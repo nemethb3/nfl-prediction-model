@@ -403,13 +403,10 @@ def run_availability_adjustment():
 
 import pickle
 
+from constants import BLEND_RATIO_BY_POSITION
 from player_models import BlendedDefenseModel, BLEND_TRAIN_SEASONS, build_blended_score_table
 
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
-
-# Winning blend ratios from Phase 2 Refinement Task 2's holdout search
-# (deterministic given fixed random_state=42 - reused, not re-derived blind).
-BLEND_RATIO_BY_POSITION = {"CB": (0.8, 0.2), "S": (0.5, 0.5)}
 
 
 def fit_dl_sacks_to_war_conversion(pass_rush_war_df):

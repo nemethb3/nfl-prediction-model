@@ -38,6 +38,8 @@ import pickle
 import numpy as np
 import pandas as pd
 
+from constants import BLEND_RATIO_BY_POSITION
+
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -52,16 +54,20 @@ OFFENSE_PRED_COLS = {
     "QB": ["predicted_epa_per_play", "predicted_epa_per_play_ol_adjusted", "predicted_epa_per_play_sos_adjusted"],
     "WR": ["predicted_epa_per_play", "predicted_epa_per_play_sos_adjusted"],
     "RB": ["predicted_epa_per_play", "predicted_epa_per_play_ol_adjusted", "predicted_epa_per_play_sos_adjusted"],
+    # TE model built after this diagnostic was first written (TE Model - Phase 2 Gap Fill,
+    # see PROGRESS.md) - added here (Master Plan Phase 4 Task 4.1) so it flows through the
+    # normal loop below instead of the hardcoded "NO MODEL BUILT" stub that used to follow it.
+    "TE": ["predicted_epa_per_play", "predicted_epa_per_play_ol_adjusted", "predicted_epa_per_play_sos_adjusted",
+           "predicted_epa_per_play_synergy_adjusted"],
 }
 DEFENSE_PRED_COL = {"EDGE": "predicted_war", "DL": "predicted_sacks",
                      "CB": "predicted_blended_score", "S": "predicted_blended_score", "LB": "predicted_blended_score"}
-BLEND_RATIO_BY_POSITION = {"CB": (0.8, 0.2), "S": (0.5, 0.5), "LB": (0.8, 0.2)}
 
 
 def load_real_2025_offense_epa():
     from ol_quality import load_real_2025_pbp, compute_real_epa_per_play
     pbp_2025 = load_real_2025_pbp()
-    return {pos: compute_real_epa_per_play(pos, pbp_2025) for pos in ["QB", "WR", "RB"]}
+    return {pos: compute_real_epa_per_play(pos, pbp_2025) for pos in ["QB", "WR", "RB", "TE"]}
 
 
 def load_real_2025_defense_ground_truth():
@@ -124,13 +130,6 @@ def validate_individual_player_projections():
                   f"real mean={metrics['real_mean']:+.4f} std={metrics['real_std']:.4f}")
             rows.append({"position": position, "pred_col": pred_col, **metrics})
 
-    print("\n" + "=" * 70 + "\nTE\n" + "=" * 70)
-    print("NO MODEL BUILT - confirmed via grep of player_models.py, no TEModel class or wrapper exists. "
-          "utilities.PRIMARY_METRIC maps TE->receiving_yards (an age curve exists) but Phase 2 never trained "
-          "a position model for it. Reported as a real gap, not estimated.")
-    rows.append({"position": "TE", "pred_col": None, "n": 0, "correlation": None, "r2": None, "mae": None,
-                 "projected_mean": None, "real_mean": None, "projected_std": None, "real_std": None})
-
     print("\n" + "=" * 70 + "\nDEFENSE (real 2025 war/sacks/blended_score, leak-free 2025-target projections)\n" + "=" * 70)
     for position, pred_col in DEFENSE_PRED_COL.items():
         proj_path = os.path.join(PROCESSED_DIR, f"{position.lower()}_leakfree_predictions_{TARGET_SEASON}.csv")
@@ -166,22 +165,32 @@ def identify_unused_assets(accuracy_df):
               f"R2={best_wr['r2']:.3f}, n={best_wr['n']:.0f}")
         print(f"   {'Real signal - worth testing as a team-strength input' if abs(best_wr['correlation']) > 0.15 else 'Weak/noisy on its own'}")
 
-    print(f"\n2. TE projections: NOT BUILT (see above) - a real, structural gap, not a deliberate exclusion.")
+    te_rows = accuracy_df[accuracy_df["position"] == "TE"]
+    te_has_data = len(te_rows.dropna(subset=["correlation"])) > 0
+    print(f"\n2. TE projections: {'BUILT (TE Model - Phase 2 Gap Fill, see PROGRESS.md)' if te_has_data else 'NOT BUILT - a real, structural gap'}.")
+    if te_has_data:
+        best_te = te_rows.loc[te_rows["correlation"].abs().idxmax()]
+        print(f"   Best individual TE column ({best_te['pred_col']}): corr={best_te['correlation']:+.3f}, "
+              f"R2={best_te['r2']:.3f}, n={best_te['n']:.0f}")
 
     qb_proj = pd.read_csv(os.path.join(PROCESSED_DIR, "qb_epa_projections_2025.csv"))
-    print(f"\n3. Availability factor (exists on every offense projection file, not used in Task 3.1's aggregation):")
+    print(f"\n3. Availability factor (exists on every offense projection file). Production's "
+          f"build_offensive_team_strength() still picks a single starting QB/leading RB with no injury-risk "
+          f"discount and no backup blended in - BUT a separate, better-performing formula that DOES blend "
+          f"availability+backup exists and is the current best-known approach (Task 3/Parallel Task B, "
+          f"real 2025 corr=+0.454 vs. production's +0.327 - see PROGRESS.md). Not yet adopted into production.")
     print(f"   QB availability_factor range: {qb_proj['availability_factor'].min():.2f} to {qb_proj['availability_factor'].max():.2f} "
           f"(mean {qb_proj['availability_factor'].mean():.2f})")
-    print(f"   Task 3.1 picked a single starting QB/leading RB by raw prior-season opportunities, with no "
-          f"injury-risk discount and no backup blended in.")
 
-    print(f"\n4. Snap share / opportunity share: Task 3.1 used a single starter per position (100% implicit share) "
-          f"rather than a depth-weighted average - real committees (RB) and rotational packages aren't reflected.")
+    print(f"\n4. Snap share / opportunity share: production still uses a single starter per position (100% "
+          f"implicit share). A depth-weighted full-roster alternative was built and tested (Parallel Task A, "
+          f"real 2025 corr=+0.366) but scored below the availability-blended approach in #3 - not adopted either.")
 
-    sos_summary = accuracy_df[accuracy_df["position"].isin(["QB", "WR", "RB"])]
-    print(f"\n5. Schedule strength (SOS) - already tested in Task 5.1: QB SOS-adjusted validated (real 2025 "
-          f"improvement), WR SOS-adjusted was flat/no help, RB SOS-adjusted actively hurt real accuracy. "
-          f"Task 3.1 used QB=SOS-adjusted correctly; RB/WR correctly did NOT use it.")
+    print(f"\n5. Schedule strength (SOS) - Task 5.1's original claim that QB SOS-adjusted validates was found to "
+          f"be an artifact of a ref_season off-by-one bug (SOS Bug Fix Task, see PROGRESS.md): with the "
+          f"corrected data, QB SOS-adjusted actually HURTS real 2025 accuracy (flips from HELPS to HURTS). "
+          f"Production has since been updated to use baseline QB instead. TE SOS-adjusted still helps; "
+          f"WR/RB SOS-adjusted still don't (unchanged verdict both before and after the fix).")
 
     print(f"\n6. OL adjustment - already tested in Task 4.2: real improvement for RB only (QB/WR were noise-level). "
           f"Task 3.1 used RB=OL-adjusted correctly; QB/WR correctly did NOT use it.")
@@ -338,6 +347,118 @@ def run_diagnostic_2():
     component_analysis = measure_component_contributions(real=real)
     structural_alternatives = test_structural_alternatives(real=real)
     return layer_trace, component_analysis, structural_alternatives
+
+
+# ---------------------------------------------------------------------------
+# Master Plan Phase 2 Task 2.1: Diagnose Compression.
+#
+# Decomposes the already-known compression ratio (~3.34x, PROGRESS.md) into
+# stages, to answer the spec's own question ("is it the model or the data")
+# with real numbers instead of a single aggregate ratio: real player-level
+# variance -> predicted player-level variance (the MODEL's compression,
+# largely an unavoidable regression-to-the-mean property of any R^2<1
+# model) -> team-level offensive_strength variance (whatever the
+# AGGREGATION/blending step ADDS on top - the more fixable part, if any).
+# ---------------------------------------------------------------------------
+
+def diagnose_player_level_compression():
+    from ol_quality import load_real_2025_pbp, compute_real_epa_per_play
+
+    pbp_2025 = load_real_2025_pbp()
+    rows = []
+    for position in ["QB", "RB", "WR", "TE"]:
+        proj = pd.read_csv(os.path.join(PROCESSED_DIR, f"{position.lower()}_epa_projections_2025.csv"))
+        real_2025 = compute_real_epa_per_play(position, pbp_2025)
+        merged = proj.merge(real_2025[["player_id", "real_2025_epa_per_play"]], on="player_id", how="inner")
+
+        std_real_prior = proj["epa_per_play_prior_season"].std()
+        std_real_2025 = merged["real_2025_epa_per_play"].std()
+        std_predicted = proj["predicted_epa_per_play"].std()
+
+        rows.append({
+            "position": position,
+            "std_real_prior_season": std_real_prior,
+            "std_predicted_2025": std_predicted,
+            "std_real_2025_actual": std_real_2025,
+            "model_compression_ratio": std_real_prior / std_predicted if std_predicted else float("nan"),
+        })
+        print(f"[{position}] std(real prior-season)={std_real_prior:.4f} | std(predicted 2025)={std_predicted:.4f} | "
+              f"std(real 2025 actual, n={len(merged)})={std_real_2025:.4f} | "
+              f"model compression (real prior / predicted) = {std_real_prior / std_predicted:.2f}x")
+    return pd.DataFrame(rows)
+
+
+def diagnose_team_level_compression():
+    team_strength = pd.read_csv(os.path.join(PROCESSED_DIR, "team_strength_2025.csv"))
+    real = compute_real_2025_team_epa()
+    merged = team_strength.merge(real, on="team", how="inner")
+
+    qb_proj = pd.read_csv(os.path.join(PROCESSED_DIR, "qb_epa_projections_2025.csv"))
+    rb_proj = pd.read_csv(os.path.join(PROCESSED_DIR, "rb_epa_projections_2025.csv"))
+    std_qb_player_level = qb_proj["predicted_epa_per_play"].std()
+    std_rb_player_level = rb_proj["predicted_epa_per_play"].std()
+
+    print("\n" + "=" * 70 + "\nTEAM-LEVEL COMPRESSION DECOMPOSITION\n" + "=" * 70)
+    print(f"Stage 1 - player-level predicted EPA/play std: QB={std_qb_player_level:.4f}, RB={std_rb_player_level:.4f}")
+    print(f"Stage 2 - team offensive_strength std (after starter-pick + play-mix blend): "
+          f"{team_strength['offensive_strength'].std():.4f}")
+    print(f"Stage 3 - real 2025 team offensive EPA std (the target): {merged['real_offensive_epa'].std():.4f}")
+
+    net_std_proj = team_strength["net_strength"].std()
+    net_std_real = merged["real_net_epa"].std()
+    total_ratio = net_std_real / net_std_proj
+    print(f"\nnet_strength std: projected={net_std_proj:.4f} | real={net_std_real:.4f} | "
+          f"TOTAL compression ratio = {total_ratio:.2f}x")
+    print("=" * 70 + "\n")
+    return {"std_qb_player": std_qb_player_level, "std_rb_player": std_rb_player_level,
+            "std_offensive_strength": team_strength["offensive_strength"].std(),
+            "std_real_offensive_epa": merged["real_offensive_epa"].std(),
+            "net_std_projected": net_std_proj, "net_std_real": net_std_real, "total_compression_ratio": total_ratio}
+
+
+def test_rescale_win_projections(factors=(1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0, 3.34)):
+    """Note on methodology: Pearson correlation is invariant to positive
+    linear rescaling, so this test is about MAE/calibration, not
+    correlation (flagged before running, not after) - rescaling epa_diff
+    around its own mean before feeding the ALREADY-FITTED (not refit)
+    win_pct model tests whether the compressed INPUT scale, not the
+    model's fitted relationship itself, is what's hurting real accuracy."""
+    import pickle
+    with open(os.path.join(PROJECT_ROOT, "models", "epa_to_wins.pkl"), "rb") as f:
+        model = pickle.load(f)
+
+    team_strength = pd.read_csv(os.path.join(PROCESSED_DIR, "team_strength_2025.csv"))
+    actual = pd.read_csv(os.path.join(PROJECT_ROOT, "data", "backtest", "actual_wins_2025.csv"))
+    merged = team_strength.merge(actual, on="team", how="inner")
+
+    mean_epa_diff = merged["net_strength"].mean()
+    games = 17
+
+    print("\n" + "=" * 70 + "\nRESCALE TEST (MAE vs. real 2025 wins, NOT correlation - see docstring)\n" + "=" * 70)
+    rows = []
+    for factor in factors:
+        rescaled = mean_epa_diff + (merged["net_strength"] - mean_epa_diff) * factor
+        win_pct = np.clip(model["slope"] * rescaled + model["intercept"], 0.0, 1.0)
+        projected_wins = win_pct * games
+        mae = np.mean(np.abs(projected_wins - merged["actual_wins"]))
+        corr = np.corrcoef(projected_wins, merged["actual_wins"])[0, 1]  # printed for completeness, expected ~constant
+        print(f"factor={factor:.2f}x: MAE={mae:.3f} wins | corr={corr:+.3f} | "
+              f"projected std={projected_wins.std():.2f} (real actual std={merged['actual_wins'].std():.2f})")
+        rows.append({"factor": factor, "mae": mae, "corr": corr, "projected_std": projected_wins.std()})
+
+    results = pd.DataFrame(rows)
+    best = results.loc[results["mae"].idxmin()]
+    print(f"\nBest factor by MAE: {best['factor']:.2f}x (MAE={best['mae']:.3f}, vs. factor=1.0x's "
+          f"MAE={results.iloc[0]['mae']:.3f})")
+    print("=" * 70 + "\n")
+    return results
+
+
+def run_compression_diagnosis():
+    player_level = diagnose_player_level_compression()
+    team_level = diagnose_team_level_compression()
+    rescale_results = test_rescale_win_projections()
+    return player_level, team_level, rescale_results
 
 
 if __name__ == "__main__":

@@ -42,6 +42,8 @@ import pickle
 import numpy as np
 import pandas as pd
 
+from constants import BLEND_RATIO_BY_POSITION
+
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -49,12 +51,6 @@ MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
 
 REF_SEASON = 2024  # leak-free jump-off point for every 2025-target component
 TARGET_SEASON = REF_SEASON + 1
-
-# CB/S/LB winning blend ratios (tackle_weight, leverage_weight) from Phase 2
-# Refinement Task 2's holdout search (LB matches CB - both landed at the
-# edge of the tested grid; S found a genuine interior optimum). Reused
-# here, not re-derived, same as Task 5.3's reuse of these constants.
-BLEND_RATIO_BY_POSITION = {"CB": (0.8, 0.2), "S": (0.5, 0.5), "LB": (0.8, 0.2)}
 
 
 # ---------------------------------------------------------------------------
@@ -877,6 +873,46 @@ def test_availability_with_simple_formula(qb_canonical_col="predicted_epa_per_pl
     print(f"\nSaved {out_path}")
 
     return simple, {"corr": corr, "mae": mae, "r2": r2, "compression": compression}
+
+
+# ---------------------------------------------------------------------------
+# Master Plan Phase 2 Task 2.2, Candidate 2: position-specific variance
+# weighting (weight each position by its own single-variable R2, not an
+# equal/play-mix blend). Reuses the exact same historical training pool and
+# real-2025 holdout components Task 4 already built - this is a cruder,
+# hand-picked-formula version of what Task 4's OLS regression already does
+# optimally, so it's expected to land at or below Task 4's +0.368, not above
+# Task 3's +0.454 - tested anyway per the master plan, not skipped on
+# assumption.
+# ---------------------------------------------------------------------------
+
+def test_variance_weighted_aggregation():
+    train_data = build_offensive_weight_training_table()
+    holdout = load_real_2025_baseline_components()
+    from phase3_diagnostic import compute_real_2025_team_epa
+    real_2025 = compute_real_2025_team_epa()[["team", "real_offensive_epa"]]
+    holdout = holdout.merge(real_2025, on="team", how="inner")
+
+    r2_by_pos = {}
+    for col in ["qb_epa", "rb_epa", "wr_epa", "te_epa"]:
+        corr = train_data[col].corr(train_data["real_offensive_epa"])
+        r2_by_pos[col] = corr ** 2
+    total_r2 = sum(r2_by_pos.values())
+    weights = {k: v / total_r2 for k, v in r2_by_pos.items()}
+
+    print("\n" + "=" * 70 + "\nCANDIDATE 2: VARIANCE (R2)-WEIGHTED AGGREGATION\n" + "=" * 70)
+    print("Per-position historical R2 (train pool) and normalized weight:")
+    for col in ["qb_epa", "rb_epa", "wr_epa", "te_epa"]:
+        print(f"  {col}: R2={r2_by_pos[col]:.4f} -> weight={weights[col]:.3f}")
+
+    holdout["offensive_strength_variance_weighted"] = sum(
+        weights[col] * holdout[col] for col in ["qb_epa", "rb_epa", "wr_epa", "te_epa"])
+    corr = holdout["offensive_strength_variance_weighted"].corr(holdout["real_offensive_epa"])
+    mae = np.mean(np.abs(holdout["offensive_strength_variance_weighted"] - holdout["real_offensive_epa"]))
+    print(f"\nReal 2025 holdout (n={len(holdout)}): corr={corr:+.3f} MAE={mae:.4f}")
+    print(f"For reference: Task 3 (availability-blended QB+RB)=+0.454 | Task 4 (OLS-optimized weights)=+0.368")
+    print("=" * 70 + "\n")
+    return {"weights": weights, "corr": corr, "mae": mae}
 
 
 if __name__ == "__main__":

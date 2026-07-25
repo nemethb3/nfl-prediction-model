@@ -203,5 +203,86 @@ def weekly_update_pipeline(season, week_completed, prior_weeks=None):
     return updated
 
 
+# ---------------------------------------------------------------------------
+# Master Plan Phase 1 Task 1.2: wire weekly updates into the game prediction
+# engine (the feedback loop Subtask 2's own report flagged as missing).
+#
+# Corrected expectation vs. the original task spec: it framed success as
+# "narrower spreads, more confident" as the season progresses. That's
+# backwards given what Subtask 2 already found - the preseason team_strength
+# is the COMPRESSED, too-narrow starting point (AUDIT_2026-07-25.md), and
+# real partial-season EPA has much higher variance. As prior_weeks'
+# influence fades and real in-season results take over, spreads should
+# WIDEN toward real variance, not narrow - that's the compression problem
+# correcting itself, and it's the outcome actually validated below.
+# ---------------------------------------------------------------------------
+
+def run_weekly_game_prediction_update(season, week_completed, prior_weeks=None):
+    """Chains weekly_update_pipeline() -> build_game_prediction_engine(),
+    restricted to games after week_completed (the "remaining schedule"
+    framing). This is the function Phase 5's weekly automation should call."""
+    from win_projection import build_game_prediction_engine
+
+    updated = weekly_update_pipeline(season, week_completed, prior_weeks=prior_weeks)
+    predictions, fit_params = build_game_prediction_engine(
+        season=season, team_strength=updated, weeks_after=week_completed)
+    return predictions, updated
+
+
+def validate_weekly_game_predictions(season=2025, checkpoint_weeks=(1, 4, 8, 12), prior_weeks=None):
+    """Real validation against the actual, completed 2025 season (same
+    reason Subtask 2 had to use 2025 - 2026 has no played games yet).
+    Compares, for the SAME set of remaining games at each checkpoint:
+    (a) the static preseason-only game predictions, vs.
+    (b) the weekly-updated predictions after that many real weeks -
+    on both spread accuracy (MAE vs. real point differential) and spread
+    std (does it widen toward real variance, as expected, or not)."""
+    from win_projection import build_game_prediction_engine
+
+    game_results = pd.read_csv(os.path.join(PROJECT_ROOT, "data", "backtest", "game_results_2015_2025.csv"))
+    game_results = game_results[(game_results["season"] == season) & (game_results["game_type"] == "REG")].copy()
+    game_results["real_point_diff"] = game_results["home_score"] - game_results["away_score"]
+
+    if prior_weeks is None:
+        prior_weeks = estimate_prior_weeks(season)
+
+    preseason_strength = pd.read_csv(os.path.join(PROCESSED_DIR, f"team_strength_{season}.csv"))
+
+    print(f"\n{'=' * 70}\nWEEKLY GAME PREDICTION VALIDATION (real {season}, prior_weeks={prior_weeks})\n{'=' * 70}")
+
+    results = []
+    for week_end in checkpoint_weeks:
+        remaining_actual = game_results[game_results["week"] > week_end]
+
+        preseason_pred, _ = build_game_prediction_engine(
+            season=season, team_strength=preseason_strength, weeks_after=week_end, save=False)
+        preseason_merged = preseason_pred.merge(
+            remaining_actual[["week", "home_team", "away_team", "real_point_diff"]],
+            on=["week", "home_team", "away_team"], how="inner")
+        preseason_mae = np.mean(np.abs(preseason_merged["expected_spread"] - preseason_merged["real_point_diff"]))
+        preseason_std = preseason_pred["expected_spread"].std()
+
+        updated_pred, updated_strength = run_weekly_game_prediction_update(season, week_end, prior_weeks=prior_weeks)
+        updated_merged = updated_pred.merge(
+            remaining_actual[["week", "home_team", "away_team", "real_point_diff"]],
+            on=["week", "home_team", "away_team"], how="inner")
+        updated_mae = np.mean(np.abs(updated_merged["expected_spread"] - updated_merged["real_point_diff"]))
+        updated_std = updated_pred["expected_spread"].std()
+
+        print(f"After week {week_end:>2} ({len(remaining_actual)} remaining games): "
+              f"preseason MAE={preseason_mae:.2f} std={preseason_std:.2f} | "
+              f"updated MAE={updated_mae:.2f} std={updated_std:.2f} | "
+              f"{'updated WIDER (expected)' if updated_std > preseason_std else 'updated narrower'} | "
+              f"{'updated BEATS preseason' if updated_mae < preseason_mae else 'preseason still better'}")
+        results.append({"week": week_end, "preseason_mae": preseason_mae, "preseason_std": preseason_std,
+                         "updated_mae": updated_mae, "updated_std": updated_std})
+
+    results_df = pd.DataFrame(results)
+    out_path = os.path.join(PROCESSED_DIR, f"weekly_game_prediction_validation_{season}.csv")
+    results_df.to_csv(out_path, index=False, encoding="utf-8")
+    print(f"\nSaved {out_path}")
+    return results_df
+
+
 if __name__ == "__main__":
     run_weekly_update_demo()

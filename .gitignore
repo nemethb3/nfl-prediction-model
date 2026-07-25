@@ -5,6 +5,8 @@ data/processed/*
 !data/processed/.gitkeep
 data/backtest/*
 !data/backtest/.gitkeep
+data/diagnostic/*
+!data/diagnostic/.gitkeep
 
 # Models
 models/*.pkl
@@ -31,3 +33,7 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Claude Code tool config, logs
+.claude/
+*.log

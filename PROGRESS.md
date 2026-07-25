@@ -2,26 +2,133 @@
 
 Target season: **2026** (training data 2015-2025).
 
+## Phase 3 Redesign: Weekly Update Pipeline
+- [x] Subtask 2: Built as `src/weekly_predictions.py` (was an empty placeholder file from early scaffolding - reused rather than creating a new module). Confirmed the real blocker before building: nflreadpy's load_pbp() raises ValueError for season=2026 (season hasn't started), so there's no real week to process yet - built the real, season/week-parameterized mechanism and validated it against the fully-completed real 2025 season instead, per direction. Team-level shrinkage update (empirical-Bayes blend of preseason team_strength with real partial-season EPA, weighted by weeks played), not full player-level cascade - the original spec's own player-level functions were unfinished stubs, so this is real working functionality where the spec had none. prior_weeks=3 empirically estimated (tested 1-14 against real 2025 final outcomes at weeks 4/8/12, not asserted). VALIDATION (real 2025, vs. static preseason MAE=0.071/corr=+0.327): after week 1 the update is slightly WORSE than preseason (0.073 vs 0.071, expected - 1 week is noisy, shrinkage correctly limits the damage but can't fully avoid it); from week 2 onward it consistently BEATS the static preseason projection and improves monotonically (MAE 0.053->0.018, corr +0.68->+0.98 by week 16) as real season data increasingly dominates the blend. A naive no-shrinkage "partial season alone" baseline is dramatically worse at week 1 (MAE=0.171 vs the shrunk 0.073) but converges to nearly identical by week 4+ - confirms the shrinkage mechanism's value is concentrated exactly where theory predicts, in the earliest, smallest-sample weeks.
+
+## Phase 3 Redesign: Vegas Comparison & Edge Detection
+- [x] Subtask 3: `vegas_comparison_framework()`/`identify_edges()` built in win_projection.py. `load_vegas_lines_all_2026()` doesn't exist - real lines just live on schedules_2026.csv directly. Checked before building: books have only posted real 2026 lines through weeks 1-4 so far (53/272 games) - genuinely how far out sportsbooks publish lines this far before the season, not a bug, so this compares to REAL currently-live market data rather than needing a historical simulation (unlike Subtask 2). Reused moneyline_to_implied_prob() (Task 5) instead of repeating that task's already-fixed over/under-as-win-total bug. Verified spread_line's sign convention against real historical blowout games before use (positive = home favored, matches our own expected_spread convention - no flip needed). RESULTS: avg spread disagreement -0.61 pts, corr(our spread, Vegas spread)=+0.257, corr(win prob)=+0.247 - modest agreement, expected for a first-pass game model. Biggest disagreements: ARI/SEA week 2 (we say +2.4, Vegas -10.0), LAC/ARI week 1 (we say +1.0, Vegas +11.5). EDGE DETECTION: 0 edges found at confidence>0.15 threshold - not a bug, our model's win probabilities never exceed 0.11 confidence (max, across all 53 games) because of the compression issue already flagged repeatedly in this project (Task 4.1/Task 5's Vegas validation) - the game engine's spread std (1.10 pts, from Subtask 1) is tiny next to real game-level variance (~14 pts), so it can never express high single-game confidence as currently calibrated.
+
+## Phase 3 Redesign: Game Prediction Engine
+- [x] Subtask 1: Game prediction engine built (`win_projection.py::build_game_prediction_engine`). Pre-req fix: rebuilt team_strength_2026.csv with baseline QB (was still using SOS-adjusted from before today's Production Update task existed). Corrected the spec's 4 asserted constants (EPA_TO_POINTS=3.5, HOME_FIELD_ADVANTAGE=2.5, league_avg_points=21.0, win-prob std_dev=5.0) into ONE real regression on 2,017 real historical REG games (point_diff ~ epa_diff, 2016-2023): slope=15.98 pts/EPA-unit, intercept=+1.64 pts (real home-field advantage), residual std=14.04 pts, real league-avg total=45.42 pts/game - all empirically derived, none asserted. 2024 holdout: MAE=10.82 pts, corr=+0.255 (modest, as expected - single-game outcomes are inherently much noisier than season win totals). Generated predictions for all 272 real 2026 REG games. Known simplification, disclosed not hidden: expected_total is currently constant across all games (league average) since only the point DIFFERENTIAL was modeled, not each team's individual scoring level - a real matchup-specific total (e.g. two elite defenses = lower total) isn't captured; same structural limitation the original spec's design had.
+
+## Prep Task: Refresh 2025 Data & Rebuild 2026 Offense Projections
+- [x] Environment migrated to D: (C: drive was ~3MB free, blocked all installs) - new venv at D:/venvs/nfl-model, old C: conda env untouched. See memory: env-python-interpreter.
+- [x] nflreadpy confirmed to solve nfl_data_py's 2025 season/weekly-stats 404 (defense/PFR/PBP sources already had 2025 - only offense weekly/seasonal was blocked). Pulled real 2025 offense data, mapped nflreadpy's schema onto the existing raw-cache column set, appended to player_weekly_raw/player_seasonal_raw, reran run_cleaning_pipeline() unchanged (same code path as every other season).
+- [x] Rebuilt player_features_with_history.csv + age curves (run_feature_engineering()) with 2025 included.
+- [x] Regenerated QB/RB/WR/TE 2026 baseline projections using the already-trained pretrained models with ref_season=2025 (no retraining - same reuse-across-ref-seasons convention as Task 4's historical backtest).
+- [x] Applied OL/SOS/availability adjustments to all four positions for 2026.
+- [x] Built team_strength_2026.csv (offense: Task 3's winning availability-blended play-mix formula, ref_season=2025; defense: top-down team_defense_epa model, ref_season=2025 - genuinely 2026-targeting, unlike the existing 2025-target leak-free defense rebuild in team_aggregation.py). No real-2026 validation possible yet (season unplayed).
+- **BUG FOUND (pre-existing, affects the whole project's SOS history, not just this task)**: `sos_adjustment.build_component_models()` hardcodes `ref_season=HOLDOUT_SEASON-1` (2023), contradicting its own docstring ("projects... to 2025 from 2024 data") - an off-by-one that means every SOS-adjusted projection ever produced by `run_sos_adjustment()` (Task 5.1 onward, including this session's TE/Phase-3-Rebuild work) used opponent-quality data projected for 2024 (from 2023), not 2025 (from 2024) as intended. Worked around for this task's 2026 pipeline by calling `train_defense_component_model`/`predict_next_season` directly with the correct `ref_season`; NOT fixed in `build_component_models()` itself or rerun retroactively for the 2025 pipeline, since that would silently change already-reported 2025 results without asking first.
+- **BUG FOUND AND FIXED (this task)**: `build_team_opponents(schedules_2015_2025.csv, 2026)` silently returned 0 rows (that file has no 2026 games), which would have corrupted every 2026 SOS-adjusted column to NaN. Fixed by pulling the real 2026 schedule directly (272 REG games, confirmed already released) and saving it as `data/raw/schedules_2026.csv`.
+
+## SOS ref_season Bug Fix - Rerun 2025 Pipeline
+- [x] Fixed `sos_adjustment.build_component_models()`'s off-by-one (`ref_season=HOLDOUT_SEASON-1` -> `ref_season=HOLDOUT_SEASON`, i.e. 2023->2024) and reran everything downstream: SOS pipeline, team_strength_2025.csv, win_projection.py (both run_win_projection and run_backtest_comparison), Phase 3 Diagnostics 1+2.
+- **HEADLINE RESULT - QB SOS-adjusted verdict FLIPS**: with the corrected (fresh) 2024 opponent data, QB SOS no longer helps real 2025 accuracy (MAE 0.0828->0.0844, worse; individual-player corr 0.386 vs baseline's 0.403) - the opposite of the original (buggy, stale-2023-data) "HELPS" verdict that Task 5.1, production's `build_offensive_team_strength()`, and every downstream Phase 3 Rebuild artifact (Task 3's depth scenarios, Parallel Task B's simple formula, Improvement Task 1's combined result, Parallel Task A's full-roster) all built on top of. TE SOS still helps (slightly better than before: 0.1959->0.1925). WR/RB SOS still don't help (unchanged verdict).
+- Also fixed a second, unrelated pre-existing bug found while regenerating diagnostics: `phase3_diagnostic.measure_component_contributions()` was called with a `real=` kwarg its signature didn't declare (an incomplete refactor from earlier this session) - added the missing parameter.
+- Net effect on already-reported numbers: production offensive_strength corr +0.341->+0.306, net_strength +0.303->+0.283; Phase 4 backtest win corr ~unchanged (0.224->0.221); Diagnostic 2's "QB-alone beats QB+RB blend" conclusion still holds directionally (+0.361->+0.335, still beats current formula's now-+0.306).
+- **NOT done, flagged for a follow-up decision**: Task 3/Parallel Task A/Parallel Task B/Improvement Task 1's saved CSVs (`team_strength_2025_availability_adjusted.csv`, `_simple.csv`, `_combined.csv`, `_full_roster.csv`, `depth_scenario_qb.csv`) all still embed the OLD (buggy) SOS-adjusted QB values and were not regenerated - out of this task's explicit scope, but now stale. Also not addressed: production's `build_offensive_team_strength()` still hardcodes QB=SOS-adjusted even though that adjustment no longer validates - worth reconsidering (e.g. switch to baseline or OL-adjusted) as a separate decision.
+
+## Phase 3 Rebuild Regeneration (post SOS bug fix)
+- [x] Subtask 1: Task 3 depth scenarios rebuilt. `project_team_strength_scenarios()` generalized with a `qb_canonical_col` param (default changed from SOS-adjusted to baseline `predicted_epa_per_play`, since SOS no longer validates for QB - see SOS bug fix task). Isolated both effects separately: fixing just the stale-data bug (QB still SOS-adjusted) gives full_season +0.306/availability_adjusted +0.439/backup_only +0.374 (all below the original buggy numbers - confirms the bug was inflating them); fixing the bug AND switching QB to baseline gives +0.327/+0.454/+0.376 - better than data-fix-alone across the board, confirming baseline is the right column now. availability_adjusted remains the best scenario within Task 3 (+0.454, essentially matching the old +0.464 despite the underlying bug fix - backup_only is even slightly better than before, +0.376 vs +0.374).
+
+- [x] Subtask 2: Task 4 weight optimization rechecked - UNCHANGED. Confirmed (not assumed) by rerunning: `optimize_offensive_weights_via_regression()` never used QB's SOS-adjusted column (always baseline `predicted_epa_per_play`, both for the historical 278-team-season training pool and the real-2025 holdout), so it was never exposed to the SOS ref_season bug. All four stepwise model results and the winning weights (qb=0.327/rb=0.169/wr=0.290/te=0.273, corr=+0.368) are bit-for-bit identical to the original run.
+
+- [x] Subtask 3: Parallel Task A (full-roster depth) rebuilt. `build_full_roster_aggregation()` generalized with the same `qb_canonical_col` param/default-to-baseline fix as Subtask 1 (WR's SOS-adjusted column left as-is - separate, pre-existing "NO HELP" finding unchanged by today's fix, out of scope here). Isolated both effects: fix-only (QB still SOS-adjusted) = +0.363; fix + QB baseline = +0.366. Both below the original buggy +0.376 - unlike Task 3, switching to baseline doesn't fully recover the gap here, since QB is a smaller fraction of this blend (weighted alongside RB/WR/TE via Task 4's optimized weights, not 100% QB+RB like Task 3's play-mix formula) so its column choice matters less. Compression ratio unchanged (2.41x vs. previous 2.39x).
+
+- [x] Subtask 4: Parallel Task B (simple formula) rebuilt. Same qb_canonical_col fix as Subtask 1/3. Results: fix-only +0.439, fix+baseline +0.454 - exact match to Subtask 1's numbers, confirming (again) this formula is mathematically identical to Task 3's availability_adjusted scenario. availability_adjusted/simple-formula remains the best-performing single approach across the whole rebuild.
+
+- [x] Subtask 5: Improvement Task 1 (combined) rebuilt. Same fix pattern. Results: fix-only +0.440, fix+baseline +0.442 - barely moved from the original +0.444 (QB diluted by the multi-position blend here too, same pattern as Parallel A).
+
+### FINAL SUMMARY - Phase 3 Rebuild Regeneration (all 5 subtasks)
+| Approach | Old (buggy) | New (fix only, QB still SOS-adj) | New (fix + QB baseline) |
+|---|---|---|---|
+| Task 3: availability_adjusted | +0.464 | +0.439 | **+0.454** |
+| Task 4: optimized weights (QB+RB+WR+TE) | +0.368 | +0.368 (unaffected - never used SOS-adjusted QB) | +0.368 |
+| Parallel A: full-roster depth | +0.376 | +0.363 | +0.366 |
+| Parallel B: simple formula | +0.464 | +0.439 | **+0.454** (identical formula to Task 3, confirmed exact match both times) |
+| Improvement 1: combined | +0.444 | +0.440 | +0.442 |
+| Production (build_offensive_team_strength - NOT updated to baseline QB) | +0.341 | +0.306 | not rebuilt with baseline - still uses SOS-adjusted QB |
+
+**Winner unchanged**: Task 3 / Parallel B (identical formula) remain the best approach at +0.454, just barely below their pre-fix (inflated) +0.464. The original Parallel Exploration's headline conclusion - "simplicity beats complexity," availability-blended QB+RB with a plain play-mix formula beats every fancier multi-position/full-roster approach tried - **survives the bug fix intact**, just with slightly more honest numbers.
+
+**Outstanding item, not addressed by this regeneration**: production's `build_offensive_team_strength()` (used by `run_team_aggregation()` to build the canonical `team_strength_2025.csv`) still hardcodes QB=SOS-adjusted, even though every rebuilt approach here confirms baseline is now the better choice. Flagged, not changed - a deliberate scope boundary (this regeneration only touched Task 3/4/Parallel A/Parallel B/Improvement 1, not the production formula itself).
+
+## Production Update: Baseline QB
+- [x] Fixed `build_offensive_team_strength()` (production's canonical formula, used by `run_team_aggregation()`) - QB switched from SOS-adjusted to baseline `predicted_epa_per_play`, RB unchanged (still OL-adjusted). Precise 3-line edit, not a file-wide string replace (which would have corrupted 4 unrelated matches: 3 explanatory docstrings from the earlier regeneration subtasks, plus WR's intentionally-still-SOS-adjusted column in `build_full_roster_aggregation()` - confirmed by grep before editing).
+- Regenerated team_strength_2025.csv, win_projections_2025.csv, win_projections_vs_actual_2025.csv.
+- RESULTS: offensive_strength corr +0.306->+0.327, net_strength +0.283->+0.289 (recovers most of the SOS-bug-fix dip, consistent with the pattern already seen in Task 3/Parallel B). Win backtest correlation ~unchanged (0.221->0.216, noise-level - win-level accuracy is fairly insensitive to this one input, same finding as the original SOS bug fix task).
+- Production (+0.327) is now close to but still below the Phase 3 Rebuild Regeneration's winning approach (Task 3/Parallel B's availability-blended formula, +0.454) - production still doesn't include availability/backup blending, just single-starter values. That gap was already known and flagged, not something this task addressed.
+
 ## Phase 1: Setup & Data Pipeline
 - [x] Task 1.1: Project Scaffolding & Git Setup
-- [ ] Task 1.2: Data Collection - Play-by-Play & Player Stats
-- [ ] Task 1.3: Data Cleaning & Standardization
-- [ ] Task 1.4: Vegas Lines & Game Results Historical Data
-- [ ] Task 1.5: Feature Engineering - Age Curves & League Baselines
+- [x] Task 1.2: Data Collection - Play-by-Play & Player Stats
+- [x] Task 1.3: Data Cleaning & Standardization
+- [x] Task 1.4: Vegas Lines & Game Results Historical Data
+- [x] Task 1.5: Feature Engineering - Age Curves & League Baselines
 
 ## Phase 2: Tier 1 Position Models
-- [ ] Task 2.1: QB Model
-- [ ] Task 2.2: WR Model
-- [ ] Task 2.3: RB Model
-- [ ] Task 2.4: EDGE Model
+- [x] Task 2.1: QB Model
+- [x] Task 2.2: WR Model
+- [x] Task 2.3: RB Model
+- [x] Task 2.4: EDGE Model
+
+## Phase 2.5: Tier 2 Defensive Position Models (added - needed for full Defensive Strength in Phase 3)
+- [x] Task 2.5: DL Model (sacks)
+- [x] Task 2.6: LB Model (combined tackles)
+- [x] Task 2.7: CB Model (combined tackles)
+- [x] Task 2.8: S Model (combined tackles)
+
+## Phase 2.X-Team: WAR Framework (hybrid scope - real PBP attribution only, no invented decomposition weights)
+- [x] Task 1: Pass-Rush WAR (EDGE/DL) from real PBP sack/QB-hit attribution
+- [x] Task 2: Team Defense EPA Prediction model
+- [x] Task 3: Retrain EDGE/DL on WAR + generate projections
+
+## Phase 2.X-Defense: Leverage EPA Attribution (Task 2's efficiency-metric proxies evaluated and not built - see Task 1 report)
+- [x] Task 1: Leverage EPA Attribution (all defensive positions, real on-field rosters via defense_players)
+
+## Phase 2 Refinement: Offensive EPA + Defensive Blending
+- [x] Task 1: Retrain QB/WR/RB on EPA Per Play (not raw yards)
+- [x] Task 2: Blend CB/S/LB (tackle efficiency + leverage WAR), ratio chosen per position via 2024 holdout search
+- [x] Task 3: DL model clarified - keep sacks-based (R2=0.399), WAR-based (R2=0.283) discarded (EDGE keeps WAR - opposite call, tuned per position not copied)
+- [x] Task 4.1: OL Quality metrics (sack rate allowed + rush EPA generated, real PBP - not PFF/PFR "Adjusted Line Yards", which isn't actually free PFR data)
+- [x] Task 4.2: OL adjustment applied - empirically near-zero for QB/WR, real modest improvement for RB (data disagreed with the spec's assumed QB-most-dependent ordering)
+- [x] Task 5.1: SOS adjustment (trained pass/rush defense-split models + empirical weights) - real improvement for QB, no help for WR, actively hurts for RB (don't use for RB)
+- [x] Task 5.2: Availability factor (real games-played history, not hardcoded injury rates) - added as informational column for Phase 3's volume aggregation, NOT multiplied into the rate metrics; validated real 2025 accuracy strongly beats the implicit "assume full season" baseline every prior task made
+- [x] Task 5.3: CB/S pass-rush synergy tested via residual regression + spurious-correlation control - CB shows no real signal, S shows a real (non-confounded) but too-weak-to-generalize signal that hurts 2024 holdout accuracy; neither adjustment recommended for use
+- [x] Task 5.4.1: Coach quality (head coach, not fabricated OC/DC data) via real offense+defense EPA models - good face validity (Andy Reid/Bruce Arians top, Matt Patricia/Joe Judge bottom) but FAILS split-half reliability check (corr ~0, even negative for defense) - not a persistent signal, flagged before any forward projection
+
+## TE Model - Phase 2 Gap Fill
+- [x] TE added to OffenseEpaModel (min_opportunities=30, use_qb_context=True) - real 2025 corr=+0.311, R2=0.072, beats WR's own real-2025 result (+0.146/0.021); confirms the gap Diagnostic 1 found is now filled
+
+## Phase 3 Rebuild
+- [x] Task 1: Threaded TE through OL/SOS/availability/synergy adjustments (reused existing leak-free pipelines, not the spec's bespoke same-data-fit-and-test sketch). Real 2025 results: OL adjustment MAE 0.1959->0.1940 (modest help, like RB), SOS MAE ->0.1944 (help, like QB - TE faces pass defense), availability beats "assume full season" baseline (0.179 vs 0.227, like every position), synergy (TE's own team pass-rush WAR) MAE ->0.1888/R2 0.070->0.119 (real, out-of-sample help - stronger than CB/S's own synergy result, though the causal story is weaker than CB/S's coverage-time argument, so treat with some caution despite passing the check). Fixed an availability-adjustment idempotency bug (validate_availability ran before stale columns were dropped, causing a merge-suffix KeyError on rerun) surfaced while re-running the pipeline; also reconciled ol_quality.py's TE min_opportunities (was 20, now matches the finalized 30) and fixed compute_real_epa_per_play's TE branch (was falling into RB's rush+receiving logic instead of WR-style receiving-only).
+
+- [x] Task 2: Position-specific SOS - verified already fully satisfied by Task 5.1/Task 1's existing POSITION_SOS_METRIC design (QB/WR/TE->pass_epa_allowed, RB->rush_epa_allowed, leak-free, validated real 2025); no new code needed, spec's proposed rebuild would have reintroduced a circular fit-on-2025 bug
+- [x] Task 3: Backup depth scenarios (QB/RB only - the 2 positions production offensive_strength actually uses; WR/TE skipped since Diagnostic 2 already found adding WR hurts and hasn't been re-tested). Fixed the spec's iloc[0]/iloc[1] "starter/backup" bug (projection files aren't sorted starter-first) by reusing team_aggregation.py's own already-established "starter = highest projected value" convention; backup fallback uses a real league-average backup-tier value (QB -0.030, RB -0.062, empirically derived) instead of the spec's asserted constants. VALIDATION FINDING: availability_adjusted scenario (blends starter/backup by real availability_factor) beats production's full-season-assumption on real 2025 outcomes: corr +0.464 vs +0.341 - a genuine, out-of-sample improvement worth considering for production, not yet applied there (this task only builds the scenario files, doesn't change team_strength_2025.csv).
+
+- [x] Task 4: Scientific offensive weight optimization - fixed the spec's inverted fit direction (it fit on 2025 alone, n=32, then "backtested" on history; flipped to fit pooled across 278 historical team-seasons 2016-2024 using each position's already-trained model applied at every historical ref_season, real 2025 held fully out as the decisive check, matching every other weight-fit in this project). WINNER by real 2025 holdout: full QB+RB+WR+TE regression, corr=+0.368 (beats QB-alone's +0.351 and production's +0.341). This reverses Diagnostic 2's "adding WR hurts" finding - that was true for the naive fixed-ratio blends tested there, not for properly OLS-optimized continuous weights; TE also contributes for the first time now that it has a model. Still short of Task 3's availability_adjusted result (+0.464) - the two ideas (optimized weights + availability blending) haven't been combined yet, flagged as a future option, not built.
+
+- [x] Task 5: Validate against Vegas - fixed the spec's implied-win-probability formula (it treated a per-game point total (`total_line`) as if it were a season win total - unrelated markets, and the dataset has no season win-total line at all). Rebuilt from real per-game moneylines (0 missing, 272 REG games), devigged and summed per team for a genuine Vegas-implied season win total. Results: model vs. Vegas agreement corr=+0.519; vs. REAL 2025 outcomes, Vegas corr=+0.798/MAE=1.78 clearly beats our model's corr=+0.224/MAE=2.89 (expected - Vegas prices in-season info a preseason-only model can't see). Useful new context: Vegas itself is compressed vs. real variance too (std 2.13 vs real 3.46, ~1.6x) but nowhere near as compressed as our model (std 1.03, ~3.4x, confirming Task 4.1's finding) - so some compression is inherent to any preseason projection, but roughly half of our model's gap looks fixable.
+
+## Phase 3 Final Improvements
+- [x] Improvement Task 1: Combined Task 3's availability blending + Task 4's optimized weights. Fixed 2 spec column-name bugs (optimized_offensive_weights.csv is qb_epa/rb_epa/wr_epa/te_epa/intercept, not qb/rb/wr/te; team_strength_2025.csv is defensive_strength_allowed, not defensive_strength) and reused build_depth_scenarios() instead of re-deriving the blend inline. RESULT: corr=+0.444 - BETWEEN Task 3 (+0.464) and Task 4 (+0.368) alone, i.e. combining does NOT beat Task 3 alone on correlation (spec's own "~+0.50+" expectation not met), though it does post the best MAE yet (0.0645 vs. Task 3's 0.0672). Best single approach for correlation remains Task 3's availability_adjusted scenario on its own.
+
+- [x] Parallel Task A: Full-roster depth aggregation (corrected data sources: season_team_from_weekly() crosswalk since player_season_stats.csv has no team column; targets not receiving_targets; avg_snap_pct for RB workload since no snaps column exists; fixed a real spec bug where the RB loop's break made "top-3 snap-share weighting" dead code, silently degrading RB to the same starter+backup blend as Improvement Task 1). RESULT: corr=+0.376 - below both Task 3 (+0.464) and Improvement 1 (+0.444), though above Task 4 alone (+0.368). Genuinely useful finding: compression ratio improved to 2.39x (vs. production's ~3.4x, Vegas's ~1.6x) - full-roster depth doesn't improve rank accuracy but does meaningfully widen the predicted spread, directly addressing the compression problem Task 4.1/Vegas-validation flagged, even without an accuracy win.
+
+- [x] Parallel Task B: Availability + simple formula (fixed 3 spec bugs: depth_scenario CSVs carry the value directly as availability_adjusted, not predicted_epa_per_play_sos/ol_adjusted; team_play_mix_2024.csv doesn't exist as a file, compute_team_play_mix() called directly; used phase3_diagnostic.compute_real_2025_team_epa() for both real offense+defense EPA). RESULT: corr=+0.464 - an EXACT match to Task 3's own availability_adjusted scenario, because this is mathematically the same computation (same QB/RB availability blend, same play-mix formula) - not new information, but a clean confirmation. FINAL ANSWER to "does simplicity beat complexity": across every variant tried in Phase 3 Rebuild + Final Improvements + this parallel exploration (production +0.341, optimized weights +0.368, full-roster depth +0.376, combined +0.444, simple-with-availability +0.464), Task 3's original simple QB+RB play-mix formula with availability blending remains the single best-performing approach on real 2025 outcomes. Every attempt to add complexity (multi-position weights, full-roster depth, combining both) came in below it.
 
 ## Phase 3: Aggregation & Win Models
-- [ ] Task 3.1: Team Strength Aggregation
+- [x] Task 3.1: Team Strength Aggregation (2025 target, leak-free from 2024 data; validated corr +0.34 offense / +0.33 defense vs real 2025 outcomes)
 - [ ] Task 3.2: Win Prediction Models
 - [ ] Task 3.3: Vegas Comparison & Edge Detection
 
 ## Phase 4: Vegas Backtesting & Validation
-- [ ] Task 4.1: Backtest 2025 Season Predictions
+- [x] Task 4.1: EPA->win_pct conversion empirically fit (R2=0.747 on real 2015-2024 data) and applied to 2025 team strength - flagged: Phase 3's projected epa_diff is ~3.2x more compressed (std 0.043) than real realized team-season epa_diff (std 0.137), so projected win spread (3.8 wins) is narrower than a typical realized season (~10-13 wins) - carried into Task 4.2's calibration check
+- [x] Task 4.2: Backtest vs real 2025 results - compression prediction CONFIRMED (3.36x actual vs 3.2x predicted), but overall fit weak (corr=0.224, R2=0.050, MAE=2.89 wins) - root cause is Phase 3's team strength (corr~0.33 with real team EPA) compounding through an otherwise-excellent win conversion (R2=0.747 standalone), not a Task 4 problem. Biggest misses (NE/JAX way underprojected, ARI/NYJ/LV/TEN way overprojected) look like idiosyncratic surprise seasons, not a directional bias. Phase 3's aggregation is the priority for improvement, not Task 4's conversion model.
+
+## Phase 3 Diagnostic: Tracing Signal Loss (triggered by Phase 4's weak 0.224 win correlation)
+- [x] Diagnostic 1: Individual player accuracy - EDGE (corr+0.60)/LB (+0.56) far stronger than any offense position; QB best offense at +0.41; RB/WR weak (<0.18); TE has NO model at all (confirmed gap, not an oversight). Key lead: defense's strong individual signal isn't reaching team_strength_2025's defensive_strength_allowed (which only hit +0.33), since that column comes from the team-level model, not bottom-up EDGE/LB aggregation.
+- [x] Diagnostic 2: Aggregation confirmed as the bottleneck (net_strength corr 0.303 vs real, compounds to ~0.262 through the already-strong win conversion, close to Phase 4's observed 0.224). SURPRISE: bottom-up defensive composite from EDGE/LB (strong individually) is WORSE at team level (corr -0.06) than the current top-down team_defense_epa model (+0.33) - individual accuracy did not translate to team-level aggregation. CB team avg blended_score even NEGATIVELY correlated (-0.28), likely the "shutdown corners get low volume" inversion already flagged in Task 2. Offense: QB alone beats QB+RB blend (+0.361 vs +0.341); adding WR in any tested form hurts (-0.10).
 
 ## Phase 5: Automation & Infrastructure
 - [ ] Weekly automated pipeline

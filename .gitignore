@@ -9,6 +9,12 @@ data/diagnostic/*
 !data/diagnostic/.gitkeep
 data/fantasy/*
 !data/fantasy/.gitkeep
+data/predictions/*
+!data/predictions/.gitkeep
+data/tracking.db
+
+# Data files that live outside data/ (component-local outputs)
+src/injury_severity_lookup.csv
 
 # Models
 models/*.pkl

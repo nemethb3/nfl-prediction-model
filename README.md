@@ -1,52 +1,130 @@
-# NFL Win Prediction Model
+# NFL Prediction & Fantasy Model
 
-A dual-track model for NFL season win totals and weekly game outcomes:
-a detailed, player-level EPA aggregation pipeline, and a simpler Elo rating
-system built alongside it — both benchmarked against real historical
-outcomes and real Vegas lines. See `PROGRESS.md` for the full, chronological
-build log this README summarizes.
+A validated NFL prediction system built on real 2015-2025 data: game spread
+predictions, season win projections, fantasy player rankings, and playoff
+probabilities — each backtested against real historical outcomes, with
+every finding (positive, negative, or null) reported honestly. See
+`PROGRESS.md` for the full, chronological build log this README summarizes.
 
-## Key Findings (real, backtested results — see PROGRESS.md for full detail)
+## What's Built
 
-1. **Elo beats the EPA pipeline, at both levels tested.**
-   - Season wins (real 2025): carryover Elo corr=+0.316, MAE=2.74 vs. EPA corr=+0.216, MAE=2.88.
-   - Game spreads (real 2024 holdout): Elo corr=+0.393, MAE=10.21 vs. EPA corr=+0.255, MAE=10.82. Replicated on real 2025 (corr=+0.385, MAE=10.36).
-   - "Elo" here means *carryover* Elo — real win/loss history only, no Vegas signal anywhere. A Vegas-informed Elo variant also exists internally but is circular (it imports Vegas's own number as a starting rating) and isn't a fair comparison point.
+- **Game spreads**: Vegas lines when available (they beat everything else
+  tested), with a small real matchup-EPA adjustment; Elo (+ a marginal
+  QB-Elo blend) as a fallback for games with no posted line.
+- **Season win projections**: real actual wins-to-date + Elo-projected
+  remaining games — dramatically more accurate than the original EPA-based
+  approach.
+- **Fantasy rankings**: RB/QB/TE on validated volume-only formulas; WR on
+  its original (still-best) combined EPA+volume formula.
+- **Playoff probability**: Monte Carlo simulation (10,000 runs/checkpoint)
+  over the real 7-team-per-conference NFL structure.
+- **Weekly tracking**: a SQLite database logging predictions, results, and
+  accuracy over time, validated end-to-end on real 2025 data.
 
-2. **Vegas beats everything, at every point tested — including late season.** A LOOCV search over Vegas/Elo blend weights at 5 checkpoints (weeks 1, 4, 8, 12, 16) independently chose **100% Vegas, 0% Elo at every single checkpoint**, contradicting the original hypothesis that Elo should take over as the season progresses. Real Vegas spread accuracy (2025): corr=+0.504, MAE=9.72 (game-level); corr=+0.798, MAE=1.78 (season win totals — a different market, kept as a separate figure, see `src/constants.py`).
+## Current Performance (real 2025 backtests)
 
-3. **Simple weighted blending never beats using the single strongest signal alone.** This pattern showed up independently four separate times: an EPA-candidates ensemble collapsed to Vegas alone; an EPA+Elo season-win ensemble collapsed to pure Elo (LOOCV selected 0% EPA weight in all 32 leave-one-out folds); the Vegas/Elo game-spread blend collapsed to pure Vegas at every checkpoint. Related, correlated signals don't cancel error the way true ensembling assumes.
+### Game spreads (n=272 real games)
+| | Correlation | MAE |
+|---|---|---|
+| Integrated (Vegas + matchup adj., or Elo fallback) | +0.500 | 9.69 |
+| Vegas alone | +0.504 | 9.72 |
 
-4. **Weekly recalibration works, but modestly, and the honest number is lower than a naive check suggests.** Freezing Elo at week N and projecting all remaining games (the real, live-deployment scenario) improves correlation monotonically through the season: +0.248 (week 1) → +0.412 (week 16, real 2025). This is meaningfully lower than a look-ahead-chained per-game accuracy figure (+0.385) — the difference matters and is documented in `PROGRESS.md` (Component B).
+Essentially a wash vs. Vegas alone — the matchup adjustment was validated
+as a fix for *Elo's* errors specifically (+0.010 corr over Elo alone) and
+doesn't clearly transfer to correcting Vegas's already-better predictions.
 
-5. **Fantasy viability is position-dependent, not uniform.** Real 2025 PPR correlation: WR +0.591 (strong), QB +0.435 and TE +0.436 (borderline), **RB −0.504 (broken by the specified EPA×volume formula)** — raw prior-season opportunity volume *alone* would have scored +0.667 for RB, meaningfully better than the specified formula. Not evidence fantasy-from-EPA is hopeless; evidence the RB formula specifically needs rework.
+### Season win projections (real actual wins + Elo-projected remainder)
+| Week | New (Elo-based) | Old (EPA-based) | Improvement |
+|---|---|---|---|
+| 1 | +0.300 | +0.069 | +0.231 |
+| 4 | +0.594 | +0.275 | +0.319 |
+| 8 | +0.736 | +0.297 | +0.439 |
+| 12 | +0.885 | +0.369 | +0.516 |
+| 16 | +0.977 | +0.412 | +0.565 |
+
+The single most decisive improvement in the whole project — the gap grows
+through the season before converging near 1.0 once real wins dominate.
+
+### Fantasy (real 2025, PPR)
+| Position | Correlation | Note |
+|---|---|---|
+| RB | +0.651 | was −0.504 on the original EPA×volume formula |
+| TE | +0.543 | was +0.436 |
+| WR | +0.591 | unchanged — the one position where EPA+volume already beats volume alone |
+| QB | +0.447 | was +0.435 (the most modest gain of the four) |
+
+### Playoff probability
+Real, correctly-scoped simulation: 7 playoff spots per 16-team conference
+(not a pooled top-8), every remaining game simulated individually per trial
+(preserving shared-opponent correlation, not independent per-team draws).
+Real 2025 spot-checks: odds spread widens appropriately through the season
+(std dev 0.18 → 0.47, week 1 → 16) and individual team trajectories move
+sensibly with real record changes.
+
+## Key Findings
+
+1. **Elo beats EPA**, at both season-win and game-spread level (real
+   backtests, both years tested).
+2. **Vegas beats everything, at every checkpoint tested — including late
+   season.** A real LOOCV search over Vegas/Elo blend weights chose 100%
+   Vegas at every one of 5 checkpoints (weeks 1, 4, 8, 12, 16), contradicting
+   the original hypothesis that Elo should take over as the season
+   progresses.
+3. **Simple weighted blending consistently loses to using the single
+   strongest signal alone.** This exact pattern recurred independently at
+   least four times: an EPA-candidates ensemble collapsed to Vegas; an
+   EPA+Elo season-win ensemble collapsed to pure Elo; the Vegas/Elo
+   game-spread blend collapsed to pure Vegas; the game-spread matchup
+   adjustment helps against Elo but washes out against Vegas.
+4. **Volume beats EPA×volume for fantasy at RB, QB, and TE** — WR is the
+   sole exception, where the combined formula already wins. The RB fix in
+   particular was dramatic (−0.504 → +0.651).
+5. **Several "obvious" adjustments tested real and came back null, and were
+   correctly NOT integrated rather than kept anyway:** injury-severity
+   adjustments (team-level EPA effect too heterogeneous to average
+   reliably, confirmed after fixing a real duplicate-counting bug), rest-day
+   adjustments (zero measurable effect on real backtest accuracy), and
+   betting on our own disagreements with Vegas (real backtest ROI: −36%,
+   i.e. actively harmful, not just unhelpful).
 
 ## Architecture
 
-Two related but independent prediction pipelines share the same raw data:
-
 ```
-nflreadpy / nfl_data_py (play-by-play, weekly stats, schedules, Vegas lines)
+nflreadpy / nfl_data_py (play-by-play, weekly stats, schedules, Vegas lines, injuries)
     |
-    +-- EPA / player pipeline (original, pre-Elo):
+    +-- EPA / player pipeline (original):
     |     data_pipeline.py -> player_models.py / team_aggregation.py / sos_adjustment.py
-    |     -> team_strength_{season}.csv -> epa_to_wins.py / game_predictions.py
-    |     -> season win + game spread projections (the EPA baseline cited above)
-    |     -> fantasy_validation.py (fantasy rankings use THIS pipeline's player
-    |        projection files, independent of Elo)
+    |     -> epa_to_wins.py / game_predictions.py (season wins + game spreads, EPA baseline)
     |
-    +-- Elo pipeline (this session, beats EPA at both levels):
-          elo_model.py (team Elo ratings, carryover + Vegas-informed variants)
-          -> elo_game_prediction.py (Elo -> game spreads, real prob->spread fit)
-          -> weekly_recalibration.py (in-season Elo updates, real per-game chain)
-          -> vegas_integration_optimized.py (learned Vegas/Elo blend weights -
-             found blending doesn't help; Vegas wins outright)
+    +-- Elo pipeline (beats EPA at both levels):
+    |     elo_model.py (team Elo, carryover + Vegas-informed variants)
+    |     -> elo_game_prediction.py (Elo -> game spreads)
+    |     -> weekly_recalibration.py (in-season Elo updates)
+    |     -> qb_elo_model.py (QB-specific Elo, marginal blend addition)
+    |
+    +-- matchup_features.py (real team-position defensive EPA edges)
+    |
+    +-- integrated_predictions.py (final pipeline: Vegas-primary game
+    |     spreads + matchup adjustment, Elo-based season projections)
+    |
+    +-- fantasy_rb_formula.py / fantasy_formula_improvements.py (validated
+    |     volume-only RB/QB/TE formulas) + fantasy_validation.py (WR,
+    |     unchanged - see Known Gaps below for RB/QB/TE wiring status)
+    |
+    +-- playoff_probability.py (Monte Carlo, real conference structure)
+    +-- weekly_tracking.py (SQLite prediction/accuracy log)
 ```
+
+`vegas_integration_optimized.py` (LOOCV blend-weight search), `injury_model.py`,
+`rest_tracking.py`, `momentum_weighting.py`, and `edge_detection.py` are all
+real, complete, validated modules whose *findings* were negative/null/
+mixed and were deliberately **not** wired into the pipelines above — see
+Key Findings above and PROGRESS.md for the evidence behind each.
 
 `src/constants.py` centralizes the shared Elo hyperparameters and all
-EPA/Elo/Vegas baseline numbers cited above — see it directly for the
-authoritative, current values rather than trusting any number restated here
-to stay current.
+EPA/Elo/Vegas/matchup baseline numbers cited above — check it directly for
+the current, authoritative values rather than trusting any number restated
+here to stay current.
 
 ## Installation
 
@@ -58,27 +136,54 @@ pip install -r requirements.txt
 
 ## Data Sources
 
-- **Play-by-play, snap counts, player stats**: [`nfl_data_py`](https://github.com/nflverse/nfl_data_py) (nflverse data); `nflreadpy` additionally used where `nfl_data_py`'s 2025-season endpoints were unavailable (returns polars DataFrames, converted to pandas).
-- **Vegas lines**: real historical spreads/moneylines/totals from the nflverse schedules data (`schedules_2015_2025.csv`, `schedules_2026.csv`) — not a proxy.
-- **Game results**: same schedules data (`home_score`/`away_score`) plus `data/backtest/game_results_2015_2025.csv`.
+- **Play-by-play, weekly stats, injuries**: [`nfl_data_py`](https://github.com/nflverse/nfl_data_py) / `nflreadpy` (nflverse data) — `nflreadpy` used where `nfl_data_py`'s 2025-season endpoints were unavailable (returns polars, converted to pandas), and for real weekly injury reports.
+- **Vegas lines**: real historical spreads/moneylines/totals from the nflverse schedules data — one closing-line snapshot per game (no intraday/opening-line history exists in this data source).
+- **Game results**: same schedules data plus `data/backtest/game_results_2015_2025.csv`.
 
 ## Running the Model
 
 ```bash
-# EPA / player pipeline
-python src/data_pipeline.py          # raw data -> player-level EPA features
-python src/epa_to_wins.py            # team strength -> season win projections
-python src/game_predictions.py       # team strength -> game spreads
+# Elo pipeline (the more accurate of the two prediction tracks)
+python src/elo_model.py                    # build + validate team Elo
+python src/elo_game_prediction.py          # Elo -> game spreads, vs. EPA
+python src/weekly_recalibration.py         # in-season Elo updates
+python src/qb_elo_model.py                 # QB-specific Elo + blend
 
-# Elo pipeline (currently the more accurate of the two)
-python src/elo_model.py              # build + validate Elo ratings
-python src/elo_game_prediction.py    # Elo -> game spreads, validate vs. EPA
-python src/weekly_recalibration.py   # simulate in-season weekly Elo updates
-python src/vegas_integration_optimized.py  # learn Vegas/Elo blend weights
+# Final, integrated pipeline (Vegas-primary spreads, Elo season projections, fantasy)
+python src/integrated_predictions.py
+# Real outputs (verified, not aspirational):
+#   data/processed/integrated_game_predictions_2025.csv
+#   data/diagnostic/integrated_season_backtest_2025.csv
+# Fantasy correlations are computed and printed by this script but not yet
+# persisted to their own CSV - see Known Gaps.
 
-# Fantasy
-python src/fantasy_validation.py     # validate EPA projections against real fantasy output
+# Playoff odds
+python src/playoff_probability.py
+# Outputs: data/processed/playoff_probability_{week}.csv (per checkpoint week)
+
+# Weekly tracking demo (real 2025 backtest through the full pipeline)
+python src/weekly_tracking.py
+# No CLI flags exist yet - this runs a fixed demo across checkpoint weeks.
+# Outputs: data/tracking.db, data/predictions/week_{N}_{predictions,results}.csv
 ```
+
+### Known Gaps (real, disclosed - not silently patched over)
+
+- **`fantasy_validation.py` still runs the ORIGINAL EPA×volume formula**,
+  not the validated volume-only RB/QB/TE formulas. Those live in
+  `fantasy_rb_formula.py` / `fantasy_formula_improvements.py` and are
+  exercised together (with real, correct numbers) inside
+  `integrated_predictions.generate_integrated_fantasy_projections()` - but
+  that function only prints/returns results, it doesn't write a combined
+  rankings CSV yet. Running `python src/fantasy_validation.py` directly
+  will reproduce the old, inferior numbers (e.g. RB ≈ −0.5), not the
+  validated ones - don't rely on it for current fantasy output.
+- `integrated_predictions.py` does not yet call `playoff_probability.py` -
+  playoff odds are a real, working, separately-run pipeline, not yet part
+  of the single integrated entrypoint.
+- `weekly_tracking.py` has no command-line interface - live/weekly use
+  currently means calling its functions directly (`save_weekly_predictions`,
+  `log_weekly_results`, etc.), not a CLI.
 
 ## Project Structure
 
@@ -89,36 +194,62 @@ data/
   backtest/    # Historical results used for validation
   diagnostic/  # Validation/accuracy outputs
   fantasy/     # Fantasy-specific outputs
+  predictions/ # Real weekly tracking outputs (Component 1.1)
 src/           # Pipeline, feature engineering, both prediction tracks
 models/        # Trained model artifacts (.pkl)
 ```
 
-`dashboard.py`, `backtest.py` (root), and `automated_pipeline.py` were empty
-scaffolding from the initial project setup and have been removed (see
-`AUDIT_2026-07-27.md`) — none had ever been implemented. They'll be
-recreated when that work is actually scoped (see Next Steps).
-
 ## Known Limitations
 
-- **Compression**: team-strength/win projections from the EPA pipeline are measured at roughly 3.3x too narrow vs. real season-to-season variance. Confirmed this cannot be fixed by simple rescaling (proven this session — rescaling amplifies noise faster than signal once real correlation is this weak).
-- **Confidence interval calibration is uneven, not uniformly good.** A percentile-across-correlated-candidates CI method was found badly miscalibrated (12.5% actual coverage vs. 90% target) and abandoned. Direct residual-std bands from real regression fits (used in the Elo game-spread work) calibrate well (~89-90% coverage). Season-total tracking CIs self-correct over the season but start poorly calibrated early (~59-63% coverage through week 8).
-- **Fantasy RB formula is currently broken** (see Key Finding 5) — needs a different formula before use, not currently fixed.
-- No injury/availability-severity model yet.
-- No QB-specific Elo yet.
-- No unit tests anywhere in the codebase — validation has been via direct backtesting against real historical outcomes throughout, not unit tests.
+- **Compression**: EPA-pipeline team-strength/win projections are ~3.3x too
+  narrow vs. real variance; proven this can't be fixed by simple rescaling.
+  This is also *why* several real "confidence-based" features underperform
+  their naive expectation — e.g. edge detection's confidence never exceeds
+  ~45% in real 2025 data because Elo's own win probabilities are compressed
+  toward 50%.
+- **CI calibration is uneven, not uniformly good.** Percentile-across-
+  correlated-candidates CIs were found badly miscalibrated (12.5% actual
+  coverage vs. 90% target) and abandoned. Direct residual-std bands
+  (game-spread work) calibrate well (~89-90%). Season-total tracking CIs
+  self-correct over the season but start poorly calibrated early.
+- **Vegas beats the model, full stop, at every checkpoint tested.** This
+  isn't a preseason-only gap that closes as the season progresses - the
+  real LOOCV search never found a point where blending in Elo helped.
+- **No unit tests** - validation is via direct backtesting against real
+  historical outcomes throughout, including honest reporting of null and
+  negative results (see Key Findings), not via a unit test suite.
+- See "Known Gaps" above for real, disclosed wiring gaps between validated
+  findings and the production entrypoints.
 
 ## Next Steps
 
-- [ ] Fix RB fantasy formula (raw opportunity volume outperforms the current EPA x volume approach)
-- [ ] Injury/availability severity model
-- [ ] QB-specific Elo
-- [ ] Matchup-specific features
-- [ ] Weekly tracking & publication infrastructure (predictions vs. results, logged weekly)
-- [ ] Playoff probability calculator
-- [ ] Dashboard / API (not started — see Known Limitations)
+- [ ] Wire the validated volume-only RB/QB/TE fantasy formulas into `fantasy_validation.py`'s actual production path (currently only reachable via `integrated_predictions.py`)
+- [ ] Persist `integrated_predictions.py`'s fantasy results to a combined CSV
+- [ ] Wire `playoff_probability.py` into the single integrated entrypoint
+- [ ] Add a real CLI to `weekly_tracking.py` for live weekly use
+- [ ] Dashboard / API (not started)
 
 ## Technical Notes
 
 - Language: Python 3.11+
 - Core libraries: pandas, numpy, scikit-learn, scipy (see `requirements.txt`)
-- Validation convention throughout: fit/derive on one real historical range, validate against a genuinely separate real holdout (commonly 2015-2023/2024 train vs. 2024/2025 holdout) — constants and coefficients are derived by regression/search on real data rather than asserted, per this project's standing convention.
+- Validation convention throughout: fit/derive on one real historical range,
+  validate against a genuinely separate real holdout (commonly 2015-2023/24
+  train vs. 2024/2025 holdout), with LOOCV wherever a weight or threshold is
+  learned from the same data it's evaluated against - constants and
+  coefficients are derived by regression/search on real data, never
+  asserted, per this project's standing convention.
+
+## Project History
+
+- **Session 1 (2026-07-25)**: built the EPA model, identified compression
+  and weakness issues.
+- **Session 2 (2026-07-27)**: built Elo (beats EPA), validated vs. Vegas
+  (Vegas wins), explored fantasy, built and validated Phases 1-4
+  (weekly tracking, RB fantasy fix, playoff odds, injury/QB-Elo/matchup
+  models, momentum/rest/QB-TE-fantasy refinements, edge detection, line
+  movement - skipped, no data), integrated the validated findings, and
+  audited/cleaned up twice.
+
+See `PROGRESS.md` for the full, task-by-task session notes behind every
+number in this document.

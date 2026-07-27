@@ -7,6 +7,10 @@ copy was missing the "LB" entry (harmless today since that module's only
 consumer only loops CB/S, but a real KeyError risk the moment anyone extends
 it to LB). Centralized here so there is exactly one copy to keep correct.
 
+Audit finding #3 (AUDIT_2026-07-27_backend_review.md): recurred a THIRD time -
+MATCHUP_FITTED_COEFFICIENT was independently hardcoded in both rest_tracking.py
+and integrated_predictions.py. Centralized here; both files now import it.
+
 Audit finding #2 (AUDIT_2026-07-27.md): the same duplication pattern recurred
 for the Elo/EPA/Vegas baseline and hyperparameter constants introduced by the
 Elo work (elo_model.py, elo_game_prediction.py, ensemble_model.py each had
@@ -69,3 +73,6 @@ VEGAS_BASELINE_GAME_MAE_2025 = 9.72
 PROB_TO_SPREAD_COEFFICIENT_REFERENCE = 72.596
 PROB_TO_SPREAD_INTERCEPT_REFERENCE = -1.641
 PROB_TO_SPREAD_RESIDUAL_STD_REFERENCE = 13.436
+
+# --- Matchup adjustment (Component 2.3, real 2015-2023 regression, n=2090 games) ---
+MATCHUP_FITTED_COEFFICIENT = 1.065  # pts per unit net EPA/play edge differential

@@ -7,6 +7,8 @@ data/backtest/*
 !data/backtest/.gitkeep
 data/diagnostic/*
 !data/diagnostic/.gitkeep
+data/fantasy/*
+!data/fantasy/.gitkeep
 
 # Models
 models/*.pkl

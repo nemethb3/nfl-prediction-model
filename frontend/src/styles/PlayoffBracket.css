@@ -1,0 +1,93 @@
+/* Rendered inside .season-projections; new, uniquely-named classes only -
+   checked against every other styles/*.css file for collisions before
+   writing this (none found). Reuses SeasonProjections.css's bare
+   .team-badge/.team-name/.record for visual consistency with the table
+   below it. */
+.playoff-bracket {
+  max-width: 1400px;
+  margin: 0 auto 24px auto;
+}
+
+.playoff-bracket h2 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.bracket-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.conference-bracket {
+  background: #1a1a1a;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.conference-bracket h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.seeds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seed-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  font-size: 12.5px;
+}
+
+.seed-row .seed-num {
+  font-weight: 700;
+  color: #999;
+  min-width: 24px;
+}
+
+.seed-row .team-badge {
+  width: 26px;
+  height: 26px;
+  font-size: 10px;
+  min-width: 26px;
+}
+
+.seed-row .team-name {
+  flex: 1;
+  font-size: 12.5px;
+  white-space: normal;
+}
+
+.seed-row .record {
+  font-size: 11.5px;
+  color: #999;
+}
+
+.bye-tag {
+  background: #0080c6;
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .bracket-container {
+    grid-template-columns: 1fr;
+  }
+
+  .seed-row .team-name {
+    display: block;
+  }
+}

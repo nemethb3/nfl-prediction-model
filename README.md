@@ -50,7 +50,7 @@ through the season before converging near 1.0 once real wins dominate.
 |---|---|---|
 | RB | +0.651 | was −0.504 on the original EPA×volume formula |
 | TE | +0.543 | was +0.436 |
-| WR | +0.591 | unchanged — the one position where EPA+volume already beats volume alone |
+| WR | +0.591 | unchanged — the one position where EPA+volume already beats volume alone (this is the original season-total-vs-season-total validation number; the live dashboard's real per-game-week WR correlation is a separate, later-tracked figure - +0.442 as of the 2026-07-30 Phase 4 fix, see DASHBOARD_DATA_GAPS.md) |
 | QB | +0.447 | was +0.435 (the most modest gain of the four) |
 
 ### Playoff probability
@@ -196,8 +196,44 @@ data/
   fantasy/     # Fantasy-specific outputs
   predictions/ # Real weekly tracking outputs (Component 1.1)
 src/           # Pipeline, feature engineering, both prediction tracks
+src/archive/   # Early-phase experiments, not in the live pipeline (see src/archive/README.md)
 models/        # Trained model artifacts (.pkl)
+frontend/      # React dashboard (see "Multi-Season Dashboard Support" below)
 ```
+
+## Multi-Season Dashboard Support
+
+The dashboard's season selector switches between real, independent datasets - it
+doesn't reinterpret one dataset two ways:
+
+- **2025**: a real, fully-completed season. Every section (games, fantasy, season
+  projections, accuracy tracker, weekly summary, betting analysis, model
+  transparency) has real, validated data.
+- **2026**: the real season hadn't been played as of this writing (real 2026-09-09
+  opener). Only what's genuinely computable pre-season is shown - the real
+  schedule with real preseason model predictions (rolled-forward Elo, since no
+  real Vegas lines exist for games this far out) in Section 1, and real preseason
+  ensemble win projections in Section 3. Fantasy Rankings, Accuracy Tracker,
+  Weekly Summary, and Betting Analysis are hidden for 2026 with a real "not
+  available yet" message rather than shown empty or fabricated - none of them
+  have real completed games to compute from yet.
+
+### Adding real data for a new season once it's playable
+
+1. Confirm real schedule data exists (`data/raw/schedules_{year}.csv`).
+2. Preseason-only, before any games are played: run
+   `python src/generate_dashboard_data_{year}.py` and
+   `python src/generate_season_projections_dashboard_data_{year}.py`
+   (see the 2026 versions for the real pattern - preseason Elo, no fabricated
+   results).
+3. Once real games start completing: extend `generate_dashboard_data.py`,
+   `generate_fantasy_dashboard_data.py`, `generate_accuracy_tracker_dashboard_
+   data.py`, `generate_weekly_summary_dashboard_data.py`, and `betting_
+   backtest.py` to accept that season - each currently assumes 2025 is the only
+   completed season on record.
+4. Add the year to `frontend/src/constants/seasons.js`'s `AVAILABLE_SEASONS`
+   and `SEASON_HAS_RESULTS`, and wire its real JSON exports into
+   `frontend/src/context/SeasonContext.js`.
 
 ## Known Limitations
 

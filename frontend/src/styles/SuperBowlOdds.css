@@ -1,0 +1,120 @@
+/* Rendered inside .season-projections; new, uniquely-named classes only -
+   checked against every other styles/*.css file for collisions before
+   writing this (none found). Reuses SeasonProjections.css's bare
+   .team-badge/.team-name for visual consistency. */
+.superbowl-odds {
+  max-width: 1400px;
+  margin: 0 auto 32px auto;
+}
+
+.superbowl-odds h2 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.odds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.odds-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  flex-wrap: wrap;
+}
+
+.odds-row .rank {
+  font-weight: 700;
+  color: #999;
+  min-width: 22px;
+}
+
+.odds-row .team-badge {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  min-width: 28px;
+}
+
+.odds-row .team-name {
+  min-width: 140px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: normal;
+}
+
+.odds-bar {
+  flex: 1;
+  min-width: 80px;
+  height: 20px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.odds-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #0080c6);
+  transition: width 0.3s;
+}
+
+.odds-value {
+  min-width: 50px;
+  text-align: right;
+  font-weight: 700;
+  color: #e5e7eb;
+  font-size: 13px;
+}
+
+.conf-champ-value {
+  min-width: 80px;
+  text-align: right;
+  font-size: 11px;
+  color: #999;
+}
+
+.superbowl-odds .expand-btn {
+  margin-top: 14px;
+  padding: 8px 16px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #0080c6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+.superbowl-odds .expand-btn:hover {
+  background: #3a3a3a;
+  border-color: #0080c6;
+}
+
+.odds-note {
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: #999;
+  padding: 10px 12px;
+  background: #161616;
+  border-left: 3px solid #0080c6;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.odds-note p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .odds-row .team-name {
+    display: block;
+    order: 1;
+    flex-basis: 100%;
+  }
+}

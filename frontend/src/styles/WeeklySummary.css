@@ -1,0 +1,519 @@
+/* Scoped under .weekly-summary for classes colliding with other sections'
+   CSS (.header/.subtitle/.disclaimer/.section/.stat/.label/.value are all
+   used elsewhere - CRA bundles everything globally, no modules). */
+.weekly-summary {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.weekly-summary .header {
+  max-width: 1100px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.weekly-summary .header h1 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.weekly-summary .subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+}
+
+.weekly-summary .week-selector {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.weekly-summary .week-btn {
+  padding: 8px 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #999;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.weekly-summary .week-btn:hover {
+  border-color: #555;
+  color: #fff;
+}
+
+.weekly-summary .week-btn.active {
+  background: #0080c6;
+  border-color: #0080c6;
+  color: #fff;
+}
+
+.weekly-summary .section {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.weekly-summary .section h2 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+}
+
+.weekly-summary .section h3 {
+  margin: 16px 0 10px 0;
+  font-size: 13px;
+  color: #ccc;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.weekly-summary .tab-note {
+  color: #999;
+  font-size: 12.5px;
+}
+
+.weekly-summary .metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.weekly-summary .metric {
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.weekly-summary .metric .label {
+  display: block;
+  font-size: 10.5px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.weekly-summary .metric .value {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.weekly-summary .metric .detail {
+  display: block;
+  font-size: 10.5px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.game-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  background: #2a2a2a;
+  border-left: 3px solid #333;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.game-row.correct {
+  border-left-color: #4ade80;
+}
+
+.game-row.incorrect {
+  border-left-color: #ef4444;
+}
+
+.game-row .teams {
+  flex: 1;
+  font-weight: 500;
+}
+
+.game-row .score {
+  min-width: 60px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.game-row .prediction {
+  min-width: 100px;
+}
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge.hit {
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+}
+
+.badge.miss {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.surprises {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #333;
+}
+
+.surprise-card {
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 3px solid #f59e0b;
+}
+
+.surprise-matchup {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.surprise-score {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.surprise-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  font-size: 10.5px;
+  color: #999;
+}
+
+.surprise-details span {
+  padding: 6px;
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+.performers-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.performers-column {
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 14px;
+  background: #2a2a2a;
+}
+
+.performers-column h3 {
+  margin-top: 0;
+}
+
+.player-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.player-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.player-position {
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.player-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-stats .stat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-stats .stat .label {
+  color: #666;
+}
+
+.player-stats .stat .value {
+  font-weight: 600;
+  color: #ccc;
+}
+
+.player-stats .stat .highlight {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.player-stats .stat .positive {
+  color: #4ade80;
+}
+
+.player-stats .stat .negative {
+  color: #ef4444;
+}
+
+.matchup-card {
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 3px solid #0080c6;
+}
+
+.matchup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.matchup-header .teams {
+  font-size: 13px;
+}
+
+.matchup-header .prediction {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+.prediction.home-favored {
+  color: #4ade80;
+}
+
+.prediction.away-favored {
+  color: #f59e0b;
+}
+
+.key-players {
+  font-size: 11px;
+  color: #999;
+}
+
+.team-players {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.team-players .label {
+  min-width: 60px;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.top-plays {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #333;
+}
+
+.play-card {
+  background: #2a2a2a;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 3px solid #333;
+  font-size: 12px;
+}
+
+.play-card.matchup-good {
+  border-left-color: #4ade80;
+}
+
+.play-card.matchup-neutral {
+  border-left-color: #f59e0b;
+}
+
+.play-card.matchup-tough {
+  border-left-color: #ef4444;
+}
+
+.play-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.play-header .player-name {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.position-team {
+  font-size: 11px;
+  color: #999;
+}
+
+.play-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  font-size: 10.5px;
+  color: #999;
+}
+
+.play-details span {
+  padding: 4px;
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+.play-details .matchup {
+  font-weight: 600;
+  color: #ccc;
+}
+
+.play-details .injury {
+  color: #ef4444;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.context-card {
+  background: #2a2a2a;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.context-card h3 {
+  margin-top: 0;
+}
+
+.leaders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leader-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.leader-row .division {
+  color: #999;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.race-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.race-stats .stat {
+  background: #1a1a1a;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.race-stats .label {
+  font-size: 10px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.race-stats .value {
+  font-size: 17px;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.race-note {
+  font-size: 10.5px;
+  color: #999;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #333;
+  font-style: italic;
+}
+
+.weekly-summary .disclaimer {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  padding: 14px 16px;
+  background: #161616;
+  border-left: 3px solid #555;
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.weekly-summary .disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .weekly-summary {
+    padding: 12px;
+  }
+
+  .performers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .matchup-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .play-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .context-grid {
+    grid-template-columns: 1fr;
+  }
+}

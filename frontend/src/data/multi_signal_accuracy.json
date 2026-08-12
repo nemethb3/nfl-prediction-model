@@ -1,0 +1,72 @@
+{
+  "methodology": "Logistic regression per position, GroupKFold (5-fold, grouped by real player_id) cross-validation - the honest, leakage-free accuracy estimate. Complete-case only (no fabricated imputation for missing real signals).",
+  "features": [
+    "age_curve_rising",
+    "injury_risk",
+    "role_trend",
+    "recent_trend",
+    "draft_capital",
+    "team_elo"
+  ],
+  "by_position": {
+    "QB": {
+      "cv_accuracy": 0.644,
+      "cv_auc": 0.636,
+      "real_players": 69,
+      "real_rows": 239,
+      "coefficients": {
+        "age_curve_rising": 0.129,
+        "injury_risk": 0.124,
+        "role_trend": -0.154,
+        "recent_trend": -1.118,
+        "draft_capital": 0.199,
+        "team_elo": 0.083
+      }
+    },
+    "RB": {
+      "cv_accuracy": 0.604,
+      "cv_auc": 0.581,
+      "real_players": 195,
+      "real_rows": 538,
+      "coefficients": {
+        "age_curve_rising": 0.117,
+        "injury_risk": 0.203,
+        "role_trend": -0.162,
+        "recent_trend": -0.172,
+        "draft_capital": 0.094,
+        "team_elo": 0.134
+      }
+    },
+    "WR": {
+      "cv_accuracy": 0.617,
+      "cv_auc": 0.593,
+      "real_players": 267,
+      "real_rows": 805,
+      "coefficients": {
+        "age_curve_rising": -0.022,
+        "injury_risk": 0.157,
+        "role_trend": -0.066,
+        "recent_trend": -0.349,
+        "draft_capital": -0.002,
+        "team_elo": 0.114
+      }
+    },
+    "TE": {
+      "cv_accuracy": 0.599,
+      "cv_auc": 0.64,
+      "real_players": 145,
+      "real_rows": 424,
+      "coefficients": {
+        "age_curve_rising": -0.016,
+        "injury_risk": 0.405,
+        "role_trend": -0.421,
+        "recent_trend": -0.404,
+        "draft_capital": 0.197,
+        "team_elo": 0.106
+      }
+    }
+  },
+  "overall_accuracy": 0.613,
+  "correct_predictions": 1230,
+  "total_predictions": 2006
+}

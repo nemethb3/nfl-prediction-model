@@ -1,0 +1,27 @@
+.season-data-unavailable {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 32px;
+  text-align: center;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.season-data-unavailable-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.season-data-unavailable h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.season-data-unavailable p {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.6;
+}

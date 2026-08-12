@@ -1,0 +1,402 @@
+/* Scoped under .fantasy-rankings throughout (except .team-box, deliberately
+   reused as-is from GamePredictions.css - same visual idiom, no properties
+   in conflict). CRA bundles all component CSS into one global stylesheet
+   (no CSS modules), and GamePredictions.css already defines several of
+   these same class names (.header, .section, .section-title, .label,
+   .expand-hint, .disclaimer, .small-text) - bare re-declarations here would
+   silently change Section 1's styling too, depending on import order. */
+.fantasy-rankings {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.fantasy-rankings .header {
+  max-width: 1400px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fantasy-rankings .header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.fantasy-rankings .preseason-banner {
+  flex-basis: 100%;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #1a3a52;
+  border-left: 3px solid #4ade80;
+  border-radius: 4px;
+}
+
+.fantasy-rankings .preseason-banner-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.fantasy-rankings .preseason-banner-note {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.fantasy-rankings .controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.fantasy-rankings .selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.fantasy-rankings .selector select {
+  padding: 8px 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fantasy-rankings .selector select:hover {
+  background: #242424;
+}
+
+.fantasy-rankings .empty-state {
+  color: #888;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.fantasy-rankings .players-container {
+  max-width: 1400px;
+  margin: 0 auto 28px auto;
+}
+
+.player-card {
+  border: 3px solid #555;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  background: #161616;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.player-card-open {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.player-card-collapsed {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.player-card .injury-badge {
+  font-size: 16px;
+  text-align: center;
+}
+
+.player-card .trend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.player-card .week-ppr {
+  background: #2a2a2a;
+  padding: 4px 8px;
+  border-radius: 3px;
+  min-width: 40px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.player-card .trend-indicator {
+  color: #999;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.player-card .stat-row.injury-risk,
+.player-card .stat-row.consistency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.player-card .stat-row .label {
+  color: #999;
+  font-weight: 600;
+  font-size: 12px;
+  min-width: 70px;
+}
+
+.player-card .risk-bar,
+.player-card .consistency-bar {
+  flex: 1;
+  height: 14px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #444;
+}
+
+.player-card .risk-fill,
+.player-card .consistency-fill {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.player-card .risk-fill.risk-low { background: #4ade80; }
+.player-card .risk-fill.risk-moderate { background: #fbbf24; }
+.player-card .risk-fill.risk-high { background: #f97316; }
+.player-card .risk-fill.risk-very-high { background: #ef4444; }
+
+.player-card .consistency-fill.consistency-low { background: #ef4444; }
+.player-card .consistency-fill.consistency-moderate { background: #fbbf24; }
+.player-card .consistency-fill.consistency-high { background: #4ade80; }
+
+.player-card .risk-value,
+.player-card .consistency-value {
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: right;
+  color: #e5e7eb;
+}
+
+.fantasy-rankings .wr-static-note {
+  max-width: 1400px;
+  margin: 0 auto 12px auto;
+  padding: 10px 14px;
+  background: #1a1a10;
+  border-left: 3px solid #997700;
+  font-size: 12px;
+  color: #ccb877;
+}
+
+.player-card .def-rank {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.player-card .accuracy-comparison {
+  background: #2a2a2a;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.player-card .accuracy-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.player-card .accuracy-row .label {
+  color: #999;
+  font-weight: 600;
+}
+
+.player-card .accuracy-row .value {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.player-card .value.projected {
+  color: #999;
+}
+
+.player-card .value.actual {
+  color: #fff;
+}
+
+.player-card .value.difference {
+  font-weight: 700;
+}
+
+.player-card .accuracy-green {
+  color: #4ade80;
+}
+
+.player-card .accuracy-yellow {
+  color: #fbbf24;
+}
+
+.player-card .accuracy-red {
+  color: #ef4444;
+}
+
+.player-card .accuracy-indicator {
+  margin-top: 8px;
+  padding: 8px;
+  background: #1a1a1a;
+  border-left: 3px solid #666;
+  font-size: 12px;
+  line-height: 1.6;
+  border-radius: 3px;
+}
+
+.player-card .accuracy-ranges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 6px 8px;
+  background: #1a1a1a;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.player-card .accuracy-ranges .label {
+  color: #999;
+}
+
+.player-card .accuracy-ranges .ranges {
+  color: #4ade80;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rank-name {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rank-name .rank {
+  color: #999;
+  font-size: 12px;
+  min-width: 26px;
+}
+
+.rank-name .name {
+  white-space: nowrap;
+}
+
+.player-card .ppr {
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.player-card .expand-hint {
+  color: #666;
+  font-size: 12px;
+}
+
+.player-card-expanded {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2a2a;
+  font-size: 13px;
+  line-height: 1.7;
+  cursor: default;
+}
+
+.player-card-expanded h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+
+.player-card .section {
+  margin: 10px 0;
+}
+
+.player-card .section-title {
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.player-card .small-text {
+  color: #777;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.player-card .collapse-hint {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #666;
+}
+
+.fantasy-rankings .disclaimer {
+  max-width: 1400px;
+  margin: 32px auto 0 auto;
+  padding: 14px 16px;
+  background: #161616;
+  border-left: 3px solid #555;
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.fantasy-rankings .disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .player-card-collapsed {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .fantasy-rankings .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fantasy-rankings .controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

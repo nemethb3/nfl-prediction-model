@@ -1,0 +1,438 @@
+/* Scoped under .betting-analysis for classes colliding with other sections'
+   CSS (.header/.subtitle/.disclaimer/.metric-card/.week-* are all used
+   elsewhere - CRA bundles everything globally, no modules). */
+.betting-analysis {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.betting-analysis .header {
+  max-width: 1100px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.betting-analysis .header h1 {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+}
+
+.betting-analysis .subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.betting-analysis .controls {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.betting-analysis .unit-size-control {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.betting-analysis .unit-size-control label {
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.betting-analysis .unit-size-control .slider {
+  flex: 1;
+  height: 6px;
+  cursor: pointer;
+}
+
+.betting-analysis .unit-size-control .unit-value {
+  min-width: 60px;
+  text-align: right;
+  font-weight: 600;
+  color: #4ade80;
+  font-size: 16px;
+}
+
+.betting-analysis .bet-type-toggle {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.betting-analysis .bet-type-btn {
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.betting-analysis .bet-type-btn:hover {
+  color: #fff;
+}
+
+.betting-analysis .bet-type-btn.active {
+  background: #0080c6;
+  color: #fff;
+}
+
+.betting-analysis .comparison-section {
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+}
+
+.betting-analysis .comparison-section h2 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+
+.betting-analysis .table-scroll {
+  overflow-x: auto;
+}
+
+.betting-analysis .comparison-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.betting-analysis .comparison-table thead {
+  background: #2a2a2a;
+}
+
+.betting-analysis .comparison-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #e5e7eb;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+}
+
+.betting-analysis .comparison-table td {
+  padding: 12px;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 13px;
+}
+
+.betting-analysis .comparison-table tbody tr {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.betting-analysis .comparison-table tbody tr:hover {
+  background: #2a2a2a;
+}
+
+.betting-analysis .comparison-table tbody tr.active {
+  background: #2a2a2a;
+  border-left: 3px solid #0080c6;
+}
+
+.betting-analysis .strategy-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.betting-analysis .color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.betting-analysis .positive {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.betting-analysis .negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.betting-analysis .strategy-detail {
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.betting-analysis .strategy-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.betting-analysis .strategy-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+}
+
+.betting-analysis .strategy-desc {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+}
+
+.betting-analysis .season-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.betting-analysis .metric-card {
+  background: #2a2a2a;
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.betting-analysis .metric-card.highlight {
+  border-color: #0080c6;
+  background: rgba(0, 128, 198, 0.1);
+}
+
+.betting-analysis .metric-label {
+  display: block;
+  font-size: 10.5px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.betting-analysis .metric-value {
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-bottom: 4px;
+}
+
+.betting-analysis .metric-detail {
+  display: block;
+  font-size: 10.5px;
+  color: #666;
+}
+
+.betting-analysis .weekly-breakdown h3 {
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.betting-analysis .weekly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.betting-analysis .weekly-row {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.betting-analysis .weekly-row-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 8px;
+}
+
+.betting-analysis .weekly-row-summary:hover {
+  background: #3a3a3a;
+}
+
+.betting-analysis .week-label {
+  font-weight: 600;
+  min-width: 60px;
+  font-size: 13px;
+}
+
+.betting-analysis .week-stats {
+  flex: 1;
+  text-align: center;
+  font-size: 11.5px;
+  color: #999;
+}
+
+.betting-analysis .week-pnl {
+  font-weight: 600;
+  min-width: 70px;
+  text-align: right;
+  font-size: 13px;
+}
+
+.betting-analysis .week-bets {
+  padding: 12px;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.betting-analysis .bet-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: #2a2a2a;
+  border-left: 3px solid #333;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.betting-analysis .bet-row.win {
+  border-left-color: #4ade80;
+}
+
+.betting-analysis .bet-row.loss {
+  border-left-color: #ef4444;
+}
+
+.betting-analysis .bet-row.push {
+  border-left-color: #999;
+}
+
+.betting-analysis .matchup {
+  font-weight: 600;
+  min-width: 110px;
+}
+
+.betting-analysis .bet-detail {
+  flex: 1;
+  color: #999;
+  font-size: 11px;
+  min-width: 140px;
+}
+
+.betting-analysis .result {
+  min-width: 60px;
+  text-align: center;
+}
+
+.betting-analysis .pnl {
+  min-width: 60px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.betting-analysis .methodology {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+  background: #2a2a2a;
+  padding: 16px;
+  border-radius: 6px;
+  border-left: 3px solid #0080c6;
+}
+
+.betting-analysis .methodology h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.betting-analysis .methodology ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.betting-analysis .methodology li {
+  margin: 8px 0;
+  font-size: 12px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.betting-analysis .disclaimer {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  background: #1a1a1a;
+  border-left: 3px solid #f59e0b;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #999;
+}
+
+.betting-analysis .disclaimer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .betting-analysis {
+    padding: 12px;
+  }
+
+  .betting-analysis .comparison-table {
+    font-size: 11px;
+  }
+
+  .betting-analysis .comparison-table th,
+  .betting-analysis .comparison-table td {
+    padding: 8px 6px;
+  }
+
+  .betting-analysis .season-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .betting-analysis .metric-value {
+    font-size: 18px;
+  }
+
+  .betting-analysis .weekly-row-summary {
+    flex-wrap: wrap;
+  }
+
+  .betting-analysis .week-stats {
+    order: 3;
+    flex-basis: 100%;
+    text-align: left;
+  }
+}

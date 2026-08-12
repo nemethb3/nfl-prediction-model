@@ -1,0 +1,149 @@
+/* Scoped under .model-transparency for classes colliding with other
+   sections' CSS (.header/.subtitle/.tabs/.tab/.disclaimer are all used
+   elsewhere - CRA bundles everything globally, no modules). */
+.model-transparency {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.model-transparency .header {
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.model-transparency .header h1 {
+  margin: 0 0 8px 0;
+  font-size: 26px;
+}
+
+.model-transparency .subtitle {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.model-transparency .tabs {
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.model-transparency .tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.model-transparency .tab:hover {
+  color: #fff;
+}
+
+.model-transparency .tab.active {
+  color: #fff;
+  border-bottom-color: #0080c6;
+}
+
+.model-transparency .tab .icon {
+  font-size: 15px;
+}
+
+.model-transparency .tab .label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .model-transparency .tab .label {
+    display: inline;
+  }
+}
+
+.model-transparency .content-area {
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 28px;
+  min-height: 420px;
+}
+
+.model-transparency .section-content h2 {
+  margin: 0 0 20px 0;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.model-transparency .text-content h3 {
+  margin: 18px 0 8px 0;
+  font-size: 14px;
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.model-transparency .text-content h3:first-child {
+  margin-top: 0;
+}
+
+.model-transparency .text-content {
+  line-height: 1.7;
+  color: #ccc;
+  font-size: 13.5px;
+}
+
+.model-transparency .text-content p {
+  margin: 8px 0;
+  white-space: pre-line;
+}
+
+.model-transparency .disclaimer {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  background: #1a1a1a;
+  border-left: 3px solid #0080c6;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+}
+
+.model-transparency .disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .model-transparency {
+    padding: 12px;
+  }
+
+  .model-transparency .content-area {
+    padding: 18px;
+  }
+
+  .model-transparency .section-content h2 {
+    font-size: 18px;
+  }
+}

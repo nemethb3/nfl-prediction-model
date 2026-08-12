@@ -1,0 +1,603 @@
+{
+  "season_summary": {
+    "games": {
+      "total_games": 272,
+      "correct_predictions": 178,
+      "accuracy_pct": 65.4,
+      "mae_spread": 9.69,
+      "vs_vegas_spread": 9.72
+    },
+    "fantasy": {
+      "QB": {
+        "correlation": 0.447,
+        "mae": 6.83,
+        "samples": 646
+      },
+      "RB": {
+        "correlation": 0.651,
+        "mae": 4.27,
+        "samples": 1598
+      },
+      "WR": {
+        "correlation": 0.442,
+        "mae": 5.57,
+        "samples": 1381
+      },
+      "TE": {
+        "correlation": 0.543,
+        "mae": 3.62,
+        "samples": 1246
+      }
+    },
+    "season_projections": {
+      "teams": 32,
+      "correct_division_winners": 8,
+      "correct_playoff_teams": 13,
+      "avg_wins_error": 0.61
+    },
+    "betting": {
+      "moneyline_accuracy_pct": 65.4,
+      "note": "Spread coverage betting tested via edge_detection.py: -36% ROI (real finding, not pursued). Moneyline accuracy above is the only real prediction this model's win-probability output makes."
+    }
+  },
+  "weekly_breakdown": [
+    {
+      "week": 1,
+      "games": {
+        "correct": 13,
+        "total": 16,
+        "accuracy_pct": 81.2,
+        "mae_spread": 5.94,
+        "vs_vegas_mae": 5.94
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.224,
+          "mae": 6.83
+        },
+        "RB": {
+          "correlation": 0.771,
+          "mae": 4.06
+        },
+        "WR": {
+          "correlation": 0.349,
+          "mae": 5.42
+        },
+        "TE": {
+          "correlation": 0.622,
+          "mae": 3.24
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 81.2
+      }
+    },
+    {
+      "week": 2,
+      "games": {
+        "correct": 11,
+        "total": 16,
+        "accuracy_pct": 68.8,
+        "mae_spread": 7.96,
+        "vs_vegas_mae": 8.19
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.115,
+          "mae": 9.91
+        },
+        "RB": {
+          "correlation": 0.605,
+          "mae": 4.37
+        },
+        "WR": {
+          "correlation": 0.24,
+          "mae": 7.19
+        },
+        "TE": {
+          "correlation": 0.543,
+          "mae": 3.52
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 68.8
+      }
+    },
+    {
+      "week": 3,
+      "games": {
+        "correct": 12,
+        "total": 16,
+        "accuracy_pct": 75.0,
+        "mae_spread": 12.32,
+        "vs_vegas_mae": 12.22
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.4,
+          "mae": 7.34
+        },
+        "RB": {
+          "correlation": 0.681,
+          "mae": 3.94
+        },
+        "WR": {
+          "correlation": 0.354,
+          "mae": 5.48
+        },
+        "TE": {
+          "correlation": 0.363,
+          "mae": 4.12
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 75.0
+      }
+    },
+    {
+      "week": 4,
+      "games": {
+        "correct": 11,
+        "total": 16,
+        "accuracy_pct": 68.8,
+        "mae_spread": 8.63,
+        "vs_vegas_mae": 9.03
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.402,
+          "mae": 7.06
+        },
+        "RB": {
+          "correlation": 0.605,
+          "mae": 4.77
+        },
+        "WR": {
+          "correlation": 0.486,
+          "mae": 5.42
+        },
+        "TE": {
+          "correlation": 0.606,
+          "mae": 3.19
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 68.8
+      }
+    },
+    {
+      "week": 5,
+      "games": {
+        "correct": 5,
+        "total": 14,
+        "accuracy_pct": 35.7,
+        "mae_spread": 11.59,
+        "vs_vegas_mae": 11.68
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.736,
+          "mae": 5.11
+        },
+        "RB": {
+          "correlation": 0.653,
+          "mae": 4.21
+        },
+        "WR": {
+          "correlation": 0.602,
+          "mae": 4.5
+        },
+        "TE": {
+          "correlation": 0.571,
+          "mae": 4.23
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 35.7
+      }
+    },
+    {
+      "week": 6,
+      "games": {
+        "correct": 11,
+        "total": 15,
+        "accuracy_pct": 73.3,
+        "mae_spread": 7.64,
+        "vs_vegas_mae": 7.7
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.465,
+          "mae": 5.55
+        },
+        "RB": {
+          "correlation": 0.648,
+          "mae": 4.58
+        },
+        "WR": {
+          "correlation": 0.35,
+          "mae": 6.11
+        },
+        "TE": {
+          "correlation": 0.591,
+          "mae": 3.7
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 73.3
+      }
+    },
+    {
+      "week": 7,
+      "games": {
+        "correct": 12,
+        "total": 15,
+        "accuracy_pct": 80.0,
+        "mae_spread": 11.26,
+        "vs_vegas_mae": 11.5
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.406,
+          "mae": 7.64
+        },
+        "RB": {
+          "correlation": 0.748,
+          "mae": 3.95
+        },
+        "WR": {
+          "correlation": 0.475,
+          "mae": 5.98
+        },
+        "TE": {
+          "correlation": 0.445,
+          "mae": 4.65
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 80.0
+      }
+    },
+    {
+      "week": 8,
+      "games": {
+        "correct": 11,
+        "total": 13,
+        "accuracy_pct": 84.6,
+        "mae_spread": 14.45,
+        "vs_vegas_mae": 14.35
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.671,
+          "mae": 5.76
+        },
+        "RB": {
+          "correlation": 0.539,
+          "mae": 5.43
+        },
+        "WR": {
+          "correlation": 0.537,
+          "mae": 4.86
+        },
+        "TE": {
+          "correlation": 0.567,
+          "mae": 3.74
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 84.6
+      }
+    },
+    {
+      "week": 9,
+      "games": {
+        "correct": 8,
+        "total": 14,
+        "accuracy_pct": 57.1,
+        "mae_spread": 9.4,
+        "vs_vegas_mae": 9.32
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.379,
+          "mae": 7.65
+        },
+        "RB": {
+          "correlation": 0.668,
+          "mae": 3.88
+        },
+        "WR": {
+          "correlation": 0.531,
+          "mae": 5.2
+        },
+        "TE": {
+          "correlation": 0.511,
+          "mae": 3.87
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 57.1
+      }
+    },
+    {
+      "week": 10,
+      "games": {
+        "correct": 8,
+        "total": 14,
+        "accuracy_pct": 57.1,
+        "mae_spread": 9.46,
+        "vs_vegas_mae": 9.43
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.42,
+          "mae": 7.1
+        },
+        "RB": {
+          "correlation": 0.75,
+          "mae": 4.07
+        },
+        "WR": {
+          "correlation": 0.444,
+          "mae": 5.45
+        },
+        "TE": {
+          "correlation": 0.553,
+          "mae": 3.83
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 57.1
+      }
+    },
+    {
+      "week": 11,
+      "games": {
+        "correct": 11,
+        "total": 15,
+        "accuracy_pct": 73.3,
+        "mae_spread": 7.2,
+        "vs_vegas_mae": 7.5
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.391,
+          "mae": 6.79
+        },
+        "RB": {
+          "correlation": 0.63,
+          "mae": 4.36
+        },
+        "WR": {
+          "correlation": 0.359,
+          "mae": 5.59
+        },
+        "TE": {
+          "correlation": 0.677,
+          "mae": 3.12
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 73.3
+      }
+    },
+    {
+      "week": 12,
+      "games": {
+        "correct": 10,
+        "total": 14,
+        "accuracy_pct": 71.4,
+        "mae_spread": 7.03,
+        "vs_vegas_mae": 7.07
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.404,
+          "mae": 6.75
+        },
+        "RB": {
+          "correlation": 0.671,
+          "mae": 4.11
+        },
+        "WR": {
+          "correlation": 0.522,
+          "mae": 5.88
+        },
+        "TE": {
+          "correlation": 0.579,
+          "mae": 3.2
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 71.4
+      }
+    },
+    {
+      "week": 13,
+      "games": {
+        "correct": 9,
+        "total": 16,
+        "accuracy_pct": 56.2,
+        "mae_spread": 9.89,
+        "vs_vegas_mae": 10.47
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.54,
+          "mae": 6.26
+        },
+        "RB": {
+          "correlation": 0.687,
+          "mae": 3.94
+        },
+        "WR": {
+          "correlation": 0.33,
+          "mae": 5.95
+        },
+        "TE": {
+          "correlation": 0.727,
+          "mae": 2.81
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 56.2
+      }
+    },
+    {
+      "week": 14,
+      "games": {
+        "correct": 7,
+        "total": 14,
+        "accuracy_pct": 50.0,
+        "mae_spread": 12.35,
+        "vs_vegas_mae": 12.43
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.36,
+          "mae": 7.31
+        },
+        "RB": {
+          "correlation": 0.696,
+          "mae": 3.59
+        },
+        "WR": {
+          "correlation": 0.586,
+          "mae": 4.91
+        },
+        "TE": {
+          "correlation": 0.517,
+          "mae": 3.28
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 50.0
+      }
+    },
+    {
+      "week": 15,
+      "games": {
+        "correct": 10,
+        "total": 16,
+        "accuracy_pct": 62.5,
+        "mae_spread": 10.47,
+        "vs_vegas_mae": 10.25
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.506,
+          "mae": 6.56
+        },
+        "RB": {
+          "correlation": 0.654,
+          "mae": 4.57
+        },
+        "WR": {
+          "correlation": 0.5,
+          "mae": 5.32
+        },
+        "TE": {
+          "correlation": 0.606,
+          "mae": 4.26
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 62.5
+      }
+    },
+    {
+      "week": 16,
+      "games": {
+        "correct": 10,
+        "total": 16,
+        "accuracy_pct": 62.5,
+        "mae_spread": 11.12,
+        "vs_vegas_mae": 10.62
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.553,
+          "mae": 6.81
+        },
+        "RB": {
+          "correlation": 0.727,
+          "mae": 4.21
+        },
+        "WR": {
+          "correlation": 0.486,
+          "mae": 5.93
+        },
+        "TE": {
+          "correlation": 0.459,
+          "mae": 3.91
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 62.5
+      }
+    },
+    {
+      "week": 17,
+      "games": {
+        "correct": 9,
+        "total": 16,
+        "accuracy_pct": 56.2,
+        "mae_spread": 10.68,
+        "vs_vegas_mae": 10.25
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.558,
+          "mae": 6.22
+        },
+        "RB": {
+          "correlation": 0.657,
+          "mae": 4.42
+        },
+        "WR": {
+          "correlation": 0.435,
+          "mae": 5.48
+        },
+        "TE": {
+          "correlation": 0.652,
+          "mae": 2.98
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 56.2
+      }
+    },
+    {
+      "week": 18,
+      "games": {
+        "correct": 10,
+        "total": 16,
+        "accuracy_pct": 62.5,
+        "mae_spread": 7.95,
+        "vs_vegas_mae": 7.94
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.438,
+          "mae": 5.99
+        },
+        "RB": {
+          "correlation": 0.466,
+          "mae": 4.42
+        },
+        "WR": {
+          "correlation": 0.585,
+          "mae": 5.0
+        },
+        "TE": {
+          "correlation": 0.462,
+          "mae": 3.7
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 62.5
+      }
+    }
+  ]
+}

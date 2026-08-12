@@ -1,0 +1,261 @@
+/* Scoped under .season-projections / .projections-table throughout to
+   avoid colliding with GamePredictions.css / FantasyRankings.css's own
+   .header/.section/.disclaimer/.small-text (all CSS bundles globally in
+   this CRA setup - no modules). */
+.season-projections {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.season-projections .header {
+  max-width: 1400px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.season-projections .header h1 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.season-projections .subtitle {
+  margin: 0;
+  font-size: 12.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.preseason-panels-note {
+  max-width: 1400px;
+  margin: 0 auto 24px auto;
+  padding: 14px 16px;
+  background: #161616;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.preseason-panels-note p {
+  margin: 0;
+}
+
+.season-projections .table-container {
+  max-width: 1400px;
+  margin: 0 auto 24px auto;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.projections-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.projections-table thead {
+  background: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.projections-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid #333;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.projections-table th:hover {
+  background: #2a2a2a;
+}
+
+.projections-table .sort-icon {
+  font-size: 11px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.projections-table tbody tr {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.projections-table tbody tr:hover {
+  background: #1a1a1a;
+}
+
+.projections-table tbody tr.division-winner {
+  background: rgba(74, 222, 128, 0.05);
+  border-left: 3px solid #4ade80;
+}
+
+.projections-table tbody tr.division-winner:hover {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.projections-table tbody tr.playoff-team {
+  font-weight: 500;
+}
+
+.projections-table td {
+  padding: 10px 12px;
+  line-height: 1.5;
+}
+
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.team-badge {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 11px;
+  min-width: 34px;
+}
+
+.team-name {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.projections-table .record {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.projections-table .projected {
+  font-weight: 500;
+}
+
+.projections-table .win-range {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.projections-table .percentage {
+  font-weight: 500;
+  color: #4ade80;
+}
+
+.projections-table .seed {
+  text-align: center;
+  font-weight: 600;
+}
+
+.seed-badge {
+  background: #0080c6;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.no-seed {
+  color: #666;
+}
+
+.projections-table .strength {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.elo-hint {
+  color: #666;
+  font-size: 11px;
+}
+
+.season-projections .legend {
+  max-width: 1400px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  gap: 24px;
+  padding: 12px;
+  background: #1a1a1a;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.season-projections .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+}
+
+.legend-badge.division-winner {
+  color: #4ade80;
+}
+
+.legend-badge.playoff-team {
+  color: #0080c6;
+}
+
+.season-projections .disclaimer {
+  max-width: 1400px;
+  margin: 0 auto 40px auto;
+  padding: 14px 16px;
+  background: #161616;
+  border-left: 3px solid #555;
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+.season-projections .disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .season-projections {
+    padding: 12px;
+  }
+
+  .projections-table {
+    font-size: 11px;
+  }
+
+  .projections-table th,
+  .projections-table td {
+    padding: 8px;
+  }
+
+  .team-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+    min-width: 26px;
+  }
+
+  .team-name {
+    display: none;
+  }
+
+  .season-projections .legend {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

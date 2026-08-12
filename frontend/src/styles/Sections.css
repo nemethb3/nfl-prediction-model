@@ -1,0 +1,31 @@
+/* Shared placeholder styling for the not-yet-built sections (3-6). Scoped
+   under .section-placeholder rather than bare element/class selectors
+   (e.g. a bare `.header`) to avoid colliding with GamePredictions.css and
+   FantasyRankings.css, which are all loaded into the same global stylesheet
+   (no CSS modules in this CRA setup). */
+.section-placeholder {
+  width: 100%;
+  min-height: 100%;
+  padding: 40px 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.section-placeholder-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-placeholder h1 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.section-placeholder p {
+  color: #999;
+  font-size: 14px;
+}

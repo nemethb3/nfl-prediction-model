@@ -1,0 +1,28 @@
+{
+  "methodology": "For each real player, does the empirical age curve's real direction (next age's curve value >= this age's) predict the real, actual sign of their own season-over-season PPR change, for real literally-consecutive seasons? Not a test of trade-outcome accuracy - no real trade-outcome data exists in this project.",
+  "by_position": {
+    "QB": {
+      "directional_accuracy": 0.507,
+      "predictions_tested": 556,
+      "correct": 282
+    },
+    "RB": {
+      "directional_accuracy": 0.457,
+      "predictions_tested": 1146,
+      "correct": 524
+    },
+    "WR": {
+      "directional_accuracy": 0.433,
+      "predictions_tested": 1565,
+      "correct": 678
+    },
+    "TE": {
+      "directional_accuracy": 0.486,
+      "predictions_tested": 845,
+      "correct": 411
+    }
+  },
+  "overall_accuracy": 0.461,
+  "correct_predictions": 1895,
+  "total_predictions": 4112
+}

@@ -1,0 +1,308 @@
+{
+  "wr_records_tested": 1381,
+  "methodology_note": "All predictions use a real leave-one-out (LOO) WR baseline, not the dashboard's shipped static season-total projection: each player-week's own real actual result is excluded from that player's season total before refitting the EPA->points calibration used to project it, so no row's projection ever saw the result it's being scored against. See module docstring.",
+  "all_results": [
+    {
+      "approach": "Recent Form",
+      "variation": "trailing_4week_avg",
+      "correlation": 0.4414,
+      "mae": 5.57,
+      "rmse": 7.31,
+      "green_tier_rate_pct": 38.2,
+      "note": "Real, already leak-free (trailing weeks strictly before the target week) independent of the LOO baseline fix - falls back to the LOO baseline only when no real recent_form exists yet.",
+      "rank": 1
+    },
+    {
+      "approach": "Volume-Only",
+      "variation": "leave_one_out_baseline",
+      "correlation": 0.3957,
+      "mae": 5.66,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.0,
+      "note": "",
+      "rank": 2
+    },
+    {
+      "approach": "Game-Script Adjusted",
+      "variation": "no_vegas_spread_data",
+      "correlation": 0.3957,
+      "mae": 5.66,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.0,
+      "note": "vegas_spread is not present in fantasy_rankings_2025.json (verified before running) - falls back to the same leave-one-out volume baseline as Approach 1, unchanged.",
+      "rank": 3
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "80v_20m_linear",
+      "correlation": 0.3954,
+      "mae": 5.65,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.2,
+      "note": "",
+      "rank": 4
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "70v_30m_linear",
+      "correlation": 0.3951,
+      "mae": 5.65,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.3,
+      "note": "",
+      "rank": 5
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "60v_40m_linear",
+      "correlation": 0.3946,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.5,
+      "note": "",
+      "rank": 6
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "80v_20m_sigmoid",
+      "correlation": 0.3944,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.1,
+      "note": "",
+      "rank": 7
+    },
+    {
+      "approach": "Matchup-Adjusted (Linear)",
+      "variation": "linear_5pct",
+      "correlation": 0.394,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.4,
+      "note": "",
+      "rank": 8
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "50v_50m_linear",
+      "correlation": 0.394,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.4,
+      "note": "",
+      "rank": 9
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "80v_20m_tiered",
+      "correlation": 0.3934,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.5,
+      "note": "",
+      "rank": 10
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "70v_30m_sigmoid",
+      "correlation": 0.3929,
+      "mae": 5.66,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.5,
+      "note": "",
+      "rank": 11
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "70v_30m_tiered",
+      "correlation": 0.3915,
+      "mae": 5.65,
+      "rmse": 7.21,
+      "green_tier_rate_pct": 33.2,
+      "note": "",
+      "rank": 12
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "60v_40m_sigmoid",
+      "correlation": 0.3908,
+      "mae": 5.66,
+      "rmse": 7.22,
+      "green_tier_rate_pct": 32.9,
+      "note": "",
+      "rank": 13
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "60v_40m_tiered",
+      "correlation": 0.3891,
+      "mae": 5.65,
+      "rmse": 7.22,
+      "green_tier_rate_pct": 33.0,
+      "note": "",
+      "rank": 14
+    },
+    {
+      "approach": "Matchup-Adjusted (Linear)",
+      "variation": "linear_10pct",
+      "correlation": 0.3891,
+      "mae": 5.66,
+      "rmse": 7.23,
+      "green_tier_rate_pct": 33.4,
+      "note": "",
+      "rank": 15
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "50v_50m_sigmoid",
+      "correlation": 0.3882,
+      "mae": 5.67,
+      "rmse": 7.23,
+      "green_tier_rate_pct": 33.9,
+      "note": "",
+      "rank": 16
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "50v_50m_tiered",
+      "correlation": 0.3861,
+      "mae": 5.66,
+      "rmse": 7.23,
+      "green_tier_rate_pct": 33.6,
+      "note": "",
+      "rank": 17
+    },
+    {
+      "approach": "Matchup-Adjusted (Linear)",
+      "variation": "linear_15pct",
+      "correlation": 0.3815,
+      "mae": 5.68,
+      "rmse": 7.26,
+      "green_tier_rate_pct": 33.4,
+      "note": "",
+      "rank": 18
+    },
+    {
+      "approach": "Matchup-Adjusted (Sigmoid)",
+      "variation": "sigmoid_scale_0.1",
+      "correlation": 0.381,
+      "mae": 5.68,
+      "rmse": 7.26,
+      "green_tier_rate_pct": 33.7,
+      "note": "",
+      "rank": 19
+    },
+    {
+      "approach": "Matchup-Adjusted (Linear)",
+      "variation": "linear_20pct",
+      "correlation": 0.3715,
+      "mae": 5.7,
+      "rmse": 7.3,
+      "green_tier_rate_pct": 34.0,
+      "note": "",
+      "rank": 20
+    },
+    {
+      "approach": "Matchup-Adjusted (Sigmoid)",
+      "variation": "sigmoid_scale_0.15",
+      "correlation": 0.3688,
+      "mae": 5.71,
+      "rmse": 7.31,
+      "green_tier_rate_pct": 34.0,
+      "note": "",
+      "rank": 21
+    },
+    {
+      "approach": "Matchup-Adjusted (Tiered)",
+      "variation": "tiered_buckets",
+      "correlation": 0.3648,
+      "mae": 5.7,
+      "rmse": 7.31,
+      "green_tier_rate_pct": 34.0,
+      "note": "",
+      "rank": 22
+    },
+    {
+      "approach": "Matchup-Adjusted (Sigmoid)",
+      "variation": "sigmoid_scale_0.2",
+      "correlation": 0.3571,
+      "mae": 5.74,
+      "rmse": 7.37,
+      "green_tier_rate_pct": 34.3,
+      "note": "",
+      "rank": 23
+    }
+  ],
+  "winner": {
+    "approach": "Recent Form",
+    "variation": "trailing_4week_avg",
+    "correlation": 0.4414,
+    "mae": 5.57,
+    "rmse": 7.31,
+    "green_tier_rate_pct": 38.2,
+    "note": "Real, already leak-free (trailing weeks strictly before the target week) independent of the LOO baseline fix - falls back to the LOO baseline only when no real recent_form exists yet.",
+    "rank": 1
+  },
+  "top_5": [
+    {
+      "approach": "Recent Form",
+      "variation": "trailing_4week_avg",
+      "correlation": 0.4414,
+      "mae": 5.57,
+      "rmse": 7.31,
+      "green_tier_rate_pct": 38.2,
+      "note": "Real, already leak-free (trailing weeks strictly before the target week) independent of the LOO baseline fix - falls back to the LOO baseline only when no real recent_form exists yet.",
+      "rank": 1
+    },
+    {
+      "approach": "Volume-Only",
+      "variation": "leave_one_out_baseline",
+      "correlation": 0.3957,
+      "mae": 5.66,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.0,
+      "note": "",
+      "rank": 2
+    },
+    {
+      "approach": "Game-Script Adjusted",
+      "variation": "no_vegas_spread_data",
+      "correlation": 0.3957,
+      "mae": 5.66,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.0,
+      "note": "vegas_spread is not present in fantasy_rankings_2025.json (verified before running) - falls back to the same leave-one-out volume baseline as Approach 1, unchanged.",
+      "rank": 3
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "80v_20m_linear",
+      "correlation": 0.3954,
+      "mae": 5.65,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.2,
+      "note": "",
+      "rank": 4
+    },
+    {
+      "approach": "Hybrid",
+      "variation": "70v_30m_linear",
+      "correlation": 0.3951,
+      "mae": 5.65,
+      "rmse": 7.2,
+      "green_tier_rate_pct": 33.3,
+      "note": "",
+      "rank": 5
+    }
+  ],
+  "leave_one_out_baseline": {
+    "approach": "Volume-Only (leave-one-out)",
+    "correlation": 0.3957,
+    "note": "The real, leak-free reference point for judging improvement in this backtest."
+  },
+  "currently_shipped_dashboard": {
+    "approach": "Volume-Only (shipped, in-sample-calibrated)",
+    "correlation": 0.4,
+    "note": "Not directly comparable to the results above - this is the existing dashboard's real correlation using the leaky (non-LOO) season-total baseline, shown for context only."
+  }
+}

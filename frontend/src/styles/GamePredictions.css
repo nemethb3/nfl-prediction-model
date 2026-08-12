@@ -1,0 +1,323 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.game-predictions {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  max-width: 1400px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header .subtitle {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 12.5px;
+  color: #999;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.week-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.week-selector select {
+  padding: 8px 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.week-selector select:hover {
+  background: #242424;
+}
+
+.empty-state {
+  color: #888;
+}
+
+.games-container {
+  max-width: 1400px;
+  margin: 0 auto 28px auto;
+}
+
+.game-card {
+  border: 3px solid #555;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 10px 0;
+  background: #161616;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.game-card-open {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.game-card-collapsed {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.matchup-badge {
+  font-size: 16px;
+}
+
+.game-card-teams {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.team-box {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.at-symbol {
+  color: #999;
+  font-size: 13px;
+}
+
+.kickoff-time {
+  font-size: 11px;
+  color: #999;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.timezone-label {
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 10px;
+}
+
+.timezone-toggle {
+  padding: 3px 8px;
+  font-size: 10px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #0080c6;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timezone-toggle:hover {
+  background: #3a3a3a;
+  border-color: #0080c6;
+  color: #00c0ff;
+}
+
+.timezone-toggle:active {
+  transform: scale(0.95);
+}
+
+.matchup-elo {
+  flex-basis: 100%;
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.game-card-spreads {
+  display: flex;
+  gap: 18px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.label {
+  color: #999;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.accuracy {
+  font-size: 18px;
+}
+
+.expand-hint {
+  color: #666;
+  font-size: 12px;
+}
+
+.game-card-expanded {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2a2a;
+  font-size: 13px;
+  line-height: 1.7;
+  cursor: default;
+}
+
+.game-card-expanded h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+
+.section {
+  margin: 10px 0;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.no-data-note {
+  color: #777;
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.game-card-expanded .small-text {
+  color: #777;
+  font-size: 11px;
+}
+
+.disagreement-note {
+  border-left: 3px solid #997700;
+  padding-left: 10px;
+  background: #1a1a10;
+}
+
+.result-win,
+.result-hit {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.result-miss {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.betting-outcome {
+  margin: 12px 0;
+  padding: 12px;
+  background: #2a2a2a;
+  border-left: 3px solid #666;
+  border-radius: 4px;
+}
+
+.outcome-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.outcome-label {
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.outcome-value {
+  color: #fff;
+  font-weight: 600;
+  text-align: right;
+}
+
+.outcome-result {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.result-score {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+  color: #fff;
+}
+
+.disclaimer {
+  margin-top: 32px;
+  padding: 14px 16px;
+  background: #161616;
+  border-left: 3px solid #555;
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .game-card-collapsed {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .game-card-spreads {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accuracy,
+  .expand-hint {
+    justify-self: start;
+  }
+}

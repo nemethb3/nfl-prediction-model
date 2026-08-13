@@ -39,6 +39,7 @@ import pandas as pd
 
 from build_trade_signals import (
     EARLIEST_SEASON, _real_draft_capital, _real_team_games_by_season,
+    _real_qb_starter_curve, QB_STARTER_YEARS_PATH,
 )
 from constants import MIN_GAMES_FOR_SEASON, TREND_EPSILON
 from simulate_2026_playoffs import real_2026_carryover_elo
@@ -132,10 +133,22 @@ def _real_current_teams():
     return teams
 
 
+def _real_current_qb_starter_years():
+    """Real years-as-starter for each real QB AS OF LAST_REAL_SEASON
+    (2025) - only populated if 2025 itself was a real starter season for
+    that player, same real convention build_trade_signals.py's training
+    side uses (a non-starter `now` season yields no stratified value)."""
+    df = pd.read_csv(QB_STARTER_YEARS_PATH)
+    df = df[(df["season"] == LAST_REAL_SEASON) & df["years_as_starter"].notna()]
+    return {r["player_id"]: int(r["years_as_starter"]) for _, r in df.iterrows()}
+
+
 def generate_trade_scores_2026():
     print("\nGenerating real, precomputed 2026 trade scores...\n")
     with open(CURVES_PATH, encoding="utf-8") as f:
         age_curves = json.load(f)
+    qb_starter_curve = _real_qb_starter_curve()
+    qb_current_starter_years = _real_current_qb_starter_years()
     draft_capital = _real_draft_capital()
     elo_by_team = real_2026_carryover_elo()
     current_teams = _real_current_teams()
@@ -175,9 +188,20 @@ def generate_trade_scores_2026():
 
         team = current_teams.get(player_id)
         team_elo = elo_by_team.get(team) if team else None
-        curve = age_curves.get(position, {}).get("curve", {})
-        age_now, age_next = str(sig["current_age"]), str(sig["current_age"] + 1)
-        age_curve_rising = int(curve[age_next] >= curve[age_now]) if age_now in curve and age_next in curve else None
+
+        if position == "QB":
+            starter_year_now = qb_current_starter_years.get(player_id)
+            if starter_year_now is None:
+                age_curve_rising = None
+            else:
+                key_now, key_next = str(starter_year_now), str(starter_year_now + 1)
+                age_curve_rising = (int(qb_starter_curve[key_next] >= qb_starter_curve[key_now])
+                                     if key_now in qb_starter_curve and key_next in qb_starter_curve else None)
+        else:
+            curve = age_curves.get(position, {}).get("curve", {})
+            age_now, age_next = str(sig["current_age"]), str(sig["current_age"] + 1)
+            age_curve_rising = (int(curve[age_next] >= curve[age_now])
+                                 if age_now in curve and age_next in curve else None)
         draft_value = draft_capital.get(player_id)
 
         feature_values = {

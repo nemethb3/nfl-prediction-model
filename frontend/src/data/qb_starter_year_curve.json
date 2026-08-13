@@ -1,0 +1,33 @@
+{
+  "QB": {
+    "curve_type": "years_as_starter",
+    "curve": {
+      "1": 206.4,
+      "2": 254.3,
+      "3": 241.5,
+      "4": 227.4,
+      "5": 246.4,
+      "6": 272.2,
+      "7": 289.1,
+      "8": 241.2,
+      "9": 243.1,
+      "10": 174.6,
+      "11": 227.0
+    },
+    "sample_sizes": {
+      "1": 92,
+      "2": 67,
+      "3": 51,
+      "4": 41,
+      "5": 33,
+      "6": 26,
+      "7": 15,
+      "8": 14,
+      "9": 7,
+      "10": 4,
+      "11": 2
+    },
+    "games_started_threshold": 8,
+    "note": "Real QB career curve indexed by years-as-starter (>=8 real games with offense_pct>0.5 in a season = a real starter season), not raw age. A separate, deliberate signal from compute_empirical_age_curves.py's real age-based curve - see QB_PEAK_AGE_INVESTIGATION.md, which explicitly decided to keep the age-based curve as computed. This file is what the trade model's QB age_curve_rising feature uses instead; RB/WR/TE are unaffected and keep using the age-based curve."
+  }
+}

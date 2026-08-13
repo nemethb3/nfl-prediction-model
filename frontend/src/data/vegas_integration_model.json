@@ -1,0 +1,34 @@
+{
+  "methodology": "Logistic regression, 5-fold stratified CV, on real 2015-2025 REG games with both a posted Vegas spread_line and an Elo rating. HISTORICAL BACKTEST ONLY: not applied to any live 2026 prediction, since no real Vegas line exists yet for any 2026 game.",
+  "applies_to_2026": false,
+  "training_samples": 2895,
+  "features": [
+    "elo_spread",
+    "vegas_spread",
+    "line_divergence",
+    "recency_weight"
+  ],
+  "cv_accuracy": 0.662,
+  "cv_auc": 0.717,
+  "elo_only_baseline_accuracy": 0.628,
+  "accuracy_gain_over_elo_only": 0.034,
+  "intercept": 0.21023871736303132,
+  "coefficients": {
+    "elo_spread": 0.0425,
+    "vegas_spread": 0.8587,
+    "line_divergence": 0.0629,
+    "recency_weight": -0.0118
+  },
+  "scaler_mean": {
+    "elo_spread": 0.0818,
+    "vegas_spread": 1.7608,
+    "line_divergence": 32.305,
+    "recency_weight": 0.5082
+  },
+  "scaler_scale": {
+    "elo_spread": 45.5667,
+    "vegas_spread": 6.0345,
+    "line_divergence": 25.9721,
+    "recency_weight": 0.3166
+  }
+}

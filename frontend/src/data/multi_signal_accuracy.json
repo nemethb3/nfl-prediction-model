@@ -10,17 +10,17 @@
   ],
   "by_position": {
     "QB": {
-      "cv_accuracy": 0.644,
-      "cv_auc": 0.636,
-      "real_players": 69,
-      "real_rows": 239,
+      "cv_accuracy": 0.647,
+      "cv_auc": 0.581,
+      "real_players": 60,
+      "real_rows": 204,
       "coefficients": {
-        "age_curve_rising": 0.129,
-        "injury_risk": 0.124,
-        "role_trend": -0.154,
-        "recent_trend": -1.118,
-        "draft_capital": 0.199,
-        "team_elo": 0.083
+        "age_curve_rising": 0.326,
+        "injury_risk": -0.113,
+        "role_trend": -0.271,
+        "recent_trend": -0.513,
+        "draft_capital": 0.11,
+        "team_elo": -0.118
       }
     },
     "RB": {
@@ -67,6 +67,6 @@
     }
   },
   "overall_accuracy": 0.613,
-  "correct_predictions": 1230,
-  "total_predictions": 2006
+  "correct_predictions": 1208,
+  "total_predictions": 1971
 }

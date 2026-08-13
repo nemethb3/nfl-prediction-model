@@ -1,0 +1,590 @@
+{
+  "draft_season": 2026,
+  "methodology_note": "Real rookie success classifier score: P(this player's eventual career weighted Approximate Value beats their real draft round's historical median), from real draft-time-only signals (round, pick, position). See rookie_classifier_accuracy.json for the honest, held-out CV accuracy this model achieves (58.0%, AUC 0.563 on 2015-2020 draft classes) - draft capital alone is a real but modest predictor of career outcome; this is disclosed, not inflated.",
+  "players": {
+    "ALL015451": {
+      "name": "Drew Allar",
+      "position": "QB",
+      "team": "PIT",
+      "draft_round": 3,
+      "draft_pick": 76,
+      "success_probability": 0.421
+    },
+    "ALL092954": {
+      "name": "Cyrus Allen",
+      "position": "WR",
+      "team": "KAN",
+      "draft_round": 5,
+      "draft_pick": 176,
+      "success_probability": 0.394
+    },
+    "ALL532376": {
+      "name": "Kaytron Allen",
+      "position": "RB",
+      "team": "WAS",
+      "draft_round": 6,
+      "draft_pick": 187,
+      "success_probability": 0.549
+    },
+    "BEL267684": {
+      "name": "Chris Bell",
+      "position": "WR",
+      "team": "MIA",
+      "draft_round": 3,
+      "draft_pick": 94,
+      "success_probability": 0.447
+    },
+    "BEL597603": {
+      "name": "Skyler Bell",
+      "position": "WR",
+      "team": "BUF",
+      "draft_round": 4,
+      "draft_pick": 125,
+      "success_probability": 0.451
+    },
+    "BEN601117": {
+      "name": "Malik Benson",
+      "position": "WR",
+      "team": "LVR",
+      "draft_round": 6,
+      "draft_pick": 195,
+      "success_probability": 0.435
+    },
+    "BEN687044": {
+      "name": "Dallen Bentley",
+      "position": "TE",
+      "team": "DEN",
+      "draft_round": 7,
+      "draft_pick": 256,
+      "success_probability": 0.297
+    },
+    "BER218265": {
+      "name": "Germie Bernard",
+      "position": "WR",
+      "team": "PIT",
+      "draft_round": 2,
+      "draft_pick": 47,
+      "success_probability": 0.492
+    },
+    "BLA097235": {
+      "name": "Kaelon Black",
+      "position": "RB",
+      "team": "SFO",
+      "draft_round": 3,
+      "draft_pick": 90,
+      "success_probability": 0.549
+    },
+    "BOE586077": {
+      "name": "Nate Boerkircher",
+      "position": "TE",
+      "team": "JAX",
+      "draft_round": 2,
+      "draft_pick": 56,
+      "success_probability": 0.406
+    },
+    "BON235618": {
+      "name": "Lewis Bond",
+      "position": "WR",
+      "team": "HOU",
+      "draft_round": 6,
+      "draft_pick": 204,
+      "success_probability": 0.407
+    },
+    "BOS677861": {
+      "name": "Denzel Boston",
+      "position": "WR",
+      "team": "CLE",
+      "draft_round": 2,
+      "draft_pick": 39,
+      "success_probability": 0.518
+    },
+    "BRA531428": {
+      "name": "Zachariah Branch",
+      "position": "WR",
+      "team": "ATL",
+      "draft_round": 3,
+      "draft_pick": 79,
+      "success_probability": 0.494
+    },
+    "BRA836631": {
+      "name": "Chris Brazzell II",
+      "position": "WR",
+      "team": "CAR",
+      "draft_round": 3,
+      "draft_pick": 83,
+      "success_probability": 0.481
+    },
+    "BRE060106": {
+      "name": "Max Bredeson",
+      "position": "TE",
+      "team": "MIN",
+      "draft_round": 5,
+      "draft_pick": 159,
+      "success_probability": 0.388
+    },
+    "BRO268113": {
+      "name": "Barion Brown",
+      "position": "WR",
+      "team": "NOR",
+      "draft_round": 6,
+      "draft_pick": 190,
+      "success_probability": 0.45
+    },
+    "CAM108646": {
+      "name": "Josh Cameron",
+      "position": "WR",
+      "team": "JAX",
+      "draft_round": 6,
+      "draft_pick": 191,
+      "success_probability": 0.447
+    },
+    "CLA041524": {
+      "name": "Demond Claiborne",
+      "position": "RB",
+      "team": "MIN",
+      "draft_round": 6,
+      "draft_pick": 198,
+      "success_probability": 0.515
+    },
+    "COL293648": {
+      "name": "Jonah Coleman",
+      "position": "RB",
+      "team": "DEN",
+      "draft_round": 4,
+      "draft_pick": 108,
+      "success_probability": 0.593
+    },
+    "COL362413": {
+      "name": "Kevin Coleman Jr.",
+      "position": "WR",
+      "team": "MIA",
+      "draft_round": 5,
+      "draft_pick": 177,
+      "success_probability": 0.391
+    },
+    "CON046719": {
+      "name": "KC Concepcion",
+      "position": "WR",
+      "team": "CLE",
+      "draft_round": 1,
+      "draft_pick": 24,
+      "success_probability": 0.463
+    },
+    "COO816508": {
+      "name": "Omar Cooper Jr.",
+      "position": "WR",
+      "team": "NYJ",
+      "draft_round": 1,
+      "draft_pick": 30,
+      "success_probability": 0.445
+    },
+    "CUE040912": {
+      "name": "Josh Cuevas",
+      "position": "TE",
+      "team": "BAL",
+      "draft_round": 5,
+      "draft_pick": 173,
+      "success_probability": 0.348
+    },
+    "DAN490797": {
+      "name": "CJ Daniels",
+      "position": "WR",
+      "team": "LAR",
+      "draft_round": 6,
+      "draft_pick": 197,
+      "success_probability": 0.428
+    },
+    "DOU210628": {
+      "name": "Caleb Douglas",
+      "position": "WR",
+      "team": "MIA",
+      "draft_round": 3,
+      "draft_pick": 75,
+      "success_probability": 0.506
+    },
+    "END438361": {
+      "name": "Jack Endries",
+      "position": "TE",
+      "team": "CIN",
+      "draft_round": 7,
+      "draft_pick": 221,
+      "success_probability": 0.397
+    },
+    "FIE775129": {
+      "name": "Malachi Fields",
+      "position": "WR",
+      "team": "NYG",
+      "draft_round": 3,
+      "draft_pick": 74,
+      "success_probability": 0.509
+    },
+    "GRE361852": {
+      "name": "Taylen Green",
+      "position": "QB",
+      "team": "CLE",
+      "draft_round": 6,
+      "draft_pick": 182,
+      "success_probability": 0.394
+    },
+    "HEN199637": {
+      "name": "Emmanuel Henderson Jr.",
+      "position": "WR",
+      "team": "SEA",
+      "draft_round": 6,
+      "draft_pick": 199,
+      "success_probability": 0.422
+    },
+    "HIB564972": {
+      "name": "Matthew Hibner",
+      "position": "TE",
+      "team": "BAL",
+      "draft_round": 4,
+      "draft_pick": 133,
+      "success_probability": 0.37
+    },
+    "HUR541377": {
+      "name": "Ted Hurst",
+      "position": "WR",
+      "team": "TAM",
+      "draft_round": 3,
+      "draft_pick": 84,
+      "success_probability": 0.478
+    },
+    "JOH224817": {
+      "name": "Emmett Johnson",
+      "position": "RB",
+      "team": "KAN",
+      "draft_round": 5,
+      "draft_pick": 161,
+      "success_probability": 0.529
+    },
+    "JOL735174": {
+      "name": "Justin Joly",
+      "position": "TE",
+      "team": "DEN",
+      "draft_round": 5,
+      "draft_pick": 152,
+      "success_probability": 0.409
+    },
+    "KAC282861": {
+      "name": "Will Kacmarek",
+      "position": "TE",
+      "team": "MIA",
+      "draft_round": 3,
+      "draft_pick": 87,
+      "success_probability": 0.41
+    },
+    "KAL252591": {
+      "name": "Athan Kaliakmanis",
+      "position": "QB",
+      "team": "WAS",
+      "draft_round": 7,
+      "draft_pick": 223,
+      "success_probability": 0.368
+    },
+    "KAN023071": {
+      "name": "Jaren Kanak",
+      "position": "TE",
+      "team": "TEN",
+      "draft_round": 7,
+      "draft_pick": 225,
+      "success_probability": 0.385
+    },
+    "KLA269938": {
+      "name": "Max Klare",
+      "position": "TE",
+      "team": "LAR",
+      "draft_round": 2,
+      "draft_pick": 61,
+      "success_probability": 0.391
+    },
+    "KLE258860": {
+      "name": "Marlin Klein",
+      "position": "TE",
+      "team": "HOU",
+      "draft_round": 2,
+      "draft_pick": 59,
+      "success_probability": 0.397
+    },
+    "KLU066027": {
+      "name": "Cade Klubnik",
+      "position": "QB",
+      "team": "NYJ",
+      "draft_round": 4,
+      "draft_pick": 110,
+      "success_probability": 0.416
+    },
+    "KOZ404039": {
+      "name": "Tanner Koziol",
+      "position": "TE",
+      "team": "JAX",
+      "draft_round": 5,
+      "draft_pick": 164,
+      "success_probability": 0.374
+    },
+    "LAN016345": {
+      "name": "Bryce Lance",
+      "position": "WR",
+      "team": "NOR",
+      "draft_round": 4,
+      "draft_pick": 136,
+      "success_probability": 0.417
+    },
+    "LAN311008": {
+      "name": "Ja'Kobi Lane",
+      "position": "WR",
+      "team": "BAL",
+      "draft_round": 3,
+      "draft_pick": 80,
+      "success_probability": 0.49
+    },
+    "LAW090280": {
+      "name": "Kendrick Law",
+      "position": "WR",
+      "team": "DET",
+      "draft_round": 5,
+      "draft_pick": 168,
+      "success_probability": 0.418
+    },
+    "LEM694125": {
+      "name": "Makai Lemon",
+      "position": "WR",
+      "team": "PHI",
+      "draft_round": 1,
+      "draft_pick": 20,
+      "success_probability": 0.476
+    },
+    "LOV121782": {
+      "name": "Jeremiyah Love",
+      "position": "RB",
+      "team": "ARI",
+      "draft_round": 1,
+      "draft_pick": 3,
+      "success_probability": 0.617
+    },
+    "MCG547540": {
+      "name": "Seth McGowan",
+      "position": "RB",
+      "team": "IND",
+      "draft_round": 7,
+      "draft_pick": 237,
+      "success_probability": 0.494
+    },
+    "MEN516487": {
+      "name": "Fernando Mendoza",
+      "position": "QB",
+      "team": "LVR",
+      "draft_round": 1,
+      "draft_pick": 1,
+      "success_probability": 0.452
+    },
+    "MIL303300": {
+      "name": "Jam Miller",
+      "position": "RB",
+      "team": "NWE",
+      "draft_round": 7,
+      "draft_pick": 245,
+      "success_probability": 0.469
+    },
+    "MOR767384": {
+      "name": "Behren Morton",
+      "position": "QB",
+      "team": "NWE",
+      "draft_round": 7,
+      "draft_pick": 234,
+      "success_probability": 0.336
+    },
+    "NOW373761": {
+      "name": "Riley Nowakowski",
+      "position": "TE",
+      "team": "PIT",
+      "draft_round": 5,
+      "draft_pick": 169,
+      "success_probability": 0.359
+    },
+    "NUS440041": {
+      "name": "Garrett Nussmeier",
+      "position": "QB",
+      "team": "KAN",
+      "draft_round": 7,
+      "draft_pick": 249,
+      "success_probability": 0.296
+    },
+    "PAY546690": {
+      "name": "Cole Payton",
+      "position": "QB",
+      "team": "PHI",
+      "draft_round": 5,
+      "draft_pick": 178,
+      "success_probability": 0.313
+    },
+    "PRI206342": {
+      "name": "Jadarian Price",
+      "position": "RB",
+      "team": "SEA",
+      "draft_round": 1,
+      "draft_pick": 32,
+      "success_probability": 0.528
+    },
+    "RAN022436": {
+      "name": "Adam Randall",
+      "position": "RB",
+      "team": "BAL",
+      "draft_round": 5,
+      "draft_pick": 174,
+      "success_probability": 0.489
+    },
+    "RAR148318": {
+      "name": "Eli Raridon",
+      "position": "TE",
+      "team": "NWE",
+      "draft_round": 3,
+      "draft_pick": 95,
+      "success_probability": 0.386
+    },
+    "ROU550040": {
+      "name": "Sam Roush",
+      "position": "TE",
+      "team": "CHI",
+      "draft_round": 3,
+      "draft_pick": 69,
+      "success_probability": 0.466
+    },
+    "RYA022232": {
+      "name": "Carsen Ryan",
+      "position": "TE",
+      "team": "CLE",
+      "draft_round": 7,
+      "draft_pick": 248,
+      "success_probability": 0.319
+    },
+    "SAD482340": {
+      "name": "Kenyon Sadiq",
+      "position": "TE",
+      "team": "NYJ",
+      "draft_round": 1,
+      "draft_pick": 16,
+      "success_probability": 0.43
+    },
+    "SAR527100": {
+      "name": "Elijah Sarratt",
+      "position": "WR",
+      "team": "BAL",
+      "draft_round": 4,
+      "draft_pick": 115,
+      "success_probability": 0.482
+    },
+    "SHA375359": {
+      "name": "Bauer Sharp",
+      "position": "TE",
+      "team": "TAM",
+      "draft_round": 6,
+      "draft_pick": 185,
+      "success_probability": 0.408
+    },
+    "SIM639376": {
+      "name": "Ty Simpson",
+      "position": "QB",
+      "team": "LAR",
+      "draft_round": 1,
+      "draft_pick": 13,
+      "success_probability": 0.415
+    },
+    "SMI038569": {
+      "name": "Anthony Smith",
+      "position": "WR",
+      "team": "DAL",
+      "draft_round": 7,
+      "draft_pick": 218,
+      "success_probability": 0.464
+    },
+    "STO806346": {
+      "name": "Eli Stowers",
+      "position": "TE",
+      "team": "PHI",
+      "draft_round": 2,
+      "draft_pick": 54,
+      "success_probability": 0.412
+    },
+    "TAT143045": {
+      "name": "Carnell Tate",
+      "position": "WR",
+      "team": "TEN",
+      "draft_round": 1,
+      "draft_pick": 4,
+      "success_probability": 0.526
+    },
+    "THO417520": {
+      "name": "Zavion Thomas",
+      "position": "WR",
+      "team": "CHI",
+      "draft_round": 3,
+      "draft_pick": 89,
+      "success_probability": 0.462
+    },
+    "THO495568": {
+      "name": "Brenen Thompson",
+      "position": "WR",
+      "team": "LAC",
+      "draft_round": 4,
+      "draft_pick": 105,
+      "success_probability": 0.514
+    },
+    "TRA291459": {
+      "name": "Seydou Traore",
+      "position": "TE",
+      "team": "MIA",
+      "draft_round": 5,
+      "draft_pick": 180,
+      "success_probability": 0.328
+    },
+    "TYS405541": {
+      "name": "Jordyn Tyson",
+      "position": "WR",
+      "team": "NOR",
+      "draft_round": 1,
+      "draft_pick": 8,
+      "success_probability": 0.513
+    },
+    "VIR271235": {
+      "name": "Reggie Virgil",
+      "position": "WR",
+      "team": "ARI",
+      "draft_round": 5,
+      "draft_pick": 143,
+      "success_probability": 0.496
+    },
+    "WAS797326": {
+      "name": "Mike Washington Jr.",
+      "position": "RB",
+      "team": "LVR",
+      "draft_round": 4,
+      "draft_pick": 122,
+      "success_probability": 0.55
+    },
+    "WET055619": {
+      "name": "Kaden Wetjen",
+      "position": "WR",
+      "team": "PIT",
+      "draft_round": 4,
+      "draft_pick": 121,
+      "success_probability": 0.463
+    },
+    "WIL143106": {
+      "name": "Antonio Williams",
+      "position": "WR",
+      "team": "WAS",
+      "draft_round": 3,
+      "draft_pick": 71,
+      "success_probability": 0.519
+    },
+    "WIL189259": {
+      "name": "CJ Williams",
+      "position": "WR",
+      "team": "JAX",
+      "draft_round": 6,
+      "draft_pick": 203,
+      "success_probability": 0.41
+    }
+  }
+}

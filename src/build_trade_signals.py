@@ -51,6 +51,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
 BACKTEST_DIR = os.path.join(PROJECT_ROOT, "data", "backtest")
 CURVES_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "empirical_age_curves.json")
+QB_STARTER_CURVE_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "qb_starter_year_curve.json")
+QB_STARTER_YEARS_PATH = os.path.join(PROCESSED_DIR, "qb_starter_years.csv")
 OUTPUT_PATH = os.path.join(PROCESSED_DIR, "trade_signals.csv")
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
@@ -205,6 +207,27 @@ def _real_age_curves():
         return json.load(f)
 
 
+def _real_qb_starter_curve():
+    """Real QB curve indexed by years-as-starter, not age - see
+    compute_empirical_age_curves_stratified.py. Deliberately used ONLY for
+    QB's age_curve_rising feature here; RB/WR/TE keep the age-based curve
+    (QB_PEAK_AGE_INVESTIGATION.md left that age-based curve itself
+    unchanged - this doesn't touch it, it swaps which curve feeds the
+    model for QB only)."""
+    with open(QB_STARTER_CURVE_PATH, encoding="utf-8") as f:
+        return json.load(f)["QB"]["curve"]
+
+
+def _real_qb_years_as_starter():
+    """Real per-(player_id, season) years-as-starter as of that season -
+    only populated for real starter seasons (see
+    compute_empirical_age_curves_stratified.py's real, disclosed
+    >=8-games-started threshold)."""
+    df = pd.read_csv(QB_STARTER_YEARS_PATH)
+    df = df[df["years_as_starter"].notna()]
+    return {(r["player_id"], int(r["season"])): int(r["years_as_starter"]) for _, r in df.iterrows()}
+
+
 def build_trade_signals():
     print("\nBuilding real, leak-free multi-signal trade features...\n")
     season_stats = _real_season_stats()
@@ -215,6 +238,8 @@ def build_trade_signals():
     draft_capital = _real_draft_capital()
     elo_by_season = _real_team_elo_at_season_start()
     age_curves = _real_age_curves()
+    qb_starter_curve = _real_qb_starter_curve()
+    qb_years_as_starter = _real_qb_years_as_starter()
 
     season_stats["draft_capital"] = season_stats["player_id"].map(draft_capital)
     season_stats["team_elo"] = season_stats.apply(
@@ -229,10 +254,21 @@ def build_trade_signals():
             if nxt["season"] != now["season"] + 1:
                 continue
             position = now["position"]
-            curve = age_curves.get(position, {}).get("curve", {})
-            age_now, age_next = str(now["age_int"]), str(now["age_int"] + 1)
-            if age_now not in curve or age_next not in curve:
-                continue
+
+            if position == "QB":
+                starter_year_now = qb_years_as_starter.get((player_id, int(now["season"])))
+                if starter_year_now is None:
+                    continue  # real season wasn't a real starter season - no stratified value to use
+                key_now, key_next = str(starter_year_now), str(starter_year_now + 1)
+                if key_now not in qb_starter_curve or key_next not in qb_starter_curve:
+                    continue
+                age_curve_rising = int(qb_starter_curve[key_next] >= qb_starter_curve[key_now])
+            else:
+                curve = age_curves.get(position, {}).get("curve", {})
+                age_now, age_next = str(now["age_int"]), str(now["age_int"] + 1)
+                if age_now not in curve or age_next not in curve:
+                    continue
+                age_curve_rising = int(curve[age_next] >= curve[age_now])
 
             rows.append({
                 "player_id": player_id,
@@ -240,7 +276,7 @@ def build_trade_signals():
                 "season_now": int(now["season"]),
                 "season_next": int(nxt["season"]),
                 "age": now["age_int"],
-                "age_curve_rising": int(curve[age_next] >= curve[age_now]),
+                "age_curve_rising": age_curve_rising,
                 "injury_risk": now["injury_risk_point_in_time"],
                 "role_trend": now["role_trend"],
                 "target_share_trend": now["target_share_trend"],

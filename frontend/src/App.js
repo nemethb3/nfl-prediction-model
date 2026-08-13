@@ -16,35 +16,39 @@ import './App.css';
 // main.js) rather than trusting the comment. TradeAnalyzer statically
 // imports its own real data files directly, so leaving its COMPONENT
 // import eager was enough to drag fantasy_rankings_2026.json/
-// trade_scores_2026.json into the main bundle even though none of the
-// three call useSeason().
+// trade_scores_2026.json into the main bundle even though none of them
+// call useSeason(). Since the Fantasy Tab Consolidation task, LeagueConnector
+// and TradeAnalyzer are no longer imported here directly - they're static
+// imports inside the single lazy-loaded Fantasy.js instead, so they still
+// land in a real, separate chunk (Fantasy's), just shared with
+// FantasyRankings/BreakoutAlerts rather than each getting their own.
 const GamePredictions = lazy(() => import('./components/GamePredictions'));
-const FantasyRankings = lazy(() => import('./components/FantasyRankings'));
+const Fantasy = lazy(() => import('./components/Fantasy'));
 const SeasonProjections = lazy(() => import('./components/SeasonProjections'));
 const AccuracyTracker = lazy(() => import('./components/AccuracyTracker'));
 const WeeklySummary = lazy(() => import('./components/WeeklySummary'));
 const BettingAnalysis = lazy(() => import('./components/BettingAnalysis'));
 const ModelTransparency = lazy(() => import('./components/ModelTransparency'));
-const LeagueConnector = lazy(() => import('./components/LeagueConnector'));
-const TradeAnalyzer = lazy(() => import('./components/TradeAnalyzer'));
 
-// ModelTransparency and TradeAnalyzer/LeagueConnector are genuinely
-// season-independent (verified: none of the three calls useSeason()
-// anywhere) - their code is still lazy-loaded (above), just deliberately
-// NOT gated behind the season-data loading placeholder below, since
-// gating them on data they never use would be a real, needless regression.
-const SEASON_DATA_SECTIONS = new Set(['games', 'fantasy', 'projections', 'accuracy', 'summary', 'betting', 'sleeper']);
+// ModelTransparency is genuinely season-independent (doesn't call
+// useSeason() anywhere) - its code is still lazy-loaded (above), just
+// deliberately NOT gated behind the season-data loading placeholder below,
+// since gating it on data it never uses would be a real, needless
+// regression. Fantasy (Rankings/Trade Analyzer/League Connection/Breakout
+// Alerts) mixes season-dependent and season-independent subtabs under one
+// section id, so it isn't gated here either - it gates its own subtabs
+// internally instead (see Fantasy.js) to avoid blocking the
+// season-independent ones on data they don't need.
+const SEASON_DATA_SECTIONS = new Set(['games', 'projections', 'accuracy', 'summary', 'betting']);
 
 const SECTION_COMPONENTS = {
   games: GamePredictions,
-  fantasy: FantasyRankings,
+  fantasy: Fantasy,
   projections: SeasonProjections,
   accuracy: AccuracyTracker,
   summary: WeeklySummary,
   transparency: ModelTransparency,
   betting: BettingAnalysis,
-  sleeper: LeagueConnector,
-  'trade-analyzer': TradeAnalyzer,
 };
 
 // AUDIT_2026-08-12_DEEP.md Section 7.2: no error boundary existed anywhere

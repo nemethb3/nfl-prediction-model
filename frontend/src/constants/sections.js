@@ -7,9 +7,9 @@ export const DASHBOARD_SECTIONS = [
   },
   {
     id: 'fantasy',
-    label: 'Fantasy Rankings',
-    description: 'Player rankings by position',
-    component: 'FantasyRankings',
+    label: 'Fantasy',
+    description: 'Rankings, trade analyzer, and Sleeper league connection',
+    component: 'Fantasy',
   },
   {
     id: 'projections',
@@ -40,18 +40,6 @@ export const DASHBOARD_SECTIONS = [
     label: 'Betting Analysis',
     description: 'Strategy backtests vs. real Vegas odds',
     component: 'BettingAnalysis',
-  },
-  {
-    id: 'sleeper',
-    label: 'My League',
-    description: 'Connect your Sleeper league and match your roster to real projections',
-    component: 'LeagueConnector',
-  },
-  {
-    id: 'trade-analyzer',
-    label: 'Trade Analyzer',
-    description: 'Multi-signal, backtested year-over-year trajectory model',
-    component: 'TradeAnalyzer',
   },
 ];
 

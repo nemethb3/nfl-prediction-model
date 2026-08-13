@@ -1,0 +1,47 @@
+.fantasy-container {
+  padding: 1rem;
+}
+
+.fantasy-tabs-header {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #333;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.fantasy-tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.fantasy-tab-button:hover {
+  color: #ccc;
+}
+
+.fantasy-tab-button.active {
+  color: #fff;
+  border-bottom-color: #00d4ff;
+}
+
+.fantasy-tabs-content {
+  animation: fantasy-fade-in 0.2s ease-in;
+}
+
+@keyframes fantasy-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -32,6 +32,7 @@ unambiguous, rather than silently picking one of two candidates.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 import time
 
@@ -82,6 +83,7 @@ def generate_sleeper_id_mapping():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(mapping, f, indent=2)
+        record_generation("sleeper_id_mapping")
 
     size_kb = os.path.getsize(OUTPUT_PATH) / 1024
     print(f"Real QB/RB/WR/TE rows with both real gsis_id and sleeper_id: {n_before_dedup}")

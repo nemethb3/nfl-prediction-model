@@ -48,6 +48,7 @@ category as team names/colors.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -201,6 +202,7 @@ def generate_season_projections_json():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(rows, f, indent=2)
+        record_generation("season_projections_2025")
 
     n_playoff = sum(1 for r in rows if r["is_playoff_team"])
     n_div_winners = sum(1 for r in rows if r["is_division_winner"])

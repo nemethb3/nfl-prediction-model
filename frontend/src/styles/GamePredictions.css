@@ -228,6 +228,12 @@ html, body, #root {
   font-size: 11px;
 }
 
+.game-card__confidence-interval {
+  color: #999;
+  font-size: 11.5px;
+  margin-top: 2px;
+}
+
 .disagreement-note {
   border-left: 3px solid #997700;
   padding-left: 10px;

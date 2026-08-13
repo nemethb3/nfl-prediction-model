@@ -54,6 +54,7 @@ Real, disclosed nulls (not fabricated fallbacks):
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import numpy as np
@@ -201,9 +202,18 @@ def generate_fantasy_rankings_2026_week1_json():
             "accuracy_tier": None,
         })
 
+    # AUDIT_2026-08-12_DEEP.md Section 10.9: real shape guards before writing.
+    assert len(records) > 0, "No real 2026 fantasy records built"
+    n_missing_ppr = sum(1 for r in records if r["projected_ppr"] is None)
+    assert n_missing_ppr == 0, f"{n_missing_ppr}/{len(records)} records missing a real projected_ppr"
+    n_missing_id = sum(1 for r in records if not r.get("id"))
+    assert n_missing_id == 0, f"{n_missing_id}/{len(records)} records missing a real id"
+    print(f"Validated: {len(records)} real 2026 fantasy records, all with real projected_ppr + id.")
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(records, f, indent=2)
+        record_generation("fantasy_rankings_2026")
 
     by_pos = combined.groupby("position").size()
     print(f"Generated {len(records)} real 2026 Week 1 preseason projections -> {OUTPUT_PATH}")

@@ -46,6 +46,7 @@ Verification-driven changes from the pasted spec (Q&A decisions, 2026-07-30):
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -269,6 +270,7 @@ def generate_betting_backtest_json():
     os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
+        record_generation("betting_backtest_results_2025")
     print(f"Wrote {OUTPUT_PATH}")
     for strategy_key, strategy_results in results.items():
         for bet_type_key in BET_TYPES:

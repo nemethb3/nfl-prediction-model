@@ -1,18 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import Navigation from './components/Navigation';
 import SeasonSelector from './components/SeasonSelector';
-import GamePredictions from './components/GamePredictions';
-import FantasyRankings from './components/FantasyRankings';
-import SeasonProjections from './components/SeasonProjections';
-import AccuracyTracker from './components/AccuracyTracker';
-import WeeklySummary from './components/WeeklySummary';
-import ModelTransparency from './components/ModelTransparency';
-import BettingAnalysis from './components/BettingAnalysis';
-import LeagueConnector from './components/LeagueConnector';
-import TradeAnalyzer from './components/TradeAnalyzer';
-import { SeasonProvider } from './context/SeasonContext';
+import { SeasonProvider, useSeason } from './context/SeasonContext';
 import { DEFAULT_SECTION } from './constants/sections';
 import './App.css';
+
+// AUDIT_2026-08-12_DEEP.md Section 7.2/8.1, Recommendation 11: every
+// section's own code is lazy-loaded so it lands in its own chunk,
+// downloaded only when that section is actually selected - verified via
+// `npm run build` (separate chunk files exist per section, not one
+// bundle). A prior pass of this fix left ModelTransparency/LeagueConnector/
+// TradeAnalyzer as plain static imports (comment claimed "still lazy-
+// loaded", code didn't match) - caught by grepping the real build output
+// for actual player data (Josh Allen/Matthew Stafford/etc. showed up in
+// main.js) rather than trusting the comment. TradeAnalyzer statically
+// imports its own real data files directly, so leaving its COMPONENT
+// import eager was enough to drag fantasy_rankings_2026.json/
+// trade_scores_2026.json into the main bundle even though none of the
+// three call useSeason().
+const GamePredictions = lazy(() => import('./components/GamePredictions'));
+const FantasyRankings = lazy(() => import('./components/FantasyRankings'));
+const SeasonProjections = lazy(() => import('./components/SeasonProjections'));
+const AccuracyTracker = lazy(() => import('./components/AccuracyTracker'));
+const WeeklySummary = lazy(() => import('./components/WeeklySummary'));
+const BettingAnalysis = lazy(() => import('./components/BettingAnalysis'));
+const ModelTransparency = lazy(() => import('./components/ModelTransparency'));
+const LeagueConnector = lazy(() => import('./components/LeagueConnector'));
+const TradeAnalyzer = lazy(() => import('./components/TradeAnalyzer'));
+
+// ModelTransparency and TradeAnalyzer/LeagueConnector are genuinely
+// season-independent (verified: none of the three calls useSeason()
+// anywhere) - their code is still lazy-loaded (above), just deliberately
+// NOT gated behind the season-data loading placeholder below, since
+// gating them on data they never use would be a real, needless regression.
+const SEASON_DATA_SECTIONS = new Set(['games', 'fantasy', 'projections', 'accuracy', 'summary', 'betting', 'sleeper']);
 
 const SECTION_COMPONENTS = {
   games: GamePredictions,
@@ -26,20 +47,83 @@ const SECTION_COMPONENTS = {
   'trade-analyzer': TradeAnalyzer,
 };
 
+// AUDIT_2026-08-12_DEEP.md Section 7.2: no error boundary existed anywhere
+// in the tree, so one bad render in any section would crash the whole app
+// instead of just that section. Class component because getDerivedStateFromError/
+// componentDidCatch have no hook equivalent.
+class SectionErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('Section render failed:', error, errorInfo);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.state.hasError && prevProps.sectionKey !== this.props.sectionKey) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ hasError: false, error: null });
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="section-error-boundary">
+          <h3>Section Error</h3>
+          <p>This section encountered an error. Try selecting another section or refreshing the page.</p>
+          <details className="section-error-boundary__details">
+            <summary>Details</summary>
+            <pre>{this.state.error?.toString()}</pre>
+          </details>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+function LoadingPlaceholder({ label }) {
+  return <div className="section-loading-placeholder">{label}</div>;
+}
+
+function AppContent({ activeSection, setActiveSection }) {
+  const { dataLoading } = useSeason();
+  const ActiveComponent = SECTION_COMPONENTS[activeSection] || GamePredictions;
+  const waitingOnSeasonData = dataLoading && SEASON_DATA_SECTIONS.has(activeSection);
+
+  return (
+    <div className="app-container">
+      <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
+      <SeasonSelector />
+      <main className="section-content">
+        <SectionErrorBoundary sectionKey={activeSection}>
+          {waitingOnSeasonData ? (
+            <LoadingPlaceholder label="Loading season data..." />
+          ) : (
+            <Suspense fallback={<LoadingPlaceholder label="Loading section..." />}>
+              <ActiveComponent />
+            </Suspense>
+          )}
+        </SectionErrorBoundary>
+      </main>
+    </div>
+  );
+}
+
 export default function App() {
   const [activeSection, setActiveSection] = useState(DEFAULT_SECTION);
 
-  const ActiveComponent = SECTION_COMPONENTS[activeSection] || GamePredictions;
-
   return (
     <SeasonProvider>
-      <div className="app-container">
-        <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
-        <SeasonSelector />
-        <main className="section-content">
-          <ActiveComponent />
-        </main>
-      </div>
+      <AppContent activeSection={activeSection} setActiveSection={setActiveSection} />
     </SeasonProvider>
   );
 }

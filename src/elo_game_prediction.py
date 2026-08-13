@@ -162,12 +162,15 @@ def generate_elo_game_spreads(season, fitted_model):
         games["home_elo"] = games["home_elo_before"]
         games["away_elo"] = games["away_elo_before"]
     else:
-        _, ratings_at_season_start, _ = run_multi_season_elo(range(ELO_EARLIEST_SEASON, season),
-                                                               k_factor=ELO_K_FACTOR, home_field_elo=ELO_HOME_FIELD)
-        preseason = ratings_at_season_start[season - 1] if (season - 1) in ratings_at_season_start else \
-            ratings_at_season_start[max(ratings_at_season_start)]
-        # roll the last known ratings forward one more (unplayed) season boundary regression
-        regressed = {t: r + (1.0 / 3.0) * (1500.0 - r) for t, r in preseason.items()}
+        # AUDIT_2026-08-12_DEEP.md Section 2.1 fix, later refactored into
+        # elo_utils.compute_season_start_elo (see that module's docstring
+        # for the real bug this fixes and why it's a shared, standalone
+        # module rather than duplicated here and in
+        # simulate_2026_playoffs.py). Real, confirmed impact of the
+        # original bug: mean abs discrepancy vs. the correct rating was
+        # 22.6 Elo points, max 55.2.
+        from elo_utils import compute_season_start_elo
+        regressed = compute_season_start_elo(ELO_EARLIEST_SEASON, season, ELO_K_FACTOR, ELO_HOME_FIELD)
         schedule = _load_schedule_for_season(season)
         reg = schedule[schedule["game_type"] == "REG"].copy()
         reg["home_elo"] = reg["home_team"].map(regressed)

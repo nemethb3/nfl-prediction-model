@@ -30,6 +30,7 @@ computed with the exact same real methodology as build_trade_signals.py:
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 import pickle
 
@@ -37,8 +38,9 @@ import numpy as np
 import pandas as pd
 
 from build_trade_signals import (
-    EARLIEST_SEASON, MIN_GAMES_FOR_SEASON, _real_draft_capital, _real_team_games_by_season,
+    EARLIEST_SEASON, _real_draft_capital, _real_team_games_by_season,
 )
+from constants import MIN_GAMES_FOR_SEASON, TREND_EPSILON
 from simulate_2026_playoffs import real_2026_carryover_elo
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -98,9 +100,9 @@ def _real_current_signals():
             s_now, s_prev = last["snap_pct"], prev["snap_pct"]
             trends = []
             if pd.notna(t_now) and pd.notna(t_prev):
-                trends.append((t_now - t_prev) / (abs(t_prev) + 0.01))
+                trends.append((t_now - t_prev) / (abs(t_prev) + TREND_EPSILON))
             if pd.notna(s_now) and pd.notna(s_prev):
-                trends.append((s_now - s_prev) / (abs(s_prev) + 0.01))
+                trends.append((s_now - s_prev) / (abs(s_prev) + TREND_EPSILON))
             if trends:
                 role_trend = float(np.mean(trends))
 
@@ -145,6 +147,10 @@ def generate_trade_scores_2026():
         if os.path.exists(path):
             with open(path, "rb") as f:
                 models[position] = pickle.load(f)
+    # AUDIT_2026-08-12_DEEP.md Section 4.1: previously no check that any
+    # model loaded - a missing models/ dir would have silently written an
+    # empty players: {} export instead of failing loudly.
+    assert models, f"No trained trade models found in {MODELS_DIR} - run train_trade_model.py first"
 
     with open(FANTASY_RANKINGS_PATH, encoding="utf-8") as f:
         fantasy_players = json.load(f)
@@ -152,7 +158,12 @@ def generate_trade_scores_2026():
 
     scores = {}
     n_scored, n_skipped = 0, 0
-    for player_id in real_player_ids:
+    # Sorted for deterministic output - iterating a raw set() uses Python's
+    # per-process randomized string hashing, so the same real data would
+    # otherwise serialize player order differently on every regeneration,
+    # producing spurious diffs with no actual value change (caught while
+    # reviewing this task's own regeneration diff).
+    for player_id in sorted(real_player_ids):
         sig = signals.get(player_id)
         if sig is None:
             n_skipped += 1
@@ -208,9 +219,12 @@ def generate_trade_scores_2026():
         ),
         "players": scores,
     }
+    assert n_scored > 0, "0 real players scored - check signals/models coverage before shipping"
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
+        record_generation("trade_scores_2026")
 
     print(f"Real players scored: {n_scored} | skipped (incomplete real signals): {n_skipped}")
     print(f"Wrote {OUTPUT_PATH}")

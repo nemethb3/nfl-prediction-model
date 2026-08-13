@@ -40,6 +40,7 @@ change year to year.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -97,13 +98,22 @@ def generate_season_projections_2026_json():
 
     rows.sort(key=lambda r: (r["conference"], r["division"], -(r["projected_wins"] or 0)))
 
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(rows, f, indent=2)
-
+    # AUDIT_2026-08-12_DEEP.md Section 10.9: real shape guards before writing
+    # (moved ahead of the write - these were previously informational prints
+    # only, so a partial ensemble file would have shipped nulls silently).
     n_with_proj = sum(1 for r in rows if r["projected_wins"] is not None)
     n_playoff = sum(1 for r in rows if r["is_playoff_team"])
     n_div_winners = sum(1 for r in rows if r["is_division_winner"])
+    assert len(rows) == 32, f"Expected 32 real NFL teams, got {len(rows)}"
+    assert n_with_proj == 32, f"Only {n_with_proj}/32 teams have a real ensemble projected-wins figure"
+    assert n_playoff == 14, f"Expected 14 real Monte Carlo playoff teams, got {n_playoff}"
+    assert n_div_winners == 8, f"Expected 8 real division winners, got {n_div_winners}"
+
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(rows, f, indent=2)
+        record_generation("season_projections_2026")
+
     print(f"Generated {len(rows)} real 2026 preseason team projections -> {OUTPUT_PATH}")
     print(f"  With a real ensemble projected-wins figure + real 90% CI: {n_with_proj}/{len(rows)}")
     print(f"  Real Monte Carlo playoff teams: {n_playoff} (expect 14) | division winners: {n_div_winners} (expect 8)")

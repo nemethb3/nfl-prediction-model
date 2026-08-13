@@ -39,6 +39,7 @@ Verification-driven fixes from the pasted spec (Q&A decisions, 2026-07-30):
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import numpy as np
@@ -373,6 +374,7 @@ if __name__ == "__main__":
     os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
+        record_generation("wr_dynamic_backtest_results_2025")
 
     print("\n=== WR DYNAMIC PROJECTIONS BACKTEST (leak-free LOO baseline) ===")
     print(f"Leave-one-out Volume-Only baseline correlation: {baseline_result['correlation']}")

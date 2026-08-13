@@ -126,7 +126,7 @@ export default function PersonalRoster({ leagueId, userId }) {
               {projection ? (
                 <div className="personal-roster__card-projection">
                   <div className="personal-roster__projection-value">
-                    {projection.projected_ppr.toFixed(1)}
+                    {projection.projected_ppr != null ? projection.projected_ppr.toFixed(1) : '--'}
                     <span className="personal-roster__ppr-label">PPR</span>
                   </div>
 

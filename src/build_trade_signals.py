@@ -44,8 +44,8 @@ import time
 
 import nflreadpy as nfl
 from elo_game_prediction import ELO_HOME_FIELD
-from elo_model import TRAIN_SEASONS, run_multi_season_elo
-from constants import ELO_K_FACTOR
+from elo_model import run_multi_season_elo
+from constants import ELO_K_FACTOR, MIN_GAMES_FOR_SEASON, TREND_EPSILON
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -54,7 +54,6 @@ CURVES_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "empirical_a
 OUTPUT_PATH = os.path.join(PROCESSED_DIR, "trade_signals.csv")
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
-MIN_GAMES_FOR_SEASON = 4  # same real convention as compute_injury_consistency_scores_2026.py
 EARLIEST_SEASON, LATEST_SEASON = 2015, 2025
 
 
@@ -119,7 +118,17 @@ def _add_role_trend(season_stats):
     """Real trend heading INTO season_now: this season's real target_share/
     snap_pct vs. the immediately preceding real season's (only if that
     prior season is real and consecutive) - leak-free, uses no info from
-    season_next."""
+    season_next.
+
+    Exports both the original blended `role_trend` (mean of the two) and
+    the two real, unblended components (`target_share_trend`/`snap_pct_
+    trend`) separately - AUDIT_2026-08-12_DEEP.md Recommendation 12 asked
+    to add target_share/snap_pct as trade signals, which turned out to
+    already exist here, blended into one averaged number. The real,
+    testable question this adds is whether keeping them separate (letting
+    the model weight target-share role change differently from snap-share
+    role change) beats the blended version - see train_trade_model.py's
+    real, honest comparison."""
     season_stats = season_stats.sort_values(["player_id", "season"]).copy()
     for col in ["target_share", "snap_pct"]:
         prev_col = f"{col}_prev"
@@ -129,10 +138,12 @@ def _add_role_trend(season_stats):
         season_stats[prev_season_col] = grouped["season"].shift()
     is_consecutive = season_stats["season"] == (season_stats["season_prev"] + 1)
     target_trend = (season_stats["target_share"] - season_stats["target_share_prev"]) / (
-        season_stats["target_share_prev"].abs() + 0.01)
+        season_stats["target_share_prev"].abs() + TREND_EPSILON)
     snap_trend = (season_stats["snap_pct"] - season_stats["snap_pct_prev"]) / (
-        season_stats["snap_pct_prev"].abs() + 0.01)
+        season_stats["snap_pct_prev"].abs() + TREND_EPSILON)
     season_stats["role_trend"] = np.where(is_consecutive, np.nanmean([target_trend, snap_trend], axis=0), np.nan)
+    season_stats["target_share_trend"] = np.where(is_consecutive, target_trend, np.nan)
+    season_stats["snap_pct_trend"] = np.where(is_consecutive, snap_trend, np.nan)
     return season_stats.drop(columns=["target_share_prev", "snap_pct_prev", "season_prev"])
 
 
@@ -232,6 +243,8 @@ def build_trade_signals():
                 "age_curve_rising": int(curve[age_next] >= curve[age_now]),
                 "injury_risk": now["injury_risk_point_in_time"],
                 "role_trend": now["role_trend"],
+                "target_share_trend": now["target_share_trend"],
+                "snap_pct_trend": now["snap_pct_trend"],
                 "recent_trend": now["recent_trend"],
                 "draft_capital": now["draft_capital"],
                 "team_elo": now["team_elo"],
@@ -246,7 +259,8 @@ def build_trade_signals():
 
     print(f"Built {len(signals)} real, leak-free (player, season_now->season_next) pairs")
     print(f"Real class balance (ppr_increased=1): {signals['ppr_increased'].mean():.3f}")
-    for col in ["injury_risk", "role_trend", "recent_trend", "draft_capital", "team_elo"]:
+    for col in ["injury_risk", "role_trend", "target_share_trend", "snap_pct_trend", "recent_trend",
+                "draft_capital", "team_elo"]:
         print(f"  real non-null {col}: {signals[col].notna().mean():.1%}")
     print(f"Wrote {OUTPUT_PATH}")
     return signals

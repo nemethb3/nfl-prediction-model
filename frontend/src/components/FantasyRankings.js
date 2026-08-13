@@ -4,6 +4,7 @@ import '../styles/SeasonDataUnavailable.css';
 import { useSeason } from '../context/SeasonContext';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor } from '../constants/teams';
 import SeasonDataUnavailable from './SeasonDataUnavailable';
+import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
 
 // RB/QB/TE: real per-week trailing projections. WR: real trailing up-to-
 // 4-week actual-PPR average (Phase 4 backtest winner, corr +0.4416 vs. the
@@ -222,14 +223,17 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const isPriorSeasonFallback = player.projection_type === 'prior_season_rate_fallback';
+  const handleKeyDown = useKeyboardToggle(onToggle);
 
   return (
     <div
       className={`player-card ${isExpanded ? 'player-card-open' : ''}`}
       style={{ borderColor }}
       onClick={onToggle}
+      onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
+      aria-expanded={isExpanded}
     >
       <div className="player-card-collapsed">
         <div className="rank-name">
@@ -247,7 +251,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
         </div>
 
         <div className="ppr">
-          {player.projected_ppr.toFixed(1)} PPR{isStatic ? ' (season avg)' : ''}
+          {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} PPR{isStatic ? ' (season avg)' : ''}
         </div>
 
         {player.opponent_defense_rank_vs_position !== null && player.opponent_defense_rank_vs_position !== undefined && (
@@ -274,7 +278,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
           <div className="section">
             <div className="section-title">Projection</div>
             <div>
-              {player.projected_ppr.toFixed(1)} projected PPR points
+              {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} projected PPR points
               {isStatic
                 ? ' (static season-long projection, per-game average)'
                 : isPriorSeasonFallback
@@ -290,7 +294,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
               <div className="accuracy-comparison">
                 <div className="accuracy-row">
                   <span className="label">Projected PPR</span>
-                  <span className="value projected">{player.projected_ppr.toFixed(1)}</span>
+                  <span className="value projected">{player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'}</span>
                 </div>
                 <div className="accuracy-row">
                   <span className="label">Actual PPR</span>

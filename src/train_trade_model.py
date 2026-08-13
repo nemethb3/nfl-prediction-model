@@ -25,6 +25,7 @@ Real bugs found and fixed before writing this:
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 import pickle
 
@@ -40,6 +41,24 @@ PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
 OUTPUT_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "multi_signal_accuracy.json")
 
+# These 6 real signals were selected after the "Multi-Signal Trade Engine"
+# task's honest GroupKFold comparison (61.3% overall CV accuracy vs. 46.1%
+# for age alone). role_trend is a BLENDED signal (real target_share and
+# snap_pct year-over-year trend, averaged - see build_trade_signals.py's
+# _add_role_trend). Unblending it into two separate features
+# (target_share_trend/snap_pct_trend, both real and still computed in
+# build_trade_signals.py for anyone who wants to re-test this) was
+# considered and tested (Full Polish task, Recommendation 12):
+#   - Accuracy improvement: only +0.2pp (61.3% -> 61.5%), under the 1%
+#     bar this task set for keeping a change.
+#   - Real coverage cost: complete-case rows dropped from 2,006 to 1,773
+#     (target_share_trend alone has lower real coverage - 58.3% - than
+#     role_trend's blended 66.1%, since requiring both separate columns
+#     non-null is a stricter filter than requiring their mean non-null).
+#   - QB impact: only 8 real unique players/9 rows survive complete-case
+#     filtering with the unblended features - too small a sample to trust.
+# Decision: kept blended (role_trend, not the separate variants). Full
+# analysis: TRADE_VALUE_ENGINE_FINDINGS_2026-08-12.md, "Update 2" section.
 FEATURES = ["age_curve_rising", "injury_risk", "role_trend", "recent_trend", "draft_capital", "team_elo"]
 POSITIONS = ["QB", "RB", "WR", "TE"]
 N_SPLITS = 5
@@ -124,6 +143,7 @@ def train_trade_model():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
+        record_generation("multi_signal_accuracy")
 
     print(f"\nOverall real GroupKFold CV accuracy: {100 * results['overall_accuracy']:.1f}% "
           f"({results['correct_predictions']}/{results['total_predictions']})")

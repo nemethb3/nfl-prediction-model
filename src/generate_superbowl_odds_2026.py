@@ -54,6 +54,7 @@ in the output's own methodology_note, not hidden).
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 from elo_game_prediction import ELO_HOME_FIELD
@@ -128,6 +129,7 @@ def generate_superbowl_odds_2026_json():
     os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
+        record_generation("superbowl_odds_2026")
 
     print(f"Wrote {OUTPUT_PATH}")
     afc_sum = sum(r["superbowl_odds_pct"] for r in results if r["conference"] == "AFC")

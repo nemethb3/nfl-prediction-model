@@ -52,6 +52,12 @@ already produced elo_wins/ensemble_wins keeps this simulation internally
 consistent with the win-total point estimate/CI surfaced alongside it,
 rather than quietly introducing a second, different "2026 preseason Elo."
 
+Update (Full Polish task, 2026-08-12): the elo_game_predictions_2026.csv
+bug described above is now fixed (elo_game_prediction.py's season>2025
+branch), and the shared computation both this function and that fixed
+branch use is now centralized in elo_utils.compute_season_start_elo
+rather than each maintaining its own copy - see that module's docstring.
+
 Two real, disclosed simplifications (both matching this project's existing
 disclosure convention rather than hiding them):
 
@@ -92,10 +98,9 @@ Two real Monte Carlo outputs are computed and used differently:
 import os
 
 import numpy as np
-import pandas as pd
 
 from elo_game_prediction import ELO_HOME_FIELD, calculate_win_probability_from_elo
-from elo_model import TRAIN_SEASONS, run_multi_season_elo
+from elo_model import TRAIN_SEASONS
 from constants import ELO_K_FACTOR
 from game_predictions import _load_schedule_for_season
 from generate_season_projections_dashboard_data import DIVISIONS, TEAM_TO_CONFERENCE
@@ -110,17 +115,17 @@ RNG_SEED = 42
 
 def real_2026_carryover_elo():
     """Real per-team carryover preseason Elo for 2026 - recomputed via
-    run_multi_season_elo(range(2015, 2027)) rather than read from
-    elo_game_predictions_2026.csv (see module docstring: the latter has a
+    elo_utils.compute_season_start_elo (shared with elo_game_prediction.py's
+    2026 game-spread branch, see that module's docstring) rather than read
+    from elo_game_predictions_2026.csv (see module docstring: the latter has a
     real, separate, pre-existing bug that discards 2025's actual results;
     this project's already-published elo_wins/ensemble_wins do NOT have
     that bug). Exported (not underscore-prefixed) so other real 2026
     deliverables that need the exact same preseason Elo - e.g. the 2026
     Super Bowl odds simulation - reuse this instead of re-deriving a
     second, potentially-diverging copy."""
-    _, ratings_at_season_start, _ = run_multi_season_elo(
-        range(min(TRAIN_SEASONS), SEASON + 1), k_factor=ELO_K_FACTOR, home_field_elo=ELO_HOME_FIELD)
-    return ratings_at_season_start[SEASON]
+    from elo_utils import compute_season_start_elo
+    return compute_season_start_elo(min(TRAIN_SEASONS), SEASON, ELO_K_FACTOR, ELO_HOME_FIELD)
 
 
 def _real_2026_schedule_and_elo():

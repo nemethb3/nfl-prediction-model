@@ -28,9 +28,10 @@ against - and is not presented as one.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
-import pandas as pd
+from compute_empirical_age_curves import _real_season_totals
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -39,17 +40,9 @@ OUTPUT_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "directional
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
-
-def _real_season_totals():
-    stats = pd.read_csv(os.path.join(PROCESSED_DIR, "player_weekly_stats.csv"))
-    stats = stats[stats["age"].notna() & stats["fantasy_points_ppr"].notna()]
-    stats = stats[(stats["season"] >= 2015) & (stats["season"] <= 2025)]
-    totals = stats.groupby(["player_id", "season", "position"]).agg(
-        season_ppr=("fantasy_points_ppr", "sum"),
-        age=("age", "mean"),
-    ).reset_index()
-    totals["age_int"] = totals["age"].round().astype(int)
-    return totals
+# AUDIT_2026-08-12_DEEP.md Section 4.1: _real_season_totals() was copy-pasted
+# verbatim here and in compute_empirical_age_curves.py. Imported from there
+# instead - same real (player_id, season) aggregation, one copy to keep correct.
 
 
 def validate_directional_accuracy():
@@ -112,6 +105,7 @@ def validate_directional_accuracy():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
+        record_generation("directional_accuracy_results")
 
     print(f"\nOverall real directional accuracy: {100 * results['overall_accuracy']:.1f}% "
           f"({results['correct_predictions']}/{results['total_predictions']} real season-over-season pairs)")

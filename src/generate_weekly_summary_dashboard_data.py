@@ -29,6 +29,7 @@ of recomputing it from games_df a second time.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -232,6 +233,7 @@ def generate_weekly_summary_json():
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
+        record_generation("weekly_summary_2025")
 
     print(f"Generated weekly summary -> {OUTPUT_PATH}")
     print(f"current_week (most recent completed): {current_week}")

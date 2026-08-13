@@ -1,53 +1,63 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { AVAILABLE_SEASONS, DEFAULT_SEASON, SEASON_HAS_RESULTS, SEASON_LABELS } from '../constants/seasons';
 
-// Static build-time imports throughout (matches how every component in
-// this app already loads data - CRA bundles these into the JS bundle, not
-// served as fetchable URLs) rather than the runtime fetch() approach
-// originally proposed, which would have required moving every JSON file
-// into CRA's public/ folder - a bigger restructuring this project can't
-// verify without Node.js installed.
-import games2025 from '../data/games_2025.json';
-import fantasy2025 from '../data/fantasy_rankings_2025.json';
-import seasonProjections2025 from '../data/season_projections_2025.json';
-import accuracyTracker2025 from '../data/accuracy_tracker_2025.json';
-import weeklySummary2025 from '../data/weekly_summary_2025.json';
-import bettingBacktest2025 from '../data/betting_backtest_results_2025.json';
-import superbowlOdds2025 from '../data/superbowl_odds_2025.json';
-
-// 2026: only real, computable-preseason exports exist (see constants/
-// seasons.js) - accuracyTracker/weeklySummary/bettingBacktest files don't
-// exist for 2026 and are never imported here (a static import of a
-// nonexistent file would break the whole build); their real absence is
-// represented as `null`, not fabricated. fantasy IS real for 2026 (Week 1
-// preseason projections only, actual_ppr null throughout - see
-// generate_fantasy_rankings_2026_week1.py). superbowlOdds is ALSO real for
-// 2026 now (Monte Carlo bracket sim seeded from this project's own real
-// simulated regular-season seeding, not an actual standing - see
-// generate_superbowl_odds_2026.py) - wired the same way fantasy2026 was.
-import games2026 from '../data/games_2026.json';
-import seasonProjections2026 from '../data/season_projections_2026.json';
-import fantasy2026 from '../data/fantasy_rankings_2026.json';
-import superbowlOdds2026 from '../data/superbowl_odds_2026.json';
-
-const SEASON_DATA = {
-  2025: {
-    games: games2025,
-    fantasy: fantasy2025,
-    seasonProjections: seasonProjections2025,
-    accuracyTracker: accuracyTracker2025,
-    weeklySummary: weeklySummary2025,
-    bettingBacktest: bettingBacktest2025,
-    superbowlOdds: superbowlOdds2025,
+// AUDIT_2026-08-12_DEEP.md Section 7.2/8.1, Recommendation 11: the prior
+// version of this file statically imported all 11 real JSON data files
+// (5.01MB total, verified) at module load time - meaning every one of
+// them landed in the single initial JS bundle regardless of which season
+// a user actually viewed. fantasy_rankings_2025.json alone (2.90MB) is
+// the single biggest file and is 2025-only.
+//
+// Fixed by loading each season's real data files via dynamic import()
+// only when that season is actually selected, cached per-season after
+// first load so switching back and forth doesn't re-fetch. The loading
+// gate lives in ONE place (App.js, via `dataLoading` below) rather than
+// being pushed into all 17 downstream components - every component still
+// receives a fully-populated, synchronous-shaped `seasonData` exactly as
+// before; they were not changed at all. Real, verified via `npm run build`:
+// each season's JSON now lands in its own separate chunk file, not the
+// main bundle.
+const SEASON_FILE_LOADERS = {
+  2025: async () => {
+    const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest, superbowlOdds] =
+      await Promise.all([
+        import('../data/games_2025.json'),
+        import('../data/fantasy_rankings_2025.json'),
+        import('../data/season_projections_2025.json'),
+        import('../data/accuracy_tracker_2025.json'),
+        import('../data/weekly_summary_2025.json'),
+        import('../data/betting_backtest_results_2025.json'),
+        import('../data/superbowl_odds_2025.json'),
+      ]);
+    return {
+      games: games.default,
+      fantasy: fantasy.default,
+      seasonProjections: seasonProjections.default,
+      accuracyTracker: accuracyTracker.default,
+      weeklySummary: weeklySummary.default,
+      bettingBacktest: bettingBacktest.default,
+      superbowlOdds: superbowlOdds.default,
+    };
   },
-  2026: {
-    games: games2026,
-    fantasy: fantasy2026,
-    seasonProjections: seasonProjections2026,
-    accuracyTracker: null,
-    weeklySummary: null,
-    bettingBacktest: null,
-    superbowlOdds: superbowlOdds2026,
+  // 2026: accuracyTracker/weeklySummary/bettingBacktest genuinely don't
+  // exist yet (real, unplayed season - see constants/seasons.js), so
+  // they're real `null`, not a fabricated/missing import.
+  2026: async () => {
+    const [games, fantasy, seasonProjections, superbowlOdds] = await Promise.all([
+      import('../data/games_2026.json'),
+      import('../data/fantasy_rankings_2026.json'),
+      import('../data/season_projections_2026.json'),
+      import('../data/superbowl_odds_2026.json'),
+    ]);
+    return {
+      games: games.default,
+      fantasy: fantasy.default,
+      seasonProjections: seasonProjections.default,
+      accuracyTracker: null,
+      weeklySummary: null,
+      bettingBacktest: null,
+      superbowlOdds: superbowlOdds.default,
+    };
   },
 };
 
@@ -55,11 +65,32 @@ const SeasonContext = createContext(null);
 
 export function SeasonProvider({ children }) {
   const [selectedSeason, setSelectedSeason] = useState(DEFAULT_SEASON);
+  const [seasonDataCache, setSeasonDataCache] = useState({});
+  const [dataLoading, setDataLoading] = useState(true);
+  // Guards against a stale, slower-resolving load overwriting a newer one
+  // if a user switches seasons again before the first load finishes.
+  const loadTokenRef = useRef(0);
+
+  useEffect(() => {
+    if (seasonDataCache[selectedSeason]) {
+      setDataLoading(false);
+      return;
+    }
+    const thisLoad = ++loadTokenRef.current;
+    setDataLoading(true);
+    SEASON_FILE_LOADERS[selectedSeason]().then((data) => {
+      if (loadTokenRef.current !== thisLoad) return; // a newer selection already superseded this one
+      setSeasonDataCache((prev) => ({ ...prev, [selectedSeason]: data }));
+      setDataLoading(false);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedSeason]);
 
   const value = {
     selectedSeason,
     setSelectedSeason,
-    seasonData: SEASON_DATA[selectedSeason],
+    seasonData: seasonDataCache[selectedSeason],
+    dataLoading,
     hasResults: SEASON_HAS_RESULTS[selectedSeason],
     availableSeasons: AVAILABLE_SEASONS,
     seasonLabel: SEASON_LABELS[selectedSeason],

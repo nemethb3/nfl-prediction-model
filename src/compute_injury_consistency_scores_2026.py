@@ -52,17 +52,21 @@ Real, disclosed simplifications (not fabrications):
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import numpy as np
 import pandas as pd
+
+from constants import MIN_GAMES_FOR_SEASON
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
 BACKTEST_DIR = os.path.join(PROJECT_ROOT, "data", "backtest")
 FANTASY_RANKINGS_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "fantasy_rankings_2026.json")
 
-MIN_GAMES_FOR_SEASON = 4
+# AUDIT_2026-08-12_DEEP.md Section 4.1: was independently hardcoded here and
+# in build_trade_signals.py - both now import the one real copy.
 MIN_RECENT_WEEKS_WINDOW = 8
 MIN_CONSISTENCY_WEEKS = 8
 
@@ -233,6 +237,7 @@ def compute_all_scores():
 
     with open(FANTASY_RANKINGS_PATH, "w", encoding="utf-8") as f:
         json.dump(players, f, indent=2)
+        record_generation("fantasy_rankings_2026")
 
     print(f"Real injury-risk multipliers - position: {position_multiplier}")
     print(f"Real overall average miss rate: {overall_avg_miss_rate * 100:.1f}%")

@@ -30,6 +30,7 @@ built).
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -215,6 +216,7 @@ def generate_games_json(season=2025):
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(games, f, indent=2)
+        record_generation("games_2025")
 
     n_with_results = sum(1 for g in games if g["actual_winner"] is not None)
     n_correct = sum(1 for g in games if g["did_we_predict_correctly"] is True)

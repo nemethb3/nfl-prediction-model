@@ -42,6 +42,7 @@ parameters until the answer matches expectation.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -126,6 +127,7 @@ def compute_empirical_age_curves():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(age_curves, f, indent=2)
+        record_generation("empirical_age_curves")
     print(f"\nWrote {OUTPUT_PATH}")
     return age_curves
 

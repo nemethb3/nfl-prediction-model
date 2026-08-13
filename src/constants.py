@@ -76,3 +76,12 @@ PROB_TO_SPREAD_RESIDUAL_STD_REFERENCE = 13.436
 
 # --- Matchup adjustment (Component 2.3, real 2015-2023 regression, n=2090 games) ---
 MATCHUP_FITTED_COEFFICIENT = 1.065  # pts per unit net EPA/play edge differential
+
+# --- Trade/injury signal engineering conventions ------------------------
+# Audit finding (AUDIT_2026-08-12_DEEP.md Section 4.1): MIN_GAMES_FOR_SEASON
+# was independently hardcoded in both build_trade_signals.py and compute_
+# injury_consistency_scores_2026.py; a year-over-year trend-smoothing
+# epsilon was independently duplicated in build_trade_signals.py and
+# generate_trade_scores_2026.py. Centralized here.
+MIN_GAMES_FOR_SEASON = 4  # min real games played to count a player-season
+TREND_EPSILON = 0.01  # denominator smoothing for year-over-year % change signals

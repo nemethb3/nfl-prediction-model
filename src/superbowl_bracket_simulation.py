@@ -39,6 +39,7 @@ inventing a new, unfit one for playoff games specifically.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import numpy as np
@@ -192,6 +193,7 @@ def generate_superbowl_odds_json():
     os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
+        record_generation("superbowl_odds_2025")
 
     print(f"Wrote {OUTPUT_PATH}")
     afc_sum = sum(r["superbowl_odds_pct"] for r in results if r["conference"] == "AFC")

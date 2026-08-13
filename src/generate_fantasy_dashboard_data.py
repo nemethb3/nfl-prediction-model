@@ -52,6 +52,7 @@ projection_type, not left to look like a broken model.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import numpy as np
@@ -345,6 +346,7 @@ def generate_fantasy_rankings_json():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(records, f, indent=2)
+        record_generation("fantasy_rankings_2025")
 
     by_pos = all_proj.groupby("position").size()
     n_with_rank = sum(1 for r in records if r["opponent_defense_rank_vs_position"] is not None)

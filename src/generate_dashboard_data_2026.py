@@ -40,6 +40,7 @@ infrastructure rather than inventing anything new:
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -74,11 +75,18 @@ def generate_games_2026_json():
         elo_row = elo_by_matchup.get((home, away, week))
 
         home_elo = away_elo = our_spread = win_prob_home = win_prob_away = None
+        ci_low_90 = ci_high_90 = None
         if elo_row is not None:
             home_elo, away_elo = float(elo_row["home_elo"]), float(elo_row["away_elo"])
             our_spread = float(elo_row["predicted_spread"])
             win_prob_home = float(calculate_win_probability_from_elo(home_elo, away_elo))
             win_prob_away = 1.0 - win_prob_home
+            # Real 90% CI from fit_probability_to_spread_conversion()'s own
+            # residual std (generate_elo_game_spreads already computes this;
+            # AUDIT_2026-08-12_DEEP.md Section 6.1 - previously computed but
+            # never exported to games_2026.json).
+            ci_low_90 = float(elo_row["ci_low_90"])
+            ci_high_90 = float(elo_row["ci_high_90"])
 
         kickoff_datetime = None
         if pd.notna(r["gameday"]) and pd.notna(r["gametime"]):
@@ -101,6 +109,8 @@ def generate_games_2026_json():
             "home_elo": round(home_elo, 1) if home_elo is not None else None,
             "away_elo": round(away_elo, 1) if away_elo is not None else None,
             "our_spread": round(our_spread, 2) if our_spread is not None else None,
+            "ci_low_90": round(ci_low_90, 2) if ci_low_90 is not None else None,
+            "ci_high_90": round(ci_high_90, 2) if ci_high_90 is not None else None,
             "vegas_spread": None,
             "win_prob_home": round(win_prob_home, 4) if win_prob_home is not None else None,
             "win_prob_away": round(win_prob_away, 4) if win_prob_away is not None else None,
@@ -119,9 +129,20 @@ def generate_games_2026_json():
 
     games.sort(key=lambda g: (g["week"], g["kickoff_datetime"] or ""))
 
+    # AUDIT_2026-08-12_DEEP.md Section 10.9: real shape guards before writing,
+    # not just informational prints - catch a silent regression at build
+    # time instead of shipping a partial/empty export.
+    assert len(games) == 272, f"Expected 272 real 2026 REG games, got {len(games)}"
+    n_missing_elo = sum(1 for g in games if g["home_elo"] is None)
+    assert n_missing_elo == 0, f"{n_missing_elo}/272 games missing real Elo ratings"
+    n_missing_ci = sum(1 for g in games if g["ci_low_90"] is None)
+    assert n_missing_ci == 0, f"{n_missing_ci}/272 games missing a real 90% CI"
+    print(f"Validated: {len(games)} games, all with real Elo + CI coverage.")
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(games, f, indent=2)
+        record_generation("games_2026")
 
     n_with_elo = sum(1 for g in games if g["our_spread"] is not None)
     print(f"Generated {len(games)} real 2026 preseason games -> {OUTPUT_PATH}")

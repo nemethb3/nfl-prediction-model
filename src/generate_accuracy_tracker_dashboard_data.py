@@ -23,6 +23,7 @@ new, less rigorous metric that would look precise but measure nothing real.
 """
 
 import json
+from generation_timestamps import record_generation
 import os
 
 import pandas as pd
@@ -170,6 +171,7 @@ def generate_accuracy_tracker_json():
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(accuracy, f, indent=2)
+        record_generation("accuracy_tracker_2025")
 
     print(f"Generated accuracy tracker -> {OUTPUT_PATH}")
     print(f"Games: {accuracy['season_summary']['games']}")

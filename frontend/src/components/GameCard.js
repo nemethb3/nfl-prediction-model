@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor, TEAM_TIMEZONES, TIMEZONE_LABELS } from '../constants/teams';
+import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
 
 // Sign convention (verified against real 2025 moneylines, matches
 // data_pipeline.py's documented convention): positive spread = home team
@@ -134,6 +135,7 @@ function formatKickoffTime(kickoffISO, homeTeam, showUserTime) {
 
 export default function GameCard({ game, isExpanded, onToggle }) {
   const [showUserTime, setShowUserTime] = useState(true);
+  const handleKeyDown = useKeyboardToggle(onToggle);
   const {
     home_team: home,
     away_team: away,
@@ -142,6 +144,8 @@ export default function GameCard({ game, isExpanded, onToggle }) {
     home_elo: homeElo,
     away_elo: awayElo,
     our_spread: ourSpread,
+    ci_low_90: ciLow90,
+    ci_high_90: ciHigh90,
     vegas_spread: vegasSpread,
     win_prob_home: winProbHome,
     win_prob_away: winProbAway,
@@ -173,8 +177,10 @@ export default function GameCard({ game, isExpanded, onToggle }) {
       className={`game-card ${isExpanded ? 'game-card-open' : ''}`}
       style={{ borderColor }}
       onClick={onToggle}
+      onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
+      aria-expanded={isExpanded}
     >
       <div className="game-card-collapsed">
         <div className="game-card-teams">
@@ -261,6 +267,12 @@ export default function GameCard({ game, isExpanded, onToggle }) {
           <div className="section">
             <div className="section-title">Prediction</div>
             <div>Our spread: {formatSpread(ourSpread, home, away)}</div>
+            {ciLow90 !== null && ciLow90 !== undefined && ciHigh90 !== null && ciHigh90 !== undefined && (
+              <div className="game-card__confidence-interval">
+                90% CI: {ciLow90.toFixed(1)} to {ciHigh90.toFixed(1)} (home-team spread points, from the
+                real fitted model's own residual std - not a Vegas-derived number)
+              </div>
+            )}
             {vegasSpread !== null && vegasSpread !== undefined && (
               <div>Vegas closing line: {formatSpread(vegasSpread, home, away)}</div>
             )}

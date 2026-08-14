@@ -1,22 +1,56 @@
 {
-  "methodology": "Logistic regression, 5-fold stratified CV, one overall model across QB/RB/WR/TE. Predicts P(real career weighted AV beats the player's real draft round's median), from real draft-time-only features (round, pick, position). Trained on real 2015-2020 draft classes only (>=6 real seasons of career value accrued by 2026).",
-  "training_samples": 478,
-  "features": [
-    "round",
-    "pick",
-    "pos_QB",
-    "pos_RB",
-    "pos_TE",
-    "pos_WR"
-  ],
+  "methodology": "Logistic regression, 5-fold stratified CV, one overall model across QB/RB/WR/TE. Predicts P(real career weighted AV beats the player's real draft round's median). Trained on real 2015-2020 draft classes only (>=6 real seasons of career value accrued by 2026). Two real models compared: baseline (round/pick/position, full coverage) and enhanced (+ real combine age/forty-time/vertical/broad-jump, complete-case only - see build_rookie_signals.py for the real coverage tradeoffs behind that feature choice).",
+  "baseline": {
+    "training_samples": 478,
+    "features": [
+      "round",
+      "pick",
+      "pos_QB",
+      "pos_RB",
+      "pos_TE",
+      "pos_WR"
+    ],
+    "cv_accuracy": 0.58,
+    "cv_auc": 0.563,
+    "coefficients": {
+      "round": 0.798,
+      "pick": -0.93,
+      "pos_QB": -0.114,
+      "pos_RB": 0.163,
+      "pos_TE": -0.089,
+      "pos_WR": 0.003
+    }
+  },
+  "enhanced": {
+    "training_samples": 337,
+    "features": [
+      "round",
+      "pick",
+      "age",
+      "forty",
+      "vertical",
+      "broad_jump",
+      "pos_QB",
+      "pos_RB",
+      "pos_TE",
+      "pos_WR"
+    ],
+    "cv_accuracy": 0.576,
+    "cv_auc": 0.605,
+    "coefficients": {
+      "round": 0.864,
+      "pick": -0.831,
+      "age": -0.394,
+      "forty": 0.087,
+      "vertical": 0.095,
+      "broad_jump": -0.11,
+      "pos_QB": -0.131,
+      "pos_RB": 0.23,
+      "pos_TE": -0.146,
+      "pos_WR": 0.0
+    }
+  },
+  "enhanced_vs_baseline_auc_delta": 0.042,
   "cv_accuracy": 0.58,
-  "cv_auc": 0.563,
-  "coefficients": {
-    "round": 0.798,
-    "pick": -0.93,
-    "pos_QB": -0.114,
-    "pos_RB": 0.163,
-    "pos_TE": -0.089,
-    "pos_WR": 0.003
-  }
+  "cv_auc": 0.563
 }

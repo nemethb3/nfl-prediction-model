@@ -1,6 +1,6 @@
 {
   "draft_season": 2026,
-  "methodology_note": "Real rookie success classifier score: P(this player's eventual career weighted Approximate Value beats their real draft round's historical median), from real draft-time-only signals (round, pick, position). See rookie_classifier_accuracy.json for the honest, held-out CV accuracy this model achieves (58.0%, AUC 0.563 on 2015-2020 draft classes) - draft capital alone is a real but modest predictor of career outcome; this is disclosed, not inflated.",
+  "methodology_note": "Real rookie success classifier score: P(this player's eventual career weighted Approximate Value beats their real draft round's historical median). success_probability: draft-time-only signals (round, pick, position) - real, held-out CV accuracy 58.0%, AUC 0.563 on 2015-2020 draft classes, always populated. success_probability_enhanced: adds real combine testing (age/forty-time/vertical/broad-jump) - real, held-out CV AUC 0.605 (a genuine but modest improvement), only populated for the real subset of rookies with complete combine data (37% of the real 2026 class, disclosed, not backfilled). Draft capital and combine testing are real but modest predictors of career outcome; this is disclosed, not inflated.",
   "players": {
     "ALL015451": {
       "name": "Drew Allar",
@@ -8,7 +8,8 @@
       "team": "PIT",
       "draft_round": 3,
       "draft_pick": 76,
-      "success_probability": 0.421
+      "success_probability": 0.421,
+      "success_probability_enhanced": null
     },
     "ALL092954": {
       "name": "Cyrus Allen",
@@ -16,7 +17,8 @@
       "team": "KAN",
       "draft_round": 5,
       "draft_pick": 176,
-      "success_probability": 0.394
+      "success_probability": 0.394,
+      "success_probability_enhanced": null
     },
     "ALL532376": {
       "name": "Kaytron Allen",
@@ -24,7 +26,8 @@
       "team": "WAS",
       "draft_round": 6,
       "draft_pick": 187,
-      "success_probability": 0.549
+      "success_probability": 0.549,
+      "success_probability_enhanced": null
     },
     "BEL267684": {
       "name": "Chris Bell",
@@ -32,7 +35,8 @@
       "team": "MIA",
       "draft_round": 3,
       "draft_pick": 94,
-      "success_probability": 0.447
+      "success_probability": 0.447,
+      "success_probability_enhanced": null
     },
     "BEL597603": {
       "name": "Skyler Bell",
@@ -40,7 +44,8 @@
       "team": "BUF",
       "draft_round": 4,
       "draft_pick": 125,
-      "success_probability": 0.451
+      "success_probability": 0.451,
+      "success_probability_enhanced": 0.27
     },
     "BEN601117": {
       "name": "Malik Benson",
@@ -48,7 +53,8 @@
       "team": "LVR",
       "draft_round": 6,
       "draft_pick": 195,
-      "success_probability": 0.435
+      "success_probability": 0.435,
+      "success_probability_enhanced": null
     },
     "BEN687044": {
       "name": "Dallen Bentley",
@@ -56,7 +62,8 @@
       "team": "DEN",
       "draft_round": 7,
       "draft_pick": 256,
-      "success_probability": 0.297
+      "success_probability": 0.297,
+      "success_probability_enhanced": 0.141
     },
     "BER218265": {
       "name": "Germie Bernard",
@@ -64,7 +71,8 @@
       "team": "PIT",
       "draft_round": 2,
       "draft_pick": 47,
-      "success_probability": 0.492
+      "success_probability": 0.492,
+      "success_probability_enhanced": 0.463
     },
     "BLA097235": {
       "name": "Kaelon Black",
@@ -72,7 +80,8 @@
       "team": "SFO",
       "draft_round": 3,
       "draft_pick": 90,
-      "success_probability": 0.549
+      "success_probability": 0.549,
+      "success_probability_enhanced": null
     },
     "BOE586077": {
       "name": "Nate Boerkircher",
@@ -80,7 +89,8 @@
       "team": "JAX",
       "draft_round": 2,
       "draft_pick": 56,
-      "success_probability": 0.406
+      "success_probability": 0.406,
+      "success_probability_enhanced": null
     },
     "BON235618": {
       "name": "Lewis Bond",
@@ -88,7 +98,8 @@
       "team": "HOU",
       "draft_round": 6,
       "draft_pick": 204,
-      "success_probability": 0.407
+      "success_probability": 0.407,
+      "success_probability_enhanced": null
     },
     "BOS677861": {
       "name": "Denzel Boston",
@@ -96,7 +107,8 @@
       "team": "CLE",
       "draft_round": 2,
       "draft_pick": 39,
-      "success_probability": 0.518
+      "success_probability": 0.518,
+      "success_probability_enhanced": null
     },
     "BRA531428": {
       "name": "Zachariah Branch",
@@ -104,7 +116,8 @@
       "team": "ATL",
       "draft_round": 3,
       "draft_pick": 79,
-      "success_probability": 0.494
+      "success_probability": 0.494,
+      "success_probability_enhanced": 0.504
     },
     "BRA836631": {
       "name": "Chris Brazzell II",
@@ -112,7 +125,8 @@
       "team": "CAR",
       "draft_round": 3,
       "draft_pick": 83,
-      "success_probability": 0.481
+      "success_probability": 0.481,
+      "success_probability_enhanced": null
     },
     "BRE060106": {
       "name": "Max Bredeson",
@@ -120,7 +134,8 @@
       "team": "MIN",
       "draft_round": 5,
       "draft_pick": 159,
-      "success_probability": 0.388
+      "success_probability": 0.388,
+      "success_probability_enhanced": null
     },
     "BRO268113": {
       "name": "Barion Brown",
@@ -128,7 +143,8 @@
       "team": "NOR",
       "draft_round": 6,
       "draft_pick": 190,
-      "success_probability": 0.45
+      "success_probability": 0.45,
+      "success_probability_enhanced": null
     },
     "CAM108646": {
       "name": "Josh Cameron",
@@ -136,7 +152,8 @@
       "team": "JAX",
       "draft_round": 6,
       "draft_pick": 191,
-      "success_probability": 0.447
+      "success_probability": 0.447,
+      "success_probability_enhanced": null
     },
     "CLA041524": {
       "name": "Demond Claiborne",
@@ -144,7 +161,8 @@
       "team": "MIN",
       "draft_round": 6,
       "draft_pick": 198,
-      "success_probability": 0.515
+      "success_probability": 0.515,
+      "success_probability_enhanced": null
     },
     "COL293648": {
       "name": "Jonah Coleman",
@@ -152,7 +170,8 @@
       "team": "DEN",
       "draft_round": 4,
       "draft_pick": 108,
-      "success_probability": 0.593
+      "success_probability": 0.593,
+      "success_probability_enhanced": null
     },
     "COL362413": {
       "name": "Kevin Coleman Jr.",
@@ -160,7 +179,8 @@
       "team": "MIA",
       "draft_round": 5,
       "draft_pick": 177,
-      "success_probability": 0.391
+      "success_probability": 0.391,
+      "success_probability_enhanced": 0.465
     },
     "CON046719": {
       "name": "KC Concepcion",
@@ -168,7 +188,8 @@
       "team": "CLE",
       "draft_round": 1,
       "draft_pick": 24,
-      "success_probability": 0.463
+      "success_probability": 0.463,
+      "success_probability_enhanced": null
     },
     "COO816508": {
       "name": "Omar Cooper Jr.",
@@ -176,7 +197,8 @@
       "team": "NYJ",
       "draft_round": 1,
       "draft_pick": 30,
-      "success_probability": 0.445
+      "success_probability": 0.445,
+      "success_probability_enhanced": null
     },
     "CUE040912": {
       "name": "Josh Cuevas",
@@ -184,7 +206,8 @@
       "team": "BAL",
       "draft_round": 5,
       "draft_pick": 173,
-      "success_probability": 0.348
+      "success_probability": 0.348,
+      "success_probability_enhanced": 0.403
     },
     "DAN490797": {
       "name": "CJ Daniels",
@@ -192,7 +215,8 @@
       "team": "LAR",
       "draft_round": 6,
       "draft_pick": 197,
-      "success_probability": 0.428
+      "success_probability": 0.428,
+      "success_probability_enhanced": null
     },
     "DOU210628": {
       "name": "Caleb Douglas",
@@ -200,7 +224,8 @@
       "team": "MIA",
       "draft_round": 3,
       "draft_pick": 75,
-      "success_probability": 0.506
+      "success_probability": 0.506,
+      "success_probability_enhanced": 0.473
     },
     "END438361": {
       "name": "Jack Endries",
@@ -208,7 +233,8 @@
       "team": "CIN",
       "draft_round": 7,
       "draft_pick": 221,
-      "success_probability": 0.397
+      "success_probability": 0.397,
+      "success_probability_enhanced": 0.496
     },
     "FIE775129": {
       "name": "Malachi Fields",
@@ -216,7 +242,8 @@
       "team": "NYG",
       "draft_round": 3,
       "draft_pick": 74,
-      "success_probability": 0.509
+      "success_probability": 0.509,
+      "success_probability_enhanced": 0.443
     },
     "GRE361852": {
       "name": "Taylen Green",
@@ -224,7 +251,8 @@
       "team": "CLE",
       "draft_round": 6,
       "draft_pick": 182,
-      "success_probability": 0.394
+      "success_probability": 0.394,
+      "success_probability_enhanced": 0.347
     },
     "HEN199637": {
       "name": "Emmanuel Henderson Jr.",
@@ -232,7 +260,8 @@
       "team": "SEA",
       "draft_round": 6,
       "draft_pick": 199,
-      "success_probability": 0.422
+      "success_probability": 0.422,
+      "success_probability_enhanced": null
     },
     "HIB564972": {
       "name": "Matthew Hibner",
@@ -240,7 +269,8 @@
       "team": "BAL",
       "draft_round": 4,
       "draft_pick": 133,
-      "success_probability": 0.37
+      "success_probability": 0.37,
+      "success_probability_enhanced": 0.227
     },
     "HUR541377": {
       "name": "Ted Hurst",
@@ -248,7 +278,8 @@
       "team": "TAM",
       "draft_round": 3,
       "draft_pick": 84,
-      "success_probability": 0.478
+      "success_probability": 0.478,
+      "success_probability_enhanced": null
     },
     "JOH224817": {
       "name": "Emmett Johnson",
@@ -256,7 +287,8 @@
       "team": "KAN",
       "draft_round": 5,
       "draft_pick": 161,
-      "success_probability": 0.529
+      "success_probability": 0.529,
+      "success_probability_enhanced": 0.65
     },
     "JOL735174": {
       "name": "Justin Joly",
@@ -264,7 +296,8 @@
       "team": "DEN",
       "draft_round": 5,
       "draft_pick": 152,
-      "success_probability": 0.409
+      "success_probability": 0.409,
+      "success_probability_enhanced": null
     },
     "KAC282861": {
       "name": "Will Kacmarek",
@@ -272,7 +305,8 @@
       "team": "MIA",
       "draft_round": 3,
       "draft_pick": 87,
-      "success_probability": 0.41
+      "success_probability": 0.41,
+      "success_probability_enhanced": null
     },
     "KAL252591": {
       "name": "Athan Kaliakmanis",
@@ -280,7 +314,8 @@
       "team": "WAS",
       "draft_round": 7,
       "draft_pick": 223,
-      "success_probability": 0.368
+      "success_probability": 0.368,
+      "success_probability_enhanced": null
     },
     "KAN023071": {
       "name": "Jaren Kanak",
@@ -288,7 +323,8 @@
       "team": "TEN",
       "draft_round": 7,
       "draft_pick": 225,
-      "success_probability": 0.385
+      "success_probability": 0.385,
+      "success_probability_enhanced": 0.471
     },
     "KLA269938": {
       "name": "Max Klare",
@@ -296,7 +332,8 @@
       "team": "LAR",
       "draft_round": 2,
       "draft_pick": 61,
-      "success_probability": 0.391
+      "success_probability": 0.391,
+      "success_probability_enhanced": null
     },
     "KLE258860": {
       "name": "Marlin Klein",
@@ -304,7 +341,8 @@
       "team": "HOU",
       "draft_round": 2,
       "draft_pick": 59,
-      "success_probability": 0.397
+      "success_probability": 0.397,
+      "success_probability_enhanced": 0.301
     },
     "KLU066027": {
       "name": "Cade Klubnik",
@@ -312,7 +350,8 @@
       "team": "NYJ",
       "draft_round": 4,
       "draft_pick": 110,
-      "success_probability": 0.416
+      "success_probability": 0.416,
+      "success_probability_enhanced": null
     },
     "KOZ404039": {
       "name": "Tanner Koziol",
@@ -320,7 +359,8 @@
       "team": "JAX",
       "draft_round": 5,
       "draft_pick": 164,
-      "success_probability": 0.374
+      "success_probability": 0.374,
+      "success_probability_enhanced": null
     },
     "LAN016345": {
       "name": "Bryce Lance",
@@ -328,7 +368,8 @@
       "team": "NOR",
       "draft_round": 4,
       "draft_pick": 136,
-      "success_probability": 0.417
+      "success_probability": 0.417,
+      "success_probability_enhanced": null
     },
     "LAN311008": {
       "name": "Ja'Kobi Lane",
@@ -336,7 +377,8 @@
       "team": "BAL",
       "draft_round": 3,
       "draft_pick": 80,
-      "success_probability": 0.49
+      "success_probability": 0.49,
+      "success_probability_enhanced": 0.515
     },
     "LAW090280": {
       "name": "Kendrick Law",
@@ -344,7 +386,8 @@
       "team": "DET",
       "draft_round": 5,
       "draft_pick": 168,
-      "success_probability": 0.418
+      "success_probability": 0.418,
+      "success_probability_enhanced": null
     },
     "LEM694125": {
       "name": "Makai Lemon",
@@ -352,7 +395,8 @@
       "team": "PHI",
       "draft_round": 1,
       "draft_pick": 20,
-      "success_probability": 0.476
+      "success_probability": 0.476,
+      "success_probability_enhanced": null
     },
     "LOV121782": {
       "name": "Jeremiyah Love",
@@ -360,7 +404,8 @@
       "team": "ARI",
       "draft_round": 1,
       "draft_pick": 3,
-      "success_probability": 0.617
+      "success_probability": 0.617,
+      "success_probability_enhanced": null
     },
     "MCG547540": {
       "name": "Seth McGowan",
@@ -368,7 +413,8 @@
       "team": "IND",
       "draft_round": 7,
       "draft_pick": 237,
-      "success_probability": 0.494
+      "success_probability": 0.494,
+      "success_probability_enhanced": 0.428
     },
     "MEN516487": {
       "name": "Fernando Mendoza",
@@ -376,7 +422,8 @@
       "team": "LVR",
       "draft_round": 1,
       "draft_pick": 1,
-      "success_probability": 0.452
+      "success_probability": 0.452,
+      "success_probability_enhanced": null
     },
     "MIL303300": {
       "name": "Jam Miller",
@@ -384,7 +431,8 @@
       "team": "NWE",
       "draft_round": 7,
       "draft_pick": 245,
-      "success_probability": 0.469
+      "success_probability": 0.469,
+      "success_probability_enhanced": null
     },
     "MOR767384": {
       "name": "Behren Morton",
@@ -392,7 +440,8 @@
       "team": "NWE",
       "draft_round": 7,
       "draft_pick": 234,
-      "success_probability": 0.336
+      "success_probability": 0.336,
+      "success_probability_enhanced": null
     },
     "NOW373761": {
       "name": "Riley Nowakowski",
@@ -400,7 +449,8 @@
       "team": "PIT",
       "draft_round": 5,
       "draft_pick": 169,
-      "success_probability": 0.359
+      "success_probability": 0.359,
+      "success_probability_enhanced": 0.217
     },
     "NUS440041": {
       "name": "Garrett Nussmeier",
@@ -408,7 +458,8 @@
       "team": "KAN",
       "draft_round": 7,
       "draft_pick": 249,
-      "success_probability": 0.296
+      "success_probability": 0.296,
+      "success_probability_enhanced": null
     },
     "PAY546690": {
       "name": "Cole Payton",
@@ -416,7 +467,8 @@
       "team": "PHI",
       "draft_round": 5,
       "draft_pick": 178,
-      "success_probability": 0.313
+      "success_probability": 0.313,
+      "success_probability_enhanced": null
     },
     "PRI206342": {
       "name": "Jadarian Price",
@@ -424,7 +476,8 @@
       "team": "SEA",
       "draft_round": 1,
       "draft_pick": 32,
-      "success_probability": 0.528
+      "success_probability": 0.528,
+      "success_probability_enhanced": 0.545
     },
     "RAN022436": {
       "name": "Adam Randall",
@@ -432,7 +485,8 @@
       "team": "BAL",
       "draft_round": 5,
       "draft_pick": 174,
-      "success_probability": 0.489
+      "success_probability": 0.489,
+      "success_probability_enhanced": 0.602
     },
     "RAR148318": {
       "name": "Eli Raridon",
@@ -440,7 +494,8 @@
       "team": "NWE",
       "draft_round": 3,
       "draft_pick": 95,
-      "success_probability": 0.386
+      "success_probability": 0.386,
+      "success_probability_enhanced": 0.392
     },
     "ROU550040": {
       "name": "Sam Roush",
@@ -448,7 +503,8 @@
       "team": "CHI",
       "draft_round": 3,
       "draft_pick": 69,
-      "success_probability": 0.466
+      "success_probability": 0.466,
+      "success_probability_enhanced": 0.371
     },
     "RYA022232": {
       "name": "Carsen Ryan",
@@ -456,7 +512,8 @@
       "team": "CLE",
       "draft_round": 7,
       "draft_pick": 248,
-      "success_probability": 0.319
+      "success_probability": 0.319,
+      "success_probability_enhanced": null
     },
     "SAD482340": {
       "name": "Kenyon Sadiq",
@@ -464,7 +521,8 @@
       "team": "NYJ",
       "draft_round": 1,
       "draft_pick": 16,
-      "success_probability": 0.43
+      "success_probability": 0.43,
+      "success_probability_enhanced": 0.486
     },
     "SAR527100": {
       "name": "Elijah Sarratt",
@@ -472,7 +530,8 @@
       "team": "BAL",
       "draft_round": 4,
       "draft_pick": 115,
-      "success_probability": 0.482
+      "success_probability": 0.482,
+      "success_probability_enhanced": null
     },
     "SHA375359": {
       "name": "Bauer Sharp",
@@ -480,7 +539,8 @@
       "team": "TAM",
       "draft_round": 6,
       "draft_pick": 185,
-      "success_probability": 0.408
+      "success_probability": 0.408,
+      "success_probability_enhanced": 0.366
     },
     "SIM639376": {
       "name": "Ty Simpson",
@@ -488,7 +548,8 @@
       "team": "LAR",
       "draft_round": 1,
       "draft_pick": 13,
-      "success_probability": 0.415
+      "success_probability": 0.415,
+      "success_probability_enhanced": null
     },
     "SMI038569": {
       "name": "Anthony Smith",
@@ -496,7 +557,8 @@
       "team": "DAL",
       "draft_round": 7,
       "draft_pick": 218,
-      "success_probability": 0.464
+      "success_probability": 0.464,
+      "success_probability_enhanced": null
     },
     "STO806346": {
       "name": "Eli Stowers",
@@ -504,7 +566,8 @@
       "team": "PHI",
       "draft_round": 2,
       "draft_pick": 54,
-      "success_probability": 0.412
+      "success_probability": 0.412,
+      "success_probability_enhanced": 0.296
     },
     "TAT143045": {
       "name": "Carnell Tate",
@@ -512,7 +575,8 @@
       "team": "TEN",
       "draft_round": 1,
       "draft_pick": 4,
-      "success_probability": 0.526
+      "success_probability": 0.526,
+      "success_probability_enhanced": null
     },
     "THO417520": {
       "name": "Zavion Thomas",
@@ -520,7 +584,8 @@
       "team": "CHI",
       "draft_round": 3,
       "draft_pick": 89,
-      "success_probability": 0.462
+      "success_probability": 0.462,
+      "success_probability_enhanced": null
     },
     "THO495568": {
       "name": "Brenen Thompson",
@@ -528,7 +593,8 @@
       "team": "LAC",
       "draft_round": 4,
       "draft_pick": 105,
-      "success_probability": 0.514
+      "success_probability": 0.514,
+      "success_probability_enhanced": null
     },
     "TRA291459": {
       "name": "Seydou Traore",
@@ -536,7 +602,8 @@
       "team": "MIA",
       "draft_round": 5,
       "draft_pick": 180,
-      "success_probability": 0.328
+      "success_probability": 0.328,
+      "success_probability_enhanced": null
     },
     "TYS405541": {
       "name": "Jordyn Tyson",
@@ -544,7 +611,8 @@
       "team": "NOR",
       "draft_round": 1,
       "draft_pick": 8,
-      "success_probability": 0.513
+      "success_probability": 0.513,
+      "success_probability_enhanced": null
     },
     "VIR271235": {
       "name": "Reggie Virgil",
@@ -552,7 +620,8 @@
       "team": "ARI",
       "draft_round": 5,
       "draft_pick": 143,
-      "success_probability": 0.496
+      "success_probability": 0.496,
+      "success_probability_enhanced": null
     },
     "WAS797326": {
       "name": "Mike Washington Jr.",
@@ -560,7 +629,8 @@
       "team": "LVR",
       "draft_round": 4,
       "draft_pick": 122,
-      "success_probability": 0.55
+      "success_probability": 0.55,
+      "success_probability_enhanced": 0.501
     },
     "WET055619": {
       "name": "Kaden Wetjen",
@@ -568,7 +638,8 @@
       "team": "PIT",
       "draft_round": 4,
       "draft_pick": 121,
-      "success_probability": 0.463
+      "success_probability": 0.463,
+      "success_probability_enhanced": null
     },
     "WIL143106": {
       "name": "Antonio Williams",
@@ -576,7 +647,8 @@
       "team": "WAS",
       "draft_round": 3,
       "draft_pick": 71,
-      "success_probability": 0.519
+      "success_probability": 0.519,
+      "success_probability_enhanced": 0.549
     },
     "WIL189259": {
       "name": "CJ Williams",
@@ -584,7 +656,8 @@
       "team": "JAX",
       "draft_round": 6,
       "draft_pick": 203,
-      "success_probability": 0.41
+      "success_probability": 0.41,
+      "success_probability_enhanced": null
     }
   }
 }

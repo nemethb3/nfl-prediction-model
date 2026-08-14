@@ -1,0 +1,18 @@
+{
+  "methodology": "Real 5-fold KFold out-of-fold AUC, 2015-2025 REG games with a posted Vegas total, real O/D Elo (offensive_elo_sum, defensive_elo_avg from this session's O/D split), the real posted total_line, and real home/away rest days. Compares logistic regression and random forest; reports whichever real AUC is higher. Real pushes (total == total_line) excluded.",
+  "n_games": 2869,
+  "base_rate_went_over": 0.4887,
+  "logistic_regression": {
+    "auc": 0.5075,
+    "accuracy": 0.5037
+  },
+  "random_forest": {
+    "auc": 0.5285,
+    "accuracy": 0.5221
+  },
+  "best_model": "random_forest",
+  "best_auc": 0.5285,
+  "decision": "MARGINAL_SIGNAL",
+  "verdict": "Real AUC 0.529 clears the 0.52 bar but is still weak - real, disclosed marginal signal, not a validated betting edge.",
+  "archive_auc_threshold": 0.52
+}

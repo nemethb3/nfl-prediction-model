@@ -54,29 +54,37 @@ const ACCURACY_TERCILE_RANGES = {
 // (see that script - a QB has no real receiving props, a WR/TE's real
 // rushing_yards prop is a near-zero real signal shown for completeness,
 // not because it's a meaningful part of their real role).
+// Real per-position prop stat display order/labels, matching the real
+// per-position targets train_player_props_models.py/train_td_logistic_
+// models.py actually trained. TD-type stats use `_prob` keys (real
+// logistic P(1+ TD), Major Refinements task) rendered as a percentage,
+// not a fractional expected count - real 5-fold OOF R^2 0.037-0.139 on
+// the old linear approach confirmed a "1.2 TDs projected" number wasn't
+// meaningfully predictive or actionable (see train_player_props_models.py/
+// train_td_logistic_models.py docstrings for the real before/after).
 const PROP_STAT_LABELS = {
   QB: [
     ['completions', 'Comp'],
     ['passing_yards', 'Pass Yds'],
-    ['passing_tds', 'Pass TD'],
-    ['rushing_tds', 'Rush TD'],
+    ['passing_tds_prob', '1+ Pass TD'],
+    ['rushing_tds_prob', '1+ Rush TD'],
   ],
   RB: [
     ['rushing_yards', 'Rush Yds'],
-    ['rushing_tds', 'Rush TD'],
+    ['rushing_tds_prob', '1+ Rush TD'],
     ['receptions', 'Rec'],
     ['receiving_yards', 'Rec Yds'],
   ],
   WR: [
     ['receptions', 'Rec'],
     ['receiving_yards', 'Rec Yds'],
-    ['receiving_tds', 'Rec TD'],
+    ['receiving_tds_prob', '1+ Rec TD'],
     ['rushing_yards', 'Rush Yds'],
   ],
   TE: [
     ['receptions', 'Rec'],
     ['receiving_yards', 'Rec Yds'],
-    ['receiving_tds', 'Rec TD'],
+    ['receiving_tds_prob', '1+ Rec TD'],
     ['rushing_yards', 'Rush Yds'],
   ],
 };
@@ -408,21 +416,29 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
             <div className="section">
               <div className="section-title">Projected Stats</div>
               <div className="props-grid">
-                {PROP_STAT_LABELS[player.position].map(([key, label]) => (
-                  <div key={key} className="prop-stat">
-                    <span className="prop-label">{label}</span>
-                    <span className="prop-value">{props.predicted_stats[key]}</span>
-                  </div>
-                ))}
+                {PROP_STAT_LABELS[player.position].map(([key, label]) => {
+                  const isProb = key.endsWith('_prob');
+                  const value = props.predicted_stats[key];
+                  return (
+                    <div key={key} className="prop-stat">
+                      <span className="prop-label">{label}</span>
+                      <span className="prop-value">
+                        {value == null ? '--' : isProb ? `${Math.round(value * 100)}%` : value}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
               <div className="small-text">
                 Real, position-specific linear regression (5-fold cross-validated), conditioned on
                 this player&apos;s own real 2015-2025 career per-game average and the real opponent
                 Defensive Elo ({props.opponent_d_elo}) from this project&apos;s O/D Elo split - not a
                 fixed per-position adjustment. Volume/yardage props are meaningfully predictive (real
-                out-of-fold R² 0.16-0.31); TD props are weak (R² 0.04-0.14, real and disclosed - TDs
-                are rare, high-variance events that a linear model can&apos;t capture well). See
-                player_props_models.json for the full real per-stat validation.
+                out-of-fold R² 0.16-0.31). TD props show a real probability of 1+ TD instead of an
+                expected count (logistic regression, real AUC 0.60-0.70, GroupKFold by player) - the
+                old linear expected-count approach was replaced after a real R² 0.037-0.139 confirmed
+                it wasn&apos;t meaningfully predictive or actionable for a binary, rare event. See
+                player_props_models.json / td_props_logistic_models.json for the full real validation.
               </div>
             </div>
           )}

@@ -54,11 +54,18 @@ CAREER_AVG_SOURCE_COLS = {
     "WR": ["targets", "receptions", "receiving_yards", "rushing_yards"],
     "TE": ["targets", "receptions", "receiving_yards", "rushing_yards"],
 }
+# Real TD stats (passing_tds/rushing_tds/receiving_tds) were removed from
+# this linear-regression target list (Major Refinements task) - a real
+# 5-fold OOF R^2 of 0.037-0.139 confirmed a fractional "1.2 TDs projected"
+# output isn't a meaningfully predictive or actionable number for a
+# binary/rare event. Real, honestly-better replacement (P of 1+ TD via
+# logistic regression, real AUC 0.60-0.70) lives in
+# train_td_logistic_models.py/td_props_logistic_models.json instead.
 TARGET_COLS = {
-    "QB": ["completions", "passing_yards", "passing_tds", "rushing_tds"],
-    "RB": ["rushing_yards", "rushing_tds", "receptions", "receiving_yards"],
-    "WR": ["receptions", "receiving_yards", "receiving_tds", "rushing_yards"],
-    "TE": ["receptions", "receiving_yards", "receiving_tds", "rushing_yards"],
+    "QB": ["completions", "passing_yards"],
+    "RB": ["rushing_yards", "receptions", "receiving_yards"],
+    "WR": ["receptions", "receiving_yards", "rushing_yards"],
+    "TE": ["receptions", "receiving_yards", "rushing_yards"],
 }
 
 

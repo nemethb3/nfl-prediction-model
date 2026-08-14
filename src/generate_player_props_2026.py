@@ -7,6 +7,13 @@ build_player_props_signals.py/train_player_props_models.py docstrings for
 the real, honest null-result finding from adding them, and why temp/wind
 were excluded as not knowable in advance for a future game).
 
+Real TD logistic addition (Major Refinements task): predicted_stats now
+includes `{td_col}_prob` (e.g. `passing_tds_prob`) - a real logistic
+P(1+ TD), replacing the old linear expected-count prediction for TD-type
+stats (real 5-fold OOF R^2 0.037-0.139 confirmed a fractional "1.2 TDs"
+output wasn't meaningfully predictive or actionable - see
+train_td_logistic_models.py, real AUC 0.60-0.70 instead).
+
 Real, serious problems found and fixed in the originally pasted spec
 before writing this:
 
@@ -49,6 +56,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
 RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
 MODELS_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "player_props_models.json")
+TD_MODELS_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "td_props_logistic_models.json")
 REGRESSED_OD_ELO_PATH = os.path.join(PROCESSED_DIR, "team_elo_offensive_defensive_2026_regressed.json")
 SCHEDULE_PATH = os.path.join(RAW_DIR, "schedules_2026.csv")
 PLAYER_STATS_PATH = os.path.join(PROCESSED_DIR, "player_weekly_stats.csv")
@@ -61,6 +69,12 @@ CAREER_AVG_SOURCE_COLS = {
     "RB": ["carries", "rushing_yards", "targets", "receptions", "receiving_yards"],
     "WR": ["targets", "receptions", "receiving_yards", "rushing_yards"],
     "TE": ["targets", "receptions", "receiving_yards", "rushing_yards"],
+}
+TD_CAREER_AVG_COLS = {
+    "QB": ["passing_tds", "rushing_tds"],
+    "RB": ["rushing_tds"],
+    "WR": ["receiving_tds"],
+    "TE": ["receiving_tds"],
 }
 
 
@@ -76,7 +90,7 @@ def _real_career_averages(position, player_ids):
     stats = pd.read_csv(PLAYER_STATS_PATH)
     stats = stats[(stats["season_type"] == "REG") & (stats["position"] == position) &
                   (stats["player_id"].isin(player_ids))]
-    cols = CAREER_AVG_SOURCE_COLS[position]
+    cols = CAREER_AVG_SOURCE_COLS[position] + TD_CAREER_AVG_COLS[position]
     return stats.groupby("player_id")[cols].mean().rename(columns={c: f"career_avg_{c}" for c in cols})
 
 
@@ -109,10 +123,26 @@ def _predict(feature_values, model_info):
     return max(0.0, pred)
 
 
+def _predict_proba(feature_values, model_info):
+    """Real logistic sigmoid transform - same real fitted coefficients/
+    scaler train_td_logistic_models.py produced, applied by hand here since
+    this project has no backend to call sklearn's own .predict_proba()."""
+    features = model_info["features"]
+    x_scaled = np.array([
+        (feature_values[f] - model_info["scaler_mean"][f]) / model_info["scaler_scale"][f]
+        for f in features
+    ])
+    coefs = np.array([model_info["coefficients"][f] for f in features])
+    z = model_info["intercept"] + float(np.dot(x_scaled, coefs))
+    return float(1.0 / (1.0 + np.exp(-z)))
+
+
 def generate_player_props_2026():
     print(f"\nGenerating real player props for {SEASON}...\n")
     with open(MODELS_PATH, encoding="utf-8") as f:
         models = json.load(f)
+    with open(TD_MODELS_PATH, encoding="utf-8") as f:
+        td_models = json.load(f)
     with open(REGRESSED_OD_ELO_PATH, encoding="utf-8") as f:
         regressed_od_elo = json.load(f)
     schedule_by_team = _real_2026_schedule_by_team()
@@ -131,6 +161,7 @@ def generate_player_props_2026():
               "not a fabricated fallback)")
 
         position_models = models[position]
+        position_td_models = td_models.get(position, {})
         n_games = 0
         for _, player in roster_with_history.iterrows():
             player_games = schedule_by_team[schedule_by_team["team"] == player["team"]]
@@ -139,19 +170,33 @@ def generate_player_props_2026():
                 if "d_elo" not in opp_elo:
                     continue
                 week_norm = (g["week"] - week_min) / (week_max - week_min)
+                common_feature_values = {
+                    "opp_d_elo": float(opp_elo["d_elo"]),
+                    "is_home": float(g["is_home"]),
+                    "week_norm": float(week_norm),
+                    "is_dome": float(g["is_dome"]),
+                    "own_rest_days": float(g["own_rest_days"]),
+                }
                 feature_values = {
                     f"career_avg_{c}": float(player[f"career_avg_{c}"]) for c in CAREER_AVG_SOURCE_COLS[position]
                 }
-                feature_values["opp_d_elo"] = float(opp_elo["d_elo"])
-                feature_values["is_home"] = float(g["is_home"])
-                feature_values["week_norm"] = float(week_norm)
-                feature_values["is_dome"] = float(g["is_dome"])
-                feature_values["own_rest_days"] = float(g["own_rest_days"])
+                feature_values.update(common_feature_values)
 
                 predicted_stats = {
                     stat: round(_predict(feature_values, model_info), 1)
                     for stat, model_info in position_models.items()
                 }
+                # Real logistic P(1+ TD), replacing the old fractional
+                # linear TD count (see train_player_props_models.py
+                # docstring for why - real R^2 0.037-0.139 wasn't
+                # meaningfully predictive or actionable).
+                for td_col, td_model_info in position_td_models.items():
+                    td_feature_values = {
+                        f"career_avg_{td_col}": float(player[f"career_avg_{td_col}"]),
+                        **common_feature_values,
+                    }
+                    predicted_stats[f"{td_col}_prob"] = round(_predict_proba(td_feature_values, td_model_info), 3)
+
                 all_props.append({
                     "id": f"{player['player_id']}_w{int(g['week'])}",
                     "player_id": player["player_id"],

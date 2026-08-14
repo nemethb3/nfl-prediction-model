@@ -72,6 +72,19 @@ CAREER_AVG_SOURCE_COLS = {
     "TE": ["targets", "receptions", "receiving_yards", "rushing_yards"],
 }
 
+# Real per-position TD-rate columns (Major Refinements task, TD logistic
+# models) - kept separate from CAREER_AVG_SOURCE_COLS so the existing,
+# already-validated yardage/reception linear models are untouched. A
+# player's real career TD RATE (not just volume) is the natural leak-free
+# predictor for "will they score 1+ TD this game" that the original
+# yardage-focused feature set didn't include.
+TD_CAREER_AVG_COLS = {
+    "QB": ["passing_tds", "rushing_tds"],
+    "RB": ["rushing_tds"],
+    "WR": ["receiving_tds"],
+    "TE": ["receiving_tds"],
+}
+
 # Real target stat columns per position (this task's requested props).
 TARGET_COLS = {
     "QB": ["completions", "passing_yards", "passing_tds", "rushing_tds"],
@@ -144,19 +157,31 @@ def build_player_props_signals():
             pos_stats[f"career_avg_{col}"] = (
                 pos_stats.groupby("player_id")[col].transform(lambda s: s.expanding().mean().shift(1))
             )
+        for col in TD_CAREER_AVG_COLS[position]:
+            pos_stats[f"career_avg_{col}"] = (
+                pos_stats.groupby("player_id")[col].transform(lambda s: s.expanding().mean().shift(1))
+            )
 
         feature_cols = [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]]
+        td_feature_cols = [f"career_avg_{c}" for c in TD_CAREER_AVG_COLS[position]]
         # A player's first-ever real game has no real prior history to
         # average - dropped (same real, disclosed rookie-exclusion
         # precedent FantasyRankings.js already uses), not filled with an
         # invented rate.
-        pos_stats = pos_stats.dropna(subset=feature_cols)
+        pos_stats = pos_stats.dropna(subset=feature_cols + td_feature_cols)
+
+        # Real binary "1+ TD" targets for the new logistic models.
+        for col in TD_CAREER_AVG_COLS[position]:
+            pos_stats[f"actual_{col}_1plus"] = (pos_stats[col] >= 1).astype(int)
+        td_target_cols = [f"actual_{c}_1plus" for c in TD_CAREER_AVG_COLS[position]]
 
         keep_cols = (
             ["player_id", "player_name", "position", "season", "week", "recent_team", "opponent_team",
              "is_home", "week_norm", "opp_o_elo", "opp_d_elo", "is_dome", "own_rest_days"]
             + feature_cols
+            + td_feature_cols
             + TARGET_COLS[position]
+            + td_target_cols
         )
         out = pos_stats[keep_cols].rename(columns={f"{t}": f"actual_{t}" for t in TARGET_COLS[position]})
         out_path = os.path.join(PROCESSED_DIR, f"player_props_signals_{position}.csv")

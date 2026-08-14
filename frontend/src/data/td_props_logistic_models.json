@@ -1,0 +1,205 @@
+{
+  "QB": {
+    "passing_tds": {
+      "base_rate": 0.687,
+      "groupkfold_auc": 0.702,
+      "n_real_players": 194,
+      "n_real_games": 6544,
+      "features": [
+        "career_avg_passing_tds",
+        "opp_d_elo",
+        "is_home",
+        "week_norm",
+        "is_dome",
+        "own_rest_days"
+      ],
+      "coefficients": {
+        "career_avg_passing_tds": 0.79886,
+        "opp_d_elo": -0.04504,
+        "is_home": 0.068,
+        "week_norm": -0.02668,
+        "is_dome": 0.02176,
+        "own_rest_days": -0.03078
+      },
+      "intercept": 0.8906,
+      "scaler_mean": {
+        "career_avg_passing_tds": 1.2857,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965,
+        "is_dome": 0.2876,
+        "own_rest_days": 7.4237
+      },
+      "scaler_scale": {
+        "career_avg_passing_tds": 0.6247,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022,
+        "is_dome": 0.4526,
+        "own_rest_days": 2.0248
+      }
+    },
+    "rushing_tds": {
+      "base_rate": 0.131,
+      "groupkfold_auc": 0.64,
+      "n_real_players": 194,
+      "n_real_games": 6544,
+      "features": [
+        "career_avg_rushing_tds",
+        "opp_d_elo",
+        "is_home",
+        "week_norm",
+        "is_dome",
+        "own_rest_days"
+      ],
+      "coefficients": {
+        "career_avg_rushing_tds": 0.52375,
+        "opp_d_elo": -0.06144,
+        "is_home": 0.10981,
+        "week_norm": -0.0372,
+        "is_dome": 0.00546,
+        "own_rest_days": 0.03278
+      },
+      "intercept": -2.0031,
+      "scaler_mean": {
+        "career_avg_rushing_tds": 0.1432,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965,
+        "is_dome": 0.2876,
+        "own_rest_days": 7.4237
+      },
+      "scaler_scale": {
+        "career_avg_rushing_tds": 0.1523,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022,
+        "is_dome": 0.4526,
+        "own_rest_days": 2.0248
+      }
+    }
+  },
+  "RB": {
+    "rushing_tds": {
+      "base_rate": 0.203,
+      "groupkfold_auc": 0.679,
+      "n_real_players": 485,
+      "n_real_games": 15088,
+      "features": [
+        "career_avg_rushing_tds",
+        "opp_d_elo",
+        "is_home",
+        "week_norm",
+        "is_dome",
+        "own_rest_days"
+      ],
+      "coefficients": {
+        "career_avg_rushing_tds": 0.59501,
+        "opp_d_elo": -0.09111,
+        "is_home": 0.08526,
+        "week_norm": 0.04109,
+        "is_dome": 0.0107,
+        "own_rest_days": 0.02477
+      },
+      "intercept": -1.4639,
+      "scaler_mean": {
+        "career_avg_rushing_tds": 0.2452,
+        "opp_d_elo": 1504.9918,
+        "is_home": 0.5021,
+        "week_norm": 0.4926,
+        "is_dome": 0.2854,
+        "own_rest_days": 7.4503
+      },
+      "scaler_scale": {
+        "career_avg_rushing_tds": 0.2313,
+        "opp_d_elo": 88.7798,
+        "is_home": 0.5,
+        "week_norm": 0.3008,
+        "is_dome": 0.4516,
+        "own_rest_days": 2.0588
+      }
+    }
+  },
+  "WR": {
+    "receiving_tds": {
+      "base_rate": 0.206,
+      "groupkfold_auc": 0.64,
+      "n_real_players": 660,
+      "n_real_games": 21924,
+      "features": [
+        "career_avg_receiving_tds",
+        "opp_d_elo",
+        "is_home",
+        "week_norm",
+        "is_dome",
+        "own_rest_days"
+      ],
+      "coefficients": {
+        "career_avg_receiving_tds": 0.44709,
+        "opp_d_elo": -0.04476,
+        "is_home": 0.07162,
+        "week_norm": -0.01323,
+        "is_dome": 0.06072,
+        "own_rest_days": -0.02821
+      },
+      "intercept": -1.4049,
+      "scaler_mean": {
+        "career_avg_receiving_tds": 0.2492,
+        "opp_d_elo": 1505.798,
+        "is_home": 0.5001,
+        "week_norm": 0.4919,
+        "is_dome": 0.2881,
+        "own_rest_days": 7.4444
+      },
+      "scaler_scale": {
+        "career_avg_receiving_tds": 0.1976,
+        "opp_d_elo": 89.7103,
+        "is_home": 0.5,
+        "week_norm": 0.3005,
+        "is_dome": 0.4529,
+        "own_rest_days": 2.0539
+      }
+    }
+  },
+  "TE": {
+    "receiving_tds": {
+      "base_rate": 0.172,
+      "groupkfold_auc": 0.602,
+      "n_real_players": 349,
+      "n_real_games": 11136,
+      "features": [
+        "career_avg_receiving_tds",
+        "opp_d_elo",
+        "is_home",
+        "week_norm",
+        "is_dome",
+        "own_rest_days"
+      ],
+      "coefficients": {
+        "career_avg_receiving_tds": 0.28107,
+        "opp_d_elo": -0.07705,
+        "is_home": 0.02247,
+        "week_norm": 0.01923,
+        "is_dome": -0.00038,
+        "own_rest_days": -0.01033
+      },
+      "intercept": -1.5988,
+      "scaler_mean": {
+        "career_avg_receiving_tds": 0.1916,
+        "opp_d_elo": 1504.5326,
+        "is_home": 0.4992,
+        "week_norm": 0.4931,
+        "is_dome": 0.2855,
+        "own_rest_days": 7.4368
+      },
+      "scaler_scale": {
+        "career_avg_receiving_tds": 0.166,
+        "opp_d_elo": 89.3825,
+        "is_home": 0.5,
+        "week_norm": 0.2993,
+        "is_dome": 0.4516,
+        "own_rest_days": 2.0495
+      }
+    }
+  }
+}

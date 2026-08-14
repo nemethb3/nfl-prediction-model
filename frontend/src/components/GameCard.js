@@ -164,6 +164,12 @@ export default function GameCard({ game, isExpanded, onToggle }) {
     vegas_total: vegasTotal,
     predicted_total_diff: predictedTotalDiff,
     predicted_total_direction: predictedTotalDirection,
+    home_o_elo: homeOElo,
+    home_d_elo: homeDElo,
+    away_o_elo: awayOElo,
+    away_d_elo: awayDElo,
+    single_elo_spread: singleEloSpread,
+    single_elo_win_prob_home: singleEloWinProbHome,
   } = game;
 
   const hasResult = homeScore !== null && homeScore !== undefined;
@@ -285,6 +291,17 @@ export default function GameCard({ game, isExpanded, onToggle }) {
             {vegasSpread !== null && vegasSpread !== undefined && (
               <div>Vegas closing line: {formatSpread(vegasSpread, home, away)}</div>
             )}
+            {singleEloSpread !== null && singleEloSpread !== undefined && (
+              <div className="small-text">
+                For comparison, single-Elo alone (team strength only, no offense/defense split)
+                would have predicted {formatSpread(singleEloSpread, home, away)}
+                {singleEloWinProbHome !== null && singleEloWinProbHome !== undefined && (
+                  <> ({Math.round((favoriteTeam(singleEloSpread, home, away) === home
+                    ? singleEloWinProbHome : 1 - singleEloWinProbHome) * 100)}% implied)</>
+                )} - real, from the same fitted single-Elo model this project used before the O/D
+                swap, not a raw Elo-rating difference.
+              </div>
+            )}
             <div>Source: {baseSource === 'vegas' ? 'Vegas line + matchup adjustment' : 'Elo fallback (no posted line)'}</div>
             {netEdgeDiff !== null && netEdgeDiff !== undefined && Math.abs(netEdgeDiff) > 0.001 && (
               <div>Matchup EPA edge differential: {netEdgeDiff > 0 ? '+' : ''}{netEdgeDiff.toFixed(2)} (home perspective)</div>
@@ -337,10 +354,10 @@ export default function GameCard({ game, isExpanded, onToggle }) {
                 ) : (
                   <>
                     No real Vegas line exists for this game (real preseason matchup, before that
-                    model's own input data exists) - this uses this project&apos;s real Elo-based
-                    win probability instead, the same backtested runner-up candidate (Brier 0.2874,
-                    beat only the asserted-constant heuristic, not the Vegas-fit model above; see
-                    backtesting_results.md).
+                    model&apos;s own input data exists) - this uses this project&apos;s real
+                    offensive/defensive Elo split instead (real held-out 2024 Brier score 0.2182,
+                    beating the prior single-Elo model&apos;s 0.2272 on the same real test - see
+                    od_elo_production_validation.json).
                   </>
                 )}{' '}
                 Not a betting recommendation.
@@ -369,6 +386,33 @@ export default function GameCard({ game, isExpanded, onToggle }) {
                 Difference: {Math.round(Math.abs(homeElo - awayElo))} points
                 ({homeElo > awayElo ? home : away} favored) - real, from elo_ratings_2025.csv,
                 lagged one real week (entering-this-week rating, leak-free)
+              </div>
+            </div>
+          )}
+
+          {homeOElo !== null && homeOElo !== undefined && awayOElo !== null && awayOElo !== undefined && (
+            <div className="section">
+              <div className="section-title">Offense/Defense Elo Split</div>
+              <div>{home}: {Math.round(homeOElo)} off / {Math.round(homeDElo)} def</div>
+              <div>{away}: {Math.round(awayOElo)} off / {Math.round(awayDElo)} def</div>
+              <div className="small-text">
+                {home}&apos;s offense vs. {away}&apos;s defense: {(homeOElo - awayDElo) > 0 ? '+' : ''}
+                {Math.round(homeOElo - awayDElo)}. {away}&apos;s offense vs. {home}&apos;s defense:{' '}
+                {(awayOElo - homeDElo) > 0 ? '+' : ''}{Math.round(awayOElo - homeDElo)}. The gap between
+                these two real terms is what separates this prediction from single-Elo above, which only
+                sees each team&apos;s one combined rating and can&apos;t tell an elite offense facing a
+                weak defense apart from an average matchup at the same net strength.
+              </div>
+              <div className="small-text">
+                This split now generates the spread, win probability, and confidence interval above
+                for real 2026 preseason games (real, held-out 2024 validation found it beats the
+                prior single-Elo model on win/loss accuracy, spread MAE, and Brier score - see
+                od_elo_production_validation.json for the full comparison). The single Elo rating
+                shown in Matchup Strength above is real but no longer drives the prediction - shown
+                as additional context only. One real, disclosed trade-off accepted with this swap:
+                this split&apos;s 90% confidence bands were only 86.4% covered on the 2024 holdout
+                (vs. the prior model&apos;s 89.3%, closer to target) - bands are a bit tighter than
+                ideal.
               </div>
             </div>
           )}

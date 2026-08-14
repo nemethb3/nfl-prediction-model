@@ -1,0 +1,177 @@
+{
+  "ARI": {
+    "o_elo": 1448.3,
+    "d_elo": 1352.5,
+    "total_elo": 2800.7
+  },
+  "ATL": {
+    "o_elo": 1429.6,
+    "d_elo": 1432.9,
+    "total_elo": 2862.5
+  },
+  "BAL": {
+    "o_elo": 1724.6,
+    "d_elo": 1659.7,
+    "total_elo": 3384.3
+  },
+  "BUF": {
+    "o_elo": 1799.6,
+    "d_elo": 1655.2,
+    "total_elo": 3454.8
+  },
+  "CAR": {
+    "o_elo": 1273.4,
+    "d_elo": 1394.5,
+    "total_elo": 2667.9
+  },
+  "CHI": {
+    "o_elo": 1396.6,
+    "d_elo": 1507.5,
+    "total_elo": 2904.1
+  },
+  "CIN": {
+    "o_elo": 1614.3,
+    "d_elo": 1373.0,
+    "total_elo": 2987.3
+  },
+  "CLE": {
+    "o_elo": 1283.6,
+    "d_elo": 1472.6,
+    "total_elo": 2756.2
+  },
+  "DAL": {
+    "o_elo": 1695.1,
+    "d_elo": 1377.0,
+    "total_elo": 3072.1
+  },
+  "DEN": {
+    "o_elo": 1425.5,
+    "d_elo": 1658.9,
+    "total_elo": 3084.3
+  },
+  "DET": {
+    "o_elo": 1774.9,
+    "d_elo": 1441.1,
+    "total_elo": 3216.0
+  },
+  "GB": {
+    "o_elo": 1599.6,
+    "d_elo": 1597.0,
+    "total_elo": 3196.7
+  },
+  "HOU": {
+    "o_elo": 1428.8,
+    "d_elo": 1553.5,
+    "total_elo": 2982.3
+  },
+  "IND": {
+    "o_elo": 1568.6,
+    "d_elo": 1370.1,
+    "total_elo": 2938.8
+  },
+  "JAX": {
+    "o_elo": 1445.6,
+    "d_elo": 1480.0,
+    "total_elo": 2925.5
+  },
+  "KC": {
+    "o_elo": 1614.8,
+    "d_elo": 1685.8,
+    "total_elo": 3300.5
+  },
+  "LA": {
+    "o_elo": 1643.9,
+    "d_elo": 1590.7,
+    "total_elo": 3234.6
+  },
+  "LAC": {
+    "o_elo": 1516.7,
+    "d_elo": 1580.6,
+    "total_elo": 3097.3
+  },
+  "LV": {
+    "o_elo": 1311.6,
+    "d_elo": 1403.9,
+    "total_elo": 2715.5
+  },
+  "MIA": {
+    "o_elo": 1476.1,
+    "d_elo": 1444.5,
+    "total_elo": 2920.6
+  },
+  "MIN": {
+    "o_elo": 1504.8,
+    "d_elo": 1596.8,
+    "total_elo": 3101.5
+  },
+  "NE": {
+    "o_elo": 1490.1,
+    "d_elo": 1653.5,
+    "total_elo": 3143.6
+  },
+  "NO": {
+    "o_elo": 1438.2,
+    "d_elo": 1567.8,
+    "total_elo": 3005.9
+  },
+  "NYG": {
+    "o_elo": 1271.6,
+    "d_elo": 1430.9,
+    "total_elo": 2702.5
+  },
+  "NYJ": {
+    "o_elo": 1207.2,
+    "d_elo": 1364.5,
+    "total_elo": 2571.8
+  },
+  "OAK": {
+    "o_elo": 1389.9,
+    "d_elo": 1353.6,
+    "total_elo": 2743.4
+  },
+  "PHI": {
+    "o_elo": 1628.2,
+    "d_elo": 1613.4,
+    "total_elo": 3241.6
+  },
+  "PIT": {
+    "o_elo": 1434.5,
+    "d_elo": 1635.4,
+    "total_elo": 3069.8
+  },
+  "SD": {
+    "o_elo": 1500.6,
+    "d_elo": 1423.9,
+    "total_elo": 2924.4
+  },
+  "SEA": {
+    "o_elo": 1615.7,
+    "d_elo": 1613.3,
+    "total_elo": 3229.0
+  },
+  "SF": {
+    "o_elo": 1651.0,
+    "d_elo": 1567.0,
+    "total_elo": 3218.0
+  },
+  "STL": {
+    "o_elo": 1420.8,
+    "d_elo": 1533.3,
+    "total_elo": 2954.1
+  },
+  "TB": {
+    "o_elo": 1604.3,
+    "d_elo": 1519.5,
+    "total_elo": 3123.8
+  },
+  "TEN": {
+    "o_elo": 1296.7,
+    "d_elo": 1366.1,
+    "total_elo": 2662.7
+  },
+  "WAS": {
+    "o_elo": 1431.2,
+    "d_elo": 1374.5,
+    "total_elo": 2805.7
+  }
+}

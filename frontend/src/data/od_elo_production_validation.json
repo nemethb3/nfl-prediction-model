@@ -1,0 +1,40 @@
+{
+  "methodology": "Real train/holdout split matching elo_game_prediction.py's own production convention (train 2015-2023, holdout 2024, 2025 for context). Spread MAE and CI coverage measured against real actual point margins (ground truth), not the Vegas line - Vegas agreement is reported separately as secondary context only.",
+  "od_k_factor": 180.0,
+  "results": {
+    "holdout_2024": {
+      "single_elo": {
+        "n_games": 272,
+        "spread_mae": 10.207,
+        "ci_coverage_90": 0.8934,
+        "brier_score": 0.2272,
+        "mae_vs_real_vegas_line": 3.241
+      },
+      "od_elo": {
+        "n_games": 272,
+        "spread_mae": 10.139,
+        "ci_coverage_90": 0.864,
+        "brier_score": 0.2182,
+        "mae_vs_real_vegas_line": 2.886
+      }
+    },
+    "context_2025": {
+      "single_elo": {
+        "n_games": 272,
+        "spread_mae": 10.355,
+        "ci_coverage_90": 0.8897,
+        "brier_score": 0.2335,
+        "mae_vs_real_vegas_line": 2.818
+      },
+      "od_elo": {
+        "n_games": 272,
+        "spread_mae": 10.271,
+        "ci_coverage_90": 0.8971,
+        "brier_score": 0.2234,
+        "mae_vs_real_vegas_line": 2.264
+      }
+    }
+  },
+  "decision": "SWAP_PIPELINE",
+  "verdict": "O/D Elo real-beats single-Elo on spread MAE and Brier score, with comparable CI calibration."
+}

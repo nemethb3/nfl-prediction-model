@@ -1,0 +1,84 @@
+{
+  "test_games": 2885,
+  "league_avg_points_per_team_per_game": 22.79,
+  "od_k_factor_grid_search": {
+    "8.0": {
+      "accuracy": 0.5976,
+      "auc": 0.6221
+    },
+    "16.0": {
+      "accuracy": 0.6087,
+      "auc": 0.6334
+    },
+    "24.0": {
+      "accuracy": 0.6135,
+      "auc": 0.6429
+    },
+    "32.0": {
+      "accuracy": 0.6191,
+      "auc": 0.6508
+    },
+    "40.0": {
+      "accuracy": 0.6225,
+      "auc": 0.6572
+    },
+    "60.0": {
+      "accuracy": 0.6302,
+      "auc": 0.6687
+    },
+    "80.0": {
+      "accuracy": 0.6322,
+      "auc": 0.6753
+    },
+    "100.0": {
+      "accuracy": 0.6367,
+      "auc": 0.6794
+    },
+    "140.0": {
+      "accuracy": 0.6378,
+      "auc": 0.6826
+    },
+    "160.0": {
+      "accuracy": 0.6412,
+      "auc": 0.6829
+    },
+    "180.0": {
+      "accuracy": 0.6416,
+      "auc": 0.6828
+    },
+    "200.0": {
+      "accuracy": 0.6402,
+      "auc": 0.6824
+    },
+    "250.0": {
+      "accuracy": 0.636,
+      "auc": 0.6796
+    },
+    "300.0": {
+      "accuracy": 0.6315,
+      "auc": 0.6752
+    }
+  },
+  "od_k_factor_selected": 180.0,
+  "models": {
+    "single_elo": {
+      "accuracy": 0.6288,
+      "auc": 0.6674
+    },
+    "od_elo_only": {
+      "accuracy": 0.6416,
+      "auc": 0.6828
+    },
+    "hybrid": {
+      "accuracy": 0.6416,
+      "auc": 0.6847
+    }
+  },
+  "improvement_pp": {
+    "od_vs_single": 1.28,
+    "hybrid_vs_single": 1.28
+  },
+  "meaningful_gain_threshold_pp": 0.5,
+  "integrated_into_2026": true,
+  "verdict": "Real gain clears the 0.5pp bar - worth integrating."
+}

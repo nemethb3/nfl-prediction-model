@@ -1,0 +1,210 @@
+{
+  "methodology": "Real train/holdout split (train 2015-2023, holdout 2024 as the primary real result, 2025 for context) - all probability/spread/totals model components refit on train seasons only for both arms, then genuinely evaluated out-of-sample. Real Vegas odds (moneyline, spread odds, total odds) from data/backtest/vegas_with_results_2015_2025.csv used for every settlement - no synthetic odds. Moneyline/ATS direction and settlement reuse betting_backtest.py's already-validated real logic unchanged. Totals uses two real, separately-fit linear regression models (single-Elo: elo_sum/elo_diff features; O/D Elo: home/away offensive and defensive Elo features directly) - not a shared formula.",
+  "od_k_factor": 180.0,
+  "results": {
+    "single_elo": {
+      "moneyline": {
+        "holdout_2024": {
+          "total_bets": 205,
+          "wins": 88,
+          "losses": 117,
+          "pushes": 0,
+          "win_pct": 42.9,
+          "pnl_units": -25.549,
+          "roi_pct": -12.46
+        },
+        "context_2025": {
+          "total_bets": 227,
+          "wins": 86,
+          "losses": 140,
+          "pushes": 1,
+          "win_pct": 38.1,
+          "pnl_units": -36.186,
+          "roi_pct": -16.01
+        }
+      },
+      "ats": {
+        "holdout_2024": {
+          "total_bets": 205,
+          "wins": 92,
+          "losses": 109,
+          "pushes": 4,
+          "win_pct": 45.8,
+          "pnl_units": -24.442,
+          "roi_pct": -12.16
+        },
+        "context_2025": {
+          "total_bets": 227,
+          "wins": 101,
+          "losses": 126,
+          "pushes": 0,
+          "win_pct": 44.5,
+          "pnl_units": -34.468,
+          "roi_pct": -15.18
+        }
+      },
+      "totals": {
+        "holdout_2024": {
+          "1.0": {
+            "total_bets": 216,
+            "wins": 109,
+            "losses": 104,
+            "pushes": 3,
+            "win_pct": 51.2,
+            "pnl_units": -5.016,
+            "roi_pct": -2.35
+          },
+          "2.0": {
+            "total_bets": 171,
+            "wins": 86,
+            "losses": 83,
+            "pushes": 2,
+            "win_pct": 50.9,
+            "pnl_units": -5.02,
+            "roi_pct": -2.97
+          },
+          "3.0": {
+            "total_bets": 120,
+            "wins": 63,
+            "losses": 56,
+            "pushes": 1,
+            "win_pct": 52.9,
+            "pnl_units": 0.917,
+            "roi_pct": 0.77
+          }
+        },
+        "context_2025": {
+          "1.0": {
+            "total_bets": 211,
+            "wins": 102,
+            "losses": 109,
+            "pushes": 0,
+            "win_pct": 48.3,
+            "pnl_units": -15.355,
+            "roi_pct": -7.28
+          },
+          "2.0": {
+            "total_bets": 158,
+            "wins": 78,
+            "losses": 80,
+            "pushes": 0,
+            "win_pct": 49.4,
+            "pnl_units": -8.481,
+            "roi_pct": -5.37
+          },
+          "3.0": {
+            "total_bets": 120,
+            "wins": 57,
+            "losses": 63,
+            "pushes": 0,
+            "win_pct": 47.5,
+            "pnl_units": -10.679,
+            "roi_pct": -8.9
+          }
+        }
+      }
+    },
+    "od_elo": {
+      "moneyline": {
+        "holdout_2024": {
+          "total_bets": 216,
+          "wins": 96,
+          "losses": 120,
+          "pushes": 0,
+          "win_pct": 44.4,
+          "pnl_units": -28.756,
+          "roi_pct": -13.31
+        },
+        "context_2025": {
+          "total_bets": 235,
+          "wins": 100,
+          "losses": 134,
+          "pushes": 1,
+          "win_pct": 42.7,
+          "pnl_units": -23.677,
+          "roi_pct": -10.12
+        }
+      },
+      "ats": {
+        "holdout_2024": {
+          "total_bets": 216,
+          "wins": 115,
+          "losses": 97,
+          "pushes": 4,
+          "win_pct": 54.2,
+          "pnl_units": 8.262,
+          "roi_pct": 3.9
+        },
+        "context_2025": {
+          "total_bets": 235,
+          "wins": 110,
+          "losses": 124,
+          "pushes": 1,
+          "win_pct": 47.0,
+          "pnl_units": -24.079,
+          "roi_pct": -10.29
+        }
+      },
+      "totals": {
+        "holdout_2024": {
+          "1.0": {
+            "total_bets": 189,
+            "wins": 101,
+            "losses": 87,
+            "pushes": 1,
+            "win_pct": 53.7,
+            "pnl_units": 4.615,
+            "roi_pct": 2.45
+          },
+          "2.0": {
+            "total_bets": 123,
+            "wins": 61,
+            "losses": 61,
+            "pushes": 1,
+            "win_pct": 50.0,
+            "pnl_units": -5.769,
+            "roi_pct": -4.73
+          },
+          "3.0": {
+            "total_bets": 67,
+            "wins": 31,
+            "losses": 35,
+            "pushes": 1,
+            "win_pct": 47.0,
+            "pnl_units": -6.933,
+            "roi_pct": -10.5
+          }
+        },
+        "context_2025": {
+          "1.0": {
+            "total_bets": 203,
+            "wins": 103,
+            "losses": 100,
+            "pushes": 0,
+            "win_pct": 50.7,
+            "pnl_units": -5.749,
+            "roi_pct": -2.83
+          },
+          "2.0": {
+            "total_bets": 139,
+            "wins": 75,
+            "losses": 64,
+            "pushes": 0,
+            "win_pct": 54.0,
+            "pnl_units": 4.683,
+            "roi_pct": 3.37
+          },
+          "3.0": {
+            "total_bets": 78,
+            "wins": 39,
+            "losses": 39,
+            "pushes": 0,
+            "win_pct": 50.0,
+            "pnl_units": -3.371,
+            "roi_pct": -4.32
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,28 @@ import '../styles/BettingAnalysis.css';
 import '../styles/SeasonDataUnavailable.css';
 import { useSeason } from '../context/SeasonContext';
 import SeasonDataUnavailable from './SeasonDataUnavailable';
+import strategyComparison from '../data/betting_strategies_comparison_od_elo.json';
+
+// Real 2024-holdout rows built from strategyComparison.results at module
+// scope (static data, not season-dependent - same real train/holdout split
+// as od_elo_production_validation.json, see backtest_betting_strategies_
+// comparison_od_elo.py's methodology field for the real, disclosed
+// train/holdout convention).
+const STRATEGY_COMPARISON_ROWS = (() => {
+  const r = strategyComparison.results;
+  const rows = [
+    { label: 'Moneyline', single: r.single_elo.moneyline.holdout_2024, od: r.od_elo.moneyline.holdout_2024 },
+    { label: 'Against the Spread', single: r.single_elo.ats.holdout_2024, od: r.od_elo.ats.holdout_2024 },
+  ];
+  for (const threshold of ['1.0', '2.0', '3.0']) {
+    rows.push({
+      label: `Totals (edge > ${parseFloat(threshold)} pt${threshold === '1.0' ? '' : 's'})`,
+      single: r.single_elo.totals.holdout_2024[threshold],
+      od: r.od_elo.totals.holdout_2024[threshold],
+    });
+  }
+  return rows;
+})();
 
 const STRATEGY_COLORS = {
   our_system: '#0080c6',
@@ -304,6 +326,168 @@ export default function BettingAnalysis() {
           </div>
         </>
       )}
+
+      <section className="model-evolution">
+        <h3>🔬 Model Evolution: Offensive/Defensive Elo</h3>
+
+        <div className="evolution-intro">
+          <p>
+            This project tests an <strong>Offensive/Defensive Elo split</strong> model that
+            separates team strength into offense (scoring ability) and defense (preventing
+            scores), instead of one combined rating. This captures matchup dynamics the combined
+            rating can&apos;t: an elite offense vs. a weak defense plays out differently than an
+            average offense vs. an elite defense, even at the same combined team strength.
+          </p>
+        </div>
+
+        <div className="model-comparison">
+          <div className="comparison-header">
+            <h4>Real Backtest Results</h4>
+          </div>
+
+          <div className="table-scroll">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Single-Elo</th>
+                  <th>O/D Elo</th>
+                  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Win/Loss Accuracy (5-fold CV, 2015-2025)</td>
+                  <td>62.9%</td>
+                  <td><strong>64.2%</strong></td>
+                  <td>✅ O/D Elo (+1.3pp)</td>
+                </tr>
+                <tr>
+                  <td>Spread Accuracy (MAE, 2024 holdout)</td>
+                  <td>10.21 pts</td>
+                  <td><strong>10.14 pts</strong></td>
+                  <td>✅ O/D Elo</td>
+                </tr>
+                <tr>
+                  <td>Probabilistic Calibration (Brier, 2024 holdout)</td>
+                  <td>0.2272</td>
+                  <td><strong>0.2182</strong></td>
+                  <td>✅ O/D Elo</td>
+                </tr>
+                <tr>
+                  <td>90% CI Coverage (2024 holdout, target 90%)</td>
+                  <td><strong>89.3%</strong></td>
+                  <td>86.4%</td>
+                  <td>✅ Single-Elo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="model-comparison">
+          <div className="comparison-header">
+            <h4>Single-Elo vs. O/D Elo: Real Betting Results (2024 Holdout)</h4>
+          </div>
+          <p className="evolution-strategy-note">
+            Same &quot;bet when we disagree with Vegas&quot; strategy shape used in Betting Analysis
+            above, run once with Single-Elo predictions and once with O/D Elo predictions, settled
+            with real per-game Vegas odds — genuinely out-of-sample (both models fit on 2015-2023
+            only, scored on 2024).
+          </p>
+
+          <div className="table-scroll">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th>Strategy</th>
+                  <th>Single-Elo</th>
+                  <th>O/D Elo</th>
+                  <th>Winner</th>
+                </tr>
+              </thead>
+              <tbody>
+                {STRATEGY_COMPARISON_ROWS.map((row) => {
+                  const odWinsRoi = row.od.roi_pct > row.single.roi_pct;
+                  return (
+                    <tr key={row.label}>
+                      <td>{row.label}</td>
+                      <td>
+                        {row.single.win_pct}% win rate,{' '}
+                        <span className={row.single.roi_pct >= 0 ? 'positive' : 'negative'}>
+                          {row.single.roi_pct > 0 ? '+' : ''}
+                          {row.single.roi_pct}% ROI
+                        </span>
+                        <span className="small-text"> ({row.single.total_bets} bets)</span>
+                      </td>
+                      <td>
+                        {row.od.win_pct}% win rate,{' '}
+                        <span className={row.od.roi_pct >= 0 ? 'positive' : 'negative'}>
+                          {row.od.roi_pct > 0 ? '+' : ''}
+                          {row.od.roi_pct}% ROI
+                        </span>
+                        <span className="small-text"> ({row.od.total_bets} bets)</span>
+                      </td>
+                      <td>{odWinsRoi ? '✅ O/D Elo' : '✅ Single-Elo'}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="evolution-strategy-note">
+            Most rows are net-negative ROI for both models — consistent with this project&apos;s
+            already-disclosed finding that betting on disagreements with Vegas loses money over a
+            real backtest (see the disclaimer at the bottom of this page). This table is a real,
+            honest head-to-head, not a recommendation to bet either model. 2025 numbers (context
+            only, same models, not re-fit) are in the underlying data file if needed.
+          </p>
+        </div>
+
+        <div className="evolution-status">
+          <h4>Current Status</h4>
+          <ul>
+            <li>
+              <strong>Game Predictions (2026):</strong> O/D Elo is now the primary model — after
+              the results above, it was swapped in to generate the spread, win probability, and
+              confidence interval for every real 2026 game. Single-Elo is still shown separately
+              as &quot;Matchup Strength&quot; context on each game card, but no longer drives the
+              prediction.
+            </li>
+            <li>
+              <strong>Betting Analysis (above):</strong> the moneyline/ATS/totals results shown at
+              the top of this page are still Single-Elo based — they cover the completed 2025
+              season, which predates the O/D Elo swap. The real head-to-head comparison below
+              shows how O/D Elo would have done on the same three strategies over a genuine
+              out-of-sample holdout.
+            </li>
+            <li>
+              <strong>Trade Model, Player Props, Breakout Alerts:</strong> not yet integrated with
+              O/D Elo. These would be real, separate follow-up work, not something this swap
+              already includes.
+            </li>
+          </ul>
+        </div>
+
+        <div className="evolution-next-steps">
+          <h4>Next: 2026 Live Monitoring</h4>
+          <p>
+            As real 2026 games are played, this project will be able to compare O/D Elo&apos;s
+            actual predictions against real results directly, the same way Model Transparency
+            already tracks single-Elo accuracy for 2025. That real data — not a backtest — is
+            what determines whether the swap holds up.
+          </p>
+        </div>
+
+        <div className="evolution-caveat">
+          <p>
+            One disclosed trade-off: O/D Elo&apos;s 90% confidence bands covered the real 2024
+            holdout only 86.4% of the time, vs. Single-Elo&apos;s 89.3% (closer to the 90% target)
+            — bands are a bit tighter than ideal. Everything else favored the swap; this one
+            metric didn&apos;t, and is shown here rather than left out.
+          </p>
+        </div>
+      </section>
 
       <div className="methodology">
         <h3>Methodology</h3>

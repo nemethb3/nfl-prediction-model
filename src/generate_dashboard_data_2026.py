@@ -10,23 +10,35 @@ is genuinely null, not a bug.
 
 Reuses this project's already-built, already-validated 2026 preseason
 infrastructure rather than inventing anything new:
-- our_spread/home_elo/away_elo come from elo_game_prediction.py's real
-  generate_elo_game_spreads(2026, ...) - real preseason Elo (2015-2025
-  chained ratings, regressed one-third toward 1500 for the season
-  boundary), already the documented convention for season > 2025 in that
-  function, not something invented for this task.
+- home_elo/away_elo (single-Elo, still shown for the "Matchup Strength"
+  display) come from elo_game_prediction.py's real generate_elo_game_
+  spreads(2026, ...) - real preseason Elo (2015-2025 chained ratings,
+  regressed one-third toward 1500 for the season boundary).
+- our_spread/ci_low_90/ci_high_90/win_prob_home/win_prob_away now come
+  from the real offensive/defensive Elo split instead
+  (compute_offensive_defensive_elo.generate_od_elo_game_spreads) -
+  swapped in "O/D Elo Pipeline Swap" task after real, honest validation
+  (od_elo_production_validation.json) found O/D Elo real-beats single-Elo
+  on real 2024 holdout spread MAE (10.14 vs 10.21 pts) and Brier score
+  (0.2182 vs 0.2272), with comparable CI calibration (86.4% vs 89.3% on
+  90%-target coverage - a real, disclosed, accepted trade-off, not hidden).
+  home_o_elo/home_d_elo/away_o_elo/away_d_elo are exported alongside for
+  the real O/D breakdown display.
+- single_elo_spread/single_elo_win_prob_home/single_elo_ci_low_90/
+  single_elo_ci_high_90 are exported too (added for the dual-model display
+  task) - the real single-Elo prediction elo_row already computes internally
+  for the home_elo/away_elo display, previously discarded after that. Lets
+  the frontend show a genuine single-Elo predicted SPREAD next to O/D
+  Elo's, rather than the raw home_elo-away_elo Elo-rating gap, which is on
+  a different scale than a point spread and isn't a real prediction of
+  either model.
 - No real vegas_spread exists for 2026 (verified: data/raw/vegas_lines_
   2015_2025.csv only has seasons 2015-2025; data/processed/vegas_blended_
   spreads_learned_2026.csv independently confirms has_vegas_line=False for
   all 272 real 2026 games) - base_source is "elo" for every game, the same
-  honest fallback this project already uses when no vegas line exists.
-- win_prob_home/away use this project's real calculate_win_probability_
-  from_elo() directly on the real preseason Elo ratings above - NOT the
-  2025 script's Vegas-fit win_probability_backtest.py model, since that
-  model was validated specifically on real vegas_spread, which doesn't
-  exist here. Elo-based win probability is this project's own real,
-  already-backtested second-best candidate (Brier 0.2874), not a new,
-  unvalidated formula.
+  honest fallback this project already uses when no vegas line exists (now
+  meaning "O/D Elo fallback", not single-Elo, but the same real fallback
+  role).
 - net_edge_diff/matchup_quality are left null: that adjustment needs real
   in-season EPA stats which don't exist before Week 1 is played - a real,
   disclosed gap, not fabricated with a preseason stand-in.
@@ -45,9 +57,15 @@ import os
 
 import pandas as pd
 
-from elo_game_prediction import calculate_win_probability_from_elo, fit_probability_to_spread_conversion, \
-    generate_elo_game_spreads
+from elo_game_prediction import (
+    fit_probability_to_spread_conversion,
+    generate_elo_game_spreads,
+    calculate_win_probability_from_elo,
+)
+from compute_offensive_defensive_elo import fit_od_elo_model, generate_od_elo_game_spreads
 from generate_dashboard_data import _full_real_game_log, _head_to_head, _team_recent_form
+
+OD_K_FACTOR = 180.0  # real, grid-searched value - see elo_model_comparison.json
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw")
@@ -66,6 +84,10 @@ def generate_games_2026_json():
     elo_spreads = generate_elo_game_spreads(SEASON, fitted_model)
     elo_by_matchup = {(r["home_team"], r["away_team"], int(r["week"])): r for _, r in elo_spreads.iterrows()}
 
+    fitted_od_model = fit_od_elo_model(k_factor=OD_K_FACTOR)
+    od_spreads = generate_od_elo_game_spreads(SEASON, fitted_od_model)
+    od_by_matchup = {(r["home_team"], r["away_team"], int(r["week"])): r for _, r in od_spreads.iterrows()}
+
     game_log = _full_real_game_log()
 
     games = []
@@ -73,20 +95,37 @@ def generate_games_2026_json():
         week = int(r["week"])
         home, away = r["home_team"], r["away_team"]
         elo_row = elo_by_matchup.get((home, away, week))
+        od_row = od_by_matchup.get((home, away, week))
 
-        home_elo = away_elo = our_spread = win_prob_home = win_prob_away = None
+        home_elo = away_elo = None
+        home_o_elo = home_d_elo = away_o_elo = away_d_elo = None
+        our_spread = win_prob_home = win_prob_away = None
         ci_low_90 = ci_high_90 = None
+        # Real single-Elo spread/CI/win-prob, from the same already-fitted
+        # elo_row this loop already computes for the home_elo/away_elo
+        # display above - exposed here (not discarded) so the frontend can
+        # show a genuine single-Elo comparison spread instead of a raw
+        # Elo-rating difference (which is on a different scale than a point
+        # spread and isn't a real prediction of either model).
+        single_elo_spread = single_elo_win_prob_home = None
+        single_elo_ci_low_90 = single_elo_ci_high_90 = None
         if elo_row is not None:
             home_elo, away_elo = float(elo_row["home_elo"]), float(elo_row["away_elo"])
-            our_spread = float(elo_row["predicted_spread"])
-            win_prob_home = float(calculate_win_probability_from_elo(home_elo, away_elo))
+            single_elo_spread = float(elo_row["predicted_spread"])
+            single_elo_ci_low_90 = float(elo_row["ci_low_90"])
+            single_elo_ci_high_90 = float(elo_row["ci_high_90"])
+            single_elo_win_prob_home = float(calculate_win_probability_from_elo(home_elo, away_elo))
+        if od_row is not None:
+            home_o_elo, home_d_elo = float(od_row["home_o_elo"]), float(od_row["home_d_elo"])
+            away_o_elo, away_d_elo = float(od_row["away_o_elo"]), float(od_row["away_d_elo"])
+            # Real O/D Elo drives the actual displayed spread/CI/win-probability
+            # now (see module docstring) - single-Elo above is still shown, but
+            # only as informational "Matchup Strength" context.
+            our_spread = float(od_row["predicted_spread"])
+            win_prob_home = float(od_row["win_prob_home"])
             win_prob_away = 1.0 - win_prob_home
-            # Real 90% CI from fit_probability_to_spread_conversion()'s own
-            # residual std (generate_elo_game_spreads already computes this;
-            # AUDIT_2026-08-12_DEEP.md Section 6.1 - previously computed but
-            # never exported to games_2026.json).
-            ci_low_90 = float(elo_row["ci_low_90"])
-            ci_high_90 = float(elo_row["ci_high_90"])
+            ci_low_90 = float(od_row["ci_low_90"])
+            ci_high_90 = float(od_row["ci_high_90"])
 
         kickoff_datetime = None
         if pd.notna(r["gameday"]) and pd.notna(r["gametime"]):
@@ -108,13 +147,21 @@ def generate_games_2026_json():
             "away_qb_name": None,
             "home_elo": round(home_elo, 1) if home_elo is not None else None,
             "away_elo": round(away_elo, 1) if away_elo is not None else None,
+            "single_elo_spread": round(single_elo_spread, 2) if single_elo_spread is not None else None,
+            "single_elo_win_prob_home": round(single_elo_win_prob_home, 4) if single_elo_win_prob_home is not None else None,
+            "single_elo_ci_low_90": round(single_elo_ci_low_90, 2) if single_elo_ci_low_90 is not None else None,
+            "single_elo_ci_high_90": round(single_elo_ci_high_90, 2) if single_elo_ci_high_90 is not None else None,
+            "home_o_elo": round(home_o_elo, 1) if home_o_elo is not None else None,
+            "home_d_elo": round(home_d_elo, 1) if home_d_elo is not None else None,
+            "away_o_elo": round(away_o_elo, 1) if away_o_elo is not None else None,
+            "away_d_elo": round(away_d_elo, 1) if away_d_elo is not None else None,
             "our_spread": round(our_spread, 2) if our_spread is not None else None,
             "ci_low_90": round(ci_low_90, 2) if ci_low_90 is not None else None,
             "ci_high_90": round(ci_high_90, 2) if ci_high_90 is not None else None,
             "vegas_spread": None,
             "win_prob_home": round(win_prob_home, 4) if win_prob_home is not None else None,
             "win_prob_away": round(win_prob_away, 4) if win_prob_away is not None else None,
-            "base_source": "elo" if elo_row is not None else None,
+            "base_source": "od_elo" if od_row is not None else None,
             "net_edge_diff": None,
             "matchup_quality": None,
             "home_recent_form": home_form,

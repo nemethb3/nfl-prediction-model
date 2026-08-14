@@ -183,6 +183,37 @@
   transition: width 0.3s;
 }
 
+.player-card .props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.player-card .prop-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px 4px;
+}
+
+.player-card .prop-label {
+  color: #999;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.player-card .prop-value {
+  color: #e5e7eb;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .player-card .risk-fill.risk-low { background: #4ade80; }
 .player-card .risk-fill.risk-moderate { background: #fbbf24; }
 .player-card .risk-fill.risk-high { background: #f97316; }

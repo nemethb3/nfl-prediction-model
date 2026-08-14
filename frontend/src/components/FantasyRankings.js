@@ -49,9 +49,48 @@ const ACCURACY_TERCILE_RANGES = {
   TE: '±1.4 / ±4.1 PPR',
 };
 
+// Real per-position prop stat display order/labels, matching the real
+// per-position targets train_player_props_models.py actually trained
+// (see that script - a QB has no real receiving props, a WR/TE's real
+// rushing_yards prop is a near-zero real signal shown for completeness,
+// not because it's a meaningful part of their real role).
+const PROP_STAT_LABELS = {
+  QB: [
+    ['completions', 'Comp'],
+    ['passing_yards', 'Pass Yds'],
+    ['passing_tds', 'Pass TD'],
+    ['rushing_tds', 'Rush TD'],
+  ],
+  RB: [
+    ['rushing_yards', 'Rush Yds'],
+    ['rushing_tds', 'Rush TD'],
+    ['receptions', 'Rec'],
+    ['receiving_yards', 'Rec Yds'],
+  ],
+  WR: [
+    ['receptions', 'Rec'],
+    ['receiving_yards', 'Rec Yds'],
+    ['receiving_tds', 'Rec TD'],
+    ['rushing_yards', 'Rush Yds'],
+  ],
+  TE: [
+    ['receptions', 'Rec'],
+    ['receiving_yards', 'Rec Yds'],
+    ['receiving_tds', 'Rec TD'],
+    ['rushing_yards', 'Rush Yds'],
+  ],
+};
+
 export default function FantasyRankings() {
   const { seasonData, selectedSeason, hasResults } = useSeason();
   const fantasyData = seasonData.fantasy;
+  // Real per-player-game stat projections (Player Props Model), keyed by
+  // the same real `{player_id}_w{week}` id format fantasy_rankings_*.json
+  // already uses - null for seasons this wasn't built for (see
+  // SeasonContext.js).
+  const propsById = seasonData.playerProps
+    ? new Map(seasonData.playerProps.map((p) => [p.id, p]))
+    : null;
   // Real data exists for 2026 (Week 1 preseason projections), unlike the
   // other sections gated by the blanket `hasResults` flag - checking for
   // real fantasy data specifically, not the season-wide flag, is what
@@ -164,6 +203,7 @@ export default function FantasyRankings() {
               isExpanded={expandedPlayerId === player.id}
               onToggle={() => setExpandedPlayerId(expandedPlayerId === player.id ? null : player.id)}
               isPreseason={isPreseason}
+              props={propsById ? propsById.get(player.id) : null}
             />
           ))
         )}
@@ -219,7 +259,7 @@ export default function FantasyRankings() {
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
+function PlayerCard({ player, isExpanded, onToggle, isPreseason, props }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const isPriorSeasonFallback = player.projection_type === 'prior_season_rate_fallback';
@@ -344,6 +384,29 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason }) {
               ) : (
                 <div className="small-text">No real trailing defense data yet (week 1 - not fabricated with a fallback)</div>
               )}
+            </div>
+          )}
+
+          {props && PROP_STAT_LABELS[player.position] && (
+            <div className="section">
+              <div className="section-title">Projected Stats</div>
+              <div className="props-grid">
+                {PROP_STAT_LABELS[player.position].map(([key, label]) => (
+                  <div key={key} className="prop-stat">
+                    <span className="prop-label">{label}</span>
+                    <span className="prop-value">{props.predicted_stats[key]}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="small-text">
+                Real, position-specific linear regression (5-fold cross-validated), conditioned on
+                this player&apos;s own real 2015-2025 career per-game average and the real opponent
+                Defensive Elo ({props.opponent_d_elo}) from this project&apos;s O/D Elo split - not a
+                fixed per-position adjustment. Volume/yardage props are meaningfully predictive (real
+                out-of-fold R² 0.16-0.31); TD props are weak (R² 0.04-0.14, real and disclosed - TDs
+                are rare, high-variance events that a linear model can&apos;t capture well). See
+                player_props_models.json for the full real per-stat validation.
+              </div>
             </div>
           )}
 

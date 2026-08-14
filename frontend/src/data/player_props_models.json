@@ -1,0 +1,698 @@
+{
+  "QB": {
+    "completions": {
+      "oof_mae": 5.898,
+      "oof_r2": 0.281,
+      "samples": 6544,
+      "features": [
+        "career_avg_completions",
+        "career_avg_attempts",
+        "career_avg_passing_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_completions": 2.46905,
+        "career_avg_attempts": -0.27886,
+        "career_avg_passing_yards": 2.51935,
+        "career_avg_rushing_yards": -0.21221,
+        "opp_d_elo": -0.0325,
+        "is_home": 0.15228,
+        "week_norm": -0.41855
+      },
+      "intercept": 18.563,
+      "scaler_mean": {
+        "career_avg_completions": 17.9256,
+        "career_avg_attempts": 28.0085,
+        "career_avg_passing_yards": 202.3732,
+        "career_avg_rushing_yards": 13.7505,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965
+      },
+      "scaler_scale": {
+        "career_avg_completions": 6.5061,
+        "career_avg_attempts": 9.6937,
+        "career_avg_passing_yards": 76.1308,
+        "career_avg_rushing_yards": 12.4287,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022
+      }
+    },
+    "passing_yards": {
+      "oof_mae": 70.461,
+      "oof_r2": 0.277,
+      "samples": 6544,
+      "features": [
+        "career_avg_completions",
+        "career_avg_attempts",
+        "career_avg_passing_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_completions": -3.22891,
+        "career_avg_attempts": -2.8208,
+        "career_avg_passing_yards": 60.55778,
+        "career_avg_rushing_yards": -0.79283,
+        "opp_d_elo": -2.41764,
+        "is_home": 2.85362,
+        "week_norm": -4.9753
+      },
+      "intercept": 206.8982,
+      "scaler_mean": {
+        "career_avg_completions": 17.9256,
+        "career_avg_attempts": 28.0085,
+        "career_avg_passing_yards": 202.3732,
+        "career_avg_rushing_yards": 13.7505,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965
+      },
+      "scaler_scale": {
+        "career_avg_completions": 6.5061,
+        "career_avg_attempts": 9.6937,
+        "career_avg_passing_yards": 76.1308,
+        "career_avg_rushing_yards": 12.4287,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022
+      }
+    },
+    "passing_tds": {
+      "oof_mae": 0.885,
+      "oof_r2": 0.139,
+      "samples": 6544,
+      "features": [
+        "career_avg_completions",
+        "career_avg_attempts",
+        "career_avg_passing_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_completions": 0.03562,
+        "career_avg_attempts": -0.26599,
+        "career_avg_passing_yards": 0.64806,
+        "career_avg_rushing_yards": 0.0498,
+        "opp_d_elo": -0.05913,
+        "is_home": 0.04813,
+        "week_norm": -0.00527
+      },
+      "intercept": 1.2905,
+      "scaler_mean": {
+        "career_avg_completions": 17.9256,
+        "career_avg_attempts": 28.0085,
+        "career_avg_passing_yards": 202.3732,
+        "career_avg_rushing_yards": 13.7505,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965
+      },
+      "scaler_scale": {
+        "career_avg_completions": 6.5061,
+        "career_avg_attempts": 9.6937,
+        "career_avg_passing_yards": 76.1308,
+        "career_avg_rushing_yards": 12.4287,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022
+      }
+    },
+    "rushing_tds": {
+      "oof_mae": 0.243,
+      "oof_r2": 0.056,
+      "samples": 6544,
+      "features": [
+        "career_avg_completions",
+        "career_avg_attempts",
+        "career_avg_passing_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_completions": -0.06013,
+        "career_avg_attempts": 0.02774,
+        "career_avg_passing_yards": 0.0281,
+        "career_avg_rushing_yards": 0.09738,
+        "opp_d_elo": -0.00666,
+        "is_home": 0.013,
+        "week_norm": -0.00207
+      },
+      "intercept": 0.1485,
+      "scaler_mean": {
+        "career_avg_completions": 17.9256,
+        "career_avg_attempts": 28.0085,
+        "career_avg_passing_yards": 202.3732,
+        "career_avg_rushing_yards": 13.7505,
+        "opp_d_elo": 1504.5078,
+        "is_home": 0.5024,
+        "week_norm": 0.4965
+      },
+      "scaler_scale": {
+        "career_avg_completions": 6.5061,
+        "career_avg_attempts": 9.6937,
+        "career_avg_passing_yards": 76.1308,
+        "career_avg_rushing_yards": 12.4287,
+        "opp_d_elo": 89.5232,
+        "is_home": 0.5,
+        "week_norm": 0.3022
+      }
+    }
+  },
+  "RB": {
+    "rushing_yards": {
+      "oof_mae": 21.985,
+      "oof_r2": 0.302,
+      "samples": 15088,
+      "features": [
+        "career_avg_carries",
+        "career_avg_rushing_yards",
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_carries": 8.34789,
+        "career_avg_rushing_yards": 11.58456,
+        "career_avg_targets": -3.42404,
+        "career_avg_receptions": 2.25406,
+        "career_avg_receiving_yards": 1.86409,
+        "opp_d_elo": -0.72359,
+        "is_home": 0.70162,
+        "week_norm": 1.04992
+      },
+      "intercept": 34.3531,
+      "scaler_mean": {
+        "career_avg_carries": 7.994,
+        "career_avg_rushing_yards": 34.3848,
+        "career_avg_targets": 2.404,
+        "career_avg_receptions": 1.8361,
+        "career_avg_receiving_yards": 14.3866,
+        "opp_d_elo": 1504.9918,
+        "is_home": 0.5021,
+        "week_norm": 0.4926
+      },
+      "scaler_scale": {
+        "career_avg_carries": 5.0165,
+        "career_avg_rushing_yards": 23.1136,
+        "career_avg_targets": 1.5326,
+        "career_avg_receptions": 1.2059,
+        "career_avg_receiving_yards": 10.4589,
+        "opp_d_elo": 88.7798,
+        "is_home": 0.5,
+        "week_norm": 0.3008
+      }
+    },
+    "rushing_tds": {
+      "oof_mae": 0.359,
+      "oof_r2": 0.084,
+      "samples": 15088,
+      "features": [
+        "career_avg_carries",
+        "career_avg_rushing_yards",
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_carries": 0.03506,
+        "career_avg_rushing_yards": 0.11968,
+        "career_avg_targets": -0.04245,
+        "career_avg_receptions": 0.00324,
+        "career_avg_receiving_yards": 0.04703,
+        "opp_d_elo": -0.01866,
+        "is_home": 0.01462,
+        "week_norm": 0.00641
+      },
+      "intercept": 0.2479,
+      "scaler_mean": {
+        "career_avg_carries": 7.994,
+        "career_avg_rushing_yards": 34.3848,
+        "career_avg_targets": 2.404,
+        "career_avg_receptions": 1.8361,
+        "career_avg_receiving_yards": 14.3866,
+        "opp_d_elo": 1504.9918,
+        "is_home": 0.5021,
+        "week_norm": 0.4926
+      },
+      "scaler_scale": {
+        "career_avg_carries": 5.0165,
+        "career_avg_rushing_yards": 23.1136,
+        "career_avg_targets": 1.5326,
+        "career_avg_receptions": 1.2059,
+        "career_avg_receiving_yards": 10.4589,
+        "opp_d_elo": 88.7798,
+        "is_home": 0.5,
+        "week_norm": 0.3008
+      }
+    },
+    "receptions": {
+      "oof_mae": 1.259,
+      "oof_r2": 0.233,
+      "samples": 15088,
+      "features": [
+        "career_avg_carries",
+        "career_avg_rushing_yards",
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_carries": -0.23308,
+        "career_avg_rushing_yards": 0.29776,
+        "career_avg_targets": 0.50189,
+        "career_avg_receptions": 0.09439,
+        "career_avg_receiving_yards": 0.31736,
+        "opp_d_elo": 0.00213,
+        "is_home": 0.02299,
+        "week_norm": -0.024
+      },
+      "intercept": 1.7931,
+      "scaler_mean": {
+        "career_avg_carries": 7.994,
+        "career_avg_rushing_yards": 34.3848,
+        "career_avg_targets": 2.404,
+        "career_avg_receptions": 1.8361,
+        "career_avg_receiving_yards": 14.3866,
+        "opp_d_elo": 1504.9918,
+        "is_home": 0.5021,
+        "week_norm": 0.4926
+      },
+      "scaler_scale": {
+        "career_avg_carries": 5.0165,
+        "career_avg_rushing_yards": 23.1136,
+        "career_avg_targets": 1.5326,
+        "career_avg_receptions": 1.2059,
+        "career_avg_receiving_yards": 10.4589,
+        "opp_d_elo": 88.7798,
+        "is_home": 0.5,
+        "week_norm": 0.3008
+      }
+    },
+    "receiving_yards": {
+      "oof_mae": 12.03,
+      "oof_r2": 0.162,
+      "samples": 15088,
+      "features": [
+        "career_avg_carries",
+        "career_avg_rushing_yards",
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_carries": -2.33484,
+        "career_avg_rushing_yards": 2.66816,
+        "career_avg_targets": 4.86404,
+        "career_avg_receptions": -1.57276,
+        "career_avg_receiving_yards": 4.09763,
+        "opp_d_elo": -0.07299,
+        "is_home": 0.28456,
+        "week_norm": -0.32955
+      },
+      "intercept": 13.8346,
+      "scaler_mean": {
+        "career_avg_carries": 7.994,
+        "career_avg_rushing_yards": 34.3848,
+        "career_avg_targets": 2.404,
+        "career_avg_receptions": 1.8361,
+        "career_avg_receiving_yards": 14.3866,
+        "opp_d_elo": 1504.9918,
+        "is_home": 0.5021,
+        "week_norm": 0.4926
+      },
+      "scaler_scale": {
+        "career_avg_carries": 5.0165,
+        "career_avg_rushing_yards": 23.1136,
+        "career_avg_targets": 1.5326,
+        "career_avg_receptions": 1.2059,
+        "career_avg_receiving_yards": 10.4589,
+        "opp_d_elo": 88.7798,
+        "is_home": 0.5,
+        "week_norm": 0.3008
+      }
+    }
+  },
+  "WR": {
+    "receptions": {
+      "oof_mae": 1.614,
+      "oof_r2": 0.304,
+      "samples": 21924,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 0.09746,
+        "career_avg_receptions": 1.15099,
+        "career_avg_receiving_yards": 0.14903,
+        "career_avg_rushing_yards": 0.03326,
+        "opp_d_elo": -0.03703,
+        "is_home": 0.02281,
+        "week_norm": -0.04209
+      },
+      "intercept": 3.0555,
+      "scaler_mean": {
+        "career_avg_targets": 4.9362,
+        "career_avg_receptions": 3.0992,
+        "career_avg_receiving_yards": 39.9142,
+        "career_avg_rushing_yards": 1.2121,
+        "opp_d_elo": 1505.798,
+        "is_home": 0.5001,
+        "week_norm": 0.4919
+      },
+      "scaler_scale": {
+        "career_avg_targets": 2.4333,
+        "career_avg_receptions": 1.6518,
+        "career_avg_receiving_yards": 22.2968,
+        "career_avg_rushing_yards": 2.5047,
+        "opp_d_elo": 89.7103,
+        "is_home": 0.5,
+        "week_norm": 0.3005
+      }
+    },
+    "receiving_yards": {
+      "oof_mae": 24.493,
+      "oof_r2": 0.239,
+      "samples": 21924,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 5.61357,
+        "career_avg_receptions": 2.53524,
+        "career_avg_receiving_yards": 10.26057,
+        "career_avg_rushing_yards": 0.21059,
+        "opp_d_elo": -0.76776,
+        "is_home": 0.54356,
+        "week_norm": -0.65224
+      },
+      "intercept": 38.9661,
+      "scaler_mean": {
+        "career_avg_targets": 4.9362,
+        "career_avg_receptions": 3.0992,
+        "career_avg_receiving_yards": 39.9142,
+        "career_avg_rushing_yards": 1.2121,
+        "opp_d_elo": 1505.798,
+        "is_home": 0.5001,
+        "week_norm": 0.4919
+      },
+      "scaler_scale": {
+        "career_avg_targets": 2.4333,
+        "career_avg_receptions": 1.6518,
+        "career_avg_receiving_yards": 22.2968,
+        "career_avg_rushing_yards": 2.5047,
+        "opp_d_elo": 89.7103,
+        "is_home": 0.5,
+        "week_norm": 0.3005
+      }
+    },
+    "receiving_tds": {
+      "oof_mae": 0.355,
+      "oof_r2": 0.056,
+      "samples": 21924,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 0.03055,
+        "career_avg_receptions": -0.00074,
+        "career_avg_receiving_yards": 0.08891,
+        "career_avg_rushing_yards": -0.00603,
+        "opp_d_elo": -0.00918,
+        "is_home": 0.01344,
+        "week_norm": -0.0029
+      },
+      "intercept": 0.2375,
+      "scaler_mean": {
+        "career_avg_targets": 4.9362,
+        "career_avg_receptions": 3.0992,
+        "career_avg_receiving_yards": 39.9142,
+        "career_avg_rushing_yards": 1.2121,
+        "opp_d_elo": 1505.798,
+        "is_home": 0.5001,
+        "week_norm": 0.4919
+      },
+      "scaler_scale": {
+        "career_avg_targets": 2.4333,
+        "career_avg_receptions": 1.6518,
+        "career_avg_receiving_yards": 22.2968,
+        "career_avg_rushing_yards": 2.5047,
+        "opp_d_elo": 89.7103,
+        "is_home": 0.5,
+        "week_norm": 0.3005
+      }
+    },
+    "rushing_yards": {
+      "oof_mae": 1.892,
+      "oof_r2": 0.081,
+      "samples": 21924,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": -0.54914,
+        "career_avg_receptions": 0.66945,
+        "career_avg_receiving_yards": -0.13207,
+        "career_avg_rushing_yards": 1.43128,
+        "opp_d_elo": -0.05183,
+        "is_home": 0.01,
+        "week_norm": 0.07207
+      },
+      "intercept": 1.1084,
+      "scaler_mean": {
+        "career_avg_targets": 4.9362,
+        "career_avg_receptions": 3.0992,
+        "career_avg_receiving_yards": 39.9142,
+        "career_avg_rushing_yards": 1.2121,
+        "opp_d_elo": 1505.798,
+        "is_home": 0.5001,
+        "week_norm": 0.4919
+      },
+      "scaler_scale": {
+        "career_avg_targets": 2.4333,
+        "career_avg_receptions": 1.6518,
+        "career_avg_receiving_yards": 22.2968,
+        "career_avg_rushing_yards": 2.5047,
+        "opp_d_elo": 89.7103,
+        "is_home": 0.5,
+        "week_norm": 0.3005
+      }
+    }
+  },
+  "TE": {
+    "receptions": {
+      "oof_mae": 1.34,
+      "oof_r2": 0.278,
+      "samples": 11136,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 0.52652,
+        "career_avg_receptions": 0.49555,
+        "career_avg_receiving_yards": 0.10731,
+        "career_avg_rushing_yards": 0.02416,
+        "opp_d_elo": -0.01103,
+        "is_home": 0.02306,
+        "week_norm": 0.04012
+      },
+      "intercept": 2.4366,
+      "scaler_mean": {
+        "career_avg_targets": 3.4927,
+        "career_avg_receptions": 2.3736,
+        "career_avg_receiving_yards": 25.7713,
+        "career_avg_rushing_yards": 0.1768,
+        "opp_d_elo": 1504.5326,
+        "is_home": 0.4992,
+        "week_norm": 0.4931
+      },
+      "scaler_scale": {
+        "career_avg_targets": 1.8638,
+        "career_avg_receptions": 1.2909,
+        "career_avg_receiving_yards": 16.2662,
+        "career_avg_rushing_yards": 1.3254,
+        "opp_d_elo": 89.3825,
+        "is_home": 0.5,
+        "week_norm": 0.2993
+      }
+    },
+    "receiving_yards": {
+      "oof_mae": 17.129,
+      "oof_r2": 0.245,
+      "samples": 11136,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 7.86666,
+        "career_avg_receptions": -2.36398,
+        "career_avg_receiving_yards": 7.90492,
+        "career_avg_rushing_yards": 0.12052,
+        "opp_d_elo": -0.56471,
+        "is_home": 0.28014,
+        "week_norm": 0.45081
+      },
+      "intercept": 26.0163,
+      "scaler_mean": {
+        "career_avg_targets": 3.4927,
+        "career_avg_receptions": 2.3736,
+        "career_avg_receiving_yards": 25.7713,
+        "career_avg_rushing_yards": 0.1768,
+        "opp_d_elo": 1504.5326,
+        "is_home": 0.4992,
+        "week_norm": 0.4931
+      },
+      "scaler_scale": {
+        "career_avg_targets": 1.8638,
+        "career_avg_receptions": 1.2909,
+        "career_avg_receiving_yards": 16.2662,
+        "career_avg_rushing_yards": 1.3254,
+        "opp_d_elo": 89.3825,
+        "is_home": 0.5,
+        "week_norm": 0.2993
+      }
+    },
+    "receiving_tds": {
+      "oof_mae": 0.305,
+      "oof_r2": 0.037,
+      "samples": 11136,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": 0.06546,
+        "career_avg_receptions": -0.0563,
+        "career_avg_receiving_yards": 0.07642,
+        "career_avg_rushing_yards": -0.00171,
+        "opp_d_elo": -0.01466,
+        "is_home": 0.00204,
+        "week_norm": 0.00439
+      },
+      "intercept": 0.1915,
+      "scaler_mean": {
+        "career_avg_targets": 3.4927,
+        "career_avg_receptions": 2.3736,
+        "career_avg_receiving_yards": 25.7713,
+        "career_avg_rushing_yards": 0.1768,
+        "opp_d_elo": 1504.5326,
+        "is_home": 0.4992,
+        "week_norm": 0.4931
+      },
+      "scaler_scale": {
+        "career_avg_targets": 1.8638,
+        "career_avg_receptions": 1.2909,
+        "career_avg_receiving_yards": 16.2662,
+        "career_avg_rushing_yards": 1.3254,
+        "opp_d_elo": 89.3825,
+        "is_home": 0.5,
+        "week_norm": 0.2993
+      }
+    },
+    "rushing_yards": {
+      "oof_mae": 0.335,
+      "oof_r2": 0.314,
+      "samples": 11136,
+      "features": [
+        "career_avg_targets",
+        "career_avg_receptions",
+        "career_avg_receiving_yards",
+        "career_avg_rushing_yards",
+        "opp_d_elo",
+        "is_home",
+        "week_norm"
+      ],
+      "coefficients": {
+        "career_avg_targets": -0.12688,
+        "career_avg_receptions": 0.01355,
+        "career_avg_receiving_yards": 0.09828,
+        "career_avg_rushing_yards": 1.56392,
+        "opp_d_elo": -0.04523,
+        "is_home": 0.00585,
+        "week_norm": 0.03176
+      },
+      "intercept": 0.2053,
+      "scaler_mean": {
+        "career_avg_targets": 3.4927,
+        "career_avg_receptions": 2.3736,
+        "career_avg_receiving_yards": 25.7713,
+        "career_avg_rushing_yards": 0.1768,
+        "opp_d_elo": 1504.5326,
+        "is_home": 0.4992,
+        "week_norm": 0.4931
+      },
+      "scaler_scale": {
+        "career_avg_targets": 1.8638,
+        "career_avg_receptions": 1.2909,
+        "career_avg_receiving_yards": 16.2662,
+        "career_avg_rushing_yards": 1.3254,
+        "opp_d_elo": 89.3825,
+        "is_home": 0.5,
+        "week_norm": 0.2993
+      }
+    }
+  }
+}

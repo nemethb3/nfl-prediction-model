@@ -31,7 +31,23 @@ writing this:
    rows - using a stat DERIVED FROM these same target columns as a
    feature would be a real, if subtle, leakage risk, and no real per-game
    Vegas total exists consistently across 2015-2025 to begin with).
-"""
+
+Real weather/rest addition (Quick Wins task): the pasted spec for that
+task assumed `data/nfl_game_weather_2015_2025.csv` and, when missing,
+fell back to a FABRICATED placeholder - literally `temperature=72.0,
+wind_speed=5.0, precipitation=0.0` for every single game, presented as if
+real. Checked first: data/raw/schedules_2015_2025.csv already has real
+`roof`, `temp`, `wind`, `home_rest`, `away_rest` columns natively (real
+nflverse data, no collection script needed at all). But `temp`/`wind` are
+real for only ~63% of outdoor games (dome/closed/open games are
+genuinely null - weather doesn't apply - and 6% of real outdoor games are
+missing) AND, more importantly, aren't knowable in advance for a future
+game - a 2026 preseason player-props projection can't use a temperature
+that doesn't exist yet. Real fix: only `roof` (stadium-fixed, known
+months in advance) and each team's own real rest days (schedule-
+determined, also knowable in advance) are used as real features here -
+both are genuinely available for 2026 scoring, unlike temp/wind, which
+were left out of the shipped model rather than faked."""
 
 import os
 
@@ -43,6 +59,7 @@ PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
 
 PLAYER_STATS_PATH = os.path.join(PROCESSED_DIR, "player_weekly_stats.csv")
 OD_ELO_HISTORY_PATH = os.path.join(PROCESSED_DIR, "team_elo_history_offensive_defensive_2015_2025.csv")
+SCHEDULE_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "schedules_2015_2025.csv")
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
@@ -82,6 +99,21 @@ def _real_opponent_od_elo_long():
     return pd.concat([home_rows, away_rows], ignore_index=True)
 
 
+def _real_roof_and_rest_long():
+    """Reshapes real schedule rows into a long (team, season, week) ->
+    is_dome/own_rest_days lookup. Both are genuinely knowable in advance
+    (roof is stadium-fixed; rest days are schedule-determined) - unlike
+    temp/wind, which are excluded here (see module docstring)."""
+    games = pd.read_csv(SCHEDULE_PATH)
+    games = games[games["game_type"] == "REG"]
+    games["is_dome"] = games["roof"].isin(["dome", "closed"]).astype(int)
+    home_rows = games[["season", "week", "home_team", "is_dome", "home_rest"]].rename(
+        columns={"home_team": "team", "home_rest": "own_rest_days"})
+    away_rows = games[["season", "week", "away_team", "is_dome", "away_rest"]].rename(
+        columns={"away_team": "team", "away_rest": "own_rest_days"})
+    return pd.concat([home_rows, away_rows], ignore_index=True)
+
+
 def build_player_props_signals():
     print("\nBuilding real, leak-free player props features (2015-2025)...\n")
     stats = pd.read_csv(PLAYER_STATS_PATH)
@@ -91,6 +123,11 @@ def build_player_props_signals():
     opp_lookup = _real_opponent_od_elo_long()
     stats = stats.merge(
         opp_lookup, left_on=["recent_team", "season", "week"], right_on=["team", "season", "week"], how="inner")
+
+    roof_rest_lookup = _real_roof_and_rest_long()
+    stats = stats.merge(
+        roof_rest_lookup, left_on=["recent_team", "season", "week"], right_on=["team", "season", "week"],
+        how="inner", suffixes=("", "_roofrest"))
 
     week_min, week_max = stats["week"].min(), stats["week"].max()
     stats["week_norm"] = (stats["week"] - week_min) / (week_max - week_min)
@@ -117,7 +154,7 @@ def build_player_props_signals():
 
         keep_cols = (
             ["player_id", "player_name", "position", "season", "week", "recent_team", "opponent_team",
-             "is_home", "week_norm", "opp_o_elo", "opp_d_elo"]
+             "is_home", "week_norm", "opp_o_elo", "opp_d_elo", "is_dome", "own_rest_days"]
             + feature_cols
             + TARGET_COLS[position]
         )

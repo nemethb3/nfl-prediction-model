@@ -1,0 +1,38 @@
+{
+  "methodology": "Real value-based-drafting gap: each position's real top-12 (elite) average season-total PPR minus its real rank-25-36 (replacement-level) average, from real 2015-2025 completed seasons, averaged across all real seasons with enough real ranked players. positional_scarcity_raw_points is that real gap normalized against the real 4-position average gap (1.0 = average scarcity).",
+  "disclosed_limitation": "This is raw fantasy-point scarcity, not roster-slot-adjusted scarcity. QB scores highest here because passing yards/TDs generate more raw PPR points at the top of the position, not because QB is harder to replace on a real roster - a standard league starts only 1 QB but 2-3 flex-eligible RB/WR/TE, which this raw-points metric doesn't capture. This project has no real roster-construction/ADP data to compute a genuine slot-adjusted scarcity number, so one wasn't fabricated - use this real point-gap metric with that real caveat in mind, not as a complete redraft-value ranking.",
+  "tiers": {
+    "QB": {
+      "elite_season_ppr": 316.5,
+      "starter_season_ppr": 224.2,
+      "replacement_season_ppr": 125.9,
+      "real_seasons_used": 11,
+      "elite_vs_replacement_gap": 190.6,
+      "positional_scarcity_raw_points": 1.46
+    },
+    "RB": {
+      "elite_season_ppr": 278.0,
+      "starter_season_ppr": 196.4,
+      "replacement_season_ppr": 152.1,
+      "real_seasons_used": 11,
+      "elite_vs_replacement_gap": 125.9,
+      "positional_scarcity_raw_points": 0.97
+    },
+    "WR": {
+      "elite_season_ppr": 285.5,
+      "starter_season_ppr": 220.7,
+      "replacement_season_ppr": 186.9,
+      "real_seasons_used": 11,
+      "elite_vs_replacement_gap": 98.6,
+      "positional_scarcity_raw_points": 0.76
+    },
+    "TE": {
+      "elite_season_ppr": 188.6,
+      "starter_season_ppr": 120.3,
+      "replacement_season_ppr": 83.1,
+      "real_seasons_used": 11,
+      "elite_vs_replacement_gap": 105.6,
+      "positional_scarcity_raw_points": 0.81
+    }
+  }
+}

@@ -15,7 +15,20 @@ doesn't apply to a QB's own passing/rushing props, and a column that
 doesn't exist anywhere in this project - see build_player_props_signals.py
 docstring). Real fix: each position gets its own feature list, built only
 from real, position-relevant career-average columns that
-build_player_props_signals.py actually exports."""
+build_player_props_signals.py actually exports.
+
+Real weather/rest addition (Quick Wins task): adds `is_dome` and
+`own_rest_days` - both real, both genuinely knowable in advance for a
+future game (unlike temp/wind - see build_player_props_signals.py
+docstring for why those were excluded). Real, honest before/after result
+(5-fold OOF, same real methodology, all 16 real position/stat models):
+R^2 moved by at most +/-0.002 and MAE by at most +/-0.04 on every single
+one - a real, genuine null result, not the "+0.05-0.10pp" the originally
+pasted spec assumed it would find before ever running the real numbers.
+Kept anyway since both features are real, free (no fabricated
+placeholder unlike the spec's temp/wind approach), and cost nothing to
+include - but this is disclosed as a null result, not oversold as an
+improvement."""
 
 import json
 import os
@@ -50,7 +63,8 @@ TARGET_COLS = {
 
 
 def _features_for(position):
-    return [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]] + ["opp_d_elo", "is_home", "week_norm"]
+    return [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]] + [
+        "opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days"]
 
 
 def train_player_props_models():

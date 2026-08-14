@@ -1,6 +1,12 @@
 """Scores real player props predictions for every real 2026 REG game, for
 every real rostered QB/RB/WR/TE with real 2015-2025 history.
 
+Real weather/rest addition (Quick Wins task): models now also take
+is_dome/own_rest_days (real, both knowable in advance for 2026 - see
+build_player_props_signals.py/train_player_props_models.py docstrings for
+the real, honest null-result finding from adding them, and why temp/wind
+were excluded as not knowable in advance for a future game).
+
 Real, serious problems found and fixed in the originally pasted spec
 before writing this:
 
@@ -77,9 +83,17 @@ def _real_career_averages(position, player_ids):
 def _real_2026_schedule_by_team():
     sched = pd.read_csv(SCHEDULE_PATH)
     sched = sched[sched["game_type"] == "REG"]
-    home = sched[["week", "home_team", "away_team"]].rename(columns={"home_team": "team", "away_team": "opponent"})
+    # Real roof/rest, same as build_player_props_signals.py's training-side
+    # features - both genuinely knowable in advance for a 2026 game.
+    # 43/272 real 2026 games have no roof recorded yet this far out; those
+    # default to is_dome=0 (real majority class - 177/229 known real 2026
+    # games are outdoors), a disclosed real fallback, not a fabricated one.
+    sched["is_dome"] = sched["roof"].isin(["dome", "closed"]).fillna(False).astype(int)
+    home = sched[["week", "home_team", "away_team", "is_dome", "home_rest"]].rename(
+        columns={"home_team": "team", "away_team": "opponent", "home_rest": "own_rest_days"})
     home["is_home"] = True
-    away = sched[["week", "away_team", "home_team"]].rename(columns={"away_team": "team", "home_team": "opponent"})
+    away = sched[["week", "away_team", "home_team", "is_dome", "away_rest"]].rename(
+        columns={"away_team": "team", "home_team": "opponent", "away_rest": "own_rest_days"})
     away["is_home"] = False
     return pd.concat([home, away], ignore_index=True)
 
@@ -131,6 +145,8 @@ def generate_player_props_2026():
                 feature_values["opp_d_elo"] = float(opp_elo["d_elo"])
                 feature_values["is_home"] = float(g["is_home"])
                 feature_values["week_norm"] = float(week_norm)
+                feature_values["is_dome"] = float(g["is_dome"])
+                feature_values["own_rest_days"] = float(g["own_rest_days"])
 
                 predicted_stats = {
                     stat: round(_predict(feature_values, model_info), 1)

@@ -1,0 +1,105 @@
+{
+  "methodology": "Linear regression (5-fold KFold, real out-of-fold evaluation), predicting each real game's combined score from Elo-derived and schedule-position features only (no Vegas signal as an input feature) - trained on real 2015-2025 REG games with a posted Vegas total. Real Vegas total is used only as the historical comparison point for the directional-accuracy and alert-threshold numbers below, never as a model input, so this model can score any real game regardless of whether a Vegas total exists for it.",
+  "training_samples": 2895,
+  "features": [
+    "elo_sum",
+    "elo_diff",
+    "week_norm",
+    "season_norm"
+  ],
+  "week_range": [
+    1,
+    18
+  ],
+  "season_range": [
+    2015,
+    2025
+  ],
+  "oof_mae_points": 10.945,
+  "oof_r2": 0.005,
+  "oof_directional_accuracy": 0.5026,
+  "alert_edge_threshold_points": 5.0,
+  "alert_coverage": 0.2318,
+  "alert_directional_accuracy": 0.5052,
+  "threshold_calibration": [
+    {
+      "edge_threshold": 0.5,
+      "coverage": 0.8964,
+      "n_flagged": 2595,
+      "directional_accuracy": 0.5021
+    },
+    {
+      "edge_threshold": 1.0,
+      "coverage": 0.818,
+      "n_flagged": 2368,
+      "directional_accuracy": 0.5025
+    },
+    {
+      "edge_threshold": 1.5,
+      "coverage": 0.7216,
+      "n_flagged": 2089,
+      "directional_accuracy": 0.4964
+    },
+    {
+      "edge_threshold": 2.0,
+      "coverage": 0.6404,
+      "n_flagged": 1854,
+      "directional_accuracy": 0.5011
+    },
+    {
+      "edge_threshold": 2.5,
+      "coverage": 0.5565,
+      "n_flagged": 1611,
+      "directional_accuracy": 0.5078
+    },
+    {
+      "edge_threshold": 3.0,
+      "coverage": 0.475,
+      "n_flagged": 1375,
+      "directional_accuracy": 0.504
+    },
+    {
+      "edge_threshold": 3.5,
+      "coverage": 0.4017,
+      "n_flagged": 1163,
+      "directional_accuracy": 0.509
+    },
+    {
+      "edge_threshold": 4.0,
+      "coverage": 0.3361,
+      "n_flagged": 973,
+      "directional_accuracy": 0.5057
+    },
+    {
+      "edge_threshold": 4.5,
+      "coverage": 0.2794,
+      "n_flagged": 809,
+      "directional_accuracy": 0.5006
+    },
+    {
+      "edge_threshold": 5.0,
+      "coverage": 0.2318,
+      "n_flagged": 671,
+      "directional_accuracy": 0.5052
+    }
+  ],
+  "intercept": 45.586183074265975,
+  "coefficients": {
+    "elo_sum": 1.0786,
+    "elo_diff": 0.0731,
+    "week_norm": -0.3367,
+    "season_norm": -0.0667
+  },
+  "scaler_mean": {
+    "elo_sum": 3000.931,
+    "elo_diff": 35.5805,
+    "week_norm": 0.4857,
+    "season_norm": 0.5082
+  },
+  "scaler_scale": {
+    "elo_sum": 46.2536,
+    "elo_diff": 28.4668,
+    "week_norm": 0.3029,
+    "season_norm": 0.3166
+  }
+}

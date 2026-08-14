@@ -19,14 +19,15 @@ import { AVAILABLE_SEASONS, DEFAULT_SEASON, SEASON_HAS_RESULTS, SEASON_LABELS } 
 // main bundle.
 const SEASON_FILE_LOADERS = {
   2025: async () => {
-    const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest, superbowlOdds] =
-      await Promise.all([
+    const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest,
+      totalsBettingBacktest, superbowlOdds] = await Promise.all([
         import('../data/games_2025.json'),
         import('../data/fantasy_rankings_2025.json'),
         import('../data/season_projections_2025.json'),
         import('../data/accuracy_tracker_2025.json'),
         import('../data/weekly_summary_2025.json'),
         import('../data/betting_backtest_results_2025.json'),
+        import('../data/totals_betting_backtest_2025.json'),
         import('../data/superbowl_odds_2025.json'),
       ]);
     return {
@@ -36,11 +37,14 @@ const SEASON_FILE_LOADERS = {
       accuracyTracker: accuracyTracker.default,
       weeklySummary: weeklySummary.default,
       bettingBacktest: bettingBacktest.default,
+      totalsBettingBacktest: totalsBettingBacktest.default,
       superbowlOdds: superbowlOdds.default,
     };
   },
-  // 2026: accuracyTracker/weeklySummary/bettingBacktest genuinely don't
-  // exist yet (real, unplayed season - see constants/seasons.js), so
+  // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
+  // genuinely don't exist yet (real, unplayed season - see
+  // constants/seasons.js; the totals backtest is real-2025-holdout-only,
+  // same reasoning as backtest_totals_betting_2025.py's own scoping), so
   // they're real `null`, not a fabricated/missing import.
   2026: async () => {
     const [games, fantasy, seasonProjections, superbowlOdds] = await Promise.all([
@@ -56,6 +60,7 @@ const SEASON_FILE_LOADERS = {
       accuracyTracker: null,
       weeklySummary: null,
       bettingBacktest: null,
+      totalsBettingBacktest: null,
       superbowlOdds: superbowlOdds.default,
     };
   },
@@ -66,22 +71,31 @@ const SeasonContext = createContext(null);
 export function SeasonProvider({ children }) {
   const [selectedSeason, setSelectedSeason] = useState(DEFAULT_SEASON);
   const [seasonDataCache, setSeasonDataCache] = useState({});
-  const [dataLoading, setDataLoading] = useState(true);
   // Guards against a stale, slower-resolving load overwriting a newer one
   // if a user switches seasons again before the first load finishes.
   const loadTokenRef = useRef(0);
 
+  // Real bug found and fixed here: dataLoading used to be its own useState,
+  // reset to true/false only inside the useEffect below - which runs AFTER
+  // render/commit, one tick behind a selectedSeason change. That left a
+  // real window where a season switch (e.g. 2026 -> 2025) had already
+  // updated `hasResults` (purely derived from selectedSeason, synchronous)
+  // while `dataLoading` was still the STALE value from the previous
+  // season and `seasonDataCache[selectedSeason]` hadn't loaded yet -
+  // exactly the gap that let BettingAnalysis (and every other component
+  // gated the same way) render with hasResults=true but seasonData still
+  // undefined, crashing on `seasonData.bettingBacktest`. Fixed by deriving
+  // dataLoading synchronously from the same render's selectedSeason/cache
+  // state instead of tracking it as separate, laggable state - it can now
+  // never disagree with hasResults on a single render.
+  const dataLoading = !seasonDataCache[selectedSeason];
+
   useEffect(() => {
-    if (seasonDataCache[selectedSeason]) {
-      setDataLoading(false);
-      return;
-    }
+    if (seasonDataCache[selectedSeason]) return;
     const thisLoad = ++loadTokenRef.current;
-    setDataLoading(true);
     SEASON_FILE_LOADERS[selectedSeason]().then((data) => {
       if (loadTokenRef.current !== thisLoad) return; // a newer selection already superseded this one
       setSeasonDataCache((prev) => ({ ...prev, [selectedSeason]: data }));
-      setDataLoading(false);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSeason]);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
 // AUDIT_2026-08-12_DEEP.md Section 9 / Recommendation 10: first automated
@@ -20,7 +20,26 @@ jest.mock('./data/season_projections_2025.json', () => ([]));
 jest.mock('./data/season_projections_2026.json', () => ([]));
 jest.mock('./data/accuracy_tracker_2025.json', () => ({ season_summary: {}, weekly_breakdown: [] }));
 jest.mock('./data/weekly_summary_2025.json', () => ({ current_week: null, weeks: [] }));
-jest.mock('./data/betting_backtest_results_2025.json', () => ({}));
+// Real minimal shape BettingAnalysis.js actually expects (verified against
+// its own real destructuring: resultsData[strategy][betType].season_summary/
+// weekly_summary/bets) - an empty {} (this file's previous mock) would have
+// masked the real bug this test exists to catch, since it would throw on
+// resultsData[selectedStrategy] being undefined for an unrelated reason.
+// jest hoists jest.mock() factories above regular declarations, but
+// "mock"-prefixed helpers are explicitly exempted from that hoisting rule,
+// so this is safe to reference from the factory below.
+function mockBetType() {
+  return {
+    season_summary: { total_bets: 1, wins: 1, losses: 0, pushes: 0, win_pct: 100, roi_pct: 10, pnl_units: 1 },
+    weekly_summary: {},
+    bets: [],
+  };
+}
+jest.mock('./data/betting_backtest_results_2025.json', () => ({
+  our_system: { label: 'Our System', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+  vegas_favorites: { label: 'Vegas Favorites', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+  underdogs_only: { label: 'Underdogs Only', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+}));
 jest.mock('./data/superbowl_odds_2025.json', () => ({ teams: [] }));
 jest.mock('./data/superbowl_odds_2026.json', () => ({ teams: [] }));
 
@@ -68,5 +87,27 @@ describe('App', () => {
     render(<App />);
     // GamePredictions.js's real empty-state string when weekGames.length === 0.
     expect(await screen.findByText('No games for this week.')).toBeInTheDocument();
+  });
+
+  test('switching season while on Betting Analysis does not crash (real regression)', async () => {
+    // Real bug: SeasonContext.js's old `dataLoading` was a separate useState
+    // only reset inside a useEffect (runs after render), one tick behind a
+    // selectedSeason change - real 2026->2025 default DEFAULT_SEASON=2026,
+    // hasResults=false so BettingAnalysis first renders its real
+    // SeasonDataUnavailable state (not a crash) - switching to 2025 (real
+    // hasResults=true, synchronous with dataLoading now) used to leave a
+    // window where hasResults flipped true before seasonData had loaded,
+    // crashing BettingAnalysis on `seasonData.bettingBacktest` being
+    // undefined. Fixed by deriving dataLoading synchronously instead.
+    await renderAppAndWaitForData();
+    fireEvent.click(screen.getByText('Betting Analysis'));
+    expect(await screen.findByText('Not available for 2026')).toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText('Season'), { target: { value: '2025' } });
+    // Regex/partial match, not an exact 'Our System' string - that text is
+    // ambiguous with the real static "Our System:" methodology bullet
+    // elsewhere in this same component.
+    expect(await screen.findByText(/Strategy Comparison/)).toBeInTheDocument();
+    expect(screen.queryByText('Section Error')).not.toBeInTheDocument();
   });
 });

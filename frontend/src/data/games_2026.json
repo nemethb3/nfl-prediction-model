@@ -43,7 +43,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 3.3,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_SF_LA",
@@ -89,7 +93,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.7,
+    "vegas_total": 48.5,
+    "predicted_total_diff": -0.8,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_CHI_CAR",
@@ -135,7 +143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 0.4,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_TB_CIN",
@@ -181,7 +193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.7,
+    "vegas_total": 52.5,
+    "predicted_total_diff": -6.8,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_NO_DET",
@@ -227,7 +243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": 49.5,
+    "predicted_total_diff": -3.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_BUF_HOU",
@@ -273,7 +293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.3,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 3.8,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_BAL_IND",
@@ -319,7 +343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": 49.5,
+    "predicted_total_diff": -3.2,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_CLE_JAX",
@@ -365,7 +393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": 40.5,
+    "predicted_total_diff": 4.7,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_ATL_PIT",
@@ -411,7 +443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": 41.5,
+    "predicted_total_diff": 4.8,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_NYJ_TEN",
@@ -457,7 +493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.2,
+    "vegas_total": 38.5,
+    "predicted_total_diff": 3.7,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_ARI_LAC",
@@ -503,7 +543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": 46.5,
+    "predicted_total_diff": -1.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_MIA_LV",
@@ -549,7 +593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.1,
+    "vegas_total": 40.5,
+    "predicted_total_diff": 3.6,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_GB_MIN",
@@ -595,7 +643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": 45.5,
+    "predicted_total_diff": 1.9,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_01_WAS_PHI",
@@ -641,7 +693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.9,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -0.6,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_DAL_NYG",
@@ -687,7 +743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.3,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -3.2,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_01_DEN_KC",
@@ -733,7 +793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.7,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 5.2,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_DET_BUF",
@@ -779,7 +843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.4,
+    "vegas_total": 52.5,
+    "predicted_total_diff": -4.1,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_CAR_ATL",
@@ -825,7 +893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": 43.5,
+    "predicted_total_diff": 1.0,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_NO_BAL",
@@ -871,7 +943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": 46.5,
+    "predicted_total_diff": -0.7,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_MIN_CHI",
@@ -917,7 +993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": 45.5,
+    "predicted_total_diff": 1.2,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_CIN_HOU",
@@ -963,7 +1043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": 46.5,
+    "predicted_total_diff": -0.1,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_PIT_NE",
@@ -1009,7 +1093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.9,
+    "vegas_total": 43.5,
+    "predicted_total_diff": 3.4,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_GB_NYJ",
@@ -1055,7 +1143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 2.4,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_CLE_TB",
@@ -1101,7 +1193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 2.4,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_PHI_TEN",
@@ -1147,7 +1243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.7,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 3.2,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_JAX_DEN",
@@ -1193,7 +1293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": 43.5,
+    "predicted_total_diff": 3.9,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_LV_LAC",
@@ -1239,7 +1343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 2.5,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_SEA_ARI",
@@ -1285,7 +1393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 1.5,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_02_WAS_DAL",
@@ -1331,7 +1443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": 51.5,
+    "predicted_total_diff": -6.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_MIA_SF",
@@ -1377,7 +1493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.5,
+    "vegas_total": 46.5,
+    "predicted_total_diff": 0.0,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_IND_KC",
@@ -1423,7 +1543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -1.4,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_02_NYG_LA",
@@ -1469,7 +1593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": 48.5,
+    "predicted_total_diff": -3.1,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_ATL_GB",
@@ -1515,7 +1643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": 46.5,
+    "predicted_total_diff": -0.4,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_LAC_BUF",
@@ -1561,7 +1693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.1,
+    "vegas_total": 48.5,
+    "predicted_total_diff": -0.4,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_CAR_CLE",
@@ -1607,7 +1743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.6,
+    "vegas_total": 39.5,
+    "predicted_total_diff": 4.1,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_NYJ_DET",
@@ -1653,7 +1793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": 45.5,
+    "predicted_total_diff": -0.2,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_HOU_IND",
@@ -1699,7 +1843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": 45.5,
+    "predicted_total_diff": 0.8,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_NE_JAX",
@@ -1745,7 +1893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.5,
+    "vegas_total": 45.5,
+    "predicted_total_diff": 1.0,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_KC_MIA",
@@ -1791,7 +1943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 1.7,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_TEN_NYG",
@@ -1837,7 +1993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.2,
+    "vegas_total": 44.5,
+    "predicted_total_diff": -2.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_CIN_PIT",
@@ -1883,7 +2043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -1.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_SEA_WAS",
@@ -1929,7 +2093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": 46.5,
+    "predicted_total_diff": 0.3,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_ARI_SF",
@@ -1975,7 +2143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": 46.5,
+    "predicted_total_diff": -1.3,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_MIN_TB",
@@ -2021,7 +2193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": 44.5,
+    "predicted_total_diff": 2.2,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_BAL_DAL",
@@ -2067,7 +2243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.5,
+    "vegas_total": 51.5,
+    "predicted_total_diff": -5.0,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_03_LV_NO",
@@ -2113,7 +2293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.2,
+    "vegas_total": 42.5,
+    "predicted_total_diff": 0.7,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_LA_DEN",
@@ -2159,7 +2343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.9,
+    "vegas_total": 45.5,
+    "predicted_total_diff": 2.4,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_03_PHI_CHI",
@@ -2205,7 +2393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": 46.5,
+    "predicted_total_diff": 0.7,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_04_PIT_CLE",
@@ -2251,7 +2443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": 40.5,
+    "predicted_total_diff": 4.9,
+    "predicted_total_direction": "OVER"
   },
   {
     "id": "2026_04_IND_WAS",
@@ -2297,7 +2493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": 50.5,
+    "predicted_total_diff": -5.8,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_04_TEN_BAL",
@@ -2343,7 +2543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_NE_BUF",
@@ -2389,7 +2593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_NYJ_CHI",
@@ -2435,7 +2643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.0,
+    "vegas_total": 45.5,
+    "predicted_total_diff": -1.5,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_04_JAX_CIN",
@@ -2481,7 +2693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_DAL_HOU",
@@ -2527,7 +2743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.5,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -1.0,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_04_ARI_NYG",
@@ -2573,7 +2793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_LA_PHI",
@@ -2619,7 +2843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_GB_TB",
@@ -2665,7 +2893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": 47.5,
+    "predicted_total_diff": -1.1,
+    "predicted_total_direction": "UNDER"
   },
   {
     "id": "2026_04_MIA_MIN",
@@ -2711,7 +2943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_KC_LV",
@@ -2757,7 +2993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_LAC_SEA",
@@ -2803,7 +3043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_DEN_SF",
@@ -2849,7 +3093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_DET_CAR",
@@ -2895,7 +3143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_04_ATL_NO",
@@ -2941,7 +3193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_TB_DAL",
@@ -2987,7 +3243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_PHI_JAX",
@@ -3033,7 +3293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_CIN_MIA",
@@ -3079,7 +3343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_LV_NE",
@@ -3125,7 +3393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_MIN_NO",
@@ -3171,7 +3443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_CLE_NYJ",
@@ -3217,7 +3493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_IND_PIT",
@@ -3263,7 +3543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_HOU_TEN",
@@ -3309,7 +3593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_NYG_WAS",
@@ -3355,7 +3643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_DEN_LAC",
@@ -3401,7 +3693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_DET_ARI",
@@ -3447,7 +3743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_CHI_GB",
@@ -3493,7 +3793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_SF_SEA",
@@ -3539,7 +3843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_BAL_ATL",
@@ -3585,7 +3893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_05_BUF_LA",
@@ -3631,7 +3943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_SEA_DEN",
@@ -3677,7 +3993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 48.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_HOU_JAX",
@@ -3723,7 +4043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_CHI_ATL",
@@ -3769,7 +4093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_BAL_CLE",
@@ -3815,7 +4143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_TEN_IND",
@@ -3861,7 +4193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_NYJ_NE",
@@ -3907,7 +4243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_NO_NYG",
@@ -3953,7 +4293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_CAR_PHI",
@@ -3999,7 +4343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_PIT_TB",
@@ -4045,7 +4393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_ARI_LA",
@@ -4091,7 +4443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_LAC_KC",
@@ -4137,7 +4493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_BUF_LV",
@@ -4183,7 +4543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_DAL_GB",
@@ -4229,7 +4593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_06_WAS_SF",
@@ -4275,7 +4643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_NE_CHI",
@@ -4321,7 +4693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_PIT_NO",
@@ -4367,7 +4743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_SF_ATL",
@@ -4413,7 +4793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_CIN_BAL",
@@ -4459,7 +4843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_TB_CAR",
@@ -4505,7 +4893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_NYG_HOU",
@@ -4551,7 +4943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_IND_MIN",
@@ -4597,7 +4993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_MIA_NYJ",
@@ -4643,7 +5043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_CLE_TEN",
@@ -4689,7 +5093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_DEN_ARI",
@@ -4735,7 +5143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_GB_DET",
@@ -4781,7 +5193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_LA_LV",
@@ -4827,7 +5243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_KC_SEA",
@@ -4873,7 +5293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_07_DAL_PHI",
@@ -4919,7 +5343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_CAR_GB",
@@ -4965,7 +5393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_BAL_BUF",
@@ -5011,7 +5443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_TEN_CIN",
@@ -5057,7 +5493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_ARI_DAL",
@@ -5103,7 +5543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_MIN_DET",
@@ -5149,7 +5593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_IND_JAX",
@@ -5195,7 +5643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_LV_NYJ",
@@ -5241,7 +5693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 41.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_CLE_PIT",
@@ -5287,7 +5743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_ATL_TB",
@@ -5333,7 +5793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_LAC_LA",
@@ -5379,7 +5843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_KC_DEN",
@@ -5425,7 +5893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_NE_MIA",
@@ -5471,7 +5943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_PHI_WAS",
@@ -5517,7 +5993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_08_CHI_SEA",
@@ -5563,7 +6043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_JAX_BAL",
@@ -5609,7 +6093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_CIN_ATL",
@@ -5655,7 +6143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_DEN_CAR",
@@ -5701,7 +6193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_DAL_IND",
@@ -5747,7 +6243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_NYJ_KC",
@@ -5793,7 +6293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_DET_MIA",
@@ -5839,7 +6343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_CLE_NO",
@@ -5885,7 +6393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_NYG_PHI",
@@ -5931,7 +6443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_LA_WAS",
@@ -5977,7 +6493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_HOU_LAC",
@@ -6023,7 +6543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_LV_SF",
@@ -6069,7 +6593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_GB_NE",
@@ -6115,7 +6643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_ARI_SEA",
@@ -6161,7 +6693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_TB_CHI",
@@ -6207,7 +6743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_09_BUF_MIN",
@@ -6253,7 +6793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_WAS_NYG",
@@ -6299,7 +6843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_NE_DET",
@@ -6345,7 +6893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_KC_ATL",
@@ -6391,7 +6943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_HOU_CLE",
@@ -6437,7 +6993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_MIN_GB",
@@ -6483,7 +7043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_MIA_IND",
@@ -6529,7 +7093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_CAR_NO",
@@ -6575,7 +7143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_BUF_NYJ",
@@ -6621,7 +7193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_JAX_TEN",
@@ -6667,7 +7243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_LA_ARI",
@@ -6713,7 +7293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_SEA_LV",
@@ -6759,7 +7343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_SF_DAL",
@@ -6805,7 +7393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_PIT_CIN",
@@ -6851,7 +7443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_10_LAC_BAL",
@@ -6897,7 +7493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_IND_HOU",
@@ -6943,7 +7543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_MIA_BUF",
@@ -6989,7 +7593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_BAL_CAR",
@@ -7035,7 +7643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_NO_CHI",
@@ -7081,7 +7693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_TEN_DAL",
@@ -7127,7 +7743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_TB_DET",
@@ -7173,7 +7793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_ARI_KC",
@@ -7219,7 +7843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_JAX_NYG",
@@ -7265,7 +7893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_NYJ_LAC",
@@ -7311,7 +7943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_LV_DEN",
@@ -7357,7 +7993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_PIT_PHI",
@@ -7403,7 +8043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_MIN_SF",
@@ -7449,7 +8093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_11_CIN_WAS",
@@ -7495,7 +8143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_GB_LA",
@@ -7541,7 +8193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_CHI_DET",
@@ -7587,7 +8243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_PHI_DAL",
@@ -7633,7 +8293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_KC_BUF",
@@ -7679,7 +8343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_DEN_PIT",
@@ -7725,7 +8393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_NO_CIN",
@@ -7771,7 +8443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_LV_CLE",
@@ -7817,7 +8493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_BAL_HOU",
@@ -7863,7 +8543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_NYG_IND",
@@ -7909,7 +8593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_NYJ_MIA",
@@ -7955,7 +8643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_ATL_MIN",
@@ -8001,7 +8693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_TEN_JAX",
@@ -8047,7 +8743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_WAS_ARI",
@@ -8093,7 +8793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_SEA_SF",
@@ -8139,7 +8843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_NE_LAC",
@@ -8185,7 +8893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_12_CAR_TB",
@@ -8231,7 +8943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_KC_LA",
@@ -8277,7 +8993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_DET_ATL",
@@ -8323,7 +9043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_JAX_CHI",
@@ -8369,7 +9093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_CIN_CLE",
@@ -8415,7 +9143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_GB_NO",
@@ -8461,7 +9193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_SF_NYG",
@@ -8507,7 +9243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_LAC_TB",
@@ -8553,7 +9293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_WAS_TEN",
@@ -8599,7 +9343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_PHI_ARI",
@@ -8645,7 +9393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_MIA_DEN",
@@ -8691,7 +9443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_CAR_MIN",
@@ -8737,7 +9493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_BUF_NE",
@@ -8783,7 +9543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_HOU_PIT",
@@ -8829,7 +9593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_13_DAL_SEA",
@@ -8875,7 +9643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_MIN_NE",
@@ -8921,7 +9693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_TB_BAL",
@@ -8967,7 +9743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_NO_CAR",
@@ -9013,7 +9793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_ATL_CLE",
@@ -9059,7 +9843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_TEN_DET",
@@ -9105,7 +9893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_CHI_MIA",
@@ -9151,7 +9943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_DEN_NYJ",
@@ -9197,7 +9993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_IND_PHI",
@@ -9243,7 +10043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_HOU_WAS",
@@ -9289,7 +10093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_LAC_LV",
@@ -9335,7 +10143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_KC_CIN",
@@ -9381,7 +10193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_NYG_SEA",
@@ -9427,7 +10243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_LA_SF",
@@ -9473,7 +10293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_BUF_GB",
@@ -9519,7 +10343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_14_PIT_JAX",
@@ -9565,7 +10393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_SF_LAC",
@@ -9611,7 +10443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_SEA_PHI",
@@ -9657,7 +10493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_CHI_BUF",
@@ -9703,7 +10543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_CIN_CAR",
@@ -9749,7 +10593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_MIA_GB",
@@ -9795,7 +10643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_JAX_HOU",
@@ -9841,7 +10693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_CLE_NYG",
@@ -9887,7 +10743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_BAL_PIT",
@@ -9933,7 +10793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_NO_TB",
@@ -9979,7 +10843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_IND_TEN",
@@ -10025,7 +10893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_ATL_WAS",
@@ -10071,7 +10943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_NYJ_ARI",
@@ -10117,7 +10993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 41.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_DAL_LA",
@@ -10163,7 +11043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_DEN_LV",
@@ -10209,7 +11093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_DET_MIN",
@@ -10255,7 +11143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_15_NE_KC",
@@ -10301,7 +11193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_HOU_PHI",
@@ -10347,7 +11243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_GB_CHI",
@@ -10393,7 +11293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_BUF_DEN",
@@ -10439,7 +11343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.7,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_LA_SEA",
@@ -10485,7 +11393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_TB_ATL",
@@ -10531,7 +11443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_CLE_BAL",
@@ -10577,7 +11493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_CIN_IND",
@@ -10623,7 +11543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_LAC_MIA",
@@ -10669,7 +11593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_WAS_MIN",
@@ -10715,7 +11643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_ARI_NO",
@@ -10761,7 +11693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 42.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_NE_NYJ",
@@ -10807,7 +11743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_CAR_PIT",
@@ -10853,7 +11793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_TEN_LV",
@@ -10899,7 +11843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 41.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_SF_KC",
@@ -10945,7 +11893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_JAX_DAL",
@@ -10991,7 +11943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_16_NYG_DET",
@@ -11037,7 +11993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_BAL_CIN",
@@ -11083,7 +12043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_NO_ATL",
@@ -11129,7 +12093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_SEA_CAR",
@@ -11175,7 +12143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_IND_CLE",
@@ -11221,7 +12193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_NYG_DAL",
@@ -11267,7 +12243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_WAS_JAX",
@@ -11313,7 +12293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_KC_LAC",
@@ -11359,7 +12343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_BUF_MIA",
@@ -11405,7 +12393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_DEN_NE",
@@ -11451,7 +12443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_MIN_NYJ",
@@ -11497,7 +12493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_LA_TB",
@@ -11543,7 +12543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_PIT_TEN",
@@ -11589,7 +12593,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_LV_ARI",
@@ -11635,7 +12643,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 41.5,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_DET_CHI",
@@ -11681,7 +12693,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_PHI_SF",
@@ -11727,7 +12743,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_17_HOU_GB",
@@ -11773,7 +12793,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.3,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_SF_ARI",
@@ -11819,7 +12843,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_PIT_BAL",
@@ -11865,7 +12893,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.1,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_NYJ_BUF",
@@ -11911,7 +12943,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_ATL_CAR",
@@ -11957,7 +12993,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_CLE_CIN",
@@ -12003,7 +13043,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_LAC_DEN",
@@ -12049,7 +13093,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_DET_GB",
@@ -12095,7 +13143,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 46.4,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_TEN_HOU",
@@ -12141,7 +13193,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_JAX_IND",
@@ -12187,7 +13243,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.8,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_LV_KC",
@@ -12233,7 +13293,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 43.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_SEA_LA",
@@ -12279,7 +13343,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 47.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_CHI_MIN",
@@ -12325,7 +13393,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.6,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_MIA_NE",
@@ -12371,7 +13443,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 45.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_TB_NO",
@@ -12417,7 +13493,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.0,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_PHI_NYG",
@@ -12463,7 +13543,11 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.9,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   },
   {
     "id": "2026_18_DAL_WAS",
@@ -12509,6 +13593,10 @@
     "actual_away_score": null,
     "actual_winner": null,
     "actual_spread_margin": null,
-    "did_we_predict_correctly": null
+    "did_we_predict_correctly": null,
+    "predicted_total_value": 44.2,
+    "vegas_total": null,
+    "predicted_total_diff": null,
+    "predicted_total_direction": null
   }
 ]

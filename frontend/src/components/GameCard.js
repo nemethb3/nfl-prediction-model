@@ -160,6 +160,10 @@ export default function GameCard({ game, isExpanded, onToggle }) {
     actual_winner: actualWinner,
     actual_spread_margin: actualSpreadMargin,
     did_we_predict_correctly: correct,
+    predicted_total_value: predictedTotal,
+    vegas_total: vegasTotal,
+    predicted_total_diff: predictedTotalDiff,
+    predicted_total_direction: predictedTotalDirection,
   } = game;
 
   const hasResult = homeScore !== null && homeScore !== undefined;
@@ -241,6 +245,11 @@ export default function GameCard({ game, isExpanded, onToggle }) {
               <span className="label">Vegas</span> {formatSpread(vegasSpread, home, away)}
             </div>
           )}
+          {predictedTotal !== null && predictedTotal !== undefined && (
+            <div className="predicted-total" title="Weak, informational projection only - see expanded view">
+              <span className="label">Total</span> {predictedTotal.toFixed(1)}
+            </div>
+          )}
         </div>
 
         {matchupQuality && MATCHUP_QUALITY_DISPLAY[matchupQuality] && (
@@ -287,6 +296,28 @@ export default function GameCard({ game, isExpanded, onToggle }) {
               </div>
             )}
           </div>
+
+          {predictedTotal !== null && predictedTotal !== undefined && (
+            <div className="section">
+              <div className="section-title">Projected Total</div>
+              <div>Our projection: {predictedTotal.toFixed(1)} combined points</div>
+              {vegasTotal !== null && vegasTotal !== undefined && (
+                <>
+                  <div>Vegas total: {vegasTotal.toFixed(1)}</div>
+                  <div>
+                    Diff: {predictedTotalDiff > 0 ? '+' : ''}{predictedTotalDiff.toFixed(1)} ({predictedTotalDirection})
+                  </div>
+                </>
+              )}
+              <div className="small-text">
+                Real, honest finding from this project&apos;s own backtest: Elo/week/season carry
+                essentially no real signal for total points (R² 0.005, directional accuracy ~50% at
+                every edge size tested, 0.5-5 points, on real held-out data). Shown as weak,
+                informational context only - not a betting recommendation, and no confidence/alert
+                threshold is implied.
+              </div>
+            </div>
+          )}
 
           {winProbFavorite && (
             <div className="section">

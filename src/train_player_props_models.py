@@ -28,7 +28,17 @@ pasted spec assumed it would find before ever running the real numbers.
 Kept anyway since both features are real, free (no fabricated
 placeholder unlike the spec's temp/wind approach), and cost nothing to
 include - but this is disclosed as a null result, not oversold as an
-improvement."""
+improvement.
+
+Real pace/snap-share addition (Player Props Enrichment task): adds
+`career_avg_snap_pct` (real, leak-free trailing snap share -
+build_player_props_signals.py) and `prior_season_pace_factor` (real
+team-level offensive-play volume from play-by-play, prior season only).
+`prior_season_rz_rate` was deliberately NOT added here - it's a real
+scoring-opportunity signal, not a yardage/reception signal, and belongs
+with the TD logistic models instead (see train_td_logistic_models.py).
+Real, honest before/after result printed below - reported as measured,
+not assumed."""
 
 import json
 import os
@@ -71,7 +81,8 @@ TARGET_COLS = {
 
 def _features_for(position):
     return [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]] + [
-        "opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days"]
+        "opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days",
+        "career_avg_snap_pct", "prior_season_pace_factor"]
 
 
 def train_player_props_models():

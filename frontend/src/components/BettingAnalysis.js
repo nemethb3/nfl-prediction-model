@@ -4,6 +4,7 @@ import '../styles/SeasonDataUnavailable.css';
 import { useSeason } from '../context/SeasonContext';
 import SeasonDataUnavailable from './SeasonDataUnavailable';
 import strategyComparison from '../data/betting_strategies_comparison_od_elo.json';
+import vegasIntegrationModel from '../data/vegas_integration_model.json';
 
 // Real 2024-holdout rows built from strategyComparison.results at module
 // scope (static data, not season-dependent - same real train/holdout split
@@ -485,6 +486,23 @@ export default function BettingAnalysis() {
             holdout only 86.4% of the time, vs. Single-Elo&apos;s 89.3% (closer to the 90% target)
             — bands are a bit tighter than ideal. Everything else favored the swap; this one
             metric didn&apos;t, and is shown here rather than left out.
+          </p>
+        </div>
+
+        <div className="evolution-caveat">
+          <h4>Vegas Integration Model (real, historical only — not live for 2026)</h4>
+          <p>
+            A separate real model was trained combining Elo with the real posted Vegas spread
+            (5-fold cross-validated, {vegasIntegrationModel.training_samples.toLocaleString()} real
+            2015-2025 games): {Math.round(vegasIntegrationModel.cv_accuracy * 100)}% accuracy, vs.{' '}
+            {Math.round(vegasIntegrationModel.elo_only_baseline_accuracy * 100)}% for Elo alone — a
+            real {(vegasIntegrationModel.accuracy_gain_over_elo_only * 100).toFixed(1)}pp gain from
+            knowing the real Vegas line. {vegasIntegrationModel.applies_to_2026 === false && (
+              <>It is <strong>not applied to any live 2026 prediction</strong>: no real Vegas line
+              exists yet for a season that hasn&apos;t been played. Preseason game predictions above
+              use O/D Elo alone; this model would only become usable once real 2026 lines are
+              posted.</>
+            )}
           </p>
         </div>
       </section>

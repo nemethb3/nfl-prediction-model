@@ -13,9 +13,22 @@ import fantasyData from '../data/fantasy_rankings_2026.json';
 import tradeScoresData from '../data/trade_scores_2026.json';
 import multiSignalAccuracy from '../data/multi_signal_accuracy.json';
 import positionValueTiers from '../data/position_value_tiers.json';
+import tradeRoleAdjustmentsData from '../data/trade_role_adjustments.json';
 import '../styles/TradeAnalyzer.css';
 
 const tradeScores = tradeScoresData.players;
+const roleAdjustments = tradeRoleAdjustmentsData.players;
+
+// Real, human-readable labels for build_trade_role_adjustments.py's real
+// empirical role tiers (see that script's own docstring for how each
+// multiplier was derived - real average per-game PPR by tier, normalized
+// to the position's own real overall average, not an asserted number).
+const ROLE_DISPLAY_LABELS = {
+  primary_starter: 'Primary Starter', spot_starter: 'Spot Starter', backup: 'Backup QB',
+  lead_rb: 'Lead RB', timeshare_rb: 'Timeshare RB', backup_rb: 'Backup RB',
+  wr1_primary: 'WR1', wr2_secondary: 'WR2', wr3_depth: 'WR3/Depth',
+  starter_te: 'Starter TE', rotational_te: 'Rotational TE', backup_te: 'Backup TE',
+};
 
 const eligiblePlayers = fantasyData
   .map((p) => ({ id: p.id.split('_w')[0], name: p.name, position: p.position, team: p.team, projected_ppr: p.projected_ppr }))
@@ -37,7 +50,10 @@ function playerPackageValue(player) {
   const trajectoryProb = score.schedule_adjusted_prob_ppr_increase ?? score.prob_ppr_increase;
   const trajectoryMultiplier = TRAJECTORY_MIN_MULTIPLIER + TRAJECTORY_RANGE * trajectoryProb;
   const scarcity = positionValueTiers.tiers[player.position]?.positional_scarcity_raw_points ?? 1.0;
-  return player.projected_ppr * trajectoryMultiplier * scarcity;
+  const role = roleAdjustments[player.id];
+  const roleMultiplier = role?.role_multiplier ?? 1.0;
+  const opportunityMultiplier = 1 + (role?.backup_opportunity_boost ?? 0);
+  return player.projected_ppr * trajectoryMultiplier * scarcity * roleMultiplier * opportunityMultiplier;
 }
 
 function countByPosition(players) {
@@ -92,14 +108,27 @@ function PackageColumn({ title, players, onAdd, onRemove, selectId }) {
       <h4>{title}</h4>
       <div className="trade-analyzer__package-list">
         {players.length === 0 && <p className="trade-analyzer__empty-note">No players added yet.</p>}
-        {players.map((p) => (
-          <div key={p.id} className="trade-analyzer__package-row">
-            <span>{p.name} ({p.position}, {p.team})</span>
-            <button type="button" onClick={() => onRemove(p.id)} aria-label={`Remove ${p.name}`}>
-              &times;
-            </button>
-          </div>
-        ))}
+        {players.map((p) => {
+          const role = roleAdjustments[p.id];
+          return (
+            <div key={p.id} className="trade-analyzer__package-row">
+              <span>
+                {p.name} ({p.position}, {p.team})
+                {role?.role && (
+                  <span className="trade-analyzer__role-badge">{ROLE_DISPLAY_LABELS[role.role] || role.role}</span>
+                )}
+                {role?.has_backup_opportunity && (
+                  <span className="trade-analyzer__role-badge trade-analyzer__role-badge--opportunity">
+                    Opportunity
+                  </span>
+                )}
+              </span>
+              <button type="button" onClick={() => onRemove(p.id)} aria-label={`Remove ${p.name}`}>
+                &times;
+              </button>
+            </div>
+          );
+        })}
       </div>
       <div className="trade-analyzer__package-add">
         <select id={selectId} value={pendingId} onChange={(e) => setPendingId(e.target.value)}>
@@ -145,7 +174,11 @@ function MultiPlayerTrade() {
           modest trajectory multiplier ({TRAJECTORY_MIN_MULTIPLIER.toFixed(1)}x-{(TRAJECTORY_MIN_MULTIPLIER + TRAJECTORY_RANGE).toFixed(1)}x,
           scaled by the real trade model&apos;s prob_ppr_increase, schedule-adjusted where available)
           &times; a real, computed positional scarcity multiplier (real elite-vs-replacement PPR point
-          gap per position, 2015-2025, normalized to the 4-position average).
+          gap per position, 2015-2025, normalized to the 4-position average) &times; a real, empirical
+          role multiplier (lead vs. backup RB, WR1 vs. WR3, etc. - real average per-game PPR by role
+          tier, normalized to the position&apos;s own real overall average) &times; a real +10% boost when
+          a player is currently listed pos_rank 2 on their real team&apos;s depth chart (real
+          &quot;next man up&quot; standing, from nflreadpy&apos;s real depth charts).
         </p>
         <p className="trade-analyzer__disclaimer">
           Real, disclosed limitation: positional scarcity here is raw fantasy-point scarcity, not
@@ -312,6 +345,12 @@ export default function TradeAnalyzer() {
                   </div>
                   <SignalRow label="Position" value={score1.position} />
                   <SignalRow label="Team" value={teamName(score1.team) || score1.team} />
+                  {roleAdjustments[player1.id]?.role && (
+                    <SignalRow label="Role" value={ROLE_DISPLAY_LABELS[roleAdjustments[player1.id].role]} />
+                  )}
+                  {roleAdjustments[player1.id]?.has_backup_opportunity && (
+                    <SignalRow label="Depth chart" value="Real backup w/ opportunity (pos_rank 2)" />
+                  )}
                   <SignalRow label="Age" value={score1.current_age} />
                   <SignalRow label="Trajectory" value={score1.trajectory} />
                   <SignalRow label="Career miss rate" value={`${Math.round(score1.signals.injury_risk * 100)}%`} />
@@ -335,6 +374,12 @@ export default function TradeAnalyzer() {
                   </div>
                   <SignalRow label="Position" value={score2.position} />
                   <SignalRow label="Team" value={teamName(score2.team) || score2.team} />
+                  {roleAdjustments[player2.id]?.role && (
+                    <SignalRow label="Role" value={ROLE_DISPLAY_LABELS[roleAdjustments[player2.id].role]} />
+                  )}
+                  {roleAdjustments[player2.id]?.has_backup_opportunity && (
+                    <SignalRow label="Depth chart" value="Real backup w/ opportunity (pos_rank 2)" />
+                  )}
                   <SignalRow label="Age" value={score2.current_age} />
                   <SignalRow label="Trajectory" value={score2.trajectory} />
                   <SignalRow label="Career miss rate" value={`${Math.round(score2.signals.injury_risk * 100)}%`} />

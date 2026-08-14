@@ -37,7 +37,15 @@ before writing this:
    regression, not the spec's unexamined default - real per-position
    sample sizes here (6.5k-22k rows, but many fewer unique real players)
    don't obviously need or benefit from a more complex model, and
-   coefficients stay honestly interpretable."""
+   coefficients stay honestly interpretable.
+
+Real red-zone-opportunity addition (Player Props Enrichment task): adds
+`prior_season_rz_rate` (real team red-zone touch rate from play-by-play,
+prior season only - build_player_props_signals.py) to every position's
+TD model. A team's real red-zone opportunity volume is mechanically a
+scoring-chance signal (this is where red-zone data belongs, not in the
+yardage linear models - see train_player_props_models.py docstring).
+Real, honest before/after AUC printed below."""
 
 import json
 import os
@@ -63,7 +71,7 @@ TD_CAREER_AVG_COLS = {
     "WR": ["receiving_tds"],
     "TE": ["receiving_tds"],
 }
-COMMON_FEATURES = ["opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days"]
+COMMON_FEATURES = ["opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days", "prior_season_rz_rate"]
 
 
 def train_td_logistic_models():

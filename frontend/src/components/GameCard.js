@@ -17,6 +17,27 @@ function formatSpread(spread, homeTeam, awayTeam) {
   return `${favorite} -${Math.abs(spread).toFixed(1)}`;
 }
 
+function ordinal(n) {
+  const rem100 = n % 100;
+  if (rem100 >= 11 && rem100 <= 13) return `${n}th`;
+  switch (n % 10) {
+    case 1: return `${n}st`;
+    case 2: return `${n}nd`;
+    case 3: return `${n}rd`;
+    default: return `${n}th`;
+  }
+}
+
+// dEloRanks is optional (real, computed once in GamePredictions.js from
+// the full real season's games - not derivable from a single game prop,
+// and NOT computed via useSeason() here since GameCard.test.js renders
+// this component directly, without a SeasonProvider).
+function dEloRankLabel(team, dEloRanks) {
+  const r = dEloRanks?.[team];
+  if (!r) return '';
+  return ` (${ordinal(r.rank)} best defense of ${r.total})`;
+}
+
 // Labels match generate_dashboard_data.py's empirical-tercile buckets
 // (real quantiles of the season's own net_edge_diff distribution, not an
 // asserted threshold).
@@ -133,7 +154,7 @@ function formatKickoffTime(kickoffISO, homeTeam, showUserTime) {
   });
 }
 
-export default function GameCard({ game, isExpanded, onToggle }) {
+export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
   const [showUserTime, setShowUserTime] = useState(true);
   const handleKeyDown = useKeyboardToggle(onToggle);
   const {
@@ -393,8 +414,14 @@ export default function GameCard({ game, isExpanded, onToggle }) {
           {homeOElo !== null && homeOElo !== undefined && awayOElo !== null && awayOElo !== undefined && (
             <div className="section">
               <div className="section-title">Offense/Defense Elo Split</div>
-              <div>{home}: {Math.round(homeOElo)} off / {Math.round(homeDElo)} def</div>
-              <div>{away}: {Math.round(awayOElo)} off / {Math.round(awayDElo)} def</div>
+              <div>
+                {home}: {Math.round(homeOElo)} off / {Math.round(homeDElo)} def
+                {dEloRankLabel(home, dEloRanks)}
+              </div>
+              <div>
+                {away}: {Math.round(awayOElo)} off / {Math.round(awayDElo)} def
+                {dEloRankLabel(away, dEloRanks)}
+              </div>
               <div className="small-text">
                 {home}&apos;s offense vs. {away}&apos;s defense: {(homeOElo - awayDElo) > 0 ? '+' : ''}
                 {Math.round(homeOElo - awayDElo)}. {away}&apos;s offense vs. {home}&apos;s defense:{' '}

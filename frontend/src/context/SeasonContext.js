@@ -47,6 +47,10 @@ const SEASON_FILE_LOADERS = {
       // Same real reasoning as playerProps - breakout alerts are a real
       // 2026-only, forward-looking signal, not a 2025 backtest display.
       breakoutAlerts: null,
+      // Real rookie classifier scores are also 2026-draft-class-only by
+      // definition (score_2026_rookies.py) - no 2015-2025 equivalent was
+      // ever built, so this stays a real null for 2025.
+      rookieScores: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
@@ -55,14 +59,16 @@ const SEASON_FILE_LOADERS = {
   // same reasoning as backtest_totals_betting_2025.py's own scoping), so
   // they're real `null`, not a fabricated/missing import.
   2026: async () => {
-    const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts] = await Promise.all([
-      import('../data/games_2026.json'),
-      import('../data/fantasy_rankings_2026.json'),
-      import('../data/season_projections_2026.json'),
-      import('../data/superbowl_odds_2026.json'),
-      import('../data/player_props_2026.json'),
-      import('../data/breakout_alerts_2026.json'),
-    ]);
+    const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts, rookieScores] =
+      await Promise.all([
+        import('../data/games_2026.json'),
+        import('../data/fantasy_rankings_2026.json'),
+        import('../data/season_projections_2026.json'),
+        import('../data/superbowl_odds_2026.json'),
+        import('../data/player_props_2026.json'),
+        import('../data/breakout_alerts_2026.json'),
+        import('../data/rookie_scores_2026.json'),
+      ]);
     return {
       games: games.default,
       fantasy: fantasy.default,
@@ -74,6 +80,7 @@ const SEASON_FILE_LOADERS = {
       superbowlOdds: superbowlOdds.default,
       playerProps: playerProps.default,
       breakoutAlerts: breakoutAlerts.default,
+      rookieScores: rookieScores.default,
     };
   },
 };

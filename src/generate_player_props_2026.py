@@ -44,13 +44,25 @@ before writing this:
    genuinely prior). A real, newly-drafted rookie with no 2015-2025 history
    is excluded (a real, disclosed gap - identical precedent to
    FantasyRankings.js's own WR rookie-exclusion note), not assigned a
-   fabricated league-average fallback."""
+   fabricated league-average fallback.
+
+Real pace/snap/red-zone addition (Player Props Enrichment task): reuses
+build_player_props_signals.py's own real prior-season team pace/red-zone
+function directly (`_real_prior_season_team_pace_and_rz`) rather than
+re-deriving the same real play-by-play logic a second time - for 2026
+this naturally resolves to each team's real 2025 rate, the same "static
+prior-season number" convention already used for team_elo_offensive_
+defensive_2026_regressed.json. `career_avg_snap_pct` uses each player's
+real full 2015-2025 mean snap share, same convention as every other
+career-average feature here."""
 
 import json
 import os
 
 import numpy as np
 import pandas as pd
+
+from build_player_props_signals import _real_prior_season_team_pace_and_rz
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -90,8 +102,18 @@ def _real_career_averages(position, player_ids):
     stats = pd.read_csv(PLAYER_STATS_PATH)
     stats = stats[(stats["season_type"] == "REG") & (stats["position"] == position) &
                   (stats["player_id"].isin(player_ids))]
-    cols = CAREER_AVG_SOURCE_COLS[position] + TD_CAREER_AVG_COLS[position]
-    return stats.groupby("player_id")[cols].mean().rename(columns={c: f"career_avg_{c}" for c in cols})
+    cols = CAREER_AVG_SOURCE_COLS[position] + TD_CAREER_AVG_COLS[position] + ["snap_pct"]
+    out = stats.groupby("player_id")[cols].mean().rename(columns={c: f"career_avg_{c}" for c in cols})
+    return out
+
+
+def _real_2026_team_pace_and_rz():
+    """Real 2025 team pace/red-zone rate (the real prior-season lookup
+    build_player_props_signals.py computes resolves to season=2026 ->
+    real 2025 rates directly)."""
+    lagged = _real_prior_season_team_pace_and_rz()
+    return lagged[lagged["season"] == SEASON].set_index("team")[
+        ["prior_season_pace_factor", "prior_season_rz_rate"]]
 
 
 def _real_2026_schedule_by_team():
@@ -149,12 +171,18 @@ def generate_player_props_2026():
     # Real, min-max week normalization matching the same real training
     # convention (build_player_props_signals.py) - REG season weeks only.
     week_min, week_max = schedule_by_team["week"].min(), schedule_by_team["week"].max()
+    team_pace_rz = _real_2026_team_pace_and_rz()
+    n_teams_no_pace_rz = 32 - len(team_pace_rz)
+    if n_teams_no_pace_rz:
+        print(f"Real note: {n_teams_no_pace_rz} teams have no real 2025 pace/RZ rate "
+              "(abbreviation change/relocation) - their real 2026 games are skipped below")
 
     all_props = []
     for position in POSITIONS:
         roster = _real_2026_roster(position)
         career_avgs = _real_career_averages(position, roster["player_id"].tolist())
         roster_with_history = roster.merge(career_avgs, on="player_id", how="inner")
+        roster_with_history = roster_with_history.dropna(subset=["career_avg_snap_pct"])
         n_excluded = len(roster) - len(roster_with_history)
         print(f"[{position}] {len(roster_with_history)}/{len(roster)} real rostered players have 2015-2025 "
               f"history ({n_excluded} real rookies/no-history players excluded - a real, disclosed gap, "
@@ -164,6 +192,9 @@ def generate_player_props_2026():
         position_td_models = td_models.get(position, {})
         n_games = 0
         for _, player in roster_with_history.iterrows():
+            if player["team"] not in team_pace_rz.index:
+                continue
+            pace_rz = team_pace_rz.loc[player["team"]]
             player_games = schedule_by_team[schedule_by_team["team"] == player["team"]]
             for _, g in player_games.iterrows():
                 opp_elo = regressed_od_elo.get(g["opponent"], {})
@@ -180,6 +211,8 @@ def generate_player_props_2026():
                 feature_values = {
                     f"career_avg_{c}": float(player[f"career_avg_{c}"]) for c in CAREER_AVG_SOURCE_COLS[position]
                 }
+                feature_values["career_avg_snap_pct"] = float(player["career_avg_snap_pct"])
+                feature_values["prior_season_pace_factor"] = float(pace_rz["prior_season_pace_factor"])
                 feature_values.update(common_feature_values)
 
                 predicted_stats = {
@@ -193,6 +226,7 @@ def generate_player_props_2026():
                 for td_col, td_model_info in position_td_models.items():
                     td_feature_values = {
                         f"career_avg_{td_col}": float(player[f"career_avg_{td_col}"]),
+                        "prior_season_rz_rate": float(pace_rz["prior_season_rz_rate"]),
                         **common_feature_values,
                     }
                     predicted_stats[f"{td_col}_prob"] = round(_predict_proba(td_feature_values, td_model_info), 3)

@@ -134,6 +134,21 @@
   padding: 0 4px;
 }
 
+.trade-analyzer__role-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10.5px;
+  background: #1a2a38;
+  color: #66c2ff;
+}
+
+.trade-analyzer__role-badge--opportunity {
+  background: #2a1f0a;
+  color: #f9a825;
+}
+
 .trade-analyzer__package-add {
   display: flex;
   gap: 8px;

@@ -1,11 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import GameCard from './GameCard';
 import { useSeason } from '../context/SeasonContext';
 import '../styles/GamePredictions.css';
 
+// Real per-team D_Elo rank (1 = strongest defense) for the "Nth best
+// defense" context in GameCard - computed once here (not inside GameCard
+// itself, which GameCard.test.js renders without a SeasonProvider) from
+// the real, static-per-season home_d_elo/away_d_elo already in
+// games_2026.json (verified: every real team has exactly one distinct
+// D_Elo value across the whole real preseason schedule - no in-season
+// updates have happened yet since no game has a real result).
+function realDEloRanks(gamesData) {
+  const byTeam = new Map();
+  for (const g of gamesData) {
+    if (g.home_d_elo != null) byTeam.set(g.home_team, g.home_d_elo);
+    if (g.away_d_elo != null) byTeam.set(g.away_team, g.away_d_elo);
+  }
+  const ranked = [...byTeam.entries()].sort((a, b) => b[1] - a[1]);
+  const ranks = {};
+  ranked.forEach(([team], i) => {
+    ranks[team] = { rank: i + 1, total: ranked.length };
+  });
+  return ranks;
+}
+
 export default function GamePredictions() {
   const { seasonData, selectedSeason, hasResults } = useSeason();
   const gamesData = seasonData.games;
+  const dEloRanks = useMemo(() => realDEloRanks(gamesData), [gamesData]);
 
   const weeks = [...new Set(gamesData.map((g) => g.week))].sort((a, b) => a - b);
   const [selectedWeek, setSelectedWeek] = useState(weeks[0]);
@@ -66,6 +88,7 @@ export default function GamePredictions() {
             <GameCard
               key={game.id}
               game={game}
+              dEloRanks={dEloRanks}
               isExpanded={expandedGameId === game.id}
               onToggle={() =>
                 setExpandedGameId(expandedGameId === game.id ? null : game.id)

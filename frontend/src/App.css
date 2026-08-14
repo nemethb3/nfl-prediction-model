@@ -20,6 +20,22 @@ body {
   width: 100%;
 }
 
+.app-footer {
+  flex-shrink: 0;
+  padding: 6px 16px;
+  text-align: right;
+  font-size: 11px;
+  color: #666;
+  border-top: 1px solid #1a1a1a;
+}
+
+@media (max-width: 600px) {
+  .app-footer {
+    text-align: center;
+    font-size: 10px;
+  }
+}
+
 /* Higher specificity than GamePredictions.css's own `.game-predictions`
    rule (100vw/100vh) so this reliably wins regardless of CSS import
    order - Section 1 now sits below the nav bar instead of claiming a

@@ -3,7 +3,25 @@ import Navigation from './components/Navigation';
 import SeasonSelector from './components/SeasonSelector';
 import { SeasonProvider, useSeason } from './context/SeasonContext';
 import { DEFAULT_SECTION } from './constants/sections';
+import generatedAt from './data/generated_at.json';
 import './App.css';
+
+// Real shape (generation_timestamps.py's record_generation, called by
+// every pipeline script that writes a dashboard data file) is a flat
+// {script_output_name: iso_timestamp} map, not the spec's assumed
+// {generated_at, scripts_run: [...]} - there is no single top-level
+// "generated_at" field. The real most-recent pipeline run is the max
+// timestamp across all real values in the file (ISO 8601 strings sort
+// correctly as plain strings).
+const LAST_UPDATED = Object.values(generatedAt).sort().pop();
+
+function formatLastUpdated(iso) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return null;
+  return `${d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} ` +
+    `${d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })}`;
+}
 
 // AUDIT_2026-08-12_DEEP.md Section 7.2/8.1, Recommendation 11: every
 // section's own code is lazy-loaded so it lands in its own chunk,
@@ -118,6 +136,11 @@ function AppContent({ activeSection, setActiveSection }) {
           )}
         </SectionErrorBoundary>
       </main>
+      {LAST_UPDATED && (
+        <footer className="app-footer">
+          Data last updated: {formatLastUpdated(LAST_UPDATED)}
+        </footer>
+      )}
     </div>
   );
 }

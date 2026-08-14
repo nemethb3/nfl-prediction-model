@@ -89,6 +89,77 @@ const PROP_STAT_LABELS = {
   ],
 };
 
+// Real note: 2026 rookie-class scores (rookie_scores_2026.json) use a
+// real, different player-ID scheme (nflreadpy draft-pick IDs like
+// "HUR541377") than the veteran fantasy_rankings_2026.json roster (real
+// gsis_ids like "00-0034857") - checked directly, zero overlap between
+// the two real ID sets, because a true rookie has no real 2015-2025 EPA
+// history to build a veteran roster row from at all (see generate_
+// player_props_2026.py's own disclosed rookie-exclusion gap). A per-row
+// "rookie badge" on the existing veteran list is therefore not real -
+// there's nothing there to badge. This is shown as its own real,
+// standalone section instead, the same real "separate export, don't
+// force it into an unrelated real number" precedent score_2026_rookies.py
+// itself already documents for why this stays out of trade_scores_2026.json.
+function RookieSection({ rookieScores }) {
+  const [open, setOpen] = useState(false);
+  const [position, setPosition] = useState('ALL');
+
+  const rookies = Object.entries(rookieScores.players)
+    .map(([id, r]) => ({ id, ...r }))
+    .filter((r) => position === 'ALL' || r.position === position)
+    .sort((a, b) => b.success_probability - a.success_probability);
+
+  return (
+    <div className="rookie-section">
+      <button type="button" className="rookie-section__toggle" onClick={() => setOpen(!open)}>
+        {open ? '▲' : '▼'} 2026 Rookie Class ({Object.keys(rookieScores.players).length} real QB/RB/WR/TE draftees)
+      </button>
+      {open && (
+        <div className="rookie-section__body">
+          <p className="small-text">{rookieScores.methodology_note}</p>
+          <div className="selector">
+            <label htmlFor="rookie-position-select">Position</label>
+            <select
+              id="rookie-position-select"
+              value={position}
+              onChange={(e) => setPosition(e.target.value)}
+            >
+              <option value="ALL">All</option>
+              {POSITIONS.map((pos) => (
+                <option key={pos} value={pos}>{pos}</option>
+              ))}
+            </select>
+          </div>
+          <div className="rookie-list">
+            {rookies.map((r) => (
+              <div key={r.id} className="rookie-row">
+                <span className="rookie-name">{r.name}</span>
+                <span
+                  className="team-box"
+                  style={{ backgroundColor: teamSecondaryColor(r.team), color: readableTextColor(teamSecondaryColor(r.team)) }}
+                >
+                  {r.team}
+                </span>
+                <span className="rookie-pos">{r.position}</span>
+                <span className="rookie-draft">Round {r.draft_round}, Pick {r.draft_pick}</span>
+                <span className="rookie-prob" title="Real P(this player's career value beats their real draft round's historical median) - draft-time-only signals, real held-out AUC 0.563">
+                  {Math.round(r.success_probability * 100)}%
+                </span>
+                {r.success_probability_enhanced != null && (
+                  <span className="rookie-prob rookie-prob--enhanced" title="Real, combine-data-enhanced version of the same estimate - held-out AUC 0.605, only available for real rookies with complete real combine testing (37% of the 2026 class)">
+                    {Math.round(r.success_probability_enhanced * 100)}% (combine-adjusted)
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function FantasyRankings() {
   const { seasonData, selectedSeason, hasResults } = useSeason();
   const fantasyData = seasonData.fantasy;
@@ -225,6 +296,8 @@ export default function FantasyRankings() {
           ))
         )}
       </div>
+
+      {seasonData.rookieScores && <RookieSection rookieScores={seasonData.rookieScores} />}
 
       <div className="disclaimer">
         <p>

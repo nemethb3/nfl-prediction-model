@@ -118,7 +118,7 @@
 
 .player-card-collapsed {
   display: grid;
-  grid-template-columns: 1fr auto auto auto auto;
+  grid-template-columns: 1fr auto auto auto auto auto;
   gap: 16px;
   align-items: center;
 }
@@ -127,6 +127,75 @@
   font-size: 16px;
   text-align: center;
 }
+
+.player-card .breakout-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid #fbbf24;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: #fbbf24;
+  white-space: nowrap;
+}
+
+.player-card .breakout-badge .breakout-text {
+  font-weight: 600;
+}
+
+.player-card .breakout-badge .confidence {
+  opacity: 0.85;
+}
+
+.player-card .breakout-details {
+  background: rgba(251, 191, 36, 0.05);
+  border-left: 3px solid #fbbf24;
+  padding-left: 10px;
+}
+
+.player-card .breakout-details .section-title {
+  color: #fbbf24;
+}
+
+.player-card .signals-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.player-card .signal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #fbbf24;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.player-card .signal-icon {
+  font-size: 13px;
+}
+
+.player-card .signal-label {
+  color: #fbbf24;
+  font-weight: 600;
+  min-width: 130px;
+}
+
+.player-card .signal-value {
+  color: #ccc;
+  flex: 1;
+}
+
+.player-card .signal.weak-defense { border-left-color: #60a5fa; }
+.player-card .signal.usage-up { border-left-color: #4ade80; }
+.player-card .signal.performance { border-left-color: #f97316; }
 
 .player-card .trend {
   display: flex;

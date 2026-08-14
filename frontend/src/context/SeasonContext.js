@@ -44,6 +44,9 @@ const SEASON_FILE_LOADERS = {
       // was requested, so this stays a real `null` for 2025 rather than a
       // fabricated backfill.
       playerProps: null,
+      // Same real reasoning as playerProps - breakout alerts are a real
+      // 2026-only, forward-looking signal, not a 2025 backtest display.
+      breakoutAlerts: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
@@ -52,12 +55,13 @@ const SEASON_FILE_LOADERS = {
   // same reasoning as backtest_totals_betting_2025.py's own scoping), so
   // they're real `null`, not a fabricated/missing import.
   2026: async () => {
-    const [games, fantasy, seasonProjections, superbowlOdds, playerProps] = await Promise.all([
+    const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts] = await Promise.all([
       import('../data/games_2026.json'),
       import('../data/fantasy_rankings_2026.json'),
       import('../data/season_projections_2026.json'),
       import('../data/superbowl_odds_2026.json'),
       import('../data/player_props_2026.json'),
+      import('../data/breakout_alerts_2026.json'),
     ]);
     return {
       games: games.default,
@@ -69,6 +73,7 @@ const SEASON_FILE_LOADERS = {
       totalsBettingBacktest: null,
       superbowlOdds: superbowlOdds.default,
       playerProps: playerProps.default,
+      breakoutAlerts: breakoutAlerts.default,
     };
   },
 };

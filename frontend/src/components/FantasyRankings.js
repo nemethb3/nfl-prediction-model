@@ -102,6 +102,14 @@ export default function FantasyRankings() {
   const [selectedPosition, setSelectedPosition] = useState('RB');
   const [expandedPlayerId, setExpandedPlayerId] = useState(null);
 
+  // Real breakout alerts are keyed by week (string) at the top level, not
+  // a flat list like playerProps - only the selected week's alerts are
+  // relevant here, so the per-id lookup is rebuilt from that week's slice.
+  const weekBreakoutAlerts = seasonData.breakoutAlerts ? seasonData.breakoutAlerts[String(selectedWeek)] : null;
+  const breakoutById = weekBreakoutAlerts
+    ? new Map(weekBreakoutAlerts.map((a) => [a.id, a]))
+    : null;
+
   useEffect(() => {
     setSelectedWeek(weeks[0]);
     setExpandedPlayerId(null);
@@ -204,6 +212,7 @@ export default function FantasyRankings() {
               onToggle={() => setExpandedPlayerId(expandedPlayerId === player.id ? null : player.id)}
               isPreseason={isPreseason}
               props={propsById ? propsById.get(player.id) : null}
+              breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
             />
           ))
         )}
@@ -259,7 +268,7 @@ export default function FantasyRankings() {
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, isPreseason, props }) {
+function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakoutAlert }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const isPriorSeasonFallback = player.projection_type === 'prior_season_rate_fallback';
@@ -303,6 +312,14 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props }) {
         {player.injury_status && player.injury_status !== 'healthy' && (
           <div className="injury-badge" title={player.injury_status_raw || player.injury_status}>
             {INJURY_EMOJI[player.injury_status] || '⚪'}
+          </div>
+        )}
+
+        {breakoutAlert && (
+          <div className="breakout-badge" title={breakoutAlert.recommendation}>
+            <span className="breakout-icon">⚡</span>
+            <span className="breakout-text">Breakout</span>
+            <span className="confidence">{Math.round(breakoutAlert.confidence * 100)}%</span>
           </div>
         )}
 
@@ -406,6 +423,55 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props }) {
                 out-of-fold R² 0.16-0.31); TD props are weak (R² 0.04-0.14, real and disclosed - TDs
                 are rare, high-variance events that a linear model can&apos;t capture well). See
                 player_props_models.json for the full real per-stat validation.
+              </div>
+            </div>
+          )}
+
+          {breakoutAlert && (
+            <div className="section breakout-details">
+              <div className="section-title">Breakout Alert Signals</div>
+              <div className="signals-breakdown">
+                {breakoutAlert.signals.weak_defense.active && (
+                  <div className="signal weak-defense">
+                    <span className="signal-icon">🛡️</span>
+                    <span className="signal-label">Weak Defense</span>
+                    <span className="signal-value">
+                      {breakoutAlert.signals.weak_defense.opponent_d_elo} D_Elo - weaker than{' '}
+                      {breakoutAlert.signals.weak_defense.weaker_than_pct_of_league}% of the real
+                      32-team 2026 league
+                    </span>
+                  </div>
+                )}
+                {breakoutAlert.signals.usage_trending_up.active && (
+                  <div className="signal usage-up">
+                    <span className="signal-icon">📈</span>
+                    <span className="signal-label">Usage Trending Up</span>
+                    <span className="signal-value">
+                      Real 2025 trailing snap-share trend: {breakoutAlert.signals.usage_trending_up.snap_pct_trend > 0 ? '+' : ''}
+                      {breakoutAlert.signals.usage_trending_up.snap_pct_trend} pts (top real tercile of the league)
+                    </span>
+                  </div>
+                )}
+                {breakoutAlert.signals.performance_strong.active && (
+                  <div className="signal performance">
+                    <span className="signal-icon">⭐</span>
+                    <span className="signal-label">Strong Recent Form</span>
+                    <span className="signal-value">
+                      Real last-4-game 2025 PPR {breakoutAlert.signals.performance_strong.last_4_ppr_2025} vs.
+                      real season average {breakoutAlert.signals.performance_strong.season_avg_ppr_2025} ({breakoutAlert.signals.performance_strong.diff > 0 ? '+' : ''}
+                      {breakoutAlert.signals.performance_strong.diff})
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div className="small-text">
+                {breakoutAlert.recommendation}. Confidence is out of 3 real, currently-available
+                signals (weak defense, usage trend, recent form) - a 4th real signal slot
+                (competition/injury at the position) exists in this data but is always inactive right
+                now: {breakoutAlert.signals.competition_reduced.disclosure} Real, empirically-derived
+                thresholds throughout (top/bottom tercile of each signal&apos;s own real league-wide
+                distribution), not asserted cutoffs - about 26% of all real player-weeks meet the 2-of-3
+                bar, the honest combinatorial result of that design, not a rare/exclusive signal.
               </div>
             </div>
           )}

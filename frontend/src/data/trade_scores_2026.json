@@ -15,10 +15,7 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.29,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.284
+      "trajectory": "Declining"
     },
     "00-0026158": {
       "position": "QB",
@@ -33,28 +30,22 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.397,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.422
+      "trajectory": "Declining"
     },
     "00-0030565": {
       "position": "QB",
       "current_age": 36,
-      "team": "LV",
+      "team": "NYJ",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.287,
         "role_trend": -0.01,
         "recent_trend": -0.295,
         "draft_capital": 0.91,
-        "team_elo": 1425.997
+        "team_elo": 1423.886
       },
-      "prob_ppr_increase": 0.528,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1535.4,
-      "schedule_strength_percentile": 0.625,
-      "schedule_adjusted_prob_ppr_increase": 0.54
+      "prob_ppr_increase": 0.531,
+      "trajectory": "Rising"
     },
     "00-0031236": {
       "position": "WR",
@@ -69,28 +60,22 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.516,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.56
+      "trajectory": "Rising"
     },
     "00-0031408": {
       "position": "WR",
       "current_age": 33,
-      "team": "TB",
+      "team": "SF",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.11,
         "role_trend": -0.054,
         "recent_trend": -0.676,
         "draft_capital": 1.0,
-        "team_elo": 1502.405
+        "team_elo": 1533.125
       },
-      "prob_ppr_increase": 0.439,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.473
+      "prob_ppr_increase": 0.472,
+      "trajectory": "Declining"
     },
     "00-0031588": {
       "position": "WR",
@@ -105,28 +90,37 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.41,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.457
+      "trajectory": "Declining"
+    },
+    "00-0032392": {
+      "position": "TE",
+      "current_age": 32,
+      "team": "ATL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.109,
+        "role_trend": -0.199,
+        "recent_trend": -0.245,
+        "draft_capital": 0.82,
+        "team_elo": 1483.199
+      },
+      "prob_ppr_increase": 0.494,
+      "trajectory": "Declining"
     },
     "00-0032464": {
       "position": "WR",
       "current_age": 32,
-      "team": "DET",
+      "team": "CHI",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.239,
         "role_trend": -0.025,
         "recent_trend": -0.132,
         "draft_capital": 0.05,
-        "team_elo": 1542.532
+        "team_elo": 1496.29
       },
-      "prob_ppr_increase": 0.46,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.422
+      "prob_ppr_increase": 0.409,
+      "trajectory": "Declining"
     },
     "00-0032775": {
       "position": "WR",
@@ -141,10 +135,22 @@
         "team_elo": 1533.125
       },
       "prob_ppr_increase": 0.47,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.445
+      "trajectory": "Declining"
+    },
+    "00-0033040": {
+      "position": "WR",
+      "current_age": 33,
+      "team": "MIA",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.121,
+        "role_trend": -0.021,
+        "recent_trend": -0.82,
+        "draft_capital": 0.64,
+        "team_elo": 1489.627
+      },
+      "prob_ppr_increase": 0.436,
+      "trajectory": "Declining"
     },
     "00-0033077": {
       "position": "QB",
@@ -159,10 +165,7 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.245,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.242
+      "trajectory": "Declining"
     },
     "00-0033090": {
       "position": "TE",
@@ -177,10 +180,7 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.466,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.513
+      "trajectory": "Declining"
     },
     "00-0033106": {
       "position": "QB",
@@ -195,10 +195,7 @@
         "team_elo": 1542.532
       },
       "prob_ppr_increase": 0.293,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.255
+      "trajectory": "Declining"
     },
     "00-0033119": {
       "position": "QB",
@@ -213,10 +210,22 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.389,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.43
+      "trajectory": "Declining"
+    },
+    "00-0033246": {
+      "position": "TE",
+      "current_age": 32,
+      "team": "PHI",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.381,
+        "role_trend": -0.242,
+        "recent_trend": -0.529,
+        "draft_capital": 0.05,
+        "team_elo": 1560.58
+      },
+      "prob_ppr_increase": 0.63,
+      "trajectory": "Rising"
     },
     "00-0033280": {
       "position": "RB",
@@ -231,10 +240,7 @@
         "team_elo": 1533.125
       },
       "prob_ppr_increase": 0.376,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.351
+      "trajectory": "Declining"
     },
     "00-0033293": {
       "position": "RB",
@@ -249,28 +255,37 @@
         "team_elo": 1535.088
       },
       "prob_ppr_increase": 0.467,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.448
+      "trajectory": "Declining"
     },
     "00-0033307": {
       "position": "WR",
       "current_age": 31,
-      "team": "SF",
+      "team": "ARI",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.174,
         "role_trend": 0.062,
         "recent_trend": 0.116,
         "draft_capital": 0.05,
-        "team_elo": 1533.125
+        "team_elo": 1431.505
       },
-      "prob_ppr_increase": 0.416,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.391
+      "prob_ppr_increase": 0.312,
+      "trajectory": "Declining"
+    },
+    "00-0033375": {
+      "position": "WR",
+      "current_age": 33,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.232,
+        "role_trend": -0.408,
+        "recent_trend": -0.584,
+        "draft_capital": 0.05,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.389,
+      "trajectory": "Declining"
     },
     "00-0033526": {
       "position": "RB",
@@ -285,10 +300,7 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.344,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.369
+      "trajectory": "Declining"
     },
     "00-0033555": {
       "position": "WR",
@@ -303,28 +315,37 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.392,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.439
+      "trajectory": "Declining"
+    },
+    "00-0033854": {
+      "position": "RB",
+      "current_age": 32,
+      "team": "HOU",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.325,
+        "role_trend": -0.518,
+        "recent_trend": -0.239,
+        "draft_capital": 0.05,
+        "team_elo": 1533.547
+      },
+      "prob_ppr_increase": 0.5,
+      "trajectory": "Rising"
     },
     "00-0033857": {
       "position": "WR",
       "current_age": 30,
-      "team": "KC",
+      "team": "NYG",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.215,
         "role_trend": 0.136,
         "recent_trend": 0.288,
         "draft_capital": 0.91,
-        "team_elo": 1524.707
+        "team_elo": 1428.247
       },
-      "prob_ppr_increase": 0.4,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.366
+      "prob_ppr_increase": 0.302,
+      "trajectory": "Declining"
     },
     "00-0033858": {
       "position": "TE",
@@ -339,10 +360,7 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.587,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.581
+      "trajectory": "Rising"
     },
     "00-0033873": {
       "position": "QB",
@@ -357,10 +375,7 @@
         "team_elo": 1524.707
       },
       "prob_ppr_increase": 0.463,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.429
+      "trajectory": "Declining"
     },
     "00-0033881": {
       "position": "TE",
@@ -375,28 +390,37 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.685,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.713
+      "trajectory": "Rising"
     },
     "00-0033885": {
       "position": "TE",
       "current_age": 30,
-      "team": "CLE",
+      "team": "LAC",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.18,
         "role_trend": -0.28,
         "recent_trend": -0.506,
         "draft_capital": 1.0,
-        "team_elo": 1450.266
+        "team_elo": 1527.14
       },
-      "prob_ppr_increase": 0.579,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1527.5,
-      "schedule_strength_percentile": 0.594,
-      "schedule_adjusted_prob_ppr_increase": 0.588
+      "prob_ppr_increase": 0.657,
+      "trajectory": "Rising"
+    },
+    "00-0033891": {
+      "position": "WR",
+      "current_age": 31,
+      "team": "ARI",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.282,
+        "role_trend": 0.431,
+        "recent_trend": -0.359,
+        "draft_capital": 0.91,
+        "team_elo": 1431.505
+      },
+      "prob_ppr_increase": 0.347,
+      "trajectory": "Declining"
     },
     "00-0033906": {
       "position": "RB",
@@ -411,10 +435,7 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.341,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.313
+      "trajectory": "Declining"
     },
     "00-0033908": {
       "position": "WR",
@@ -429,10 +450,7 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.503,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.481
+      "trajectory": "Rising"
     },
     "00-0033921": {
       "position": "WR",
@@ -447,10 +465,7 @@
         "team_elo": 1502.405
       },
       "prob_ppr_increase": 0.443,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.477
+      "trajectory": "Declining"
     },
     "00-0033923": {
       "position": "RB",
@@ -465,10 +480,22 @@
         "team_elo": 1524.707
       },
       "prob_ppr_increase": 0.408,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.374
+      "trajectory": "Declining"
+    },
+    "00-0033943": {
+      "position": "WR",
+      "current_age": 32,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.315,
+        "role_trend": 0.641,
+        "recent_trend": -0.724,
+        "draft_capital": 0.73,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.362,
+      "trajectory": "Declining"
     },
     "00-0033955": {
       "position": "RB",
@@ -483,10 +510,37 @@
         "team_elo": 1473.256
       },
       "prob_ppr_increase": 0.293,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1522.9,
-      "schedule_strength_percentile": 0.531,
-      "schedule_adjusted_prob_ppr_increase": 0.296
+      "trajectory": "Declining"
+    },
+    "00-0034159": {
+      "position": "TE",
+      "current_age": 30,
+      "team": "LAC",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.353,
+        "role_trend": -0.494,
+        "recent_trend": -0.725,
+        "draft_capital": 0.73,
+        "team_elo": 1527.14
+      },
+      "prob_ppr_increase": 0.757,
+      "trajectory": "Rising"
+    },
+    "00-0034272": {
+      "position": "WR",
+      "current_age": 32,
+      "team": "DAL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.173,
+        "role_trend": -0.187,
+        "recent_trend": -0.546,
+        "draft_capital": 0.64,
+        "team_elo": 1498.093
+      },
+      "prob_ppr_increase": 0.431,
+      "trajectory": "Declining"
     },
     "00-0034348": {
       "position": "WR",
@@ -501,10 +555,7 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.415,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.443
+      "trajectory": "Declining"
     },
     "00-0034351": {
       "position": "TE",
@@ -519,10 +570,7 @@
         "team_elo": 1560.58
       },
       "prob_ppr_increase": 0.474,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.433
+      "trajectory": "Declining"
     },
     "00-0034383": {
       "position": "TE",
@@ -537,10 +585,52 @@
         "team_elo": 1533.547
       },
       "prob_ppr_increase": 0.43,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.386
+      "trajectory": "Declining"
+    },
+    "00-0034407": {
+      "position": "WR",
+      "current_age": 30,
+      "team": "NYG",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.35,
+        "role_trend": -0.443,
+        "recent_trend": -0.837,
+        "draft_capital": 0.55,
+        "team_elo": 1428.247
+      },
+      "prob_ppr_increase": 0.422,
+      "trajectory": "Declining"
+    },
+    "00-0034521": {
+      "position": "WR",
+      "current_age": 31,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.282,
+        "role_trend": -0.53,
+        "recent_trend": -0.753,
+        "draft_capital": 0.05,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.401,
+      "trajectory": "Declining"
+    },
+    "00-0034613": {
+      "position": "TE",
+      "current_age": 32,
+      "team": "CIN",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.55,
+        "role_trend": 0.11,
+        "recent_trend": -0.195,
+        "draft_capital": 0.05,
+        "team_elo": 1487.552
+      },
+      "prob_ppr_increase": 0.524,
+      "trajectory": "Rising"
     },
     "00-0034753": {
       "position": "TE",
@@ -555,28 +645,22 @@
         "team_elo": 1529.571
       },
       "prob_ppr_increase": 0.459,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.412
+      "trajectory": "Declining"
     },
     "00-0034775": {
       "position": "WR",
       "current_age": 30,
-      "team": "HOU",
+      "team": "SF",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.218,
         "role_trend": -0.248,
         "recent_trend": -0.476,
         "draft_capital": 0.91,
-        "team_elo": 1533.547
+        "team_elo": 1533.125
       },
-      "prob_ppr_increase": 0.477,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.433
+      "prob_ppr_increase": 0.476,
+      "trajectory": "Declining"
     },
     "00-0034791": {
       "position": "RB",
@@ -591,10 +675,7 @@
         "team_elo": 1533.547
       },
       "prob_ppr_increase": 0.418,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.374
+      "trajectory": "Declining"
     },
     "00-0034796": {
       "position": "QB",
@@ -609,28 +690,22 @@
         "team_elo": 1529.571
       },
       "prob_ppr_increase": 0.458,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.411
+      "trajectory": "Declining"
     },
     "00-0034827": {
       "position": "WR",
       "current_age": 29,
-      "team": "CHI",
+      "team": "BUF",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.015,
         "role_trend": -0.242,
         "recent_trend": -0.344,
         "draft_capital": 1.0,
-        "team_elo": 1496.29
+        "team_elo": 1567.269
       },
-      "prob_ppr_increase": 0.397,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.416
+      "prob_ppr_increase": 0.474,
+      "trajectory": "Declining"
     },
     "00-0034829": {
       "position": "TE",
@@ -645,10 +720,7 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.494,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.519
+      "trajectory": "Declining"
     },
     "00-0034837": {
       "position": "WR",
@@ -663,10 +735,7 @@
         "team_elo": 1418.226
       },
       "prob_ppr_increase": 0.375,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1503.2,
-      "schedule_strength_percentile": 0.375,
-      "schedule_adjusted_prob_ppr_increase": 0.362
+      "trajectory": "Declining"
     },
     "00-0034844": {
       "position": "RB",
@@ -681,10 +750,7 @@
         "team_elo": 1560.58
       },
       "prob_ppr_increase": 0.43,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.389
+      "trajectory": "Declining"
     },
     "00-0034855": {
       "position": "QB",
@@ -699,10 +765,7 @@
         "team_elo": 1502.405
       },
       "prob_ppr_increase": 0.475,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.509
+      "trajectory": "Declining"
     },
     "00-0034857": {
       "position": "QB",
@@ -717,10 +780,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.393,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.437
+      "trajectory": "Declining"
     },
     "00-0034869": {
       "position": "QB",
@@ -735,10 +795,7 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.337,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.315
+      "trajectory": "Declining"
     },
     "00-0034960": {
       "position": "WR",
@@ -753,10 +810,7 @@
         "team_elo": 1512.585
       },
       "prob_ppr_increase": 0.413,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.435
+      "trajectory": "Declining"
     },
     "00-0034975": {
       "position": "RB",
@@ -771,28 +825,22 @@
         "team_elo": 1529.571
       },
       "prob_ppr_increase": 0.502,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.455
+      "trajectory": "Rising"
     },
     "00-0035208": {
       "position": "WR",
       "current_age": 29,
-      "team": "CHI",
+      "team": "ATL",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.282,
         "role_trend": 0.178,
         "recent_trend": 0.11,
         "draft_capital": 0.05,
-        "team_elo": 1496.29
+        "team_elo": 1483.199
       },
-      "prob_ppr_increase": 0.408,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.427
+      "prob_ppr_increase": 0.394,
+      "trajectory": "Declining"
     },
     "00-0035229": {
       "position": "TE",
@@ -807,10 +855,37 @@
         "team_elo": 1535.088
       },
       "prob_ppr_increase": 0.541,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.522
+      "trajectory": "Rising"
+    },
+    "00-0035243": {
+      "position": "RB",
+      "current_age": 29,
+      "team": "DAL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.248,
+        "role_trend": -0.405,
+        "recent_trend": -0.676,
+        "draft_capital": 0.91,
+        "team_elo": 1498.093
+      },
+      "prob_ppr_increase": 0.499,
+      "trajectory": "Declining"
+    },
+    "00-0035249": {
+      "position": "TE",
+      "current_age": 29,
+      "team": "MIN",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.329,
+        "role_trend": -0.144,
+        "recent_trend": -0.076,
+        "draft_capital": 0.82,
+        "team_elo": 1535.088
+      },
+      "prob_ppr_increase": 0.634,
+      "trajectory": "Rising"
     },
     "00-0035250": {
       "position": "RB",
@@ -825,10 +900,7 @@
         "team_elo": 1428.247
       },
       "prob_ppr_increase": 0.341,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.291
+      "trajectory": "Declining"
     },
     "00-0035261": {
       "position": "RB",
@@ -843,28 +915,37 @@
         "team_elo": 1418.226
       },
       "prob_ppr_increase": 0.32,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1503.2,
-      "schedule_strength_percentile": 0.375,
-      "schedule_adjusted_prob_ppr_increase": 0.307
+      "trajectory": "Declining"
+    },
+    "00-0035406": {
+      "position": "WR",
+      "current_age": 28,
+      "team": "DEN",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.426,
+        "role_trend": 0.069,
+        "recent_trend": -0.379,
+        "draft_capital": 0.05,
+        "team_elo": 1549.774
+      },
+      "prob_ppr_increase": 0.522,
+      "trajectory": "Rising"
     },
     "00-0035500": {
       "position": "WR",
       "current_age": 28,
-      "team": "ARI",
+      "team": "DET",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.279,
         "role_trend": -0.215,
         "recent_trend": -0.03,
         "draft_capital": 0.05,
-        "team_elo": 1431.505
+        "team_elo": 1542.532
       },
-      "prob_ppr_increase": 0.35,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.391
+      "prob_ppr_increase": 0.469,
+      "trajectory": "Declining"
     },
     "00-0035535": {
       "position": "WR",
@@ -879,10 +960,7 @@
         "team_elo": 1428.247
       },
       "prob_ppr_increase": 0.319,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.269
+      "trajectory": "Declining"
     },
     "00-0035537": {
       "position": "RB",
@@ -897,10 +975,22 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.491,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.535
+      "trajectory": "Declining"
+    },
+    "00-0035631": {
+      "position": "TE",
+      "current_age": 30,
+      "team": "CIN",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.35,
+        "role_trend": -0.094,
+        "recent_trend": -0.265,
+        "draft_capital": 0.91,
+        "team_elo": 1487.552
+      },
+      "prob_ppr_increase": 0.623,
+      "trajectory": "Rising"
     },
     "00-0035640": {
       "position": "WR",
@@ -915,28 +1005,22 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.411,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.405
+      "trajectory": "Declining"
     },
     "00-0035644": {
       "position": "TE",
       "current_age": 29,
-      "team": "CIN",
+      "team": "NO",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.111,
         "role_trend": -0.354,
         "recent_trend": -0.157,
         "draft_capital": 1.0,
-        "team_elo": 1487.552
+        "team_elo": 1461.306
       },
-      "prob_ppr_increase": 0.561,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.586
+      "prob_ppr_increase": 0.533,
+      "trajectory": "Rising"
     },
     "00-0035659": {
       "position": "WR",
@@ -951,46 +1035,37 @@
         "team_elo": 1473.256
       },
       "prob_ppr_increase": 0.379,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1522.9,
-      "schedule_strength_percentile": 0.531,
-      "schedule_adjusted_prob_ppr_increase": 0.382
+      "trajectory": "Declining"
     },
     "00-0035676": {
       "position": "WR",
       "current_age": 29,
-      "team": "PHI",
+      "team": "NE",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.103,
         "role_trend": -0.051,
         "recent_trend": -0.13,
         "draft_capital": 0.91,
-        "team_elo": 1560.58
+        "team_elo": 1517.111
       },
-      "prob_ppr_increase": 0.464,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.423
+      "prob_ppr_increase": 0.416,
+      "trajectory": "Declining"
     },
     "00-0035685": {
       "position": "RB",
       "current_age": 29,
-      "team": "DET",
+      "team": "HOU",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.103,
         "role_trend": -0.237,
         "recent_trend": -0.222,
         "draft_capital": 0.82,
-        "team_elo": 1542.532
+        "team_elo": 1533.547
       },
-      "prob_ppr_increase": 0.489,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.452
+      "prob_ppr_increase": 0.477,
+      "trajectory": "Declining"
     },
     "00-0035689": {
       "position": "TE",
@@ -1005,10 +1080,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.445,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.489
+      "trajectory": "Declining"
     },
     "00-0035700": {
       "position": "RB",
@@ -1023,10 +1095,7 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.458,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.442
+      "trajectory": "Declining"
     },
     "00-0035710": {
       "position": "QB",
@@ -1041,10 +1110,7 @@
         "team_elo": 1484.894
       },
       "prob_ppr_increase": 0.349,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.656,
-      "schedule_adjusted_prob_ppr_increase": 0.365
+      "trajectory": "Declining"
     },
     "00-0035719": {
       "position": "WR",
@@ -1059,10 +1125,7 @@
         "team_elo": 1473.256
       },
       "prob_ppr_increase": 0.363,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1522.9,
-      "schedule_strength_percentile": 0.531,
-      "schedule_adjusted_prob_ppr_increase": 0.366
+      "trajectory": "Declining"
     },
     "00-0036040": {
       "position": "TE",
@@ -1077,28 +1140,22 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.264,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.236
+      "trajectory": "Declining"
     },
     "00-0036139": {
       "position": "RB",
       "current_age": 28,
-      "team": "CAR",
+      "team": "PIT",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.039,
         "role_trend": 0.127,
         "recent_trend": 0.495,
         "draft_capital": 0.05,
-        "team_elo": 1456.623
+        "team_elo": 1528.825
       },
-      "prob_ppr_increase": 0.282,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.282
+      "prob_ppr_increase": 0.361,
+      "trajectory": "Declining"
     },
     "00-0036158": {
       "position": "RB",
@@ -1113,28 +1170,52 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.564,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.592
+      "trajectory": "Rising"
+    },
+    "00-0036182": {
+      "position": "WR",
+      "current_age": 29,
+      "team": "IND",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.238,
+        "role_trend": -0.554,
+        "recent_trend": -0.82,
+        "draft_capital": 0.05,
+        "team_elo": 1484.894
+      },
+      "prob_ppr_increase": 0.478,
+      "trajectory": "Declining"
+    },
+    "00-0036196": {
+      "position": "WR",
+      "current_age": 28,
+      "team": "BUF",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.23,
+        "role_trend": -0.292,
+        "recent_trend": -0.713,
+        "draft_capital": 0.73,
+        "team_elo": 1567.269
+      },
+      "prob_ppr_increase": 0.535,
+      "trajectory": "Rising"
     },
     "00-0036212": {
       "position": "QB",
       "current_age": 29,
-      "team": "MIA",
+      "team": "ATL",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.228,
         "role_trend": -0.018,
         "recent_trend": -0.292,
         "draft_capital": 1.0,
-        "team_elo": 1489.627
+        "team_elo": 1483.199
       },
-      "prob_ppr_increase": 0.476,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1553.2,
-      "schedule_strength_percentile": 0.812,
-      "schedule_adjusted_prob_ppr_increase": 0.507
+      "prob_ppr_increase": 0.483,
+      "trajectory": "Declining"
     },
     "00-0036223": {
       "position": "RB",
@@ -1149,10 +1230,7 @@
         "team_elo": 1484.894
       },
       "prob_ppr_increase": 0.392,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.656,
-      "schedule_adjusted_prob_ppr_increase": 0.408
+      "trajectory": "Declining"
     },
     "00-0036244": {
       "position": "TE",
@@ -1167,46 +1245,37 @@
         "team_elo": 1542.572
       },
       "prob_ppr_increase": 0.443,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1557.6,
-      "schedule_strength_percentile": 0.875,
-      "schedule_adjusted_prob_ppr_increase": 0.481
+      "trajectory": "Declining"
     },
     "00-0036252": {
       "position": "WR",
       "current_age": 29,
-      "team": "IND",
+      "team": "PIT",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.059,
         "role_trend": -0.102,
         "recent_trend": -0.032,
         "draft_capital": 0.91,
-        "team_elo": 1484.894
+        "team_elo": 1528.825
       },
-      "prob_ppr_increase": 0.369,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.656,
-      "schedule_adjusted_prob_ppr_increase": 0.385
+      "prob_ppr_increase": 0.415,
+      "trajectory": "Declining"
     },
     "00-0036259": {
       "position": "WR",
       "current_age": 29,
-      "team": "SF",
+      "team": "MIN",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.165,
         "role_trend": -0.05,
         "recent_trend": 0.323,
         "draft_capital": 0.46,
-        "team_elo": 1533.125
+        "team_elo": 1535.088
       },
-      "prob_ppr_increase": 0.417,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "prob_ppr_increase": 0.419,
+      "trajectory": "Declining"
     },
     "00-0036264": {
       "position": "QB",
@@ -1221,10 +1290,7 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.257,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.241
+      "trajectory": "Declining"
     },
     "00-0036275": {
       "position": "RB",
@@ -1239,10 +1305,7 @@
         "team_elo": 1496.29
       },
       "prob_ppr_increase": 0.425,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.444
+      "trajectory": "Declining"
     },
     "00-0036290": {
       "position": "TE",
@@ -1257,28 +1320,22 @@
         "team_elo": 1496.29
       },
       "prob_ppr_increase": 0.525,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.544
+      "trajectory": "Rising"
     },
     "00-0036309": {
       "position": "WR",
       "current_age": 29,
-      "team": "ATL",
+      "team": "NYG",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.119,
         "role_trend": -0.158,
         "recent_trend": -0.395,
         "draft_capital": 0.64,
-        "team_elo": 1483.199
+        "team_elo": 1428.247
       },
-      "prob_ppr_increase": 0.405,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.411
+      "prob_ppr_increase": 0.348,
+      "trajectory": "Declining"
     },
     "00-0036322": {
       "position": "WR",
@@ -1293,10 +1350,22 @@
         "team_elo": 1535.088
       },
       "prob_ppr_increase": 0.419,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.4
+      "trajectory": "Declining"
+    },
+    "00-0036328": {
+      "position": "RB",
+      "current_age": 28,
+      "team": "NE",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.178,
+        "role_trend": -0.569,
+        "recent_trend": -0.799,
+        "draft_capital": 0.82,
+        "team_elo": 1517.111
+      },
+      "prob_ppr_increase": 0.514,
+      "trajectory": "Rising"
     },
     "00-0036355": {
       "position": "QB",
@@ -1311,10 +1380,7 @@
         "team_elo": 1527.14
       },
       "prob_ppr_increase": 0.429,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1504.4,
-      "schedule_strength_percentile": 0.406,
-      "schedule_adjusted_prob_ppr_increase": 0.42
+      "trajectory": "Declining"
     },
     "00-0036358": {
       "position": "WR",
@@ -1329,10 +1395,7 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.394,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.391
+      "trajectory": "Declining"
     },
     "00-0036389": {
       "position": "QB",
@@ -1347,10 +1410,7 @@
         "team_elo": 1560.58
       },
       "prob_ppr_increase": 0.383,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.342
+      "trajectory": "Declining"
     },
     "00-0036407": {
       "position": "WR",
@@ -1365,10 +1425,7 @@
         "team_elo": 1450.266
       },
       "prob_ppr_increase": 0.349,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1527.5,
-      "schedule_strength_percentile": 0.594,
-      "schedule_adjusted_prob_ppr_increase": 0.358
+      "trajectory": "Declining"
     },
     "00-0036410": {
       "position": "WR",
@@ -1383,28 +1440,52 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.371,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.396
+      "trajectory": "Declining"
     },
     "00-0036415": {
       "position": "WR",
       "current_age": 30,
-      "team": "TEN",
+      "team": "WAS",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.178,
         "role_trend": 0.059,
         "recent_trend": 0.335,
         "draft_capital": 0.91,
-        "team_elo": 1418.226
+        "team_elo": 1473.256
       },
-      "prob_ppr_increase": 0.286,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1503.2,
-      "schedule_strength_percentile": 0.375,
-      "schedule_adjusted_prob_ppr_increase": 0.273
+      "prob_ppr_increase": 0.339,
+      "trajectory": "Declining"
+    },
+    "00-0036422": {
+      "position": "TE",
+      "current_age": 30,
+      "team": "DEN",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.257,
+        "role_trend": 0.02,
+        "recent_trend": -0.127,
+        "draft_capital": 0.82,
+        "team_elo": 1549.774
+      },
+      "prob_ppr_increase": 0.587,
+      "trajectory": "Rising"
+    },
+    "00-0036427": {
+      "position": "WR",
+      "current_age": 28,
+      "team": "DAL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.328,
+        "role_trend": -0.128,
+        "recent_trend": -0.434,
+        "draft_capital": 0.64,
+        "team_elo": 1498.093
+      },
+      "prob_ppr_increase": 0.454,
+      "trajectory": "Declining"
     },
     "00-0036550": {
       "position": "WR",
@@ -1419,10 +1500,7 @@
         "team_elo": 1529.571
       },
       "prob_ppr_increase": 0.485,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.438
+      "trajectory": "Declining"
     },
     "00-0036554": {
       "position": "WR",
@@ -1437,10 +1515,7 @@
         "team_elo": 1533.547
       },
       "prob_ppr_increase": 0.435,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.391
+      "trajectory": "Declining"
     },
     "00-0036555": {
       "position": "RB",
@@ -1455,46 +1530,52 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.396,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.396
+      "trajectory": "Declining"
     },
     "00-0036613": {
       "position": "WR",
       "current_age": 28,
-      "team": "MIA",
+      "team": "DEN",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.082,
         "role_trend": 0.195,
         "recent_trend": 0.115,
         "draft_capital": 1.0,
-        "team_elo": 1489.627
+        "team_elo": 1549.774
       },
-      "prob_ppr_increase": 0.345,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1553.2,
-      "schedule_strength_percentile": 0.812,
-      "schedule_adjusted_prob_ppr_increase": 0.376
+      "prob_ppr_increase": 0.408,
+      "trajectory": "Declining"
     },
     "00-0036626": {
       "position": "WR",
       "current_age": 27,
-      "team": "JAX",
+      "team": "WAS",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.353,
         "role_trend": 0.069,
         "recent_trend": -0.029,
         "draft_capital": 0.82,
-        "team_elo": 1512.585
+        "team_elo": 1473.256
       },
-      "prob_ppr_increase": 0.44,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.462
+      "prob_ppr_increase": 0.397,
+      "trajectory": "Declining"
+    },
+    "00-0036628": {
+      "position": "TE",
+      "current_age": 29,
+      "team": "WAS",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.365,
+        "role_trend": 0.442,
+        "recent_trend": 0.126,
+        "draft_capital": 0.73,
+        "team_elo": 1473.256
+      },
+      "prob_ppr_increase": 0.406,
+      "trajectory": "Declining"
     },
     "00-0036637": {
       "position": "TE",
@@ -1509,10 +1590,52 @@
         "team_elo": 1524.707
       },
       "prob_ppr_increase": 0.543,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.509
+      "trajectory": "Rising"
+    },
+    "00-0036727": {
+      "position": "RB",
+      "current_age": 30,
+      "team": "DEN",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.618,
+        "role_trend": -0.31,
+        "recent_trend": 5.542,
+        "draft_capital": 0.05,
+        "team_elo": 1549.774
+      },
+      "prob_ppr_increase": 0.372,
+      "trajectory": "Declining"
+    },
+    "00-0036754": {
+      "position": "TE",
+      "current_age": 28,
+      "team": "DET",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.459,
+        "role_trend": 0.186,
+        "recent_trend": 0.166,
+        "draft_capital": 0.05,
+        "team_elo": 1542.532
+      },
+      "prob_ppr_increase": 0.484,
+      "trajectory": "Declining"
+    },
+    "00-0036849": {
+      "position": "WR",
+      "current_age": 27,
+      "team": "MIA",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.279,
+        "role_trend": -0.422,
+        "recent_trend": -0.705,
+        "draft_capital": 0.91,
+        "team_elo": 1489.627
+      },
+      "prob_ppr_increase": 0.464,
+      "trajectory": "Declining"
     },
     "00-0036875": {
       "position": "RB",
@@ -1527,10 +1650,7 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.444,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.491
+      "trajectory": "Declining"
     },
     "00-0036894": {
       "position": "TE",
@@ -1545,10 +1665,7 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.573,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.567
+      "trajectory": "Rising"
     },
     "00-0036900": {
       "position": "WR",
@@ -1563,10 +1680,22 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.355,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.38
+      "trajectory": "Declining"
+    },
+    "00-0036906": {
+      "position": "RB",
+      "current_age": 28,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.388,
+        "role_trend": -0.335,
+        "recent_trend": -0.908,
+        "draft_capital": 0.55,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.416,
+      "trajectory": "Declining"
     },
     "00-0036912": {
       "position": "WR",
@@ -1581,46 +1710,37 @@
         "team_elo": 1560.58
       },
       "prob_ppr_increase": 0.437,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.396
+      "trajectory": "Declining"
     },
     "00-0036919": {
       "position": "RB",
       "current_age": 27,
-      "team": "PIT",
+      "team": "TB",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.035,
         "role_trend": 1.138,
         "recent_trend": 1.767,
         "draft_capital": 0.64,
-        "team_elo": 1528.825
+        "team_elo": 1502.405
       },
-      "prob_ppr_increase": 0.302,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.296
+      "prob_ppr_increase": 0.275,
+      "trajectory": "Declining"
     },
     "00-0036945": {
       "position": "QB",
       "current_age": 27,
-      "team": "NYJ",
+      "team": "KC",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.306,
         "role_trend": 0.45,
         "recent_trend": -0.183,
         "draft_capital": 1.0,
-        "team_elo": 1423.886
+        "team_elo": 1524.707
       },
-      "prob_ppr_increase": 0.5,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.469
+      "prob_ppr_increase": 0.381,
+      "trajectory": "Declining"
     },
     "00-0036963": {
       "position": "WR",
@@ -1635,10 +1755,7 @@
         "team_elo": 1542.532
       },
       "prob_ppr_increase": 0.403,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.366
+      "trajectory": "Declining"
     },
     "00-0036970": {
       "position": "TE",
@@ -1653,10 +1770,7 @@
         "team_elo": 1483.199
       },
       "prob_ppr_increase": 0.275,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.281
+      "trajectory": "Declining"
     },
     "00-0036971": {
       "position": "QB",
@@ -1671,10 +1785,7 @@
         "team_elo": 1512.585
       },
       "prob_ppr_increase": 0.392,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.414
+      "trajectory": "Declining"
     },
     "00-0036972": {
       "position": "QB",
@@ -1689,28 +1800,37 @@
         "team_elo": 1533.125
       },
       "prob_ppr_increase": 0.378,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.353
+      "trajectory": "Declining"
     },
     "00-0036973": {
       "position": "RB",
       "current_age": 28,
-      "team": "JAX",
+      "team": "NO",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.029,
         "role_trend": 0.003,
         "recent_trend": 0.231,
         "draft_capital": 1.0,
-        "team_elo": 1512.585
+        "team_elo": 1461.306
       },
-      "prob_ppr_increase": 0.417,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.439
+      "prob_ppr_increase": 0.356,
+      "trajectory": "Declining"
+    },
+    "00-0036980": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "PHI",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.212,
+        "role_trend": -0.553,
+        "recent_trend": -0.774,
+        "draft_capital": 0.91,
+        "team_elo": 1560.58
+      },
+      "prob_ppr_increase": 0.538,
+      "trajectory": "Rising"
     },
     "00-0036988": {
       "position": "WR",
@@ -1725,10 +1845,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.513,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.557
+      "trajectory": "Rising"
     },
     "00-0036997": {
       "position": "RB",
@@ -1743,10 +1860,22 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.424,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.421
+      "trajectory": "Declining"
+    },
+    "00-0037004": {
+      "position": "TE",
+      "current_age": 28,
+      "team": "JAX",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.588,
+        "role_trend": 0.491,
+        "recent_trend": 0.711,
+        "draft_capital": 0.82,
+        "team_elo": 1512.585
+      },
+      "prob_ppr_increase": 0.517,
+      "trajectory": "Rising"
     },
     "00-0037005": {
       "position": "TE",
@@ -1761,28 +1890,22 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.466,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.466
+      "trajectory": "Declining"
     },
     "00-0037197": {
       "position": "RB",
       "current_age": 28,
-      "team": "KC",
+      "team": "DET",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.25,
         "role_trend": -0.066,
         "recent_trend": -0.355,
         "draft_capital": 0.46,
-        "team_elo": 1524.707
+        "team_elo": 1542.532
       },
-      "prob_ppr_increase": 0.468,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.434
+      "prob_ppr_increase": 0.49,
+      "trajectory": "Declining"
     },
     "00-0037228": {
       "position": "RB",
@@ -1797,10 +1920,22 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.379,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.373
+      "trajectory": "Declining"
+    },
+    "00-0037231": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "NO",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.618,
+        "role_trend": 0.224,
+        "recent_trend": 0.222,
+        "draft_capital": 0.05,
+        "team_elo": 1461.306
+      },
+      "prob_ppr_increase": 0.418,
+      "trajectory": "Declining"
     },
     "00-0037238": {
       "position": "WR",
@@ -1815,10 +1950,7 @@
         "team_elo": 1483.199
       },
       "prob_ppr_increase": 0.36,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.366
+      "trajectory": "Declining"
     },
     "00-0037239": {
       "position": "WR",
@@ -1833,10 +1965,7 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.294,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.266
+      "trajectory": "Declining"
     },
     "00-0037240": {
       "position": "WR",
@@ -1851,10 +1980,7 @@
         "team_elo": 1542.532
       },
       "prob_ppr_increase": 0.417,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.379
+      "trajectory": "Declining"
     },
     "00-0037247": {
       "position": "WR",
@@ -1869,10 +1995,7 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.328,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.325
+      "trajectory": "Declining"
     },
     "00-0037248": {
       "position": "RB",
@@ -1887,28 +2010,37 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.474,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.518
+      "trajectory": "Declining"
     },
     "00-0037256": {
       "position": "RB",
       "current_age": 28,
-      "team": "TB",
+      "team": "WAS",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.044,
         "role_trend": -0.187,
         "recent_trend": -0.388,
         "draft_capital": 0.82,
-        "team_elo": 1502.405
+        "team_elo": 1473.256
       },
-      "prob_ppr_increase": 0.424,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.458
+      "prob_ppr_increase": 0.389,
+      "trajectory": "Declining"
+    },
+    "00-0037258": {
+      "position": "RB",
+      "current_age": 27,
+      "team": "PHI",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.412,
+        "role_trend": -0.599,
+        "recent_trend": -0.943,
+        "draft_capital": 0.73,
+        "team_elo": 1560.58
+      },
+      "prob_ppr_increase": 0.624,
+      "trajectory": "Rising"
     },
     "00-0037261": {
       "position": "WR",
@@ -1923,64 +2055,67 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.45,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.494
+      "trajectory": "Declining"
     },
     "00-0037263": {
       "position": "RB",
       "current_age": 26,
-      "team": "ATL",
+      "team": "ARI",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.015,
         "role_trend": 0.019,
         "recent_trend": 0.009,
         "draft_capital": 0.64,
-        "team_elo": 1483.199
+        "team_elo": 1431.505
       },
-      "prob_ppr_increase": 0.359,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.365
+      "prob_ppr_increase": 0.301,
+      "trajectory": "Declining"
     },
     "00-0037267": {
       "position": "RB",
       "current_age": 27,
-      "team": "CLE",
+      "team": "WAS",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.137,
         "role_trend": -0.34,
         "recent_trend": -0.749,
         "draft_capital": 0.64,
-        "team_elo": 1450.266
+        "team_elo": 1473.256
       },
-      "prob_ppr_increase": 0.391,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1527.5,
-      "schedule_strength_percentile": 0.594,
-      "schedule_adjusted_prob_ppr_increase": 0.4
+      "prob_ppr_increase": 0.418,
+      "trajectory": "Declining"
     },
     "00-0037291": {
       "position": "WR",
       "current_age": 28,
-      "team": "MIN",
+      "team": "LV",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.275,
         "role_trend": 0.221,
         "recent_trend": 0.46,
         "draft_capital": 0.55,
-        "team_elo": 1535.088
+        "team_elo": 1425.997
       },
-      "prob_ppr_increase": 0.409,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.39
+      "prob_ppr_increase": 0.299,
+      "trajectory": "Declining"
+    },
+    "00-0037304": {
+      "position": "RB",
+      "current_age": 28,
+      "team": "LV",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.441,
+        "role_trend": -0.642,
+        "recent_trend": -0.016,
+        "draft_capital": 0.55,
+        "team_elo": 1425.997
+      },
+      "prob_ppr_increase": 0.434,
+      "trajectory": "Declining"
     },
     "00-0037525": {
       "position": "RB",
@@ -1995,10 +2130,7 @@
         "team_elo": 1535.088
       },
       "prob_ppr_increase": 0.465,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.446
+      "trajectory": "Declining"
     },
     "00-0037545": {
       "position": "WR",
@@ -2013,28 +2145,37 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.467,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.445
+      "trajectory": "Declining"
     },
     "00-0037614": {
       "position": "WR",
       "current_age": 26,
-      "team": "NYJ",
+      "team": "CAR",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.275,
         "role_trend": 0.069,
         "recent_trend": 0.642,
         "draft_capital": 0.91,
-        "team_elo": 1423.886
+        "team_elo": 1456.623
       },
-      "prob_ppr_increase": 0.291,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.26
+      "prob_ppr_increase": 0.322,
+      "trajectory": "Declining"
+    },
+    "00-0037617": {
+      "position": "RB",
+      "current_age": 27,
+      "team": "LAC",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.431,
+        "role_trend": -0.501,
+        "recent_trend": -0.66,
+        "draft_capital": 0.73,
+        "team_elo": 1527.14
+      },
+      "prob_ppr_increase": 0.575,
+      "trajectory": "Rising"
     },
     "00-0037664": {
       "position": "WR",
@@ -2049,28 +2190,22 @@
         "team_elo": 1484.894
       },
       "prob_ppr_increase": 0.319,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.656,
-      "schedule_adjusted_prob_ppr_increase": 0.335
+      "trajectory": "Declining"
     },
     "00-0037666": {
       "position": "WR",
       "current_age": 28,
-      "team": "DAL",
+      "team": "MIA",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.176,
         "role_trend": -0.319,
         "recent_trend": -0.565,
         "draft_capital": 0.82,
-        "team_elo": 1498.093
+        "team_elo": 1489.627
       },
-      "prob_ppr_increase": 0.438,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.435
+      "prob_ppr_increase": 0.428,
+      "trajectory": "Declining"
     },
     "00-0037740": {
       "position": "WR",
@@ -2085,28 +2220,37 @@
         "team_elo": 1423.886
       },
       "prob_ppr_increase": 0.337,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.306
+      "trajectory": "Declining"
     },
     "00-0037741": {
       "position": "WR",
       "current_age": 26,
-      "team": "PHI",
+      "team": "ATL",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.147,
         "role_trend": -0.022,
         "recent_trend": -0.398,
         "draft_capital": 1.0,
-        "team_elo": 1560.58
+        "team_elo": 1483.199
       },
-      "prob_ppr_increase": 0.477,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.436
+      "prob_ppr_increase": 0.392,
+      "trajectory": "Declining"
+    },
+    "00-0037742": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "WAS",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.515,
+        "role_trend": 0.622,
+        "recent_trend": 0.224,
+        "draft_capital": 1.0,
+        "team_elo": 1473.256
+      },
+      "prob_ppr_increase": 0.393,
+      "trajectory": "Declining"
     },
     "00-0037744": {
       "position": "TE",
@@ -2121,28 +2265,22 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.357,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.398
+      "trajectory": "Declining"
     },
     "00-0037746": {
       "position": "RB",
       "current_age": 27,
-      "team": "SF",
+      "team": "ATL",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.147,
         "role_trend": -0.638,
         "recent_trend": -0.651,
         "draft_capital": 0.82,
-        "team_elo": 1533.125
+        "team_elo": 1483.199
       },
-      "prob_ppr_increase": 0.528,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.503
+      "prob_ppr_increase": 0.466,
+      "trajectory": "Declining"
     },
     "00-0037801": {
       "position": "WR",
@@ -2157,46 +2295,52 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.414,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.411
+      "trajectory": "Declining"
+    },
+    "00-0037805": {
+      "position": "TE",
+      "current_age": 26,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.275,
+        "role_trend": 0.161,
+        "recent_trend": 0.574,
+        "draft_capital": 0.82,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.358,
+      "trajectory": "Declining"
     },
     "00-0037809": {
       "position": "TE",
       "current_age": 27,
-      "team": "TEN",
+      "team": "WAS",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.044,
         "role_trend": 0.027,
         "recent_trend": 0.093,
         "draft_capital": 0.73,
-        "team_elo": 1418.226
+        "team_elo": 1473.256
       },
-      "prob_ppr_increase": 0.3,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1503.2,
-      "schedule_strength_percentile": 0.375,
-      "schedule_adjusted_prob_ppr_increase": 0.287
+      "prob_ppr_increase": 0.352,
+      "trajectory": "Declining"
     },
     "00-0037816": {
       "position": "WR",
       "current_age": 26,
-      "team": "GB",
+      "team": "NE",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.132,
         "role_trend": -0.02,
         "recent_trend": 0.079,
         "draft_capital": 0.73,
-        "team_elo": 1527.17
+        "team_elo": 1517.111
       },
-      "prob_ppr_increase": 0.405,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.389
+      "prob_ppr_increase": 0.394,
+      "trajectory": "Declining"
     },
     "00-0037834": {
       "position": "QB",
@@ -2211,46 +2355,37 @@
         "team_elo": 1533.125
       },
       "prob_ppr_increase": 0.347,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.322
+      "trajectory": "Declining"
     },
     "00-0037837": {
       "position": "WR",
       "current_age": 27,
-      "team": "PIT",
+      "team": "NYG",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.118,
         "role_trend": -0.002,
         "recent_trend": -0.006,
         "draft_capital": 0.73,
-        "team_elo": 1528.825
+        "team_elo": 1428.247
       },
-      "prob_ppr_increase": 0.409,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.403
+      "prob_ppr_increase": 0.307,
+      "trajectory": "Declining"
     },
     "00-0037838": {
       "position": "TE",
       "current_age": 26,
-      "team": "BAL",
+      "team": "NYG",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.206,
         "role_trend": -0.067,
         "recent_trend": -0.451,
         "draft_capital": 0.73,
-        "team_elo": 1529.571
+        "team_elo": 1428.247
       },
-      "prob_ppr_increase": 0.563,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.516
+      "prob_ppr_increase": 0.455,
+      "trajectory": "Declining"
     },
     "00-0037840": {
       "position": "RB",
@@ -2265,10 +2400,22 @@
         "team_elo": 1542.572
       },
       "prob_ppr_increase": 0.496,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1557.6,
-      "schedule_strength_percentile": 0.875,
-      "schedule_adjusted_prob_ppr_increase": 0.533
+      "trajectory": "Declining"
+    },
+    "00-0038040": {
+      "position": "RB",
+      "current_age": 27,
+      "team": "LV",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.456,
+        "role_trend": -0.355,
+        "recent_trend": -0.814,
+        "draft_capital": 0.73,
+        "team_elo": 1425.997
+      },
+      "prob_ppr_increase": 0.447,
+      "trajectory": "Declining"
     },
     "00-0038041": {
       "position": "TE",
@@ -2283,10 +2430,22 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.411,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.408
+      "trajectory": "Declining"
+    },
+    "00-0038046": {
+      "position": "TE",
+      "current_age": 28,
+      "team": "LAC",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.49,
+        "role_trend": 0.028,
+        "recent_trend": 0.448,
+        "draft_capital": 0.73,
+        "team_elo": 1527.14
+      },
+      "prob_ppr_increase": 0.608,
+      "trajectory": "Rising"
     },
     "00-0038104": {
       "position": "WR",
@@ -2301,28 +2460,37 @@
         "team_elo": 1524.707
       },
       "prob_ppr_increase": 0.25,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.216
+      "trajectory": "Declining"
+    },
+    "00-0038115": {
+      "position": "TE",
+      "current_age": 26,
+      "team": "TEN",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.353,
+        "role_trend": 0.004,
+        "recent_trend": 0.548,
+        "draft_capital": 0.73,
+        "team_elo": 1418.226
+      },
+      "prob_ppr_increase": 0.419,
+      "trajectory": "Declining"
     },
     "00-0038117": {
       "position": "WR",
       "current_age": 26,
-      "team": "NYG",
+      "team": "TEN",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.206,
         "role_trend": 0.195,
         "recent_trend": 0.38,
         "draft_capital": 0.91,
-        "team_elo": 1428.247
+        "team_elo": 1418.226
       },
-      "prob_ppr_increase": 0.294,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.244
+      "prob_ppr_increase": 0.284,
+      "trajectory": "Declining"
     },
     "00-0038120": {
       "position": "RB",
@@ -2337,10 +2505,7 @@
         "team_elo": 1423.886
       },
       "prob_ppr_increase": 0.363,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.332
+      "trajectory": "Declining"
     },
     "00-0038124": {
       "position": "WR",
@@ -2355,10 +2520,7 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.418,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.402
+      "trajectory": "Declining"
     },
     "00-0038129": {
       "position": "TE",
@@ -2373,46 +2535,37 @@
         "team_elo": 1502.405
       },
       "prob_ppr_increase": 0.45,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.484
+      "trajectory": "Declining"
     },
     "00-0038134": {
       "position": "RB",
       "current_age": 26,
-      "team": "SEA",
+      "team": "KC",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.147,
         "role_trend": -0.312,
         "recent_trend": 0.008,
         "draft_capital": 0.91,
-        "team_elo": 1560.922
+        "team_elo": 1524.707
       },
-      "prob_ppr_increase": 0.529,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.507
+      "prob_ppr_increase": 0.484,
+      "trajectory": "Declining"
     },
     "00-0038393": {
       "position": "WR",
       "current_age": 25,
-      "team": "GB",
+      "team": "PHI",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.118,
         "role_trend": -0.172,
         "recent_trend": -0.342,
         "draft_capital": 0.64,
-        "team_elo": 1527.17
+        "team_elo": 1560.58
       },
-      "prob_ppr_increase": 0.436,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.42
+      "prob_ppr_increase": 0.473,
+      "trajectory": "Declining"
     },
     "00-0038542": {
       "position": "RB",
@@ -2427,10 +2580,7 @@
         "team_elo": 1483.199
       },
       "prob_ppr_increase": 0.36,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.366
+      "trajectory": "Declining"
     },
     "00-0038543": {
       "position": "WR",
@@ -2445,10 +2595,7 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.358,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.336
+      "trajectory": "Declining"
     },
     "00-0038544": {
       "position": "WR",
@@ -2463,10 +2610,22 @@
         "team_elo": 1527.14
       },
       "prob_ppr_increase": 0.387,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1504.4,
-      "schedule_strength_percentile": 0.406,
-      "schedule_adjusted_prob_ppr_increase": 0.378
+      "trajectory": "Declining"
+    },
+    "00-0038547": {
+      "position": "TE",
+      "current_age": 28,
+      "team": "DAL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.314,
+        "role_trend": -0.327,
+        "recent_trend": -0.349,
+        "draft_capital": 0.91,
+        "team_elo": 1498.093
+      },
+      "prob_ppr_increase": 0.668,
+      "trajectory": "Rising"
     },
     "00-0038551": {
       "position": "RB",
@@ -2481,10 +2640,7 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.514,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.486
+      "trajectory": "Rising"
     },
     "00-0038555": {
       "position": "RB",
@@ -2499,10 +2655,7 @@
         "team_elo": 1560.58
       },
       "prob_ppr_increase": 0.555,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1474.3,
-      "schedule_strength_percentile": 0.094,
-      "schedule_adjusted_prob_ppr_increase": 0.514
+      "trajectory": "Rising"
     },
     "00-0038558": {
       "position": "TE",
@@ -2517,10 +2670,7 @@
         "team_elo": 1528.825
       },
       "prob_ppr_increase": 0.379,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1516.4,
-      "schedule_strength_percentile": 0.438,
-      "schedule_adjusted_prob_ppr_increase": 0.373
+      "trajectory": "Declining"
     },
     "00-0038559": {
       "position": "WR",
@@ -2535,10 +2685,7 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.253,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.294
+      "trajectory": "Declining"
     },
     "00-0038563": {
       "position": "WR",
@@ -2553,10 +2700,7 @@
         "team_elo": 1425.997
       },
       "prob_ppr_increase": 0.256,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1535.4,
-      "schedule_strength_percentile": 0.625,
-      "schedule_adjusted_prob_ppr_increase": 0.269
+      "trajectory": "Declining"
     },
     "00-0038597": {
       "position": "RB",
@@ -2571,10 +2715,7 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.37,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.395
+      "trajectory": "Declining"
     },
     "00-0038606": {
       "position": "WR",
@@ -2589,10 +2730,7 @@
         "team_elo": 1512.585
       },
       "prob_ppr_increase": 0.316,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.338
+      "trajectory": "Declining"
     },
     "00-0038608": {
       "position": "WR",
@@ -2607,28 +2745,22 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.408,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.455
+      "trajectory": "Declining"
     },
     "00-0038611": {
       "position": "RB",
       "current_age": 27,
-      "team": "WAS",
+      "team": "JAX",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.49,
         "role_trend": 0.247,
         "recent_trend": 1.651,
         "draft_capital": 0.55,
-        "team_elo": 1473.256
+        "team_elo": 1512.585
       },
-      "prob_ppr_increase": 0.4,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1522.9,
-      "schedule_strength_percentile": 0.531,
-      "schedule_adjusted_prob_ppr_increase": 0.403
+      "prob_ppr_increase": 0.448,
+      "trajectory": "Declining"
     },
     "00-0038618": {
       "position": "WR",
@@ -2643,10 +2775,7 @@
         "team_elo": 1533.547
       },
       "prob_ppr_increase": 0.221,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.177
+      "trajectory": "Declining"
     },
     "00-0038619": {
       "position": "WR",
@@ -2661,10 +2790,7 @@
         "team_elo": 1487.552
       },
       "prob_ppr_increase": 0.377,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1550.6,
-      "schedule_strength_percentile": 0.75,
-      "schedule_adjusted_prob_ppr_increase": 0.402
+      "trajectory": "Declining"
     },
     "00-0038621": {
       "position": "WR",
@@ -2679,10 +2805,7 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.428,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.475
+      "trajectory": "Declining"
     },
     "00-0038685": {
       "position": "RB",
@@ -2697,28 +2820,37 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.436,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.42
+      "trajectory": "Declining"
     },
     "00-0038705": {
       "position": "RB",
       "current_age": 28,
-      "team": "ARI",
+      "team": "KC",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.294,
         "role_trend": -0.098,
         "recent_trend": -0.089,
         "draft_capital": 0.05,
-        "team_elo": 1431.505
+        "team_elo": 1524.707
       },
-      "prob_ppr_increase": 0.335,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.376
+      "prob_ppr_increase": 0.446,
+      "trajectory": "Declining"
+    },
+    "00-0038720": {
+      "position": "TE",
+      "current_age": 26,
+      "team": "MIA",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.451,
+        "role_trend": 0.229,
+        "recent_trend": 1.013,
+        "draft_capital": 0.05,
+        "team_elo": 1489.627
+      },
+      "prob_ppr_increase": 0.345,
+      "trajectory": "Declining"
     },
     "00-0038738": {
       "position": "RB",
@@ -2733,10 +2865,7 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.418,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.415
+      "trajectory": "Declining"
     },
     "00-0038794": {
       "position": "RB",
@@ -2751,28 +2880,22 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.497,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.525
+      "trajectory": "Declining"
     },
     "00-0038797": {
       "position": "RB",
       "current_age": 27,
-      "team": "GB",
+      "team": "SEA",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.235,
         "role_trend": 0.019,
         "recent_trend": 0.706,
         "draft_capital": 0.05,
-        "team_elo": 1527.17
+        "team_elo": 1560.922
       },
-      "prob_ppr_increase": 0.408,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "prob_ppr_increase": 0.45,
+      "trajectory": "Declining"
     },
     "00-0038933": {
       "position": "TE",
@@ -2787,10 +2910,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.657,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.701
+      "trajectory": "Rising"
     },
     "00-0038935": {
       "position": "TE",
@@ -2805,10 +2925,7 @@
         "team_elo": 1512.585
       },
       "prob_ppr_increase": 0.433,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.455
+      "trajectory": "Declining"
     },
     "00-0038951": {
       "position": "RB",
@@ -2823,10 +2940,7 @@
         "team_elo": 1502.405
       },
       "prob_ppr_increase": 0.386,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.42
+      "trajectory": "Declining"
     },
     "00-0038976": {
       "position": "WR",
@@ -2841,10 +2955,7 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.425,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.453
+      "trajectory": "Declining"
     },
     "00-0038979": {
       "position": "WR",
@@ -2859,10 +2970,7 @@
         "team_elo": 1450.266
       },
       "prob_ppr_increase": 0.384,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1527.5,
-      "schedule_strength_percentile": 0.594,
-      "schedule_adjusted_prob_ppr_increase": 0.393
+      "trajectory": "Declining"
     },
     "00-0038994": {
       "position": "WR",
@@ -2877,10 +2985,7 @@
         "team_elo": 1535.088
       },
       "prob_ppr_increase": 0.438,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.1,
-      "schedule_strength_percentile": 0.312,
-      "schedule_adjusted_prob_ppr_increase": 0.419
+      "trajectory": "Declining"
     },
     "00-0038996": {
       "position": "TE",
@@ -2895,10 +3000,7 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.547,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.531
+      "trajectory": "Rising"
     },
     "00-0038997": {
       "position": "WR",
@@ -2913,10 +3015,7 @@
         "team_elo": 1484.894
       },
       "prob_ppr_increase": 0.373,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.656,
-      "schedule_adjusted_prob_ppr_increase": 0.389
+      "trajectory": "Declining"
     },
     "00-0039032": {
       "position": "RB",
@@ -2931,10 +3030,7 @@
         "team_elo": 1418.226
       },
       "prob_ppr_increase": 0.334,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1503.2,
-      "schedule_strength_percentile": 0.375,
-      "schedule_adjusted_prob_ppr_increase": 0.322
+      "trajectory": "Declining"
     },
     "00-0039040": {
       "position": "RB",
@@ -2949,10 +3045,7 @@
         "team_elo": 1489.627
       },
       "prob_ppr_increase": 0.389,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1553.2,
-      "schedule_strength_percentile": 0.812,
-      "schedule_adjusted_prob_ppr_increase": 0.42
+      "trajectory": "Declining"
     },
     "00-0039041": {
       "position": "TE",
@@ -2967,10 +3060,7 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.332,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.373
+      "trajectory": "Declining"
     },
     "00-0039064": {
       "position": "WR",
@@ -2985,10 +3075,7 @@
         "team_elo": 1529.571
       },
       "prob_ppr_increase": 0.371,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1422.0,
-      "schedule_strength_percentile": 0.031,
-      "schedule_adjusted_prob_ppr_increase": 0.324
+      "trajectory": "Declining"
     },
     "00-0039065": {
       "position": "TE",
@@ -3003,10 +3090,7 @@
         "team_elo": 1542.532
       },
       "prob_ppr_increase": 0.56,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.523
+      "trajectory": "Rising"
     },
     "00-0039066": {
       "position": "TE",
@@ -3021,10 +3105,7 @@
         "team_elo": 1425.997
       },
       "prob_ppr_increase": 0.367,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1535.4,
-      "schedule_strength_percentile": 0.625,
-      "schedule_adjusted_prob_ppr_increase": 0.38
+      "trajectory": "Declining"
     },
     "00-0039074": {
       "position": "TE",
@@ -3039,10 +3120,7 @@
         "team_elo": 1542.572
       },
       "prob_ppr_increase": 0.373,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1557.6,
-      "schedule_strength_percentile": 0.875,
-      "schedule_adjusted_prob_ppr_increase": 0.41
+      "trajectory": "Declining"
     },
     "00-0039075": {
       "position": "WR",
@@ -3057,10 +3135,7 @@
         "team_elo": 1542.572
       },
       "prob_ppr_increase": 0.397,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1557.6,
-      "schedule_strength_percentile": 0.875,
-      "schedule_adjusted_prob_ppr_increase": 0.434
+      "trajectory": "Declining"
     },
     "00-0039139": {
       "position": "RB",
@@ -3075,10 +3150,7 @@
         "team_elo": 1542.532
       },
       "prob_ppr_increase": 0.44,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1475.9,
-      "schedule_strength_percentile": 0.125,
-      "schedule_adjusted_prob_ppr_increase": 0.402
+      "trajectory": "Declining"
     },
     "00-0039144": {
       "position": "TE",
@@ -3093,10 +3165,22 @@
         "team_elo": 1527.17
       },
       "prob_ppr_increase": 0.495,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1496.2,
-      "schedule_strength_percentile": 0.344,
-      "schedule_adjusted_prob_ppr_increase": 0.479
+      "trajectory": "Declining"
+    },
+    "00-0039146": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "GB",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.255,
+        "role_trend": -0.054,
+        "recent_trend": -0.766,
+        "draft_capital": 0.91,
+        "team_elo": 1527.17
+      },
+      "prob_ppr_increase": 0.49,
+      "trajectory": "Declining"
     },
     "00-0039150": {
       "position": "QB",
@@ -3111,10 +3195,7 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.33,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.33
+      "trajectory": "Declining"
     },
     "00-0039163": {
       "position": "QB",
@@ -3129,10 +3210,7 @@
         "team_elo": 1533.547
       },
       "prob_ppr_increase": 0.308,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1439.5,
-      "schedule_strength_percentile": 0.062,
-      "schedule_adjusted_prob_ppr_increase": 0.264
+      "trajectory": "Declining"
     },
     "00-0039165": {
       "position": "RB",
@@ -3147,10 +3225,7 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.494,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.472
+      "trajectory": "Declining"
     },
     "00-0039337": {
       "position": "WR",
@@ -3165,10 +3240,7 @@
         "team_elo": 1428.247
       },
       "prob_ppr_increase": 0.441,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.391
+      "trajectory": "Declining"
     },
     "00-0039338": {
       "position": "TE",
@@ -3183,10 +3255,7 @@
         "team_elo": 1425.997
       },
       "prob_ppr_increase": 0.446,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1535.4,
-      "schedule_strength_percentile": 0.625,
-      "schedule_adjusted_prob_ppr_increase": 0.459
+      "trajectory": "Declining"
     },
     "00-0039342": {
       "position": "WR",
@@ -3201,10 +3270,22 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.356,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.356
+      "trajectory": "Declining"
+    },
+    "00-0039355": {
+      "position": "WR",
+      "current_age": 25,
+      "team": "WAS",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.382,
+        "role_trend": -0.063,
+        "recent_trend": 0.474,
+        "draft_capital": 0.82,
+        "team_elo": 1473.256
+      },
+      "prob_ppr_increase": 0.375,
+      "trajectory": "Declining"
     },
     "00-0039356": {
       "position": "TE",
@@ -3219,10 +3300,22 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.485,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.485
+      "trajectory": "Declining"
+    },
+    "00-0039359": {
+      "position": "TE",
+      "current_age": 26,
+      "team": "HOU",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.441,
+        "role_trend": 0.372,
+        "recent_trend": -0.42,
+        "draft_capital": 0.73,
+        "team_elo": 1533.547
+      },
+      "prob_ppr_increase": 0.574,
+      "trajectory": "Rising"
     },
     "00-0039361": {
       "position": "RB",
@@ -3237,10 +3330,7 @@
         "team_elo": 1502.405
       },
       "prob_ppr_increase": 0.427,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1554.7,
-      "schedule_strength_percentile": 0.844,
-      "schedule_adjusted_prob_ppr_increase": 0.461
+      "trajectory": "Declining"
     },
     "00-0039373": {
       "position": "RB",
@@ -3255,10 +3345,22 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.288,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.26
+      "trajectory": "Declining"
+    },
+    "00-0039379": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "CLE",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.588,
+        "role_trend": 0.459,
+        "recent_trend": 2.981,
+        "draft_capital": 0.64,
+        "team_elo": 1450.266
+      },
+      "prob_ppr_increase": 0.231,
+      "trajectory": "Declining"
     },
     "00-0039384": {
       "position": "RB",
@@ -3273,10 +3375,7 @@
         "team_elo": 1428.247
       },
       "prob_ppr_increase": 0.309,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.259
+      "trajectory": "Declining"
     },
     "00-0039391": {
       "position": "RB",
@@ -3291,10 +3390,7 @@
         "team_elo": 1527.14
       },
       "prob_ppr_increase": 0.401,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1504.4,
-      "schedule_strength_percentile": 0.406,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "trajectory": "Declining"
     },
     "00-0039410": {
       "position": "WR",
@@ -3309,10 +3405,7 @@
         "team_elo": 1498.093
       },
       "prob_ppr_increase": 0.13,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1517.1,
-      "schedule_strength_percentile": 0.469,
-      "schedule_adjusted_prob_ppr_increase": 0.127
+      "trajectory": "Declining"
     },
     "00-0039424": {
       "position": "WR",
@@ -3327,10 +3420,7 @@
         "team_elo": 1461.306
       },
       "prob_ppr_increase": 0.42,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1489.0,
-      "schedule_strength_percentile": 0.219,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "trajectory": "Declining"
     },
     "00-0039491": {
       "position": "WR",
@@ -3345,10 +3435,22 @@
         "team_elo": 1456.623
       },
       "prob_ppr_increase": 0.381,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1519.2,
-      "schedule_strength_percentile": 0.5,
-      "schedule_adjusted_prob_ppr_increase": 0.381
+      "trajectory": "Declining"
+    },
+    "00-0039623": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "NO",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.5,
+        "role_trend": -0.246,
+        "recent_trend": -0.146,
+        "draft_capital": 0.05,
+        "team_elo": 1461.306
+      },
+      "prob_ppr_increase": 0.436,
+      "trajectory": "Declining"
     },
     "00-0039732": {
       "position": "QB",
@@ -3363,10 +3465,7 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.295,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.323
+      "trajectory": "Declining"
     },
     "00-0039738": {
       "position": "RB",
@@ -3381,10 +3480,37 @@
         "team_elo": 1542.572
       },
       "prob_ppr_increase": 0.376,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1557.6,
-      "schedule_strength_percentile": 0.875,
-      "schedule_adjusted_prob_ppr_increase": 0.413
+      "trajectory": "Declining"
+    },
+    "00-0039746": {
+      "position": "RB",
+      "current_age": 24,
+      "team": "PHI",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.441,
+        "role_trend": -0.451,
+        "recent_trend": 0.242,
+        "draft_capital": 0.73,
+        "team_elo": 1560.58
+      },
+      "prob_ppr_increase": 0.594,
+      "trajectory": "Rising"
+    },
+    "00-0039751": {
+      "position": "WR",
+      "current_age": 26,
+      "team": "LA",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.382,
+        "role_trend": -0.419,
+        "recent_trend": -0.309,
+        "draft_capital": 0.55,
+        "team_elo": 1542.572
+      },
+      "prob_ppr_increase": 0.518,
+      "trajectory": "Rising"
     },
     "00-0039793": {
       "position": "TE",
@@ -3399,10 +3525,37 @@
         "team_elo": 1560.922
       },
       "prob_ppr_increase": 0.269,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1495.3,
-      "schedule_strength_percentile": 0.281,
-      "schedule_adjusted_prob_ppr_increase": 0.247
+      "trajectory": "Declining"
+    },
+    "00-0039794": {
+      "position": "RB",
+      "current_age": 23,
+      "team": "NYJ",
+      "signals": {
+        "age_curve_rising": 0,
+        "injury_risk": 0.382,
+        "role_trend": -0.287,
+        "recent_trend": -0.82,
+        "draft_capital": 0.73,
+        "team_elo": 1423.886
+      },
+      "prob_ppr_increase": 0.351,
+      "trajectory": "Declining"
+    },
+    "00-0039796": {
+      "position": "RB",
+      "current_age": 26,
+      "team": "BAL",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.441,
+        "role_trend": -0.148,
+        "recent_trend": 6.806,
+        "draft_capital": 0.64,
+        "team_elo": 1529.571
+      },
+      "prob_ppr_increase": 0.376,
+      "trajectory": "Declining"
     },
     "00-0039798": {
       "position": "RB",
@@ -3417,10 +3570,7 @@
         "team_elo": 1423.886
       },
       "prob_ppr_increase": 0.323,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.292
+      "trajectory": "Declining"
     },
     "00-0039847": {
       "position": "TE",
@@ -3435,10 +3585,7 @@
         "team_elo": 1428.247
       },
       "prob_ppr_increase": 0.326,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1417.2,
-      "schedule_strength_percentile": 0.0,
-      "schedule_adjusted_prob_ppr_increase": 0.276
+      "trajectory": "Declining"
     },
     "00-0039849": {
       "position": "WR",
@@ -3453,10 +3600,7 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.341,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.382
+      "trajectory": "Declining"
     },
     "00-0039851": {
       "position": "QB",
@@ -3471,10 +3615,22 @@
         "team_elo": 1517.111
       },
       "prob_ppr_increase": 0.22,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1583.8,
-      "schedule_strength_percentile": 0.969,
-      "schedule_adjusted_prob_ppr_increase": 0.267
+      "trajectory": "Declining"
+    },
+    "00-0039855": {
+      "position": "WR",
+      "current_age": 25,
+      "team": "TB",
+      "signals": {
+        "age_curve_rising": 1,
+        "injury_risk": 0.5,
+        "role_trend": -0.224,
+        "recent_trend": -0.779,
+        "draft_capital": 0.82,
+        "team_elo": 1502.405
+      },
+      "prob_ppr_increase": 0.523,
+      "trajectory": "Rising"
     },
     "00-0039868": {
       "position": "WR",
@@ -3489,10 +3645,7 @@
         "team_elo": 1549.774
       },
       "prob_ppr_increase": 0.289,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1552.3,
-      "schedule_strength_percentile": 0.781,
-      "schedule_adjusted_prob_ppr_increase": 0.317
+      "trajectory": "Declining"
     },
     "00-0039874": {
       "position": "RB",
@@ -3507,10 +3660,7 @@
         "team_elo": 1489.627
       },
       "prob_ppr_increase": 0.361,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1553.2,
-      "schedule_strength_percentile": 0.812,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "trajectory": "Declining"
     },
     "00-0039875": {
       "position": "RB",
@@ -3525,10 +3675,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.515,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.559
+      "trajectory": "Rising"
     },
     "00-0039880": {
       "position": "WR",
@@ -3543,10 +3690,7 @@
         "team_elo": 1489.627
       },
       "prob_ppr_increase": 0.299,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1553.2,
-      "schedule_strength_percentile": 0.812,
-      "schedule_adjusted_prob_ppr_increase": 0.33
+      "trajectory": "Declining"
     },
     "00-0039890": {
       "position": "WR",
@@ -3561,10 +3705,7 @@
         "team_elo": 1423.886
       },
       "prob_ppr_increase": 0.241,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1487.6,
-      "schedule_strength_percentile": 0.188,
-      "schedule_adjusted_prob_ppr_increase": 0.21
+      "trajectory": "Declining"
     },
     "00-0039893": {
       "position": "WR",
@@ -3579,10 +3720,7 @@
         "team_elo": 1512.585
       },
       "prob_ppr_increase": 0.423,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1547.0,
-      "schedule_strength_percentile": 0.719,
-      "schedule_adjusted_prob_ppr_increase": 0.445
+      "trajectory": "Declining"
     },
     "00-0039894": {
       "position": "WR",
@@ -3597,10 +3735,7 @@
         "team_elo": 1524.707
       },
       "prob_ppr_increase": 0.446,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1479.9,
-      "schedule_strength_percentile": 0.156,
-      "schedule_adjusted_prob_ppr_increase": 0.412
+      "trajectory": "Declining"
     },
     "00-0039901": {
       "position": "WR",
@@ -3615,10 +3750,7 @@
         "team_elo": 1567.269
       },
       "prob_ppr_increase": 0.501,
-      "trajectory": "Rising",
-      "avg_opponent_d_elo_next4": 1561.2,
-      "schedule_strength_percentile": 0.938,
-      "schedule_adjusted_prob_ppr_increase": 0.545
+      "trajectory": "Rising"
     },
     "00-0039915": {
       "position": "WR",
@@ -3633,10 +3765,7 @@
         "team_elo": 1527.14
       },
       "prob_ppr_increase": 0.412,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1504.4,
-      "schedule_strength_percentile": 0.406,
-      "schedule_adjusted_prob_ppr_increase": 0.403
+      "trajectory": "Declining"
     },
     "00-0039916": {
       "position": "WR",
@@ -3651,10 +3780,7 @@
         "team_elo": 1533.125
       },
       "prob_ppr_increase": 0.477,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1494.4,
-      "schedule_strength_percentile": 0.25,
-      "schedule_adjusted_prob_ppr_increase": 0.452
+      "trajectory": "Declining"
     },
     "00-0039917": {
       "position": "QB",
@@ -3669,10 +3795,7 @@
         "team_elo": 1483.199
       },
       "prob_ppr_increase": 0.256,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1526.8,
-      "schedule_strength_percentile": 0.562,
-      "schedule_adjusted_prob_ppr_increase": 0.262
+      "trajectory": "Declining"
     },
     "00-0039918": {
       "position": "QB",
@@ -3687,10 +3810,7 @@
         "team_elo": 1496.29
       },
       "prob_ppr_increase": 0.31,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.329
+      "trajectory": "Declining"
     },
     "00-0039919": {
       "position": "WR",
@@ -3705,10 +3825,7 @@
         "team_elo": 1496.29
       },
       "prob_ppr_increase": 0.373,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1545.0,
-      "schedule_strength_percentile": 0.688,
-      "schedule_adjusted_prob_ppr_increase": 0.392
+      "trajectory": "Declining"
     },
     "00-0039921": {
       "position": "RB",
@@ -3723,11 +3840,7 @@
         "team_elo": 1431.505
       },
       "prob_ppr_increase": 0.329,
-      "trajectory": "Declining",
-      "avg_opponent_d_elo_next4": 1558.9,
-      "schedule_strength_percentile": 0.906,
-      "schedule_adjusted_prob_ppr_increase": 0.37
+      "trajectory": "Declining"
     }
-  },
-  "schedule_strength_methodology": "Real, disclosed adjustment layered on top of the already-validated prob_ppr_increase (unchanged, still the honest cross-validated model output) - NOT a retrained model, since the real trade model's target (year-over-year season PPR direction) has no leak-free way to incorporate a within-season, week-by-week opponent-defense feature. Uses each player's real team's average real opponent D_Elo over the next 4 real 2026 weeks, real percentile-ranked against the real 32-team league, applied as a modest, symmetric adjustment (max +/-5 percentage points, linear in percentile) to produce schedule_adjusted_prob_ppr_increase. Not a validated, backtested claim that schedule strength predicts season-long PPR direction - a transparent, disclosed context signal only."
+  }
 }

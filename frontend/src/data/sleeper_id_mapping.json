@@ -3,19 +3,19 @@
     "player_id": "00-0041562",
     "name": "Fernando Mendoza",
     "position": "QB",
-    "team": "LVR"
+    "team": "LV"
   },
   "13275": {
     "player_id": "00-0041568",
     "name": "Ty Simpson",
     "position": "QB",
-    "team": "LAR"
+    "team": "LA"
   },
   "13404": {
     "player_id": "00-0040906",
     "name": "Garrett Nussmeier",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "13272": {
     "player_id": "00-0041561",
@@ -39,7 +39,7 @@
     "player_id": "00-0041251",
     "name": "Jalon Daniels",
     "position": "QB",
-    "team": "TBB"
+    "team": "TB"
   },
   "13314": {
     "player_id": "00-0041453",
@@ -63,7 +63,7 @@
     "player_id": "00-0041013",
     "name": "Emmett Johnson",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "13424": {
     "player_id": "00-0041125",
@@ -93,7 +93,7 @@
     "player_id": "00-0040959",
     "name": "Jaydn Ott",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "13347": {
     "player_id": "00-0041104",
@@ -105,31 +105,31 @@
     "player_id": "WAS569019",
     "name": "Mike Washington Jr.",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "13416": {
     "player_id": "00-0040998",
     "name": "Roman Hemby",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "13414": {
     "player_id": "00-0041052",
     "name": "Kaelon Black",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "13403": {
     "player_id": "00-0041129",
     "name": "Jam Miller",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "13348": {
     "player_id": "00-0041217",
     "name": "J'Mari Taylor",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13437": {
     "player_id": "00-0041312",
@@ -141,13 +141,13 @@
     "player_id": "00-0041415",
     "name": "Dean Connors",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "13277": {
     "player_id": "00-0041326",
     "name": "CJ Donaldson",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "13595": {
     "player_id": "00-0041191",
@@ -165,7 +165,7 @@
     "player_id": "00-0041029",
     "name": "Jordyn Tyson",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "13294": {
     "player_id": "00-0040867",
@@ -249,13 +249,13 @@
     "player_id": "00-0041035",
     "name": "De'Zhaun Stribling",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "13316": {
     "player_id": "00-0041257",
     "name": "Eric Rivers",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "13309": {
     "player_id": "00-0041491",
@@ -273,19 +273,19 @@
     "player_id": "00-0040890",
     "name": "Cyrus Allen",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "13420": {
     "player_id": "00-0041067",
     "name": "Bryce Lance",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "13317": {
     "player_id": "00-0041048",
     "name": "Ted Hurst",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "13411": {
     "player_id": "00-0041051",
@@ -297,13 +297,13 @@
     "player_id": "00-0041004",
     "name": "Chase Roberts",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "13392": {
     "player_id": "00-0040953",
     "name": "Jeff Caldwell",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "13336": {
     "player_id": "00-0041293",
@@ -327,7 +327,7 @@
     "player_id": "00-0041100",
     "name": "Josh Cameron",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13338": {
     "player_id": "00-0041529",
@@ -351,13 +351,13 @@
     "player_id": "00-0041152",
     "name": "Kobe Prentice",
     "position": "WR",
-    "team": "NEP"
+    "team": "CAR"
   },
   "13356": {
     "player_id": "00-0041216",
     "name": "Trebor Pena",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13621": {
     "player_id": "00-0041342",
@@ -387,7 +387,7 @@
     "player_id": "00-0041099",
     "name": "Barion Brown",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "13477": {
     "player_id": "00-0041069",
@@ -423,7 +423,7 @@
     "player_id": "00-0041510",
     "name": "Max Klare",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "13400": {
     "player_id": "00-0041077",
@@ -447,13 +447,13 @@
     "player_id": "00-0041041",
     "name": "Oscar Delp",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "13299": {
     "player_id": "00-0041503",
     "name": "Nate Boerkircher",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13307": {
     "player_id": "00-0041472",
@@ -477,7 +477,7 @@
     "player_id": "00-0041395",
     "name": "Eli Raridon",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "13491": {
     "player_id": "00-0041397",
@@ -495,7 +495,7 @@
     "player_id": "00-0041084",
     "name": "Tanner Koziol",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13412": {
     "player_id": "00-0041446",
@@ -543,7 +543,7 @@
     "player_id": "00-0041094",
     "name": "Bauer Sharp",
     "position": "TE",
-    "team": "TBB"
+    "team": "TB"
   },
   "13313": {
     "player_id": "00-0040895",
@@ -555,7 +555,7 @@
     "player_id": "00-0041106",
     "name": "C.J. Williams",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "13582": {
     "player_id": "00-0040900",
@@ -597,19 +597,19 @@
     "player_id": "00-0041123",
     "name": "Behren Morton",
     "position": "QB",
-    "team": "NEP"
+    "team": "NE"
   },
   "13329": {
     "player_id": "00-0040894",
     "name": "Malik Benson",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "13770": {
     "player_id": "00-0040948",
     "name": "J Michael Sturdivant",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "13291": {
     "player_id": "00-0041350",
@@ -627,7 +627,7 @@
     "player_id": "00-0040955",
     "name": "John Michael Gyllenborg",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "13415": {
     "player_id": "00-0041149",
@@ -641,11 +641,17 @@
     "position": "WR",
     "team": "TEN"
   },
+  "13750": {
+    "player_id": "00-0041281",
+    "name": "TJ Harden",
+    "position": "RB",
+    "team": "CLE"
+  },
   "13964": {
     "player_id": "00-0041323",
     "name": "Myles Montgomery",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "13946": {
     "player_id": "00-0041244",
@@ -669,13 +675,13 @@
     "player_id": "00-0041403",
     "name": "Rohan Jones",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "13778": {
     "player_id": "00-0040964",
     "name": "EJ Smith",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "13325": {
     "player_id": "00-0040934",
@@ -687,7 +693,7 @@
     "player_id": "00-0041422",
     "name": "Dan Villari",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "13826": {
     "player_id": "00-0041199",
@@ -699,7 +705,7 @@
     "player_id": "00-0040937",
     "name": "Dominic Richardson",
     "position": "RB",
-    "team": null
+    "team": "DAL"
   },
   "13844": {
     "player_id": "00-0041165",
@@ -711,7 +717,7 @@
     "player_id": "00-0041451",
     "name": "Brock Rechsteiner",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "13343": {
     "player_id": "00-0041185",
@@ -723,7 +729,7 @@
     "player_id": "00-0040945",
     "name": "RJ Maryland",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "12522": {
     "player_id": "00-0040676",
@@ -777,13 +783,13 @@
     "player_id": "00-0040014",
     "name": "Kyle McCord",
     "position": "QB",
-    "team": "GBP"
+    "team": "GB"
   },
   "12545": {
     "player_id": "00-0040743",
     "name": "Tyler Shough",
     "position": "QB",
-    "team": "NOS"
+    "team": "NO"
   },
   "12538": {
     "player_id": "00-0040398",
@@ -795,19 +801,19 @@
     "player_id": "00-0040589",
     "name": "Kurtis Rourke",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "12527": {
     "player_id": "00-0040122",
     "name": "Ashton Jeanty",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "12529": {
     "player_id": "00-0040734",
     "name": "TreVeyon Henderson",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "12507": {
     "player_id": "00-0040666",
@@ -825,7 +831,7 @@
     "player_id": "00-0040202",
     "name": "Devin Neal",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "12469": {
     "player_id": "00-0040162",
@@ -843,7 +849,7 @@
     "player_id": "00-0040078",
     "name": "Brashard Smith",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "12516": {
     "player_id": "00-0040205",
@@ -861,7 +867,7 @@
     "player_id": "00-0040719",
     "name": "Bhayshul Tuten",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "12474": {
     "player_id": "00-0040583",
@@ -873,13 +879,13 @@
     "player_id": "00-0040651",
     "name": "Damien Martinez",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "12467": {
     "player_id": "00-0040177",
     "name": "Jordan James",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "12531": {
     "player_id": "00-0040644",
@@ -915,7 +921,7 @@
     "player_id": "00-0040238",
     "name": "LeQuint Allen",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "12472": {
     "player_id": "00-0040466",
@@ -933,7 +939,7 @@
     "player_id": "00-0040692",
     "name": "Jarquez Hunter",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "12534": {
     "player_id": "00-0040236",
@@ -981,13 +987,13 @@
     "player_id": "00-0040718",
     "name": "Travis Hunter",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "12501": {
     "player_id": "00-0040667",
     "name": "Matthew Golden",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "12503": {
     "player_id": "00-0040782",
@@ -1005,13 +1011,13 @@
     "player_id": "00-0040729",
     "name": "Jack Bech",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "12485": {
     "player_id": "00-0040237",
     "name": "Tez Johnson",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "12536": {
     "player_id": "00-0040138",
@@ -1023,7 +1029,7 @@
     "player_id": "00-0040129",
     "name": "Emeka Egbuka",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "12492": {
     "player_id": "00-0040134",
@@ -1053,13 +1059,13 @@
     "player_id": "00-0040646",
     "name": "Jalen Royals",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "12541": {
     "player_id": "00-0040581",
     "name": "Dont'e Thornton",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "12860": {
     "player_id": "00-0040311",
@@ -1083,7 +1089,7 @@
     "player_id": "00-0040009",
     "name": "Savion Williams",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "12496": {
     "player_id": "00-0040154",
@@ -1149,7 +1155,7 @@
     "player_id": "00-0040737",
     "name": "Terrance Ferguson",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "12521": {
     "player_id": "00-0040739",
@@ -1173,7 +1179,7 @@
     "player_id": "00-0040131",
     "name": "Kyle Williams",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "12535": {
     "player_id": "00-0040669",
@@ -1203,7 +1209,7 @@
     "player_id": "00-0040172",
     "name": "Jordan Watkins",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "12670": {
     "player_id": "00-0040184",
@@ -1251,7 +1257,7 @@
     "player_id": "00-0040220",
     "name": "Tommy Mellott",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "12688": {
     "player_id": "00-0040222",
@@ -1275,7 +1281,7 @@
     "player_id": "00-0040590",
     "name": "Konata Mumpfield",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "12732": {
     "player_id": "00-0040241",
@@ -1293,13 +1299,13 @@
     "player_id": "00-0040244",
     "name": "Moliki Matavao",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "12743": {
     "player_id": "00-0040247",
     "name": "Junior Bergen",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "12868": {
     "player_id": "00-0040028",
@@ -1311,19 +1317,19 @@
     "player_id": "00-0040568",
     "name": "Lan Larison",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "12817": {
     "player_id": "00-0040081",
     "name": "Jake Briningstool",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "12542": {
     "player_id": "00-0040563",
     "name": "Efton Chism",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "12928": {
     "player_id": "00-0040039",
@@ -1335,7 +1341,7 @@
     "player_id": "00-0040603",
     "name": "Mario Williams",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "12491": {
     "player_id": "00-0040556",
@@ -1347,13 +1353,13 @@
     "player_id": "00-0040558",
     "name": "Isaiah Neyor",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "12863": {
     "player_id": "00-0040298",
     "name": "Andrew Armstrong",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "12829": {
     "player_id": "00-0040352",
@@ -1365,7 +1371,7 @@
     "player_id": "00-0040566",
     "name": "CJ Dippre",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "12775": {
     "player_id": "00-0040494",
@@ -1407,7 +1413,7 @@
     "player_id": "00-0040656",
     "name": "Hunter Dekkers",
     "position": "QB",
-    "team": "NOS"
+    "team": "NO"
   },
   "12803": {
     "player_id": "00-0040461",
@@ -1425,7 +1431,7 @@
     "player_id": "00-0040571",
     "name": "Gee Scott",
     "position": "TE",
-    "team": "WAS"
+    "team": "NYJ"
   },
   "12889": {
     "player_id": "00-0040432",
@@ -1485,7 +1491,7 @@
     "player_id": "00-0040597",
     "name": "Brennan Presley",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "12746": {
     "player_id": "00-0040275",
@@ -1503,7 +1509,7 @@
     "player_id": "00-0040332",
     "name": "Ja'Quinden Jackson",
     "position": "RB",
-    "team": null
+    "team": "PHI"
   },
   "13150": {
     "player_id": "00-0040024",
@@ -1545,7 +1551,7 @@
     "player_id": "00-0040429",
     "name": "Josh Williams",
     "position": "RB",
-    "team": "TBB"
+    "team": "TB"
   },
   "13075": {
     "player_id": "00-0040506",
@@ -1563,7 +1569,7 @@
     "player_id": "00-0040388",
     "name": "Jakobie Keeney-James",
     "position": "WR",
-    "team": "PIT"
+    "team": "GB"
   },
   "11560": {
     "player_id": "00-0039918",
@@ -1575,7 +1581,7 @@
     "player_id": "00-0039851",
     "name": "Drake Maye",
     "position": "QB",
-    "team": "NEP"
+    "team": "NE"
   },
   "11566": {
     "player_id": "00-0039910",
@@ -1611,7 +1617,7 @@
     "player_id": "00-0039376",
     "name": "Spencer Rattler",
     "position": "QB",
-    "team": "NOS"
+    "team": "NO"
   },
   "11376": {
     "player_id": "00-0039677",
@@ -1647,7 +1653,7 @@
     "player_id": "00-0039738",
     "name": "Blake Corum",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "11589": {
     "player_id": "00-0039921",
@@ -1659,7 +1665,7 @@
     "player_id": "00-0039373",
     "name": "Audric Estime",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "11576": {
     "player_id": "00-0039794",
@@ -1677,7 +1683,7 @@
     "player_id": "00-0039361",
     "name": "Bucky Irving",
     "position": "RB",
-    "team": "TBB"
+    "team": "TB"
   },
   "11573": {
     "player_id": "00-0039471",
@@ -1707,7 +1713,7 @@
     "player_id": "00-0039811",
     "name": "MarShawn Lloyd",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "11590": {
     "player_id": "00-0039393",
@@ -1761,7 +1767,7 @@
     "player_id": "00-0039407",
     "name": "Dylan Laube",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "11628": {
     "player_id": "00-0039849",
@@ -1791,7 +1797,7 @@
     "player_id": "00-0039893",
     "name": "Brian Thomas Jr.",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "11627": {
     "player_id": "00-0039868",
@@ -1803,7 +1809,7 @@
     "player_id": "00-0039894",
     "name": "Xavier Worthy",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "11629": {
     "player_id": "00-0039792",
@@ -1815,19 +1821,19 @@
     "player_id": "00-0039916",
     "name": "Ricky Pearsall",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "11621": {
     "player_id": "00-0039415",
     "name": "Brenden Rice",
     "position": "WR",
-    "team": null
+    "team": "GB"
   },
   "11633": {
     "player_id": "00-0039379",
     "name": "Jamari Thrash",
     "position": "WR",
-    "team": null
+    "team": "CLE"
   },
   "11636": {
     "player_id": "00-0039236",
@@ -1851,7 +1857,7 @@
     "player_id": "00-0039855",
     "name": "Jalen McMillan",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "11630": {
     "player_id": "00-0039739",
@@ -1869,7 +1875,7 @@
     "player_id": "00-0039907",
     "name": "Ja'Lynn Polk",
     "position": "WR",
-    "team": null
+    "team": "NO"
   },
   "11640": {
     "player_id": "00-0039810",
@@ -1881,7 +1887,7 @@
     "player_id": "00-0039751",
     "name": "Jordan Whittington",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "11921": {
     "player_id": "00-0039521",
@@ -1905,7 +1911,7 @@
     "player_id": "00-0039853",
     "name": "Javon Baker",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "11626": {
     "player_id": "00-0039342",
@@ -1917,13 +1923,13 @@
     "player_id": "00-0039365",
     "name": "Jacob Cowing",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "11604": {
     "player_id": "00-0039338",
     "name": "Brock Bowers",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "11599": {
     "player_id": "00-0039359",
@@ -1965,7 +1971,7 @@
     "player_id": "00-0039824",
     "name": "Jared Wiley",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "11597": {
     "player_id": "00-0039847",
@@ -2001,7 +2007,7 @@
     "player_id": "00-0039747",
     "name": "Ainias Smith",
     "position": "WR",
-    "team": null
+    "team": "CAR"
   },
   "11654": {
     "player_id": "00-0039230",
@@ -2013,7 +2019,7 @@
     "player_id": "00-0039363",
     "name": "Isaac Guerendo",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "11716": {
     "player_id": "00-0039737",
@@ -2055,7 +2061,7 @@
     "player_id": "00-0039386",
     "name": "Bub Means",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "11571": {
     "player_id": "00-0039798",
@@ -2079,19 +2085,19 @@
     "player_id": "00-0039394",
     "name": "Casey Washington",
     "position": "WR",
-    "team": "CAR"
+    "team": "ATL"
   },
   "11802": {
     "player_id": "00-0039397",
     "name": "Tejhaun Palmer",
     "position": "WR",
-    "team": "NEP"
+    "team": "ARI"
   },
   "11598": {
     "player_id": "00-0039399",
     "name": "Tanner McLachlan",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "11588": {
     "player_id": "00-0039405",
@@ -2109,7 +2115,7 @@
     "player_id": "00-0039424",
     "name": "Devaughn Vele",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "11821": {
     "player_id": "00-0039884",
@@ -2121,7 +2127,7 @@
     "player_id": "00-0039754",
     "name": "Devin Culp",
     "position": "TE",
-    "team": "TBB"
+    "team": "TB"
   },
   "11815": {
     "player_id": "00-0039437",
@@ -2151,7 +2157,7 @@
     "player_id": "00-0039552",
     "name": "Joshua Cephus",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "11606": {
     "player_id": "00-0039613",
@@ -2175,7 +2181,7 @@
     "player_id": "00-0039244",
     "name": "Chris Collier",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "11943": {
     "player_id": "00-0039684",
@@ -2295,13 +2301,13 @@
     "player_id": "00-0039702",
     "name": "Mason Pline",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "12045": {
     "player_id": "00-0039305",
     "name": "Jack Westover",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "12133": {
     "player_id": "00-0039773",
@@ -2331,7 +2337,7 @@
     "player_id": "00-0039263",
     "name": "McCallan Castles",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "11906": {
     "player_id": "00-0039709",
@@ -2343,7 +2349,7 @@
     "player_id": "00-0039623",
     "name": "Mason Tipton",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "11989": {
     "player_id": "00-0039595",
@@ -2379,13 +2385,13 @@
     "player_id": "00-0039534",
     "name": "Carter Bradley",
     "position": "QB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "11994": {
     "player_id": "00-0039589",
     "name": "Kameron Johnson",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "11942": {
     "player_id": "00-0039686",
@@ -2397,7 +2403,7 @@
     "player_id": "00-0039757",
     "name": "Terrell Jennings",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "12374": {
     "player_id": "00-0039458",
@@ -2481,7 +2487,7 @@
     "player_id": "00-0039107",
     "name": "Stetson Bennett",
     "position": "QB",
-    "team": "LAR"
+    "team": "LA"
   },
   "9231": {
     "player_id": "00-0038598",
@@ -2517,7 +2523,7 @@
     "player_id": "00-0038579",
     "name": "Aidan O'Connell",
     "position": "QB",
-    "team": "LVR"
+    "team": "LV"
   },
   "10217": {
     "player_id": "00-0038582",
@@ -2559,7 +2565,7 @@
     "player_id": "00-0038951",
     "name": "Sean Tucker",
     "position": "RB",
-    "team": "TBB"
+    "team": "TB"
   },
   "9226": {
     "player_id": "00-0039040",
@@ -2583,13 +2589,13 @@
     "player_id": "00-0038636",
     "name": "Kenny McIntosh",
     "position": "RB",
-    "team": null
+    "team": "SEA"
   },
   "9757": {
     "player_id": "00-0038551",
     "name": "Kendre Miller",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "10651": {
     "player_id": "00-0038656",
@@ -2607,7 +2613,7 @@
     "player_id": "00-0038611",
     "name": "Chris Rodriguez",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "10235": {
     "player_id": "00-0039021",
@@ -2643,7 +2649,7 @@
     "player_id": "00-0038397",
     "name": "Evan Hull",
     "position": "RB",
-    "team": "ARI"
+    "team": "HOU"
   },
   "9224": {
     "player_id": "00-0038597",
@@ -2667,7 +2673,7 @@
     "player_id": "00-0039146",
     "name": "Jayden Reed",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "9488": {
     "player_id": "00-0038543",
@@ -2715,19 +2721,19 @@
     "player_id": "00-0038606",
     "name": "Parker Washington",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "9504": {
     "player_id": "00-0038608",
     "name": "Kayshon Boutte",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "10229": {
     "player_id": "00-0039067",
     "name": "Rashee Rice",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "9486": {
     "player_id": "00-0038393",
@@ -2739,7 +2745,7 @@
     "player_id": "00-0038612",
     "name": "A.T. Perry",
     "position": "WR",
-    "team": null
+    "team": "PIT"
   },
   "10225": {
     "player_id": "00-0039062",
@@ -2757,7 +2763,7 @@
     "player_id": "00-0039052",
     "name": "Trey Palmer",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "11382": {
     "player_id": "00-0038447",
@@ -2775,7 +2781,7 @@
     "player_id": "00-0038647",
     "name": "Ronnie Bell",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "10228": {
     "player_id": "00-0038576",
@@ -2793,7 +2799,7 @@
     "player_id": "00-0038941",
     "name": "Tyler Scott",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "10232": {
     "player_id": "00-0038559",
@@ -2817,19 +2823,19 @@
     "player_id": "00-0038590",
     "name": "Justin Shorter",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "9493": {
     "player_id": "00-0039075",
     "name": "Puka Nacua",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "9482": {
     "player_id": "00-0039066",
     "name": "Michael Mayer",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "10236": {
     "player_id": "00-0038933",
@@ -2847,7 +2853,7 @@
     "player_id": "00-0039144",
     "name": "Luke Musgrave",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "9479": {
     "player_id": "00-0038558",
@@ -2865,13 +2871,13 @@
     "player_id": "00-0039050",
     "name": "Payne Durham",
     "position": "TE",
-    "team": "TBB"
+    "team": "TB"
   },
   "10214": {
     "player_id": "00-0039074",
     "name": "Davis Allen",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "10220": {
     "player_id": "00-0038394",
@@ -2889,7 +2895,7 @@
     "player_id": "00-0038996",
     "name": "Tucker Kraft",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "9483": {
     "player_id": "00-0038406",
@@ -2907,13 +2913,13 @@
     "player_id": "00-0038935",
     "name": "Brenton Strange",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "10213": {
     "player_id": "00-0038563",
     "name": "Tre Tucker",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "10234": {
     "player_id": "00-0038573",
@@ -2925,7 +2931,7 @@
     "player_id": "00-0038589",
     "name": "Josh Whyle",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "10983": {
     "player_id": "00-0038391",
@@ -2949,7 +2955,7 @@
     "player_id": "00-0038621",
     "name": "Demario Douglas",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "11053": {
     "player_id": "00-0038627",
@@ -2961,7 +2967,7 @@
     "player_id": "00-0038632",
     "name": "Colton Dowell",
     "position": "WR",
-    "team": "PIT"
+    "team": "SF"
   },
   "9510": {
     "player_id": "00-0038409",
@@ -2985,7 +2991,7 @@
     "player_id": "00-0038643",
     "name": "Brayden Willis",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "11024": {
     "player_id": "00-0038507",
@@ -3009,7 +3015,7 @@
     "player_id": "00-0038518",
     "name": "Deneric Prince",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "11232": {
     "player_id": "00-0038883",
@@ -3027,7 +3033,7 @@
     "player_id": "00-0038705",
     "name": "Emari Demercado",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "10861": {
     "player_id": "00-0038727",
@@ -3039,7 +3045,7 @@
     "player_id": "00-0038685",
     "name": "Chris Brooks",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "11505": {
     "player_id": "00-0038734",
@@ -3075,7 +3081,7 @@
     "player_id": "00-0038740",
     "name": "Jalen Cropper",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "11270": {
     "player_id": "00-0038714",
@@ -3159,25 +3165,25 @@
     "player_id": "00-0038519",
     "name": "Nikko Remigio",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "11311": {
     "player_id": "00-0038492",
     "name": "Jason Brownlee",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "11378": {
     "player_id": "00-0038678",
     "name": "Jordan Mims",
     "position": "RB",
-    "team": "MIN"
+    "team": null
   },
   "11371": {
     "player_id": "00-0038720",
     "name": "Julian Hill",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "11247": {
     "player_id": "00-0038887",
@@ -3189,7 +3195,7 @@
     "player_id": "00-0038359",
     "name": "Xavier Smith",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "11474": {
     "player_id": "00-0038953",
@@ -3231,7 +3237,7 @@
     "player_id": "00-0038476",
     "name": "Tommy DeVito",
     "position": "QB",
-    "team": "NEP"
+    "team": "NE"
   },
   "11184": {
     "player_id": "00-0038702",
@@ -3291,7 +3297,7 @@
     "player_id": "00-0038458",
     "name": "Owen Wright",
     "position": "RB",
-    "team": null
+    "team": "HOU"
   },
   "11169": {
     "player_id": "00-0038385",
@@ -3303,7 +3309,7 @@
     "player_id": "00-0038891",
     "name": "Shedrick Jackson",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "11209": {
     "player_id": "00-0038468",
@@ -3333,7 +3339,7 @@
     "player_id": "00-0038658",
     "name": "Adrian Martinez",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "11070": {
     "player_id": "00-0038830",
@@ -3441,7 +3447,7 @@
     "player_id": "00-0037834",
     "name": "Brock Purdy",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "8206": {
     "player_id": "00-0037327",
@@ -3501,13 +3507,13 @@
     "player_id": "00-0037840",
     "name": "Kyren Williams",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "8151": {
     "player_id": "00-0038134",
     "name": "Kenneth Walker III",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "8132": {
     "player_id": "00-0037263",
@@ -3525,7 +3531,7 @@
     "player_id": "00-0038040",
     "name": "Zamir White",
     "position": "RB",
-    "team": null
+    "team": "SF"
   },
   "8138": {
     "player_id": "00-0037248",
@@ -3561,7 +3567,7 @@
     "player_id": "00-0037617",
     "name": "Hassan Haskins",
     "position": "RB",
-    "team": "LAC"
+    "team": "NE"
   },
   "8136": {
     "player_id": "00-0037256",
@@ -3573,7 +3579,7 @@
     "player_id": "00-0037276",
     "name": "Ty Chandler",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "8217": {
     "player_id": "00-0037466",
@@ -3591,7 +3597,7 @@
     "player_id": "00-0037557",
     "name": "Ronnie Rivers",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "8122": {
     "player_id": "00-0037157",
@@ -3627,13 +3633,13 @@
     "player_id": "00-0038098",
     "name": "Pierre Strong Jr.",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "8221": {
     "player_id": "00-0037299",
     "name": "Keaontay Ingram",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "8218": {
     "player_id": "00-0037389",
@@ -3669,7 +3675,7 @@
     "player_id": "00-0037509",
     "name": "Sincere McCormick",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "8184": {
     "player_id": "00-0037400",
@@ -3723,7 +3729,7 @@
     "player_id": "00-0037239",
     "name": "Chris Olave",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "8119": {
     "player_id": "00-0037741",
@@ -3783,13 +3789,13 @@
     "player_id": "00-0037231",
     "name": "Kevin Austin",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "8168": {
     "player_id": "00-0038090",
     "name": "Skyy Moore",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "8223": {
     "player_id": "00-0037745",
@@ -3861,7 +3867,7 @@
     "player_id": "00-0037816",
     "name": "Romeo Doubs",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "8114": {
     "player_id": "00-0038092",
@@ -3891,19 +3897,19 @@
     "player_id": "00-0037091",
     "name": "Bo Melton",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "8180": {
     "player_id": "00-0037291",
     "name": "Jalen Nailor",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "8188": {
     "player_id": "00-0038104",
     "name": "Tyquan Thornton",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "8117": {
     "player_id": "00-0037666",
@@ -3915,7 +3921,7 @@
     "player_id": "00-0038124",
     "name": "Christian Watson",
     "position": "WR",
-    "team": "GBP"
+    "team": "GB"
   },
   "8229": {
     "player_id": "00-0037343",
@@ -3933,7 +3939,7 @@
     "player_id": "00-0037300",
     "name": "Michael Woods",
     "position": "WR",
-    "team": "GBP"
+    "team": "DEN"
   },
   "8115": {
     "player_id": "00-0037436",
@@ -3981,7 +3987,7 @@
     "player_id": "00-0037304",
     "name": "Connor Heyward",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "8215": {
     "player_id": "00-0037369",
@@ -3993,7 +3999,7 @@
     "player_id": "00-0038129",
     "name": "Cade Otton",
     "position": "TE",
-    "team": "TBB"
+    "team": "TB"
   },
   "8214": {
     "player_id": "00-0037078",
@@ -4071,13 +4077,13 @@
     "player_id": "00-0037306",
     "name": "John FitzPatrick",
     "position": "TE",
-    "team": "GBP"
+    "team": "GB"
   },
   "8484": {
     "player_id": "00-0037311",
     "name": "Ko Kieft",
     "position": "TE",
-    "team": "TBB"
+    "team": "TB"
   },
   "8523": {
     "player_id": "00-0037317",
@@ -4089,13 +4095,13 @@
     "player_id": "00-0037093",
     "name": "Dareke Young",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "8413": {
     "player_id": "00-0037324",
     "name": "Chris Oladokun",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "8423": {
     "player_id": "00-0037329",
@@ -4167,7 +4173,7 @@
     "player_id": "00-0037487",
     "name": "Deven Thompkins",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "8650": {
     "player_id": "00-0037071",
@@ -4185,19 +4191,19 @@
     "player_id": "00-0037570",
     "name": "Dennis Houston",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "8861": {
     "player_id": "00-0037156",
     "name": "Irvin Charles",
     "position": "WR",
-    "team": null
+    "team": "SEA"
   },
   "8756": {
     "player_id": "00-0037382",
     "name": "Brandon Johnson",
     "position": "WR",
-    "team": "DEN"
+    "team": "LV"
   },
   "8731": {
     "player_id": "00-0037174",
@@ -4233,7 +4239,7 @@
     "player_id": "00-0037387",
     "name": "Jalen Virgil",
     "position": "WR",
-    "team": null
+    "team": "BUF"
   },
   "8602": {
     "player_id": "00-0037119",
@@ -4275,7 +4281,7 @@
     "player_id": "00-0037112",
     "name": "Jake Tonges",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "8732": {
     "player_id": "00-0037185",
@@ -4371,19 +4377,19 @@
     "player_id": "00-0036971",
     "name": "Trevor Lawrence",
     "position": "QB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "7591": {
     "player_id": "00-0036945",
     "name": "Justin Fields",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "7538": {
     "player_id": "00-0037013",
     "name": "Zach Wilson",
     "position": "QB",
-    "team": "NOS"
+    "team": "NO"
   },
   "7610": {
     "player_id": "00-0037012",
@@ -4395,13 +4401,13 @@
     "player_id": "00-0036972",
     "name": "Mac Jones",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "7605": {
     "player_id": "00-0036928",
     "name": "Kyle Trask",
     "position": "QB",
-    "team": "ATL"
+    "team": "CAR"
   },
   "7581": {
     "player_id": "00-0036946",
@@ -4443,7 +4449,7 @@
     "player_id": "00-0036973",
     "name": "Travis Etienne",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "7528": {
     "player_id": "00-0036893",
@@ -4455,7 +4461,7 @@
     "player_id": "00-0036919",
     "name": "Kenneth Gainwell",
     "position": "RB",
-    "team": "TBB"
+    "team": "TB"
   },
   "7588": {
     "player_id": "00-0036997",
@@ -4467,7 +4473,7 @@
     "player_id": "00-0036984",
     "name": "Trey Sermon",
     "position": "RB",
-    "team": "PIT"
+    "team": "ATL"
   },
   "7607": {
     "player_id": "00-0036924",
@@ -4479,7 +4485,7 @@
     "player_id": "00-0036875",
     "name": "Rhamondre Stevenson",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "7537": {
     "player_id": "00-0036755",
@@ -4497,7 +4503,7 @@
     "player_id": "00-0036670",
     "name": "Jermar Jefferson",
     "position": "RB",
-    "team": null
+    "team": "MIN"
   },
   "7561": {
     "player_id": "00-0036567",
@@ -4545,7 +4551,7 @@
     "player_id": "00-0036906",
     "name": "Khalil Herbert",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "7574": {
     "player_id": "00-0036650",
@@ -4833,13 +4839,13 @@
     "player_id": "00-0037004",
     "name": "Hunter Long",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "7842": {
     "player_id": "00-0036887",
     "name": "Luke Farrell",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "7859": {
     "player_id": "00-0036766",
@@ -4851,7 +4857,7 @@
     "player_id": "00-0036637",
     "name": "Noah Gray",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "8018": {
     "player_id": "00-0036718",
@@ -4875,7 +4881,7 @@
     "player_id": "00-0036590",
     "name": "Quintin Morris",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "7943": {
     "player_id": "00-0036640",
@@ -4983,7 +4989,7 @@
     "player_id": "00-0036939",
     "name": "Kawaan Baker",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "7890": {
     "player_id": "00-0036750",
@@ -5037,7 +5043,7 @@
     "player_id": "00-0036692",
     "name": "Miller Forristall",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "7915": {
     "player_id": "00-0036598",
@@ -5115,13 +5121,13 @@
     "player_id": "00-0036527",
     "name": "DJ Turner",
     "position": "WR",
-    "team": "HOU"
+    "team": null
   },
   "8013": {
     "player_id": "00-0036497",
     "name": "Tim Jones",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "8921": {
     "player_id": "00-0037708",
@@ -5133,7 +5139,7 @@
     "player_id": "00-0036841",
     "name": "Austin Trammell",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "7521": {
     "player_id": "00-0036463",
@@ -5175,7 +5181,7 @@
     "player_id": "00-0036264",
     "name": "Jordan Love",
     "position": "QB",
-    "team": "GBP"
+    "team": "GB"
   },
   "6904": {
     "player_id": "00-0036389",
@@ -5271,7 +5277,7 @@
     "player_id": "00-0036360",
     "name": "Clyde Edwards-Helaire",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "6878": {
     "player_id": "00-0036336",
@@ -5337,7 +5343,7 @@
     "player_id": "00-0036425",
     "name": "DeeJay Dallas",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "6992": {
     "player_id": "00-0036006",
@@ -5349,7 +5355,7 @@
     "player_id": "00-0035973",
     "name": "Patrick Taylor",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "7088": {
     "player_id": "00-0036078",
@@ -5475,7 +5481,7 @@
     "player_id": "00-0036261",
     "name": "Brandon Aiyuk",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "6886": {
     "player_id": "00-0036326",
@@ -5601,7 +5607,7 @@
     "player_id": "00-0036040",
     "name": "Juwan Johnson",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "6913": {
     "player_id": "00-0036377",
@@ -5655,7 +5661,7 @@
     "player_id": "00-0036244",
     "name": "Colby Parkinson",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "6834": {
     "player_id": "00-0035787",
@@ -5667,7 +5673,7 @@
     "player_id": "00-0036423",
     "name": "Albert Okwuegbunam",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "6846": {
     "player_id": "00-0036008",
@@ -5679,13 +5685,13 @@
     "player_id": "00-0036232",
     "name": "Harrison Bryant",
     "position": "TE",
-    "team": null
+    "team": "SEA"
   },
   "7050": {
     "player_id": "00-0036332",
     "name": "Josiah Deguara",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "6956": {
     "player_id": "00-0036194",
@@ -5925,7 +5931,7 @@
     "player_id": "00-0036187",
     "name": "Reggie Gilliam",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "7496": {
     "player_id": "00-0036182",
@@ -6027,7 +6033,7 @@
     "player_id": "00-0036471",
     "name": "Mathew Sexton",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "7308": {
     "player_id": "00-0036083",
@@ -6135,7 +6141,7 @@
     "player_id": "00-0035251",
     "name": "Will Grier",
     "position": "QB",
-    "team": null
+    "team": "CAR"
   },
   "6136": {
     "player_id": "00-0035264",
@@ -6201,7 +6207,7 @@
     "player_id": "00-0035700",
     "name": "Josh Jacobs",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "6153": {
     "player_id": "00-0034995",
@@ -6381,7 +6387,7 @@
     "player_id": "00-0035676",
     "name": "A.J. Brown",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "5848": {
     "player_id": "00-0035662",
@@ -6417,7 +6423,7 @@
     "player_id": "00-0035359",
     "name": "David Sills",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "6017": {
     "player_id": "00-0035475",
@@ -6519,7 +6525,7 @@
     "player_id": "00-0034960",
     "name": "Jakobi Meyers",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "6049": {
     "player_id": "00-0035361",
@@ -6561,13 +6567,13 @@
     "player_id": "00-0035719",
     "name": "Deebo Samuel",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "5857": {
     "player_id": "00-0035644",
     "name": "Noah Fant",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "5844": {
     "player_id": "00-0035229",
@@ -6723,7 +6729,7 @@
     "player_id": "00-0035596",
     "name": "Kerrith Whyte",
     "position": "RB",
-    "team": "GBP"
+    "team": "GB"
   },
   "6137": {
     "player_id": "00-0035308",
@@ -6837,7 +6843,7 @@
     "player_id": "00-0035628",
     "name": "D'Ernest Johnson",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "6501": {
     "player_id": "00-0035009",
@@ -6915,7 +6921,7 @@
     "player_id": "00-0035100",
     "name": "Jake Browning",
     "position": "QB",
-    "team": "TBB"
+    "team": "TB"
   },
   "6202": {
     "player_id": "00-0035726",
@@ -7023,7 +7029,7 @@
     "player_id": "00-0035039",
     "name": "Stephen Carlson",
     "position": "TE",
-    "team": null
+    "team": "CHI"
   },
   "6539": {
     "player_id": "00-0034935",
@@ -7071,7 +7077,7 @@
     "player_id": "00-0035118",
     "name": "Matt Orzech",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "6239": {
     "player_id": "00-0035480",
@@ -7095,7 +7101,7 @@
     "player_id": "00-0035602",
     "name": "Alex Bachman",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "6387": {
     "player_id": "00-0035621",
@@ -7161,7 +7167,7 @@
     "player_id": "00-0035587",
     "name": "Spencer Schnell",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "6231": {
     "player_id": "00-0035161",
@@ -7215,13 +7221,13 @@
     "player_id": "00-0035567",
     "name": "Craig Reynolds",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "6591": {
     "player_id": "00-0035553",
     "name": "Charles Jones",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "6075": {
     "player_id": "00-0035562",
@@ -7299,7 +7305,7 @@
     "player_id": "00-0034855",
     "name": "Baker Mayfield",
     "position": "QB",
-    "team": "TBB"
+    "team": "TB"
   },
   "4863": {
     "player_id": "00-0034343",
@@ -7473,7 +7479,7 @@
     "player_id": "00-0034367",
     "name": "Nyheim Hines",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "5549": {
     "player_id": "00-0034301",
@@ -7527,7 +7533,7 @@
     "player_id": "00-0034775",
     "name": "Christian Kirk",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "4992": {
     "player_id": "00-0034860",
@@ -7575,7 +7581,7 @@
     "player_id": "00-0034407",
     "name": "Ray-Ray McCloud",
     "position": "WR",
-    "team": "NYG"
+    "team": "CHI"
   },
   "5130": {
     "player_id": "00-0034686",
@@ -7737,7 +7743,7 @@
     "player_id": "00-0034867",
     "name": "Malik Turner",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "5665": {
     "player_id": "00-0034584",
@@ -7785,7 +7791,7 @@
     "player_id": "00-0034365",
     "name": "Ian Thomas",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "5009": {
     "player_id": "00-0034766",
@@ -7821,7 +7827,7 @@
     "player_id": "00-0034364",
     "name": "Jordan Akins",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "5010": {
     "player_id": "00-0034159",
@@ -7875,7 +7881,7 @@
     "player_id": "00-0034411",
     "name": "Russell Gage",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "5122": {
     "player_id": "00-0034414",
@@ -8019,7 +8025,7 @@
     "player_id": "00-0034200",
     "name": "Mark Thompson",
     "position": "RB",
-    "team": "OAK"
+    "team": "LV"
   },
   "5255": {
     "player_id": "00-0034647",
@@ -8127,13 +8133,13 @@
     "player_id": "00-0034449",
     "name": "Buddy Howell",
     "position": "RB",
-    "team": "LAR"
+    "team": "LA"
   },
   "4435": {
     "player_id": "00-0033455",
     "name": "Anthony Firkser",
     "position": "TE",
-    "team": "DET"
+    "team": "WAS"
   },
   "5464": {
     "player_id": "00-0034201",
@@ -8151,7 +8157,7 @@
     "player_id": "00-0034854",
     "name": "KhaDarel Hodge",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "5175": {
     "player_id": "00-0034499",
@@ -8397,7 +8403,7 @@
     "player_id": "00-0033873",
     "name": "Patrick Mahomes",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "4222": {
     "player_id": "00-0033585",
@@ -8409,7 +8415,7 @@
     "player_id": "00-0033949",
     "name": "Joshua Dobbs",
     "position": "QB",
-    "team": null
+    "team": "DET"
   },
   "4061": {
     "player_id": "00-0033550",
@@ -8457,7 +8463,7 @@
     "player_id": "00-0033280",
     "name": "Christian McCaffrey",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "4018": {
     "player_id": "00-0033897",
@@ -8469,7 +8475,7 @@
     "player_id": "00-0033906",
     "name": "Alvin Kamara",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "4147": {
     "player_id": "00-0033526",
@@ -8559,7 +8565,7 @@
     "player_id": "00-0033854",
     "name": "Dare Ogunbowale",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "4576": {
     "player_id": "00-0033664",
@@ -8643,7 +8649,7 @@
     "player_id": "00-0033921",
     "name": "Chris Godwin",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "4039": {
     "player_id": "00-0033908",
@@ -8697,7 +8703,7 @@
     "player_id": "00-0033591",
     "name": "Noah Brown",
     "position": "WR",
-    "team": "WAS"
+    "team": null
   },
   "4119": {
     "player_id": "00-0033916",
@@ -8751,7 +8757,7 @@
     "player_id": "00-0033517",
     "name": "Travin Dural",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "4676": {
     "player_id": "00-0033739",
@@ -8889,7 +8895,7 @@
     "player_id": "00-0033555",
     "name": "Mack Hollins",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "4157": {
     "player_id": "00-0033556",
@@ -8901,7 +8907,7 @@
     "player_id": "00-0033288",
     "name": "George Kittle",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "4198": {
     "player_id": "00-0033572",
@@ -8961,7 +8967,7 @@
     "player_id": "00-0033304",
     "name": "Devante Mays",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "4283": {
     "player_id": "00-0033797",
@@ -9261,7 +9267,7 @@
     "player_id": "00-0031834",
     "name": "Larry Pinkard",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "4522": {
     "player_id": "00-0033599",
@@ -9291,7 +9297,7 @@
     "player_id": "00-0032689",
     "name": "Jason Vander Laan",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "4518": {
     "player_id": "00-0033514",
@@ -9303,7 +9309,7 @@
     "player_id": "00-0033353",
     "name": "Montay Crockett",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "4571": {
     "player_id": "00-0033658",
@@ -9363,7 +9369,7 @@
     "player_id": "00-0033374",
     "name": "Ricky Ortiz",
     "position": "RB",
-    "team": "NOS"
+    "team": "NO"
   },
   "4314": {
     "player_id": "00-0033246",
@@ -9375,7 +9381,7 @@
     "player_id": "00-0033319",
     "name": "Nick Mullens",
     "position": "QB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "4443": {
     "player_id": "00-0033439",
@@ -9693,7 +9699,7 @@
     "player_id": "00-0032385",
     "name": "Sterling Shepard",
     "position": "WR",
-    "team": "TBB"
+    "team": "TB"
   },
   "3520": {
     "player_id": "00-0032559",
@@ -9789,7 +9795,7 @@
     "player_id": "00-0033090",
     "name": "Hunter Henry",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "3202": {
     "player_id": "00-0032392",
@@ -9801,7 +9807,7 @@
     "player_id": "00-0033110",
     "name": "Tyler Higbee",
     "position": "TE",
-    "team": "LAR"
+    "team": "LA"
   },
   "3561": {
     "player_id": "00-0032583",
@@ -9867,7 +9873,7 @@
     "player_id": "00-0032775",
     "name": "Demarcus Robinson",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "3296": {
     "player_id": "00-0033080",
@@ -10167,7 +10173,7 @@
     "player_id": "00-0032562",
     "name": "Cole Wick",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "3840": {
     "player_id": "00-0032937",
@@ -10251,7 +10257,7 @@
     "player_id": "00-0032841",
     "name": "Paul Turner",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "3934": {
     "player_id": "00-0033164",
@@ -10287,19 +10293,19 @@
     "player_id": "00-0032876",
     "name": "Jordan Williams",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "3583": {
     "player_id": "00-0032358",
     "name": "Tevaun Smith",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "3456": {
     "player_id": "00-0032614",
     "name": "Joel Stave",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "3418": {
     "player_id": "00-0032351",
@@ -10575,7 +10581,7 @@
     "player_id": "00-0032104",
     "name": "Ameer Abdullah",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "2411": {
     "player_id": "00-0031569",
@@ -10743,7 +10749,7 @@
     "player_id": "00-0032208",
     "name": "Phillip Dorsett",
     "position": "WR",
-    "team": "LVR"
+    "team": "LV"
   },
   "2587": {
     "player_id": "00-0031504",
@@ -10815,7 +10821,7 @@
     "player_id": "00-0032117",
     "name": "Nick O'Leary",
     "position": "TE",
-    "team": "LVR"
+    "team": "LV"
   },
   "2397": {
     "player_id": "00-0032227",
@@ -10965,7 +10971,7 @@
     "player_id": "00-0032068",
     "name": "Malcolm Johnson",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "2499": {
     "player_id": "00-0031533",
@@ -11019,7 +11025,7 @@
     "player_id": "00-0031960",
     "name": "Da'Ron Brown",
     "position": "WR",
-    "team": "KCC"
+    "team": "KC"
   },
   "2533": {
     "player_id": "00-0032070",
@@ -11043,7 +11049,7 @@
     "player_id": "00-0032156",
     "name": "Trevor Siemian",
     "position": "QB",
-    "team": null
+    "team": "ATL"
   },
   "2555": {
     "player_id": "00-0032190",
@@ -11133,7 +11139,7 @@
     "player_id": "00-0032029",
     "name": "R.J. Harris",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "2596": {
     "player_id": "00-0031864",
@@ -11157,7 +11163,7 @@
     "player_id": "00-0032035",
     "name": "Deon Long",
     "position": "WR",
-    "team": "STL"
+    "team": "LA"
   },
   "2823": {
     "player_id": "00-0031846",
@@ -11199,7 +11205,7 @@
     "player_id": "00-0032089",
     "name": "Brian Parker",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "2789": {
     "player_id": "00-0031757",
@@ -11229,7 +11235,7 @@
     "player_id": "00-0031687",
     "name": "Raheem Mostert",
     "position": "RB",
-    "team": "LVR"
+    "team": "LV"
   },
   "2774": {
     "player_id": "00-0032100",
@@ -11253,7 +11259,7 @@
     "player_id": "00-0031529",
     "name": "Reggie Bell",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "2673": {
     "player_id": "00-0031868",
@@ -11343,7 +11349,7 @@
     "player_id": "00-0031510",
     "name": "Dylan Thompson",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "2751": {
     "player_id": "00-0032098",
@@ -11535,7 +11541,7 @@
     "player_id": "00-0031190",
     "name": "Tyler Gaffney",
     "position": "RB",
-    "team": "JAC"
+    "team": "JAX"
   },
   "2283": {
     "player_id": "00-0030786",
@@ -11583,7 +11589,7 @@
     "player_id": "00-0031408",
     "name": "Mike Evans",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "1987": {
     "player_id": "00-0031431",
@@ -11607,7 +11613,7 @@
     "player_id": "00-0031381",
     "name": "Davante Adams",
     "position": "WR",
-    "team": "LAR"
+    "team": "LA"
   },
   "1800": {
     "player_id": "00-0031299",
@@ -11799,7 +11805,7 @@
     "player_id": "00-0031345",
     "name": "Jimmy Garoppolo",
     "position": "QB",
-    "team": "LAR"
+    "team": "LA"
   },
   "2161": {
     "player_id": "00-0031376",
@@ -11943,7 +11949,7 @@
     "player_id": "00-0031271",
     "name": "Trey Millard",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "1833": {
     "player_id": "00-0030874",
@@ -12111,13 +12117,13 @@
     "player_id": "00-0031123",
     "name": "Darrin Reaves",
     "position": "RB",
-    "team": "KCC"
+    "team": "KC"
   },
   "2202": {
     "player_id": "00-0030805",
     "name": "Je'Ron Hamm",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "2175": {
     "player_id": "00-0030743",
@@ -12189,7 +12195,7 @@
     "player_id": "00-0030985",
     "name": "Trey Watts",
     "position": "RB",
-    "team": "RAM"
+    "team": "LA"
   },
   "1899": {
     "player_id": "00-0030653",
@@ -12237,7 +12243,7 @@
     "player_id": "00-0031213",
     "name": "Rashaun Allen",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "2024": {
     "player_id": "00-0030668",
@@ -12303,7 +12309,7 @@
     "player_id": "00-0031009",
     "name": "Rashad Lawrence",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "5828": {
     "player_id": "00-0031319",
@@ -12549,7 +12555,7 @@
     "player_id": "00-0030095",
     "name": "Corey Fuller",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "1631": {
     "player_id": "00-0029934",
@@ -12633,7 +12639,7 @@
     "player_id": "00-0029860",
     "name": "Emory Blake",
     "position": "WR",
-    "team": "STL"
+    "team": "LA"
   },
   "1333": {
     "player_id": "00-0030147",
@@ -12657,13 +12663,13 @@
     "player_id": "00-0030506",
     "name": "Travis Kelce",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "1749": {
     "player_id": "00-0030272",
     "name": "Jake Stoneburner",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "1339": {
     "player_id": "00-0030061",
@@ -12705,7 +12711,7 @@
     "player_id": "00-0029951",
     "name": "Ryan Otten",
     "position": "TE",
-    "team": "SDC"
+    "team": "LAC"
   },
   "1520": {
     "player_id": "00-0030110",
@@ -12759,7 +12765,7 @@
     "player_id": "00-0029892",
     "name": "Kyle Juszczyk",
     "position": "RB",
-    "team": "SFO"
+    "team": "SF"
   },
   "1603": {
     "player_id": "00-0030089",
@@ -12813,7 +12819,7 @@
     "player_id": "00-0030116",
     "name": "Kevin Dorsey",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "1584": {
     "player_id": "00-0030120",
@@ -12909,7 +12915,7 @@
     "player_id": "00-0030419",
     "name": "Matt McGloin",
     "position": "QB",
-    "team": "KCC"
+    "team": "KC"
   },
   "1720": {
     "player_id": "00-0030348",
@@ -13029,7 +13035,7 @@
     "player_id": "00-0029755",
     "name": "Brian Leonhardt",
     "position": "TE",
-    "team": "SFO"
+    "team": "SF"
   },
   "1681": {
     "player_id": "00-0030247",
@@ -13083,7 +13089,7 @@
     "player_id": "00-0030615",
     "name": "James Winchester",
     "position": "TE",
-    "team": "KCC"
+    "team": "KC"
   },
   "1111": {
     "player_id": "00-0029668",
@@ -13119,7 +13125,7 @@
     "player_id": "00-0029604",
     "name": "Kirk Cousins",
     "position": "QB",
-    "team": "LVR"
+    "team": "LV"
   },
   "1158": {
     "player_id": "00-0029234",
@@ -13365,7 +13371,7 @@
     "player_id": "00-0029274",
     "name": "Devon Wylie",
     "position": "WR",
-    "team": "STL"
+    "team": "LA"
   },
   "1152": {
     "player_id": "00-0029276",
@@ -13443,7 +13449,7 @@
     "player_id": "00-0029308",
     "name": "Greg Scruggs",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "1330": {
     "player_id": "00-0029311",
@@ -13461,7 +13467,7 @@
     "player_id": "00-0029315",
     "name": "Brad Smelley",
     "position": "TE",
-    "team": "STL"
+    "team": "LA"
   },
   "1324": {
     "player_id": "00-0029317",
@@ -13563,7 +13569,7 @@
     "player_id": "00-0028974",
     "name": "Lance Lewis",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "1144": {
     "player_id": "00-0029000",
@@ -13611,7 +13617,7 @@
     "player_id": "00-0028359",
     "name": "McLeod Bethel-Thompson",
     "position": "QB",
-    "team": "SFO"
+    "team": "SF"
   },
   "1246": {
     "player_id": "00-0028994",
@@ -13671,7 +13677,7 @@
     "player_id": "00-0028961",
     "name": "Brandon Barden",
     "position": "TE",
-    "team": "JAC"
+    "team": "JAX"
   },
   "1321": {
     "player_id": "00-0029155",
@@ -13713,13 +13719,13 @@
     "player_id": "00-0026722",
     "name": "Greg Orton",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "173": {
     "player_id": "00-0027616",
     "name": "Andy Tanner",
     "position": "WR",
-    "team": "NOS"
+    "team": "NO"
   },
   "1807": {
     "player_id": "00-0029151",
@@ -14103,7 +14109,7 @@
     "player_id": "00-0028118",
     "name": "Tyrod Taylor",
     "position": "QB",
-    "team": "GBP"
+    "team": "GB"
   },
   "885": {
     "player_id": "00-0028119",
@@ -14301,7 +14307,7 @@
     "player_id": "00-0029534",
     "name": "Cooper Helfet",
     "position": "TE",
-    "team": "OAK"
+    "team": "LV"
   },
   "737": {
     "player_id": "00-0027809",
@@ -14637,7 +14643,7 @@
     "player_id": "00-0027725",
     "name": "Clay Harbor",
     "position": "TE",
-    "team": "NOS"
+    "team": "NO"
   },
   "622": {
     "player_id": "00-0027732",
@@ -14745,7 +14751,7 @@
     "player_id": "00-0026498",
     "name": "Matthew Stafford",
     "position": "QB",
-    "team": "LAR"
+    "team": "LA"
   },
   "411": {
     "player_id": "00-0026995",
@@ -14871,7 +14877,7 @@
     "player_id": "00-0026931",
     "name": "Bear Pascoe",
     "position": "TE",
-    "team": "NEP"
+    "team": "NE"
   },
   "659": {
     "player_id": "00-0026932",
@@ -14883,7 +14889,7 @@
     "player_id": "00-0026937",
     "name": "Brandon Gibson",
     "position": "WR",
-    "team": "NEP"
+    "team": "NE"
   },
   "397": {
     "player_id": "00-0027135",
@@ -15207,7 +15213,7 @@
     "player_id": "00-0026349",
     "name": "Matt Flynn",
     "position": "QB",
-    "team": "NOS"
+    "team": "NO"
   },
   "108": {
     "player_id": "00-0026364",
@@ -15249,7 +15255,7 @@
     "player_id": "00-0025860",
     "name": "BenJarvus Green-Ellis",
     "position": "RB",
-    "team": "FA*"
+    "team": null
   },
   "1015": {
     "player_id": "00-0026072",
@@ -15321,7 +15327,7 @@
     "player_id": "00-0025414",
     "name": "Robert Meachem",
     "position": "WR",
-    "team": "FA*"
+    "team": null
   },
   "171": {
     "player_id": "00-0025425",
@@ -15339,7 +15345,7 @@
     "player_id": "00-0025479",
     "name": "Trent Edwards",
     "position": "QB",
-    "team": "OAK"
+    "team": "LV"
   },
   "355": {
     "player_id": "00-0025439",
@@ -15735,7 +15741,7 @@
     "player_id": "00-0023560",
     "name": "J.J. Stokes",
     "position": "WR",
-    "team": "SFO"
+    "team": "SF"
   },
   "246": {
     "player_id": "00-0023564",
@@ -15837,7 +15843,7 @@
     "player_id": "00-0022736",
     "name": "Steven Jackson",
     "position": "RB",
-    "team": "NEP"
+    "team": "NE"
   },
   "663": {
     "player_id": "00-0022943",
@@ -16077,7 +16083,7 @@
     "player_id": "00-0031821",
     "name": "Marshall Faulk",
     "position": "RB",
-    "team": "STL"
+    "team": "LA"
   },
   "462": {
     "player_id": "00-0005106",
@@ -16107,7 +16113,7 @@
     "player_id": "00-0030856",
     "name": "Tony Washington",
     "position": "WR",
-    "team": "JAC"
+    "team": "JAX"
   },
   "2865": {
     "player_id": "00-0031861",
@@ -16119,7 +16125,7 @@
     "player_id": "00-0032932",
     "name": "Ryan O'Malley",
     "position": "TE",
-    "team": "OAK"
+    "team": "LV"
   },
   "8931": {
     "player_id": "00-0038149",

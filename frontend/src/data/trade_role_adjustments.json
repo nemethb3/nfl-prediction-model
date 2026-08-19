@@ -149,13 +149,6 @@
       "has_backup_opportunity": false,
       "backup_opportunity_boost": 0.0
     },
-    "00-0033119": {
-      "position": "QB",
-      "role": "primary_starter",
-      "role_multiplier": 1.668,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
-    },
     "00-0033280": {
       "position": "RB",
       "role": "lead_rb",
@@ -167,13 +160,6 @@
       "position": "RB",
       "role": "lead_rb",
       "role_multiplier": 1.873,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
-    },
-    "00-0033307": {
-      "position": "WR",
-      "role": "wr2_secondary",
-      "role_multiplier": 0.837,
       "has_backup_opportunity": false,
       "backup_opportunity_boost": 0.0
     },
@@ -821,13 +807,6 @@
       "has_backup_opportunity": true,
       "backup_opportunity_boost": 0.1
     },
-    "00-0037263": {
-      "position": "RB",
-      "role": "timeshare_rb",
-      "role_multiplier": 0.796,
-      "has_backup_opportunity": true,
-      "backup_opportunity_boost": 0.1
-    },
     "00-0037267": {
       "position": "RB",
       "role": "timeshare_rb",
@@ -890,13 +869,6 @@
       "role_multiplier": 0.837,
       "has_backup_opportunity": true,
       "backup_opportunity_boost": 0.1
-    },
-    "00-0037744": {
-      "position": "TE",
-      "role": "starter_te",
-      "role_multiplier": 1.705,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
     },
     "00-0037746": {
       "position": "RB",
@@ -1052,13 +1024,6 @@
       "has_backup_opportunity": true,
       "backup_opportunity_boost": 0.1
     },
-    "00-0038559": {
-      "position": "WR",
-      "role": "wr1_primary",
-      "role_multiplier": 1.832,
-      "has_backup_opportunity": true,
-      "backup_opportunity_boost": 0.1
-    },
     "00-0038563": {
       "position": "WR",
       "role": "wr1_primary",
@@ -1203,8 +1168,8 @@
       "position": "WR",
       "role": "wr1_primary",
       "role_multiplier": 1.832,
-      "has_backup_opportunity": true,
-      "backup_opportunity_boost": 0.1
+      "has_backup_opportunity": false,
+      "backup_opportunity_boost": 0.0
     },
     "00-0039032": {
       "position": "RB",
@@ -1217,13 +1182,6 @@
       "position": "RB",
       "role": "lead_rb",
       "role_multiplier": 1.873,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
-    },
-    "00-0039041": {
-      "position": "TE",
-      "role": "rotational_te",
-      "role_multiplier": 0.833,
       "has_backup_opportunity": false,
       "backup_opportunity_boost": 0.0
     },
@@ -1350,8 +1308,8 @@
       "position": "RB",
       "role": "lead_rb",
       "role_multiplier": 1.873,
-      "has_backup_opportunity": true,
-      "backup_opportunity_boost": 0.1
+      "has_backup_opportunity": false,
+      "backup_opportunity_boost": 0.0
     },
     "00-0039410": {
       "position": "WR",
@@ -1408,13 +1366,6 @@
       "role_multiplier": 1.705,
       "has_backup_opportunity": true,
       "backup_opportunity_boost": 0.1
-    },
-    "00-0039849": {
-      "position": "WR",
-      "role": "wr1_primary",
-      "role_multiplier": 1.832,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
     },
     "00-0039851": {
       "position": "QB",
@@ -1511,13 +1462,6 @@
       "position": "WR",
       "role": "wr1_primary",
       "role_multiplier": 1.832,
-      "has_backup_opportunity": false,
-      "backup_opportunity_boost": 0.0
-    },
-    "00-0039921": {
-      "position": "RB",
-      "role": "lead_rb",
-      "role_multiplier": 1.873,
       "has_backup_opportunity": false,
       "backup_opportunity_boost": 0.0
     }

@@ -63,6 +63,7 @@ import pandas as pd
 import fantasy_formula_improvements as ffi
 from fantasy_rb_formula import PPR_RUSH_YD, PPR_REC_YD, PPR_RECEPTION, PPR_TD, VOLUME_COLS as RB_VOLUME_COLS
 from fantasy_validation import extract_actual_fantasy_points_2025, project_fantasy_points_from_epa
+from roster_utils import apply_current_team
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -86,8 +87,19 @@ def _real_week1_opponents_2026():
 
 
 def _real_2026_roster(position):
+    """Real team assignment corrected against the real, live 2026 roster
+    (roster_utils.py) - see update_rosters_2026.py's docstring for the
+    real, verified staleness bug this fixes.
+
+    confidence_tier (2026-08-18, Filter DEF/K + Expand Projections task):
+    'high' for real players clearing this position's real, validated
+    minimum-opportunity floor (see player_models.py's run_*_epa_model
+    functions), 'lower' for the real, newly-included players below that
+    floor but above a real, still-meaningful secondary floor - a real,
+    disclosed distinction, not silently blended in as equal-confidence."""
     df = pd.read_csv(os.path.join(PROCESSED_DIR, f"{position.lower()}_epa_projections_2026.csv"))
-    return df[["player_id", "player_name", "team"]].drop_duplicates(subset=["player_id"])
+    df = apply_current_team(df)
+    return df[["player_id", "player_name", "team", "confidence_tier"]].drop_duplicates(subset=["player_id"])
 
 
 def _real_2025_per_game_rate(position, volume_cols):
@@ -111,7 +123,7 @@ def _qb_or_te_week1_2026(position):
     merged = roster.merge(rate_2025, on="player_id", how="inner")
     merged["projected_ppr"] = ffi._real_ppr(position, merged)
     n_excluded = len(roster) - len(merged)
-    return merged[["player_id", "player_name", "team", "projected_ppr"]], n_excluded
+    return merged[["player_id", "player_name", "team", "projected_ppr", "confidence_tier"]], n_excluded
 
 
 def _rb_week1_2026():
@@ -128,7 +140,7 @@ def _rb_week1_2026():
         + merged["receptions"] * PPR_RECEPTION + merged["total_td"] * PPR_TD
     )
     n_excluded = len(roster) - len(merged)
-    return merged[["player_id", "player_name", "team", "projected_ppr"]], n_excluded
+    return merged[["player_id", "player_name", "team", "projected_ppr", "confidence_tier"]], n_excluded
 
 
 def _wr_week1_2026():
@@ -152,7 +164,7 @@ def _wr_week1_2026():
     raw_2026["season_projected_pts"] = slope * raw_2026["projected_score"] + intercept
     raw_2026["projected_ppr"] = raw_2026["season_projected_pts"] / raw_2026["expected_games_2026"]
 
-    return raw_2026[["player_id", "player_name", "team", "projected_ppr"]], 0
+    return raw_2026[["player_id", "player_name", "team", "projected_ppr", "confidence_tier"]], 0
 
 
 def generate_fantasy_rankings_2026_week1_json():
@@ -200,6 +212,7 @@ def generate_fantasy_rankings_2026_week1_json():
                 "applied to real 2026 preseason inputs - same static per-game convention as 2025 WR)"
             ),
             "accuracy_tier": None,
+            "confidence_tier": r["confidence_tier"],
         })
 
     # AUDIT_2026-08-12_DEEP.md Section 10.9: real shape guards before writing.

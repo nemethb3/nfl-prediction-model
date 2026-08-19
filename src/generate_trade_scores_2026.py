@@ -43,6 +43,7 @@ from build_trade_signals import (
 )
 from constants import MIN_GAMES_FOR_SEASON, TREND_EPSILON
 from simulate_2026_playoffs import real_2026_carryover_elo
+from roster_utils import apply_current_team
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -124,10 +125,15 @@ def _real_current_teams():
     """Real 2026 team per player from the real, purpose-built 2026 roster
     files - NOT each player's real 2025 team, which the 2026-07-30 audit
     already found goes stale for any real trade (the George Pickens class
-    of bug)."""
+    of bug). Team is further corrected against the real, LIVE 2026 roster
+    (roster_utils.py) - the {position}_epa_projections_2026.csv files
+    themselves are a static snapshot that can also go stale between real
+    transactions (see update_rosters_2026.py's docstring for the real,
+    verified Kenneth Walker III case this fixes)."""
     teams = {}
     for position in POSITIONS:
         df = pd.read_csv(os.path.join(PROCESSED_DIR, f"{position.lower()}_epa_projections_2026.csv"))
+        df = apply_current_team(df)
         for _, row in df.drop_duplicates("player_id").iterrows():
             teams[row["player_id"]] = row["team"]
     return teams

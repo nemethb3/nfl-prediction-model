@@ -45,7 +45,20 @@ prior season only - build_player_props_signals.py) to every position's
 TD model. A team's real red-zone opportunity volume is mechanically a
 scoring-chance signal (this is where red-zone data belongs, not in the
 yardage linear models - see train_player_props_models.py docstring).
-Real, honest before/after AUC printed below."""
+Real, honest before/after AUC printed below.
+
+Real opponent-EPA-allowed-by-position addition (Fantasy Model Overhaul
+Phase 1): adds `opp_epa_allowed_vs_position_prior_season` (real, prior-
+season defensive EPA/play allowed to this position). Real, honest
+before/after AUC printed below, same as every other addition here.
+
+Real recent-form addition (Fantasy Model Overhaul Phase 1B): adds
+`recent_form_ppr_last4` (real, leak-free trailing mean PPR over a player's
+own last 4 real games played). Chosen over role-based per-tier models and
+usage trending after a real, fair before/after measurement
+(experiment_phase1b_features.py) - the only one of the three with a real,
+consistent gain (avg AUC delta +0.014, zero real losses); the other two
+were real null results, not promoted."""
 
 import json
 import os
@@ -71,7 +84,8 @@ TD_CAREER_AVG_COLS = {
     "WR": ["receiving_tds"],
     "TE": ["receiving_tds"],
 }
-COMMON_FEATURES = ["opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days", "prior_season_rz_rate"]
+COMMON_FEATURES = ["opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days", "prior_season_rz_rate",
+                    "opp_epa_allowed_vs_position_prior_season", "recent_form_ppr_last4"]
 
 
 def train_td_logistic_models():

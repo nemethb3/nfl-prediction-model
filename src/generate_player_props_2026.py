@@ -54,7 +54,13 @@ this naturally resolves to each team's real 2025 rate, the same "static
 prior-season number" convention already used for team_elo_offensive_
 defensive_2026_regressed.json. `career_avg_snap_pct` uses each player's
 real full 2015-2025 mean snap share, same convention as every other
-career-average feature here."""
+career-average feature here.
+
+Real opponent-EPA-allowed-by-position addition (Fantasy Model Overhaul
+Phase 1): reuses the cached defense_epa_allowed_by_position_2015_2025.csv
+(build_defense_epa_allowed_by_position.py) directly - for 2026 this
+already resolves to each opponent's real 2025 rate, same static
+prior-season convention as pace/RZ above."""
 
 import json
 import os
@@ -63,6 +69,7 @@ import numpy as np
 import pandas as pd
 
 from build_player_props_signals import _real_prior_season_team_pace_and_rz
+from roster_utils import apply_current_team
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
@@ -72,6 +79,8 @@ TD_MODELS_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "td_props
 REGRESSED_OD_ELO_PATH = os.path.join(PROCESSED_DIR, "team_elo_offensive_defensive_2026_regressed.json")
 SCHEDULE_PATH = os.path.join(RAW_DIR, "schedules_2026.csv")
 PLAYER_STATS_PATH = os.path.join(PROCESSED_DIR, "player_weekly_stats.csv")
+DEF_EPA_ALLOWED_BY_POSITION_PATH = os.path.join(
+    PROCESSED_DIR, "defense_epa_allowed_by_position_2015_2025.csv")
 OUTPUT_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "player_props_2026.json")
 
 SEASON = 2026
@@ -91,10 +100,16 @@ TD_CAREER_AVG_COLS = {
 
 
 def _real_2026_roster(position):
-    """Same real, already-fixed source generate_fantasy_rankings_2026_
-    week1.py and generate_trade_scores_2026.py both use."""
+    """Real player_id/player_name from {position}_epa_projections_2026.csv
+    (same real source generate_fantasy_rankings_2026_week1.py and
+    generate_trade_scores_2026.py both use), but `team` is corrected
+    against the real, live 2026 roster (roster_utils.py) - see
+    update_rosters_2026.py's docstring for the real, verified staleness
+    bug this fixes (that CSV's own `team` column is a byproduct of an EPA
+    model that explicitly disclaims tracking real transactions)."""
     path = os.path.join(PROCESSED_DIR, f"{position.lower()}_epa_projections_2026.csv")
     df = pd.read_csv(path)
+    df = apply_current_team(df)
     return df[["player_id", "player_name", "team"]].drop_duplicates("player_id")
 
 
@@ -107,6 +122,21 @@ def _real_career_averages(position, player_ids):
     return out
 
 
+def _real_recent_form(position, player_ids):
+    """Real recent-form feature for 2026 scoring (Fantasy Model Overhaul
+    Phase 1B, the real winning approach - see train_player_props_models.py
+    docstring): each rostered player's real trailing mean PPR over their
+    own last 4 real games played (most recent 4 rows by season/week -
+    naturally resolves to the end of their real 2025 season, the same
+    "most recent real data" convention every other 2026 preseason feature
+    here already uses, held static until real 2026 games are played)."""
+    stats = pd.read_csv(PLAYER_STATS_PATH)
+    stats = stats[(stats["season_type"] == "REG") & (stats["position"] == position) &
+                  (stats["player_id"].isin(player_ids))].sort_values(["player_id", "season", "week"])
+    out = stats.groupby("player_id").tail(4).groupby("player_id")["fantasy_points_ppr"].mean()
+    return out.rename("recent_form_ppr_last4")
+
+
 def _real_2026_team_pace_and_rz():
     """Real 2025 team pace/red-zone rate (the real prior-season lookup
     build_player_props_signals.py computes resolves to season=2026 ->
@@ -114,6 +144,15 @@ def _real_2026_team_pace_and_rz():
     lagged = _real_prior_season_team_pace_and_rz()
     return lagged[lagged["season"] == SEASON].set_index("team")[
         ["prior_season_pace_factor", "prior_season_rz_rate"]]
+
+
+def _real_2026_def_epa_allowed_by_position(position):
+    """Real 2025 opponent defensive EPA/play allowed to this position (the
+    cached lookup already resolves season=2026 -> real 2025 rate, same
+    convention as pace/RZ above)."""
+    df = pd.read_csv(DEF_EPA_ALLOWED_BY_POSITION_PATH)
+    df = df[(df["season"] == SEASON) & (df["position"] == position)]
+    return df.set_index("team")["opp_epa_allowed_vs_position_prior_season"]
 
 
 def _real_2026_schedule_by_team():
@@ -181,8 +220,10 @@ def generate_player_props_2026():
     for position in POSITIONS:
         roster = _real_2026_roster(position)
         career_avgs = _real_career_averages(position, roster["player_id"].tolist())
+        recent_form = _real_recent_form(position, roster["player_id"].tolist())
         roster_with_history = roster.merge(career_avgs, on="player_id", how="inner")
-        roster_with_history = roster_with_history.dropna(subset=["career_avg_snap_pct"])
+        roster_with_history = roster_with_history.merge(recent_form, on="player_id", how="left")
+        roster_with_history = roster_with_history.dropna(subset=["career_avg_snap_pct", "recent_form_ppr_last4"])
         n_excluded = len(roster) - len(roster_with_history)
         print(f"[{position}] {len(roster_with_history)}/{len(roster)} real rostered players have 2015-2025 "
               f"history ({n_excluded} real rookies/no-history players excluded - a real, disclosed gap, "
@@ -190,6 +231,7 @@ def generate_player_props_2026():
 
         position_models = models[position]
         position_td_models = td_models.get(position, {})
+        def_epa_allowed = _real_2026_def_epa_allowed_by_position(position)
         n_games = 0
         for _, player in roster_with_history.iterrows():
             if player["team"] not in team_pace_rz.index:
@@ -200,6 +242,8 @@ def generate_player_props_2026():
                 opp_elo = regressed_od_elo.get(g["opponent"], {})
                 if "d_elo" not in opp_elo:
                     continue
+                if g["opponent"] not in def_epa_allowed.index:
+                    continue
                 week_norm = (g["week"] - week_min) / (week_max - week_min)
                 common_feature_values = {
                     "opp_d_elo": float(opp_elo["d_elo"]),
@@ -207,6 +251,8 @@ def generate_player_props_2026():
                     "week_norm": float(week_norm),
                     "is_dome": float(g["is_dome"]),
                     "own_rest_days": float(g["own_rest_days"]),
+                    "opp_epa_allowed_vs_position_prior_season": float(def_epa_allowed[g["opponent"]]),
+                    "recent_form_ppr_last4": float(player["recent_form_ppr_last4"]),
                 }
                 feature_values = {
                     f"career_avg_{c}": float(player[f"career_avg_{c}"]) for c in CAREER_AVG_SOURCE_COLS[position]

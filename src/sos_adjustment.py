@@ -68,27 +68,29 @@ def compute_team_sos(opponents, defense_metrics, metric_cols):
     return merged.groupby("team")[metric_cols].mean().reset_index()
 
 
-def build_component_models():
+def build_component_models(ref_season=HOLDOUT_SEASON):
     """Trains + honestly backtests the pass_epa_allowed and rush_epa_allowed
     Ridge models (reusing team_strength.py's validated pipeline), and
-    projects both forward to 2025 (from 2024 data - the season our QB/WR/RB
-    EPA projections are actually for)."""
+    projects both forward from `ref_season` data (default HOLDOUT_SEASON=
+    2024, i.e. projecting 2025 - the season our QB/WR/RB EPA projections
+    were originally for). Pass ref_season=2025 to project 2026 instead -
+    same trained model/pipeline, just jumping off one season later."""
     pass_rush_war_df = pd.read_csv(os.path.join(PROCESSED_DIR, "pass_rush_war_2015_2025.csv"))
     team_epa = compute_team_defense_epa()
     df = build_team_defense_features(team_epa, pass_rush_war_df)
 
     models = {}
-    projections_2025 = {}
+    projections_out = {}
     for target_col, out_col in [("pass_epa_allowed", "predicted_pass_epa_allowed"),
                                  ("rush_epa_allowed", "predicted_rush_epa_allowed")]:
         model, _ = train_defense_component_model(df, target_col)
         models[target_col] = model
-        proj, ref_season = predict_next_season(df, model, ref_season=HOLDOUT_SEASON,
-                                                 target_col=target_col, out_col=out_col)
-        projections_2025[target_col] = proj[["team", out_col]]
+        proj, _ = predict_next_season(df, model, ref_season=ref_season,
+                                       target_col=target_col, out_col=out_col)
+        projections_out[target_col] = proj[["team", out_col]]
 
-    proj_2025 = projections_2025["pass_epa_allowed"].merge(projections_2025["rush_epa_allowed"], on="team")
-    return df, models, proj_2025
+    proj_out = projections_out["pass_epa_allowed"].merge(projections_out["rush_epa_allowed"], on="team")
+    return df, models, proj_out
 
 
 def estimate_sos_weight(position, residuals_df, team_epa_raw, schedules, train_seasons):
@@ -394,6 +396,103 @@ def run_availability_adjustment():
                  if "mae_model" in r else " | (2026 - not yet played, holdout-only validation)"))
     return results
 
+
+def run_wr_2026_availability_and_sos():
+    """Real, disclosed fix (2026-08-18, Filter DEF/K + Expand Projections
+    task; SOS portion made real 2026-08-19, Fantasy Model Overhaul Phase 1).
+    generate_fantasy_rankings_2026_week1.py's _wr_week1_2026() reads
+    predicted_epa_per_play_sos_adjusted + expected_games_2026 from
+    wr_epa_projections_2026.csv - real columns this project's WR pipeline
+    has always depended on, but whose real generator could not be found
+    anywhere in this repo (run_sos_adjustment/run_availability_adjustment
+    above are wired to the _2025.csv backtest files for offense and the
+    _2026.csv files for defense only - never WR's own 2026 file; the data
+    file itself isn't git-tracked either, so its prior real values aren't
+    recoverable). Real fix reusing this project's OWN already-validated
+    methodology end to end, not inventing something new:
+    - expected_games_2026: the SAME real, validated availability model
+      already fit for offense's 2025 backtest above (build_position_
+      availability, same real train/holdout seasons - a real, already-fit
+      model, not refit), applied with ref_season=2025 to project forward
+      into 2026 - the exact same real "most recent real season's features
+      -> next season's expected games" pattern CB/S/LB already use for
+      their own real 2026 projections just above.
+    - predicted_epa_per_play_sos_adjusted: previously a disclosed no-op
+      fallback (sos_adjustment_applied=False) because build_team_opponents()
+      needs a real 2026-shaped schedule and schedules_2015_2025.csv is
+      historical-only by design. Fixed for real: data/raw/schedules_2026.csv
+      (the real 2026 NFL schedule, already in this repo) has exactly the
+      shape build_team_opponents() needs. See run_wr_2026_sos_adjustment()
+      below - same real Ridge pass-EPA-allowed model and the same real,
+      historically-fit WR SOS slope (estimate_sos_weight, unchanged, still
+      trained on real 2016-2023 residuals), just applied one season further
+      forward against the real 2026 schedule."""
+    season_stats_df = pd.read_csv(os.path.join(PROCESSED_DIR, "player_season_stats.csv"))
+    offense_train_seasons = range(TRAIN_START, HOLDOUT_SEASON)
+    availability_2026, choice = build_position_availability(
+        "WR", season_stats_df, "games_played", offense_train_seasons, HOLDOUT_SEASON, ref_season=2025)
+
+    proj_path = os.path.join(PROCESSED_DIR, "wr_epa_projections_2026.csv")
+    projections = pd.read_csv(proj_path).drop(
+        columns=["availability_factor", "expected_games_2026"], errors="ignore")
+    merged = projections.merge(availability_2026, on="player_id", how="left")
+    merged["availability_factor"] = merged["availability_factor"].fillna(choice["position_avg"])
+    merged["expected_games_2026"] = (merged["availability_factor"] * SEASON_LENGTH[2026]).round(1)
+    merged.to_csv(proj_path, index=False, encoding="utf-8")
+    print(f"[WR 2026] availability method={choice['method']} | Saved {proj_path} (added real "
+          f"expected_games_2026 [validated availability model])")
+
+    sos_info = run_wr_2026_sos_adjustment()
+    return merged, sos_info
+
+
+def run_wr_2026_sos_adjustment():
+    """Real 2026 WR SOS adjustment (2026-08-19 fix, Fantasy Model Overhaul
+    Phase 1 Part 2). Reuses this module's own already-validated pipeline end
+    to end - the same real Ridge pass_epa_allowed model (build_component_
+    models), the same real historically-estimated WR SOS slope
+    (estimate_sos_weight, trained on real 2016-2023 residuals, UNCHANGED) -
+    just applied one season further forward (ref_season=2025, projecting
+    2026 team pass-defense quality) against the real 2026 schedule
+    (data/raw/schedules_2026.csv, 272 real REG/POST games) instead of the
+    historical-only schedules_2015_2025.csv the old fallback couldn't use.
+
+    2026 hasn't been played yet, so - same real, disclosed limitation
+    run_availability_adjustment() already states for CB/S/LB's 2026
+    projections - there's no real-outcome check possible here, unlike the
+    2025 SOS fit's own validate_sos_adjustment() call. The slope itself IS
+    validated (real 2025 MAE/R2 improvement, printed by run_sos_adjustment())
+    - what's not validated is applying that already-proven slope one season
+    further forward, which is the same forward-projection assumption every
+    other 2026 preseason number in this project already makes."""
+    features_df = pd.read_csv(os.path.join(PROCESSED_DIR, "player_features_with_history.csv"))
+    season_stats_df = pd.read_csv(os.path.join(PROCESSED_DIR, "player_season_stats.csv"))
+    schedules_hist = pd.read_csv(os.path.join(RAW_DIR, "schedules_2015_2025.csv"))
+    schedules_2026 = pd.read_csv(os.path.join(RAW_DIR, "schedules_2026.csv"))
+
+    print("=" * 60 + "\n[WR 2026] Building pass defense-allowed model (projecting 2026 from 2025)\n" + "=" * 60)
+    team_epa_raw, _, proj_2026 = build_component_models(ref_season=2025)
+
+    metric_col = POSITION_SOS_METRIC["WR"]  # pass_epa_allowed
+    pred_col = f"predicted_{metric_col}"
+
+    model, prepped = load_epa_model("WR", features_df, season_stats_df)
+    residuals = compute_epa_model_residuals(model, prepped)
+    train_seasons = range(TRAIN_START, HOLDOUT_SEASON)
+    slope, corr, n = estimate_sos_weight("WR", residuals, team_epa_raw, schedules_hist, train_seasons)
+
+    opponents_2026 = build_team_opponents(schedules_2026, 2026)
+    sos_2026 = compute_team_sos(opponents_2026, proj_2026.rename(columns={pred_col: metric_col}), [metric_col])
+
+    proj_path = os.path.join(PROCESSED_DIR, "wr_epa_projections_2026.csv")
+    projections = pd.read_csv(proj_path)
+    adjusted = apply_sos_adjustment(projections, sos_2026, slope, metric_col)
+    adjusted["sos_adjustment_applied"] = True
+    adjusted.to_csv(proj_path, index=False, encoding="utf-8")
+    print(f"[WR 2026] slope={slope:+.4f} corr={corr:+.3f} (n={n}, real 2016-2023 fit) | "
+          f"Saved {proj_path} (real opponent_sos + predicted_epa_per_play_sos_adjusted, "
+          f"sos_adjustment_applied=True) - no real-outcome check possible yet (2026 not yet played)")
+    return {"slope": slope, "corr": corr, "n": n}
 
 
 # ---------------------------------------------------------------------------

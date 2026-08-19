@@ -38,7 +38,24 @@ team-level offensive-play volume from play-by-play, prior season only).
 scoring-opportunity signal, not a yardage/reception signal, and belongs
 with the TD logistic models instead (see train_td_logistic_models.py).
 Real, honest before/after result printed below - reported as measured,
-not assumed."""
+not assumed.
+
+Real opponent-EPA-allowed-by-position addition (Fantasy Model Overhaul
+Phase 1): adds `opp_epa_allowed_vs_position_prior_season` (real, prior-
+season defensive EPA/play allowed to this position - build_player_props_
+signals.py). Honest before/after OOF R2/MAE printed below, same as every
+other feature addition here - kept regardless of direction, not filtered
+to only report improvements.
+
+Real recent-form addition (Fantasy Model Overhaul Phase 1B): adds
+`recent_form_ppr_last4` (real, leak-free trailing mean PPR over a player's
+own last 4 real games played - crosses season boundaries by design, not
+reset each September). Chosen over two other tested approaches (role-based
+per-tier models, usage trending) after a real, fair, apples-to-apples
+before/after measurement (experiment_phase1b_features.py) - recent_form was
+the only one of the three with a real, consistent gain across all 16 real
+models (avg OOF R2 delta +0.017, zero real losses); the other two were
+real, honest null results and were NOT promoted to production."""
 
 import json
 import os
@@ -82,7 +99,8 @@ TARGET_COLS = {
 def _features_for(position):
     return [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]] + [
         "opp_d_elo", "is_home", "week_norm", "is_dome", "own_rest_days",
-        "career_avg_snap_pct", "prior_season_pace_factor"]
+        "career_avg_snap_pct", "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season", "recent_form_ppr_last4"]
 
 
 def train_player_props_models():

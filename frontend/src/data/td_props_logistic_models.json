@@ -2,7 +2,7 @@
   "QB": {
     "passing_tds": {
       "base_rate": 0.682,
-      "groupkfold_auc": 0.704,
+      "groupkfold_auc": 0.715,
       "n_real_players": 182,
       "n_real_games": 6052,
       "features": [
@@ -12,18 +12,22 @@
         "week_norm",
         "is_dome",
         "own_rest_days",
-        "prior_season_rz_rate"
+        "prior_season_rz_rate",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_passing_tds": 0.80955,
-        "opp_d_elo": -0.03994,
-        "is_home": 0.06469,
-        "week_norm": -0.00128,
-        "is_dome": 0.03173,
-        "own_rest_days": -0.03253,
-        "prior_season_rz_rate": 0.02487
+        "career_avg_passing_tds": 0.52229,
+        "opp_d_elo": -0.04014,
+        "is_home": 0.06804,
+        "week_norm": 0.01369,
+        "is_dome": 0.03844,
+        "own_rest_days": -0.03845,
+        "prior_season_rz_rate": 0.01889,
+        "opp_epa_allowed_vs_position_prior_season": 0.03388,
+        "recent_form_ppr_last4": 0.40641
       },
-      "intercept": 0.8643,
+      "intercept": 0.8704,
       "scaler_mean": {
         "career_avg_passing_tds": 1.2849,
         "opp_d_elo": 1505.0551,
@@ -31,7 +35,9 @@
         "week_norm": 0.4957,
         "is_dome": 0.2911,
         "own_rest_days": 7.4218,
-        "prior_season_rz_rate": 9.0551
+        "prior_season_rz_rate": 9.0551,
+        "opp_epa_allowed_vs_position_prior_season": -0.176,
+        "recent_form_ppr_last4": 14.1888
       },
       "scaler_scale": {
         "career_avg_passing_tds": 0.6136,
@@ -40,12 +46,14 @@
         "week_norm": 0.3035,
         "is_dome": 0.4543,
         "own_rest_days": 2.0212,
-        "prior_season_rz_rate": 1.5304
+        "prior_season_rz_rate": 1.5304,
+        "opp_epa_allowed_vs_position_prior_season": 0.5032,
+        "recent_form_ppr_last4": 6.7075
       }
     },
     "rushing_tds": {
       "base_rate": 0.132,
-      "groupkfold_auc": 0.652,
+      "groupkfold_auc": 0.658,
       "n_real_players": 182,
       "n_real_games": 6052,
       "features": [
@@ -55,18 +63,22 @@
         "week_norm",
         "is_dome",
         "own_rest_days",
-        "prior_season_rz_rate"
+        "prior_season_rz_rate",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_rushing_tds": 0.52942,
-        "opp_d_elo": -0.06107,
-        "is_home": 0.10916,
-        "week_norm": -0.04262,
-        "is_dome": 0.01721,
-        "own_rest_days": 0.03228,
-        "prior_season_rz_rate": -0.05114
+        "career_avg_rushing_tds": 0.47673,
+        "opp_d_elo": -0.0573,
+        "is_home": 0.11174,
+        "week_norm": -0.02889,
+        "is_dome": 0.01812,
+        "own_rest_days": 0.02868,
+        "prior_season_rz_rate": -0.07136,
+        "opp_epa_allowed_vs_position_prior_season": 0.07072,
+        "recent_form_ppr_last4": 0.17965
       },
-      "intercept": -1.9946,
+      "intercept": -2.0109,
       "scaler_mean": {
         "career_avg_rushing_tds": 0.1482,
         "opp_d_elo": 1505.0551,
@@ -74,7 +86,9 @@
         "week_norm": 0.4957,
         "is_dome": 0.2911,
         "own_rest_days": 7.4218,
-        "prior_season_rz_rate": 9.0551
+        "prior_season_rz_rate": 9.0551,
+        "opp_epa_allowed_vs_position_prior_season": -0.176,
+        "recent_form_ppr_last4": 14.1888
       },
       "scaler_scale": {
         "career_avg_rushing_tds": 0.1531,
@@ -83,14 +97,16 @@
         "week_norm": 0.3035,
         "is_dome": 0.4543,
         "own_rest_days": 2.0212,
-        "prior_season_rz_rate": 1.5304
+        "prior_season_rz_rate": 1.5304,
+        "opp_epa_allowed_vs_position_prior_season": 0.5032,
+        "recent_form_ppr_last4": 6.7075
       }
     }
   },
   "RB": {
     "rushing_tds": {
       "base_rate": 0.206,
-      "groupkfold_auc": 0.69,
+      "groupkfold_auc": 0.704,
       "n_real_players": 453,
       "n_real_games": 13848,
       "features": [
@@ -100,18 +116,22 @@
         "week_norm",
         "is_dome",
         "own_rest_days",
-        "prior_season_rz_rate"
+        "prior_season_rz_rate",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_rushing_tds": 0.61761,
-        "opp_d_elo": -0.09609,
-        "is_home": 0.0843,
-        "week_norm": 0.0442,
-        "is_dome": 0.00818,
-        "own_rest_days": 0.01858,
-        "prior_season_rz_rate": -0.00808
+        "career_avg_rushing_tds": 0.37537,
+        "opp_d_elo": -0.09365,
+        "is_home": 0.0841,
+        "week_norm": 0.05128,
+        "is_dome": 0.01182,
+        "own_rest_days": 0.01662,
+        "prior_season_rz_rate": -0.00283,
+        "opp_epa_allowed_vs_position_prior_season": 0.02799,
+        "recent_form_ppr_last4": 0.37478
       },
-      "intercept": -1.4529,
+      "intercept": -1.4783,
       "scaler_mean": {
         "career_avg_rushing_tds": 0.2489,
         "opp_d_elo": 1505.7064,
@@ -119,7 +139,9 @@
         "week_norm": 0.4925,
         "is_dome": 0.29,
         "own_rest_days": 7.4506,
-        "prior_season_rz_rate": 9.0686
+        "prior_season_rz_rate": 9.0686,
+        "opp_epa_allowed_vs_position_prior_season": -0.0661,
+        "recent_form_ppr_last4": 8.5334
       },
       "scaler_scale": {
         "career_avg_rushing_tds": 0.2285,
@@ -128,14 +150,16 @@
         "week_norm": 0.302,
         "is_dome": 0.4538,
         "own_rest_days": 2.0565,
-        "prior_season_rz_rate": 1.5252
+        "prior_season_rz_rate": 1.5252,
+        "opp_epa_allowed_vs_position_prior_season": 0.0671,
+        "recent_form_ppr_last4": 6.1509
       }
     }
   },
   "WR": {
     "receiving_tds": {
       "base_rate": 0.204,
-      "groupkfold_auc": 0.644,
+      "groupkfold_auc": 0.664,
       "n_real_players": 614,
       "n_real_games": 20285,
       "features": [
@@ -145,18 +169,22 @@
         "week_norm",
         "is_dome",
         "own_rest_days",
-        "prior_season_rz_rate"
+        "prior_season_rz_rate",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_receiving_tds": 0.45793,
-        "opp_d_elo": -0.04171,
-        "is_home": 0.06787,
-        "week_norm": -0.00973,
-        "is_dome": 0.06796,
-        "own_rest_days": -0.03095,
-        "prior_season_rz_rate": 0.01949
+        "career_avg_receiving_tds": 0.22134,
+        "opp_d_elo": -0.02965,
+        "is_home": 0.07133,
+        "week_norm": -0.00632,
+        "is_dome": 0.059,
+        "own_rest_days": -0.03299,
+        "prior_season_rz_rate": 0.01328,
+        "opp_epa_allowed_vs_position_prior_season": 0.03111,
+        "recent_form_ppr_last4": 0.36391
       },
-      "intercept": -1.4218,
+      "intercept": -1.4455,
       "scaler_mean": {
         "career_avg_receiving_tds": 0.2495,
         "opp_d_elo": 1506.4502,
@@ -164,7 +192,9 @@
         "week_norm": 0.4917,
         "is_dome": 0.2925,
         "own_rest_days": 7.4431,
-        "prior_season_rz_rate": 9.0404
+        "prior_season_rz_rate": 9.0404,
+        "opp_epa_allowed_vs_position_prior_season": 0.2237,
+        "recent_form_ppr_last4": 8.5471
       },
       "scaler_scale": {
         "career_avg_receiving_tds": 0.1941,
@@ -173,14 +203,16 @@
         "week_norm": 0.3017,
         "is_dome": 0.4549,
         "own_rest_days": 2.0506,
-        "prior_season_rz_rate": 1.5385
+        "prior_season_rz_rate": 1.5385,
+        "opp_epa_allowed_vs_position_prior_season": 0.1234,
+        "recent_form_ppr_last4": 5.651
       }
     }
   },
   "TE": {
     "receiving_tds": {
       "base_rate": 0.169,
-      "groupkfold_auc": 0.598,
+      "groupkfold_auc": 0.619,
       "n_real_players": 327,
       "n_real_games": 10289,
       "features": [
@@ -190,18 +222,22 @@
         "week_norm",
         "is_dome",
         "own_rest_days",
-        "prior_season_rz_rate"
+        "prior_season_rz_rate",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_receiving_tds": 0.28812,
-        "opp_d_elo": -0.07432,
-        "is_home": 0.01882,
-        "week_norm": 0.01978,
-        "is_dome": -0.00406,
-        "own_rest_days": -0.01,
-        "prior_season_rz_rate": 0.04043
+        "career_avg_receiving_tds": 0.09074,
+        "opp_d_elo": -0.07882,
+        "is_home": 0.02172,
+        "week_norm": 0.02492,
+        "is_dome": -0.00337,
+        "own_rest_days": -0.01343,
+        "prior_season_rz_rate": 0.03387,
+        "opp_epa_allowed_vs_position_prior_season": 0.00174,
+        "recent_form_ppr_last4": 0.32752
       },
-      "intercept": -1.6194,
+      "intercept": -1.6435,
       "scaler_mean": {
         "career_avg_receiving_tds": 0.1891,
         "opp_d_elo": 1505.1827,
@@ -209,7 +245,9 @@
         "week_norm": 0.492,
         "is_dome": 0.2903,
         "own_rest_days": 7.4343,
-        "prior_season_rz_rate": 9.0379
+        "prior_season_rz_rate": 9.0379,
+        "opp_epa_allowed_vs_position_prior_season": 0.1948,
+        "recent_form_ppr_last4": 6.1844
       },
       "scaler_scale": {
         "career_avg_receiving_tds": 0.1551,
@@ -218,7 +256,9 @@
         "week_norm": 0.3009,
         "is_dome": 0.4539,
         "own_rest_days": 2.0385,
-        "prior_season_rz_rate": 1.5126
+        "prior_season_rz_rate": 1.5126,
+        "opp_epa_allowed_vs_position_prior_season": 0.1803,
+        "recent_form_ppr_last4": 4.3318
       }
     }
   }

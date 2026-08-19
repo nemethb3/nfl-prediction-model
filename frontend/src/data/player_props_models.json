@@ -1,8 +1,8 @@
 {
   "QB": {
     "completions": {
-      "oof_mae": 5.902,
-      "oof_r2": 0.286,
+      "oof_mae": 5.818,
+      "oof_r2": 0.311,
       "samples": 6052,
       "features": [
         "career_avg_completions",
@@ -15,20 +15,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_completions": 2.42754,
-        "career_avg_attempts": -0.75447,
-        "career_avg_passing_yards": 2.62833,
-        "career_avg_rushing_yards": -0.21236,
-        "opp_d_elo": -0.01925,
-        "is_home": 0.16858,
-        "week_norm": -0.3712,
-        "is_dome": 0.15996,
-        "own_rest_days": -0.20405,
-        "career_avg_snap_pct": 0.49333,
-        "prior_season_pace_factor": 0.10649
+        "career_avg_completions": 1.78763,
+        "career_avg_attempts": 0.71519,
+        "career_avg_passing_yards": 0.31393,
+        "career_avg_rushing_yards": -1.00866,
+        "opp_d_elo": -0.03047,
+        "is_home": 0.18376,
+        "week_norm": -0.31486,
+        "is_dome": 0.20293,
+        "own_rest_days": -0.21739,
+        "career_avg_snap_pct": 0.55,
+        "prior_season_pace_factor": 0.06921,
+        "opp_epa_allowed_vs_position_prior_season": 0.02676,
+        "recent_form_ppr_last4": 2.26484
       },
       "intercept": 18.4504,
       "scaler_mean": {
@@ -42,7 +46,9 @@
         "is_dome": 0.2911,
         "own_rest_days": 7.4218,
         "career_avg_snap_pct": 0.8178,
-        "prior_season_pace_factor": 1.0004
+        "prior_season_pace_factor": 1.0004,
+        "opp_epa_allowed_vs_position_prior_season": -0.176,
+        "recent_form_ppr_last4": 14.1888
       },
       "scaler_scale": {
         "career_avg_completions": 6.3973,
@@ -55,12 +61,14 @@
         "is_dome": 0.4543,
         "own_rest_days": 2.0212,
         "career_avg_snap_pct": 0.2374,
-        "prior_season_pace_factor": 0.0434
+        "prior_season_pace_factor": 0.0434,
+        "opp_epa_allowed_vs_position_prior_season": 0.5032,
+        "recent_form_ppr_last4": 6.7075
       }
     },
     "passing_yards": {
-      "oof_mae": 70.224,
-      "oof_r2": 0.282,
+      "oof_mae": 68.982,
+      "oof_r2": 0.309,
       "samples": 6052,
       "features": [
         "career_avg_completions",
@@ -73,20 +81,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_completions": -4.08939,
-        "career_avg_attempts": -13.57937,
-        "career_avg_passing_yards": 62.90662,
-        "career_avg_rushing_yards": -1.62971,
-        "opp_d_elo": -2.11976,
-        "is_home": 2.82884,
-        "week_norm": -4.52783,
-        "is_dome": 3.26382,
-        "own_rest_days": -1.84284,
-        "career_avg_snap_pct": 10.12022,
-        "prior_season_pace_factor": 0.98768
+        "career_avg_completions": -11.97327,
+        "career_avg_attempts": 4.47515,
+        "career_avg_passing_yards": 34.6534,
+        "career_avg_rushing_yards": -11.34854,
+        "opp_d_elo": -2.21108,
+        "is_home": 3.00917,
+        "week_norm": -3.84235,
+        "is_dome": 3.79291,
+        "own_rest_days": -2.01248,
+        "career_avg_snap_pct": 10.7531,
+        "prior_season_pace_factor": 0.53161,
+        "opp_epa_allowed_vs_position_prior_season": 0.78412,
+        "recent_form_ppr_last4": 27.6679
       },
       "intercept": 204.8896,
       "scaler_mean": {
@@ -100,7 +112,9 @@
         "is_dome": 0.2911,
         "own_rest_days": 7.4218,
         "career_avg_snap_pct": 0.8178,
-        "prior_season_pace_factor": 1.0004
+        "prior_season_pace_factor": 1.0004,
+        "opp_epa_allowed_vs_position_prior_season": -0.176,
+        "recent_form_ppr_last4": 14.1888
       },
       "scaler_scale": {
         "career_avg_completions": 6.3973,
@@ -113,14 +127,16 @@
         "is_dome": 0.4543,
         "own_rest_days": 2.0212,
         "career_avg_snap_pct": 0.2374,
-        "prior_season_pace_factor": 0.0434
+        "prior_season_pace_factor": 0.0434,
+        "opp_epa_allowed_vs_position_prior_season": 0.5032,
+        "recent_form_ppr_last4": 6.7075
       }
     }
   },
   "RB": {
     "rushing_yards": {
-      "oof_mae": 21.97,
-      "oof_r2": 0.305,
+      "oof_mae": 21.498,
+      "oof_r2": 0.333,
       "samples": 13848,
       "features": [
         "career_avg_carries",
@@ -134,21 +150,25 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_carries": 7.19565,
-        "career_avg_rushing_yards": 13.19503,
-        "career_avg_targets": -3.43148,
-        "career_avg_receptions": 2.69406,
-        "career_avg_receiving_yards": 1.86982,
-        "opp_d_elo": -0.69242,
-        "is_home": 0.58647,
-        "week_norm": 1.10729,
-        "is_dome": -0.11387,
-        "own_rest_days": 0.1612,
-        "career_avg_snap_pct": -0.7148,
-        "prior_season_pace_factor": -0.16494
+        "career_avg_carries": 8.49732,
+        "career_avg_rushing_yards": 6.52048,
+        "career_avg_targets": -1.55579,
+        "career_avg_receptions": 0.29257,
+        "career_avg_receiving_yards": -1.68679,
+        "opp_d_elo": -0.39679,
+        "is_home": 0.55237,
+        "week_norm": 1.26084,
+        "is_dome": -0.079,
+        "own_rest_days": 0.11739,
+        "career_avg_snap_pct": -0.69007,
+        "prior_season_pace_factor": -0.23492,
+        "opp_epa_allowed_vs_position_prior_season": 1.08651,
+        "recent_form_ppr_last4": 10.0783
       },
       "intercept": 34.4824,
       "scaler_mean": {
@@ -163,7 +183,9 @@
         "is_dome": 0.29,
         "own_rest_days": 7.4506,
         "career_avg_snap_pct": 0.382,
-        "prior_season_pace_factor": 1.001
+        "prior_season_pace_factor": 1.001,
+        "opp_epa_allowed_vs_position_prior_season": -0.0661,
+        "recent_form_ppr_last4": 8.5334
       },
       "scaler_scale": {
         "career_avg_carries": 5.0061,
@@ -177,12 +199,14 @@
         "is_dome": 0.4538,
         "own_rest_days": 2.0565,
         "career_avg_snap_pct": 0.1776,
-        "prior_season_pace_factor": 0.0435
+        "prior_season_pace_factor": 0.0435,
+        "opp_epa_allowed_vs_position_prior_season": 0.0671,
+        "recent_form_ppr_last4": 6.1509
       }
     },
     "receptions": {
-      "oof_mae": 1.256,
-      "oof_r2": 0.236,
+      "oof_mae": 1.239,
+      "oof_r2": 0.253,
       "samples": 13848,
       "features": [
         "career_avg_carries",
@@ -196,21 +220,25 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_carries": -0.29517,
-        "career_avg_rushing_yards": 0.28387,
-        "career_avg_targets": 0.40424,
-        "career_avg_receptions": 0.12173,
-        "career_avg_receiving_yards": 0.33715,
-        "opp_d_elo": 0.00346,
-        "is_home": 0.02406,
-        "week_norm": -0.03204,
-        "is_dome": 0.01625,
-        "own_rest_days": -0.01649,
-        "career_avg_snap_pct": 0.11952,
-        "prior_season_pace_factor": 0.00323
+        "career_avg_carries": -0.24561,
+        "career_avg_rushing_yards": 0.01558,
+        "career_avg_targets": 0.4765,
+        "career_avg_receptions": 0.02797,
+        "career_avg_receiving_yards": 0.19225,
+        "opp_d_elo": 0.00136,
+        "is_home": 0.0228,
+        "week_norm": -0.02592,
+        "is_dome": 0.01527,
+        "own_rest_days": -0.01912,
+        "career_avg_snap_pct": 0.12127,
+        "prior_season_pace_factor": 0.00079,
+        "opp_epa_allowed_vs_position_prior_season": -0.01001,
+        "recent_form_ppr_last4": 0.4098
       },
       "intercept": 1.7943,
       "scaler_mean": {
@@ -225,7 +253,9 @@
         "is_dome": 0.29,
         "own_rest_days": 7.4506,
         "career_avg_snap_pct": 0.382,
-        "prior_season_pace_factor": 1.001
+        "prior_season_pace_factor": 1.001,
+        "opp_epa_allowed_vs_position_prior_season": -0.0661,
+        "recent_form_ppr_last4": 8.5334
       },
       "scaler_scale": {
         "career_avg_carries": 5.0061,
@@ -239,12 +269,14 @@
         "is_dome": 0.4538,
         "own_rest_days": 2.0565,
         "career_avg_snap_pct": 0.1776,
-        "prior_season_pace_factor": 0.0435
+        "prior_season_pace_factor": 0.0435,
+        "opp_epa_allowed_vs_position_prior_season": 0.0671,
+        "recent_form_ppr_last4": 6.1509
       }
     },
     "receiving_yards": {
-      "oof_mae": 11.912,
-      "oof_r2": 0.162,
+      "oof_mae": 11.796,
+      "oof_r2": 0.176,
       "samples": 13848,
       "features": [
         "career_avg_carries",
@@ -258,21 +290,25 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_carries": -2.89095,
-        "career_avg_rushing_yards": 2.67544,
-        "career_avg_targets": 4.05548,
-        "career_avg_receptions": -1.38762,
-        "career_avg_receiving_yards": 4.31561,
-        "opp_d_elo": -0.05389,
-        "is_home": 0.29184,
-        "week_norm": -0.40653,
-        "is_dome": 0.00875,
-        "own_rest_days": 0.02469,
-        "career_avg_snap_pct": 0.89492,
-        "prior_season_pace_factor": 0.04752
+        "career_avg_carries": -2.45764,
+        "career_avg_rushing_yards": 0.37081,
+        "career_avg_targets": 4.68483,
+        "career_avg_receptions": -2.20061,
+        "career_avg_receiving_yards": 3.0762,
+        "opp_d_elo": -0.03352,
+        "is_home": 0.28074,
+        "week_norm": -0.3538,
+        "is_dome": 0.00687,
+        "own_rest_days": 0.00444,
+        "career_avg_snap_pct": 0.90787,
+        "prior_season_pace_factor": 0.02556,
+        "opp_epa_allowed_vs_position_prior_season": 0.06144,
+        "recent_form_ppr_last4": 3.50737
       },
       "intercept": 13.7433,
       "scaler_mean": {
@@ -287,7 +323,9 @@
         "is_dome": 0.29,
         "own_rest_days": 7.4506,
         "career_avg_snap_pct": 0.382,
-        "prior_season_pace_factor": 1.001
+        "prior_season_pace_factor": 1.001,
+        "opp_epa_allowed_vs_position_prior_season": -0.0661,
+        "recent_form_ppr_last4": 8.5334
       },
       "scaler_scale": {
         "career_avg_carries": 5.0061,
@@ -301,14 +339,16 @@
         "is_dome": 0.4538,
         "own_rest_days": 2.0565,
         "career_avg_snap_pct": 0.1776,
-        "prior_season_pace_factor": 0.0435
+        "prior_season_pace_factor": 0.0435,
+        "opp_epa_allowed_vs_position_prior_season": 0.0671,
+        "recent_form_ppr_last4": 6.1509
       }
     }
   },
   "WR": {
     "receptions": {
-      "oof_mae": 1.606,
-      "oof_r2": 0.306,
+      "oof_mae": 1.574,
+      "oof_r2": 0.329,
       "samples": 20285,
       "features": [
         "career_avg_targets",
@@ -321,20 +361,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": -0.0969,
-        "career_avg_receptions": 1.23928,
-        "career_avg_receiving_yards": 0.14412,
-        "career_avg_rushing_yards": 0.03922,
-        "opp_d_elo": -0.03143,
-        "is_home": 0.02613,
-        "week_norm": -0.03864,
-        "is_dome": 0.07979,
-        "own_rest_days": -0.07377,
-        "career_avg_snap_pct": 0.12402,
-        "prior_season_pace_factor": -0.02306
+        "career_avg_targets": 0.0175,
+        "career_avg_receptions": 1.00352,
+        "career_avg_receiving_yards": -0.23595,
+        "career_avg_rushing_yards": 0.00441,
+        "opp_d_elo": -0.02638,
+        "is_home": 0.028,
+        "week_norm": -0.03226,
+        "is_dome": 0.0795,
+        "own_rest_days": -0.0764,
+        "career_avg_snap_pct": 0.13384,
+        "prior_season_pace_factor": -0.02166,
+        "opp_epa_allowed_vs_position_prior_season": 0.01286,
+        "recent_form_ppr_last4": 0.62183
       },
       "intercept": 3.037,
       "scaler_mean": {
@@ -348,7 +392,9 @@
         "is_dome": 0.2925,
         "own_rest_days": 7.4431,
         "career_avg_snap_pct": 0.602,
-        "prior_season_pace_factor": 0.9998
+        "prior_season_pace_factor": 0.9998,
+        "opp_epa_allowed_vs_position_prior_season": 0.2237,
+        "recent_form_ppr_last4": 8.5471
       },
       "scaler_scale": {
         "career_avg_targets": 2.4141,
@@ -361,12 +407,14 @@
         "is_dome": 0.4549,
         "own_rest_days": 2.0506,
         "career_avg_snap_pct": 0.216,
-        "prior_season_pace_factor": 0.0433
+        "prior_season_pace_factor": 0.0433,
+        "opp_epa_allowed_vs_position_prior_season": 0.1234,
+        "recent_form_ppr_last4": 5.651
       }
     },
     "receiving_yards": {
-      "oof_mae": 24.303,
-      "oof_r2": 0.241,
+      "oof_mae": 23.934,
+      "oof_r2": 0.26,
       "samples": 20285,
       "features": [
         "career_avg_targets",
@@ -379,20 +427,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": 2.79058,
-        "career_avg_receptions": 3.4524,
-        "career_avg_receiving_yards": 10.44543,
-        "career_avg_rushing_yards": 0.38211,
-        "opp_d_elo": -0.66434,
-        "is_home": 0.53579,
-        "week_norm": -0.62765,
-        "is_dome": 1.37009,
-        "own_rest_days": -0.92258,
-        "career_avg_snap_pct": 1.78818,
-        "prior_season_pace_factor": -0.28736
+        "career_avg_targets": 4.33555,
+        "career_avg_receptions": 0.27089,
+        "career_avg_receiving_yards": 5.31808,
+        "career_avg_rushing_yards": -0.08756,
+        "opp_d_elo": -0.58776,
+        "is_home": 0.56103,
+        "week_norm": -0.54172,
+        "is_dome": 1.36564,
+        "own_rest_days": -0.95797,
+        "career_avg_snap_pct": 1.92052,
+        "prior_season_pace_factor": -0.26886,
+        "opp_epa_allowed_vs_position_prior_season": 0.19127,
+        "recent_form_ppr_last4": 8.38826
       },
       "intercept": 38.6217,
       "scaler_mean": {
@@ -406,7 +458,9 @@
         "is_dome": 0.2925,
         "own_rest_days": 7.4431,
         "career_avg_snap_pct": 0.602,
-        "prior_season_pace_factor": 0.9998
+        "prior_season_pace_factor": 0.9998,
+        "opp_epa_allowed_vs_position_prior_season": 0.2237,
+        "recent_form_ppr_last4": 8.5471
       },
       "scaler_scale": {
         "career_avg_targets": 2.4141,
@@ -419,11 +473,13 @@
         "is_dome": 0.4549,
         "own_rest_days": 2.0506,
         "career_avg_snap_pct": 0.216,
-        "prior_season_pace_factor": 0.0433
+        "prior_season_pace_factor": 0.0433,
+        "opp_epa_allowed_vs_position_prior_season": 0.1234,
+        "recent_form_ppr_last4": 5.651
       }
     },
     "rushing_yards": {
-      "oof_mae": 1.925,
+      "oof_mae": 1.926,
       "oof_r2": 0.086,
       "samples": 20285,
       "features": [
@@ -437,20 +493,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": -0.35668,
-        "career_avg_receptions": 0.55142,
-        "career_avg_receiving_yards": -0.03208,
-        "career_avg_rushing_yards": 1.4331,
-        "opp_d_elo": -0.05829,
-        "is_home": 0.02015,
-        "week_norm": 0.06985,
-        "is_dome": -0.03607,
-        "own_rest_days": 0.04055,
-        "career_avg_snap_pct": -0.20168,
-        "prior_season_pace_factor": 0.00489
+        "career_avg_targets": -0.32215,
+        "career_avg_receptions": 0.48212,
+        "career_avg_receiving_yards": -0.14275,
+        "career_avg_rushing_yards": 1.42291,
+        "opp_d_elo": -0.05055,
+        "is_home": 0.0207,
+        "week_norm": 0.0716,
+        "is_dome": -0.03654,
+        "own_rest_days": 0.03984,
+        "career_avg_snap_pct": -0.19897,
+        "prior_season_pace_factor": 0.00504,
+        "opp_epa_allowed_vs_position_prior_season": 0.01696,
+        "recent_form_ppr_last4": 0.18069
       },
       "intercept": 1.1309,
       "scaler_mean": {
@@ -464,7 +524,9 @@
         "is_dome": 0.2925,
         "own_rest_days": 7.4431,
         "career_avg_snap_pct": 0.602,
-        "prior_season_pace_factor": 0.9998
+        "prior_season_pace_factor": 0.9998,
+        "opp_epa_allowed_vs_position_prior_season": 0.2237,
+        "recent_form_ppr_last4": 8.5471
       },
       "scaler_scale": {
         "career_avg_targets": 2.4141,
@@ -477,14 +539,16 @@
         "is_dome": 0.4549,
         "own_rest_days": 2.0506,
         "career_avg_snap_pct": 0.216,
-        "prior_season_pace_factor": 0.0433
+        "prior_season_pace_factor": 0.0433,
+        "opp_epa_allowed_vs_position_prior_season": 0.1234,
+        "recent_form_ppr_last4": 5.651
       }
     }
   },
   "TE": {
     "receptions": {
-      "oof_mae": 1.332,
-      "oof_r2": 0.275,
+      "oof_mae": 1.317,
+      "oof_r2": 0.291,
       "samples": 10289,
       "features": [
         "career_avg_targets",
@@ -497,20 +561,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": 0.47807,
-        "career_avg_receptions": 0.47387,
-        "career_avg_receiving_yards": 0.09495,
-        "career_avg_rushing_yards": 0.02962,
-        "opp_d_elo": -0.01177,
-        "is_home": 0.015,
-        "week_norm": 0.04937,
-        "is_dome": 0.00012,
-        "own_rest_days": -0.02736,
-        "career_avg_snap_pct": 0.08305,
-        "prior_season_pace_factor": 0.02441
+        "career_avg_targets": 0.55263,
+        "career_avg_receptions": 0.26566,
+        "career_avg_receiving_yards": -0.13017,
+        "career_avg_rushing_yards": -0.0133,
+        "opp_d_elo": -0.00237,
+        "is_home": 0.01876,
+        "week_norm": 0.05218,
+        "is_dome": -0.0005,
+        "own_rest_days": -0.02997,
+        "career_avg_snap_pct": 0.10161,
+        "prior_season_pace_factor": 0.023,
+        "opp_epa_allowed_vs_position_prior_season": 0.02545,
+        "recent_form_ppr_last4": 0.43754
       },
       "intercept": 2.4165,
       "scaler_mean": {
@@ -524,7 +592,9 @@
         "is_dome": 0.2903,
         "own_rest_days": 7.4343,
         "career_avg_snap_pct": 0.539,
-        "prior_season_pace_factor": 1.0003
+        "prior_season_pace_factor": 1.0003,
+        "opp_epa_allowed_vs_position_prior_season": 0.1948,
+        "recent_form_ppr_last4": 6.1844
       },
       "scaler_scale": {
         "career_avg_targets": 1.8266,
@@ -537,12 +607,14 @@
         "is_dome": 0.4539,
         "own_rest_days": 2.0385,
         "career_avg_snap_pct": 0.1879,
-        "prior_season_pace_factor": 0.0437
+        "prior_season_pace_factor": 0.0437,
+        "opp_epa_allowed_vs_position_prior_season": 0.1803,
+        "recent_form_ppr_last4": 4.3318
       }
     },
     "receiving_yards": {
-      "oof_mae": 16.986,
-      "oof_r2": 0.241,
+      "oof_mae": 16.827,
+      "oof_r2": 0.253,
       "samples": 10289,
       "features": [
         "career_avg_targets",
@@ -555,20 +627,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": 6.75435,
-        "career_avg_receptions": -2.16277,
-        "career_avg_receiving_yards": 7.88477,
-        "career_avg_rushing_yards": 0.16028,
-        "opp_d_elo": -0.56637,
-        "is_home": 0.17452,
-        "week_norm": 0.51679,
-        "is_dome": 0.06188,
-        "own_rest_days": -0.07772,
-        "career_avg_snap_pct": 0.81642,
-        "prior_season_pace_factor": 0.06871
+        "career_avg_targets": 7.58796,
+        "career_avg_receptions": -4.47681,
+        "career_avg_receiving_yards": 5.40104,
+        "career_avg_rushing_yards": -0.31508,
+        "opp_d_elo": -0.42183,
+        "is_home": 0.21568,
+        "week_norm": 0.54802,
+        "is_dome": 0.04927,
+        "own_rest_days": -0.10883,
+        "career_avg_snap_pct": 1.02217,
+        "prior_season_pace_factor": 0.05235,
+        "opp_epa_allowed_vs_position_prior_season": 0.408,
+        "recent_form_ppr_last4": 4.8334
       },
       "intercept": 25.7065,
       "scaler_mean": {
@@ -582,7 +658,9 @@
         "is_dome": 0.2903,
         "own_rest_days": 7.4343,
         "career_avg_snap_pct": 0.539,
-        "prior_season_pace_factor": 1.0003
+        "prior_season_pace_factor": 1.0003,
+        "opp_epa_allowed_vs_position_prior_season": 0.1948,
+        "recent_form_ppr_last4": 6.1844
       },
       "scaler_scale": {
         "career_avg_targets": 1.8266,
@@ -595,12 +673,14 @@
         "is_dome": 0.4539,
         "own_rest_days": 2.0385,
         "career_avg_snap_pct": 0.1879,
-        "prior_season_pace_factor": 0.0437
+        "prior_season_pace_factor": 0.0437,
+        "opp_epa_allowed_vs_position_prior_season": 0.1803,
+        "recent_form_ppr_last4": 4.3318
       }
     },
     "rushing_yards": {
-      "oof_mae": 0.363,
-      "oof_r2": 0.257,
+      "oof_mae": 0.373,
+      "oof_r2": 0.256,
       "samples": 10289,
       "features": [
         "career_avg_targets",
@@ -613,20 +693,24 @@
         "is_dome",
         "own_rest_days",
         "career_avg_snap_pct",
-        "prior_season_pace_factor"
+        "prior_season_pace_factor",
+        "opp_epa_allowed_vs_position_prior_season",
+        "recent_form_ppr_last4"
       ],
       "coefficients": {
-        "career_avg_targets": -0.14754,
-        "career_avg_receptions": 0.05166,
-        "career_avg_receiving_yards": 0.10629,
-        "career_avg_rushing_yards": 1.62335,
-        "opp_d_elo": -0.04447,
-        "is_home": 0.01136,
-        "week_norm": 0.02805,
-        "is_dome": 0.0198,
-        "own_rest_days": 0.00614,
-        "career_avg_snap_pct": -0.04295,
-        "prior_season_pace_factor": 0.01198
+        "career_avg_targets": -0.14796,
+        "career_avg_receptions": 0.04727,
+        "career_avg_receiving_yards": 0.09411,
+        "career_avg_rushing_yards": 1.62175,
+        "opp_d_elo": -0.06053,
+        "is_home": 0.01168,
+        "week_norm": 0.02811,
+        "is_dome": 0.02209,
+        "own_rest_days": 0.00693,
+        "career_avg_snap_pct": -0.04236,
+        "prior_season_pace_factor": 0.01219,
+        "opp_epa_allowed_vs_position_prior_season": -0.05024,
+        "recent_form_ppr_last4": 0.02123
       },
       "intercept": 0.2173,
       "scaler_mean": {
@@ -640,7 +724,9 @@
         "is_dome": 0.2903,
         "own_rest_days": 7.4343,
         "career_avg_snap_pct": 0.539,
-        "prior_season_pace_factor": 1.0003
+        "prior_season_pace_factor": 1.0003,
+        "opp_epa_allowed_vs_position_prior_season": 0.1948,
+        "recent_form_ppr_last4": 6.1844
       },
       "scaler_scale": {
         "career_avg_targets": 1.8266,
@@ -653,7 +739,9 @@
         "is_dome": 0.4539,
         "own_rest_days": 2.0385,
         "career_avg_snap_pct": 0.1879,
-        "prior_season_pace_factor": 0.0437
+        "prior_season_pace_factor": 0.0437,
+        "opp_epa_allowed_vs_position_prior_season": 0.1803,
+        "recent_form_ppr_last4": 4.3318
       }
     }
   }

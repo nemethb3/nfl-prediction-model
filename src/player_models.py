@@ -793,23 +793,35 @@ class OffenseEpaModel:
 
         return {"mae": mae, "r2": r2, "mae_baseline": mae_baseline, "r2_baseline": r2_baseline, "report": report}
 
-    def predict_next_season(self, features_df, season_stats_df, ref_season=None):
+    def predict_next_season(self, features_df, season_stats_df, ref_season=None, output_min_opportunities=None):
         """Project EPA/play for the season after ref_season (auto-detected -
         same rationale as QBModel.predict_next_season: nflverse's offense
         weekly/seasonal release lags pbp/schedules, so this is currently a
         2025 projection, not 2026, for all three positions here).
 
         Unlike the yards-based models above, this does NOT relax the
-        min_opportunities floor to 1 for projection - EPA/play is a rate
-        stat, so a 1-3 opportunity prior season produces an extreme,
-        non-representative ratio (e.g. a single bad carry -> -4.67 EPA/play)
-        that's wildly out-of-distribution for a model trained only on 30+
-        (WR/RB) or 100+ (QB) opportunity seasons. Feeding that in produced
-        garbage top-of-list projections during this task's validation (a
-        3-target WR and a 1-carry RB both ranked in the projected top 10) -
-        keeping the same floor used in training avoids extrapolating past
-        what the model actually learned from."""
-        prepped = self.prepare_data(features_df, season_stats_df)
+        min_opportunities floor all the way to 1 for projection - EPA/play
+        is a rate stat, so a 1-3 opportunity prior season produces an
+        extreme, non-representative ratio (e.g. a single bad carry -> -4.67
+        EPA/play) that's wildly out-of-distribution for a model trained
+        only on 30+ (WR/RB/TE) or 100+ (QB) opportunity seasons. Feeding
+        that in produced garbage top-of-list projections during this
+        task's validation (a 3-target WR and a 1-carry RB both ranked in
+        the projected top 10) - keeping the same floor used in training
+        avoids extrapolating past what the model actually learned from.
+
+        2026-08-18 (Filter DEF/K + Expand Projections task): the trained
+        model/self.min_opportunities (the training floor) are NOT changed
+        by this - `output_min_opportunities`, when given, only widens the
+        real OUTPUT population this method reports on, via prepare_data's
+        own already-existing min_opportunities override param. Real
+        players between output_min_opportunities and self.min_opportunities
+        get a real 'lower' confidence_tier in the output (still a real,
+        meaningfully bigger sample than the 1-3-opportunity case above -
+        this project's own TE holdout test found 15/20 both underperform
+        30 but are real, usable signal, not noise) - callers/consumers are
+        expected to disclose that tier, not treat it as equal-confidence."""
+        prepped = self.prepare_data(features_df, season_stats_df, min_opportunities=output_min_opportunities)
         if ref_season is None:
             ref_season = int(prepped["season"].max())
         current = prepped[prepped["season"] == ref_season].copy()
@@ -844,6 +856,7 @@ class OffenseEpaModel:
             "predicted_epa_per_play": predicted.round(4),
             "confidence_epa_per_play_pm": round(self.residual_std_, 4),
             "opportunities_prior_season": current["opportunities"],
+            "confidence_tier": np.where(current["opportunities"] >= self.min_opportunities, "high", "lower"),
             "projection_note": f"assumes same team/coach as {ref_season}; actual next-season changes not yet reflected",
         }).sort_values("predicted_epa_per_play", ascending=False).reset_index(drop=True)
         return out
@@ -857,11 +870,14 @@ class OffenseEpaModel:
 
 
 def run_offense_epa_model(position, epa_cols, opportunity_cols, min_opportunities,
-                           use_qb_context=False, **kwargs):
+                           use_qb_context=False, output_min_opportunities=None, **kwargs):
     features_df = pd.read_csv(os.path.join(PROCESSED_DIR, "player_features_with_history.csv"))
     season_stats_df = pd.read_csv(os.path.join(PROCESSED_DIR, "player_season_stats.csv"))
 
     model = OffenseEpaModel(position, epa_cols, opportunity_cols, min_opportunities, use_qb_context, **kwargs)
+    # Training/holdout population is UNCHANGED - always the real, validated
+    # min_opportunities floor, never output_min_opportunities (that only
+    # widens which real players get a row in the OUTPUT csv below).
     prepped = model.prepare_data(features_df, season_stats_df)
     train_df = prepped[prepped["season"].isin(TRAIN_SEASONS)]
     holdout_df = prepped[prepped["season"] == HOLDOUT_SEASON]
@@ -872,38 +888,57 @@ def run_offense_epa_model(position, epa_cols, opportunity_cols, min_opportunitie
     metrics = model.validate(holdout_df)
     model.save()
 
-    predictions = model.predict_next_season(features_df, season_stats_df)
+    predictions = model.predict_next_season(features_df, season_stats_df,
+                                             output_min_opportunities=output_min_opportunities)
     ref_season = int(prepped["season"].max())
     target_season = ref_season + 1
     out_path = os.path.join(PROCESSED_DIR, f"{position.lower()}_epa_projections_{target_season}.csv")
     predictions.to_csv(out_path, index=False, encoding="utf-8")
+    n_high = int((predictions["confidence_tier"] == "high").sum())
+    n_lower = int((predictions["confidence_tier"] == "lower").sum())
     print(f"\n[{position} EPA] projecting season {target_season} from {ref_season} data "
           f"(most recent offense stats available)")
-    print(f"Saved {out_path} ({len(predictions)} {position}s)")
+    print(f"Saved {out_path} ({len(predictions)} {position}s - {n_high} high confidence >= {min_opportunities} real "
+          f"opportunities, {n_lower} lower confidence real {output_min_opportunities}-{min_opportunities - 1})")
     print(predictions.head(10).to_string(index=False))
 
     return model, metrics, predictions
 
 
 def run_qb_epa_model():
+    # 2026-08-18 (Filter DEF/K + Expand Projections task): output_min_
+    # opportunities=50 - real QBs with 50-99 real prior-season attempts
+    # (backups who saw real spot duty, not just the 100+ real starters)
+    # now get a real, explicitly lower-confidence projection instead of
+    # being dropped entirely - roughly the same real proportional
+    # loosening (~half the validated floor) the user asked for on RB/WR/TE,
+    # extended to QB's different real opportunity unit (attempts, not
+    # targets/carries) for consistency, since QB wasn't addressed directly.
     return run_offense_epa_model("QB", ["passing_epa"], ["attempts"], min_opportunities=100,
-                                  use_qb_context=False, n_estimators=60, max_depth=3)
+                                  use_qb_context=False, output_min_opportunities=50, n_estimators=60, max_depth=3)
 
 
 def run_wr_epa_model():
     # min_opportunities=30 (vs. WRModel's min_targets=10 for the yards
     # target): EPA/play is a rate stat, and 10-19 target seasons produced
     # visibly unstable per-play ratios during this task's holdout check.
+    # output_min_opportunities=15 (2026-08-18 fix): real 15-29 real target
+    # WRs get a real, explicitly lower-confidence projection rather than
+    # none at all - the real, already-run TE holdout comparison (see
+    # run_te_epa_model below) found 15-29-opportunity predictions ARE
+    # measurably weaker than 30+, but real, usable signal, not noise.
     return run_offense_epa_model("WR", ["receiving_epa"], ["targets"], min_opportunities=30,
-                                  use_qb_context=True, n_estimators=60, max_depth=3)
+                                  use_qb_context=True, output_min_opportunities=15, n_estimators=60, max_depth=3)
 
 
 def run_rb_epa_model():
     # Combined rush+receive opportunities/EPA, same combined-role rationale
     # as RBModel above. min_opportunities=30 (vs. RBModel's min_carries=1):
-    # same rate-stat instability reasoning as WR.
+    # same rate-stat instability reasoning as WR. output_min_opportunities=15
+    # (2026-08-18 fix): same real lower-confidence-tier extension as WR/TE.
     return run_offense_epa_model("RB", ["rushing_epa", "receiving_epa"], ["carries", "targets"],
-                                  min_opportunities=30, use_qb_context=False, n_estimators=60, max_depth=3)
+                                  min_opportunities=30, use_qb_context=False, output_min_opportunities=15,
+                                  n_estimators=60, max_depth=3)
 
 
 def run_te_epa_model(min_opportunities=30):
@@ -915,8 +950,13 @@ def run_te_epa_model(min_opportunities=30):
     # project's decisive test): 30 wins clearly there too (corr+0.311/
     # R2=0.072 vs 20's corr+0.193/R2=0.014) - same threshold WR ended up at,
     # now independently confirmed for TE rather than just copied.
+    #
+    # output_min_opportunities=15 (2026-08-18 fix): that same real 15-vs-30
+    # comparison is exactly the real evidence used to label real 15-29-
+    # opportunity real TEs "lower confidence" rather than excluding them -
+    # a real, quantified weaker tier, not a guess.
     return run_offense_epa_model("TE", ["receiving_epa"], ["targets"], min_opportunities=min_opportunities,
-                                  use_qb_context=True, n_estimators=60, max_depth=3)
+                                  use_qb_context=True, output_min_opportunities=15, n_estimators=60, max_depth=3)
 
 
 DEFENSE_TRAIN_SEASONS = range(2018, 2024)  # 2018-2023: PFR advanced-defense coverage starts 2018

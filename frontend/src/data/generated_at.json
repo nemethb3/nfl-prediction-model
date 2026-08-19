@@ -1,6 +1,7 @@
 {
   "betting_strategies_comparison_od_elo": "2026-08-14T16:48:18.924182+00:00",
   "elo_model_comparison": "2026-08-14T02:01:34.948380+00:00",
+  "fantasy_rankings_2026": "2026-08-19T15:54:01.647635+00:00",
   "games_2026": "2026-08-14T17:13:43.783792+00:00",
   "games_2026_offensive_defensive_elo": "2026-08-14T02:15:16.992717+00:00",
   "games_2026_point_totals": "2026-08-14T17:13:46.709208+00:00",
@@ -9,12 +10,13 @@
   "point_totals_model": "2026-08-13T21:42:42.998084+00:00",
   "qb_starter_year_curve": "2026-08-13T20:38:25.302540+00:00",
   "rookie_classifier_accuracy": "2026-08-14T22:21:28.215129+00:00",
-  "rookie_scores_2026": "2026-08-14T22:22:15.876083+00:00",
+  "rookie_scores_2026": "2026-08-18T22:35:52.664441+00:00",
   "season_projections_2026": "2026-08-13T00:27:02.918693+00:00",
+  "sleeper_id_mapping": "2026-08-19T15:53:27.036995+00:00",
   "superbowl_odds_2026": "2026-08-13T00:27:07.796271+00:00",
   "team_elo_offensive_defensive_2025": "2026-08-14T01:56:57.245305+00:00",
   "team_elo_offensive_defensive_2026_regressed": "2026-08-14T17:13:40.662790+00:00",
   "totals_betting_backtest_2025": "2026-08-13T21:45:32.415779+00:00",
-  "trade_scores_2026": "2026-08-13T20:41:46.459971+00:00",
+  "trade_scores_2026": "2026-08-19T15:54:46.088014+00:00",
   "vegas_integration_model": "2026-08-13T20:29:07.043446+00:00"
 }

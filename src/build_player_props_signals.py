@@ -90,7 +90,68 @@ multiplier.
 Real, checked coverage note: team pace/red-zone rate require a real prior
 season in pbp_2015_2025.csv, so real 2015 rows (no 2014 pbp data exists
 in this project) are dropped - a real, disclosed one-season gap, not a
-fabricated fallback value."""
+fabricated fallback value.
+
+Real opponent-EPA-allowed-by-position addition (Fantasy Model Overhaul
+Phase 1, Part 1/3): the originally pasted spec for this task assumed a
+`data/processed/position_vs_team_allowed_2015_2025.json` yards/TDs-allowed
+table built from pbp columns (`pbp['position']`, `pbp['defense_team']`,
+`rushing_touchdown`) that don't exist in this project's real pbp schema
+(real columns: `defteam`, `rush_touchdown`, `receiver_id`/`rusher_id`, no
+bare `position`). Real fix: reuses matchup_features.py's already-validated
+build_defense_epa_by_position_multi_season() (real target_position via the
+real player_id->position crosswalk), cached to a season-level, PRIOR-SEASON
+table by build_defense_epa_allowed_by_position.py - same prior-season
+convention as team pace/red-zone above, for the same reason (no in-season
+week-1 cold start, generalizes directly to 2026 scoring). Real, disclosed
+limitation carried over from matchup_features.py: for QB this only reflects
+defense quality against QB rushing plays (scrambles/designed runs), not
+passing defense, since receiver_id is never a QB on a real pass play - kept
+anyway as a real, honestly-measured signal, not silently relabeled.
+
+Real recent-form / usage-trend / role-tier addition (Fantasy Model
+Overhaul Phase 1B): the originally pasted spec for this task assumed
+`data/processed/player_season_stats_2015_2025.csv` and `player_game_stats_
+2015_2025.csv` (neither exists - real files are player_season_stats.csv
+and player_weekly_stats.csv), a `ppr` column (real column is
+fantasy_points_ppr), and a `carry_share` column (checked - doesn't exist
+anywhere in this project, at either season or weekly grain; not built
+here). Three further, real, serious problems fixed before writing this:
+
+1. The spec's recent-form/usage-trend builders looped `for player_id in
+   ...unique(): for idx, row in player_data.iterrows(): ...` re-slicing a
+   per-player frame on every single row - the same real O(n*m) anti-pattern
+   already flagged and fixed twice elsewhere this project (build_player_
+   props_signals.py's own docstring above, backtest_offensive_defensive_
+   elo.py). At this project's real per-week row counts (player_weekly_
+   stats.csv), that's not just slow - it's impractical. Replaced with
+   vectorized `groupby().rolling()`/`transform()`, same as every other
+   leak-free feature in this file.
+2. The spec's recent-form feature used the player's CURRENT-game `snap_pct`
+   as an input to a role-tier bucketing step, and its "usage trending"
+   feature computed a same-season delta from raw current-season aggregates
+   - both are the same current-game/current-season leakage pattern this
+   file's own module docstring already identified and fixed once (the
+   original career_avg_snap_pct fix). Real fix: `recent_form_ppr_last4` is
+   a leak-free trailing rolling mean (shift(1), excludes the current row,
+   crosses season boundaries by design - "last 4 games played" is a
+   real, ongoing signal, not reset each September). `usage_trend_*_delta`
+   is a real, leak-free, already-final SEASON-OVER-SEASON change (this
+   player's realized season S-1 rate minus season S-2's, lagged +1 season
+   to apply to season S - the same static prior-season convention as team
+   pace/red-zone/O-D-Elo above, and the only way this signal is honestly
+   knowable in advance for a real 2026 game). Role tiers are bucketed from
+   the already-existing leak-free `career_avg_snap_pct`/new leak-free
+   `career_avg_target_share` (trailing, shift(1)), not same-game/season
+   values.
+3. The spec's role-based-model evaluation code set `improved_r2 =
+   baseline_r2` verbatim for every role tier (`retrain_role_based_models`
+   never computes an actual pooled baseline) - the reported "average gain"
+   for that whole approach was guaranteed to equal exactly 0.0 by
+   construction, not a real measurement. See experiment_phase1b_features.py
+   for the real, fair comparison methodology used instead (out-of-fold
+   predictions from tier-specific models recombined and compared against a
+   freshly-computed pooled baseline on the identical row set)."""
 
 import os
 
@@ -104,6 +165,16 @@ PLAYER_STATS_PATH = os.path.join(PROCESSED_DIR, "player_weekly_stats.csv")
 OD_ELO_HISTORY_PATH = os.path.join(PROCESSED_DIR, "team_elo_history_offensive_defensive_2015_2025.csv")
 SCHEDULE_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "schedules_2015_2025.csv")
 PBP_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "pbp_2015_2025.csv")
+DEF_EPA_ALLOWED_BY_POSITION_PATH = os.path.join(
+    PROCESSED_DIR, "defense_epa_allowed_by_position_2015_2025.csv")
+SEASON_STATS_PATH = os.path.join(PROCESSED_DIR, "player_season_stats.csv")
+
+# Real, leak-free role-tier thresholds (Phase 1B) - same cutpoints the
+# originally pasted spec proposed, applied to real TRAILING (career-to-date,
+# shift(1)) rates instead of same-game/season values.
+RB_ROLE_THRESHOLDS = [(0.50, "RB_LEAD"), (0.30, "RB_COMMITTEE")]  # else RB_BACKUP
+WR_ROLE_THRESHOLDS = [(0.25, "WR_1"), (0.15, "WR_2")]  # else WR_3
+TE_ROLE_THRESHOLDS = [(0.20, "TE_1")]  # else TE_2
 
 POSITIONS = ["QB", "RB", "WR", "TE"]
 
@@ -204,6 +275,36 @@ def _real_prior_season_team_pace_and_rz():
         "pace_factor": "prior_season_pace_factor", "rz_touches_per_game": "prior_season_rz_rate"})
 
 
+def _real_prior_season_defense_epa_allowed_vs_position():
+    """Real prior-season defensive EPA/play allowed to each position (QB/RB/
+    WR/TE), cached by build_defense_epa_allowed_by_position.py from
+    matchup_features.py's real position-crosswalk pbp aggregation - already
+    lagged +1 season there, so this is a plain read, not a recompute."""
+    return pd.read_csv(DEF_EPA_ALLOWED_BY_POSITION_PATH)
+
+
+def _real_prior_season_usage_trend():
+    """Real, leak-free usage-trend signal (Phase 1B): this player's realized
+    season-over-season CHANGE in snap share / target share, using two
+    already-completed real seasons (S-1 minus S-2), lagged +1 to apply to
+    season S - the only way this is honestly knowable in advance for a real
+    future game (an in-progress "current season vs prior season" version,
+    as the originally pasted spec proposed, isn't well-defined for a
+    player's own early-season games and would need same-season data those
+    games don't have yet)."""
+    season_stats = pd.read_csv(SEASON_STATS_PATH)
+    season_stats = season_stats.sort_values(["player_id", "season"]).drop_duplicates(
+        subset=["player_id", "season"])
+    grp = season_stats.groupby("player_id")
+    season_stats["usage_trend_snap_pct_delta"] = grp["avg_snap_pct"].diff()
+    season_stats["usage_trend_target_share_delta"] = grp["target_share"].diff()
+
+    lagged = season_stats[["player_id", "season", "usage_trend_snap_pct_delta",
+                            "usage_trend_target_share_delta"]].copy()
+    lagged["season"] = lagged["season"] + 1
+    return lagged
+
+
 def build_player_props_signals():
     print("\nBuilding real, leak-free player props features (2015-2025)...\n")
     stats = pd.read_csv(PLAYER_STATS_PATH)
@@ -227,6 +328,31 @@ def build_player_props_signals():
     n_no_prior_season = int(stats["prior_season_pace_factor"].isna().sum())
     print(f"  {n_no_prior_season} real player-games have no real prior-season pace/RZ rate "
           f"(real 2015 rows - no 2014 pbp data exists in this project) - will be dropped below")
+
+    print("Joining real prior-season opponent EPA-allowed-by-position...")
+    def_epa_allowed_lookup = _real_prior_season_defense_epa_allowed_vs_position()
+    stats = stats.merge(
+        def_epa_allowed_lookup, left_on=["opponent_team", "season", "position"],
+        right_on=["team", "season", "position"], how="left", suffixes=("", "_defepa"))
+    n_no_opp_epa_allowed = int(stats["opp_epa_allowed_vs_position_prior_season"].isna().sum())
+    print(f"  {n_no_opp_epa_allowed} real player-games have no real prior-season opponent "
+          f"EPA-allowed-vs-position (real 2016 rows - the lookup itself starts at 2016, "
+          f"needing a real 2015 prior season) - will be dropped below")
+
+    print("Joining real season-over-season usage-trend deltas...")
+    usage_trend_lookup = _real_prior_season_usage_trend()
+    stats = stats.merge(usage_trend_lookup, on=["player_id", "season"], how="left")
+    n_no_usage_trend = int(stats["usage_trend_snap_pct_delta"].isna().sum())
+    print(f"  {n_no_usage_trend} real player-games have no real usage trend (real rookie-season rows, "
+          f"or a player's 2nd real season - needs two already-completed prior seasons) - optional "
+          f"column, NOT dropped from the base feature set")
+
+    print("Computing real leak-free recent-form (trailing last-4-games PPR, crosses season boundaries)...")
+    stats["recent_form_ppr_last4"] = stats.groupby("player_id")["fantasy_points_ppr"].transform(
+        lambda s: s.rolling(4, min_periods=1).mean().shift(1))
+    n_no_recent_form = int(stats["recent_form_ppr_last4"].isna().sum())
+    print(f"  {n_no_recent_form} real player-games have no real recent form (a player's real career-first "
+          f"game) - optional column, NOT dropped from the base feature set")
 
     week_min, week_max = stats["week"].min(), stats["week"].max()
     stats["week_norm"] = (stats["week"] - week_min) / (week_max - week_min)
@@ -255,10 +381,46 @@ def build_player_props_signals():
         pos_stats["career_avg_snap_pct"] = (
             pos_stats.groupby("player_id")["snap_pct"].transform(lambda s: s.expanding().mean().shift(1))
         )
+        # Real, leak-free trailing target-share average - used below for
+        # real WR/TE role-tier bucketing (Phase 1B), same leak-free
+        # construction as every other career_avg_* column.
+        pos_stats["career_avg_target_share"] = (
+            pos_stats.groupby("player_id")["target_share"].transform(lambda s: s.expanding().mean().shift(1))
+        )
+
+        # Real role tier (Phase 1B), bucketed from the leak-free trailing
+        # averages above - NOT same-game/season values (see module
+        # docstring). Optional column; rows with no real trailing average
+        # yet (a player's real career-first game) get role_tier=NaN, not a
+        # fabricated default tier.
+        if position == "RB":
+            pos_stats["role_tier"] = np.select(
+                [pos_stats["career_avg_snap_pct"] > 0.50, pos_stats["career_avg_snap_pct"] >= 0.30],
+                ["RB_LEAD", "RB_COMMITTEE"], default="RB_BACKUP")
+            pos_stats.loc[pos_stats["career_avg_snap_pct"].isna(), "role_tier"] = np.nan
+        elif position == "WR":
+            pos_stats["role_tier"] = np.select(
+                [pos_stats["career_avg_target_share"] >= 0.25, pos_stats["career_avg_target_share"] >= 0.15],
+                ["WR_1", "WR_2"], default="WR_3")
+            pos_stats.loc[pos_stats["career_avg_target_share"].isna(), "role_tier"] = np.nan
+        elif position == "TE":
+            pos_stats["role_tier"] = np.select(
+                [pos_stats["career_avg_target_share"] >= 0.20], ["TE_1"], default="TE_2")
+            pos_stats.loc[pos_stats["career_avg_target_share"].isna(), "role_tier"] = np.nan
+        else:  # QB - always a single real tier (see module docstring)
+            pos_stats["role_tier"] = "QB"
 
         feature_cols = [f"career_avg_{c}" for c in CAREER_AVG_SOURCE_COLS[position]] + ["career_avg_snap_pct"]
         td_feature_cols = [f"career_avg_{c}" for c in TD_CAREER_AVG_COLS[position]]
-        situational_feature_cols = ["prior_season_pace_factor", "prior_season_rz_rate"]
+        # recent_form_ppr_last4 promoted from optional/experimental to a
+        # required production feature (Phase 1B): the real, honest
+        # apples-to-apples measurement in experiment_phase1b_features.py
+        # showed a real gain on all 16 real models (avg R2 delta +0.017,
+        # avg AUC delta +0.014, zero losses) - role_tier and the two
+        # usage_trend_* columns stayed real null results and were NOT
+        # promoted (still kept below as optional/disclosed columns).
+        situational_feature_cols = ["prior_season_pace_factor", "prior_season_rz_rate",
+                                     "opp_epa_allowed_vs_position_prior_season", "recent_form_ppr_last4"]
         # A player's first-ever real game has no real prior history to
         # average - dropped (same real, disclosed rookie-exclusion
         # precedent FantasyRankings.js already uses), not filled with an
@@ -271,6 +433,14 @@ def build_player_props_signals():
             pos_stats[f"actual_{col}_1plus"] = (pos_stats[col] >= 1).astype(int)
         td_target_cols = [f"actual_{c}_1plus" for c in TD_CAREER_AVG_COLS[position]]
 
+        # Phase 1B experimental columns that stayed real null results (see
+        # experiment_phase1b_features.py) - kept OPTIONAL (not added to the
+        # dropna above) so they're available for transparency/future re-
+        # testing without shrinking the production row set. recent_form_
+        # ppr_last4 is no longer here - it was promoted to a required
+        # feature above.
+        optional_experiment_cols = ["role_tier", "usage_trend_snap_pct_delta", "usage_trend_target_share_delta"]
+
         keep_cols = (
             ["player_id", "player_name", "position", "season", "week", "recent_team", "opponent_team",
              "is_home", "week_norm", "is_late_season", "opp_o_elo", "opp_d_elo", "is_dome", "own_rest_days"]
@@ -279,6 +449,7 @@ def build_player_props_signals():
             + td_feature_cols
             + TARGET_COLS[position]
             + td_target_cols
+            + optional_experiment_cols
         )
         out = pos_stats[keep_cols].rename(columns={f"{t}": f"actual_{t}" for t in TARGET_COLS[position]})
         out_path = os.path.join(PROCESSED_DIR, f"player_props_signals_{position}.csv")

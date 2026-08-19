@@ -1,10 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/FantasyRankings.css';
 import '../styles/SeasonDataUnavailable.css';
 import { useSeason } from '../context/SeasonContext';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor } from '../constants/teams';
 import SeasonDataUnavailable from './SeasonDataUnavailable';
 import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
+
+function ordinal(n) {
+  const rem100 = n % 100;
+  if (rem100 >= 11 && rem100 <= 13) return `${n}th`;
+  switch (n % 10) {
+    case 1: return `${n}st`;
+    case 2: return `${n}nd`;
+    case 3: return `${n}rd`;
+    default: return `${n}th`;
+  }
+}
+
+// Real per-team Defensive Elo + rank for a single selected week, same real
+// per-week (not per-season) methodology as GamePredictions.js's
+// realEloRanksForWeek - checked directly there, real single/O/D Elo can
+// move week-to-week across a real completed season, so a season-wide map
+// would silently rank a team using whichever week's game happened to be
+// iterated last. Not imported from GamePredictions.js (not exported, and
+// this only needs the D_Elo half) - same real fields (home_d_elo/
+// away_d_elo/home_team/away_team), independently computed here.
+function realDEloRanksForWeek(weekGames) {
+  const byTeam = new Map();
+  for (const g of weekGames) {
+    if (g.home_d_elo != null) byTeam.set(g.home_team, g.home_d_elo);
+    if (g.away_d_elo != null) byTeam.set(g.away_team, g.away_d_elo);
+  }
+  const ranked = [...byTeam.entries()].sort((a, b) => b[1] - a[1]);
+  const ranks = {};
+  ranked.forEach(([team, d_elo], i) => {
+    ranks[team] = { rank: i + 1, total: ranked.length, d_elo };
+  });
+  return ranks;
+}
 
 // RB/QB/TE: real per-week trailing projections. WR: real trailing up-to-
 // 4-week actual-PPR average (Phase 4 backtest winner, corr +0.4416 vs. the
@@ -117,7 +150,6 @@ function RookieSection({ rookieScores }) {
       </button>
       {open && (
         <div className="rookie-section__body">
-          <p className="small-text">{rookieScores.methodology_note}</p>
           <div className="selector">
             <label htmlFor="rookie-position-select">Position</label>
             <select
@@ -189,6 +221,16 @@ export default function FantasyRankings() {
     ? new Map(weekBreakoutAlerts.map((a) => [a.id, a]))
     : null;
 
+  // Real opponent D_Elo/rank for the selected week - each player's real
+  // `opponent` field already comes precomputed from the backend (see
+  // generate_fantasy_rankings_2026_week1.py's real
+  // _real_week1_opponents_2026()), so this only needs a real team ->
+  // D_Elo/rank lookup, not the game-matching logic a from-scratch version
+  // would otherwise need.
+  const dEloRanks = useMemo(
+    () => realDEloRanksForWeek(seasonData.games.filter((g) => g.week === selectedWeek)),
+    [seasonData.games, selectedWeek]);
+
   useEffect(() => {
     setSelectedWeek(weeks[0]);
     setExpandedPlayerId(null);
@@ -216,9 +258,7 @@ export default function FantasyRankings() {
           <div className="preseason-banner">
             <span className="preseason-banner-title">📋 Week 1 Preseason Projections</span>
             <span className="preseason-banner-note">
-              Real {selectedSeason} preseason data only - each returning player&apos;s own real
-              full-2025-season per-game rate (WR: real EPA-based static projection), no real 2026
-              games played yet. Real results appear once the season starts.
+              No real {selectedSeason} games played yet - see How This Model Works for methodology.
             </span>
           </div>
         )}
@@ -260,25 +300,6 @@ export default function FantasyRankings() {
         </div>
       </div>
 
-      {selectedPosition === 'WR' && (
-        <p className="wr-static-note">
-          {isPreseason ? (
-            <>
-              WR projections use a real static EPA-based season-long figure for every {selectedSeason}
-              player shown - there&apos;s no real prior {selectedSeason} week yet to switch to a
-              trailing average, unlike a season already in progress.
-            </>
-          ) : (
-            <>
-              WR projections use a real trailing up-to-4-week actual-PPR average once a player has a
-              real prior {selectedSeason} week - a player&apos;s first real {selectedSeason} appearance
-              (usually week 1) falls back to a static season-long figure instead. Each card&apos;s
-              &quot;Methodology&quot; section shows which real method produced that specific projection.
-            </>
-          )}
-        </p>
-      )}
-
       <div className="players-container">
         {players.length === 0 ? (
           <p className="empty-state">No real projection data for this week/position.</p>
@@ -289,9 +310,9 @@ export default function FantasyRankings() {
               player={player}
               isExpanded={expandedPlayerId === player.id}
               onToggle={() => setExpandedPlayerId(expandedPlayerId === player.id ? null : player.id)}
-              isPreseason={isPreseason}
               props={propsById ? propsById.get(player.id) : null}
               breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
+              opponentDElo={player.opponent ? dEloRanks[player.opponent] : null}
             />
           ))
         )}
@@ -301,58 +322,19 @@ export default function FantasyRankings() {
 
       <div className="disclaimer">
         <p>
-          {isPreseason ? (
-            <>
-              Real {selectedSeason} Week 1 preseason projections, no fabrication. RB/QB/TE:
-              each returning player&apos;s own real full-2025-season per-game rate, run through
-              this project&apos;s real, unmodified PPR formula - the same real convention already
-              used for a completed season&apos;s own Week 1 (fall back to the real prior season&apos;s
-              rate), just applied one real year forward. WR: the same real static EPA-based
-              formula as a completed season, calibrated on real 2025 outcomes and applied to real{' '}
-              {selectedSeason} preseason inputs. Real 2026 team assignments come from this
-              project&apos;s own real, {selectedSeason}-specific roster files, not a stale prior-year
-              team (the exact class of bug the 2026-07-30 audit caught and fixed). Opponent defense
-              rank, recent form, injury status, actual PPR, and accuracy tier are all real nulls -
-              none of them have any real data to compute from before a season starts. Players with
-              real 2025 data are all wired in as this project&apos;s real 2026 preseason roster
-              files; a real, newly-drafted rookie with no prior real season would be excluded here
-              (a real, disclosed gap) rather than assigned an invented rate.
-            </>
-          ) : (
-            <>
-              Real {selectedSeason} backtest data. RB/QB/TE use validated volume-only
-              trailing-window formulas, updated every real week (RB: real corr
-              +0.651, QB/TE: beat their combined-formula baselines - see
-              PROGRESS.md). WR uses a real trailing up-to-4-week actual-PPR
-              average (real corr +0.4416, winner of a real leave-one-out
-              backtest across 23 variations - see src/wr_dynamic_backtest.py)
-              once a player has a real prior {selectedSeason} week; a player&apos;s first real
-              {selectedSeason} appearance falls back to the original validated static
-              EPA+volume season projection instead - each card&apos;s own
-              &quot;Methodology&quot; section shows which real method produced that
-              specific row. Opponent defense rank vs. position and injury
-              status (real
-              nflreadpy weekly reports) are real, but absent for week 1 where no
-              real trailing data or report exists yet - not fabricated with a
-              fallback. Recent form is the real trailing 4-week actual PPR (also
-              absent in week 1). Actual PPR and projection accuracy (for
-              completed games) use real results, with accuracy color tiers set
-              from empirical per-position terciles, not a fixed threshold. No
-              confidence interval is shown - that still needs real per-player
-              calibration work, not a lookup. See the project&apos;s Data Gaps
-              Report for detail.
-            </>
-          )}
+          {isPreseason
+            ? `Real ${selectedSeason} Week 1 preseason projections - the season hasn't started yet.`
+            : `Real ${selectedSeason} backtest data.`}{' '}
+          See How This Model Works for full methodology.
         </p>
       </div>
     </div>
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakoutAlert }) {
+function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, opponentDElo }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
-  const isPriorSeasonFallback = player.projection_type === 'prior_season_rate_fallback';
   const handleKeyDown = useKeyboardToggle(onToggle);
 
   return (
@@ -378,6 +360,21 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
           >
             {player.team}
           </span>
+          {breakoutAlert && (
+            <span className="breakout-badge" title={breakoutAlert.recommendation}>
+              <span className="breakout-icon">⚡</span>
+              <span className="breakout-text">Breakout</span>
+              <span className="confidence">{Math.round(breakoutAlert.confidence * 100)}%</span>
+            </span>
+          )}
+          {player.confidence_tier === 'lower' && (
+            <span
+              className="confidence-tier-badge"
+              title="Real 2025 opportunities below this position's validated projection threshold - included, but a real, meaningfully weaker signal than the rest of the list (see Fantasy Predictions in How This Model Works)."
+            >
+              Lower confidence
+            </span>
+          )}
         </div>
 
         <div className="ppr">
@@ -390,17 +387,18 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
           </div>
         )}
 
-        {player.injury_status && player.injury_status !== 'healthy' && (
-          <div className="injury-badge" title={player.injury_status_raw || player.injury_status}>
-            {INJURY_EMOJI[player.injury_status] || '⚪'}
+        {opponentDElo && (
+          <div
+            className="opponent-d-elo"
+            title={`Real ${player.opponent} Defensive Elo this week: ${Math.round(opponentDElo.d_elo)} (${ordinal(opponentDElo.rank)} of ${opponentDElo.total} real teams, 1 = strongest real defense)`}
+          >
+            vs {player.opponent} ({Math.round(opponentDElo.d_elo)} D_Elo, {ordinal(opponentDElo.rank)} best)
           </div>
         )}
 
-        {breakoutAlert && (
-          <div className="breakout-badge" title={breakoutAlert.recommendation}>
-            <span className="breakout-icon">⚡</span>
-            <span className="breakout-text">Breakout</span>
-            <span className="confidence">{Math.round(breakoutAlert.confidence * 100)}%</span>
+        {player.injury_status && player.injury_status !== 'healthy' && (
+          <div className="injury-badge" title={player.injury_status_raw || player.injury_status}>
+            {INJURY_EMOJI[player.injury_status] || '⚪'}
           </div>
         )}
 
@@ -417,13 +415,15 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
             <div className="section-title">Projection</div>
             <div>
               {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} projected PPR points
-              {isStatic
-                ? ' (static season-long projection, per-game average)'
-                : isPriorSeasonFallback
-                ? " (this player's own real prior-season per-game rate, no real trailing data yet this season)"
-                : ' (this week, real trailing data)'}
+              {isStatic ? ' (season avg)' : ''}
             </div>
-            <div className="small-text">Source: {player.source}</div>
+            {player.confidence_tier === 'lower' && (
+              <div className="small-text">
+                Lower confidence: this player&apos;s real 2025 opportunities (targets/carries/attempts) were
+                below this position&apos;s validated projection threshold - included for real roster
+                coverage, but a real, meaningfully weaker signal than the rest of the list.
+              </div>
+            )}
           </div>
 
           {player.actual_ppr !== null && player.actual_ppr !== undefined && (
@@ -449,22 +449,12 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
               {player.accuracy_tier && (
                 <div className="accuracy-indicator">
                   {ACCURACY_DISPLAY[player.accuracy_tier].emoji} {ACCURACY_DISPLAY[player.accuracy_tier].label}
-                  <span className="small-text">
-                    {' '}(empirical tercile of real {player.position} projection errors this season, not a fixed threshold)
-                  </span>
                 </div>
               )}
               {ACCURACY_TERCILE_RANGES[player.position] && (
                 <div className="accuracy-ranges">
                   <span className="label">Real {player.position} green/yellow boundary this season:</span>
                   <span className="ranges">{ACCURACY_TERCILE_RANGES[player.position]}</span>
-                </div>
-              )}
-              {isStatic && (
-                <div className="small-text">
-                  {isPreseason
-                    ? "No real trailing form exists yet this early in the season, so this row uses the static season-long average instead of the usual trailing actual-PPR projection - large differences here often reflect real game-to-game variance, not model error."
-                    : "This is the player's first real appearance this season, so no trailing form exists yet - this row uses the static season-long average instead of the usual trailing actual-PPR projection, so large differences here often reflect real game-to-game variance, not model error."}
                 </div>
               )}
             </div>
@@ -474,13 +464,10 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
             <div className="section">
               <div className="section-title">Matchup</div>
               <div>vs {teamName(player.opponent)}</div>
-              {player.opponent_defense_rank_vs_position !== null && player.opponent_defense_rank_vs_position !== undefined ? (
+              {player.opponent_defense_rank_vs_position !== null && player.opponent_defense_rank_vs_position !== undefined && (
                 <div className="small-text">
                   Real trailing defense rank vs {player.position}: #{player.opponent_defense_rank_vs_position} of 32
-                  (1 = stingiest, through the prior real week's play-by-play)
                 </div>
-              ) : (
-                <div className="small-text">No real trailing defense data yet (week 1 - not fabricated with a fallback)</div>
               )}
             </div>
           )}
@@ -501,17 +488,6 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
                     </div>
                   );
                 })}
-              </div>
-              <div className="small-text">
-                Real, position-specific linear regression (5-fold cross-validated), conditioned on
-                this player&apos;s own real 2015-2025 career per-game average and the real opponent
-                Defensive Elo ({props.opponent_d_elo}) from this project&apos;s O/D Elo split - not a
-                fixed per-position adjustment. Volume/yardage props are meaningfully predictive (real
-                out-of-fold R² 0.16-0.31). TD props show a real probability of 1+ TD instead of an
-                expected count (logistic regression, real AUC 0.60-0.70, GroupKFold by player) - the
-                old linear expected-count approach was replaced after a real R² 0.037-0.139 confirmed
-                it wasn&apos;t meaningfully predictive or actionable for a binary, rare event. See
-                player_props_models.json / td_props_logistic_models.json for the full real validation.
               </div>
             </div>
           )}
@@ -553,15 +529,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
                   </div>
                 )}
               </div>
-              <div className="small-text">
-                {breakoutAlert.recommendation}. Confidence is out of 3 real, currently-available
-                signals (weak defense, usage trend, recent form) - a 4th real signal slot
-                (competition/injury at the position) exists in this data but is always inactive right
-                now: {breakoutAlert.signals.competition_reduced.disclosure} Real, empirically-derived
-                thresholds throughout (top/bottom tercile of each signal&apos;s own real league-wide
-                distribution), not asserted cutoffs - about 26% of all real player-weeks meet the 2-of-3
-                bar, the honest combinatorial result of that design, not a rare/exclusive signal.
-              </div>
+              <div className="small-text">{breakoutAlert.recommendation}</div>
             </div>
           )}
 
@@ -572,11 +540,6 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
                 {INJURY_EMOJI[player.injury_status] || '⚪'} {player.injury_status}
                 {player.injury_status_raw ? ` (${player.injury_status_raw})` : ''}
               </div>
-              <div className="small-text">
-                {isPreseason
-                  ? "Defaulted to healthy - real nflreadpy injury data doesn't cover this season at all yet (verified directly), not because this specific player was checked and cleared."
-                  : "From real nflreadpy weekly injury reports - no report entry means the player wasn't listed that week (real absence, not an assumption)."}
-              </div>
             </div>
           )}
 
@@ -584,7 +547,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
             <div className="section-title">Injury Risk &amp; Consistency</div>
             {player.injury_risk_score !== null && player.injury_risk_score !== undefined ? (
               <div className="stat-row injury-risk">
-                <span className="label">Injury Risk</span>
+                <span className="label">Career Injury Risk</span>
                 <div className="risk-bar">
                   <div className={`risk-fill risk-${player.injury_risk_slug}`} style={{ width: `${player.injury_risk_score}%` }} />
                 </div>
@@ -592,7 +555,7 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
               </div>
             ) : (
               <div className="small-text">
-                Injury risk: no real 2015-2025 NFL history to compute a career miss rate from.
+                Career Injury Risk: no real 2015-2025 NFL history to compute a career miss rate from.
               </div>
             )}
             {player.consistency_score !== null && player.consistency_score !== undefined ? (
@@ -605,15 +568,9 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
               </div>
             ) : (
               <div className="small-text">
-                Consistency: fewer than 8 real 2025 weekly PPR values to compute week-to-week variance from.
+                Consistency: fewer than 8 real career weekly PPR values to compute week-to-week variance from.
               </div>
             )}
-            <div className="small-text">
-              Injury Risk: real career miss rate (2015-2025, &gt;=4-game seasons only) blended with
-              real, empirically-computed position/age risk multipliers and real recent (last 8
-              real weeks) miss rate - not asserted constants. Consistency: 100 minus real
-              week-to-week coefficient of variation in 2025 actual PPR (higher = more predictable).
-            </div>
           </div>
 
           {player.recent_form && player.recent_form.length > 0 && (
@@ -633,27 +590,8 @@ function PlayerCard({ player, isExpanded, onToggle, isPreseason, props, breakout
                   </span>
                 )}
               </div>
-              <div className="small-text">Real actual PPR, most recent real weeks strictly before this one.</div>
             </div>
           )}
-
-          <div className="section">
-            <div className="section-title">Methodology</div>
-            <div className="small-text">
-              {isPriorSeasonFallback
-                ? "No real trailing 2026 data exists yet - this real formula uses this player's own real full-2025-season per-game rate (rushing/receiving/passing touches, yards, TDs) run through the same real formula used once the season is underway, the same real fallback convention already used for a completed season's own real Week 1."
-                : isStatic && player.position === 'WR' && isPreseason
-                ? 'Static, real season-long EPA x volume projection, calibrated on real 2025 outcomes and applied to real 2026 preseason inputs - every WR row uses this real static method before the season starts, since no real trailing weeks exist yet.'
-                : isStatic && player.position === 'WR'
-                ? "Static, real season-long EPA x volume projection (the original validated WR formula), calibrated to real PPR units and divided by real expected games played - used because this is this player's first real appearance this season, before any real trailing form exists."
-                : isStatic
-                ? 'Static, real season-long EPA x volume projection, calibrated to real PPR units and divided by real expected games played - does not update within the season.'
-                : player.position === 'WR'
-                ? 'Real trailing up-to-4-week actual-PPR average - the real winner of a leave-one-out backtest across 23 variations (corr +0.4416 vs. a leak-free static baseline\'s +0.3957 - see src/wr_dynamic_backtest.py), not a volume formula like RB/QB/TE.'
-                : "Volume-based formula (rushing/receiving/passing touches, yards, TDs) using each player's own real trailing weeks of this season's data (week 1 falls back to the real prior season's per-game rates)."}
-              {' '}No confidence interval is factored in or shown - real per-player calibration for that doesn't exist yet.
-            </div>
-          </div>
 
           <div className="collapse-hint">Click to collapse</div>
         </div>

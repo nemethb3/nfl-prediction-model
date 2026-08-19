@@ -69,6 +69,18 @@ export default function PersonalRoster({ leagueId, userId }) {
     return <div className="personal-roster">No roster data.</div>;
   }
 
+  // Real, deliberate crosswalk scope (generate_sleeper_id_mapping.py:
+  // POSITIONS = {"QB","RB","WR","TE"}) - kickers and team defenses are
+  // never in sleeperIdMapping at all, by design, since this project has
+  // no K or DEF model anywhere (see ModelTransparency's Limitations
+  // section). An unmapped roster slot is therefore virtually always one
+  // of those two real, out-of-scope positions, not a data gap - counted
+  // and disclosed in aggregate below rather than rendered as a per-card
+  // error, which is what was reading as "empty boxes" for every real
+  // league roster (every real lineup carries exactly one DEF + one K).
+  const rosterIds = roster.players || [];
+  const unmappedCount = rosterIds.filter((sleeperId) => !sleeperIdMapping[sleeperId]).length;
+
   return (
     <div className="personal-roster">
       <h2>Your Roster</h2>
@@ -80,21 +92,11 @@ export default function PersonalRoster({ leagueId, userId }) {
       )}
 
       <div className="personal-roster__roster-grid">
-        {(roster.players || []).map((sleeperId) => {
+        {rosterIds.map((sleeperId) => {
           const idInfo = sleeperIdMapping[sleeperId];
 
           if (!idInfo) {
-            return (
-              <div
-                key={sleeperId}
-                className="personal-roster__roster-card personal-roster__roster-card--error"
-              >
-                <span className="personal-roster__error-text">
-                  Not a fantasy-relevant position (QB/RB/WR/TE only) or not in this project&apos;s
-                  real player ID crosswalk
-                </span>
-              </div>
-            );
+            return null;
           }
 
           const projection = fantasyData.find((p) => p.id === `${idInfo.player_id}_w${targetWeek}`);
@@ -149,16 +151,33 @@ export default function PersonalRoster({ leagueId, userId }) {
                       Consistency: {projection.consistency_label}
                     </div>
                   )}
+
+                  {projection.confidence_tier === 'lower' && (
+                    <div
+                      className="personal-roster__confidence-tier-badge"
+                      title="Real 2025 opportunities below this position's validated projection threshold - a real, meaningfully weaker signal than this project's core rankings."
+                    >
+                      Lower confidence projection
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="personal-roster__card-no-data">
-                  Outside this project&apos;s real top-294 ranked players this week
+                  Outside this project&apos;s real ~390 ranked players this week
                 </div>
               )}
             </div>
           );
         })}
       </div>
+
+      {unmappedCount > 0 && (
+        <div className="personal-roster__excluded-note">
+          {unmappedCount} roster spot{unmappedCount === 1 ? '' : 's'} not shown - kickers, team
+          defenses, and any other position outside this project&apos;s real QB/RB/WR/TE scope
+          (see Limitations in How This Model Works).
+        </div>
+      )}
 
       <div className="personal-roster__disclaimer">
         <p>
@@ -168,9 +187,11 @@ export default function PersonalRoster({ leagueId, userId }) {
           Sleeper ID &lt;-&gt; this project&apos;s own GSIS-style player ID) - not Sleeper&apos;s
           own self-reported ID field, which was found to have incomplete real coverage for
           several prominent active players. Projections are this project&apos;s own real,
-          already-published {selectedSeason} top-294 fantasy rankings - a roster player outside
-          that list (deep bench, practice squad) will real-honestly show no projection rather than
-          a fabricated one. Start/Bench/Sit is a basic real threshold (projected PPR &gt; 15 =
+          already-published {selectedSeason} fantasy rankings (~390 real players, including a real,
+          explicitly labeled lower-confidence tier for players below this project&apos;s validated
+          opportunity threshold) - a roster player outside that list (deep bench, practice squad,
+          true rookie) will real-honestly show no projection rather than a fabricated one.
+          Start/Bench/Sit is a basic real threshold (projected PPR &gt; 15 =
           Start, &lt; 5 = Bench, real bye week = Sit) - not this project&apos;s full model output,
           which has no lineup-optimization logic built yet.
         </p>

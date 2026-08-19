@@ -173,6 +173,14 @@ html, body, #root {
   white-space: nowrap;
 }
 
+.single-elo-spread {
+  color: #888;
+}
+
+.our-spread {
+  font-weight: 600;
+}
+
 .label {
   color: #999;
   font-size: 10px;
@@ -232,6 +240,175 @@ html, body, #root {
   color: #999;
   font-size: 11.5px;
   margin-top: 2px;
+}
+
+.game-card-expanded .elo-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-card-expanded .team-elo-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.game-card-expanded .team-elo-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.game-card-expanded .metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12.5px;
+}
+
+.game-card-expanded .metric .label {
+  color: #999;
+  font-size: 11px;
+  text-transform: none;
+  margin-right: 0;
+}
+
+.game-card-expanded .metric .value {
+  color: #eee;
+}
+
+@media (max-width: 480px) {
+  .game-card-expanded .elo-metrics {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.game-card-expanded .qb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-card-expanded .qb-card {
+  padding: 8px 10px;
+  background: #151515;
+  border-radius: 4px;
+}
+
+.game-card-expanded .qb-card h4 {
+  font-size: 11px;
+  color: #999;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.game-card-expanded .qb-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.game-card-expanded .qb-name {
+  font-size: 13px;
+  color: #eee;
+  font-weight: 600;
+}
+
+.game-card-expanded .qb-stats {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12px;
+}
+
+.game-card-expanded .qb-pass-count {
+  font-weight: 700;
+  color: #eee;
+}
+
+.game-card-expanded .qb-pass-prob {
+  color: #999;
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  .game-card-expanded .qb-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.game-card-expanded .scorers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-card-expanded .team-scorers h4 {
+  font-size: 12px;
+  color: #999;
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.game-card-expanded .scorers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.game-card-expanded .scorer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  border-bottom: 1px solid #1e1e1e;
+  font-size: 12px;
+}
+
+.game-card-expanded .scorer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card-expanded .scorer-name {
+  color: #eee;
+}
+
+.game-card-expanded .scorer-position {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.game-card-expanded .scorer-odds {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.game-card-expanded .scorer-prob {
+  font-weight: 700;
+  color: #eee;
+}
+
+.game-card-expanded .scorer-implied-odds {
+  color: #999;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  min-width: 44px;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .game-card-expanded .scorers-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 .disagreement-note {

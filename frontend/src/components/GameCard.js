@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor, TEAM_TIMEZONES, TIMEZONE_LABELS } from '../constants/teams';
 import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
+import { getUserTimezone, formatKickoffInZone, SHORT_CODE_TO_IANA_ZONE, ARIZONA_IANA_ZONE } from '../utils/timeUtils';
 
 // Sign convention (verified against real 2025 moneylines, matches
 // data_pipeline.py's documented convention): positive spread = home team
@@ -28,14 +29,15 @@ function ordinal(n) {
   }
 }
 
-// dEloRanks is optional (real, computed once in GamePredictions.js from
-// the full real season's games - not derivable from a single game prop,
-// and NOT computed via useSeason() here since GameCard.test.js renders
-// this component directly, without a SeasonProvider).
-function dEloRankLabel(team, dEloRanks) {
-  const r = dEloRanks?.[team];
+// Rank maps (singleEloRanks/oEloRanks/dEloRanks) are optional props,
+// computed once per week in GamePredictions.js (real Elo moves week-to-
+// week for a completed season, so this can't be derived from a single
+// game prop) - NOT computed via useSeason() here since GameCard.test.js
+// renders this component directly, without a SeasonProvider.
+function rankLabel(team, ranks) {
+  const r = ranks?.[team];
   if (!r) return '';
-  return ` (${ordinal(r.rank)} best defense of ${r.total})`;
+  return ` (${ordinal(r.rank)} of ${r.total})`;
 }
 
 // Labels match generate_dashboard_data.py's empirical-tercile buckets
@@ -70,91 +72,39 @@ function atsResult(actualSpreadMargin, vegasSpread) {
   return actualSpreadMargin > vegasSpread ? 'home' : 'away';
 }
 
-// Real fact, verified against this project's own 2025 schedule data before
-// building this: kickoff_datetime's time-of-day is stored in Eastern Time
-// (nflverse's documented schedules.gametime convention), not UTC and not
-// each game's own stadium-local time - e.g. real LV (Pacific) home games
-// show gametime 16:05/16:25, the real ET value for the real 1:05/1:25 PM
+// Real fact, verified against this project's own 2025/2026 schedule data:
+// kickoff_datetime's time-of-day is stored in Eastern Time (nflverse's
+// documented schedules.gametime convention), not UTC and not each game's
+// own stadium-local time - e.g. real LV (Pacific) home games show
+// gametime 16:05/16:25, the real ET value for the real 1:05/1:25 PM
 // Pacific "late window" kickoff, not an evening LV-local time.
 //
-// This matters because `new Date("2025-09-04T20:20:00")` (no UTC offset in
-// the string) parses those digits as the VIEWER's OWN local time, not ET -
-// so a bare `new Date(kickoff_datetime)` (what this component did before)
-// silently just echoes the raw ET digits back to every viewer as if they
-// were already correct, rather than converting anything. Fixed by
-// attaching the real ET UTC offset before parsing, so downstream
-// conversions to any real viewer timezone are actually correct.
-const DST_2025_FALLBACK_DATE = '2025-11-02'; // real 2025 US DST end date
+// Real, previously-shipped bug found and fixed by this task: an earlier
+// version of this file hand-rolled the ET->UTC conversion with a
+// hardcoded single DST cutover date. Since ISO date strings compare
+// lexicographically, that logic silently used the wrong (EST) offset for
+// EVERY real 2026 game before the real 2026 DST cutover (Nov 1, 2026) -
+// a genuine ~1-hour-off bug for roughly half the 2026 season in "Your
+// Time" mode. Real, permanent fix now lives in utils/timeUtils.js: real
+// IANA-timezone-database-driven conversion (Intl.DateTimeFormat), which
+// handles DST correctly for any real year with no hardcoded date, and
+// handles Arizona's real non-DST-observing zone natively (no more
+// hand-rolled Arizona special case).
+const USER_TIMEZONE = getUserTimezone();
 
-function etUtcOffsetHours(kickoffISO) {
-  const gameDate = kickoffISO.slice(0, 10);
-  return gameDate >= DST_2025_FALLBACK_DATE ? 5 : 4; // EST (-5) on/after, EDT (-4) before
+function stadiumIanaZone(homeTeam) {
+  if (homeTeam === 'ARI') return ARIZONA_IANA_ZONE;
+  return SHORT_CODE_TO_IANA_ZONE[TEAM_TIMEZONES[homeTeam]] || 'America/New_York';
 }
 
-const STADIUM_HOURS_BEHIND_ET = { ET: 0, CT: 1, MT: 2, PT: 3 };
-
-function stadiumOffsetHours(homeTeam, kickoffISO) {
-  if (homeTeam === 'ARI') {
-    // Real fact: Arizona doesn't observe DST, so its real offset from ET
-    // isn't constant like the other zones - it matches Pacific (3h behind
-    // ET) during the real EDT months, then Mountain (2h behind ET) after
-    // the real Nov 2 fall-back, even though TEAM_TIMEZONES labels it "MT"
-    // year-round per convention.
-    return etUtcOffsetHours(kickoffISO) === 4 ? 3 : 2;
-  }
-  return STADIUM_HOURS_BEHIND_ET[TEAM_TIMEZONES[homeTeam]] ?? 0;
+function formatKickoff(kickoffISO, homeTeam, showUserTime) {
+  const zone = showUserTime ? USER_TIMEZONE : stadiumIanaZone(homeTeam);
+  return formatKickoffInZone(kickoffISO, zone);
 }
 
-function toAbsoluteKickoffDate(kickoffISO) {
-  const offsetHours = etUtcOffsetHours(kickoffISO);
-  const d = new Date(`${kickoffISO}-0${offsetHours}:00`);
-  return Number.isNaN(d.getTime()) ? null : d;
-}
-
-function formatKickoffDate(kickoffISO) {
-  if (!kickoffISO) return '';
-  const [y, m, day] = kickoffISO.slice(0, 10).split('-').map(Number);
-  const d = new Date(y, m - 1, day); // calendar date only - no timezone/instant involved
-  if (Number.isNaN(d.getTime())) return '';
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-}
-
-function formatKickoffTime(kickoffISO, homeTeam, showUserTime) {
-  if (!kickoffISO) return 'TBD';
-  const timePart = kickoffISO.slice(11, 16);
-  if (!timePart) return 'TBD';
-
-  if (!showUserTime) {
-    // Game Time: real stadium-local clock, derived directly from the real
-    // ET source value + the real fixed hour offset for that stadium's zone
-    // (all real US mainland zones shift DST together, so CT/MT/PT stay a
-    // constant 1/2/3 hours behind ET all season - only Arizona varies, see
-    // stadiumOffsetHours).
-    const [etHour, etMin] = timePart.split(':').map(Number);
-    const offset = stadiumOffsetHours(homeTeam, kickoffISO);
-    const localHour = (etHour - offset + 24) % 24;
-    const meridiem = localHour >= 12 ? 'PM' : 'AM';
-    const displayHour = localHour % 12 || 12;
-    return `${displayHour}:${etMin.toString().padStart(2, '0')} ${meridiem}`;
-  }
-
-  const absolute = toAbsoluteKickoffDate(kickoffISO);
-  if (!absolute) return 'TBD';
-  let userTimezone = 'UTC';
-  try {
-    userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-  } catch (e) {
-    userTimezone = 'UTC';
-  }
-  return absolute.toLocaleString('en-US', {
-    timeZone: userTimezone,
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-  });
-}
-
-export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
+export default function GameCard({
+  game, singleEloRanks, oEloRanks, dEloRanks, topScorers, qbPassingTDs, isExpanded, onToggle,
+}) {
   const [showUserTime, setShowUserTime] = useState(true);
   const handleKeyDown = useKeyboardToggle(onToggle);
   const {
@@ -165,8 +115,6 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
     home_elo: homeElo,
     away_elo: awayElo,
     our_spread: ourSpread,
-    ci_low_90: ciLow90,
-    ci_high_90: ciHigh90,
     vegas_spread: vegasSpread,
     win_prob_home: winProbHome,
     win_prob_away: winProbAway,
@@ -202,6 +150,7 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
     ? (winProbHome > 0.5 ? home : away) : null;
   const winProbHit = hasResult && winProbFavorite && actualWinner !== 'TIE'
     ? actualWinner === winProbFavorite : null;
+  const kickoff = formatKickoff(game.kickoff_datetime, home, showUserTime);
 
   return (
     <div
@@ -235,7 +184,7 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
             {home}
           </span>
           <span className="kickoff-time">
-            {formatKickoffDate(game.kickoff_datetime)} · {formatKickoffTime(game.kickoff_datetime, home, showUserTime)}
+            {kickoff.date} · {kickoff.time}
             {game.kickoff_datetime && (
               <span className="timezone-label">
                 {' '}
@@ -264,8 +213,13 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
         </div>
 
         <div className="game-card-spreads">
+          {singleEloSpread !== null && singleEloSpread !== undefined && (
+            <div className="single-elo-spread">
+              <span className="label">Single-Elo</span> {formatSpread(singleEloSpread, home, away)}
+            </div>
+          )}
           <div className="our-spread">
-            <span className="label">Our</span> {formatSpread(ourSpread, home, away)}
+            <span className="label">O/D Elo</span> {formatSpread(ourSpread, home, away)}
           </div>
           {vegasSpread !== null && vegasSpread !== undefined && (
             <div className="vegas-spread">
@@ -302,36 +256,25 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
 
           <div className="section">
             <div className="section-title">Prediction</div>
-            <div>Our spread: {formatSpread(ourSpread, home, away)}</div>
-            {ciLow90 !== null && ciLow90 !== undefined && ciHigh90 !== null && ciHigh90 !== undefined && (
-              <div className="game-card__confidence-interval">
-                90% CI: {ciLow90.toFixed(1)} to {ciHigh90.toFixed(1)} (home-team spread points, from the
-                real fitted model's own residual std - not a Vegas-derived number)
-              </div>
-            )}
-            {vegasSpread !== null && vegasSpread !== undefined && (
-              <div>Vegas closing line: {formatSpread(vegasSpread, home, away)}</div>
-            )}
             {singleEloSpread !== null && singleEloSpread !== undefined && (
-              <div className="small-text">
-                For comparison, single-Elo alone (team strength only, no offense/defense split)
-                would have predicted {formatSpread(singleEloSpread, home, away)}
+              <div>
+                Single-Elo spread: {formatSpread(singleEloSpread, home, away)}
                 {singleEloWinProbHome !== null && singleEloWinProbHome !== undefined && (
                   <> ({Math.round((favoriteTeam(singleEloSpread, home, away) === home
                     ? singleEloWinProbHome : 1 - singleEloWinProbHome) * 100)}% implied)</>
-                )} - real, from the same fitted single-Elo model this project used before the O/D
-                swap, not a raw Elo-rating difference.
+                )}
               </div>
+            )}
+            <div>O/D Elo spread: {formatSpread(ourSpread, home, away)}</div>
+            {vegasSpread !== null && vegasSpread !== undefined && (
+              <div>Vegas closing line: {formatSpread(vegasSpread, home, away)}</div>
             )}
             <div>Source: {baseSource === 'vegas' ? 'Vegas line + matchup adjustment' : 'Elo fallback (no posted line)'}</div>
             {netEdgeDiff !== null && netEdgeDiff !== undefined && Math.abs(netEdgeDiff) > 0.001 && (
               <div>Matchup EPA edge differential: {netEdgeDiff > 0 ? '+' : ''}{netEdgeDiff.toFixed(2)} (home perspective)</div>
             )}
             {matchupQuality && MATCHUP_QUALITY_DISPLAY[matchupQuality] && (
-              <div>
-                {MATCHUP_QUALITY_DISPLAY[matchupQuality].emoji} {MATCHUP_QUALITY_DISPLAY[matchupQuality].label}
-                <span className="small-text"> (empirical tercile of this season's real matchup-edge distribution)</span>
-              </div>
+              <div>{MATCHUP_QUALITY_DISPLAY[matchupQuality].emoji} {MATCHUP_QUALITY_DISPLAY[matchupQuality].label}</div>
             )}
           </div>
 
@@ -347,13 +290,7 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
                   </div>
                 </>
               )}
-              <div className="small-text">
-                Real, honest finding from this project&apos;s own backtest: Elo/week/season carry
-                essentially no real signal for total points (R² 0.005, directional accuracy ~50% at
-                every edge size tested, 0.5-5 points, on real held-out data). Shown as weak,
-                informational context only - not a betting recommendation, and no confidence/alert
-                threshold is implied.
-              </div>
+              <div className="small-text">Weak signal (real backtest R² 0.005) - informational only.</div>
             </div>
           )}
 
@@ -365,24 +302,7 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
                   (winProbFavorite === home ? winProbHome : winProbAway) * 100
                 )}% implied)
               </div>
-              <div className="small-text">
-                {baseSource === 'vegas' ? (
-                  <>
-                    From a real backtested model (logistic regression fit on real 2024 Vegas
-                    spreads vs. real outcomes; real 2025 weeks 13-17 holdout Brier score 0.2512 -
-                    beat both an Elo-based model and a simple heuristic; see backtesting_results.md).
-                  </>
-                ) : (
-                  <>
-                    No real Vegas line exists for this game (real preseason matchup, before that
-                    model&apos;s own input data exists) - this uses this project&apos;s real
-                    offensive/defensive Elo split instead (real held-out 2024 Brier score 0.2182,
-                    beating the prior single-Elo model&apos;s 0.2272 on the same real test - see
-                    od_elo_production_validation.json).
-                  </>
-                )}{' '}
-                Not a betting recommendation.
-              </div>
+              <div className="small-text">Not a betting recommendation.</div>
             </div>
           )}
 
@@ -390,56 +310,92 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
             <div className="section disagreement-note">
               <div className="section-title">Model vs. Vegas</div>
               <div>Our model favors {disagreement.ourFavorite}; Vegas favors {disagreement.vegasFavorite}.</div>
-              <div className="small-text">
-                Shown for transparency only, not a recommendation - this project's own real
-                backtest (edge_detection.py) found that betting on disagreements like this one
-                produced -36% ROI (actively harmful), not a real edge.
-              </div>
+              <div className="small-text">Not a recommendation - real backtest ROI on disagreements: -36%.</div>
             </div>
           )}
 
           {homeElo !== null && homeElo !== undefined && awayElo !== null && awayElo !== undefined && (
             <div className="section">
-              <div className="section-title">Matchup Strength (Elo)</div>
-              <div>{home}: {Math.round(homeElo)}</div>
-              <div>{away}: {Math.round(awayElo)}</div>
+              <div className="section-title">Team Elo Ratings</div>
+              <div className="elo-metrics">
+                <div className="team-elo-block">
+                  <div className="team-elo-name">{home}</div>
+                  <div className="metric">
+                    <span className="label">Single Elo</span>
+                    <span className="value">{Math.round(homeElo)}{rankLabel(home, singleEloRanks)}</span>
+                  </div>
+                  {homeOElo !== null && homeOElo !== undefined && (
+                    <div className="metric">
+                      <span className="label">O_Elo</span>
+                      <span className="value">{Math.round(homeOElo)}{rankLabel(home, oEloRanks)}</span>
+                    </div>
+                  )}
+                  {homeDElo !== null && homeDElo !== undefined && (
+                    <div className="metric">
+                      <span className="label">D_Elo</span>
+                      <span className="value">{Math.round(homeDElo)}{rankLabel(home, dEloRanks)}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="team-elo-block">
+                  <div className="team-elo-name">{away}</div>
+                  <div className="metric">
+                    <span className="label">Single Elo</span>
+                    <span className="value">{Math.round(awayElo)}{rankLabel(away, singleEloRanks)}</span>
+                  </div>
+                  {awayOElo !== null && awayOElo !== undefined && (
+                    <div className="metric">
+                      <span className="label">O_Elo</span>
+                      <span className="value">{Math.round(awayOElo)}{rankLabel(away, oEloRanks)}</span>
+                    </div>
+                  )}
+                  {awayDElo !== null && awayDElo !== undefined && (
+                    <div className="metric">
+                      <span className="label">D_Elo</span>
+                      <span className="value">{Math.round(awayDElo)}{rankLabel(away, dEloRanks)}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+              {homeOElo !== null && homeOElo !== undefined && awayOElo !== null && awayOElo !== undefined && (
+                <div className="small-text">
+                  {home} off vs {away} def: {(homeOElo - awayDElo) > 0 ? '+' : ''}{Math.round(homeOElo - awayDElo)}.{' '}
+                  {away} off vs {home} def: {(awayOElo - homeDElo) > 0 ? '+' : ''}{Math.round(awayOElo - homeDElo)}.
+                </div>
+              )}
+            </div>
+          )}
+
+          {qbPassingTDs && (qbPassingTDs[home] || qbPassingTDs[away]) && (
+            <div className="section qb-passing-tds">
+              <div className="section-title">Passing Touchdowns</div>
+              <div className="qb-grid">
+                <QBPassingTDCard team={away} qb={qbPassingTDs[away]} />
+                <QBPassingTDCard team={home} qb={qbPassingTDs[home]} />
+              </div>
               <div className="small-text">
-                Difference: {Math.round(Math.abs(homeElo - awayElo))} points
-                ({homeElo > awayElo ? home : away} favored) - real, from elo_ratings_2025.csv,
-                lagged one real week (entering-this-week rating, leak-free)
+                Real P(1+ pass TD) per real starting QB (logistic regression, real AUC 0.60-0.70 -
+                see td_props_logistic_models.json). Expected TD count is DERIVED from that real
+                probability (-ln(1-p), standard Poisson relationship), not a separate model - this
+                project already found and removed a real linear expected-count model for being
+                non-predictive (real R² 0.037-0.139). Not a betting recommendation.
               </div>
             </div>
           )}
 
-          {homeOElo !== null && homeOElo !== undefined && awayOElo !== null && awayOElo !== undefined && (
-            <div className="section">
-              <div className="section-title">Offense/Defense Elo Split</div>
-              <div>
-                {home}: {Math.round(homeOElo)} off / {Math.round(homeDElo)} def
-                {dEloRankLabel(home, dEloRanks)}
-              </div>
-              <div>
-                {away}: {Math.round(awayOElo)} off / {Math.round(awayDElo)} def
-                {dEloRankLabel(away, dEloRanks)}
+          {topScorers && (topScorers[home]?.length > 0 || topScorers[away]?.length > 0) && (
+            <div className="section top-scorers">
+              <div className="section-title">Top Rushing/Receiving TD Scorers</div>
+              <div className="scorers-grid">
+                <TeamScorers team={away} scorers={topScorers[away]} />
+                <TeamScorers team={home} scorers={topScorers[home]} />
               </div>
               <div className="small-text">
-                {home}&apos;s offense vs. {away}&apos;s defense: {(homeOElo - awayDElo) > 0 ? '+' : ''}
-                {Math.round(homeOElo - awayDElo)}. {away}&apos;s offense vs. {home}&apos;s defense:{' '}
-                {(awayOElo - homeDElo) > 0 ? '+' : ''}{Math.round(awayOElo - homeDElo)}. The gap between
-                these two real terms is what separates this prediction from single-Elo above, which only
-                sees each team&apos;s one combined rating and can&apos;t tell an elite offense facing a
-                weak defense apart from an average matchup at the same net strength.
-              </div>
-              <div className="small-text">
-                This split now generates the spread, win probability, and confidence interval above
-                for real 2026 preseason games (real, held-out 2024 validation found it beats the
-                prior single-Elo model on win/loss accuracy, spread MAE, and Brier score - see
-                od_elo_production_validation.json for the full comparison). The single Elo rating
-                shown in Matchup Strength above is real but no longer drives the prediction - shown
-                as additional context only. One real, disclosed trade-off accepted with this swap:
-                this split&apos;s 90% confidence bands were only 86.4% covered on the 2024 holdout
-                (vs. the prior model&apos;s 89.3%, closer to target) - bands are a bit tighter than
-                ideal.
+                Real P(1+ TD) per player this game, rushing/receiving only (passing TDs are shown
+                separately above) - logistic regression, real AUC 0.60-0.70 by position/TD-type
+                (see td_props_logistic_models.json), converted to standard American odds. A real
+                rushing QB can still appear here via their own real rushing_tds_prob. Not a
+                betting recommendation.
               </div>
             </div>
           )}
@@ -536,6 +492,55 @@ export default function GameCard({ game, dEloRanks, isExpanded, onToggle }) {
             </div>
           )}
         </div>
+      )}
+    </div>
+  );
+}
+
+function QBPassingTDCard({ team, qb }) {
+  return (
+    <div className="qb-card">
+      <h4>{team}</h4>
+      {qb ? (
+        <div className="qb-info">
+          <span className="qb-name">{qb.player_name}</span>
+          <div className="qb-stats">
+            <span className="qb-pass-count">{qb.expected_passing_tds.toFixed(1)} pass TDs</span>
+            <span className="qb-pass-prob">({Math.round(qb.passing_td_prob * 100)}% to score 1+)</span>
+          </div>
+        </div>
+      ) : (
+        <div className="no-data-note">No real QB props for this team yet.</div>
+      )}
+    </div>
+  );
+}
+
+function TeamScorers({ team, scorers }) {
+  return (
+    <div className="team-scorers">
+      <h4>{team}</h4>
+      {scorers && scorers.length > 0 ? (
+        <div className="scorers-list">
+          {scorers.map((s) => (
+            <div key={s.player_id} className="scorer-row">
+              <span className="scorer-info">
+                <span className="scorer-name">{s.player_name}</span>
+                <span className="scorer-position">{s.position} · {s.td_type}</span>
+              </span>
+              <span className="scorer-odds">
+                <span className="scorer-prob">{Math.round(s.td_prob * 100)}%</span>
+                {s.implied_odds != null && (
+                  <span className="scorer-implied-odds">
+                    {s.implied_odds > 0 ? '+' : ''}{s.implied_odds}
+                  </span>
+                )}
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="no-data-note">No real player props for this team yet.</div>
       )}
     </div>
   );

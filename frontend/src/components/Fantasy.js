@@ -3,22 +3,25 @@ import { useSeason } from '../context/SeasonContext';
 import FantasyRankings from './FantasyRankings';
 import TradeAnalyzer from './TradeAnalyzer';
 import LeagueConnector from './LeagueConnector';
-import BreakoutAlerts from './BreakoutAlerts';
 import './Fantasy.css';
 
 // Rankings and League Connection real-y need season data (FantasyRankings
 // calls useSeason() directly; LeagueConnector renders PersonalRoster once
 // connected, which also calls useSeason() - verified via grep). Trade
-// Analyzer and Breakout Alerts don't (TradeAnalyzer statically imports its
-// own precomputed JSON, independent of the selected season). Gating ALL
-// four subtabs behind the season-data loading placeholder (the originally
-// pasted spec's Fantasy.js has no loading-state handling at all) would be
-// a real regression for the two that don't need it.
+// Analyzer doesn't (TradeAnalyzer statically imports its own precomputed
+// JSON, independent of the selected season). Gating ALL subtabs behind the
+// season-data loading placeholder (the originally pasted spec's Fantasy.js
+// has no loading-state handling at all) would be a real regression for
+// the one that doesn't need it.
+//
+// Breakout Alerts tab removed (BreakoutAlerts.js component and its
+// breakout_alerts_2026.json data both left in place, unused, in case this
+// comes back later) - the real per-player breakout badges inside
+// FantasyRankings itself are a separate feature and are unaffected.
 const TABS = [
   { id: 'rankings', label: 'Rankings', needsSeasonData: true },
   { id: 'trade-analyzer', label: 'Trade Analyzer', needsSeasonData: false },
   { id: 'league-connection', label: 'League Connection', needsSeasonData: true },
-  { id: 'breakout-alerts', label: 'Breakout Alerts', needsSeasonData: false },
 ];
 
 export default function Fantasy() {
@@ -57,7 +60,6 @@ export default function Fantasy() {
                 `if (userId) fetchRoster()` guard would just leave permanently
                 stuck on "loading". */}
             {activeTab === 'league-connection' && <LeagueConnector />}
-            {activeTab === 'breakout-alerts' && <BreakoutAlerts />}
           </>
         )}
       </div>

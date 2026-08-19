@@ -11,7 +11,6 @@ import { teamName } from '../constants/teams';
 // every real number here was computed ahead of time in Python.
 import fantasyData from '../data/fantasy_rankings_2026.json';
 import tradeScoresData from '../data/trade_scores_2026.json';
-import multiSignalAccuracy from '../data/multi_signal_accuracy.json';
 import positionValueTiers from '../data/position_value_tiers.json';
 import tradeRoleAdjustmentsData from '../data/trade_role_adjustments.json';
 import '../styles/TradeAnalyzer.css';
@@ -169,25 +168,9 @@ function MultiPlayerTrade() {
   return (
     <>
       <div className="trade-analyzer__methodology">
-        <p>
-          <strong>Package value</strong> = each player&apos;s real Week 1 projected PPR &times; a real,
-          modest trajectory multiplier ({TRAJECTORY_MIN_MULTIPLIER.toFixed(1)}x-{(TRAJECTORY_MIN_MULTIPLIER + TRAJECTORY_RANGE).toFixed(1)}x,
-          scaled by the real trade model&apos;s prob_ppr_increase, schedule-adjusted where available)
-          &times; a real, computed positional scarcity multiplier (real elite-vs-replacement PPR point
-          gap per position, 2015-2025, normalized to the 4-position average) &times; a real, empirical
-          role multiplier (lead vs. backup RB, WR1 vs. WR3, etc. - real average per-game PPR by role
-          tier, normalized to the position&apos;s own real overall average) &times; a real +10% boost when
-          a player is currently listed pos_rank 2 on their real team&apos;s depth chart (real
-          &quot;next man up&quot; standing, from nflreadpy&apos;s real depth charts).
-        </p>
         <p className="trade-analyzer__disclaimer">
-          Real, disclosed limitation: positional scarcity here is raw fantasy-point scarcity, not
-          roster-slot scarcity. QB scores highest (real {positionValueTiers.tiers.QB.positional_scarcity_raw_points}x)
-          because passing yards/TDs generate more raw PPR points at the top of the position, not
-          because QB is harder to roster - a standard league starts only 1 QB but 2-3 flex-eligible
-          RB/WR/TE, which this metric doesn&apos;t capture. This project has no real ADP/roster-
-          construction data to compute a genuine slot-adjusted number, so one wasn&apos;t invented -
-          use the QB flag below alongside your own judgment, not as a standalone verdict.
+          Positional scarcity favors QB (see How This Model Works) - not a roster-slot-adjusted
+          number. Use the QB flag below alongside your own judgment, not as a standalone verdict.
         </p>
       </div>
 
@@ -262,8 +245,6 @@ export default function TradeAnalyzer() {
   const winner = showResult
     ? (score1.prob_ppr_increase >= score2.prob_ppr_increase ? 'player1' : 'player2')
     : null;
-  const accuracyFor = (position) =>
-    multiSignalAccuracy.by_position[position]?.cv_accuracy ?? multiSignalAccuracy.overall_accuracy;
 
   return (
     <div className="trade-analyzer">
@@ -281,22 +262,10 @@ export default function TradeAnalyzer() {
       {mode === 'single' ? (
         <>
           <div className="trade-analyzer__methodology">
-            <p>
-              <strong>Model:</strong> real age-curve direction + real point-in-time career injury
-              history + real role trend (target share / snap %) + real draft capital + real recent-form
-              trend + real team Elo, combined in a logistic regression fit separately per position.
-            </p>
-            <p>
-              <strong>Honest accuracy</strong> (GroupKFold cross-validation, grouped by real player so no
-              player&apos;s own data crosses the train/test boundary): QB {Math.round(accuracyFor('QB') * 100)}%,
-              RB {Math.round(accuracyFor('RB') * 100)}%, WR {Math.round(accuracyFor('WR') * 100)}%,
-              TE {Math.round(accuracyFor('TE') * 100)}% - all above a 50% coin flip, unlike age alone (46%,
-              see Model Transparency).
-            </p>
             <p className="trade-analyzer__disclaimer">
-              This predicts the direction of a player&apos;s own next-season PPR (up or down), not a trade
-              outcome between two specific players - this project has no real trade-outcome data to
-              validate that stronger claim against. Use as one input among many.
+              Predicts the direction of each player&apos;s own next-season PPR (up or down), not a
+              trade outcome between two specific players. Use as one input among many. See How This
+              Model Works for the full model and honest accuracy figures.
             </p>
           </div>
 

@@ -149,6 +149,19 @@
   opacity: 0.85;
 }
 
+.player-card .confidence-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid #64748b;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
 .player-card .breakout-details {
   background: rgba(251, 191, 36, 0.05);
   border-left: 3px solid #fbbf24;
@@ -301,17 +314,13 @@
   color: #e5e7eb;
 }
 
-.fantasy-rankings .wr-static-note {
-  max-width: 1400px;
-  margin: 0 auto 12px auto;
-  padding: 10px 14px;
-  background: #1a1a10;
-  border-left: 3px solid #997700;
+.player-card .def-rank {
   font-size: 12px;
-  color: #ccb877;
+  color: #999;
+  white-space: nowrap;
 }
 
-.player-card .def-rank {
+.player-card .opponent-d-elo {
   font-size: 12px;
   color: #999;
   white-space: nowrap;

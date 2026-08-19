@@ -31,6 +31,46 @@
   line-height: 1.5;
 }
 
+/* Tab navigation - same real pattern as Fantasy.css's fantasy-tabs-header,
+   just re-scoped/re-colored (#0080c6) to match this page's own existing
+   accent color (SuperBowlOdds.css/PowerRankings.css already use it). */
+.season-projections-tabs {
+  display: flex;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 2px solid #333;
+  overflow-x: auto;
+}
+
+.season-projections-tab {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.season-projections-tab:hover {
+  color: #ccc;
+}
+
+.season-projections-tab.active {
+  color: #fff;
+  border-bottom-color: #0080c6;
+}
+
+.season-projections-tab-content {
+  max-width: 1400px;
+  margin: 20px auto 0 auto;
+}
+
 .preseason-panels-note {
   max-width: 1400px;
   margin: 0 auto 24px auto;

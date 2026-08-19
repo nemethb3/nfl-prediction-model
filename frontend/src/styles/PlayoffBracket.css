@@ -82,6 +82,109 @@
   letter-spacing: 0.3px;
 }
 
+.seed-distribution {
+  margin-top: 28px;
+}
+
+.seed-distribution h3 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.seed-distribution .conference-selector {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.seed-distribution .conference-selector button {
+  background: #2a2a2a;
+  color: #999;
+  border: 1px solid #444;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.seed-distribution .conference-selector button.active {
+  background: #0080c6;
+  color: #fff;
+  border-color: #0080c6;
+}
+
+.seed-distribution .conference-selector button:hover {
+  border-color: #0080c6;
+}
+
+.seed-distribution-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.seed-distribution-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.seed-distribution-table thead {
+  background: #1a1a1a;
+}
+
+.seed-distribution-table th {
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 2px solid #333;
+  white-space: nowrap;
+}
+
+.seed-distribution-table th.team-col {
+  text-align: left;
+}
+
+.seed-distribution-table tbody tr {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.seed-distribution-table tbody tr:hover {
+  background: #1a1a1a;
+}
+
+.seed-distribution-table td {
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.seed-distribution-table td.team-col {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.seed-distribution-table .team-col-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seed-distribution-table .seed-pct-cell {
+  background: rgba(0, 128, 198, 0.35);
+  color: #fff;
+  font-weight: 500;
+}
+
+.seed-distribution-table .miss-pct-cell {
+  color: #999;
+  font-size: 11.5px;
+}
+
 @media (max-width: 768px) {
   .bracket-container {
     grid-template-columns: 1fr;
@@ -89,5 +192,9 @@
 
   .seed-row .team-name {
     display: block;
+  }
+
+  .seed-distribution-table td.team-col .team-name {
+    display: none;
   }
 }

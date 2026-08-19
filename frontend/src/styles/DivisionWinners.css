@@ -19,48 +19,143 @@
   color: #999;
 }
 
-.winners-grid {
+.division-groups {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  align-items: start;
 }
 
-.winner-card {
-  padding: 14px;
+.division-group {
+  background: #1a1a1a;
+  border: 1px solid #333;
   border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 
-.winner-card .division-name {
-  font-size: 10.5px;
+.division-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.division-header:hover {
+  background: #222;
+}
+
+.division-header.expanded {
+  border-bottom: 1px solid #333;
+}
+
+.division-name {
+  font-size: 13px;
   font-weight: 600;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.4px;
-  opacity: 0.85;
-  margin-bottom: 6px;
 }
 
-.winner-card .team-name {
-  /* Explicit display override - SeasonProjections.css's bare .team-name
-     rule sets display:none at this same breakpoint (for the dense table),
-     which would otherwise win on this property since this rule doesn't
-     live inside that same media query. */
-  display: block;
-  font-size: 15px;
+.division-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.winner-badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12.5px;
   font-weight: 700;
-  margin: 4px 0;
+  white-space: nowrap;
+}
+
+.expand-icon {
+  color: #666;
+  font-size: 11px;
+  min-width: 14px;
+  text-align: right;
+}
+
+.division-expanded {
+  padding: 4px;
+}
+
+.division-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.division-table thead {
+  background: #161616;
+}
+
+.division-table th {
+  text-align: left;
+  padding: 6px 10px;
+  color: #888;
+  font-weight: 600;
+  font-size: 11px;
+  border-bottom: 1px solid #2a2a2a;
+  white-space: nowrap;
+}
+
+.division-table td {
+  padding: 6px 10px;
+  color: #ccc;
+  border-bottom: 1px solid #222;
+}
+
+.division-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.division-table tr.division-winner {
+  background: rgba(74, 222, 128, 0.06);
+}
+
+.division-table .team-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.division-table .team-badge {
+  width: 24px;
+  height: 24px;
+  font-size: 9.5px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.division-table .team-name {
+  display: block;
+  font-size: 12.5px;
   white-space: normal;
 }
 
-.winner-card .team-record {
-  font-size: 12px;
-  opacity: 0.9;
-  font-weight: 600;
-}
-
 @media (max-width: 768px) {
-  .winners-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .division-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .division-table .team-name {
+    display: none;
   }
 }

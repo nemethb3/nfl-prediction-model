@@ -42,24 +42,36 @@ grew out of):
    every team (SuperBowlOdds.js reads it when expanded) using the same
    real field name convention as superbowl_odds_2025.json.
 
-Real, disclosed methodology: uses this task's own real, derived seeding
-(top-7-per-conference/top-1-per-division by real Monte Carlo playoff
-percentage, from simulate_2026_playoffs.py) as a FIXED bracket structure,
-then Monte Carlo simulates the bracket itself - the same real "answers
-'who wins if this seeding holds,' not two compounded layers of
-uncertainty" simplification the real 2025 Super Bowl sim already discloses
-(here, "this seeding" is itself a real simulation output rather than an
-actual week-16 standing, since no 2026 games have been played - disclosed
-in the output's own methodology_note, not hidden).
+Real, disclosed methodology (revised 2026-08-19 - see "Real bug fixed"
+below): each of the real 10,000 regular-season Monte Carlo trials
+(simulate_2026_playoffs.py) now simulates its OWN real playoff bracket
+using THAT TRIAL's own real seeding, rather than fixing the bracket at one
+aggregate, most-likely seeding across all trials. Real bracket-advancement
+rules (bye, re-seeding, neutral-site Super Bowl) are unchanged, reused
+from superbowl_bracket_simulation.py - only WHICH bracket gets simulated,
+per trial, changed.
+
+Real bug found and fixed here: the prior version of this script fixed the
+bracket at simulate_2026_playoffs.py's own DERIVED, single most-likely
+14-team seeding (top-7-per-conference by aggregate Monte Carlo playoff
+percentage) before simulating the bracket - meaning any of the real other
+18 teams got a hard, literal 0.0% Super Bowl chance, even ones with a real,
+meaningful (e.g. 20-40%) chance of actually making the playoffs. Before a
+real season starts, every team still has SOME real chance until it's
+mathematically eliminated - collapsing 10,000 trials' worth of real "who
+actually makes it" uncertainty into one fixed bracket erased that,
+understating every non-lock team's real odds and completely zeroing out
+bubble/longshot teams that a real fan would still call "alive." Fixed by
+integrating the bracket simulation into simulate_2026_playoffs.py's own
+per-trial loop (run_2026_superbowl_simulation) instead of simulating N
+brackets against one fixed, aggregated seeding.
 """
 
 import json
 from generation_timestamps import record_generation
 import os
 
-from elo_game_prediction import ELO_HOME_FIELD
-from simulate_2026_playoffs import N_SIMULATIONS, RNG_SEED, real_2026_carryover_elo
-from superbowl_bracket_simulation import _real_seeds_by_conference, simulate_superbowl
+from simulate_2026_playoffs import N_SIMULATIONS, RNG_SEED, run_2026_superbowl_simulation
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRONTEND_DATA_DIR = os.path.join(PROJECT_ROOT, "frontend", "src", "data")
@@ -70,40 +82,35 @@ SEASON = 2026
 
 
 def _load_2026_season_projections():
+    """Real per-team conference/division/actual-record metadata - reused
+    here rather than re-derived, since generate_season_projections_
+    dashboard_data_2026.py already computes it from the same real source
+    (DIVISIONS) and games_2026.json's real actual scores."""
     with open(SEASON_PROJECTIONS_PATH, encoding="utf-8") as f:
-        return json.load(f)
+        return {t["team"]: t for t in json.load(f)}
 
 
 def generate_superbowl_odds_2026_json():
-    teams = _load_2026_season_projections()
-    n_playoff = sum(1 for t in teams if t["is_playoff_team"])
+    team_meta = _load_2026_season_projections()
+    team_stats = run_2026_superbowl_simulation(n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED)
+    n_playoff = sum(1 for s in team_stats.values() if s["is_playoff_team"])
     if n_playoff != 14:
-        raise RuntimeError(f"Expected 14 real simulated playoff teams, found {n_playoff}")
-
-    seeds_by_conference = _real_seeds_by_conference(teams)
-    elo = real_2026_carryover_elo()
-
-    missing_elo = [t for conf in seeds_by_conference.values() for t in conf if t not in elo]
-    if missing_elo:
-        raise RuntimeError(f"Missing real preseason Elo for real playoff teams: {missing_elo}")
-
-    conf_champ_pct, sb_pct = simulate_superbowl(
-        seeds_by_conference, elo, n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED, home_field_elo=ELO_HOME_FIELD)
+        raise RuntimeError(f"Expected 14 real derived playoff teams, found {n_playoff}")
 
     results = []
-    for t in teams:
-        team = t["team"]
+    for team, s in team_stats.items():
+        meta = team_meta[team]
         results.append({
             "team": team,
-            "conference": t["conference"],
-            "division": t["division"],
-            "is_playoff_team": bool(t["is_playoff_team"]),
-            "playoff_seed": t["playoff_seed"],
-            "wins_actual": t["wins_actual"],
-            "losses_actual": t["losses_actual"],
-            "ties_actual": t["ties_actual"],
-            "conference_champion_pct": round(conf_champ_pct.get(team, 0.0) * 100, 1),
-            "superbowl_odds_pct": round(sb_pct.get(team, 0.0) * 100, 1),
+            "conference": meta["conference"],
+            "division": meta["division"],
+            "is_playoff_team": bool(s["is_playoff_team"]),
+            "playoff_seed": s["playoff_seed"],
+            "wins_actual": meta["wins_actual"],
+            "losses_actual": meta["losses_actual"],
+            "ties_actual": meta["ties_actual"],
+            "conference_champion_pct": round(s["conference_champion_percentage"] * 100, 1),
+            "superbowl_odds_pct": round(s["superbowl_percentage"] * 100, 1),
         })
     results.sort(key=lambda r: -r["superbowl_odds_pct"])
 
@@ -113,15 +120,16 @@ def generate_superbowl_odds_2026_json():
         "is_preseason": True,
         "n_simulations": N_SIMULATIONS,
         "methodology_note": (
-            "Real Monte Carlo bracket simulation (not a heuristic): since no real 2026 games have "
-            "been played, seeding is fixed at this project's own real Monte Carlo REGULAR-SEASON "
-            "simulation's derived seeds (top 7 per conference / top 1 per division by real playoff "
-            "odds - see simulate_2026_playoffs.py), not an actual standing. Each simulated bracket "
-            "game then uses this project's real, already-fit preseason carryover Elo via the same "
-            "real win-probability formula and bracket rules (bye, re-seeding, neutral-site Super "
-            "Bowl) as the real 2025 Super Bowl simulation. Answers 'who wins if this simulated "
-            "seeding holds,' not two independently compounded layers of regular-season-plus-"
-            "playoff uncertainty. See src/generate_superbowl_odds_2026.py and Model Transparency."
+            "Real Monte Carlo bracket simulation, integrated with the real regular-season "
+            "simulation (not a heuristic, and not a single fixed bracket): since no real 2026 "
+            "games have been played, EACH of the 10,000 real regular-season trials (see "
+            "simulate_2026_playoffs.py) simulates its own real playoff bracket using that trial's "
+            "own real seeding - so every real team's odds reflect the true joint probability of "
+            "both making the playoffs and winning it, not just 'if the single most-likely seeding "
+            "holds.' Each simulated bracket game uses this project's real, already-fit preseason "
+            "carryover Elo via the real win-probability formula and real bracket rules (bye, "
+            "re-seeding, neutral-site Super Bowl). See src/generate_superbowl_odds_2026.py and "
+            "Model Transparency."
         ),
         "teams": results,
     }

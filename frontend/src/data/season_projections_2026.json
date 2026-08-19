@@ -13,6 +13,15 @@
     "playoff_percentage": 0.7889,
     "division_winner_percentage": 0.6076,
     "playoff_seed": 1,
+    "seed_distribution": {
+      "1": 0.2223,
+      "2": 0.1529,
+      "3": 0.1282,
+      "4": 0.1042,
+      "5": 0.072,
+      "6": 0.0582,
+      "7": 0.0511
+    },
     "remaining_schedule_strength": 1501.1,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -31,6 +40,15 @@
     "playoff_percentage": 0.4518,
     "division_winner_percentage": 0.2237,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0417,
+      "2": 0.0501,
+      "3": 0.0634,
+      "4": 0.0685,
+      "5": 0.0743,
+      "6": 0.0765,
+      "7": 0.0773
+    },
     "remaining_schedule_strength": 1505.5,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -49,6 +67,15 @@
     "playoff_percentage": 0.3081,
     "division_winner_percentage": 0.134,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0214,
+      "2": 0.0269,
+      "3": 0.0413,
+      "4": 0.0444,
+      "5": 0.0503,
+      "6": 0.0569,
+      "7": 0.0669
+    },
     "remaining_schedule_strength": 1502.5,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -67,6 +94,15 @@
     "playoff_percentage": 0.0967,
     "division_winner_percentage": 0.0347,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0029,
+      "2": 0.0071,
+      "3": 0.0092,
+      "4": 0.0155,
+      "5": 0.013,
+      "6": 0.0203,
+      "7": 0.0287
+    },
     "remaining_schedule_strength": 1501.8,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -85,6 +121,15 @@
     "playoff_percentage": 0.6494,
     "division_winner_percentage": 0.4159,
     "playoff_seed": 4,
+    "seed_distribution": {
+      "1": 0.1016,
+      "2": 0.1081,
+      "3": 0.1038,
+      "4": 0.1024,
+      "5": 0.0841,
+      "6": 0.0758,
+      "7": 0.0736
+    },
     "remaining_schedule_strength": 1496.8,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -103,6 +148,15 @@
     "playoff_percentage": 0.6283,
     "division_winner_percentage": 0.3445,
     "playoff_seed": 5,
+    "seed_distribution": {
+      "1": 0.0929,
+      "2": 0.0923,
+      "3": 0.0869,
+      "4": 0.0724,
+      "5": 0.1126,
+      "6": 0.0899,
+      "7": 0.0813
+    },
     "remaining_schedule_strength": 1496.6,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -121,6 +175,15 @@
     "playoff_percentage": 0.3571,
     "division_winner_percentage": 0.1516,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0282,
+      "2": 0.0337,
+      "3": 0.0415,
+      "4": 0.0482,
+      "5": 0.0603,
+      "6": 0.0687,
+      "7": 0.0765
+    },
     "remaining_schedule_strength": 1499.3,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -139,6 +202,15 @@
     "playoff_percentage": 0.2249,
     "division_winner_percentage": 0.088,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0132,
+      "2": 0.022,
+      "3": 0.0245,
+      "4": 0.0283,
+      "5": 0.0334,
+      "6": 0.0477,
+      "7": 0.0558
+    },
     "remaining_schedule_strength": 1495.4,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -157,6 +229,15 @@
     "playoff_percentage": 0.6812,
     "division_winner_percentage": 0.4934,
     "playoff_seed": 3,
+    "seed_distribution": {
+      "1": 0.1129,
+      "2": 0.1266,
+      "3": 0.1282,
+      "4": 0.1257,
+      "5": 0.0657,
+      "6": 0.0639,
+      "7": 0.0582
+    },
     "remaining_schedule_strength": 1499.0,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -175,6 +256,15 @@
     "playoff_percentage": 0.5064,
     "division_winner_percentage": 0.2994,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0514,
+      "2": 0.064,
+      "3": 0.0784,
+      "4": 0.1056,
+      "5": 0.0618,
+      "6": 0.0718,
+      "7": 0.0734
+    },
     "remaining_schedule_strength": 1495.7,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -193,6 +283,15 @@
     "playoff_percentage": 0.3233,
     "division_winner_percentage": 0.1634,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0228,
+      "2": 0.037,
+      "3": 0.0416,
+      "4": 0.062,
+      "5": 0.0432,
+      "6": 0.0543,
+      "7": 0.0624
+    },
     "remaining_schedule_strength": 1500.6,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -211,6 +310,15 @@
     "playoff_percentage": 0.0989,
     "division_winner_percentage": 0.0438,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0039,
+      "2": 0.0072,
+      "3": 0.0099,
+      "4": 0.0228,
+      "5": 0.0126,
+      "6": 0.0198,
+      "7": 0.0227
+    },
     "remaining_schedule_strength": 1498.4,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -229,6 +337,15 @@
     "playoff_percentage": 0.7226,
     "division_winner_percentage": 0.482,
     "playoff_seed": 2,
+    "seed_distribution": {
+      "1": 0.1581,
+      "2": 0.1322,
+      "3": 0.1091,
+      "4": 0.0826,
+      "5": 0.0948,
+      "6": 0.0801,
+      "7": 0.0657
+    },
     "remaining_schedule_strength": 1500.1,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -247,6 +364,15 @@
     "playoff_percentage": 0.5316,
     "division_winner_percentage": 0.2246,
     "playoff_seed": 7,
+    "seed_distribution": {
+      "1": 0.0574,
+      "2": 0.0642,
+      "3": 0.0556,
+      "4": 0.0474,
+      "5": 0.1109,
+      "6": 0.1062,
+      "7": 0.0899
+    },
     "remaining_schedule_strength": 1497.3,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -265,6 +391,15 @@
     "playoff_percentage": 0.5425,
     "division_winner_percentage": 0.2642,
     "playoff_seed": 6,
+    "seed_distribution": {
+      "1": 0.0666,
+      "2": 0.0695,
+      "3": 0.0715,
+      "4": 0.0566,
+      "5": 0.0988,
+      "6": 0.0915,
+      "7": 0.088
+    },
     "remaining_schedule_strength": 1504.3,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -283,6 +418,15 @@
     "playoff_percentage": 0.0883,
     "division_winner_percentage": 0.0292,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0027,
+      "2": 0.0062,
+      "3": 0.0069,
+      "4": 0.0134,
+      "5": 0.0122,
+      "6": 0.0184,
+      "7": 0.0285
+    },
     "remaining_schedule_strength": 1501.6,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -301,6 +445,15 @@
     "playoff_percentage": 0.8067,
     "division_winner_percentage": 0.653,
     "playoff_seed": 1,
+    "seed_distribution": {
+      "1": 0.2182,
+      "2": 0.166,
+      "3": 0.165,
+      "4": 0.1038,
+      "5": 0.0583,
+      "6": 0.0499,
+      "7": 0.0455
+    },
     "remaining_schedule_strength": 1492.1,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -319,6 +472,15 @@
     "playoff_percentage": 0.389,
     "division_winner_percentage": 0.193,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0311,
+      "2": 0.0449,
+      "3": 0.0618,
+      "4": 0.0552,
+      "5": 0.0563,
+      "6": 0.0649,
+      "7": 0.0748
+    },
     "remaining_schedule_strength": 1500.7,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -337,6 +499,15 @@
     "playoff_percentage": 0.2438,
     "division_winner_percentage": 0.1096,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0138,
+      "2": 0.0258,
+      "3": 0.0367,
+      "4": 0.0333,
+      "5": 0.0347,
+      "6": 0.0411,
+      "7": 0.0584
+    },
     "remaining_schedule_strength": 1499.4,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -355,6 +526,15 @@
     "playoff_percentage": 0.104,
     "division_winner_percentage": 0.0444,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.004,
+      "2": 0.0075,
+      "3": 0.0148,
+      "4": 0.0181,
+      "5": 0.0142,
+      "6": 0.0194,
+      "7": 0.026
+    },
     "remaining_schedule_strength": 1501.9,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -373,6 +553,15 @@
     "playoff_percentage": 0.7105,
     "division_winner_percentage": 0.4491,
     "playoff_seed": 3,
+    "seed_distribution": {
+      "1": 0.1261,
+      "2": 0.1452,
+      "3": 0.1149,
+      "4": 0.0629,
+      "5": 0.0911,
+      "6": 0.0926,
+      "7": 0.0777
+    },
     "remaining_schedule_strength": 1493.8,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -391,6 +580,15 @@
     "playoff_percentage": 0.5954,
     "division_winner_percentage": 0.2723,
     "playoff_seed": 6,
+    "seed_distribution": {
+      "1": 0.0816,
+      "2": 0.0892,
+      "3": 0.0681,
+      "4": 0.0334,
+      "5": 0.1163,
+      "6": 0.1077,
+      "7": 0.0991
+    },
     "remaining_schedule_strength": 1498.8,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -409,6 +607,15 @@
     "playoff_percentage": 0.4936,
     "division_winner_percentage": 0.1928,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0539,
+      "2": 0.0685,
+      "3": 0.049,
+      "4": 0.0214,
+      "5": 0.1002,
+      "6": 0.0997,
+      "7": 0.1009
+    },
     "remaining_schedule_strength": 1500.8,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -427,6 +634,15 @@
     "playoff_percentage": 0.2875,
     "division_winner_percentage": 0.0858,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.019,
+      "2": 0.0275,
+      "3": 0.0238,
+      "4": 0.0155,
+      "5": 0.0545,
+      "6": 0.0716,
+      "7": 0.0756
+    },
     "remaining_schedule_strength": 1505.5,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -445,6 +661,15 @@
     "playoff_percentage": 0.5091,
     "division_winner_percentage": 0.429,
     "playoff_seed": 4,
+    "seed_distribution": {
+      "1": 0.0347,
+      "2": 0.0618,
+      "3": 0.1035,
+      "4": 0.229,
+      "5": 0.0136,
+      "6": 0.0292,
+      "7": 0.0373
+    },
     "remaining_schedule_strength": 1499.0,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -463,6 +688,15 @@
     "playoff_percentage": 0.3567,
     "division_winner_percentage": 0.2691,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0203,
+      "2": 0.0389,
+      "3": 0.0642,
+      "4": 0.1457,
+      "5": 0.0176,
+      "6": 0.0276,
+      "7": 0.0424
+    },
     "remaining_schedule_strength": 1502.8,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -481,6 +715,15 @@
     "playoff_percentage": 0.28,
     "division_winner_percentage": 0.1928,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0143,
+      "2": 0.0263,
+      "3": 0.0468,
+      "4": 0.1054,
+      "5": 0.017,
+      "6": 0.0312,
+      "7": 0.039
+    },
     "remaining_schedule_strength": 1496.5,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -499,6 +742,15 @@
     "playoff_percentage": 0.1737,
     "division_winner_percentage": 0.1091,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0064,
+      "2": 0.0135,
+      "3": 0.028,
+      "4": 0.0612,
+      "5": 0.0129,
+      "6": 0.0225,
+      "7": 0.0292
+    },
     "remaining_schedule_strength": 1505.0,
     "is_division_winner": false,
     "is_playoff_team": false
@@ -517,6 +769,15 @@
     "playoff_percentage": 0.7684,
     "division_winner_percentage": 0.4952,
     "playoff_seed": 2,
+    "seed_distribution": {
+      "1": 0.2088,
+      "2": 0.135,
+      "3": 0.0978,
+      "4": 0.0536,
+      "5": 0.1205,
+      "6": 0.0837,
+      "7": 0.069
+    },
     "remaining_schedule_strength": 1497.1,
     "is_division_winner": true,
     "is_playoff_team": true
@@ -535,6 +796,15 @@
     "playoff_percentage": 0.6261,
     "division_winner_percentage": 0.2678,
     "playoff_seed": 5,
+    "seed_distribution": {
+      "1": 0.0969,
+      "2": 0.0797,
+      "3": 0.062,
+      "4": 0.0292,
+      "5": 0.1483,
+      "6": 0.1173,
+      "7": 0.0927
+    },
     "remaining_schedule_strength": 1505.1,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -553,6 +823,15 @@
     "playoff_percentage": 0.5718,
     "division_winner_percentage": 0.2113,
     "playoff_seed": 7,
+    "seed_distribution": {
+      "1": 0.067,
+      "2": 0.0649,
+      "3": 0.0558,
+      "4": 0.0236,
+      "5": 0.1304,
+      "6": 0.1228,
+      "7": 0.1073
+    },
     "remaining_schedule_strength": 1503.5,
     "is_division_winner": false,
     "is_playoff_team": true
@@ -571,6 +850,15 @@
     "playoff_percentage": 0.0837,
     "division_winner_percentage": 0.0257,
     "playoff_seed": null,
+    "seed_distribution": {
+      "1": 0.0039,
+      "2": 0.0053,
+      "3": 0.0078,
+      "4": 0.0087,
+      "5": 0.0141,
+      "6": 0.0188,
+      "7": 0.0251
+    },
     "remaining_schedule_strength": 1504.4,
     "is_division_winner": false,
     "is_playoff_team": false

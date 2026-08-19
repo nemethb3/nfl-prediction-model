@@ -90,6 +90,7 @@ def generate_season_projections_2026_json():
             "playoff_percentage": sim["playoff_percentage"],
             "division_winner_percentage": sim["division_winner_percentage"],
             "playoff_seed": sim["playoff_seed"],
+            "seed_distribution": sim["seed_distribution"],
             "remaining_schedule_strength": remaining_strength.get(team),
             "is_division_winner": sim["is_division_winner"],
             "is_playoff_team": sim["is_playoff_team"],

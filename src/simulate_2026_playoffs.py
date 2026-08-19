@@ -166,11 +166,14 @@ def _simulate_win_totals(n_teams, home_idx, away_idx, p_home, n_simulations, rng
     return wins.astype(np.int32)  # (n_simulations, n_teams)
 
 
-def _trial_seeds(win_row, team_idx, elo_lookup, conference):
-    """One trial's real seeding for one conference: division leaders 1-4
-    (by trial wins, Elo-tiebreak - see module docstring simplification #1),
-    next-best 3 wildcards 5-7. Mirrors generate_season_projections_
-    dashboard_data._compute_seeds's real algorithm."""
+def _trial_seeds_ordered(win_row, team_idx, elo_lookup, conference):
+    """One trial's real ORDERED seeding for one conference: division
+    leaders 1-4 (by trial wins, Elo-tiebreak - see module docstring
+    simplification #1), next-best 3 wildcards 5-7 - returned as an ordered
+    (leaders, wildcards) pair (seed 1..7 in list order), not just a set, so
+    a real per-trial bracket (see run_2026_superbowl_simulation below) can
+    be seeded correctly. Mirrors generate_season_projections_dashboard_
+    data._compute_seeds's real algorithm."""
     def strength(t):
         return (win_row[team_idx[t]], elo_lookup[t])
 
@@ -182,7 +185,15 @@ def _trial_seeds(win_row, team_idx, elo_lookup, conference):
     wildcard_pool = sorted((t for t in conf_teams if t not in division_leaders), key=strength, reverse=True)
     wildcards = wildcard_pool[:3]
 
-    return set(division_leaders[:4]) | set(wildcards)
+    return division_leaders, wildcards
+
+
+def _trial_seeds(win_row, team_idx, elo_lookup, conference):
+    """Unordered real playoff-team set for one trial/conference - thin
+    wrapper over _trial_seeds_ordered for callers that only need
+    membership (e.g. the playoff_percentage tally below), not seed order."""
+    leaders, wildcards = _trial_seeds_ordered(win_row, team_idx, elo_lookup, conference)
+    return set(leaders) | set(wildcards)
 
 
 def _aggregate_seeds(team_stats, conference):
@@ -218,6 +229,13 @@ def run_2026_playoff_simulation(n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED):
 
     playoff_count = {t: 0 for t in teams}
     division_winner_count = {t: 0 for t in teams}
+    # Real per-seed tally (Playoff Picture seed-distribution grid,
+    # 2026-08-19 follow-up): unlike playoff_percentage/is_playoff_team
+    # (playoff-or-not, and a single derived "most likely" seed), this keeps
+    # the full real distribution across all 10,000 trials - e.g. a bubble
+    # team might be seed 7 in 20% of trials and miss entirely in the other
+    # 80%, which a single point estimate can't show.
+    seed_count = {t: {s: 0 for s in range(1, 8)} for t in teams}
 
     for trial in range(n_simulations):
         row = wins[trial]
@@ -229,7 +247,13 @@ def run_2026_playoff_simulation(n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED):
             conf_divisions = [d for d in DIVISIONS if d.startswith(conf)]
             leaders = [max(DIVISIONS[div], key=strength) for div in conf_divisions]
             trial_div_winners.update(leaders)
-            trial_playoff_teams.update(_trial_seeds(row, team_idx, elo_lookup, conf))
+
+            ordered_leaders, ordered_wildcards = _trial_seeds_ordered(row, team_idx, elo_lookup, conf)
+            for i, t in enumerate(ordered_leaders):
+                seed_count[t][i + 1] += 1
+            for i, t in enumerate(ordered_wildcards):
+                seed_count[t][i + 5] += 1
+            trial_playoff_teams.update(set(ordered_leaders) | set(ordered_wildcards))
         for t in trial_playoff_teams:
             playoff_count[t] += 1
         for t in trial_div_winners:
@@ -239,6 +263,97 @@ def run_2026_playoff_simulation(n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED):
         t: {
             "playoff_percentage": round(playoff_count[t] / n_simulations, 4),
             "division_winner_percentage": round(division_winner_count[t] / n_simulations, 4),
+            "seed_distribution": {str(s): round(seed_count[t][s] / n_simulations, 4) for s in range(1, 8)},
+        }
+        for t in teams
+    }
+
+    all_seeds, all_div_winners = {}, set()
+    for conf in ("AFC", "NFC"):
+        seeds, div_winners = _aggregate_seeds(team_stats, conf)
+        all_seeds.update(seeds)
+        all_div_winners |= div_winners
+
+    for t in teams:
+        team_stats[t]["is_playoff_team"] = t in all_seeds
+        team_stats[t]["is_division_winner"] = t in all_div_winners
+        team_stats[t]["playoff_seed"] = all_seeds.get(t)
+
+    return team_stats
+
+
+def run_2026_superbowl_simulation(n_simulations=N_SIMULATIONS, rng_seed=RNG_SEED):
+    """Real, INTEGRATED regular-season + playoff-bracket Monte Carlo
+    (PersonalRoster/SeasonProjections follow-up, 2026-08-19): the original
+    generate_superbowl_odds_2026.py collapsed all real regular-season
+    uncertainty into ONE fixed, most-likely 14-team bracket (this module's
+    own _aggregate_seeds, a real, derived point estimate) before running
+    the playoff bracket - meaning any of the real 18 non-derived teams got
+    a hard, literal 0.0% Super Bowl chance, even ones with real, meaningful
+    (e.g. 20-40%) playoff odds. Before the real season starts, ANY team
+    still has a real (if often small) chance at the Super Bowl until it's
+    actually eliminated - collapsing to one bracket erases that real
+    uncertainty rather than modeling it.
+
+    Real fix: simulates a real playoff bracket INSIDE each of the N real
+    regular-season trials, using THAT TRIAL's own real seeding (this
+    module's own _trial_seeds_ordered - real per-trial division
+    leaders/wildcards, not a fixed aggregate), reusing superbowl_bracket_
+    simulation.py's real, already-validated bracket-advancement rules
+    (bye, re-seeding, neutral-site Super Bowl) rather than reinventing
+    them. Every one of the real 32 teams' Super Bowl odds now correctly
+    integrate the real JOINT probability of "makes the playoffs in this
+    trial's real seeding" AND "wins the resulting bracket" - a rare team
+    that snuck into 3% of trials' brackets still gets a real, nonzero
+    (if small) share of those trials' Super Bowl wins, instead of being
+    silently zeroed out for not appearing in the one aggregate bracket.
+
+    Uses the SAME real per-trial win draw (same rng_seed) as
+    run_2026_playoff_simulation() above, so this function's own
+    playoff_percentage/division_winner_percentage outputs are guaranteed
+    identical to that function's - real, deliberate internal consistency
+    (same reasoning as real_2026_carryover_elo()'s own docstring), not a
+    second, independently-derived simulation that could quietly diverge.
+    Uses a separate RNG stream (rng_seed + 1) for the bracket-game draws
+    themselves, so those draws don't consume/shift the regular-season
+    Bernoulli draws."""
+    from superbowl_bracket_simulation import simulate_conference_bracket, _play_seeded_game
+
+    teams, team_idx, home_idx, away_idx, p_home, elo_lookup = _real_2026_schedule_and_elo()
+    n_teams = len(teams)
+    wins = _simulate_win_totals(n_teams, home_idx, away_idx, p_home, n_simulations, rng_seed)
+    bracket_rng = np.random.default_rng(rng_seed + 1)
+
+    playoff_count = {t: 0 for t in teams}
+    division_winner_count = {t: 0 for t in teams}
+    conf_champ_count = {t: 0 for t in teams}
+    sb_win_count = {t: 0 for t in teams}
+
+    for trial in range(n_simulations):
+        row = wins[trial]
+        trial_champs = {}
+        for conf in ("AFC", "NFC"):
+            leaders, wildcards = _trial_seeds_ordered(row, team_idx, elo_lookup, conf)
+            for t in leaders:
+                division_winner_count[t] += 1
+            for t in leaders + wildcards:
+                playoff_count[t] += 1
+
+            ordered_seeds = leaders + wildcards  # seed 1..7, real bracket order
+            champ = simulate_conference_bracket(bracket_rng, ordered_seeds, elo_lookup, ELO_HOME_FIELD)
+            conf_champ_count[champ] += 1
+            trial_champs[conf] = champ
+
+        sb_winner, _ = _play_seeded_game(
+            bracket_rng, trial_champs["AFC"], 1, trial_champs["NFC"], 1, elo_lookup, home_field_elo=0)
+        sb_win_count[sb_winner] += 1
+
+    team_stats = {
+        t: {
+            "playoff_percentage": round(playoff_count[t] / n_simulations, 4),
+            "division_winner_percentage": round(division_winner_count[t] / n_simulations, 4),
+            "conference_champion_percentage": round(conf_champ_count[t] / n_simulations, 4),
+            "superbowl_percentage": round(sb_win_count[t] / n_simulations, 4),
         }
         for t in teams
     }

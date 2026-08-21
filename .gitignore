@@ -11,6 +11,8 @@ data/fantasy/*
 !data/fantasy/.gitkeep
 data/predictions/*
 !data/predictions/.gitkeep
+data/espn_odds/*
+!data/espn_odds/.gitkeep
 data/tracking.db
 
 # Data files that live outside data/ (component-local outputs)

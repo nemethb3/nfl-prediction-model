@@ -3,6 +3,7 @@ import { useSeason } from '../context/SeasonContext';
 import FantasyRankings from './FantasyRankings';
 import TradeAnalyzer from './TradeAnalyzer';
 import LeagueConnector from './LeagueConnector';
+import SuggestedLineups from './SuggestedLineups';
 import './Fantasy.css';
 
 // Rankings and League Connection real-y need season data (FantasyRankings
@@ -22,6 +23,7 @@ const TABS = [
   { id: 'rankings', label: 'Rankings', needsSeasonData: true },
   { id: 'trade-analyzer', label: 'Trade Analyzer', needsSeasonData: false },
   { id: 'league-connection', label: 'League Connection', needsSeasonData: true },
+  { id: 'suggested-lineup', label: 'Suggested Lineup', needsSeasonData: true },
 ];
 
 export default function Fantasy() {
@@ -60,6 +62,7 @@ export default function Fantasy() {
                 `if (userId) fetchRoster()` guard would just leave permanently
                 stuck on "loading". */}
             {activeTab === 'league-connection' && <LeagueConnector />}
+            {activeTab === 'suggested-lineup' && <SuggestedLineups />}
           </>
         )}
       </div>

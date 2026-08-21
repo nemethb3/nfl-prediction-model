@@ -1,0 +1,131 @@
+/* All classes scoped under .suggested-lineups - same reasoning as
+   PersonalRoster.css/LeagueConnector.css (bare global class names in this
+   CRA bundle collide across components). */
+
+.suggested-lineups {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+.suggested-lineups--empty,
+.suggested-lineups--loading,
+.suggested-lineups--error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.suggested-lineups h2 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+
+.suggested-lineups__meta {
+  margin: 0 0 16px 0;
+  font-size: 12.5px;
+  color: #999;
+}
+
+.suggested-lineups__total {
+  font-size: 28px;
+  font-weight: 700;
+  color: #4ade80;
+  margin-bottom: 20px;
+}
+
+.suggested-lineups__total span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999;
+}
+
+.suggested-lineups__section {
+  margin-bottom: 24px;
+}
+
+.suggested-lineups__section h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+.suggested-lineups__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.suggested-lineups__row {
+  display: grid;
+  grid-template-columns: 60px 1fr 50px 70px;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.suggested-lineups__row--bench {
+  grid-template-columns: 1fr 50px 70px;
+  opacity: 0.75;
+}
+
+.suggested-lineups__slot {
+  font-weight: 700;
+  color: #0080c6;
+  font-size: 12px;
+}
+
+.suggested-lineups__name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.suggested-lineups__pos {
+  color: #999;
+  font-size: 11.5px;
+}
+
+.suggested-lineups__pts {
+  text-align: right;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.suggested-lineups__warning {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #f59e0b;
+}
+
+.suggested-lineups__disclaimer {
+  margin-top: 20px;
+  padding: 12px 14px;
+  background: #161616;
+  border-left: 3px solid #555;
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: #999;
+  line-height: 1.5;
+}
+
+.suggested-lineups__disclaimer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .suggested-lineups__row {
+    grid-template-columns: 40px 1fr 40px 55px;
+    font-size: 12px;
+  }
+
+  .suggested-lineups__row--bench {
+    grid-template-columns: 1fr 40px 55px;
+  }
+}

@@ -25,3 +25,10 @@
   color: #999;
   line-height: 1.6;
 }
+
+@media (max-width: 480px) {
+  .season-data-unavailable {
+    margin: 32px auto;
+    padding: 20px;
+  }
+}

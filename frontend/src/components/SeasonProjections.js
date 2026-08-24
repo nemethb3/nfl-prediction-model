@@ -5,6 +5,7 @@ import '../styles/PlayoffBracket.css';
 import '../styles/SuperBowlOdds.css';
 import '../styles/PowerRankings.css';
 import '../styles/AwardRaces.css';
+import '../styles/TeamStrengthCards.css';
 import { useSeason } from '../context/SeasonContext';
 import { teamColor, readableTextColor } from '../constants/teams';
 import DivisionWinners from './DivisionWinners';
@@ -12,6 +13,7 @@ import PlayoffBracket from './PlayoffBracket';
 import SuperBowlOdds from './SuperBowlOdds';
 import PowerRankings from './PowerRankings';
 import AwardRaces from './AwardRaces';
+import TeamStrengthCards from './TeamStrengthCards';
 
 const CHECKPOINT_WEEK = 16; // real 2025 checkpoint only - 2026 has no checkpoint concept (0 real games played)
 
@@ -145,6 +147,7 @@ export default function SeasonProjections() {
     { id: 'playoff', label: 'Playoff Picture' },
     { id: 'superbowl', label: 'Super Bowl Odds' },
     ...(powerRankingsData ? [{ id: 'power', label: 'Power Rankings' }] : []),
+    ...(powerRankingsData && superbowlData ? [{ id: 'team-strength', label: 'Team Strength' }] : []),
     ...(awardRacesData ? [{ id: 'awards', label: 'MVP Race' }] : []),
     { id: 'all', label: 'All Teams' },
   ];
@@ -211,6 +214,9 @@ export default function SeasonProjections() {
               )
             )}
             {activeTab === 'power' && powerRankingsData && <PowerRankings data={powerRankingsData} />}
+            {activeTab === 'team-strength' && powerRankingsData && superbowlData && (
+              <TeamStrengthCards data={powerRankingsData} sbData={superbowlData} />
+            )}
             {activeTab === 'awards' && awardRacesData && <AwardRaces data={awardRacesData} />}
             {activeTab === 'all' && <AllTeamsTable projections={projections} hasWinRangeCI={hasWinRangeCI} />}
           </div>

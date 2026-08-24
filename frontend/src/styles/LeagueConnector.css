@@ -174,3 +174,22 @@
 .league-connector__disconnect-btn:hover {
   background: #991b1b;
 }
+
+@media (max-width: 480px) {
+  .league-connector {
+    padding: 12px;
+  }
+
+  .league-connector__form {
+    padding: 16px;
+  }
+
+  .league-connector__connected-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .league-connector__disconnect-btn {
+    width: 100%;
+  }
+}

@@ -62,6 +62,19 @@ function spreadDisagreement(ourSpread, vegasSpread, home, away) {
   return { ourFavorite, vegasFavorite };
 }
 
+// Real, continuous version of spreadDisagreement() above - that one only
+// fires when the two models flip which team they favor (a real, coarse
+// signal). This quantifies the real point gap between our_spread and
+// vegas_spread even when both models agree on the favorite, so "we agree
+// with Vegas on the winner but like them by 3 more points" is still shown.
+// Same sign convention as favoriteTeam() (positive = home favored).
+function spreadEdge(ourSpread, vegasSpread, home, away) {
+  if (vegasSpread === null || vegasSpread === undefined) return null;
+  const edgeHome = ourSpread - vegasSpread;
+  if (Math.abs(edgeHome) < 0.05) return null;
+  return { team: edgeHome > 0 ? home : away, magnitude: Math.abs(edgeHome) };
+}
+
 // Real, objective historical fact for completed games only (not a
 // prediction) - did the home team's real result beat the real Vegas
 // closing line?
@@ -145,6 +158,7 @@ export default function GameCard({
   const favorite = favoriteTeam(ourSpread, home, away);
   const borderColor = favorite ? teamColor(favorite) : '#555';
   const disagreement = spreadDisagreement(ourSpread, vegasSpread, home, away);
+  const edge = spreadEdge(ourSpread, vegasSpread, home, away);
   const ats = atsResult(actualSpreadMargin, vegasSpread);
   const winProbFavorite = winProbHome !== null && winProbHome !== undefined
     ? (winProbHome > 0.5 ? home : away) : null;
@@ -268,6 +282,12 @@ export default function GameCard({
             <div>O/D Elo spread: {formatSpread(ourSpread, home, away)}</div>
             {vegasSpread !== null && vegasSpread !== undefined && (
               <div>Vegas closing line: {formatSpread(vegasSpread, home, away)}</div>
+            )}
+            {edge && (
+              <div className="spread-edge">
+                You favor <strong>{edge.team}</strong> by {edge.magnitude.toFixed(1)}pts more than Vegas.
+                <span className="small-text"> Not a betting recommendation.</span>
+              </div>
             )}
             <div>Source: {baseSource === 'vegas' ? 'Vegas line + matchup adjustment' : 'Elo fallback (no posted line)'}</div>
             {netEdgeDiff !== null && netEdgeDiff !== undefined && Math.abs(netEdgeDiff) > 0.001 && (

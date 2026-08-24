@@ -25,6 +25,27 @@ function ordinal(n) {
 // iterated last. Not imported from GamePredictions.js (not exported, and
 // this only needs the D_Elo half) - same real fields (home_d_elo/
 // away_d_elo/home_team/away_team), independently computed here.
+// Real bye-week lookup, same underlying real games-based check
+// PersonalRoster.js's isBye() already uses for a different purpose (there:
+// a single roster's own team; here: every real team for the selected
+// week). Not a per-player-row badge - checked directly, a team on bye has
+// no real projection row at all for that week (fantasyData simply omits
+// them), so there's no row to attach a badge to. Shown as a banner instead.
+function byeTeamsForWeek(week, games) {
+  if (!games || games.length === 0) return [];
+  const allTeams = new Set();
+  const playingThisWeek = new Set();
+  for (const g of games) {
+    allTeams.add(g.home_team);
+    allTeams.add(g.away_team);
+    if (g.week === week) {
+      playingThisWeek.add(g.home_team);
+      playingThisWeek.add(g.away_team);
+    }
+  }
+  return [...allTeams].filter((t) => !playingThisWeek.has(t)).sort();
+}
+
 function realDEloRanksForWeek(weekGames) {
   const byTeam = new Map();
   for (const g of weekGames) {
@@ -231,6 +252,10 @@ export default function FantasyRankings() {
     () => realDEloRanksForWeek(seasonData.games.filter((g) => g.week === selectedWeek)),
     [seasonData.games, selectedWeek]);
 
+  const byeTeams = useMemo(
+    () => byeTeamsForWeek(selectedWeek, seasonData.games),
+    [seasonData.games, selectedWeek]);
+
   useEffect(() => {
     setSelectedWeek(weeks[0]);
     setExpandedPlayerId(null);
@@ -298,6 +323,16 @@ export default function FantasyRankings() {
             </select>
           </div>
         </div>
+
+        {byeTeams.length > 0 && (
+          <div className="bye-week-banner">
+            <span className="bye-week-banner-title">🚫 Bye week{byeTeams.length > 1 ? 's' : ''}</span>
+            <span className="bye-week-banner-note">
+              {byeTeams.join(', ')} {byeTeams.length > 1 ? "don't" : "doesn't"} have a real Week {selectedWeek}
+              {' '}game - their players have no real projection row for this week rather than a fabricated one.
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="players-container">

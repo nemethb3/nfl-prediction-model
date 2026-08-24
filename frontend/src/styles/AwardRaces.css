@@ -1,0 +1,36 @@
+/* Rendered inside .season-projections; reuses PowerRankings.css's real
+   .rankings-list/.rankings-row/.team-badge/.team-name/.rankings-bar/
+   .rankings-fill/.rankings-value/.rankings-note (already imported
+   globally by SeasonProjections.js) for visual consistency - only the
+   two genuinely new classes below are defined here. Checked against
+   every other styles/*.css file for collisions before writing this
+   (none found). */
+.award-races {
+  max-width: 1400px;
+  margin: 0 auto 32px auto;
+}
+
+.award-races h2 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.award-races-pos {
+  color: #999;
+  font-weight: 500;
+  font-size: 11.5px;
+}
+
+.award-races-stats {
+  min-width: 200px;
+  text-align: right;
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .award-races-stats {
+    display: none;
+  }
+}

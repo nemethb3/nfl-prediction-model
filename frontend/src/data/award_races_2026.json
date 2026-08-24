@@ -1,0 +1,158 @@
+{
+  "season": 2026,
+  "award": "MVP",
+  "is_preseason": true,
+  "methodology_note": "Real preseason ranking: each real candidate's real full-season projected stats (player_props_2026.json, summed across all 18 real weeks) are z-scored against the real historical MVP-winner profile (11 real seasons, 2015-2025 - see award_winner_profiles.json), blended 60/40 with a real team-strength z-score (this team's real projected wins vs. the real historical MVP-winning teams' average). 'relative_share_pct' is a real softmax of that composite score across the real top-15 ranked candidates (not the full ~390-player pool, which would dilute every real contender's share toward 0% and stop being interpretable), NOT a calibrated win probability - no real historical voting-share data exists to fit a true probability against (Pro-Football-Reference blocks direct scraping). Read it as a relative ranking strength. Real, disclosed limitation: the historical profile is fit on only 11 real seasons - a real, small sample.",
+  "candidates": [
+    {
+      "player_id": "00-0034857",
+      "player_name": "Josh Allen",
+      "position": "QB",
+      "team": "BUF",
+      "projected_season_stats": {
+        "passing_yards": 4063.9,
+        "passing_tds": 14.6,
+        "rushing_yards": 0.0,
+        "rushing_tds": 6.8
+      },
+      "team_projected_wins": 9.9,
+      "composite_score": -1.763,
+      "relative_share_pct": 9.39
+    },
+    {
+      "player_id": "00-0036389",
+      "player_name": "Jalen Hurts",
+      "position": "QB",
+      "team": "PHI",
+      "projected_season_stats": {
+        "passing_yards": 3014.3,
+        "passing_tds": 11.6,
+        "rushing_yards": 0.0,
+        "rushing_tds": 7.2
+      },
+      "team_projected_wins": 10.3,
+      "composite_score": -1.899,
+      "relative_share_pct": 8.19
+    },
+    {
+      "player_id": "00-0033106",
+      "player_name": "Jared Goff",
+      "position": "QB",
+      "team": "DET",
+      "projected_season_stats": {
+        "passing_yards": 4405.7,
+        "passing_tds": 13.8,
+        "rushing_yards": 0.0,
+        "rushing_tds": 1.8
+      },
+      "team_projected_wins": 9.8,
+      "composite_score": -1.907,
+      "relative_share_pct": 8.13
+    },
+    {
+      "player_id": "00-0026498",
+      "player_name": "Matthew Stafford",
+      "position": "QB",
+      "team": "LA",
+      "projected_season_stats": {
+        "passing_yards": 4774.3,
+        "passing_tds": 14.7,
+        "rushing_yards": 0.0,
+        "rushing_tds": 1.6
+      },
+      "team_projected_wins": 9.4,
+      "composite_score": -1.959,
+      "relative_share_pct": 7.72
+    },
+    {
+      "player_id": "00-0037834",
+      "player_name": "Brock Purdy",
+      "position": "QB",
+      "team": "SF",
+      "projected_season_stats": {
+        "passing_yards": 4542.2,
+        "passing_tds": 14.8,
+        "rushing_yards": 0.0,
+        "rushing_tds": 2.9
+      },
+      "team_projected_wins": 9.2,
+      "composite_score": -2.047,
+      "relative_share_pct": 7.07
+    },
+    {
+      "player_id": "00-0036971",
+      "player_name": "Trevor Lawrence",
+      "position": "QB",
+      "team": "JAX",
+      "projected_season_stats": {
+        "passing_yards": 4799.8,
+        "passing_tds": 14.7,
+        "rushing_yards": 0.0,
+        "rushing_tds": 3.9
+      },
+      "team_projected_wins": 8.9,
+      "composite_score": -2.071,
+      "relative_share_pct": 6.9
+    },
+    {
+      "player_id": "00-0039732",
+      "player_name": "Bo Nix",
+      "position": "QB",
+      "team": "DEN",
+      "projected_season_stats": {
+        "passing_yards": 3860.4,
+        "passing_tds": 13.6,
+        "rushing_yards": 0.0,
+        "rushing_tds": 3.0
+      },
+      "team_projected_wins": 9.6,
+      "composite_score": -2.075,
+      "relative_share_pct": 6.87
+    },
+    {
+      "player_id": "00-0034869",
+      "player_name": "Sam Darnold",
+      "position": "QB",
+      "team": "SEA",
+      "projected_season_stats": {
+        "passing_yards": 3405.7,
+        "passing_tds": 11.2,
+        "rushing_yards": 0.0,
+        "rushing_tds": 1.8
+      },
+      "team_projected_wins": 10.0,
+      "composite_score": -2.113,
+      "relative_share_pct": 6.61
+    },
+    {
+      "player_id": "00-0039163",
+      "player_name": "C.J. Stroud",
+      "position": "QB",
+      "team": "HOU",
+      "projected_season_stats": {
+        "passing_yards": 3964.1,
+        "passing_tds": 12.6,
+        "rushing_yards": 0.0,
+        "rushing_tds": 1.8
+      },
+      "team_projected_wins": 9.4,
+      "composite_score": -2.183,
+      "relative_share_pct": 6.17
+    },
+    {
+      "player_id": "00-0035228",
+      "player_name": "Kyler Murray",
+      "position": "QB",
+      "team": "MIN",
+      "projected_season_stats": {
+        "passing_yards": 3489.3,
+        "passing_tds": 12.5,
+        "rushing_yards": 0.0,
+        "rushing_tds": 3.9
+      },
+      "team_projected_wins": 9.4,
+      "composite_score": -2.226,
+      "relative_share_pct": 5.91
+    }
+  ]
+}

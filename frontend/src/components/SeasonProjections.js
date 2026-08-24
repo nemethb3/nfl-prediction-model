@@ -4,12 +4,14 @@ import '../styles/DivisionWinners.css';
 import '../styles/PlayoffBracket.css';
 import '../styles/SuperBowlOdds.css';
 import '../styles/PowerRankings.css';
+import '../styles/AwardRaces.css';
 import { useSeason } from '../context/SeasonContext';
 import { teamColor, readableTextColor } from '../constants/teams';
 import DivisionWinners from './DivisionWinners';
 import PlayoffBracket from './PlayoffBracket';
 import SuperBowlOdds from './SuperBowlOdds';
 import PowerRankings from './PowerRankings';
+import AwardRaces from './AwardRaces';
 
 const CHECKPOINT_WEEK = 16; // real 2025 checkpoint only - 2026 has no checkpoint concept (0 real games played)
 
@@ -127,6 +129,7 @@ export default function SeasonProjections() {
   const projections = seasonData.seasonProjections;
   const superbowlData = seasonData.superbowlOdds;
   const powerRankingsData = seasonData.powerRankings;
+  const awardRacesData = seasonData.awardRaces;
   const isPreseason = !hasResults;
   // Real preseason Monte Carlo playoff simulation exists for 2026 (see
   // simulate_2026_playoffs.py) even though hasResults is correctly still
@@ -142,6 +145,7 @@ export default function SeasonProjections() {
     { id: 'playoff', label: 'Playoff Picture' },
     { id: 'superbowl', label: 'Super Bowl Odds' },
     ...(powerRankingsData ? [{ id: 'power', label: 'Power Rankings' }] : []),
+    ...(awardRacesData ? [{ id: 'awards', label: 'MVP Race' }] : []),
     { id: 'all', label: 'All Teams' },
   ];
   const [activeTab, setActiveTab] = useState('divisions');
@@ -207,6 +211,7 @@ export default function SeasonProjections() {
               )
             )}
             {activeTab === 'power' && powerRankingsData && <PowerRankings data={powerRankingsData} />}
+            {activeTab === 'awards' && awardRacesData && <AwardRaces data={awardRacesData} />}
             {activeTab === 'all' && <AllTeamsTable projections={projections} hasWinRangeCI={hasWinRangeCI} />}
           </div>
         </>

@@ -54,6 +54,9 @@ const SEASON_FILE_LOADERS = {
       // Real Power Rankings (single/O/D Elo split) are also 2026-only -
       // see the 2026 loader below for why.
       powerRankings: null,
+      // Real MVP race is also 2026-only - no real 2015-2025 per-season
+      // award-race backtest was built, so this stays a real null for 2025.
+      awardRaces: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
@@ -63,7 +66,7 @@ const SEASON_FILE_LOADERS = {
   // they're real `null`, not a fabricated/missing import.
   2026: async () => {
     const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts, rookieScores,
-      powerRankings] =
+      powerRankings, awardRaces] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
@@ -73,6 +76,7 @@ const SEASON_FILE_LOADERS = {
         import('../data/breakout_alerts_2026.json'),
         import('../data/rookie_scores_2026.json'),
         import('../data/power_rankings_2026.json'),
+        import('../data/award_races_2026.json'),
       ]);
     return {
       games: games.default,
@@ -90,6 +94,10 @@ const SEASON_FILE_LOADERS = {
       // built (real single/O/D Elo split by team, same real reasoning as
       // playerProps/breakoutAlerts/rookieScores above), so 2025 stays null.
       powerRankings: powerRankings.default,
+      // Real, 2026-only, MVP only (see DECISIONS_LOG.md - DPOY/Offensive
+      // ROY/Defensive ROY have no real per-player projection data
+      // anywhere in this project, not built rather than faked).
+      awardRaces: awardRaces.default,
     };
   },
 };

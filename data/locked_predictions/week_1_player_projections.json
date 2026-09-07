@@ -1,0 +1,6637 @@
+{
+  "week": 1,
+  "locked_at": "2026-09-07T11:20:36.521528",
+  "count": 390,
+  "projections": [
+    {
+      "id": "00-0037834_w1",
+      "player_id": "00-0037834",
+      "player_name": "Brock Purdy",
+      "position": "QB",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "completions": 23.4,
+        "passing_yards": 278.7,
+        "passing_tds_prob": 0.869,
+        "rushing_tds_prob": 0.17
+      }
+    },
+    {
+      "id": "00-0026498_w1",
+      "player_id": "00-0026498",
+      "player_name": "Matthew Stafford",
+      "position": "QB",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "completions": 25.7,
+        "passing_yards": 293.8,
+        "passing_tds_prob": 0.876,
+        "rushing_tds_prob": 0.107
+      }
+    },
+    {
+      "id": "00-0039851_w1",
+      "player_id": "00-0039851",
+      "player_name": "Drake Maye",
+      "position": "QB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "completions": 21.1,
+        "passing_yards": 235.7,
+        "passing_tds_prob": 0.812,
+        "rushing_tds_prob": 0.156
+      }
+    },
+    {
+      "id": "00-0036264_w1",
+      "player_id": "00-0036264",
+      "player_name": "Jordan Love",
+      "position": "QB",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "completions": 19.6,
+        "passing_yards": 221.3,
+        "passing_tds_prob": 0.734,
+        "rushing_tds_prob": 0.088
+      }
+    },
+    {
+      "id": "00-0033106_w1",
+      "player_id": "00-0033106",
+      "player_name": "Jared Goff",
+      "position": "QB",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "completions": 23.9,
+        "passing_yards": 272.0,
+        "passing_tds_prob": 0.824,
+        "rushing_tds_prob": 0.117
+      }
+    },
+    {
+      "id": "00-0033077_w1",
+      "player_id": "00-0033077",
+      "player_name": "Dak Prescott",
+      "position": "QB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "completions": 21.0,
+        "passing_yards": 231.4,
+        "passing_tds_prob": 0.769,
+        "rushing_tds_prob": 0.133
+      }
+    },
+    {
+      "id": "00-0031503_w1",
+      "player_id": "00-0031503",
+      "player_name": "Jameis Winston",
+      "position": "QB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "completions": 18.8,
+        "passing_yards": 220.5,
+        "passing_tds_prob": 0.724,
+        "rushing_tds_prob": 0.129
+      }
+    },
+    {
+      "id": "00-0033873_w1",
+      "player_id": "00-0033873",
+      "player_name": "Patrick Mahomes",
+      "position": "QB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "completions": 22.5,
+        "passing_yards": 250.4,
+        "passing_tds_prob": 0.848,
+        "rushing_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0034857_w1",
+      "player_id": "00-0034857",
+      "player_name": "Josh Allen",
+      "position": "QB",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "completions": 21.4,
+        "passing_yards": 239.3,
+        "passing_tds_prob": 0.842,
+        "rushing_tds_prob": 0.363
+      }
+    },
+    {
+      "id": "00-0034869_w1",
+      "player_id": "00-0034869",
+      "player_name": "Sam Darnold",
+      "position": "QB",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "completions": 18.5,
+        "passing_yards": 207.5,
+        "passing_tds_prob": 0.661,
+        "rushing_tds_prob": 0.115
+      }
+    },
+    {
+      "id": "00-0036442_w1",
+      "player_id": "00-0036442",
+      "player_name": "Joe Burrow",
+      "position": "QB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "completions": 24.2,
+        "passing_yards": 264.1,
+        "passing_tds_prob": 0.859,
+        "rushing_tds_prob": 0.151
+      }
+    },
+    {
+      "id": "00-0039732_w1",
+      "player_id": "00-0039732",
+      "player_name": "Bo Nix",
+      "position": "QB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "completions": 21.7,
+        "passing_yards": 227.4,
+        "passing_tds_prob": 0.772,
+        "rushing_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0036972_w1",
+      "player_id": "00-0036972",
+      "player_name": "Mac Jones",
+      "position": "QB",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "completions": 17.6,
+        "passing_yards": 186.0,
+        "passing_tds_prob": 0.545,
+        "rushing_tds_prob": 0.063
+      }
+    },
+    {
+      "id": "00-0036971_w1",
+      "player_id": "00-0036971",
+      "player_name": "Trevor Lawrence",
+      "position": "QB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "completions": 26.0,
+        "passing_yards": 290.7,
+        "passing_tds_prob": 0.868,
+        "rushing_tds_prob": 0.242
+      }
+    },
+    {
+      "id": "00-0039163_w1",
+      "player_id": "00-0039163",
+      "player_name": "C.J. Stroud",
+      "position": "QB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "completions": 21.3,
+        "passing_yards": 242.3,
+        "passing_tds_prob": 0.753,
+        "rushing_tds_prob": 0.124
+      }
+    },
+    {
+      "id": "00-0036355_w1",
+      "player_id": "00-0036355",
+      "player_name": "Justin Herbert",
+      "position": "QB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "completions": 23.2,
+        "passing_yards": 258.7,
+        "passing_tds_prob": 0.828,
+        "rushing_tds_prob": 0.162
+      }
+    },
+    {
+      "id": "00-0035710_w1",
+      "player_id": "00-0035710",
+      "player_name": "Daniel Jones",
+      "position": "QB",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "completions": 18.5,
+        "passing_yards": 197.6,
+        "passing_tds_prob": 0.646,
+        "rushing_tds_prob": 0.146
+      }
+    },
+    {
+      "id": "00-0039918_w1",
+      "player_id": "00-0039918",
+      "player_name": "Caleb Williams",
+      "position": "QB",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "completions": 21.3,
+        "passing_yards": 234.8,
+        "passing_tds_prob": 0.772,
+        "rushing_tds_prob": 0.103
+      }
+    },
+    {
+      "id": "00-0034855_w1",
+      "player_id": "00-0034855",
+      "player_name": "Baker Mayfield",
+      "position": "QB",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "completions": 20.8,
+        "passing_yards": 233.3,
+        "passing_tds_prob": 0.758,
+        "rushing_tds_prob": 0.102
+      }
+    },
+    {
+      "id": "00-0032268_w1",
+      "player_id": "00-0032268",
+      "player_name": "Marcus Mariota",
+      "position": "QB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "completions": 15.1,
+        "passing_yards": 168.8,
+        "passing_tds_prob": 0.566,
+        "rushing_tds_prob": 0.107
+      }
+    },
+    {
+      "id": "00-0033119_w1",
+      "player_id": "00-0033119",
+      "player_name": "Jacoby Brissett",
+      "position": "QB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "completions": 18.1,
+        "passing_yards": 198.1,
+        "passing_tds_prob": 0.617,
+        "rushing_tds_prob": 0.114
+      }
+    },
+    {
+      "id": "00-0036212_w1",
+      "player_id": "00-0036212",
+      "player_name": "Tua Tagovailoa",
+      "position": "QB",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "completions": 19.2,
+        "passing_yards": 207.8,
+        "passing_tds_prob": 0.672,
+        "rushing_tds_prob": 0.091
+      }
+    },
+    {
+      "id": "00-0034796_w1",
+      "player_id": "00-0034796",
+      "player_name": "Lamar Jackson",
+      "position": "QB",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "completions": 14.9,
+        "passing_yards": 174.3,
+        "passing_tds_prob": 0.761,
+        "rushing_tds_prob": 0.171
+      }
+    },
+    {
+      "id": "00-0036389_w1",
+      "player_id": "00-0036389",
+      "player_name": "Jalen Hurts",
+      "position": "QB",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "completions": 16.4,
+        "passing_yards": 187.8,
+        "passing_tds_prob": 0.695,
+        "rushing_tds_prob": 0.467
+      }
+    },
+    {
+      "id": "00-0029604_w1",
+      "player_id": "00-0029604",
+      "player_name": "Kirk Cousins",
+      "position": "QB",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "completions": 23.1,
+        "passing_yards": 262.3,
+        "passing_tds_prob": 0.815,
+        "rushing_tds_prob": 0.152
+      }
+    },
+    {
+      "id": "00-0030565_w1",
+      "player_id": "00-0030565",
+      "player_name": "Geno Smith",
+      "position": "QB",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "completions": 18.5,
+        "passing_yards": 200.1,
+        "passing_tds_prob": 0.641,
+        "rushing_tds_prob": 0.095
+      }
+    },
+    {
+      "id": "00-0034771_w1",
+      "player_id": "00-0034771",
+      "player_name": "Mason Rudolph",
+      "position": "QB",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "completions": 14.0,
+        "passing_yards": 147.7,
+        "passing_tds_prob": 0.486,
+        "rushing_tds_prob": 0.075
+      }
+    },
+    {
+      "id": "00-0026158_w1",
+      "player_id": "00-0026158",
+      "player_name": "Joe Flacco",
+      "position": "QB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "completions": 18.5,
+        "passing_yards": 190.3,
+        "passing_tds_prob": 0.547,
+        "rushing_tds_prob": 0.082
+      }
+    },
+    {
+      "id": "00-0039917_w1",
+      "player_id": "00-0039917",
+      "player_name": "Michael Penix Jr.",
+      "position": "QB",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "completions": 18.6,
+        "passing_yards": 212.3,
+        "passing_tds_prob": 0.598,
+        "rushing_tds_prob": 0.12
+      }
+    },
+    {
+      "id": "00-0036945_w1",
+      "player_id": "00-0036945",
+      "player_name": "Justin Fields",
+      "position": "QB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "completions": 14.1,
+        "passing_yards": 157.5,
+        "passing_tds_prob": 0.61,
+        "rushing_tds_prob": 0.224
+      }
+    },
+    {
+      "id": "00-0039150_w1",
+      "player_id": "00-0039150",
+      "player_name": "Bryce Young",
+      "position": "QB",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "completions": 19.6,
+        "passing_yards": 207.6,
+        "passing_tds_prob": 0.678,
+        "rushing_tds_prob": 0.154
+      }
+    },
+    {
+      "id": "00-0035228_w1",
+      "player_id": "00-0035228",
+      "player_name": "Kyler Murray",
+      "position": "QB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "completions": 20.0,
+        "passing_yards": 216.9,
+        "passing_tds_prob": 0.75,
+        "rushing_tds_prob": 0.254
+      }
+    },
+    {
+      "id": "00-0035993_w1",
+      "player_id": "00-0035993",
+      "player_name": "Tyler Huntley",
+      "position": "QB",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "completions": 12.5,
+        "passing_yards": 127.4,
+        "passing_tds_prob": 0.438,
+        "rushing_tds_prob": 0.103
+      }
+    },
+    {
+      "id": "00-0028118_w1",
+      "player_id": "00-0028118",
+      "player_name": "Tyrod Taylor",
+      "position": "QB",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "completions": 14.4,
+        "passing_yards": 157.4,
+        "passing_tds_prob": 0.533,
+        "rushing_tds_prob": 0.113
+      }
+    },
+    {
+      "id": "00-0022942_w1",
+      "player_id": "00-0022942",
+      "player_name": "Philip Rivers",
+      "position": "QB",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "completions": 21.6,
+        "passing_yards": 242.4,
+        "passing_tds_prob": 0.744,
+        "rushing_tds_prob": 0.071
+      }
+    },
+    {
+      "id": "00-0029263_w1",
+      "player_id": "00-0029263",
+      "player_name": "Russell Wilson",
+      "position": "QB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "completions": 15.7,
+        "passing_yards": 177.9,
+        "passing_tds_prob": 0.669,
+        "rushing_tds_prob": 0.106
+      }
+    },
+    {
+      "id": "00-0040691_w1",
+      "player_id": "00-0040691",
+      "player_name": "Jaxson Dart",
+      "position": "QB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "completions": 17.3,
+        "passing_yards": 194.3,
+        "passing_tds_prob": 0.728,
+        "rushing_tds_prob": 0.468
+      }
+    },
+    {
+      "id": "00-0032950_w1",
+      "player_id": "00-0032950",
+      "player_name": "Carson Wentz",
+      "position": "QB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "completions": 21.2,
+        "passing_yards": 233.8,
+        "passing_tds_prob": 0.766,
+        "rushing_tds_prob": 0.128
+      }
+    },
+    {
+      "id": "00-0036898_w1",
+      "player_id": "00-0036898",
+      "player_name": "Davis Mills",
+      "position": "QB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "completions": 19.2,
+        "passing_yards": 207.3,
+        "passing_tds_prob": 0.665,
+        "rushing_tds_prob": 0.115
+      }
+    },
+    {
+      "id": "00-0040743_w1",
+      "player_id": "00-0040743",
+      "player_name": "Tyler Shough",
+      "position": "QB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "completions": 21.7,
+        "passing_yards": 239.8,
+        "passing_tds_prob": 0.702,
+        "rushing_tds_prob": 0.202
+      }
+    },
+    {
+      "id": "00-0039910_w1",
+      "player_id": "00-0039910",
+      "player_name": "Jayden Daniels",
+      "position": "QB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "completions": 16.2,
+        "passing_yards": 173.6,
+        "passing_tds_prob": 0.687,
+        "rushing_tds_prob": 0.173
+      }
+    },
+    {
+      "id": "00-0040234_w1",
+      "player_id": "00-0040234",
+      "player_name": "Quinn Ewers",
+      "position": "QB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "completions": 15.9,
+        "passing_yards": 176.8,
+        "passing_tds_prob": 0.524,
+        "rushing_tds_prob": 0.065
+      }
+    },
+    {
+      "id": "00-0040206_w1",
+      "player_id": "00-0040206",
+      "player_name": "Riley Leonard",
+      "position": "QB",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "completions": 12.1,
+        "passing_yards": 129.6,
+        "passing_tds_prob": 0.438,
+        "rushing_tds_prob": 0.199
+      }
+    },
+    {
+      "id": "00-0023459_w1",
+      "player_id": "00-0023459",
+      "player_name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "completions": 21.4,
+        "passing_yards": 235.7,
+        "passing_tds_prob": 0.815,
+        "rushing_tds_prob": 0.12
+      }
+    },
+    {
+      "id": "00-0040676_w1",
+      "player_id": "00-0040676",
+      "player_name": "Cam Ward",
+      "position": "QB",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "completions": 20.5,
+        "passing_yards": 221.0,
+        "passing_tds_prob": 0.658,
+        "rushing_tds_prob": 0.16
+      }
+    },
+    {
+      "id": "00-0037324_w1",
+      "player_id": "00-0037324",
+      "player_name": "Chris Oladokun",
+      "position": "QB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "completions": 11.2,
+        "passing_yards": 105.1,
+        "passing_tds_prob": 0.334,
+        "rushing_tds_prob": 0.062
+      }
+    },
+    {
+      "id": "00-0037012_w1",
+      "player_id": "00-0037012",
+      "player_name": "Trey Lance",
+      "position": "QB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "completions": 9.6,
+        "passing_yards": 110.8,
+        "passing_tds_prob": 0.39,
+        "rushing_tds_prob": 0.091
+      }
+    },
+    {
+      "id": "00-0040398_w1",
+      "player_id": "00-0040398",
+      "player_name": "Brady Cook",
+      "position": "QB",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "completions": 17.0,
+        "passing_yards": 170.1,
+        "passing_tds_prob": 0.402,
+        "rushing_tds_prob": 0.062
+      }
+    },
+    {
+      "id": "00-0026300_w1",
+      "player_id": "00-0026300",
+      "player_name": "Josh Johnson",
+      "position": "QB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "completions": 11.4,
+        "passing_yards": 121.0,
+        "passing_tds_prob": 0.402,
+        "rushing_tds_prob": 0.081
+      }
+    },
+    {
+      "id": "00-0040494_w1",
+      "player_id": "00-0040494",
+      "player_name": "Max Brosmer",
+      "position": "QB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "completions": 9.8,
+        "passing_yards": 98.7,
+        "passing_tds_prob": 0.279,
+        "rushing_tds_prob": 0.069
+      }
+    },
+    {
+      "id": "00-0039376_w1",
+      "player_id": "00-0039376",
+      "player_name": "Spencer Rattler",
+      "position": "QB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "completions": 16.5,
+        "passing_yards": 167.5,
+        "passing_tds_prob": 0.473,
+        "rushing_tds_prob": 0.07
+      }
+    },
+    {
+      "id": "00-0039923_w1",
+      "player_id": "00-0039923",
+      "player_name": "J.J. McCarthy",
+      "position": "QB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "completions": 18.0,
+        "passing_yards": 210.8,
+        "passing_tds_prob": 0.703,
+        "rushing_tds_prob": 0.274
+      }
+    },
+    {
+      "id": "00-0033662_w1",
+      "player_id": "00-0033662",
+      "player_name": "Cooper Rush",
+      "position": "QB",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "completions": 10.9,
+        "passing_yards": 110.9,
+        "passing_tds_prob": 0.34,
+        "rushing_tds_prob": 0.058
+      }
+    },
+    {
+      "id": "00-0035100_w1",
+      "player_id": "00-0035100",
+      "player_name": "Jake Browning",
+      "position": "QB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "completions": 15.8,
+        "passing_yards": 170.1,
+        "passing_tds_prob": 0.586,
+        "rushing_tds_prob": 0.15
+      }
+    },
+    {
+      "id": "00-0040668_w1",
+      "player_id": "00-0040668",
+      "player_name": "Shedeur Sanders",
+      "position": "QB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "completions": 15.0,
+        "passing_yards": 166.7,
+        "passing_tds_prob": 0.494,
+        "rushing_tds_prob": 0.098
+      }
+    },
+    {
+      "id": "00-0040704_w1",
+      "player_id": "00-0040704",
+      "player_name": "Dillon Gabriel",
+      "position": "QB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "completions": 12.6,
+        "passing_yards": 121.8,
+        "passing_tds_prob": 0.434,
+        "rushing_tds_prob": 0.066
+      }
+    },
+    {
+      "id": "00-0040208_w1",
+      "player_id": "00-0040208",
+      "player_name": "Tahj Brooks",
+      "position": "RB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "rushing_yards": 7.0,
+        "receptions": 0.4,
+        "receiving_yards": 3.8,
+        "rushing_tds_prob": 0.092
+      }
+    },
+    {
+      "id": "00-0039875_w1",
+      "player_id": "00-0039875",
+      "player_name": "Ray Davis",
+      "position": "RB",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "rushing_yards": 25.4,
+        "receptions": 1.3,
+        "receiving_yards": 10.1,
+        "rushing_tds_prob": 0.117
+      }
+    },
+    {
+      "id": "00-0039798_w1",
+      "player_id": "00-0039798",
+      "player_name": "Isaiah Davis",
+      "position": "RB",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "rushing_yards": 19.0,
+        "receptions": 1.5,
+        "receiving_yards": 12.4,
+        "rushing_tds_prob": 0.133
+      }
+    },
+    {
+      "id": "00-0038611_w1",
+      "player_id": "00-0038611",
+      "player_name": "Chris Rodriguez Jr.",
+      "position": "RB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "rushing_yards": 39.7,
+        "receptions": 1.0,
+        "receiving_yards": 8.3,
+        "rushing_tds_prob": 0.233
+      }
+    },
+    {
+      "id": "00-0029892_w1",
+      "player_id": "00-0029892",
+      "player_name": "Kyle Juszczyk",
+      "position": "RB",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "rushing_yards": 0.6,
+        "receptions": 2.1,
+        "receiving_yards": 16.4,
+        "rushing_tds_prob": 0.093
+      }
+    },
+    {
+      "id": "00-0032104_w1",
+      "player_id": "00-0032104",
+      "player_name": "Ameer Abdullah",
+      "position": "RB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "rushing_yards": 13.7,
+        "receptions": 1.6,
+        "receiving_yards": 12.5,
+        "rushing_tds_prob": 0.107
+      }
+    },
+    {
+      "id": "00-0037085_w1",
+      "player_id": "00-0037085",
+      "player_name": "Tyler Badie",
+      "position": "RB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "rushing_yards": 2.8,
+        "receptions": 1.2,
+        "receiving_yards": 9.4,
+        "rushing_tds_prob": 0.072
+      }
+    },
+    {
+      "id": "00-0040734_w1",
+      "player_id": "00-0040734",
+      "player_name": "TreVeyon Henderson",
+      "position": "RB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "rushing_yards": 48.1,
+        "receptions": 2.2,
+        "receiving_yards": 16.0,
+        "rushing_tds_prob": 0.257
+      }
+    },
+    {
+      "id": "00-0037248_w1",
+      "player_id": "00-0037248",
+      "player_name": "James Cook",
+      "position": "RB",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "rushing_yards": 59.6,
+        "receptions": 2.3,
+        "receiving_yards": 18.3,
+        "rushing_tds_prob": 0.293
+      }
+    },
+    {
+      "id": "00-0039139_w1",
+      "player_id": "00-0039139",
+      "player_name": "Jahmyr Gibbs",
+      "position": "RB",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "rushing_yards": 58.1,
+        "receptions": 3.2,
+        "receiving_yards": 25.0,
+        "rushing_tds_prob": 0.45
+      }
+    },
+    {
+      "id": "00-0039040_w1",
+      "player_id": "00-0039040",
+      "player_name": "De'Von Achane",
+      "position": "RB",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "rushing_yards": 59.0,
+        "receptions": 3.4,
+        "receiving_yards": 26.4,
+        "rushing_tds_prob": 0.352
+      }
+    },
+    {
+      "id": "00-0037304_w1",
+      "player_id": "00-0037304",
+      "player_name": "Connor Heyward",
+      "position": "RB",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "rushing_yards": 11.8,
+        "receptions": 0.8,
+        "receiving_yards": 6.2,
+        "rushing_tds_prob": 0.14
+      }
+    },
+    {
+      "id": "00-0033280_w1",
+      "player_id": "00-0033280",
+      "player_name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "rushing_yards": 62.8,
+        "receptions": 4.9,
+        "receiving_yards": 38.2,
+        "rushing_tds_prob": 0.413
+      }
+    },
+    {
+      "id": "00-0038738_w1",
+      "player_id": "00-0038738",
+      "player_name": "Hunter Luepke",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 8.0,
+        "receptions": 1.1,
+        "receiving_yards": 9.3,
+        "rushing_tds_prob": 0.097
+      }
+    },
+    {
+      "id": "00-0036275_w1",
+      "player_id": "00-0036275",
+      "player_name": "D'Andre Swift",
+      "position": "RB",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "rushing_yards": 51.2,
+        "receptions": 2.9,
+        "receiving_yards": 22.4,
+        "rushing_tds_prob": 0.276
+      }
+    },
+    {
+      "id": "00-0038555_w1",
+      "player_id": "00-0038555",
+      "player_name": "Tank Bigsby",
+      "position": "RB",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "rushing_yards": 35.1,
+        "receptions": 0.9,
+        "receiving_yards": 7.9,
+        "rushing_tds_prob": 0.202
+      }
+    },
+    {
+      "id": "00-0033923_w1",
+      "player_id": "00-0033923",
+      "player_name": "Kareem Hunt",
+      "position": "RB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "rushing_yards": 31.3,
+        "receptions": 1.7,
+        "receiving_yards": 12.5,
+        "rushing_tds_prob": 0.169
+      }
+    },
+    {
+      "id": "00-0038454_w1",
+      "player_id": "00-0038454",
+      "player_name": "Keaton Mitchell",
+      "position": "RB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "rushing_yards": 24.3,
+        "receptions": 1.0,
+        "receiving_yards": 8.2,
+        "rushing_tds_prob": 0.141
+      }
+    },
+    {
+      "id": "00-0037840_w1",
+      "player_id": "00-0037840",
+      "player_name": "Kyren Williams",
+      "position": "RB",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "rushing_yards": 66.6,
+        "receptions": 2.3,
+        "receiving_yards": 17.6,
+        "rushing_tds_prob": 0.418
+      }
+    },
+    {
+      "id": "00-0038542_w1",
+      "player_id": "00-0038542",
+      "player_name": "Bijan Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "rushing_yards": 79.3,
+        "receptions": 4.2,
+        "receiving_yards": 33.5,
+        "rushing_tds_prob": 0.448
+      }
+    },
+    {
+      "id": "00-0039738_w1",
+      "player_id": "00-0039738",
+      "player_name": "Blake Corum",
+      "position": "RB",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "rushing_yards": 34.6,
+        "receptions": 1.1,
+        "receiving_yards": 8.7,
+        "rushing_tds_prob": 0.182
+      }
+    },
+    {
+      "id": "00-0037228_w1",
+      "player_id": "00-0037228",
+      "player_name": "Jaylen Warren",
+      "position": "RB",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "rushing_yards": 45.4,
+        "receptions": 2.6,
+        "receiving_yards": 20.3,
+        "rushing_tds_prob": 0.234
+      }
+    },
+    {
+      "id": "00-0038397_w1",
+      "player_id": "00-0038397",
+      "player_name": "Evan Hull",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 6.7,
+        "receptions": 0.5,
+        "receiving_yards": 3.2,
+        "rushing_tds_prob": 0.076
+      }
+    },
+    {
+      "id": "00-0039757_w1",
+      "player_id": "00-0039757",
+      "player_name": "Terrell Jennings",
+      "position": "RB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "rushing_yards": 12.6,
+        "receptions": 0.5,
+        "receiving_yards": 3.4,
+        "rushing_tds_prob": 0.081
+      }
+    },
+    {
+      "id": "00-0037525_w1",
+      "player_id": "00-0037525",
+      "player_name": "Jordan Mason",
+      "position": "RB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "rushing_yards": 37.0,
+        "receptions": 0.9,
+        "receiving_yards": 6.9,
+        "rushing_tds_prob": 0.175
+      }
+    },
+    {
+      "id": "00-0038797_w1",
+      "player_id": "00-0038797",
+      "player_name": "Emanuel Wilson",
+      "position": "RB",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "rushing_yards": 23.7,
+        "receptions": 0.9,
+        "receiving_yards": 6.7,
+        "rushing_tds_prob": 0.126
+      }
+    },
+    {
+      "id": "00-0038794_w1",
+      "player_id": "00-0038794",
+      "player_name": "Jaleel McLaughlin",
+      "position": "RB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "rushing_yards": 20.0,
+        "receptions": 1.1,
+        "receiving_yards": 7.7,
+        "rushing_tds_prob": 0.09
+      }
+    },
+    {
+      "id": "00-0034975_w1",
+      "player_id": "00-0034975",
+      "player_name": "Justice Hill",
+      "position": "RB",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "rushing_yards": 11.0,
+        "receptions": 1.4,
+        "receiving_yards": 10.9,
+        "rushing_tds_prob": 0.103
+      }
+    },
+    {
+      "id": "00-0040666_w1",
+      "player_id": "00-0040666",
+      "player_name": "Omarion Hampton",
+      "position": "RB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "rushing_yards": 58.0,
+        "receptions": 2.8,
+        "receiving_yards": 20.6,
+        "rushing_tds_prob": 0.35
+      }
+    },
+    {
+      "id": "00-0040236_w1",
+      "player_id": "00-0040236",
+      "player_name": "Kyle Monangai",
+      "position": "RB",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "rushing_yards": 37.8,
+        "receptions": 1.3,
+        "receiving_yards": 10.9,
+        "rushing_tds_prob": 0.162
+      }
+    },
+    {
+      "id": "00-0040730_w1",
+      "player_id": "00-0040730",
+      "player_name": "RJ Harvey",
+      "position": "RB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "rushing_yards": 38.7,
+        "receptions": 2.6,
+        "receiving_yards": 20.3,
+        "rushing_tds_prob": 0.242
+      }
+    },
+    {
+      "id": "00-0038120_w1",
+      "player_id": "00-0038120",
+      "player_name": "Breece Hall",
+      "position": "RB",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "rushing_yards": 46.8,
+        "receptions": 2.8,
+        "receiving_yards": 21.8,
+        "rushing_tds_prob": 0.211
+      }
+    },
+    {
+      "id": "00-0040242_w1",
+      "player_id": "00-0040242",
+      "player_name": "Jacory Croskey-Merritt",
+      "position": "RB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "rushing_yards": 48.5,
+        "receptions": 1.2,
+        "receiving_yards": 9.6,
+        "rushing_tds_prob": 0.234
+      }
+    },
+    {
+      "id": "00-0037263_w1",
+      "player_id": "00-0037263",
+      "player_name": "Tyler Allgeier",
+      "position": "RB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "rushing_yards": 30.8,
+        "receptions": 0.8,
+        "receiving_yards": 5.7,
+        "rushing_tds_prob": 0.121
+      }
+    },
+    {
+      "id": "00-0031687_w1",
+      "player_id": "00-0031687",
+      "player_name": "Raheem Mostert",
+      "position": "RB",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "rushing_yards": 27.6,
+        "receptions": 1.1,
+        "receiving_yards": 8.1,
+        "rushing_tds_prob": 0.167
+      }
+    },
+    {
+      "id": "00-0036223_w1",
+      "player_id": "00-0036223",
+      "player_name": "Jonathan Taylor",
+      "position": "RB",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "rushing_yards": 72.6,
+        "receptions": 2.1,
+        "receiving_yards": 16.3,
+        "rushing_tds_prob": 0.43
+      }
+    },
+    {
+      "id": "00-0035685_w1",
+      "player_id": "00-0035685",
+      "player_name": "David Montgomery",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 44.2,
+        "receptions": 1.7,
+        "receiving_yards": 12.8,
+        "rushing_tds_prob": 0.242
+      }
+    },
+    {
+      "id": "00-0035537_w1",
+      "player_id": "00-0035537",
+      "player_name": "Ty Johnson",
+      "position": "RB",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "rushing_yards": 20.9,
+        "receptions": 2.0,
+        "receiving_yards": 16.2,
+        "rushing_tds_prob": 0.125
+      }
+    },
+    {
+      "id": "00-0039361_w1",
+      "player_id": "00-0039361",
+      "player_name": "Bucky Irving",
+      "position": "RB",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "rushing_yards": 50.1,
+        "receptions": 2.1,
+        "receiving_yards": 16.1,
+        "rushing_tds_prob": 0.199
+      }
+    },
+    {
+      "id": "00-0033955_w1",
+      "player_id": "00-0033955",
+      "player_name": "Jeremy McNichols",
+      "position": "RB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "rushing_yards": 11.0,
+        "receptions": 1.2,
+        "receiving_yards": 9.5,
+        "rushing_tds_prob": 0.087
+      }
+    },
+    {
+      "id": "00-0037256_w1",
+      "player_id": "00-0037256",
+      "player_name": "Rachaad White",
+      "position": "RB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "rushing_yards": 29.5,
+        "receptions": 2.1,
+        "receiving_yards": 15.5,
+        "rushing_tds_prob": 0.116
+      }
+    },
+    {
+      "id": "00-0032764_w1",
+      "player_id": "00-0032764",
+      "player_name": "Derrick Henry",
+      "position": "RB",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "rushing_yards": 86.0,
+        "receptions": 2.1,
+        "receiving_yards": 16.9,
+        "rushing_tds_prob": 0.545
+      }
+    },
+    {
+      "id": "00-0033553_w1",
+      "player_id": "00-0033553",
+      "player_name": "James Conner",
+      "position": "RB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "rushing_yards": 43.0,
+        "receptions": 2.2,
+        "receiving_yards": 16.1,
+        "rushing_tds_prob": 0.233
+      }
+    },
+    {
+      "id": "00-0036158_w1",
+      "player_id": "00-0036158",
+      "player_name": "J.K. Dobbins",
+      "position": "RB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "rushing_yards": 50.8,
+        "receptions": 1.5,
+        "receiving_yards": 10.8,
+        "rushing_tds_prob": 0.234
+      }
+    },
+    {
+      "id": "00-0036919_w1",
+      "player_id": "00-0036919",
+      "player_name": "Kenny Gainwell",
+      "position": "RB",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "rushing_yards": 40.3,
+        "receptions": 2.6,
+        "receiving_yards": 21.3,
+        "rushing_tds_prob": 0.263
+      }
+    },
+    {
+      "id": "00-0033526_w1",
+      "player_id": "00-0033526",
+      "player_name": "Samaje Perine",
+      "position": "RB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "rushing_yards": 25.6,
+        "receptions": 1.9,
+        "receiving_yards": 14.9,
+        "rushing_tds_prob": 0.161
+      }
+    },
+    {
+      "id": "00-0039165_w1",
+      "player_id": "00-0039165",
+      "player_name": "Zach Charbonnet",
+      "position": "RB",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "rushing_yards": 46.1,
+        "receptions": 2.4,
+        "receiving_yards": 18.7,
+        "rushing_tds_prob": 0.309
+      }
+    },
+    {
+      "id": "00-0038040_w1",
+      "player_id": "00-0038040",
+      "player_name": "Zamir White",
+      "position": "RB",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "rushing_yards": 19.2,
+        "receptions": 0.8,
+        "receiving_yards": 5.6,
+        "rushing_tds_prob": 0.111
+      }
+    },
+    {
+      "id": "00-0039032_w1",
+      "player_id": "00-0039032",
+      "player_name": "Tyjae Spears",
+      "position": "RB",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "rushing_yards": 28.4,
+        "receptions": 2.6,
+        "receiving_yards": 20.2,
+        "rushing_tds_prob": 0.209
+      }
+    },
+    {
+      "id": "00-0038551_w1",
+      "player_id": "00-0038551",
+      "player_name": "Kendre Miller",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 23.8,
+        "receptions": 1.1,
+        "receiving_yards": 8.7,
+        "rushing_tds_prob": 0.125
+      }
+    },
+    {
+      "id": "00-0036139_w1",
+      "player_id": "00-0036139",
+      "player_name": "Rico Dowdle",
+      "position": "RB",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "rushing_yards": 43.1,
+        "receptions": 1.7,
+        "receiving_yards": 13.1,
+        "rushing_tds_prob": 0.174
+      }
+    },
+    {
+      "id": "00-0038597_w1",
+      "player_id": "00-0038597",
+      "player_name": "Chase Brown",
+      "position": "RB",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "rushing_yards": 67.6,
+        "receptions": 3.5,
+        "receiving_yards": 27.3,
+        "rushing_tds_prob": 0.408
+      }
+    },
+    {
+      "id": "00-0036893_w1",
+      "player_id": "00-0036893",
+      "player_name": "Najee Harris",
+      "position": "RB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "rushing_yards": 50.4,
+        "receptions": 1.9,
+        "receiving_yards": 13.7,
+        "rushing_tds_prob": 0.235
+      }
+    },
+    {
+      "id": "00-0040719_w1",
+      "player_id": "00-0040719",
+      "player_name": "Bhayshul Tuten",
+      "position": "RB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "rushing_yards": 23.0,
+        "receptions": 1.0,
+        "receiving_yards": 8.3,
+        "rushing_tds_prob": 0.172
+      }
+    },
+    {
+      "id": "00-0036755_w1",
+      "player_id": "00-0036755",
+      "player_name": "Jaret Patterson",
+      "position": "RB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "rushing_yards": 24.9,
+        "receptions": 0.9,
+        "receiving_yards": 6.5,
+        "rushing_tds_prob": 0.151
+      }
+    },
+    {
+      "id": "00-0038134_w1",
+      "player_id": "00-0038134",
+      "player_name": "Kenneth Walker III",
+      "position": "RB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "rushing_yards": 56.0,
+        "receptions": 2.2,
+        "receiving_yards": 16.7,
+        "rushing_tds_prob": 0.286
+      }
+    },
+    {
+      "id": "00-0036555_w1",
+      "player_id": "00-0036555",
+      "player_name": "Chuba Hubbard",
+      "position": "RB",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "rushing_yards": 35.9,
+        "receptions": 1.5,
+        "receiving_yards": 10.7,
+        "rushing_tds_prob": 0.155
+      }
+    },
+    {
+      "id": "00-0040715_w1",
+      "player_id": "00-0040715",
+      "player_name": "Cam Skattebo",
+      "position": "RB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "rushing_yards": 59.7,
+        "receptions": 3.1,
+        "receiving_yards": 25.3,
+        "rushing_tds_prob": 0.477
+      }
+    },
+    {
+      "id": "00-0038951_w1",
+      "player_id": "00-0038951",
+      "player_name": "Sean Tucker",
+      "position": "RB",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "rushing_yards": 20.5,
+        "receptions": 0.7,
+        "receiving_yards": 5.9,
+        "rushing_tds_prob": 0.144
+      }
+    },
+    {
+      "id": "00-0039391_w1",
+      "player_id": "00-0039391",
+      "player_name": "Kimani Vidal",
+      "position": "RB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "rushing_yards": 31.9,
+        "receptions": 1.2,
+        "receiving_yards": 9.6,
+        "rushing_tds_prob": 0.153
+      }
+    },
+    {
+      "id": "00-0039384_w1",
+      "player_id": "00-0039384",
+      "player_name": "Tyrone Tracy Jr.",
+      "position": "RB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "rushing_yards": 57.2,
+        "receptions": 2.7,
+        "receiving_yards": 21.6,
+        "rushing_tds_prob": 0.304
+      }
+    },
+    {
+      "id": "00-0036997_w1",
+      "player_id": "00-0036997",
+      "player_name": "Javonte Williams",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 48.9,
+        "receptions": 2.4,
+        "receiving_yards": 17.6,
+        "rushing_tds_prob": 0.218
+      }
+    },
+    {
+      "id": "00-0040583_w1",
+      "player_id": "00-0040583",
+      "player_name": "Woody Marks",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 43.5,
+        "receptions": 1.7,
+        "receiving_yards": 13.4,
+        "rushing_tds_prob": 0.158
+      }
+    },
+    {
+      "id": "00-0040078_w1",
+      "player_id": "00-0040078",
+      "player_name": "Brashard Smith",
+      "position": "RB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "rushing_yards": 10.6,
+        "receptions": 1.5,
+        "receiving_yards": 11.8,
+        "rushing_tds_prob": 0.094
+      }
+    },
+    {
+      "id": "00-0037563_w1",
+      "player_id": "00-0037563",
+      "player_name": "Malik Davis",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 26.6,
+        "receptions": 0.9,
+        "receiving_yards": 7.5,
+        "rushing_tds_prob": 0.138
+      }
+    },
+    {
+      "id": "00-0039921_w1",
+      "player_id": "00-0039921",
+      "player_name": "Trey Benson",
+      "position": "RB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "rushing_yards": 27.6,
+        "receptions": 1.4,
+        "receiving_yards": 10.6,
+        "rushing_tds_prob": 0.118
+      }
+    },
+    {
+      "id": "00-0039874_w1",
+      "player_id": "00-0039874",
+      "player_name": "Jaylen Wright",
+      "position": "RB",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "rushing_yards": 27.0,
+        "receptions": 0.8,
+        "receiving_yards": 6.2,
+        "rushing_tds_prob": 0.124
+      }
+    },
+    {
+      "id": "00-0040202_w1",
+      "player_id": "00-0040202",
+      "player_name": "Devin Neal",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 30.9,
+        "receptions": 2.0,
+        "receiving_yards": 15.0,
+        "rushing_tds_prob": 0.187
+      }
+    },
+    {
+      "id": "00-0038685_w1",
+      "player_id": "00-0038685",
+      "player_name": "Chris Brooks",
+      "position": "RB",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "rushing_yards": 8.5,
+        "receptions": 1.0,
+        "receiving_yards": 6.8,
+        "rushing_tds_prob": 0.073
+      }
+    },
+    {
+      "id": "00-0036924_w1",
+      "player_id": "00-0036924",
+      "player_name": "Michael Carter",
+      "position": "RB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "rushing_yards": 24.6,
+        "receptions": 2.2,
+        "receiving_yards": 16.8,
+        "rushing_tds_prob": 0.129
+      }
+    },
+    {
+      "id": "00-0038440_w1",
+      "player_id": "00-0038440",
+      "player_name": "Zavier Scott",
+      "position": "RB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "rushing_yards": 9.5,
+        "receptions": 1.1,
+        "receiving_yards": 8.2,
+        "rushing_tds_prob": 0.091
+      }
+    },
+    {
+      "id": "00-0035700_w1",
+      "player_id": "00-0035700",
+      "player_name": "Josh Jacobs",
+      "position": "RB",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "rushing_yards": 59.7,
+        "receptions": 2.2,
+        "receiving_yards": 15.8,
+        "rushing_tds_prob": 0.289
+      }
+    },
+    {
+      "id": "00-0037157_w1",
+      "player_id": "00-0037157",
+      "player_name": "Bam Knight",
+      "position": "RB",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "rushing_yards": 29.9,
+        "receptions": 1.7,
+        "receiving_yards": 13.0,
+        "rushing_tds_prob": 0.153
+      }
+    },
+    {
+      "id": "00-0040466_w1",
+      "player_id": "00-0040466",
+      "player_name": "Raheim Sanders",
+      "position": "RB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "rushing_yards": 23.2,
+        "receptions": 0.9,
+        "receiving_yards": 6.8,
+        "rushing_tds_prob": 0.124
+      }
+    },
+    {
+      "id": "00-0040179_w1",
+      "player_id": "00-0040179",
+      "player_name": "DJ Giddens",
+      "position": "RB",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "rushing_yards": 17.2,
+        "receptions": 0.4,
+        "receiving_yards": 3.6,
+        "rushing_tds_prob": 0.086
+      }
+    },
+    {
+      "id": "00-0040784_w1",
+      "player_id": "00-0040784",
+      "player_name": "Quinshon Judkins",
+      "position": "RB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "rushing_yards": 54.5,
+        "receptions": 1.6,
+        "receiving_yards": 11.5,
+        "rushing_tds_prob": 0.225
+      }
+    },
+    {
+      "id": "00-0033293_w1",
+      "player_id": "00-0033293",
+      "player_name": "Aaron Jones",
+      "position": "RB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "rushing_yards": 49.4,
+        "receptions": 2.5,
+        "receiving_yards": 19.5,
+        "rushing_tds_prob": 0.257
+      }
+    },
+    {
+      "id": "00-0040142_w1",
+      "player_id": "00-0040142",
+      "player_name": "Kaleb Johnson",
+      "position": "RB",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "rushing_yards": 5.4,
+        "receptions": 0.4,
+        "receiving_yards": 2.4,
+        "rushing_tds_prob": 0.061
+      }
+    },
+    {
+      "id": "00-0040644_w1",
+      "player_id": "00-0040644",
+      "player_name": "Trevor Etienne",
+      "position": "RB",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "rushing_yards": 4.8,
+        "receptions": 0.4,
+        "receiving_yards": 3.1,
+        "rushing_tds_prob": 0.08
+      }
+    },
+    {
+      "id": "00-0034844_w1",
+      "player_id": "00-0034844",
+      "player_name": "Saquon Barkley",
+      "position": "RB",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "rushing_yards": 69.6,
+        "receptions": 3.1,
+        "receiving_yards": 24.1,
+        "rushing_tds_prob": 0.376
+      }
+    },
+    {
+      "id": "00-0037746_w1",
+      "player_id": "00-0037746",
+      "player_name": "Brian Robinson",
+      "position": "RB",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "rushing_yards": 31.7,
+        "receptions": 0.9,
+        "receiving_yards": 6.4,
+        "rushing_tds_prob": 0.117
+      }
+    },
+    {
+      "id": "00-0040122_w1",
+      "player_id": "00-0040122",
+      "player_name": "Ashton Jeanty",
+      "position": "RB",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "rushing_yards": 61.2,
+        "receptions": 3.0,
+        "receiving_yards": 22.2,
+        "rushing_tds_prob": 0.292
+      }
+    },
+    {
+      "id": "00-0036973_w1",
+      "player_id": "00-0036973",
+      "player_name": "Travis Etienne",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 56.9,
+        "receptions": 2.7,
+        "receiving_yards": 20.6,
+        "rushing_tds_prob": 0.279
+      }
+    },
+    {
+      "id": "00-0039796_w1",
+      "player_id": "00-0039796",
+      "player_name": "Rasheen Ali",
+      "position": "RB",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "rushing_yards": 7.5,
+        "receptions": 0.9,
+        "receiving_yards": 7.1,
+        "rushing_tds_prob": 0.093
+      }
+    },
+    {
+      "id": "00-0037617_w1",
+      "player_id": "00-0037617",
+      "player_name": "Hassan Haskins",
+      "position": "RB",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "rushing_yards": 8.0,
+        "receptions": 0.7,
+        "receiving_yards": 5.1,
+        "rushing_tds_prob": 0.109
+      }
+    },
+    {
+      "id": "00-0033699_w1",
+      "player_id": "00-0033699",
+      "player_name": "Austin Ekeler",
+      "position": "RB",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "rushing_yards": 24.9,
+        "receptions": 3.0,
+        "receiving_yards": 24.0,
+        "rushing_tds_prob": 0.149
+      }
+    },
+    {
+      "id": "00-0039746_w1",
+      "player_id": "00-0039746",
+      "player_name": "Will Shipley",
+      "position": "RB",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "rushing_yards": 8.9,
+        "receptions": 0.8,
+        "receiving_yards": 6.1,
+        "rushing_tds_prob": 0.095
+      }
+    },
+    {
+      "id": "00-0036875_w1",
+      "player_id": "00-0036875",
+      "player_name": "Rhamondre Stevenson",
+      "position": "RB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "rushing_yards": 61.6,
+        "receptions": 3.1,
+        "receiving_yards": 24.0,
+        "rushing_tds_prob": 0.317
+      }
+    },
+    {
+      "id": "00-0040556_w1",
+      "player_id": "00-0040556",
+      "player_name": "Corey Kiner",
+      "position": "RB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "rushing_yards": 8.5,
+        "receptions": 0.7,
+        "receiving_yards": 5.4,
+        "rushing_tds_prob": 0.065
+      }
+    },
+    {
+      "id": "00-0035250_w1",
+      "player_id": "00-0035250",
+      "player_name": "Devin Singletary",
+      "position": "RB",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "rushing_yards": 41.4,
+        "receptions": 1.9,
+        "receiving_yards": 14.4,
+        "rushing_tds_prob": 0.22
+      }
+    },
+    {
+      "id": "00-0036727_w1",
+      "player_id": "00-0036727",
+      "player_name": "Adam Prentice",
+      "position": "RB",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "rushing_yards": 2.3,
+        "receptions": 0.8,
+        "receiving_yards": 6.3,
+        "rushing_tds_prob": 0.071
+      }
+    },
+    {
+      "id": "00-0037197_w1",
+      "player_id": "00-0037197",
+      "player_name": "Isiah Pacheco",
+      "position": "RB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "rushing_yards": 36.9,
+        "receptions": 1.4,
+        "receiving_yards": 9.9,
+        "rushing_tds_prob": 0.146
+      }
+    },
+    {
+      "id": "00-0040198_w1",
+      "player_id": "00-0040198",
+      "player_name": "Ollie Gordon II",
+      "position": "RB",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "rushing_yards": 11.0,
+        "receptions": 0.5,
+        "receiving_yards": 3.3,
+        "rushing_tds_prob": 0.104
+      }
+    },
+    {
+      "id": "00-0040586_w1",
+      "player_id": "00-0040586",
+      "player_name": "Jaydon Blue",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 28.8,
+        "receptions": 0.5,
+        "receiving_yards": 3.8,
+        "rushing_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0037267_w1",
+      "player_id": "00-0037267",
+      "player_name": "Jerome Ford",
+      "position": "RB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "rushing_yards": 17.8,
+        "receptions": 1.6,
+        "receiving_yards": 11.6,
+        "rushing_tds_prob": 0.091
+      }
+    },
+    {
+      "id": "00-0039405_w1",
+      "player_id": "00-0039405",
+      "player_name": "Jawhar Jordan",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 41.9,
+        "receptions": 1.3,
+        "receiving_yards": 8.9,
+        "rushing_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0038705_w1",
+      "player_id": "00-0038705",
+      "player_name": "Emari Demercado",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 16.5,
+        "receptions": 1.4,
+        "receiving_yards": 10.8,
+        "rushing_tds_prob": 0.105
+      }
+    },
+    {
+      "id": "00-0039299_w1",
+      "player_id": "00-0039299",
+      "player_name": "George Holani",
+      "position": "RB",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "rushing_yards": 9.7,
+        "receptions": 0.6,
+        "receiving_yards": 4.3,
+        "rushing_tds_prob": 0.099
+      }
+    },
+    {
+      "id": "00-0037258_w1",
+      "player_id": "00-0037258",
+      "player_name": "Dameon Pierce",
+      "position": "RB",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "rushing_yards": 27.2,
+        "receptions": 0.8,
+        "receiving_yards": 5.3,
+        "rushing_tds_prob": 0.102
+      }
+    },
+    {
+      "id": "00-0035291_w1",
+      "player_id": "00-0035291",
+      "player_name": "Trayveon Williams",
+      "position": "RB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "rushing_yards": 11.1,
+        "receptions": 0.9,
+        "receiving_yards": 7.1,
+        "rushing_tds_prob": 0.081
+      }
+    },
+    {
+      "id": "00-0035243_w1",
+      "player_id": "00-0035243",
+      "player_name": "Miles Sanders",
+      "position": "RB",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "rushing_yards": 38.6,
+        "receptions": 1.8,
+        "receiving_yards": 13.7,
+        "rushing_tds_prob": 0.159
+      }
+    },
+    {
+      "id": "00-0036328_w1",
+      "player_id": "00-0036328",
+      "player_name": "Antonio Gibson",
+      "position": "RB",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "rushing_yards": 26.9,
+        "receptions": 1.9,
+        "receiving_yards": 13.6,
+        "rushing_tds_prob": 0.12
+      }
+    },
+    {
+      "id": "00-0035261_w1",
+      "player_id": "00-0035261",
+      "player_name": "Tony Pollard",
+      "position": "RB",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "rushing_yards": 51.1,
+        "receptions": 2.2,
+        "receiving_yards": 17.4,
+        "rushing_tds_prob": 0.273
+      }
+    },
+    {
+      "id": "00-0039373_w1",
+      "player_id": "00-0039373",
+      "player_name": "Audric Estim\u00e9",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 35.6,
+        "receptions": 1.4,
+        "receiving_yards": 11.0,
+        "rushing_tds_prob": 0.174
+      }
+    },
+    {
+      "id": "00-0039603_w1",
+      "player_id": "00-0039603",
+      "player_name": "British Brooks",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 9.9,
+        "receptions": 0.4,
+        "receiving_yards": 3.5,
+        "rushing_tds_prob": 0.089
+      }
+    },
+    {
+      "id": "00-0033854_w1",
+      "player_id": "00-0033854",
+      "player_name": "Dare Ogunbowale",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 9.6,
+        "receptions": 1.5,
+        "receiving_yards": 12.5,
+        "rushing_tds_prob": 0.111
+      }
+    },
+    {
+      "id": "00-0037276_w1",
+      "player_id": "00-0037276",
+      "player_name": "Ty Chandler",
+      "position": "RB",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "rushing_yards": 20.8,
+        "receptions": 1.0,
+        "receiving_yards": 7.1,
+        "rushing_tds_prob": 0.11
+      }
+    },
+    {
+      "id": "00-0039794_w1",
+      "player_id": "00-0039794",
+      "player_name": "Braelon Allen",
+      "position": "RB",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "rushing_yards": 18.9,
+        "receptions": 1.1,
+        "receiving_yards": 8.5,
+        "rushing_tds_prob": 0.122
+      }
+    },
+    {
+      "id": "00-0034791_w1",
+      "player_id": "00-0034791",
+      "player_name": "Nick Chubb",
+      "position": "RB",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "rushing_yards": 48.2,
+        "receptions": 1.1,
+        "receiving_yards": 8.2,
+        "rushing_tds_prob": 0.214
+      }
+    },
+    {
+      "id": "00-0033906_w1",
+      "player_id": "00-0033906",
+      "player_name": "Alvin Kamara",
+      "position": "RB",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "rushing_yards": 35.0,
+        "receptions": 3.3,
+        "receiving_yards": 25.2,
+        "rushing_tds_prob": 0.203
+      }
+    },
+    {
+      "id": "00-0036265_w1",
+      "player_id": "00-0036265",
+      "player_name": "AJ Dillon",
+      "position": "RB",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "rushing_yards": 26.4,
+        "receptions": 1.1,
+        "receiving_yards": 8.2,
+        "rushing_tds_prob": 0.126
+      }
+    },
+    {
+      "id": "00-0040238_w1",
+      "player_id": "00-0040238",
+      "player_name": "LeQuint Allen Jr.",
+      "position": "RB",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "rushing_yards": 4.9,
+        "receptions": 0.8,
+        "receiving_yards": 6.3,
+        "rushing_tds_prob": 0.083
+      }
+    },
+    {
+      "id": "00-0040162_w1",
+      "player_id": "00-0040162",
+      "player_name": "Dylan Sampson",
+      "position": "RB",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "rushing_yards": 14.0,
+        "receptions": 1.9,
+        "receiving_yards": 14.6,
+        "rushing_tds_prob": 0.091
+      }
+    },
+    {
+      "id": "00-0036906_w1",
+      "player_id": "00-0036906",
+      "player_name": "Khalil Herbert",
+      "position": "RB",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "rushing_yards": 25.1,
+        "receptions": 0.8,
+        "receiving_yards": 6.0,
+        "rushing_tds_prob": 0.113
+      }
+    },
+    {
+      "id": "00-0038543_w1",
+      "player_id": "00-0038543",
+      "player_name": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 5.4,
+        "receiving_yards": 67.3,
+        "rushing_yards": 1.3,
+        "receiving_tds_prob": 0.345
+      }
+    },
+    {
+      "id": "00-0039410_w1",
+      "player_id": "00-0039410",
+      "player_name": "Ryan Flournoy",
+      "position": "WR",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 38.0,
+        "rushing_yards": 1.4,
+        "receiving_tds_prob": 0.23
+      }
+    },
+    {
+      "id": "00-0038104_w1",
+      "player_id": "00-0038104",
+      "player_name": "Tyquan Thornton",
+      "position": "WR",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 20.9,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.122
+      }
+    },
+    {
+      "id": "00-0037247_w1",
+      "player_id": "00-0037247",
+      "player_name": "George Pickens",
+      "position": "WR",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 53.9,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.229
+      }
+    },
+    {
+      "id": "00-0039075_w1",
+      "player_id": "00-0039075",
+      "player_name": "Puka Nacua",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 7.5,
+        "receiving_yards": 96.7,
+        "rushing_yards": 4.1,
+        "receiving_tds_prob": 0.575
+      }
+    },
+    {
+      "id": "00-0037664_w1",
+      "player_id": "00-0037664",
+      "player_name": "Alec Pierce",
+      "position": "WR",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "receptions": 3.4,
+        "receiving_yards": 50.5,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.27
+      }
+    },
+    {
+      "id": "00-0036912_w1",
+      "player_id": "00-0036912",
+      "player_name": "DeVonta Smith",
+      "position": "WR",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 52.8,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.241
+      }
+    },
+    {
+      "id": "00-0037666_w1",
+      "player_id": "00-0037666",
+      "player_name": "Jalen Tolbert",
+      "position": "WR",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 25.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.139
+      }
+    },
+    {
+      "id": "00-0038621_w1",
+      "player_id": "00-0038621",
+      "player_name": "DeMario Douglas",
+      "position": "WR",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 2.3,
+        "receiving_yards": 24.9,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.099
+      }
+    },
+    {
+      "id": "00-0038608_w1",
+      "player_id": "00-0038608",
+      "player_name": "Kayshon Boutte",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 2.5,
+        "receiving_yards": 33.1,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.177
+      }
+    },
+    {
+      "id": "00-0040138_w1",
+      "player_id": "00-0040138",
+      "player_name": "Jaylin Noel",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 18.6,
+        "rushing_yards": 1.0,
+        "receiving_tds_prob": 0.136
+      }
+    },
+    {
+      "id": "00-0036196_w1",
+      "player_id": "00-0036196",
+      "player_name": "Gabe Davis",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 2.3,
+        "receiving_yards": 32.9,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.161
+      }
+    },
+    {
+      "id": "00-0033555_w1",
+      "player_id": "00-0033555",
+      "player_name": "Mack Hollins",
+      "position": "WR",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 30.2,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.144
+      }
+    },
+    {
+      "id": "00-0038124_w1",
+      "player_id": "00-0038124",
+      "player_name": "Christian Watson",
+      "position": "WR",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 50.7,
+        "rushing_yards": 1.6,
+        "receiving_tds_prob": 0.287
+      }
+    },
+    {
+      "id": "00-0039916_w1",
+      "player_id": "00-0039916",
+      "player_name": "Ricky Pearsall",
+      "position": "WR",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 3.5,
+        "receiving_yards": 45.1,
+        "rushing_yards": 1.4,
+        "receiving_tds_prob": 0.182
+      }
+    },
+    {
+      "id": "00-0036963_w1",
+      "player_id": "00-0036963",
+      "player_name": "Amon-Ra St. Brown",
+      "position": "WR",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "receptions": 6.8,
+        "receiving_yards": 82.0,
+        "rushing_yards": 2.1,
+        "receiving_tds_prob": 0.497
+      }
+    },
+    {
+      "id": "00-0034348_w1",
+      "player_id": "00-0034348",
+      "player_name": "Courtland Sutton",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 4.0,
+        "receiving_yards": 54.1,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.237
+      }
+    },
+    {
+      "id": "00-0040735_w1",
+      "player_id": "00-0040735",
+      "player_name": "Luther Burden III",
+      "position": "WR",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 45.0,
+        "rushing_yards": 2.2,
+        "receiving_tds_prob": 0.227
+      }
+    },
+    {
+      "id": "00-0040669_w1",
+      "player_id": "00-0040669",
+      "player_name": "Isaac TeSlaa",
+      "position": "WR",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 28.8,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.254
+      }
+    },
+    {
+      "id": "00-0038679_w1",
+      "player_id": "00-0038679",
+      "player_name": "Tyrell Shavers",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 1.8,
+        "receiving_yards": 25.1,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0037816_w1",
+      "player_id": "00-0037816",
+      "player_name": "Romeo Doubs",
+      "position": "WR",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 3.2,
+        "receiving_yards": 39.4,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.176
+      }
+    },
+    {
+      "id": "00-0033908_w1",
+      "player_id": "00-0033908",
+      "player_name": "Cooper Kupp",
+      "position": "WR",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 50.2,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.21
+      }
+    },
+    {
+      "id": "00-0039064_w1",
+      "player_id": "00-0039064",
+      "player_name": "Zay Flowers",
+      "position": "WR",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "receptions": 5.3,
+        "receiving_yards": 67.2,
+        "rushing_yards": 2.6,
+        "receiving_tds_prob": 0.325
+      }
+    },
+    {
+      "id": "00-0036554_w1",
+      "player_id": "00-0036554",
+      "player_name": "Nico Collins",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 4.3,
+        "receiving_yards": 58.5,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.288
+      }
+    },
+    {
+      "id": "00-0036358_w1",
+      "player_id": "00-0036358",
+      "player_name": "CeeDee Lamb",
+      "position": "WR",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 4.7,
+        "receiving_yards": 58.6,
+        "rushing_yards": 2.7,
+        "receiving_tds_prob": 0.233
+      }
+    },
+    {
+      "id": "00-0040648_w1",
+      "player_id": "00-0040648",
+      "player_name": "Tory Horton",
+      "position": "WR",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 2.3,
+        "receiving_yards": 29.0,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.269
+      }
+    },
+    {
+      "id": "00-0038359_w1",
+      "player_id": "00-0038359",
+      "player_name": "Xavier Smith",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 21.0,
+        "rushing_yards": 1.7,
+        "receiving_tds_prob": 0.15
+      }
+    },
+    {
+      "id": "00-0032464_w1",
+      "player_id": "00-0032464",
+      "player_name": "Kalif Raymond",
+      "position": "WR",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 27.3,
+        "rushing_yards": 1.4,
+        "receiving_tds_prob": 0.145
+      }
+    },
+    {
+      "id": "00-0039146_w1",
+      "player_id": "00-0039146",
+      "player_name": "Jayden Reed",
+      "position": "WR",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 3.4,
+        "receiving_yards": 42.7,
+        "rushing_yards": 4.9,
+        "receiving_tds_prob": 0.215
+      }
+    },
+    {
+      "id": "00-0037240_w1",
+      "player_id": "00-0037240",
+      "player_name": "Jameson Williams",
+      "position": "WR",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 54.2,
+        "rushing_yards": 1.9,
+        "receiving_tds_prob": 0.317
+      }
+    },
+    {
+      "id": "00-0040667_w1",
+      "player_id": "00-0040667",
+      "player_name": "Matthew Golden",
+      "position": "WR",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 24.9,
+        "rushing_yards": 2.0,
+        "receiving_tds_prob": 0.109
+      }
+    },
+    {
+      "id": "00-0040131_w1",
+      "player_id": "00-0040131",
+      "player_name": "Kyle Williams",
+      "position": "WR",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 16.0,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0037801_w1",
+      "player_id": "00-0037801",
+      "player_name": "KaVontae Turpin",
+      "position": "WR",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 21.6,
+        "rushing_yards": 4.4,
+        "receiving_tds_prob": 0.147
+      }
+    },
+    {
+      "id": "00-0038393_w1",
+      "player_id": "00-0038393",
+      "player_name": "Dontayvion Wicks",
+      "position": "WR",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 35.2,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.208
+      }
+    },
+    {
+      "id": "00-0037261_w1",
+      "player_id": "00-0037261",
+      "player_name": "Khalil Shakir",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 3.2,
+        "receiving_yards": 37.6,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.168
+      }
+    },
+    {
+      "id": "00-0031408_w1",
+      "player_id": "00-0031408",
+      "player_name": "Mike Evans",
+      "position": "WR",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 4.6,
+        "receiving_yards": 64.1,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.32
+      }
+    },
+    {
+      "id": "00-0035676_w1",
+      "player_id": "00-0035676",
+      "player_name": "A.J. Brown",
+      "position": "WR",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 4.5,
+        "receiving_yards": 62.0,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.279
+      }
+    },
+    {
+      "id": "00-0039451_w1",
+      "player_id": "00-0039451",
+      "player_name": "Isaiah Williams",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 25.5,
+        "rushing_yards": 2.0,
+        "receiving_tds_prob": 0.147
+      }
+    },
+    {
+      "id": "00-0035500_w1",
+      "player_id": "00-0035500",
+      "player_name": "Greg Dortch",
+      "position": "WR",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 3.3,
+        "receiving_yards": 37.5,
+        "rushing_yards": 1.9,
+        "receiving_tds_prob": 0.204
+      }
+    },
+    {
+      "id": "00-0037545_w1",
+      "player_id": "00-0037545",
+      "player_name": "Rashid Shaheed",
+      "position": "WR",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 2.7,
+        "receiving_yards": 36.2,
+        "rushing_yards": 2.4,
+        "receiving_tds_prob": 0.169
+      }
+    },
+    {
+      "id": "00-0040130_w1",
+      "player_id": "00-0040130",
+      "player_name": "Jayden Higgins",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 2.6,
+        "receiving_yards": 33.6,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.206
+      }
+    },
+    {
+      "id": "00-0031236_w1",
+      "player_id": "00-0031236",
+      "player_name": "Brandin Cooks",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 40.1,
+        "rushing_yards": 0.9,
+        "receiving_tds_prob": 0.147
+      }
+    },
+    {
+      "id": "00-0033307_w1",
+      "player_id": "00-0033307",
+      "player_name": "Kendrick Bourne",
+      "position": "WR",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 2.3,
+        "receiving_yards": 28.8,
+        "rushing_yards": 0.9,
+        "receiving_tds_prob": 0.13
+      }
+    },
+    {
+      "id": "00-0031588_w1",
+      "player_id": "00-0031588",
+      "player_name": "Stefon Diggs",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 5.1,
+        "receiving_yards": 62.1,
+        "rushing_yards": 1.0,
+        "receiving_tds_prob": 0.266
+      }
+    },
+    {
+      "id": "00-0032398_w1",
+      "player_id": "00-0032398",
+      "player_name": "Chris Moore",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 18.1,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.097
+      }
+    },
+    {
+      "id": "00-0038117_w1",
+      "player_id": "00-0038117",
+      "player_name": "Wan'Dale Robinson",
+      "position": "WR",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 4.9,
+        "receiving_yards": 55.4,
+        "rushing_yards": 1.8,
+        "receiving_tds_prob": 0.251
+      }
+    },
+    {
+      "id": "00-0037238_w1",
+      "player_id": "00-0037238",
+      "player_name": "Drake London",
+      "position": "WR",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 4.3,
+        "receiving_yards": 55.4,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.218
+      }
+    },
+    {
+      "id": "00-0039915_w1",
+      "player_id": "00-0039915",
+      "player_name": "Ladd McConkey",
+      "position": "WR",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 49.5,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.235
+      }
+    },
+    {
+      "id": "00-0039067_w1",
+      "player_id": "00-0039067",
+      "player_name": "Rashee Rice",
+      "position": "WR",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 5.5,
+        "receiving_yards": 65.2,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.371
+      }
+    },
+    {
+      "id": "00-0036988_w1",
+      "player_id": "00-0036988",
+      "player_name": "Josh Palmer",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 26.4,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.105
+      }
+    },
+    {
+      "id": "00-0039919_w1",
+      "player_id": "00-0039919",
+      "player_name": "Rome Odunze",
+      "position": "WR",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "receptions": 3.3,
+        "receiving_yards": 46.4,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.199
+      }
+    },
+    {
+      "id": "00-0039901_w1",
+      "player_id": "00-0039901",
+      "player_name": "Keon Coleman",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 37.4,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.182
+      }
+    },
+    {
+      "id": "00-0036849_w1",
+      "player_id": "00-0036849",
+      "player_name": "Tutu Atwell",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 29.4,
+        "rushing_yards": 1.0,
+        "receiving_tds_prob": 0.152
+      }
+    },
+    {
+      "id": "00-0040134_w1",
+      "player_id": "00-0040134",
+      "player_name": "Pat Bryant",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 2.5,
+        "receiving_yards": 30.6,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.135
+      }
+    },
+    {
+      "id": "00-0036407_w1",
+      "player_id": "00-0036407",
+      "player_name": "Jerry Jeudy",
+      "position": "WR",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 41.2,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.128
+      }
+    },
+    {
+      "id": "00-0038997_w1",
+      "player_id": "00-0038997",
+      "player_name": "Josh Downs",
+      "position": "WR",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 44.8,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.207
+      }
+    },
+    {
+      "id": "00-0038559_w1",
+      "player_id": "00-0038559",
+      "player_name": "Michael Wilson",
+      "position": "WR",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 4.5,
+        "receiving_yards": 58.3,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.304
+      }
+    },
+    {
+      "id": "00-0037239_w1",
+      "player_id": "00-0037239",
+      "player_name": "Chris Olave",
+      "position": "WR",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 5.9,
+        "receiving_yards": 76.1,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.402
+      }
+    },
+    {
+      "id": "00-0038544_w1",
+      "player_id": "00-0038544",
+      "player_name": "Quentin Johnston",
+      "position": "WR",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 50.9,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.312
+      }
+    },
+    {
+      "id": "00-0036322_w1",
+      "player_id": "00-0036322",
+      "player_name": "Justin Jefferson",
+      "position": "WR",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "receptions": 5.1,
+        "receiving_yards": 69.7,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.296
+      }
+    },
+    {
+      "id": "00-0030035_w1",
+      "player_id": "00-0030035",
+      "player_name": "Adam Thielen",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 43.4,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.195
+      }
+    },
+    {
+      "id": "00-0034827_w1",
+      "player_id": "00-0034827",
+      "player_name": "DJ Moore",
+      "position": "WR",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 55.1,
+        "rushing_yards": 2.3,
+        "receiving_tds_prob": 0.216
+      }
+    },
+    {
+      "id": "00-0039890_w1",
+      "player_id": "00-0039890",
+      "player_name": "Adonai Mitchell",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 30.5,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.15
+      }
+    },
+    {
+      "id": "00-0033040_w1",
+      "player_id": "00-0033040",
+      "player_name": "Tyreek Hill",
+      "position": "WR",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 5.1,
+        "receiving_yards": 66.4,
+        "rushing_yards": 3.6,
+        "receiving_tds_prob": 0.335
+      }
+    },
+    {
+      "id": "00-0039868_w1",
+      "player_id": "00-0039868",
+      "player_name": "Troy Franklin",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 34.5,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.173
+      }
+    },
+    {
+      "id": "00-0040590_w1",
+      "player_id": "00-0040590",
+      "player_name": "Konata Mumpfield",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 19.5,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.144
+      }
+    },
+    {
+      "id": "00-0036900_w1",
+      "player_id": "00-0036900",
+      "player_name": "Ja'Marr Chase",
+      "position": "WR",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 6.6,
+        "receiving_yards": 84.4,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.505
+      }
+    },
+    {
+      "id": "00-0035659_w1",
+      "player_id": "00-0035659",
+      "player_name": "Terry McLaurin",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 54.6,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.214
+      }
+    },
+    {
+      "id": "00-0040129_w1",
+      "player_id": "00-0040129",
+      "player_name": "Emeka Egbuka",
+      "position": "WR",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 44.1,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.171
+      }
+    },
+    {
+      "id": "00-0038976_w1",
+      "player_id": "00-0038976",
+      "player_name": "Marvin Mims Jr.",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 22.8,
+        "rushing_yards": 2.3,
+        "receiving_tds_prob": 0.129
+      }
+    },
+    {
+      "id": "00-0036252_w1",
+      "player_id": "00-0036252",
+      "player_name": "Michael Pittman",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 4.0,
+        "receiving_yards": 45.5,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.166
+      }
+    },
+    {
+      "id": "00-0039849_w1",
+      "player_id": "00-0039849",
+      "player_name": "Marvin Harrison Jr.",
+      "position": "WR",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 3.3,
+        "receiving_yards": 45.7,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.204
+      }
+    },
+    {
+      "id": "00-0038994_w1",
+      "player_id": "00-0038994",
+      "player_name": "Jordan Addison",
+      "position": "WR",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 47.8,
+        "rushing_yards": 1.2,
+        "receiving_tds_prob": 0.25
+      }
+    },
+    {
+      "id": "00-0034960_w1",
+      "player_id": "00-0034960",
+      "player_name": "Jakobi Meyers",
+      "position": "WR",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "receptions": 4.1,
+        "receiving_yards": 49.3,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.199
+      }
+    },
+    {
+      "id": "00-0039424_w1",
+      "player_id": "00-0039424",
+      "player_name": "Devaughn Vele",
+      "position": "WR",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 44.2,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.235
+      }
+    },
+    {
+      "id": "00-0036259_w1",
+      "player_id": "00-0036259",
+      "player_name": "Jauan Jennings",
+      "position": "WR",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "receptions": 3.9,
+        "receiving_yards": 49.7,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.305
+      }
+    },
+    {
+      "id": "00-0033857_w1",
+      "player_id": "00-0033857",
+      "player_name": "JuJu Smith-Schuster",
+      "position": "WR",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 34.4,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.141
+      }
+    },
+    {
+      "id": "00-0035662_w1",
+      "player_id": "00-0035662",
+      "player_name": "Marquise Brown",
+      "position": "WR",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 3.4,
+        "receiving_yards": 42.2,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.196
+      }
+    },
+    {
+      "id": "00-0039894_w1",
+      "player_id": "00-0039894",
+      "player_name": "Xavier Worthy",
+      "position": "WR",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 35.1,
+        "rushing_yards": 3.7,
+        "receiving_tds_prob": 0.154
+      }
+    },
+    {
+      "id": "00-0038563_w1",
+      "player_id": "00-0038563",
+      "player_name": "Tre Tucker",
+      "position": "WR",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 38.7,
+        "rushing_yards": 2.2,
+        "receiving_tds_prob": 0.194
+      }
+    },
+    {
+      "id": "00-0039491_w1",
+      "player_id": "00-0039491",
+      "player_name": "Jalen Coker",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 3.3,
+        "receiving_yards": 41.4,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.212
+      }
+    },
+    {
+      "id": "00-0039893_w1",
+      "player_id": "00-0039893",
+      "player_name": "Brian Thomas Jr.",
+      "position": "WR",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "receptions": 3.7,
+        "receiving_yards": 51.3,
+        "rushing_yards": 1.3,
+        "receiving_tds_prob": 0.226
+      }
+    },
+    {
+      "id": "00-0039855_w1",
+      "player_id": "00-0039855",
+      "player_name": "Jalen McMillan",
+      "position": "WR",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 35.8,
+        "rushing_yards": 1.8,
+        "receiving_tds_prob": 0.211
+      }
+    },
+    {
+      "id": "00-0039355_w1",
+      "player_id": "00-0039355",
+      "player_name": "Luke McCaffrey",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 17.3,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.114
+      }
+    },
+    {
+      "id": "00-0039751_w1",
+      "player_id": "00-0039751",
+      "player_name": "Jordan Whittington",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 20.8,
+        "rushing_yards": 0.9,
+        "receiving_tds_prob": 0.118
+      }
+    },
+    {
+      "id": "00-0040237_w1",
+      "player_id": "00-0040237",
+      "player_name": "Tez Johnson",
+      "position": "WR",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 19.5,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.139
+      }
+    },
+    {
+      "id": "00-0035208_w1",
+      "player_id": "00-0035208",
+      "player_name": "Olamide Zaccheaus",
+      "position": "WR",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 26.0,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0036309_w1",
+      "player_id": "00-0036309",
+      "player_name": "Darnell Mooney",
+      "position": "WR",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 41.1,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.175
+      }
+    },
+    {
+      "id": "00-0038606_w1",
+      "player_id": "00-0038606",
+      "player_name": "Parker Washington",
+      "position": "WR",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "receptions": 4.1,
+        "receiving_yards": 52.9,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.32
+      }
+    },
+    {
+      "id": "00-0040124_w1",
+      "player_id": "00-0040124",
+      "player_name": "Tetairoa McMillan",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 52.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.237
+      }
+    },
+    {
+      "id": "00-0031381_w1",
+      "player_id": "00-0031381",
+      "player_name": "Davante Adams",
+      "position": "WR",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 5.7,
+        "receiving_yards": 72.8,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.44
+      }
+    },
+    {
+      "id": "00-0038619_w1",
+      "player_id": "00-0038619",
+      "player_name": "Andrei Iosivas",
+      "position": "WR",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 26.6,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.157
+      }
+    },
+    {
+      "id": "00-0037741_w1",
+      "player_id": "00-0037741",
+      "player_name": "Jahan Dotson",
+      "position": "WR",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 25.1,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.125
+      }
+    },
+    {
+      "id": "00-0036613_w1",
+      "player_id": "00-0036613",
+      "player_name": "Jaylen Waddle",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 3.9,
+        "receiving_yards": 49.1,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.185
+      }
+    },
+    {
+      "id": "00-0040727_w1",
+      "player_id": "00-0040727",
+      "player_name": "Tre Harris",
+      "position": "WR",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 29.6,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.172
+      }
+    },
+    {
+      "id": "00-0035535_w1",
+      "player_id": "00-0035535",
+      "player_name": "Darius Slayton",
+      "position": "WR",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 40.1,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.19
+      }
+    },
+    {
+      "id": "00-0033921_w1",
+      "player_id": "00-0033921",
+      "player_name": "Chris Godwin Jr.",
+      "position": "WR",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 4.5,
+        "receiving_yards": 55.4,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.236
+      }
+    },
+    {
+      "id": "00-0035406_w1",
+      "player_id": "00-0035406",
+      "player_name": "Lil'Jordan Humphrey",
+      "position": "WR",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 23.8,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.138
+      }
+    },
+    {
+      "id": "00-0037291_w1",
+      "player_id": "00-0037291",
+      "player_name": "Jalen Nailor",
+      "position": "WR",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 33.6,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.214
+      }
+    },
+    {
+      "id": "00-0038618_w1",
+      "player_id": "00-0038618",
+      "player_name": "Xavier Hutchinson",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 1.8,
+        "receiving_yards": 22.9,
+        "rushing_yards": 1.3,
+        "receiving_tds_prob": 0.14
+      }
+    },
+    {
+      "id": "00-0034775_w1",
+      "player_id": "00-0034775",
+      "player_name": "Christian Kirk",
+      "position": "WR",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 37.7,
+        "rushing_yards": 0.9,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0030564_w1",
+      "player_id": "00-0030564",
+      "player_name": "DeAndre Hopkins",
+      "position": "WR",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "receptions": 3.7,
+        "receiving_yards": 47.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.168
+      }
+    },
+    {
+      "id": "00-0032775_w1",
+      "player_id": "00-0032775",
+      "player_name": "Demarcus Robinson",
+      "position": "WR",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 2.6,
+        "receiving_yards": 32.6,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.173
+      }
+    },
+    {
+      "id": "00-0034837_w1",
+      "player_id": "00-0034837",
+      "player_name": "Calvin Ridley",
+      "position": "WR",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 3.7,
+        "receiving_yards": 50.4,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.232
+      }
+    },
+    {
+      "id": "00-0036550_w1",
+      "player_id": "00-0036550",
+      "player_name": "Rashod Bateman",
+      "position": "WR",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 26.7,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0030279_w1",
+      "player_id": "00-0030279",
+      "player_name": "Keenan Allen",
+      "position": "WR",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "receptions": 4.9,
+        "receiving_yards": 56.7,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.225
+      }
+    },
+    {
+      "id": "00-0038840_w1",
+      "player_id": "00-0038840",
+      "player_name": "Brycen Tremayne",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 1.0,
+        "receiving_yards": 11.0,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.102
+      }
+    },
+    {
+      "id": "00-0037740_w1",
+      "player_id": "00-0037740",
+      "player_name": "Garrett Wilson",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 4.7,
+        "receiving_yards": 59.1,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.227
+      }
+    },
+    {
+      "id": "00-0037837_w1",
+      "player_id": "00-0037837",
+      "player_name": "Calvin Austin III",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 26.7,
+        "rushing_yards": 1.0,
+        "receiving_tds_prob": 0.155
+      }
+    },
+    {
+      "id": "00-0035640_w1",
+      "player_id": "00-0035640",
+      "player_name": "DK Metcalf",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 4.3,
+        "receiving_yards": 58.7,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.296
+      }
+    },
+    {
+      "id": "00-0036980_w1",
+      "player_id": "00-0036980",
+      "player_name": "Elijah Moore",
+      "position": "WR",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 2.6,
+        "receiving_yards": 31.2,
+        "rushing_yards": 0.9,
+        "receiving_tds_prob": 0.135
+      }
+    },
+    {
+      "id": "00-0039342_w1",
+      "player_id": "00-0039342",
+      "player_name": "Xavier Legette",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 2.5,
+        "receiving_yards": 30.3,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0039880_w1",
+      "player_id": "00-0039880",
+      "player_name": "Malik Washington",
+      "position": "WR",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 30.7,
+        "rushing_yards": 3.1,
+        "receiving_tds_prob": 0.158
+      }
+    },
+    {
+      "id": "00-0033375_w1",
+      "player_id": "00-0033375",
+      "player_name": "Tim Patrick",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.5,
+        "receiving_yards": 32.2,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.161
+      }
+    },
+    {
+      "id": "00-0038979_w1",
+      "player_id": "00-0038979",
+      "player_name": "Cedric Tillman",
+      "position": "WR",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 25.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.109
+      }
+    },
+    {
+      "id": "00-0037614_w1",
+      "player_id": "00-0037614",
+      "player_name": "John Metchie III",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 24.5,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.139
+      }
+    },
+    {
+      "id": "00-0036427_w1",
+      "player_id": "00-0036427",
+      "player_name": "Tyler Johnson",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 24.5,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.134
+      }
+    },
+    {
+      "id": "00-0040218_w1",
+      "player_id": "00-0040218",
+      "player_name": "Jimmy Horn Jr.",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 1.2,
+        "receiving_yards": 13.2,
+        "rushing_yards": 4.5,
+        "receiving_tds_prob": 0.11
+      }
+    },
+    {
+      "id": "00-0036165_w1",
+      "player_id": "00-0036165",
+      "player_name": "Isaiah Hodgins",
+      "position": "WR",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 22.6,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0033891_w1",
+      "player_id": "00-0033891",
+      "player_name": "Zay Jones",
+      "position": "WR",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 35.2,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.151
+      }
+    },
+    {
+      "id": "00-0036415_w1",
+      "player_id": "00-0036415",
+      "player_name": "Van Jefferson",
+      "position": "WR",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 2.3,
+        "receiving_yards": 30.6,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.162
+      }
+    },
+    {
+      "id": "00-0039739_w1",
+      "player_id": "00-0039739",
+      "player_name": "Roman Wilson",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 20.8,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0035719_w1",
+      "player_id": "00-0035719",
+      "player_name": "Deebo Samuel Sr.",
+      "position": "WR",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 3.7,
+        "receiving_yards": 46.9,
+        "rushing_yards": 7.4,
+        "receiving_tds_prob": 0.189
+      }
+    },
+    {
+      "id": "00-0037742_w1",
+      "player_id": "00-0037742",
+      "player_name": "Treylon Burks",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.8,
+        "receiving_yards": 22.2,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.097
+      }
+    },
+    {
+      "id": "00-0034407_w1",
+      "player_id": "00-0034407",
+      "player_name": "Ray-Ray McCloud",
+      "position": "WR",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 20.4,
+        "rushing_yards": 2.5,
+        "receiving_tds_prob": 0.12
+      }
+    },
+    {
+      "id": "00-0036626_w1",
+      "player_id": "00-0036626",
+      "player_name": "Dyami Brown",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 13.1,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.086
+      }
+    },
+    {
+      "id": "00-0032211_w1",
+      "player_id": "00-0032211",
+      "player_name": "Tyler Lockett",
+      "position": "WR",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 3.3,
+        "receiving_yards": 41.4,
+        "rushing_yards": 1.0,
+        "receiving_tds_prob": 0.194
+      }
+    },
+    {
+      "id": "00-0040582_w1",
+      "player_id": "00-0040582",
+      "player_name": "Arian Smith",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 0.9,
+        "receiving_yards": 10.3,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.095
+      }
+    },
+    {
+      "id": "00-0039623_w1",
+      "player_id": "00-0039623",
+      "player_name": "Mason Tipton",
+      "position": "WR",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 21.2,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.119
+      }
+    },
+    {
+      "id": "00-0035359_w1",
+      "player_id": "00-0035359",
+      "player_name": "David Sills",
+      "position": "WR",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 22.5,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.128
+      }
+    },
+    {
+      "id": "00-0040705_w1",
+      "player_id": "00-0040705",
+      "player_name": "Chimere Dike",
+      "position": "WR",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 36.0,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.207
+      }
+    },
+    {
+      "id": "00-0034521_w1",
+      "player_id": "00-0034521",
+      "player_name": "Allen Lazard",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 28.6,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.14
+      }
+    },
+    {
+      "id": "00-0039379_w1",
+      "player_id": "00-0039379",
+      "player_name": "Jamari Thrash",
+      "position": "WR",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "receptions": 1.2,
+        "receiving_yards": 12.8,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.09
+      }
+    },
+    {
+      "id": "00-0034983_w1",
+      "player_id": "00-0034983",
+      "player_name": "Hunter Renfrow",
+      "position": "WR",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 30.2,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.14
+      }
+    },
+    {
+      "id": "00-0038839_w1",
+      "player_id": "00-0038839",
+      "player_name": "Mitchell Tinsley",
+      "position": "WR",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 1.4,
+        "receiving_yards": 21.3,
+        "rushing_yards": 0.2,
+        "receiving_tds_prob": 0.158
+      }
+    },
+    {
+      "id": "00-0032385_w1",
+      "player_id": "00-0032385",
+      "player_name": "Sterling Shepard",
+      "position": "WR",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 3.2,
+        "receiving_yards": 36.5,
+        "rushing_yards": 1.6,
+        "receiving_tds_prob": 0.142
+      }
+    },
+    {
+      "id": "00-0036410_w1",
+      "player_id": "00-0036410",
+      "player_name": "Tee Higgins",
+      "position": "WR",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 4.9,
+        "receiving_yards": 65.5,
+        "rushing_yards": 0.6,
+        "receiving_tds_prob": 0.379
+      }
+    },
+    {
+      "id": "00-0040782_w1",
+      "player_id": "00-0040782",
+      "player_name": "Isaiah Bond",
+      "position": "WR",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 22.3,
+        "rushing_yards": 1.1,
+        "receiving_tds_prob": 0.099
+      }
+    },
+    {
+      "id": "00-0040164_w1",
+      "player_id": "00-0040164",
+      "player_name": "Jaylin Lane",
+      "position": "WR",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 13.6,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.085
+      }
+    },
+    {
+      "id": "00-0036182_w1",
+      "player_id": "00-0036182",
+      "player_name": "Nick Westbrook-Ikhine",
+      "position": "WR",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 22.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.128
+      }
+    },
+    {
+      "id": "00-0037231_w1",
+      "player_id": "00-0037231",
+      "player_name": "Kevin Austin Jr.",
+      "position": "WR",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 2.6,
+        "receiving_yards": 34.5,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.167
+      }
+    },
+    {
+      "id": "00-0039337_w1",
+      "player_id": "00-0039337",
+      "player_name": "Malik Nabers",
+      "position": "WR",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 5.8,
+        "receiving_yards": 71.6,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.342
+      }
+    },
+    {
+      "id": "00-0034272_w1",
+      "player_id": "00-0034272",
+      "player_name": "Marquez Valdes-Scantling",
+      "position": "WR",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 32.9,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.164
+      }
+    },
+    {
+      "id": "00-0040581_w1",
+      "player_id": "00-0040581",
+      "player_name": "Dont'e Thornton Jr.",
+      "position": "WR",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 22.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.125
+      }
+    },
+    {
+      "id": "00-0033943_w1",
+      "player_id": "00-0033943",
+      "player_name": "Josh Reynolds",
+      "position": "WR",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 30.9,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0040170_w1",
+      "player_id": "00-0040170",
+      "player_name": "Elic Ayomanor",
+      "position": "WR",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 41.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.208
+      }
+    },
+    {
+      "id": "00-0040729_w1",
+      "player_id": "00-0040729",
+      "player_name": "Jack Bech",
+      "position": "WR",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 2.1,
+        "receiving_yards": 26.1,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.151
+      }
+    },
+    {
+      "id": "00-0040126_w1",
+      "player_id": "00-0040126",
+      "player_name": "Colston Loveland",
+      "position": "TE",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "receptions": 4.0,
+        "receiving_yards": 45.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.3
+      }
+    },
+    {
+      "id": "00-0040194_w1",
+      "player_id": "00-0040194",
+      "player_name": "Jackson Hawes",
+      "position": "TE",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 1.3,
+        "receiving_yards": 12.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0038996_w1",
+      "player_id": "00-0038996",
+      "player_name": "Tucker Kraft",
+      "position": "TE",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 43.8,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.286
+      }
+    },
+    {
+      "id": "00-0039065_w1",
+      "player_id": "00-0039065",
+      "player_name": "Sam LaPorta",
+      "position": "TE",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 46.3,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.282
+      }
+    },
+    {
+      "id": "00-0033288_w1",
+      "player_id": "00-0033288",
+      "player_name": "George Kittle",
+      "position": "TE",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 4.6,
+        "receiving_yards": 54.6,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.317
+      }
+    },
+    {
+      "id": "00-0037004_w1",
+      "player_id": "00-0037004",
+      "player_name": "Hunter Long",
+      "position": "TE",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 1.2,
+        "receiving_yards": 10.9,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.111
+      }
+    },
+    {
+      "id": "00-0038115_w1",
+      "player_id": "00-0038115",
+      "player_name": "Daniel Bellinger",
+      "position": "TE",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 21.0,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.153
+      }
+    },
+    {
+      "id": "00-0034351_w1",
+      "player_id": "00-0034351",
+      "player_name": "Dallas Goedert",
+      "position": "TE",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 46.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.309
+      }
+    },
+    {
+      "id": "00-0038933_w1",
+      "player_id": "00-0038933",
+      "player_name": "Dalton Kincaid",
+      "position": "TE",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 32.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.162
+      }
+    },
+    {
+      "id": "00-0036894_w1",
+      "player_id": "00-0036894",
+      "player_name": "Pat Freiermuth",
+      "position": "TE",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 32.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.188
+      }
+    },
+    {
+      "id": "00-0031610_w1",
+      "player_id": "00-0031610",
+      "player_name": "Darren Waller",
+      "position": "TE",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 3.7,
+        "receiving_yards": 42.0,
+        "rushing_yards": 0.3,
+        "receiving_tds_prob": 0.196
+      }
+    },
+    {
+      "id": "00-0033090_w1",
+      "player_id": "00-0033090",
+      "player_name": "Hunter Henry",
+      "position": "TE",
+      "team": "NE",
+      "week": 1,
+      "opponent": "SEA",
+      "is_home": false,
+      "opponent_d_elo": 1671.1,
+      "predicted_stats": {
+        "receptions": 3.5,
+        "receiving_yards": 38.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.195
+      }
+    },
+    {
+      "id": "00-0032392_w1",
+      "player_id": "00-0032392",
+      "player_name": "Austin Hooper",
+      "position": "TE",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 2.6,
+        "receiving_yards": 26.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.144
+      }
+    },
+    {
+      "id": "00-0038935_w1",
+      "player_id": "00-0038935",
+      "player_name": "Brenton Strange",
+      "position": "TE",
+      "team": "JAX",
+      "week": 1,
+      "opponent": "CLE",
+      "is_home": true,
+      "opponent_d_elo": 1560.2,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 32.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.219
+      }
+    },
+    {
+      "id": "00-0036422_w1",
+      "player_id": "00-0036422",
+      "player_name": "Adam Trautman",
+      "position": "TE",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 17.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.129
+      }
+    },
+    {
+      "id": "00-0039793_w1",
+      "player_id": "00-0039793",
+      "player_name": "AJ Barner",
+      "position": "TE",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 27.0,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.201
+      }
+    },
+    {
+      "id": "00-0038046_w1",
+      "player_id": "00-0038046",
+      "player_name": "Charlie Kolar",
+      "position": "TE",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 13.0,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.125
+      }
+    },
+    {
+      "id": "00-0035249_w1",
+      "player_id": "00-0035249",
+      "player_name": "Josh Oliver",
+      "position": "TE",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "receptions": 1.4,
+        "receiving_yards": 14.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.127
+      }
+    },
+    {
+      "id": "00-0037252_w1",
+      "player_id": "00-0037252",
+      "player_name": "Greg Dulcich",
+      "position": "TE",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 32.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.179
+      }
+    },
+    {
+      "id": "00-0034159_w1",
+      "player_id": "00-0034159",
+      "player_name": "Will Dissly",
+      "position": "TE",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 19.7,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.141
+      }
+    },
+    {
+      "id": "00-0037744_w1",
+      "player_id": "00-0037744",
+      "player_name": "Trey McBride",
+      "position": "TE",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 5.7,
+        "receiving_yards": 59.0,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.345
+      }
+    },
+    {
+      "id": "00-0030506_w1",
+      "player_id": "00-0030506",
+      "player_name": "Travis Kelce",
+      "position": "TE",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 4.4,
+        "receiving_yards": 49.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.181
+      }
+    },
+    {
+      "id": "00-0037838_w1",
+      "player_id": "00-0037838",
+      "player_name": "Isaiah Likely",
+      "position": "TE",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 27.1,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.183
+      }
+    },
+    {
+      "id": "00-0036290_w1",
+      "player_id": "00-0036290",
+      "player_name": "Cole Kmet",
+      "position": "TE",
+      "team": "CHI",
+      "week": 1,
+      "opponent": "CAR",
+      "is_home": false,
+      "opponent_d_elo": 1508.9,
+      "predicted_stats": {
+        "receptions": 2.7,
+        "receiving_yards": 28.0,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.143
+      }
+    },
+    {
+      "id": "00-0036628_w1",
+      "player_id": "00-0036628",
+      "player_name": "John Bates",
+      "position": "TE",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 1.3,
+        "receiving_yards": 12.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.105
+      }
+    },
+    {
+      "id": "00-0037112_w1",
+      "player_id": "00-0037112",
+      "player_name": "Jake Tonges",
+      "position": "TE",
+      "team": "SF",
+      "week": 1,
+      "opponent": "LA",
+      "is_home": false,
+      "opponent_d_elo": 1526.3,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 26.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.187
+      }
+    },
+    {
+      "id": "00-0038720_w1",
+      "player_id": "00-0038720",
+      "player_name": "Julian Hill",
+      "position": "TE",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 1.2,
+        "receiving_yards": 12.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.111
+      }
+    },
+    {
+      "id": "00-0033357_w1",
+      "player_id": "00-0033357",
+      "player_name": "Taysom Hill",
+      "position": "TE",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 1.3,
+        "receiving_yards": 10.2,
+        "rushing_yards": 24.1,
+        "receiving_tds_prob": 0.137
+      }
+    },
+    {
+      "id": "00-0039338_w1",
+      "player_id": "00-0039338",
+      "player_name": "Brock Bowers",
+      "position": "TE",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 5.3,
+        "receiving_yards": 56.9,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.297
+      }
+    },
+    {
+      "id": "00-0038558_w1",
+      "player_id": "00-0038558",
+      "player_name": "Darnell Washington",
+      "position": "TE",
+      "team": "PIT",
+      "week": 1,
+      "opponent": "ATL",
+      "is_home": true,
+      "opponent_d_elo": 1487.0,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 17.9,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0033885_w1",
+      "player_id": "00-0033885",
+      "player_name": "David Njoku",
+      "position": "TE",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 33.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.173
+      }
+    },
+    {
+      "id": "00-0040189_w1",
+      "player_id": "00-0040189",
+      "player_name": "Oronde Gadsden II",
+      "position": "TE",
+      "team": "LAC",
+      "week": 1,
+      "opponent": "ARI",
+      "is_home": true,
+      "opponent_d_elo": 1386.1,
+      "predicted_stats": {
+        "receptions": 2.9,
+        "receiving_yards": 35.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.184
+      }
+    },
+    {
+      "id": "00-0040739_w1",
+      "player_id": "00-0040739",
+      "player_name": "Elijah Arroyo",
+      "position": "TE",
+      "team": "SEA",
+      "week": 1,
+      "opponent": "NE",
+      "is_home": true,
+      "opponent_d_elo": 1570.7,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 11.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.1
+      }
+    },
+    {
+      "id": "00-0037348_w1",
+      "player_id": "00-0037348",
+      "player_name": "Tanner Conner",
+      "position": "TE",
+      "team": "MIA",
+      "week": 1,
+      "opponent": "LV",
+      "is_home": false,
+      "opponent_d_elo": 1435.8,
+      "predicted_stats": {
+        "receptions": 1.1,
+        "receiving_yards": 12.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.11
+      }
+    },
+    {
+      "id": "00-0039066_w1",
+      "player_id": "00-0039066",
+      "player_name": "Michael Mayer",
+      "position": "TE",
+      "team": "LV",
+      "week": 1,
+      "opponent": "MIA",
+      "is_home": true,
+      "opponent_d_elo": 1455.9,
+      "predicted_stats": {
+        "receptions": 2.5,
+        "receiving_yards": 25.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.158
+      }
+    },
+    {
+      "id": "00-0039041_w1",
+      "player_id": "00-0039041",
+      "player_name": "Elijah Higgins",
+      "position": "TE",
+      "team": "ARI",
+      "week": 1,
+      "opponent": "LAC",
+      "is_home": false,
+      "opponent_d_elo": 1578.7,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 16.7,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.135
+      }
+    },
+    {
+      "id": "00-0036637_w1",
+      "player_id": "00-0036637",
+      "player_name": "Noah Gray",
+      "position": "TE",
+      "team": "KC",
+      "week": 1,
+      "opponent": "DEN",
+      "is_home": true,
+      "opponent_d_elo": 1609.3,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 15.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.114
+      }
+    },
+    {
+      "id": "00-0040737_w1",
+      "player_id": "00-0040737",
+      "player_name": "Terrance Ferguson",
+      "position": "TE",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 22.9,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.179
+      }
+    },
+    {
+      "id": "00-0035229_w1",
+      "player_id": "00-0035229",
+      "player_name": "T.J. Hockenson",
+      "position": "TE",
+      "team": "MIN",
+      "week": 1,
+      "opponent": "GB",
+      "is_home": true,
+      "opponent_d_elo": 1531.2,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 40.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.181
+      }
+    },
+    {
+      "id": "00-0040663_w1",
+      "player_id": "00-0040663",
+      "player_name": "Harold Fannin Jr.",
+      "position": "TE",
+      "team": "CLE",
+      "week": 1,
+      "opponent": "JAX",
+      "is_home": false,
+      "opponent_d_elo": 1585.2,
+      "predicted_stats": {
+        "receptions": 4.8,
+        "receiving_yards": 49.7,
+        "rushing_yards": 0.8,
+        "receiving_tds_prob": 0.291
+      }
+    },
+    {
+      "id": "00-0034753_w1",
+      "player_id": "00-0034753",
+      "player_name": "Mark Andrews",
+      "position": "TE",
+      "team": "BAL",
+      "week": 1,
+      "opponent": "IND",
+      "is_home": false,
+      "opponent_d_elo": 1418.5,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 35.7,
+        "rushing_yards": 0.5,
+        "receiving_tds_prob": 0.173
+      }
+    },
+    {
+      "id": "00-0035689_w1",
+      "player_id": "00-0035689",
+      "player_name": "Dawson Knox",
+      "position": "TE",
+      "team": "BUF",
+      "week": 1,
+      "opponent": "HOU",
+      "is_home": false,
+      "opponent_d_elo": 1601.4,
+      "predicted_stats": {
+        "receptions": 2.8,
+        "receiving_yards": 29.9,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.197
+      }
+    },
+    {
+      "id": "00-0035631_w1",
+      "player_id": "00-0035631",
+      "player_name": "Drew Sample",
+      "position": "TE",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 15.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.131
+      }
+    },
+    {
+      "id": "00-0035644_w1",
+      "player_id": "00-0035644",
+      "player_name": "Noah Fant",
+      "position": "TE",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 2.2,
+        "receiving_yards": 23.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.103
+      }
+    },
+    {
+      "id": "00-0033246_w1",
+      "player_id": "00-0033246",
+      "player_name": "Johnny Mundt",
+      "position": "TE",
+      "team": "PHI",
+      "week": 1,
+      "opponent": "WAS",
+      "is_home": true,
+      "opponent_d_elo": 1445.8,
+      "predicted_stats": {
+        "receptions": 1.3,
+        "receiving_yards": 13.1,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0034383_w1",
+      "player_id": "00-0034383",
+      "player_name": "Dalton Schultz",
+      "position": "TE",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 4.0,
+        "receiving_yards": 41.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.247
+      }
+    },
+    {
+      "id": "00-0039074_w1",
+      "player_id": "00-0039074",
+      "player_name": "Davis Allen",
+      "position": "TE",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 14.9,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.138
+      }
+    },
+    {
+      "id": "00-0036040_w1",
+      "player_id": "00-0036040",
+      "player_name": "Juwan Johnson",
+      "position": "TE",
+      "team": "NO",
+      "week": 1,
+      "opponent": "DET",
+      "is_home": false,
+      "opponent_d_elo": 1494.1,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 33.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.209
+      }
+    },
+    {
+      "id": "00-0040128_w1",
+      "player_id": "00-0040128",
+      "player_name": "Tyler Warren",
+      "position": "TE",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "receptions": 3.8,
+        "receiving_yards": 40.3,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.174
+      }
+    },
+    {
+      "id": "00-0039359_w1",
+      "player_id": "00-0039359",
+      "player_name": "Cade Stover",
+      "position": "TE",
+      "team": "HOU",
+      "week": 1,
+      "opponent": "BUF",
+      "is_home": true,
+      "opponent_d_elo": 1524.8,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 13.6,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0038547_w1",
+      "player_id": "00-0038547",
+      "player_name": "Luke Schoonmaker",
+      "position": "TE",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 1.4,
+        "receiving_yards": 13.7,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.126
+      }
+    },
+    {
+      "id": "00-0030061_w1",
+      "player_id": "00-0030061",
+      "player_name": "Zach Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 4.2,
+        "receiving_yards": 43.7,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.19
+      }
+    },
+    {
+      "id": "00-0033881_w1",
+      "player_id": "00-0033881",
+      "player_name": "Evan Engram",
+      "position": "TE",
+      "team": "DEN",
+      "week": 1,
+      "opponent": "KC",
+      "is_home": false,
+      "opponent_d_elo": 1593.9,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 35.8,
+        "rushing_yards": 0.7,
+        "receiving_tds_prob": 0.139
+      }
+    },
+    {
+      "id": "00-0033858_w1",
+      "player_id": "00-0033858",
+      "player_name": "Jonnu Smith",
+      "position": "TE",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 23.6,
+        "rushing_yards": 1.7,
+        "receiving_tds_prob": 0.135
+      }
+    },
+    {
+      "id": "00-0039847_w1",
+      "player_id": "00-0039847",
+      "player_name": "Theo Johnson",
+      "position": "TE",
+      "team": "NYG",
+      "week": 1,
+      "opponent": "DAL",
+      "is_home": true,
+      "opponent_d_elo": 1366.8,
+      "predicted_stats": {
+        "receptions": 3.1,
+        "receiving_yards": 34.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.19
+      }
+    },
+    {
+      "id": "00-0039144_w1",
+      "player_id": "00-0039144",
+      "player_name": "Luke Musgrave",
+      "position": "TE",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 2.0,
+        "receiving_yards": 19.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.123
+      }
+    },
+    {
+      "id": "00-0036244_w1",
+      "player_id": "00-0036244",
+      "player_name": "Colby Parkinson",
+      "position": "TE",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 31.2,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.279
+      }
+    },
+    {
+      "id": "00-0038129_w1",
+      "player_id": "00-0038129",
+      "player_name": "Cade Otton",
+      "position": "TE",
+      "team": "TB",
+      "week": 1,
+      "opponent": "CIN",
+      "is_home": false,
+      "opponent_d_elo": 1447.8,
+      "predicted_stats": {
+        "receptions": 3.6,
+        "receiving_yards": 36.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.196
+      }
+    },
+    {
+      "id": "00-0038041_w1",
+      "player_id": "00-0038041",
+      "player_name": "Jake Ferguson",
+      "position": "TE",
+      "team": "DAL",
+      "week": 1,
+      "opponent": "NYG",
+      "is_home": false,
+      "opponent_d_elo": 1482.1,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 28.6,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.151
+      }
+    },
+    {
+      "id": "00-0037306_w1",
+      "player_id": "00-0037306",
+      "player_name": "John FitzPatrick",
+      "position": "TE",
+      "team": "GB",
+      "week": 1,
+      "opponent": "MIN",
+      "is_home": false,
+      "opponent_d_elo": 1679.5,
+      "predicted_stats": {
+        "receptions": 1.0,
+        "receiving_yards": 7.1,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.098
+      }
+    },
+    {
+      "id": "00-0033217_w1",
+      "player_id": "00-0033217",
+      "player_name": "Mo Alie-Cox",
+      "position": "TE",
+      "team": "IND",
+      "week": 1,
+      "opponent": "BAL",
+      "is_home": true,
+      "opponent_d_elo": 1539.0,
+      "predicted_stats": {
+        "receptions": 1.6,
+        "receiving_yards": 17.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.148
+      }
+    },
+    {
+      "id": "00-0033110_w1",
+      "player_id": "00-0033110",
+      "player_name": "Tyler Higbee",
+      "position": "TE",
+      "team": "LA",
+      "week": 1,
+      "opponent": "SF",
+      "is_home": true,
+      "opponent_d_elo": 1503.8,
+      "predicted_stats": {
+        "receptions": 3.2,
+        "receiving_yards": 33.5,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.212
+      }
+    },
+    {
+      "id": "00-0037809_w1",
+      "player_id": "00-0037809",
+      "player_name": "Chig Okonkwo",
+      "position": "TE",
+      "team": "WAS",
+      "week": 1,
+      "opponent": "PHI",
+      "is_home": false,
+      "opponent_d_elo": 1635.2,
+      "predicted_stats": {
+        "receptions": 3.0,
+        "receiving_yards": 30.3,
+        "rushing_yards": 0.4,
+        "receiving_tds_prob": 0.172
+      }
+    },
+    {
+      "id": "00-0040584_w1",
+      "player_id": "00-0040584",
+      "player_name": "Gunnar Helm",
+      "position": "TE",
+      "team": "TEN",
+      "week": 1,
+      "opponent": "NYJ",
+      "is_home": true,
+      "opponent_d_elo": 1356.6,
+      "predicted_stats": {
+        "receptions": 2.4,
+        "receiving_yards": 22.4,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.154
+      }
+    },
+    {
+      "id": "00-0034829_w1",
+      "player_id": "00-0034829",
+      "player_name": "Mike Gesicki",
+      "position": "TE",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 2.7,
+        "receiving_yards": 29.7,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.163
+      }
+    },
+    {
+      "id": "00-0036754_w1",
+      "player_id": "00-0036754",
+      "player_name": "Brock Wright",
+      "position": "TE",
+      "team": "DET",
+      "week": 1,
+      "opponent": "NO",
+      "is_home": true,
+      "opponent_d_elo": 1513.2,
+      "predicted_stats": {
+        "receptions": 1.5,
+        "receiving_yards": 14.3,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.133
+      }
+    },
+    {
+      "id": "00-0039356_w1",
+      "player_id": "00-0039356",
+      "player_name": "Ja'Tavion Sanders",
+      "position": "TE",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 17.2,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.121
+      }
+    },
+    {
+      "id": "00-0037005_w1",
+      "player_id": "00-0037005",
+      "player_name": "Tommy Tremble",
+      "position": "TE",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 1.9,
+        "receiving_yards": 18.6,
+        "rushing_yards": 0.1,
+        "receiving_tds_prob": 0.14
+      }
+    },
+    {
+      "id": "00-0036970_w1",
+      "player_id": "00-0036970",
+      "player_name": "Kyle Pitts",
+      "position": "TE",
+      "team": "ATL",
+      "week": 1,
+      "opponent": "PIT",
+      "is_home": false,
+      "opponent_d_elo": 1554.1,
+      "predicted_stats": {
+        "receptions": 4.6,
+        "receiving_yards": 52.9,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.329
+      }
+    },
+    {
+      "id": "00-0037805_w1",
+      "player_id": "00-0037805",
+      "player_name": "Jeremy Ruckert",
+      "position": "TE",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 1.4,
+        "receiving_yards": 13.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.121
+      }
+    },
+    {
+      "id": "00-0040187_w1",
+      "player_id": "00-0040187",
+      "player_name": "Mitchell Evans",
+      "position": "TE",
+      "team": "CAR",
+      "week": 1,
+      "opponent": "CHI",
+      "is_home": true,
+      "opponent_d_elo": 1535.6,
+      "predicted_stats": {
+        "receptions": 1.2,
+        "receiving_yards": 11.5,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.116
+      }
+    },
+    {
+      "id": "00-0034613_w1",
+      "player_id": "00-0034613",
+      "player_name": "Tanner Hudson",
+      "position": "TE",
+      "team": "CIN",
+      "week": 1,
+      "opponent": "TB",
+      "is_home": true,
+      "opponent_d_elo": 1461.6,
+      "predicted_stats": {
+        "receptions": 1.7,
+        "receiving_yards": 16.8,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.129
+      }
+    },
+    {
+      "id": "00-0040736_w1",
+      "player_id": "00-0040736",
+      "player_name": "Mason Taylor",
+      "position": "TE",
+      "team": "NYJ",
+      "week": 1,
+      "opponent": "TEN",
+      "is_home": false,
+      "opponent_d_elo": 1389.4,
+      "predicted_stats": {
+        "receptions": 3.2,
+        "receiving_yards": 31.0,
+        "rushing_yards": 0.0,
+        "receiving_tds_prob": 0.158
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "week": 1,
+  "locked_at": "2026-09-07T11:20:36.521528",
+  "files": {
+    "games": "week_1_game_predictions.json",
+    "projections": "week_1_player_projections.json",
+    "rankings": "week_1_player_rankings.json"
+  },
+  "notes": "Real snapshot of this project's Week 1 predictions as of the locked_at timestamp - kept for honest post-hoc accuracy comparison, not literally immutable (see this script's own module docstring).",
+  "games_scheduled": "2026-09-09 (Thursday) - 2026-09-15 (Monday night)",
+  "tracking_begins": "2026-09-16"
+}

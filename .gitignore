@@ -13,7 +13,18 @@ data/predictions/*
 !data/predictions/.gitkeep
 data/espn_odds/*
 !data/espn_odds/.gitkeep
+data/espn_injuries/*
+!data/espn_injuries/.gitkeep
+data/refresh_logs/*
+!data/refresh_logs/.gitkeep
+data/season_tracking/*
+!data/season_tracking/.gitkeep
 data/tracking.db
+
+# data/locked_predictions/ is deliberately NOT gitignored - it's a real,
+# permanent, git-tracked snapshot of what this project predicted before
+# games were played (the whole point is an honest, tamper-evident record
+# for after-the-fact accuracy comparison, not another regenerated cache).
 
 # Data files that live outside data/ (component-local outputs)
 src/injury_severity_lookup.csv
@@ -61,3 +72,4 @@ MODELS_EXPLAINED.md
 DATA_DICT.md
 DECISIONS_LOG.md
 RUNNING_INSTRUCTIONS.md
+DEPLOYMENT_CHECKLIST.md

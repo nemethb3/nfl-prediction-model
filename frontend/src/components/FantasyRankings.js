@@ -46,6 +46,21 @@ function byeTeamsForWeek(week, games) {
   return [...allTeams].filter((t) => !playingThisWeek.has(t)).sort();
 }
 
+// Real, separate live-news overlay (ESPN injury report - see
+// generate_injury_adjustments_2026.py) - matched by name+team against
+// fantasyData rows. Deliberately NOT merged into fantasyData/playerProps
+// themselves (an additive layer, not a mutation of the model's own
+// output - see DECISIONS_LOG.md for why: it keeps data/locked_
+// predictions/ and the model's own real numbers intact and durable
+// across the next refresh_weekly.py run). Only week 1 exists in this
+// file right now (its own real `week` field, checked once here rather
+// than per-row) - gated on selectedWeek so a future multi-week season
+// doesn't show stale Week 1 injury news under a later week.
+function injuryAdjustmentsByPlayer(injuryAdjustments, selectedWeek) {
+  if (!injuryAdjustments || injuryAdjustments.week !== selectedWeek) return new Map();
+  return new Map(injuryAdjustments.players.map((p) => [`${p.name}|${p.team}`, p]));
+}
+
 function realDEloRanksForWeek(weekGames) {
   const byTeam = new Map();
   for (const g of weekGames) {
@@ -256,6 +271,11 @@ export default function FantasyRankings() {
     () => byeTeamsForWeek(selectedWeek, seasonData.games),
     [seasonData.games, selectedWeek]);
 
+  const injuryByPlayer = useMemo(
+    () => injuryAdjustmentsByPlayer(seasonData.injuryAdjustments, selectedWeek),
+    [seasonData.injuryAdjustments, selectedWeek]);
+  const confirmedOutThisWeek = [...injuryByPlayer.values()].filter((p) => p.confirmed_out);
+
   useEffect(() => {
     setSelectedWeek(weeks[0]);
     setExpandedPlayerId(null);
@@ -333,6 +353,20 @@ export default function FantasyRankings() {
             </span>
           </div>
         )}
+
+        {confirmedOutThisWeek.length > 0 && (
+          <div className="injury-alert-banner">
+            <span className="injury-alert-banner-title">🚑 Confirmed Out (ESPN)</span>
+            <span className="injury-alert-banner-note">
+              {confirmedOutThisWeek.length} real, confirmed Out/Injured Reserve player{confirmedOutThisWeek.length > 1 ? 's' : ''}{' '}
+              this week: {confirmedOutThisWeek.map((p) => p.name).join(', ')}. Shown below with a real OUT badge -
+              their real model projection is left visible alongside it, not silently zeroed (see the badge for detail).
+              Real, disclosed limitation: only Questionable and worse are flagged - Questionable players are flagged,
+              not numerically adjusted (no real model exists in this project for how much to discount a game-status
+              designation).
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="players-container">
@@ -348,6 +382,7 @@ export default function FantasyRankings() {
               props={propsById ? propsById.get(player.id) : null}
               breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
               opponentDElo={player.opponent ? dEloRanks[player.opponent] : null}
+              injuryAdjustment={injuryByPlayer.get(`${player.name}|${player.team}`) || null}
             />
           ))
         )}
@@ -367,7 +402,7 @@ export default function FantasyRankings() {
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, opponentDElo }) {
+function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, opponentDElo, injuryAdjustment }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const handleKeyDown = useKeyboardToggle(onToggle);
@@ -434,6 +469,15 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
         {player.injury_status && player.injury_status !== 'healthy' && (
           <div className="injury-badge" title={player.injury_status_raw || player.injury_status}>
             {INJURY_EMOJI[player.injury_status] || '⚪'}
+          </div>
+        )}
+
+        {injuryAdjustment && (
+          <div
+            className={`espn-injury-badge ${injuryAdjustment.confirmed_out ? 'espn-injury-badge--out' : 'espn-injury-badge--questionable'}`}
+            title={`ESPN: ${injuryAdjustment.status} - ${injuryAdjustment.body_part}${injuryAdjustment.detail ? ` (${injuryAdjustment.detail})` : ''}`}
+          >
+            🚑 {injuryAdjustment.confirmed_out ? 'OUT' : 'Q'}
           </div>
         )}
 
@@ -574,6 +618,25 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
               <div>
                 {INJURY_EMOJI[player.injury_status] || '⚪'} {player.injury_status}
                 {player.injury_status_raw ? ` (${player.injury_status_raw})` : ''}
+              </div>
+            </div>
+          )}
+
+          {injuryAdjustment && (
+            <div className="section">
+              <div className="section-title">🚑 Real ESPN Injury Report</div>
+              <div>
+                {injuryAdjustment.status} - {injuryAdjustment.body_part}
+                {injuryAdjustment.detail ? ` (${injuryAdjustment.detail})` : ''}
+                {injuryAdjustment.return_date ? `, return ${injuryAdjustment.return_date}` : ''}
+              </div>
+              {injuryAdjustment.source_note && (
+                <div className="small-text">{injuryAdjustment.source_note}</div>
+              )}
+              <div className="small-text">
+                {injuryAdjustment.confirmed_out
+                  ? `Real, confirmed - won't play. Model projection was ${injuryAdjustment.original_projected_ppr?.toFixed(1) ?? '--'} PPR.`
+                  : 'Real, flagged as Questionable - the projection above is NOT adjusted (no real model exists in this project for how much to discount a game-status designation).'}
               </div>
             </div>
           )}

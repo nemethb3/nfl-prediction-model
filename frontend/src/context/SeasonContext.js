@@ -57,6 +57,9 @@ const SEASON_FILE_LOADERS = {
       // Real MVP race is also 2026-only - no real 2015-2025 per-season
       // award-race backtest was built, so this stays a real null for 2025.
       awardRaces: null,
+      // Real, 2026-only, live-news overlay (ESPN injury report) - a real
+      // 2015-2025 backtest concept doesn't apply here at all.
+      injuryAdjustments: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
@@ -66,7 +69,7 @@ const SEASON_FILE_LOADERS = {
   // they're real `null`, not a fabricated/missing import.
   2026: async () => {
     const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts, rookieScores,
-      powerRankings, awardRaces] =
+      powerRankings, awardRaces, injuryAdjustments] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
@@ -77,6 +80,7 @@ const SEASON_FILE_LOADERS = {
         import('../data/rookie_scores_2026.json'),
         import('../data/power_rankings_2026.json'),
         import('../data/award_races_2026.json'),
+        import('../data/injury_adjustments_2026.json'),
       ]);
     return {
       games: games.default,
@@ -98,6 +102,10 @@ const SEASON_FILE_LOADERS = {
       // ROY/Defensive ROY have no real per-player projection data
       // anywhere in this project, not built rather than faked).
       awardRaces: awardRaces.default,
+      // Real, 2026-only, ESPN-sourced live injury overlay (see
+      // generate_injury_adjustments_2026.py) - a separate, disclosed layer,
+      // not a mutation of fantasy/playerProps above (see DECISIONS_LOG.md).
+      injuryAdjustments: injuryAdjustments.default,
     };
   },
 };

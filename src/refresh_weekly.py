@@ -54,6 +54,12 @@ arbitrary sequence):
   8. generate_power_rankings_2026.py
   9. generate_trade_scores_2026.py - real, depends on step 4's output.
   10. generate_mvp_race_2026.py - real, depends on steps 4 and 6.
+  11. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
+      (added after a real launch-day report: "confirmed out" badges
+      weren't propagating into projections everywhere they mattered -
+      lineup optimizer, trade analyzer, personal roster). Depends on
+      step 5's real fantasy_rankings_2026.json output for the real
+      original_projected_ppr comparison it reports.
 """
 
 import json
@@ -97,6 +103,7 @@ class WeeklyRefresh:
         self.step("Games pipeline (Elo spread/win-prob + point-totals)", ["orchestrate_2026_pipeline.py"])
         self.step("Scoring player props", ["generate_player_props_2026.py"])
         self.step("Regenerating fantasy rankings (Week 1)", ["generate_fantasy_rankings_2026_week1.py"])
+        self.step("Refreshing ESPN injury adjustments", ["generate_injury_adjustments_2026.py"])
         self.step("Regenerating season projections", ["generate_season_projections_dashboard_data_2026.py"])
         self.step("Regenerating Super Bowl odds", ["generate_superbowl_odds_2026.py"])
         self.step("Regenerating Power Rankings", ["generate_power_rankings_2026.py"])

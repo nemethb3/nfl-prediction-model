@@ -508,6 +508,20 @@
   white-space: nowrap;
 }
 
+.player-card .ppr-zeroed {
+  color: #ef4444;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.player-card--out {
+  opacity: 0.65;
+}
+
+.player-card--out .name {
+  text-decoration: line-through;
+}
+
 .player-card .expand-hint {
   color: #666;
   font-size: 12px;

@@ -6,6 +6,7 @@ import { TEAM_NAMES } from '../constants/teams';
 // fetch(); a fetch('/data/...') here wouldn't even resolve under CRA,
 // since this file lives in src/data, not public/).
 import sleeperIdMapping from '../data/sleeper_id_mapping.json';
+import { getConfirmedOutSet, isConfirmedOut } from '../utils/injuryAdjustments';
 import '../styles/PersonalRoster.css';
 
 export default function PersonalRoster({ leagueId, userId }) {
@@ -50,6 +51,8 @@ export default function PersonalRoster({ leagueId, userId }) {
   // check and the projection lookup below, instead of two disconnected
   // notions of "current week."
   const targetWeek = fantasyData.length > 0 ? Math.max(...fantasyData.map((p) => p.week || 1)) : 1;
+
+  const outSet = getConfirmedOutSet(seasonData.injuryAdjustments, targetWeek);
 
   const isBye = (nflTeam) => {
     if (!nflTeam || games.length === 0) return false;
@@ -101,9 +104,16 @@ export default function PersonalRoster({ leagueId, userId }) {
 
           const projection = fantasyData.find((p) => p.id === `${idInfo.player_id}_w${targetWeek}`);
           const onBye = isBye(idInfo.team);
+          const isOut = isConfirmedOut(idInfo.name, idInfo.team, outSet);
+          // Real, confirmed-out (ESPN) always wins over a stale positive
+          // threshold-based recommendation - a player projected 16.1 PPR
+          // before real injury news broke should never still say START.
+          const displayPpr = isOut ? 0 : projection?.projected_ppr;
 
           let recommendation = null;
-          if (onBye) {
+          if (isOut) {
+            recommendation = { text: 'OUT', slug: 'out' };
+          } else if (onBye) {
             recommendation = { text: 'SIT (Bye Week)', slug: 'bye' };
           } else if (projection) {
             if (projection.projected_ppr > 15) {
@@ -127,10 +137,17 @@ export default function PersonalRoster({ leagueId, userId }) {
 
               {projection ? (
                 <div className="personal-roster__card-projection">
-                  <div className="personal-roster__projection-value">
-                    {projection.projected_ppr != null ? projection.projected_ppr.toFixed(1) : '--'}
+                  <div className={`personal-roster__projection-value ${isOut ? 'personal-roster__projection-value--zeroed' : ''}`}>
+                    {displayPpr != null ? displayPpr.toFixed(1) : '--'}
                     <span className="personal-roster__ppr-label">PPR</span>
                   </div>
+
+                  {isOut && (
+                    <div className="personal-roster__injury-badge personal-roster__injury-badge--out">
+                      🚑 Confirmed Out (ESPN) - model projection before this news was{' '}
+                      {projection.projected_ppr != null ? projection.projected_ppr.toFixed(1) : '--'} PPR
+                    </div>
+                  )}
 
                   {recommendation && (
                     <div
@@ -192,8 +209,11 @@ export default function PersonalRoster({ leagueId, userId }) {
           opportunity threshold) - a roster player outside that list (deep bench, practice squad,
           true rookie) will real-honestly show no projection rather than a fabricated one.
           Start/Bench/Sit is a basic real threshold (projected PPR &gt; 15 =
-          Start, &lt; 5 = Bench, real bye week = Sit) - not this project&apos;s full model output,
-          which has no lineup-optimization logic built yet.
+          Start, &lt; 5 = Bench, real bye week = Sit, real confirmed Out/Injured Reserve via
+          ESPN&apos;s live injury report always overrides the threshold and shows OUT) - this
+          simple per-card view doesn&apos;t fill your actual lineup slots; see the Suggested
+          Lineup tab for this project&apos;s real, slot-aware optimizer (which applies this same
+          real confirmed-out zeroing).
         </p>
       </div>
     </div>

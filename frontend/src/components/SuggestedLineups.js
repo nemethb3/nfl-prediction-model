@@ -4,6 +4,7 @@ import sleeperIdMapping from '../data/sleeper_id_mapping.json';
 import { fetchSleeperLeague, parseScoringSettings, parseRosterPositions } from '../utils/sleeperLeagueSettings';
 import { adjustRosterForLeague } from '../utils/adjustProjectionsForLeague';
 import { optimizeLineup } from '../utils/lineupOptimizer';
+import { getConfirmedOutSet } from '../utils/injuryAdjustments';
 import '../styles/SuggestedLineups.css';
 
 const SLEEPER_BASE = 'https://api.sleeper.app/v1';
@@ -63,8 +64,9 @@ export default function SuggestedLineups() {
 
         const allProps = seasonData.playerProps || [];
         const weeklyProps = allProps.filter((p) => p.week === targetWeek);
+        const outSet = getConfirmedOutSet(seasonData.injuryAdjustments, targetWeek);
 
-        const adjustedRoster = adjustRosterForLeague(mappedPlayers, weeklyProps, targetWeek, scoring);
+        const adjustedRoster = adjustRosterForLeague(mappedPlayers, weeklyProps, targetWeek, scoring, outSet);
         const withProjection = adjustedRoster.filter((p) => typeof p.leaguePoints === 'number');
         const withoutProjection = adjustedRoster.filter((p) => typeof p.leaguePoints !== 'number');
 
@@ -135,13 +137,22 @@ export default function SuggestedLineups() {
         <h3>Starting</h3>
         <div className="suggested-lineups__list">
           {lineup.starting.map((s) => (
-            <div key={s.slot} className="suggested-lineups__row">
+            <div key={s.slot} className={`suggested-lineups__row ${s.player.isOut ? 'suggested-lineups__row--out' : ''}`}>
               <span className="suggested-lineups__slot">{s.slot}</span>
-              <span className="suggested-lineups__name">{s.player.name}</span>
+              <span className="suggested-lineups__name">
+                {s.player.name}
+                {s.player.isOut && <span className="suggested-lineups__out-badge">🚑 OUT</span>}
+              </span>
               <span className="suggested-lineups__pos">{s.player.position}</span>
               <span className="suggested-lineups__pts">{s.player.leaguePoints.toFixed(1)}</span>
             </div>
           ))}
+          {lineup.starting.some((s) => s.player.isOut) && (
+            <p className="suggested-lineups__warning">
+              A confirmed-out (ESPN) player was started anyway - no healthy alternative at that
+              position is on your real roster right now.
+            </p>
+          )}
         </div>
         {lineup.unfilled.length > 0 && (
           <p className="suggested-lineups__warning">
@@ -155,8 +166,11 @@ export default function SuggestedLineups() {
           <h3>Bench</h3>
           <div className="suggested-lineups__list">
             {lineup.bench.map((p) => (
-              <div key={p.player_id} className="suggested-lineups__row suggested-lineups__row--bench">
-                <span className="suggested-lineups__name">{p.name}</span>
+              <div key={p.player_id} className={`suggested-lineups__row suggested-lineups__row--bench ${p.isOut ? 'suggested-lineups__row--out' : ''}`}>
+                <span className="suggested-lineups__name">
+                  {p.name}
+                  {p.isOut && <span className="suggested-lineups__out-badge">🚑 OUT</span>}
+                </span>
                 <span className="suggested-lineups__pos">{p.position}</span>
                 <span className="suggested-lineups__pts">{p.leaguePoints.toFixed(1)}</span>
               </div>
@@ -174,7 +188,9 @@ export default function SuggestedLineups() {
           per-stat projections, rescored using your real league&apos;s Sleeper scoring settings -
           not this project&apos;s own default PPR total. Interception-based scoring (if your league
           uses it) isn&apos;t applied: this project has no real interception projection to score
-          against.
+          against. Players confirmed Out/Injured Reserve (real, live ESPN injury report) are
+          scored at 0 points here too, so the optimizer benches them behind any healthy real
+          alternative on your roster.
           {excludedCount > 0 &&
             ` ${excludedCount} roster spot${excludedCount === 1 ? '' : 's'} excluded (kickers/defenses/unmapped players).`}
           {withoutProjection.length > 0 &&

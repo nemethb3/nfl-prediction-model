@@ -149,6 +149,12 @@
   color: #f9a825;
 }
 
+.trade-analyzer__role-badge--out {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
 .trade-analyzer__package-add {
   display: flex;
   gap: 8px;

@@ -14,6 +14,8 @@
 // convention this project's own default projected_ppr already uses -
 // not a new approximation invented here.
 
+import { isConfirmedOut } from './injuryAdjustments';
+
 export function computeLeaguePoints(predictedStats, position, scoring) {
   const s = predictedStats || {};
   let points = 0;
@@ -44,17 +46,27 @@ export function computeLeaguePoints(predictedStats, position, scoring) {
  * A rostered player with no real prop row this week (outside this
  * project's real ~390 ranked players) is returned with points=null,
  * disclosed rather than defaulted to 0 (which would wrongly look like a
- * real, confident zero-point projection). */
-export function adjustRosterForLeague(rosterPlayers, weeklyProps, targetWeek, scoring) {
+ * real, confident zero-point projection).
+ *
+ * `outSet` (optional - see utils/injuryAdjustments.js getConfirmedOutSet)
+ * zeroes leaguePoints for a real, confirmed Out/Injured Reserve player
+ * (ESPN) and marks them `isOut: true` - the lineup optimizer that
+ * consumes this output naturally benches a 0-point player behind any
+ * real healthy alternative, rather than starting someone confirmed not
+ * to play. Matched by name+team, the same real join key
+ * injury_adjustments_2026.json itself uses. */
+export function adjustRosterForLeague(rosterPlayers, weeklyProps, targetWeek, scoring, outSet = new Set()) {
   const propsById = new Map(weeklyProps.map((p) => [p.player_id, p]));
 
   return rosterPlayers.map((player) => {
     const propRow = propsById.get(player.player_id);
+    const isOut = isConfirmedOut(player.name, player.team, outSet);
     const points = propRow ? computeLeaguePoints(propRow.predicted_stats, player.position, scoring) : null;
     return {
       ...player,
       week: targetWeek,
-      leaguePoints: points,
+      leaguePoints: isOut ? 0 : points,
+      isOut,
     };
   });
 }

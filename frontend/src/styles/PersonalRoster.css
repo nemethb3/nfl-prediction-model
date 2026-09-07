@@ -134,6 +134,22 @@
   color: #a78bfa;
 }
 
+.personal-roster__recommendation--out {
+  background: #7f1d1d;
+  color: #ef4444;
+}
+
+.personal-roster__projection-value--zeroed {
+  color: #ef4444 !important;
+  text-decoration: line-through;
+}
+
+.personal-roster__injury-badge--out {
+  color: #ef4444;
+  background: #7f1d1d;
+  font-weight: 600;
+}
+
 .personal-roster__injury-badge,
 .personal-roster__consistency-badge {
   font-size: 11px;

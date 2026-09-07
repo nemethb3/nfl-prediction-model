@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import GameCard from './GameCard';
 import { useSeason } from '../context/SeasonContext';
+import { getConfirmedOutSet, isConfirmedOut } from '../utils/injuryAdjustments';
 import '../styles/GamePredictions.css';
 
 // Real per-team Elo rank (1 = strongest) for the "Nth best" context in
@@ -65,7 +66,7 @@ function impliedAmericanOdds(probability) {
 // ranking. Real `null` playerProps (2025 - no real player props were
 // ever built for a completed season, see SeasonContext.js) returns an
 // empty map rather than throwing.
-function realTopTDScorersForWeek(weekGames, playerProps, week) {
+function realTopTDScorersForWeek(weekGames, playerProps, week, outSet) {
   if (!playerProps) return {};
   const teams = new Set();
   for (const g of weekGames) {
@@ -77,6 +78,7 @@ function realTopTDScorersForWeek(weekGames, playerProps, week) {
 
   for (const p of playerProps) {
     if (p.week !== week || !teams.has(p.team)) continue;
+    if (isConfirmedOut(p.player_name, p.team, outSet)) continue;
     let bestProb = 0;
     let bestType = null;
     for (const [field, label] of RUSHING_RECEIVING_TD_PROB_FIELDS) {
@@ -123,7 +125,7 @@ function realTopTDScorersForWeek(weekGames, playerProps, week) {
 // ask would be a real regression. The Poisson derivation keeps the
 // display grounded in the one real, validated number instead, and is
 // disclosed as a derivation, not presented as an independently-fit count.
-function realQBPassingTDsForWeek(weekGames, playerProps, week) {
+function realQBPassingTDsForWeek(weekGames, playerProps, week, outSet) {
   if (!playerProps) return {};
   const teams = new Set();
   for (const g of weekGames) {
@@ -133,6 +135,7 @@ function realQBPassingTDsForWeek(weekGames, playerProps, week) {
   const bestByTeam = {};
   for (const p of playerProps) {
     if (p.week !== week || p.position !== 'QB' || !teams.has(p.team)) continue;
+    if (isConfirmedOut(p.player_name, p.team, outSet)) continue;
     const passingYards = p.predicted_stats?.passing_yards;
     const passingTdProb = p.predicted_stats?.passing_tds_prob;
     if (passingYards == null || passingTdProb == null) continue;
@@ -184,12 +187,15 @@ export default function GamePredictions() {
     () => realEloRanksForWeek(weekGames, 'home_o_elo', 'away_o_elo'), [weekGames]);
   const dEloRanks = useMemo(
     () => realEloRanksForWeek(weekGames, 'home_d_elo', 'away_d_elo'), [weekGames]);
+  const outSet = useMemo(
+    () => getConfirmedOutSet(seasonData.injuryAdjustments, selectedWeek),
+    [seasonData.injuryAdjustments, selectedWeek]);
   const topScorers = useMemo(
-    () => realTopTDScorersForWeek(weekGames, seasonData.playerProps, selectedWeek),
-    [weekGames, seasonData.playerProps, selectedWeek]);
+    () => realTopTDScorersForWeek(weekGames, seasonData.playerProps, selectedWeek, outSet),
+    [weekGames, seasonData.playerProps, selectedWeek, outSet]);
   const qbPassingTDs = useMemo(
-    () => realQBPassingTDsForWeek(weekGames, seasonData.playerProps, selectedWeek),
-    [weekGames, seasonData.playerProps, selectedWeek]);
+    () => realQBPassingTDsForWeek(weekGames, seasonData.playerProps, selectedWeek, outSet),
+    [weekGames, seasonData.playerProps, selectedWeek, outSet]);
 
   return (
     <div className="game-predictions">

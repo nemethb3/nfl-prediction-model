@@ -76,6 +76,25 @@
   opacity: 0.75;
 }
 
+.suggested-lineups__row--out {
+  border-color: #ef4444;
+  background: #2a1414;
+}
+
+.suggested-lineups__out-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
 .suggested-lineups__slot {
   font-weight: 700;
   color: #0080c6;

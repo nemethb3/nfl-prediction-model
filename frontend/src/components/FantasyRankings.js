@@ -5,6 +5,7 @@ import { useSeason } from '../context/SeasonContext';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor } from '../constants/teams';
 import SeasonDataUnavailable from './SeasonDataUnavailable';
 import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
+import { getInjuryAdjustmentMap, getInjuryAdjustment } from '../utils/injuryAdjustments';
 
 function ordinal(n) {
   const rem100 = n % 100;
@@ -44,21 +45,6 @@ function byeTeamsForWeek(week, games) {
     }
   }
   return [...allTeams].filter((t) => !playingThisWeek.has(t)).sort();
-}
-
-// Real, separate live-news overlay (ESPN injury report - see
-// generate_injury_adjustments_2026.py) - matched by name+team against
-// fantasyData rows. Deliberately NOT merged into fantasyData/playerProps
-// themselves (an additive layer, not a mutation of the model's own
-// output - see DECISIONS_LOG.md for why: it keeps data/locked_
-// predictions/ and the model's own real numbers intact and durable
-// across the next refresh_weekly.py run). Only week 1 exists in this
-// file right now (its own real `week` field, checked once here rather
-// than per-row) - gated on selectedWeek so a future multi-week season
-// doesn't show stale Week 1 injury news under a later week.
-function injuryAdjustmentsByPlayer(injuryAdjustments, selectedWeek) {
-  if (!injuryAdjustments || injuryAdjustments.week !== selectedWeek) return new Map();
-  return new Map(injuryAdjustments.players.map((p) => [`${p.name}|${p.team}`, p]));
 }
 
 function realDEloRanksForWeek(weekGames) {
@@ -272,7 +258,7 @@ export default function FantasyRankings() {
     [seasonData.games, selectedWeek]);
 
   const injuryByPlayer = useMemo(
-    () => injuryAdjustmentsByPlayer(seasonData.injuryAdjustments, selectedWeek),
+    () => getInjuryAdjustmentMap(seasonData.injuryAdjustments, selectedWeek),
     [seasonData.injuryAdjustments, selectedWeek]);
   const confirmedOutThisWeek = [...injuryByPlayer.values()].filter((p) => p.confirmed_out);
 
@@ -382,7 +368,7 @@ export default function FantasyRankings() {
               props={propsById ? propsById.get(player.id) : null}
               breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
               opponentDElo={player.opponent ? dEloRanks[player.opponent] : null}
-              injuryAdjustment={injuryByPlayer.get(`${player.name}|${player.team}`) || null}
+              injuryAdjustment={getInjuryAdjustment(player.name, player.team, injuryByPlayer)}
             />
           ))
         )}
@@ -406,10 +392,17 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const handleKeyDown = useKeyboardToggle(onToggle);
+  // Real, confirmed-out players (ESPN) are zeroed everywhere they're
+  // displayed (PPR + per-stat projections) rather than just badged next
+  // to an unchanged number - the badge alone was reported as misleading
+  // (this feature's own real projection is still shown separately, in
+  // the injury detail section below, so the original number isn't lost).
+  const isOut = injuryAdjustment?.confirmed_out === true;
+  const displayPpr = isOut ? 0 : player.projected_ppr;
 
   return (
     <div
-      className={`player-card ${isExpanded ? 'player-card-open' : ''}`}
+      className={`player-card ${isExpanded ? 'player-card-open' : ''} ${isOut ? 'player-card--out' : ''}`}
       style={{ borderColor }}
       onClick={onToggle}
       onKeyDown={handleKeyDown}
@@ -447,8 +440,8 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
           )}
         </div>
 
-        <div className="ppr">
-          {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} PPR{isStatic ? ' (season avg)' : ''}
+        <div className={`ppr ${isOut ? 'ppr-zeroed' : ''}`}>
+          {displayPpr != null ? displayPpr.toFixed(1) : '--'} PPR{isStatic ? ' (season avg)' : ''}
         </div>
 
         {player.opponent_defense_rank_vs_position !== null && player.opponent_defense_rank_vs_position !== undefined && (
@@ -493,9 +486,16 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
           <div className="section">
             <div className="section-title">Projection</div>
             <div>
-              {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} projected PPR points
+              {displayPpr != null ? displayPpr.toFixed(1) : '--'} projected PPR points
               {isStatic ? ' (season avg)' : ''}
             </div>
+            {isOut && (
+              <div className="small-text">
+                Real, confirmed Out (ESPN) - zeroed here. Model&apos;s own projection before this
+                news was {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} PPR
+                (see the ESPN Injury Report section below for the real source).
+              </div>
+            )}
             {player.confidence_tier === 'lower' && (
               <div className="small-text">
                 Lower confidence: this player&apos;s real 2025 opportunities (targets/carries/attempts) were
@@ -557,7 +557,8 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
               <div className="props-grid">
                 {PROP_STAT_LABELS[player.position].map(([key, label]) => {
                   const isProb = key.endsWith('_prob');
-                  const value = props.predicted_stats[key];
+                  const rawValue = props.predicted_stats[key];
+                  const value = isOut ? 0 : rawValue;
                   return (
                     <div key={key} className="prop-stat">
                       <span className="prop-label">{label}</span>

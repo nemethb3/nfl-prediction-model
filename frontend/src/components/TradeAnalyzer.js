@@ -13,10 +13,21 @@ import fantasyData from '../data/fantasy_rankings_2026.json';
 import tradeScoresData from '../data/trade_scores_2026.json';
 import positionValueTiers from '../data/position_value_tiers.json';
 import tradeRoleAdjustmentsData from '../data/trade_role_adjustments.json';
+// Real, static import of the ESPN-sourced injury overlay - same real
+// file every other consumer reads via useSeason(), but this module
+// computes eligiblePlayers at load time (not inside the component), so
+// it needs its own static import, matching this file's existing pattern
+// for tradeScores/positionValueTiers/roleAdjustments.
+import injuryAdjustmentsData from '../data/injury_adjustments_2026.json';
+import { getConfirmedOutSet, isConfirmedOut } from '../utils/injuryAdjustments';
 import '../styles/TradeAnalyzer.css';
 
 const tradeScores = tradeScoresData.players;
 const roleAdjustments = tradeRoleAdjustmentsData.players;
+// This component's own real, existing scope is Week 1 only (see its
+// footnote: "real Week 1 preseason projected_ppr as the magnitude
+// baseline") - matches injury_adjustments_2026.json's own real week.
+const outSet = getConfirmedOutSet(injuryAdjustmentsData, 1);
 
 // Real, human-readable labels for build_trade_role_adjustments.py's real
 // empirical role tiers (see that script's own docstring for how each
@@ -30,7 +41,17 @@ const ROLE_DISPLAY_LABELS = {
 };
 
 const eligiblePlayers = fantasyData
-  .map((p) => ({ id: p.id.split('_w')[0], name: p.name, position: p.position, team: p.team, projected_ppr: p.projected_ppr }))
+  .map((p) => {
+    const isOut = isConfirmedOut(p.name, p.team, outSet);
+    return {
+      id: p.id.split('_w')[0], name: p.name, position: p.position, team: p.team,
+      // Real, confirmed-out (ESPN) players contribute 0 real trade value -
+      // zeroed here so it flows through playerPackageValue() automatically
+      // rather than needing a separate check at every call site.
+      projected_ppr: isOut ? 0 : p.projected_ppr,
+      isOut,
+    };
+  })
   .filter((p) => tradeScores[p.id])
   .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -113,6 +134,9 @@ function PackageColumn({ title, players, onAdd, onRemove, selectId }) {
             <div key={p.id} className="trade-analyzer__package-row">
               <span>
                 {p.name} ({p.position}, {p.team})
+                {p.isOut && (
+                  <span className="trade-analyzer__role-badge trade-analyzer__role-badge--out">🚑 OUT</span>
+                )}
                 {role?.role && (
                   <span className="trade-analyzer__role-badge">{ROLE_DISPLAY_LABELS[role.role] || role.role}</span>
                 )}
@@ -136,7 +160,7 @@ function PackageColumn({ title, players, onAdd, onRemove, selectId }) {
             .filter((p) => !players.some((existing) => existing.id === p.id))
             .map((p) => (
               <option key={p.id} value={p.id}>
-                {p.name} ({p.position}, {p.team})
+                {p.name} ({p.position}, {p.team}){p.isOut ? ' - OUT' : ''}
               </option>
             ))}
         </select>
@@ -276,7 +300,7 @@ export default function TradeAnalyzer() {
                 <option value="">Select player...</option>
                 {eligiblePlayers.map((p) => (
                   <option key={p.id} value={p.id}>
-                    {p.name} ({p.position}, {p.team})
+                    {p.name} ({p.position}, {p.team}){p.isOut ? ' - OUT' : ''}
                   </option>
                 ))}
               </select>
@@ -288,7 +312,7 @@ export default function TradeAnalyzer() {
                 <option value="">Select player...</option>
                 {eligiblePlayers.map((p) => (
                   <option key={p.id} value={p.id}>
-                    {p.name} ({p.position}, {p.team})
+                    {p.name} ({p.position}, {p.team}){p.isOut ? ' - OUT' : ''}
                   </option>
                 ))}
               </select>
@@ -307,7 +331,16 @@ export default function TradeAnalyzer() {
 
               <div className="trade-analyzer__comparison">
                 <div className="trade-analyzer__player-card">
-                  <h4>{player1.name}</h4>
+                  <h4>
+                    {player1.name}
+                    {player1.isOut && <span className="trade-analyzer__role-badge trade-analyzer__role-badge--out">🚑 OUT</span>}
+                  </h4>
+                  {player1.isOut && (
+                    <div className="trade-analyzer__signal-detail">
+                      Real, confirmed Out (ESPN) this week - the % below is a season-long trajectory
+                      signal (age/role/draft capital), not adjusted for this week&apos;s status.
+                    </div>
+                  )}
                   <div className="trade-analyzer__score-display">
                     {Math.round(score1.prob_ppr_increase * 100)}%
                     <span className="trade-analyzer__score-label">P(PPR increases)</span>
@@ -336,7 +369,16 @@ export default function TradeAnalyzer() {
                 <div className="trade-analyzer__vs">vs</div>
 
                 <div className="trade-analyzer__player-card">
-                  <h4>{player2.name}</h4>
+                  <h4>
+                    {player2.name}
+                    {player2.isOut && <span className="trade-analyzer__role-badge trade-analyzer__role-badge--out">🚑 OUT</span>}
+                  </h4>
+                  {player2.isOut && (
+                    <div className="trade-analyzer__signal-detail">
+                      Real, confirmed Out (ESPN) this week - the % below is a season-long trajectory
+                      signal (age/role/draft capital), not adjusted for this week&apos;s status.
+                    </div>
+                  )}
                   <div className="trade-analyzer__score-display">
                     {Math.round(score2.prob_ppr_increase * 100)}%
                     <span className="trade-analyzer__score-label">P(PPR increases)</span>

@@ -60,6 +60,16 @@ arbitrary sequence):
       lineup optimizer, trade analyzer, personal roster). Depends on
       step 5's real fantasy_rankings_2026.json output for the real
       original_projected_ppr comparison it reports.
+
+Real results-ingestion step (added 2026-09-10, once the 2026 season
+actually started): ingest_completed_results_2026.py runs FIRST, before
+the week-1-only guard below and before any generator - it fills the real,
+already-existing-but-null result fields in games_2026.json /
+fantasy_rankings_2026.json for every game nflreadpy now has a real final
+score for. It is safe for any week (a real no-op when nothing new has
+completed), does not depend on the week-1 generators, and does NOT flip
+the season-wide SEASON_HAS_RESULTS[2026] flag (see that script's own
+docstring for why).
 """
 
 import json
@@ -84,6 +94,12 @@ class WeeklyRefresh:
     def run(self):
         print(f"\nStarting real weekly refresh for Week {self.week}...")
         print(f"   Timestamp: {self.timestamp}\n")
+
+        # Real completed-game results first - safe for any week, independent
+        # of the week-1-only generators, a no-op when nothing new has
+        # finished. Runs even when the week guard below refuses the rest.
+        self.step("Ingesting completed game results + player box scores",
+                  ["ingest_completed_results_2026.py"])
 
         if self.week != 1:
             print(

@@ -1,15 +1,21 @@
 """Dashboard Section 3 data export for the 2026 season - real preseason
 projections only, no fabricated standings.
 
-Real, verified fact: the 2026 season hasn't been played (see generate_
-dashboard_data_2026.py's docstring). So unlike the 2025 export, this
-script cannot compute real wins-so-far or real seeding from actual games -
-that doesn't exist yet. Reuses the real, already-built 2026 preseason
-ensemble (data/processed/ensemble_season_wins_2026.csv, a real blend of
-this project's EPA-based and Elo-based season-win projections) for
-`projected_wins` - the one real, computable point estimate for an unplayed
-season. `wins_actual`/`losses_actual`/`ties_actual` are real 0s, not nulls
-- every team really has played 0 real 2026 games as of this run.
+Real, verified fact when this was first written: the 2026 season hadn't
+been played, so wins-so-far/seeding from actual games didn't exist yet.
+Reuses the real, already-built 2026 preseason ensemble (data/processed/
+ensemble_season_wins_2026.csv, a real blend of this project's EPA-based
+and Elo-based season-win projections) for `projected_wins` - the one real,
+computable point estimate for an unplayed season.
+
+`wins_actual`/`losses_actual`/`ties_actual` (fixed 2026-09-15, once real
+games started completing): computed directly from games_2026.json's own
+actual_winner field (populated by ingest_completed_results_2026.py) via
+_real_actual_records() below - real 0s for a team with no completed game
+yet, real tallies once games exist. NOT hardcoded to 0 anymore - that was
+correct only while genuinely 0/272 games had been played and became stale,
+silently-wrong output the moment the season actually started (the
+AllTeamsTable "Record" column in the frontend reads this field directly).
 
 Two real additions (see the "Fix Win Totals Variance" investigation this
 task grew out of - confirmed the model's win-total point estimate isn't
@@ -50,9 +56,38 @@ from simulate_2026_playoffs import run_2026_playoff_simulation
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
-OUTPUT_PATH = os.path.join(PROJECT_ROOT, "frontend", "src", "data", "season_projections_2026.json")
+FRONTEND_DATA_DIR = os.path.join(PROJECT_ROOT, "frontend", "src", "data")
+GAMES_2026_PATH = os.path.join(FRONTEND_DATA_DIR, "games_2026.json")
+OUTPUT_PATH = os.path.join(FRONTEND_DATA_DIR, "season_projections_2026.json")
 
 SEASON = 2026
+
+
+def _real_actual_records():
+    """Real per-team {wins, losses, ties} tallied from games_2026.json's
+    own actual_winner field - a completed game with a real tie writes
+    "TIE" there (see ingest_completed_results_2026.py), not either team's
+    code, so it's handled as its own branch, not silently missed."""
+    with open(GAMES_2026_PATH, encoding="utf-8") as f:
+        games = json.load(f)
+    records = {}
+    for g in games:
+        winner = g.get("actual_winner")
+        if winner is None:
+            continue
+        home, away = g["home_team"], g["away_team"]
+        rh = records.setdefault(home, {"wins": 0, "losses": 0, "ties": 0})
+        ra = records.setdefault(away, {"wins": 0, "losses": 0, "ties": 0})
+        if winner == "TIE":
+            rh["ties"] += 1
+            ra["ties"] += 1
+        elif winner == home:
+            rh["wins"] += 1
+            ra["losses"] += 1
+        elif winner == away:
+            ra["wins"] += 1
+            rh["losses"] += 1
+    return records
 
 
 def _real_preseason_remaining_strength():
@@ -71,19 +106,21 @@ def generate_season_projections_2026_json():
     ensemble = pd.read_csv(os.path.join(PROCESSED_DIR, "ensemble_season_wins_2026.csv")).set_index("team")
     remaining_strength = _real_preseason_remaining_strength()
     playoff_sim = run_2026_playoff_simulation()
+    actual_records = _real_actual_records()
 
     rows = []
     for team in TEAM_TO_DIVISION:
         in_ensemble = team in ensemble.index
         sim = playoff_sim[team]
+        record = actual_records.get(team, {"wins": 0, "losses": 0, "ties": 0})
         row = {
             "team": team,
             "team_name": TEAM_NAMES[team],
             "conference": TEAM_TO_CONFERENCE[team],
             "division": TEAM_TO_DIVISION[team],
-            "wins_actual": 0,
-            "losses_actual": 0,
-            "ties_actual": 0,
+            "wins_actual": record["wins"],
+            "losses_actual": record["losses"],
+            "ties_actual": record["ties"],
             "projected_wins": round(float(ensemble.loc[team, "ensemble_wins"]), 1) if in_ensemble else None,
             "projected_wins_low_90": round(float(ensemble.loc[team, "ensemble_wins_low_90"]), 1) if in_ensemble else None,
             "projected_wins_high_90": round(float(ensemble.loc[team, "ensemble_wins_high_90"]), 1) if in_ensemble else None,
@@ -118,7 +155,9 @@ def generate_season_projections_2026_json():
     print(f"Generated {len(rows)} real 2026 preseason team projections -> {OUTPUT_PATH}")
     print(f"  With a real ensemble projected-wins figure + real 90% CI: {n_with_proj}/{len(rows)}")
     print(f"  Real Monte Carlo playoff teams: {n_playoff} (expect 14) | division winners: {n_div_winners} (expect 8)")
-    print("  All wins_actual are real 0s (no real 2026 games played yet).")
+    n_with_record = sum(1 for r in rows if r["wins_actual"] or r["losses_actual"] or r["ties_actual"])
+    print(f"  Teams with a real completed-game record: {n_with_record}/32 "
+          f"(from games_2026.json's actual_winner).")
     return rows
 
 

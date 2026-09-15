@@ -275,16 +275,16 @@
     "00-0033375": {
       "position": "WR",
       "current_age": 33,
-      "team": "NYJ",
+      "team": "JAX",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.232,
         "role_trend": -0.408,
         "recent_trend": -0.584,
         "draft_capital": 0.05,
-        "team_elo": 1423.886
+        "team_elo": 1512.585
       },
-      "prob_ppr_increase": 0.389,
+      "prob_ppr_increase": 0.485,
       "trajectory": "Declining"
     },
     "00-0033526": {
@@ -1040,16 +1040,16 @@
     "00-0035676": {
       "position": "WR",
       "current_age": 29,
-      "team": "NE",
+      "team": "PHI",
       "signals": {
         "age_curve_rising": 0,
         "injury_risk": 0.103,
         "role_trend": -0.051,
         "recent_trend": -0.13,
         "draft_capital": 0.91,
-        "team_elo": 1517.111
+        "team_elo": 1560.58
       },
-      "prob_ppr_increase": 0.416,
+      "prob_ppr_increase": 0.464,
       "trajectory": "Declining"
     },
     "00-0035685": {

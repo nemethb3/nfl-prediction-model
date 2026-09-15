@@ -59534,173 +59534,20 @@
     }
   },
   {
-    "id": "00-0035676_w2",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 2,
-    "opponent": "PIT",
-    "is_home": true,
-    "opponent_d_elo": 1554.1,
-    "predicted_stats": {
-      "receptions": 4.5,
-      "receiving_yards": 62.4,
-      "rushing_yards": 0.7,
-      "receiving_tds_prob": 0.318
-    }
-  },
-  {
-    "id": "00-0035676_w5",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 5,
-    "opponent": "LV",
-    "is_home": true,
-    "opponent_d_elo": 1435.8,
-    "predicted_stats": {
-      "receptions": 4.7,
-      "receiving_yards": 64.8,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.345
-    }
-  },
-  {
-    "id": "00-0035676_w6",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 6,
-    "opponent": "NYJ",
-    "is_home": true,
-    "opponent_d_elo": 1356.6,
-    "predicted_stats": {
-      "receptions": 4.7,
-      "receiving_yards": 65.3,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.354
-    }
-  },
-  {
-    "id": "00-0035676_w9",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 9,
-    "opponent": "GB",
-    "is_home": true,
-    "opponent_d_elo": 1531.2,
-    "predicted_stats": {
-      "receptions": 4.6,
-      "receiving_yards": 63.8,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.337
-    }
-  },
-  {
-    "id": "00-0035676_w13",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 13,
-    "opponent": "BUF",
-    "is_home": true,
-    "opponent_d_elo": 1524.8,
-    "predicted_stats": {
-      "receptions": 4.6,
-      "receiving_yards": 63.1,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.325
-    }
-  },
-  {
-    "id": "00-0035676_w14",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 14,
-    "opponent": "MIN",
-    "is_home": true,
-    "opponent_d_elo": 1679.5,
-    "predicted_stats": {
-      "receptions": 4.6,
-      "receiving_yards": 63.4,
-      "rushing_yards": 0.7,
-      "receiving_tds_prob": 0.326
-    }
-  },
-  {
-    "id": "00-0035676_w17",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 17,
-    "opponent": "DEN",
-    "is_home": true,
-    "opponent_d_elo": 1609.3,
-    "predicted_stats": {
-      "receptions": 4.5,
-      "receiving_yards": 62.0,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.314
-    }
-  },
-  {
-    "id": "00-0035676_w18",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 18,
-    "opponent": "MIA",
-    "is_home": true,
-    "opponent_d_elo": 1455.9,
-    "predicted_stats": {
-      "receptions": 4.6,
-      "receiving_yards": 63.3,
-      "rushing_yards": 0.9,
-      "receiving_tds_prob": 0.341
-    }
-  },
-  {
     "id": "00-0035676_w1",
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
+    "team": "PHI",
     "week": 1,
-    "opponent": "SEA",
-    "is_home": false,
-    "opponent_d_elo": 1671.1,
+    "opponent": "WAS",
+    "is_home": true,
+    "opponent_d_elo": 1445.8,
     "predicted_stats": {
-      "receptions": 4.5,
-      "receiving_yards": 62.0,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.279
-    }
-  },
-  {
-    "id": "00-0035676_w3",
-    "player_id": "00-0035676",
-    "player_name": "A.J. Brown",
-    "position": "WR",
-    "team": "NE",
-    "week": 3,
-    "opponent": "JAX",
-    "is_home": false,
-    "opponent_d_elo": 1585.2,
-    "predicted_stats": {
-      "receptions": 4.5,
-      "receiving_yards": 62.3,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.28
+      "receptions": 4.7,
+      "receiving_yards": 65.3,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.35
     }
   },
   {
@@ -59708,16 +59555,33 @@
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
+    "team": "PHI",
     "week": 4,
-    "opponent": "BUF",
-    "is_home": false,
-    "opponent_d_elo": 1524.8,
+    "opponent": "LA",
+    "is_home": true,
+    "opponent_d_elo": 1526.3,
     "predicted_stats": {
-      "receptions": 4.6,
-      "receiving_yards": 62.9,
+      "receptions": 4.7,
+      "receiving_yards": 64.6,
       "rushing_yards": 0.6,
-      "receiving_tds_prob": 0.297
+      "receiving_tds_prob": 0.333
+    }
+  },
+  {
+    "id": "00-0035676_w6",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 6,
+    "opponent": "CAR",
+    "is_home": true,
+    "opponent_d_elo": 1508.9,
+    "predicted_stats": {
+      "receptions": 4.7,
+      "receiving_yards": 64.2,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.336
     }
   },
   {
@@ -59725,67 +59589,67 @@
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
+    "team": "PHI",
     "week": 7,
-    "opponent": "CHI",
-    "is_home": false,
-    "opponent_d_elo": 1535.6,
+    "opponent": "DAL",
+    "is_home": true,
+    "opponent_d_elo": 1366.8,
     "predicted_stats": {
       "receptions": 4.7,
-      "receiving_yards": 64.0,
-      "rushing_yards": 0.6,
-      "receiving_tds_prob": 0.309
+      "receiving_yards": 64.9,
+      "rushing_yards": 0.9,
+      "receiving_tds_prob": 0.355
     }
   },
   {
-    "id": "00-0035676_w8",
+    "id": "00-0035676_w9",
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
-    "week": 8,
-    "opponent": "MIA",
-    "is_home": false,
-    "opponent_d_elo": 1455.9,
+    "team": "PHI",
+    "week": 9,
+    "opponent": "NYG",
+    "is_home": true,
+    "opponent_d_elo": 1482.1,
     "predicted_stats": {
-      "receptions": 4.5,
-      "receiving_yards": 61.9,
+      "receptions": 4.6,
+      "receiving_yards": 64.2,
       "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.302
+      "receiving_tds_prob": 0.341
     }
   },
   {
-    "id": "00-0035676_w10",
+    "id": "00-0035676_w11",
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
-    "week": 10,
-    "opponent": "DET",
-    "is_home": false,
-    "opponent_d_elo": 1494.1,
+    "team": "PHI",
+    "week": 11,
+    "opponent": "PIT",
+    "is_home": true,
+    "opponent_d_elo": 1554.1,
     "predicted_stats": {
-      "receptions": 4.8,
-      "receiving_yards": 65.8,
-      "rushing_yards": 0.7,
-      "receiving_tds_prob": 0.337
+      "receptions": 4.3,
+      "receiving_yards": 60.1,
+      "rushing_yards": 0.9,
+      "receiving_tds_prob": 0.307
     }
   },
   {
-    "id": "00-0035676_w12",
+    "id": "00-0035676_w14",
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
-    "week": 12,
-    "opponent": "LAC",
-    "is_home": false,
-    "opponent_d_elo": 1578.7,
+    "team": "PHI",
+    "week": 14,
+    "opponent": "IND",
+    "is_home": true,
+    "opponent_d_elo": 1418.5,
     "predicted_stats": {
-      "receptions": 4.4,
-      "receiving_yards": 61.3,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.29
+      "receptions": 4.6,
+      "receiving_yards": 63.9,
+      "rushing_yards": 0.9,
+      "receiving_tds_prob": 0.338
     }
   },
   {
@@ -59793,16 +59657,16 @@
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
+    "team": "PHI",
     "week": 15,
-    "opponent": "KC",
-    "is_home": false,
-    "opponent_d_elo": 1593.9,
+    "opponent": "SEA",
+    "is_home": true,
+    "opponent_d_elo": 1671.1,
     "predicted_stats": {
-      "receptions": 4.3,
-      "receiving_yards": 59.3,
-      "rushing_yards": 0.8,
-      "receiving_tds_prob": 0.273
+      "receptions": 4.6,
+      "receiving_yards": 62.2,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.309
     }
   },
   {
@@ -59810,16 +59674,152 @@
     "player_id": "00-0035676",
     "player_name": "A.J. Brown",
     "position": "WR",
-    "team": "NE",
+    "team": "PHI",
     "week": 16,
-    "opponent": "NYJ",
-    "is_home": false,
-    "opponent_d_elo": 1356.6,
+    "opponent": "HOU",
+    "is_home": true,
+    "opponent_d_elo": 1601.4,
     "predicted_stats": {
       "receptions": 4.6,
-      "receiving_yards": 63.6,
+      "receiving_yards": 63.2,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.322
+    }
+  },
+  {
+    "id": "00-0035676_w2",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 2,
+    "opponent": "TEN",
+    "is_home": false,
+    "opponent_d_elo": 1389.4,
+    "predicted_stats": {
+      "receptions": 4.7,
+      "receiving_yards": 64.6,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.327
+    }
+  },
+  {
+    "id": "00-0035676_w3",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 3,
+    "opponent": "CHI",
+    "is_home": false,
+    "opponent_d_elo": 1535.6,
+    "predicted_stats": {
+      "receptions": 4.6,
+      "receiving_yards": 62.7,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.298
+    }
+  },
+  {
+    "id": "00-0035676_w5",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 5,
+    "opponent": "JAX",
+    "is_home": false,
+    "opponent_d_elo": 1585.2,
+    "predicted_stats": {
+      "receptions": 4.5,
+      "receiving_yards": 62.2,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.281
+    }
+  },
+  {
+    "id": "00-0035676_w8",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 8,
+    "opponent": "WAS",
+    "is_home": false,
+    "opponent_d_elo": 1445.8,
+    "predicted_stats": {
+      "receptions": 4.7,
+      "receiving_yards": 63.9,
+      "rushing_yards": 0.7,
+      "receiving_tds_prob": 0.319
+    }
+  },
+  {
+    "id": "00-0035676_w12",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 12,
+    "opponent": "DAL",
+    "is_home": false,
+    "opponent_d_elo": 1366.8,
+    "predicted_stats": {
+      "receptions": 4.7,
+      "receiving_yards": 65.1,
+      "rushing_yards": 0.8,
+      "receiving_tds_prob": 0.336
+    }
+  },
+  {
+    "id": "00-0035676_w13",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 13,
+    "opponent": "ARI",
+    "is_home": false,
+    "opponent_d_elo": 1386.1,
+    "predicted_stats": {
+      "receptions": 4.5,
+      "receiving_yards": 61.8,
       "rushing_yards": 0.9,
-      "receiving_tds_prob": 0.323
+      "receiving_tds_prob": 0.304
+    }
+  },
+  {
+    "id": "00-0035676_w17",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 17,
+    "opponent": "SF",
+    "is_home": false,
+    "opponent_d_elo": 1503.8,
+    "predicted_stats": {
+      "receptions": 4.4,
+      "receiving_yards": 60.6,
+      "rushing_yards": 0.9,
+      "receiving_tds_prob": 0.295
+    }
+  },
+  {
+    "id": "00-0035676_w18",
+    "player_id": "00-0035676",
+    "player_name": "A.J. Brown",
+    "position": "WR",
+    "team": "PHI",
+    "week": 18,
+    "opponent": "NYG",
+    "is_home": false,
+    "opponent_d_elo": 1482.1,
+    "predicted_stats": {
+      "receptions": 4.5,
+      "receiving_yards": 62.1,
+      "rushing_yards": 0.9,
+      "receiving_tds_prob": 0.307
     }
   },
   {
@@ -81787,29 +81787,12 @@
     }
   },
   {
-    "id": "00-0033375_w2",
+    "id": "00-0033375_w1",
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
-    "week": 2,
-    "opponent": "GB",
-    "is_home": true,
-    "opponent_d_elo": 1531.2,
-    "predicted_stats": {
-      "receptions": 2.5,
-      "receiving_yards": 32.1,
-      "rushing_yards": 0.4,
-      "receiving_tds_prob": 0.169
-    }
-  },
-  {
-    "id": "00-0033375_w5",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 5,
+    "team": "JAX",
+    "week": 1,
     "opponent": "CLE",
     "is_home": true,
     "opponent_d_elo": 1560.2,
@@ -81817,126 +81800,7 @@
       "receptions": 2.4,
       "receiving_yards": 31.2,
       "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.157
-    }
-  },
-  {
-    "id": "00-0033375_w7",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 7,
-    "opponent": "MIA",
-    "is_home": true,
-    "opponent_d_elo": 1455.9,
-    "predicted_stats": {
-      "receptions": 2.5,
-      "receiving_yards": 32.1,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.172
-    }
-  },
-  {
-    "id": "00-0033375_w8",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 8,
-    "opponent": "LV",
-    "is_home": true,
-    "opponent_d_elo": 1435.8,
-    "predicted_stats": {
-      "receptions": 2.5,
-      "receiving_yards": 32.1,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.172
-    }
-  },
-  {
-    "id": "00-0033375_w10",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 10,
-    "opponent": "BUF",
-    "is_home": true,
-    "opponent_d_elo": 1524.8,
-    "predicted_stats": {
-      "receptions": 2.4,
-      "receiving_yards": 31.0,
-      "rushing_yards": 0.4,
-      "receiving_tds_prob": 0.161
-    }
-  },
-  {
-    "id": "00-0033375_w14",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 14,
-    "opponent": "DEN",
-    "is_home": true,
-    "opponent_d_elo": 1609.3,
-    "predicted_stats": {
-      "receptions": 2.1,
-      "receiving_yards": 26.6,
-      "rushing_yards": 0.6,
-      "receiving_tds_prob": 0.14
-    }
-  },
-  {
-    "id": "00-0033375_w16",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 16,
-    "opponent": "NE",
-    "is_home": true,
-    "opponent_d_elo": 1570.7,
-    "predicted_stats": {
-      "receptions": 2.4,
-      "receiving_yards": 30.1,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.159
-    }
-  },
-  {
-    "id": "00-0033375_w17",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 17,
-    "opponent": "MIN",
-    "is_home": true,
-    "opponent_d_elo": 1679.5,
-    "predicted_stats": {
-      "receptions": 2.3,
-      "receiving_yards": 29.3,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.154
-    }
-  },
-  {
-    "id": "00-0033375_w1",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 1,
-    "opponent": "TEN",
-    "is_home": false,
-    "opponent_d_elo": 1389.4,
-    "predicted_stats": {
-      "receptions": 2.5,
-      "receiving_yards": 32.2,
-      "rushing_yards": 0.4,
-      "receiving_tds_prob": 0.161
+      "receiving_tds_prob": 0.163
     }
   },
   {
@@ -81944,33 +81808,33 @@
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
+    "team": "JAX",
     "week": 3,
-    "opponent": "DET",
-    "is_home": false,
-    "opponent_d_elo": 1494.1,
+    "opponent": "NE",
+    "is_home": true,
+    "opponent_d_elo": 1570.7,
     "predicted_stats": {
-      "receptions": 2.6,
-      "receiving_yards": 34.1,
+      "receptions": 2.4,
+      "receiving_yards": 31.2,
       "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.168
+      "receiving_tds_prob": 0.167
     }
   },
   {
-    "id": "00-0033375_w4",
+    "id": "00-0033375_w5",
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
-    "week": 4,
-    "opponent": "CHI",
-    "is_home": false,
-    "opponent_d_elo": 1535.6,
+    "team": "JAX",
+    "week": 5,
+    "opponent": "PHI",
+    "is_home": true,
+    "opponent_d_elo": 1635.2,
     "predicted_stats": {
       "receptions": 2.4,
-      "receiving_yards": 30.5,
+      "receiving_yards": 30.3,
       "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.145
+      "receiving_tds_prob": 0.158
     }
   },
   {
@@ -81978,50 +81842,33 @@
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
+    "team": "JAX",
     "week": 6,
-    "opponent": "NE",
-    "is_home": false,
-    "opponent_d_elo": 1570.7,
+    "opponent": "HOU",
+    "is_home": true,
+    "opponent_d_elo": 1601.4,
     "predicted_stats": {
       "receptions": 2.4,
-      "receiving_yards": 30.0,
+      "receiving_yards": 30.4,
       "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.142
+      "receiving_tds_prob": 0.16
     }
   },
   {
-    "id": "00-0033375_w9",
+    "id": "00-0033375_w8",
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
-    "week": 9,
-    "opponent": "KC",
-    "is_home": false,
-    "opponent_d_elo": 1593.9,
+    "team": "JAX",
+    "week": 8,
+    "opponent": "IND",
+    "is_home": true,
+    "opponent_d_elo": 1418.5,
     "predicted_stats": {
-      "receptions": 2.3,
-      "receiving_yards": 29.4,
-      "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.138
-    }
-  },
-  {
-    "id": "00-0033375_w11",
-    "player_id": "00-0033375",
-    "player_name": "Tim Patrick",
-    "position": "WR",
-    "team": "NYJ",
-    "week": 11,
-    "opponent": "LAC",
-    "is_home": false,
-    "opponent_d_elo": 1578.7,
-    "predicted_stats": {
-      "receptions": 2.5,
-      "receiving_yards": 32.3,
-      "rushing_yards": 0.3,
-      "receiving_tds_prob": 0.153
+      "receptions": 2.2,
+      "receiving_yards": 28.4,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.158
     }
   },
   {
@@ -82029,16 +81876,152 @@
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
+    "team": "JAX",
     "week": 12,
-    "opponent": "MIA",
-    "is_home": false,
-    "opponent_d_elo": 1455.9,
+    "opponent": "TEN",
+    "is_home": true,
+    "opponent_d_elo": 1389.4,
     "predicted_stats": {
       "receptions": 2.4,
-      "receiving_yards": 30.4,
+      "receiving_yards": 31.8,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.185
+    }
+  },
+  {
+    "id": "00-0033375_w14",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 14,
+    "opponent": "PIT",
+    "is_home": true,
+    "opponent_d_elo": 1554.1,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 29.7,
       "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.152
+      "receiving_tds_prob": 0.166
+    }
+  },
+  {
+    "id": "00-0033375_w17",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 17,
+    "opponent": "WAS",
+    "is_home": true,
+    "opponent_d_elo": 1445.8,
+    "predicted_stats": {
+      "receptions": 2.4,
+      "receiving_yards": 30.8,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.177
+    }
+  },
+  {
+    "id": "00-0033375_w2",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 2,
+    "opponent": "DEN",
+    "is_home": false,
+    "opponent_d_elo": 1609.3,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 29.7,
+      "rushing_yards": 0.2,
+      "receiving_tds_prob": 0.143
+    }
+  },
+  {
+    "id": "00-0033375_w4",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 4,
+    "opponent": "CIN",
+    "is_home": false,
+    "opponent_d_elo": 1447.8,
+    "predicted_stats": {
+      "receptions": 2.4,
+      "receiving_yards": 30.9,
+      "rushing_yards": 0.4,
+      "receiving_tds_prob": 0.157
+    }
+  },
+  {
+    "id": "00-0033375_w9",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 9,
+    "opponent": "BAL",
+    "is_home": false,
+    "opponent_d_elo": 1539.0,
+    "predicted_stats": {
+      "receptions": 2.5,
+      "receiving_yards": 31.2,
+      "rushing_yards": 0.3,
+      "receiving_tds_prob": 0.158
+    }
+  },
+  {
+    "id": "00-0033375_w10",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 10,
+    "opponent": "TEN",
+    "is_home": false,
+    "opponent_d_elo": 1389.4,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 29.5,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.158
+    }
+  },
+  {
+    "id": "00-0033375_w11",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 11,
+    "opponent": "NYG",
+    "is_home": false,
+    "opponent_d_elo": 1482.1,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 30.0,
+      "rushing_yards": 0.5,
+      "receiving_tds_prob": 0.155
+    }
+  },
+  {
+    "id": "00-0033375_w13",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 13,
+    "opponent": "CHI",
+    "is_home": false,
+    "opponent_d_elo": 1535.6,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 29.2,
+      "rushing_yards": 0.5,
+      "receiving_tds_prob": 0.149
     }
   },
   {
@@ -82046,16 +82029,33 @@
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
+    "team": "JAX",
     "week": 15,
-    "opponent": "ARI",
+    "opponent": "HOU",
     "is_home": false,
-    "opponent_d_elo": 1386.1,
+    "opponent_d_elo": 1601.4,
+    "predicted_stats": {
+      "receptions": 2.3,
+      "receiving_yards": 28.8,
+      "rushing_yards": 0.4,
+      "receiving_tds_prob": 0.142
+    }
+  },
+  {
+    "id": "00-0033375_w16",
+    "player_id": "00-0033375",
+    "player_name": "Tim Patrick",
+    "position": "WR",
+    "team": "JAX",
+    "week": 16,
+    "opponent": "DAL",
+    "is_home": false,
+    "opponent_d_elo": 1366.8,
     "predicted_stats": {
       "receptions": 2.4,
-      "receiving_yards": 30.5,
+      "receiving_yards": 30.4,
       "rushing_yards": 0.6,
-      "receiving_tds_prob": 0.153
+      "receiving_tds_prob": 0.164
     }
   },
   {
@@ -82063,16 +82063,16 @@
     "player_id": "00-0033375",
     "player_name": "Tim Patrick",
     "position": "WR",
-    "team": "NYJ",
+    "team": "JAX",
     "week": 18,
-    "opponent": "BUF",
+    "opponent": "IND",
     "is_home": false,
-    "opponent_d_elo": 1524.8,
+    "opponent_d_elo": 1418.5,
     "predicted_stats": {
       "receptions": 2.3,
-      "receiving_yards": 29.0,
-      "rushing_yards": 0.5,
-      "receiving_tds_prob": 0.141
+      "receiving_yards": 29.5,
+      "rushing_yards": 0.6,
+      "receiving_tds_prob": 0.153
     }
   },
   {

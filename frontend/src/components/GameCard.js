@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { teamName, teamColor, teamSecondaryColor, readableTextColor, TEAM_TIMEZONES, TIMEZONE_LABELS } from '../constants/teams';
 import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
 import { getUserTimezone, formatKickoffInZone, SHORT_CODE_TO_IANA_ZONE, ARIZONA_IANA_ZONE } from '../utils/timeUtils';
+import { formatRecord } from '../utils/teamRecords';
 
 // Sign convention (verified against real 2025 moneylines, matches
 // data_pipeline.py's documented convention): positive spread = home team
@@ -116,7 +117,7 @@ function formatKickoff(kickoffISO, homeTeam, showUserTime) {
 }
 
 export default function GameCard({
-  game, singleEloRanks, oEloRanks, dEloRanks, topScorers, qbPassingTDs, isExpanded, onToggle,
+  game, singleEloRanks, oEloRanks, dEloRanks, teamRecords, topScorers, qbPassingTDs, isExpanded, onToggle,
 }) {
   const [showUserTime, setShowUserTime] = useState(true);
   const handleKeyDown = useKeyboardToggle(onToggle);
@@ -186,6 +187,7 @@ export default function GameCard({
             }}
           >
             {away}
+            <span className="team-record">{formatRecord(teamRecords?.[away])}</span>
           </span>
           <span className="at-symbol">@</span>
           <span
@@ -196,6 +198,7 @@ export default function GameCard({
             }}
           >
             {home}
+            <span className="team-record">{formatRecord(teamRecords?.[home])}</span>
           </span>
           <span className="kickoff-time">
             {kickoff.date} · {kickoff.time}
@@ -265,7 +268,8 @@ export default function GameCard({
       {isExpanded && (
         <div className="game-card-expanded" onClick={(e) => e.stopPropagation()}>
           <h3>
-            {teamName(away)} @ {teamName(home)}
+            {teamName(away)} ({formatRecord(teamRecords?.[away])}) @{' '}
+            {teamName(home)} ({formatRecord(teamRecords?.[home])})
           </h3>
 
           <div className="section">

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import GameCard from './GameCard';
 import { useSeason } from '../context/SeasonContext';
 import { getConfirmedOutSet, isConfirmedOut } from '../utils/injuryAdjustments';
+import { computeTeamRecords } from '../utils/teamRecords';
 import '../styles/GamePredictions.css';
 
 // Real per-team Elo rank (1 = strongest) for the "Nth best" context in
@@ -190,6 +191,12 @@ export default function GamePredictions() {
   const outSet = useMemo(
     () => getConfirmedOutSet(seasonData.injuryAdjustments, selectedWeek),
     [seasonData.injuryAdjustments, selectedWeek]);
+  // Real record entering the selected week - every game up through
+  // (selectedWeek - 1) counts, so a Week 3 card shows each team's real
+  // 0-2/1-1/2-0 record heading in, not their final-season record.
+  const teamRecords = useMemo(
+    () => computeTeamRecords(gamesData.filter((g) => g.week < selectedWeek)),
+    [gamesData, selectedWeek]);
   const topScorers = useMemo(
     () => realTopTDScorersForWeek(weekGames, seasonData.playerProps, selectedWeek, outSet),
     [weekGames, seasonData.playerProps, selectedWeek, outSet]);
@@ -236,6 +243,7 @@ export default function GamePredictions() {
               singleEloRanks={singleEloRanks}
               oEloRanks={oEloRanks}
               dEloRanks={dEloRanks}
+              teamRecords={teamRecords}
               topScorers={topScorers}
               qbPassingTDs={qbPassingTDs}
               isExpanded={expandedGameId === game.id}

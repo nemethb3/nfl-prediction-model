@@ -141,6 +141,17 @@ export default function SeasonProjections() {
   const hasPlayoffSim = projections.some((t) => t.playoff_percentage !== null);
   const hasWinRangeCI = projections.some((t) => t.projected_wins_low_90 !== null && t.projected_wins_low_90 !== undefined);
   const hasPanels = hasResults || hasPlayoffSim;
+  // Real, disclosed fix (2026-09-15): the season-wide hasResults flag stays
+  // false all year for 2026 (it also gates Accuracy Tracker/Weekly Summary/
+  // Betting Analysis, whose 2026 data genuinely doesn't exist yet - see
+  // ingest_completed_results_2026.py's own docstring for why it's never
+  // flipped), but real games DO complete during that time - the subtitle
+  // below used to unconditionally assert "the season hasn't been played
+  // (real 0-0-0 record for every team)", which went from true to false the
+  // moment Week 1 finished, even though hasResults never moved. Checked
+  // directly off the same real games array the "All Teams" Record column
+  // (wins_actual/losses_actual/ties_actual) already uses.
+  const hasAnyCompletedGames = seasonData.games.some((g) => g.actual_winner);
 
   const TABS = [
     { id: 'divisions', label: 'Division Winners' },
@@ -164,6 +175,16 @@ export default function SeasonProjections() {
               checkpoint (the latest real playoff-odds checkpoint this project computed - this
               dataset is a completed historical season, not a live feed, so this is a fixed
               point-in-time view, not &quot;today&apos;s&quot; standings).
+            </>
+          ) : hasAnyCompletedGames ? (
+            <>
+              Real {selectedSeason} season underway - real records (see the &quot;All Teams&quot;
+              tab) come from completed games as they&apos;re ingested. &quot;Proj. Wins&quot; and
+              its 90% range are still this project&apos;s real PRESEASON ensemble (Elo + EPA
+              blend) - not yet recalibrated using in-season results (real, disclosed gap, see
+              refresh_weekly.py). Playoff %/Seed/Division Winners come from a real 10,000-trial
+              Monte Carlo simulation of the actual {selectedSeason} schedule, also still on
+              preseason ratings.
             </>
           ) : (
             <>
@@ -213,9 +234,11 @@ export default function SeasonProjections() {
                 </div>
               )
             )}
-            {activeTab === 'power' && powerRankingsData && <PowerRankings data={powerRankingsData} />}
+            {activeTab === 'power' && powerRankingsData && (
+              <PowerRankings data={powerRankingsData} games={seasonData.games} />
+            )}
             {activeTab === 'team-strength' && powerRankingsData && superbowlData && (
-              <TeamStrengthCards data={powerRankingsData} sbData={superbowlData} />
+              <TeamStrengthCards data={powerRankingsData} sbData={superbowlData} games={seasonData.games} />
             )}
             {activeTab === 'awards' && awardRacesData && <AwardRaces data={awardRacesData} />}
             {activeTab === 'all' && <AllTeamsTable projections={projections} hasWinRangeCI={hasWinRangeCI} />}

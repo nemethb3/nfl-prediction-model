@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { teamName, teamColor, readableTextColor } from '../constants/teams';
+import { computeTeamRecords, formatRecord } from '../utils/teamRecords';
 
 const SORT_OPTIONS = [
   { key: 'single_elo', label: 'Single Elo' },
@@ -7,8 +8,9 @@ const SORT_OPTIONS = [
   { key: 'd_elo', label: 'Defensive Elo' },
 ];
 
-export default function PowerRankings({ data }) {
+export default function PowerRankings({ data, games }) {
   const [sortBy, setSortBy] = useState('single_elo');
+  const teamRecords = useMemo(() => computeTeamRecords(games || []), [games]);
 
   const teams = [...data.teams].sort((a, b) => b[sortBy] - a[sortBy]);
   const maxVal = Math.max(...teams.map((t) => t[sortBy]));
@@ -50,6 +52,7 @@ export default function PowerRankings({ data }) {
                 {team.team}
               </span>
               <span className="team-name">{teamName(team.team)}</span>
+              <span className="rankings-record">{formatRecord(teamRecords[team.team])}</span>
               <div className="rankings-bar">
                 <div className="rankings-fill" style={{ width: `${Math.max(fillPct, 2)}%` }} />
               </div>

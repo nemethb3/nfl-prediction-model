@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { teamName, teamColor, readableTextColor } from '../constants/teams';
+import { computeTeamRecords, formatRecord } from '../utils/teamRecords';
 
 const SORT_OPTIONS = [
   { key: 'single_elo', label: 'Single Elo' },
@@ -27,9 +28,10 @@ function strengthLabel(elo, { q25, q50, q75 }) {
   return 'Rebuilding';
 }
 
-export default function TeamStrengthCards({ data, sbData }) {
+export default function TeamStrengthCards({ data, sbData, games }) {
   const [sortBy, setSortBy] = useState('single_elo');
   const [expandedTeam, setExpandedTeam] = useState(null);
+  const teamRecords = useMemo(() => computeTeamRecords(games || []), [games]);
 
   // Real join on team code - power_rankings_2026.json (Elo/playoff%) and
   // superbowl_odds_2026.json (SB/conf-championship%) are two separate real
@@ -86,6 +88,10 @@ export default function TeamStrengthCards({ data, sbData }) {
               </div>
 
               <div className="card-quick-stats">
+                <div className="stat">
+                  <span className="label">Record</span>
+                  <span className="value">{formatRecord(teamRecords[team.team])}</span>
+                </div>
                 <div className="stat">
                   <span className="label">Elo</span>
                   <span className="value">{team.single_elo.toFixed(0)}</span>

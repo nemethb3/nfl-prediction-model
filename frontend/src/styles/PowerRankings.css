@@ -82,6 +82,14 @@
   white-space: normal;
 }
 
+.rankings-record {
+  min-width: 44px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  white-space: nowrap;
+}
+
 .rankings-bar {
   flex: 1;
   min-width: 80px;

@@ -44,6 +44,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from get_espn_injuries import ESPNInjuriesFetcher, FLAGGED_STATUSES
+from current_week_2026 import real_current_week_2026
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_PATH = PROJECT_ROOT / "frontend" / "src" / "data" / "fantasy_rankings_2026.json"
@@ -56,8 +57,19 @@ def generate_injury_adjustments():
     fetcher = ESPNInjuriesFetcher()
     matched, unmatched = fetcher.match_to_rankings()
 
+    # Real fix (2026-09-16, once fantasy_rankings_2026.json started holding
+    # more than one real week - see generate_fantasy_rankings_week2_2026.py):
+    # this file used to be hardcoded to week 1 forever, and its (name, team)
+    # rankings lookup had no week filter at all - once a second real week's
+    # rows existed for the same player, dict construction from the full
+    # list would silently keep whichever week happened to sort last,
+    # regardless of which week this overlay was actually meant to describe.
+    # Now targets the real current week (current_week_2026.py - the same
+    # "first week with an unfinished game" check the frontend's own
+    # getCurrentWeek.js uses), and only joins that week's rows.
+    week = real_current_week_2026()
     with open(RANKINGS_PATH, encoding="utf-8") as f:
-        rankings = {(p["name"], p["team"]): p for p in json.load(f)}
+        rankings = {(p["name"], p["team"]): p for p in json.load(f) if p["week"] == week}
 
     players = []
     for name, row in matched.items():
@@ -83,7 +95,7 @@ def generate_injury_adjustments():
     players.sort(key=lambda p: (not p["confirmed_out"], -(p["original_projected_ppr"] or 0)))
 
     output = {
-        "week": 1,
+        "week": week,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "ESPN live injury report (site.api.espn.com/.../nfl/injuries) - see get_espn_injuries.py",
         "methodology_note": (
@@ -106,7 +118,7 @@ def generate_injury_adjustments():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
 
-    print(f"Real injury adjustments -> {OUTPUT_PATH}")
+    print(f"Real injury adjustments (Week {week}) -> {OUTPUT_PATH}")
     print(f"  Confirmed Out/IR (fantasy-relevant): {output['confirmed_out_count']}")
     print(f"  Questionable (fantasy-relevant, flagged only): {output['questionable_count']}")
     for p in players:

@@ -80,37 +80,45 @@ arbitrary sequence):
      AGAIN right after this, every time, for the same reason it runs after
      step 4. Verified idempotent - a real, cheap no-op when there's
      nothing new to re-ingest.
-  9. generate_season_projections_dashboard_data_2026.py - reads
-     games_2026.json's actual_winner directly (fixed 2026-09-15) for real
-     wins_actual/losses_actual/ties_actual (must run after the step-6
-     re-ingest, not before), AND (fixed 2026-09-16) its real Monte Carlo
-     playoff simulation (simulate_2026_playoffs.py) now starts from
-     current in-season Elo and locks already-played games to their real
-     outcome instead of re-simulating them - see simulate_2026_playoffs.
-     real_2026_carryover_elo's docstring.
-  10. generate_superbowl_odds_2026.py - real, seeded from step 9's output.
-  11. generate_power_rankings_2026.py - reads step 5's current O/D-Elo file
-      directly, and single-Elo via the same fixed real_2026_carryover_elo.
-  12. generate_trade_scores_2026.py - real, depends on step 7's output and
-      the same current-Elo team-strength context as step 11.
-  13. generate_mvp_race_2026.py - real, depends on steps 7 and 9. Stays on
-      its existing, validated preseason full-season-projection methodology
-      (player_props_2026.json summed across 18 weeks, z-scored against
-      historical MVP-winner profiles) - deliberately NOT blended with
-      actual in-season results this round (see the "In-Season Dynamic
-      Recalibration" task decision, 2026-09-16).
-  14. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
+  9. generate_fantasy_rankings_week2_2026.py (added 2026-09-16) - real,
+     additive Week 2 trailing-rate projections (see that script's own
+     docstring for the real methodology: reuses this project's own
+     already-established prior-season-fallback/trailing-mean convention,
+     not an asserted formula). APPENDS to fantasy_rankings_2026.json -
+     does not overwrite Week 1's real rows or their real actual_ppr.
+  10. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
       (added after a real launch-day report: "confirmed out" badges
       weren't propagating into projections everywhere they mattered -
-      lineup optimizer, trade analyzer, personal roster). Depends on
-      step 8's real fantasy_rankings_2026.json output for the real
-      original_projected_ppr comparison it reports.
+      lineup optimizer, trade analyzer, personal roster). Fixed 2026-09-16
+      (current_week_2026.py) to target the real current week instead of a
+      hardcoded week=1 - fantasy_rankings_2026.json now legitimately holds
+      more than one real week's rows (step 9), and the old unfiltered
+      (name, team) join would have silently picked up whichever week's row
+      happened to sort last.
+  11. generate_season_projections_dashboard_data_2026.py - reads
+      games_2026.json's actual_winner directly (fixed 2026-09-15) for real
+      wins_actual/losses_actual/ties_actual (must run after the step-6
+      re-ingest, not before), AND (fixed 2026-09-16) its real Monte Carlo
+      playoff simulation (simulate_2026_playoffs.py) now starts from
+      current in-season Elo and locks already-played games to their real
+      outcome instead of re-simulating them - see simulate_2026_playoffs.
+      real_2026_carryover_elo's docstring.
+  12. generate_superbowl_odds_2026.py - real, seeded from step 11's output.
+  13. generate_power_rankings_2026.py - reads step 5's current O/D-Elo file
+      directly, and single-Elo via the same fixed real_2026_carryover_elo.
+  14. generate_trade_scores_2026.py - real, depends on step 7's output and
+      the same current-Elo team-strength context as step 13.
+  15. generate_mvp_race_2026.py - real, depends on steps 7 and 11. Fixed
+      2026-09-16: now blends real completed weeks' nflreadpy box scores
+      into the season stat total in place of that week's prediction (the
+      standard real fantasy-industry "rest-of-season" convention), instead
+      of the pasted spec's crude, separately-weighted "actual x 17 pace"
+      replacement - see that script's own module docstring.
 
-Real, disclosed scope: MVP race (step 13) is the one real 2026 deliverable
-this task deliberately left on its preseason methodology - everything
-else above (Elo itself, Division Winners, Playoff Picture, Super Bowl
-odds, Power Rankings, Trade Scores) now genuinely recalibrates from real
-completed 2026 games.
+Real, disclosed scope: every real 2026 deliverable this project ships now
+genuinely recalibrates from real completed games - Elo, Division Winners,
+Playoff Picture, Super Bowl odds, Power Rankings, Trade Scores, MVP race,
+and (new) Week 2+ fantasy projections.
 """
 
 import json
@@ -185,6 +193,14 @@ class WeeklyRefresh:
         # reads real records off games_2026.json below.
         self.step("Re-ingesting completed results (fantasy rankings step just reset actual_ppr)",
                   ["ingest_completed_results_2026.py"])
+        # Real, additive Week 2 trailing-rate projections (real once Week 1
+        # has completed games to trail from - see that script's own module
+        # docstring for the real "no fabricated formula" methodology).
+        # Appends to fantasy_rankings_2026.json, does not overwrite it - must
+        # run after the re-ingest above (needs real Week 1 actual_ppr) and
+        # before injury adjustments below (needs real Week 2 rows to exist
+        # for its current-week join).
+        self.step("Generating Week 2 fantasy projections", ["generate_fantasy_rankings_week2_2026.py"])
         self.step("Refreshing ESPN injury adjustments", ["generate_injury_adjustments_2026.py"])
         self.step("Regenerating season projections", ["generate_season_projections_dashboard_data_2026.py"])
         self.step("Regenerating Super Bowl odds", ["generate_superbowl_odds_2026.py"])

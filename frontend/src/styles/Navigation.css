@@ -18,6 +18,16 @@
   white-space: nowrap;
 }
 
+.current-week-indicator {
+  color: #00ff88;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 10px;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
 .hamburger {
   display: none;
   background: none;

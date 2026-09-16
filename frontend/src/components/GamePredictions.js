@@ -3,6 +3,7 @@ import GameCard from './GameCard';
 import { useSeason } from '../context/SeasonContext';
 import { getConfirmedOutSet, isConfirmedOut } from '../utils/injuryAdjustments';
 import { computeTeamRecords } from '../utils/teamRecords';
+import { getCurrentWeek } from '../utils/getCurrentWeek';
 import '../styles/GamePredictions.css';
 
 // Real per-team Elo rank (1 = strongest) for the "Nth best" context in
@@ -159,14 +160,21 @@ export default function GamePredictions() {
   const gamesData = seasonData.games;
 
   const weeks = [...new Set(gamesData.map((g) => g.week))].sort((a, b) => a - b);
-  const [selectedWeek, setSelectedWeek] = useState(weeks[0]);
+  // Real default: a completed, historical season (hasResults - e.g. 2025)
+  // still opens on Week 1 for sequential browsing, unchanged; a live,
+  // in-progress season (2026) opens on the real current week (the first
+  // week with a game whose real outcome isn't in yet) instead of always
+  // Week 1, so the dashboard doesn't make you manually click forward every
+  // week once games start completing.
+  const defaultWeek = () => (hasResults ? weeks[0] : getCurrentWeek(gamesData));
+  const [selectedWeek, setSelectedWeek] = useState(defaultWeek);
   const [expandedGameId, setExpandedGameId] = useState(null);
 
   // Real weeks differ by season only in edge cases, but reset cleanly on
   // season switch regardless, since a stale selectedWeek from one season
   // could momentarily point at a week the other season doesn't have.
   useEffect(() => {
-    setSelectedWeek(weeks[0]);
+    setSelectedWeek(defaultWeek());
     setExpandedGameId(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSeason]);

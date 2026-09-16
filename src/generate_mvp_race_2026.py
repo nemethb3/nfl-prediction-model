@@ -33,7 +33,22 @@ row at all as of this run - rather than guess, those default to
 INCLUDED (fail open) so a real starter is never silently dropped due
 to missing data; the z-score model itself still has to rank them
 competitively to reach the top 10.
-"""
+
+Real Week 1+ blending (added 2026-09-16, once the season actually
+started - see the "Week 2 Fantasy Projections" task decision for the
+fuller writeup of why a pasted spec's crude "actual x 17 pace" formula
+with asserted 0.5/30/100 weights was rejected): for any real completed
+week, _aggregate_season_stats substitutes that week's REAL nflreadpy box
+score (passing_yards/rushing_yards exactly, passing_tds/rushing_tds as
+real counts) for that week's PREDICTED contribution - the standard real
+fantasy-industry "rest-of-season" convention (completed weeks are real,
+remaining weeks stay projected), not a new, separately-weighted scoring
+system. The z-scoring/historical-profile/softmax machinery below is
+completely unchanged - only one input (which weeks are real vs.
+projected) changed. team_projected_wins was already real-time (season_
+projections_2026.json's projected_wins already reflects in-season Elo
+recalibration - see recalibrate_2026_elo.py - with no MVP-specific
+change needed here)."""
 
 import json
 import os
@@ -53,11 +68,38 @@ OUTPUT_PATH = os.path.join(FRONTEND_DATA_DIR, "award_races_2026.json")
 STAT_FIELDS = ["passing_yards", "passing_tds", "rushing_yards", "rushing_tds"]
 
 
-def _aggregate_season_stats(player_props):
+def _real_completed_week_stats():
+    """Real per-player, per-week box-score component stats
+    (passing_yards/rushing_yards exact, passing_tds/rushing_tds real
+    counts) for every real completed 2026 week - nflreadpy.
+    load_player_stats(), the same real source ingest_completed_results_
+    2026.py already uses for actual_ppr. Returns {(player_id, week):
+    {field: value}}."""
+    ps = nfl.load_player_stats([2026]).to_pandas()
+    ps = ps[ps["season_type"] == "REG"]
+    out = {}
+    for r in ps.itertuples():
+        pid = getattr(r, "player_id", None)
+        if not pid:
+            continue
+        out[(pid, int(r.week))] = {
+            "passing_yards": float(getattr(r, "passing_yards", 0) or 0),
+            "passing_tds": float(getattr(r, "passing_tds", 0) or 0),
+            "rushing_yards": float(getattr(r, "rushing_yards", 0) or 0),
+            "rushing_tds": float(getattr(r, "rushing_tds", 0) or 0),
+        }
+    return out
+
+
+def _aggregate_season_stats(player_props, real_week_stats=None):
     """Real full-season aggregate per player: sums real per-week
     predicted_stats (yards summed directly; *_tds_prob summed as an
     expected-count proxy - the same real convention already used
-    throughout this project, e.g. adjustProjectionsForLeague.js)."""
+    throughout this project, e.g. adjustProjectionsForLeague.js) - EXCEPT
+    for any week real_week_stats has a real completed box score for, in
+    which case that week's real outcome is used instead of its
+    prediction (see module docstring's "Real Week 1+ blending")."""
+    real_week_stats = real_week_stats or {}
     players = {}
     for row in player_props:
         pid = row["player_id"]
@@ -68,11 +110,18 @@ def _aggregate_season_stats(player_props):
                 "passing_yards": 0.0, "passing_tds": 0.0,
                 "rushing_yards": 0.0, "rushing_tds": 0.0,
             }
-        stats = row.get("predicted_stats", {})
-        players[pid]["passing_yards"] += stats.get("passing_yards", 0.0)
-        players[pid]["passing_tds"] += stats.get("passing_tds_prob", 0.0)
-        players[pid]["rushing_yards"] += stats.get("rushing_yards", 0.0)
-        players[pid]["rushing_tds"] += stats.get("rushing_tds_prob", 0.0)
+        real = real_week_stats.get((pid, row["week"]))
+        if real is not None:
+            players[pid]["passing_yards"] += real["passing_yards"]
+            players[pid]["passing_tds"] += real["passing_tds"]
+            players[pid]["rushing_yards"] += real["rushing_yards"]
+            players[pid]["rushing_tds"] += real["rushing_tds"]
+        else:
+            stats = row.get("predicted_stats", {})
+            players[pid]["passing_yards"] += stats.get("passing_yards", 0.0)
+            players[pid]["passing_tds"] += stats.get("passing_tds_prob", 0.0)
+            players[pid]["rushing_yards"] += stats.get("rushing_yards", 0.0)
+            players[pid]["rushing_tds"] += stats.get("rushing_tds_prob", 0.0)
     return list(players.values())
 
 
@@ -104,7 +153,9 @@ def generate_mvp_race_2026():
         season_projections = json.load(f)
     team_wins_by_team = {t["team"]: t["projected_wins"] for t in season_projections if t["projected_wins"] is not None}
 
-    candidates = _aggregate_season_stats(player_props)
+    real_week_stats = _real_completed_week_stats()
+    candidates = _aggregate_season_stats(player_props, real_week_stats)
+    n_completed_weeks = len({wk for _, wk in real_week_stats})
     non_starting_qb_ids = _load_non_starting_qb_ids()
     n_before = len(candidates)
     candidates = [
@@ -151,16 +202,26 @@ def generate_mvp_race_2026():
 
     top_candidates = contender_pool[:10]
 
+    week_note = (
+        f"Real weeks 1-{n_completed_weeks} use each candidate's REAL nflreadpy box score "
+        f"(passing/rushing yards exact, TDs as real counts) in place of that week's preseason "
+        f"prediction; remaining weeks stay projected (real fantasy-industry 'rest-of-season' "
+        f"convention) - "
+        if n_completed_weeks > 0 else
+        "No real 2026 week has completed yet, so every week is still the preseason prediction - "
+    )
     output = {
         "season": 2026,
         "award": "MVP",
-        "is_preseason": True,
+        "is_preseason": n_completed_weeks == 0,
         "methodology_note": (
-            "Real preseason ranking: each real candidate's real full-season projected stats "
-            "(player_props_2026.json, summed across all 18 real weeks) are z-scored against "
+            f"{week_note}"
+            "each real candidate's real full-season stat total "
+            "(player_props_2026.json, summed across all 18 real weeks) is z-scored against "
             "the real historical MVP-winner profile (11 real seasons, 2015-2025 - see "
             "award_winner_profiles.json), blended 60/40 with a real team-strength z-score "
-            "(this team's real projected wins vs. the real historical MVP-winning teams' "
+            "(this team's real projected wins - itself in-season-recalibrated, see "
+            "recalibrate_2026_elo.py - vs. the real historical MVP-winning teams' "
             "average). 'relative_share_pct' is a real softmax of that composite score across "
             "the real top-15 ranked candidates (not the full ~390-player pool, which would "
             "dilute every real contender's share toward 0% and stop being interpretable), NOT a "
@@ -175,7 +236,7 @@ def generate_mvp_race_2026():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
 
-    print(f"Real 2026 preseason MVP race -> {OUTPUT_PATH}")
+    print(f"Real 2026 MVP race ({n_completed_weeks} real completed week(s) blended in) -> {OUTPUT_PATH}")
     for c in top_candidates[:5]:
         print(f"  {c['player_name']} ({c['position']}, {c['team']}): {c['relative_share_pct']}%")
     return output

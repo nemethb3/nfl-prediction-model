@@ -6,6 +6,7 @@ import { teamName, teamColor, teamSecondaryColor, readableTextColor } from '../c
 import SeasonDataUnavailable from './SeasonDataUnavailable';
 import { useKeyboardToggle } from '../hooks/useKeyboardToggle';
 import { getInjuryAdjustmentMap, getInjuryAdjustment } from '../utils/injuryAdjustments';
+import { getCurrentWeek } from '../utils/getCurrentWeek';
 
 function ordinal(n) {
   const rem100 = n % 100;
@@ -231,7 +232,18 @@ export default function FantasyRankings() {
   const isPreseason = !hasResults;
 
   const weeks = fantasyData ? [...new Set(fantasyData.map((p) => p.week))].sort((a, b) => a - b) : [];
-  const [selectedWeek, setSelectedWeek] = useState(weeks[0]);
+  // Real default: same "live season opens on the real current week"
+  // convention as GamePredictions.js - clamped to weeks fantasy data
+  // actually exists for (the per-week generator can legitimately lag a
+  // week or two behind games_2026.json's own schedule), falling back to
+  // the latest available week, then week 1. A completed, historical
+  // season (hasResults) still opens on week 1 unchanged.
+  const defaultWeek = () => {
+    if (hasResults || !weeks.length) return weeks[0];
+    const current = getCurrentWeek(seasonData.games);
+    return weeks.includes(current) ? current : weeks[weeks.length - 1];
+  };
+  const [selectedWeek, setSelectedWeek] = useState(defaultWeek);
   const [selectedPosition, setSelectedPosition] = useState('RB');
   const [expandedPlayerId, setExpandedPlayerId] = useState(null);
 
@@ -263,7 +275,7 @@ export default function FantasyRankings() {
   const confirmedOutThisWeek = [...injuryByPlayer.values()].filter((p) => p.confirmed_out);
 
   useEffect(() => {
-    setSelectedWeek(weeks[0]);
+    setSelectedWeek(defaultWeek());
     setExpandedPlayerId(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSeason]);

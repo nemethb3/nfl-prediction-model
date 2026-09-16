@@ -1,0 +1,5160 @@
+{
+  "current_week": 1,
+  "weeks": [
+    {
+      "week": 1,
+      "is_completed": true,
+      "this_week": {
+        "total_games": 16,
+        "correct_predictions": 11,
+        "accuracy_pct": 68.8,
+        "mean_spread_error": 11.73,
+        "games": [
+          {
+            "week": 1,
+            "home_team": "SEA",
+            "away_team": "NE",
+            "home_score": 13,
+            "away_score": 10,
+            "predicted_winner": "SEA",
+            "actual_winner": "SEA",
+            "prediction_correct": true,
+            "predicted_spread": 2.7,
+            "actual_spread": 3.0,
+            "vegas_spread": 3.0
+          },
+          {
+            "week": 1,
+            "home_team": "LA",
+            "away_team": "SF",
+            "home_score": 7,
+            "away_score": 27,
+            "predicted_winner": "LA",
+            "actual_winner": "SF",
+            "prediction_correct": false,
+            "predicted_spread": 2.6,
+            "actual_spread": -20.0,
+            "vegas_spread": null
+          },
+          {
+            "week": 1,
+            "home_team": "CAR",
+            "away_team": "CHI",
+            "home_score": 37,
+            "away_score": 59,
+            "predicted_winner": "CHI",
+            "actual_winner": "CHI",
+            "prediction_correct": true,
+            "predicted_spread": -0.1,
+            "actual_spread": -22.0,
+            "vegas_spread": -3.0
+          },
+          {
+            "week": 1,
+            "home_team": "CIN",
+            "away_team": "TB",
+            "home_score": 33,
+            "away_score": 27,
+            "predicted_winner": "CIN",
+            "actual_winner": "CIN",
+            "prediction_correct": true,
+            "predicted_spread": 3.0,
+            "actual_spread": 6.0,
+            "vegas_spread": 3.5
+          },
+          {
+            "week": 1,
+            "home_team": "DET",
+            "away_team": "NO",
+            "home_score": 31,
+            "away_score": 30,
+            "predicted_winner": "DET",
+            "actual_winner": "DET",
+            "prediction_correct": true,
+            "predicted_spread": 3.8,
+            "actual_spread": 1.0,
+            "vegas_spread": 7.0
+          },
+          {
+            "week": 1,
+            "home_team": "HOU",
+            "away_team": "BUF",
+            "home_score": 31,
+            "away_score": 36,
+            "predicted_winner": "HOU",
+            "actual_winner": "BUF",
+            "prediction_correct": false,
+            "predicted_spread": 2.0,
+            "actual_spread": -5.0,
+            "vegas_spread": -1.5
+          },
+          {
+            "week": 1,
+            "home_team": "IND",
+            "away_team": "BAL",
+            "home_score": 23,
+            "away_score": 41,
+            "predicted_winner": "IND",
+            "actual_winner": "BAL",
+            "prediction_correct": false,
+            "predicted_spread": 0.7,
+            "actual_spread": -18.0,
+            "vegas_spread": -3.0
+          },
+          {
+            "week": 1,
+            "home_team": "JAX",
+            "away_team": "CLE",
+            "home_score": 34,
+            "away_score": 10,
+            "predicted_winner": "JAX",
+            "actual_winner": "JAX",
+            "prediction_correct": true,
+            "predicted_spread": 4.8,
+            "actual_spread": 24.0,
+            "vegas_spread": 8.5
+          },
+          {
+            "week": 1,
+            "home_team": "PIT",
+            "away_team": "ATL",
+            "home_score": 20,
+            "away_score": 13,
+            "predicted_winner": "PIT",
+            "actual_winner": "PIT",
+            "prediction_correct": true,
+            "predicted_spread": 2.8,
+            "actual_spread": 7.0,
+            "vegas_spread": 6.5
+          },
+          {
+            "week": 1,
+            "home_team": "TEN",
+            "away_team": "NYJ",
+            "home_score": 10,
+            "away_score": 23,
+            "predicted_winner": "TEN",
+            "actual_winner": "NYJ",
+            "prediction_correct": false,
+            "predicted_spread": 3.0,
+            "actual_spread": -13.0,
+            "vegas_spread": 1.5
+          },
+          {
+            "week": 1,
+            "home_team": "LAC",
+            "away_team": "ARI",
+            "home_score": 14,
+            "away_score": 26,
+            "predicted_winner": "LAC",
+            "actual_winner": "ARI",
+            "prediction_correct": false,
+            "predicted_spread": 4.1,
+            "actual_spread": -12.0,
+            "vegas_spread": 8.5
+          },
+          {
+            "week": 1,
+            "home_team": "LV",
+            "away_team": "MIA",
+            "home_score": 27,
+            "away_score": 13,
+            "predicted_winner": "LV",
+            "actual_winner": "LV",
+            "prediction_correct": true,
+            "predicted_spread": 0.7,
+            "actual_spread": 14.0,
+            "vegas_spread": 3.0
+          },
+          {
+            "week": 1,
+            "home_team": "MIN",
+            "away_team": "GB",
+            "home_score": 39,
+            "away_score": 22,
+            "predicted_winner": "MIN",
+            "actual_winner": "MIN",
+            "prediction_correct": true,
+            "predicted_spread": 2.6,
+            "actual_spread": 17.0,
+            "vegas_spread": 2.5
+          },
+          {
+            "week": 1,
+            "home_team": "PHI",
+            "away_team": "WAS",
+            "home_score": 24,
+            "away_score": 22,
+            "predicted_winner": "PHI",
+            "actual_winner": "PHI",
+            "prediction_correct": true,
+            "predicted_spread": 3.7,
+            "actual_spread": 2.0,
+            "vegas_spread": null
+          },
+          {
+            "week": 1,
+            "home_team": "NYG",
+            "away_team": "DAL",
+            "home_score": 28,
+            "away_score": 20,
+            "predicted_winner": "NYG",
+            "actual_winner": "NYG",
+            "prediction_correct": true,
+            "predicted_spread": 2.3,
+            "actual_spread": 8.0,
+            "vegas_spread": -3.0
+          },
+          {
+            "week": 1,
+            "home_team": "KC",
+            "away_team": "DEN",
+            "home_score": 31,
+            "away_score": 10,
+            "predicted_winner": "KC",
+            "actual_winner": "KC",
+            "prediction_correct": true,
+            "predicted_spread": 0.2,
+            "actual_spread": 21.0,
+            "vegas_spread": 2.5
+          }
+        ],
+        "biggest_surprises": [
+          {
+            "home_team": "LA",
+            "away_team": "SF",
+            "home_score": 7,
+            "away_score": 27,
+            "predicted_winner": "LA",
+            "actual_winner": "SF",
+            "prediction_confidence": "58% LA",
+            "actual_spread": -20.0,
+            "surprise_score": 22.6
+          },
+          {
+            "home_team": "IND",
+            "away_team": "BAL",
+            "home_score": 23,
+            "away_score": 41,
+            "predicted_winner": "IND",
+            "actual_winner": "BAL",
+            "prediction_confidence": "52% IND",
+            "actual_spread": -18.0,
+            "surprise_score": 18.7
+          },
+          {
+            "home_team": "LAC",
+            "away_team": "ARI",
+            "home_score": 14,
+            "away_score": 26,
+            "predicted_winner": "LAC",
+            "actual_winner": "ARI",
+            "prediction_confidence": "62% LAC",
+            "actual_spread": -12.0,
+            "surprise_score": 16.1
+          }
+        ]
+      },
+      "top_performers": {
+        "best": [
+          {
+            "player_name": "Jalen Coker",
+            "position": "WR",
+            "team": "CAR",
+            "projected_ppr": 6.7,
+            "actual_ppr": 33.8,
+            "difference": 27.1
+          },
+          {
+            "player_name": "Christian Watson",
+            "position": "WR",
+            "team": "GB",
+            "projected_ppr": 9.1,
+            "actual_ppr": 32.7,
+            "difference": 23.6
+          },
+          {
+            "player_name": "Kenneth Walker III",
+            "position": "RB",
+            "team": "KC",
+            "projected_ppr": 11.3,
+            "actual_ppr": 34.1,
+            "difference": 22.8
+          },
+          {
+            "player_name": "Isaiah Likely",
+            "position": "TE",
+            "team": "NYG",
+            "projected_ppr": 5.3,
+            "actual_ppr": 27.8,
+            "difference": 22.5
+          },
+          {
+            "player_name": "David Montgomery",
+            "position": "RB",
+            "team": "HOU",
+            "projected_ppr": 9.6,
+            "actual_ppr": 28.9,
+            "difference": 19.3
+          }
+        ],
+        "worst": [
+          {
+            "player_name": "Matthew Stafford",
+            "position": "QB",
+            "team": "LA",
+            "projected_ppr": 21.0,
+            "actual_ppr": 4.1,
+            "difference": -16.9
+          },
+          {
+            "player_name": "Kyler Murray",
+            "position": "QB",
+            "team": "MIN",
+            "projected_ppr": 16.0,
+            "actual_ppr": -0.4,
+            "difference": -16.4
+          },
+          {
+            "player_name": "Josh Jacobs",
+            "position": "RB",
+            "team": "GB",
+            "projected_ppr": 16.1,
+            "actual_ppr": 0.0,
+            "difference": -16.1
+          },
+          {
+            "player_name": "Justin Fields",
+            "position": "QB",
+            "team": "KC",
+            "projected_ppr": 15.4,
+            "actual_ppr": 0.0,
+            "difference": -15.4
+          },
+          {
+            "player_name": "Brock Bowers",
+            "position": "TE",
+            "team": "LV",
+            "projected_ppr": 14.5,
+            "actual_ppr": 0.0,
+            "difference": -14.5
+          }
+        ]
+      },
+      "next_week": {
+        "week": 2,
+        "games": [
+          {
+            "week": 2,
+            "home_team": "BUF",
+            "away_team": "DET",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.578,
+            "win_prob_away": 0.422,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [
+                "Josh Allen (QB)",
+                "Khalil Shakir (WR)",
+                "Keon Coleman (WR)"
+              ],
+              "away": [
+                "Amon-Ra St. Brown (WR)",
+                "Jared Goff (QB)",
+                "Jameson Williams (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "ATL",
+            "away_team": "CAR",
+            "predicted_winner": "ATL",
+            "win_prob_home": 0.61,
+            "win_prob_away": 0.391,
+            "predicted_spread": 3.6,
+            "key_players": {
+              "home": [
+                "Drake London (WR)",
+                "Darnell Mooney (WR)",
+                "David Sills (WR)"
+              ],
+              "away": [
+                "Bryce Young (QB)",
+                "Tetairoa McMillan (WR)",
+                "Jalen Coker (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "BAL",
+            "away_team": "NO",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.65,
+            "win_prob_away": 0.35,
+            "predicted_spread": 4.9,
+            "key_players": {
+              "home": [
+                "Lamar Jackson (QB)",
+                "Zay Flowers (WR)",
+                "DeAndre Hopkins (WR)"
+              ],
+              "away": [
+                "Tyler Shough (QB)",
+                "Chris Olave (WR)",
+                "Devaughn Vele (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "CHI",
+            "away_team": "MIN",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.558,
+            "win_prob_away": 0.442,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [
+                "Caleb Williams (QB)",
+                "Rome Odunze (WR)",
+                "DJ Moore (WR)"
+              ],
+              "away": [
+                "Carson Wentz (QB)",
+                "Justin Jefferson (WR)",
+                "Jordan Addison (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "HOU",
+            "away_team": "CIN",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.568,
+            "win_prob_away": 0.432,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [
+                "C.J. Stroud (QB)",
+                "Nico Collins (WR)",
+                "Jayden Higgins (WR)"
+              ],
+              "away": [
+                "Ja'Marr Chase (WR)",
+                "Joe Burrow (QB)",
+                "Tee Higgins (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "NE",
+            "away_team": "PIT",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.581,
+            "win_prob_away": 0.419,
+            "predicted_spread": 2.6,
+            "key_players": {
+              "home": [
+                "Stefon Diggs (WR)",
+                "Mack Hollins (WR)",
+                "Drake Maye (QB)"
+              ],
+              "away": [
+                "Aaron Rodgers (QB)",
+                "DK Metcalf (WR)",
+                "Calvin Austin III (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "NYJ",
+            "away_team": "GB",
+            "predicted_winner": "NYJ",
+            "win_prob_home": 0.529,
+            "win_prob_away": 0.471,
+            "predicted_spread": 1.0,
+            "key_players": {
+              "home": [
+                "Geno Smith (QB)",
+                "Adonai Mitchell (WR)",
+                "Garrett Wilson (WR)"
+              ],
+              "away": [
+                "Jordan Love (QB)",
+                "Romeo Doubs (WR)",
+                "Christian Watson (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "TB",
+            "away_team": "CLE",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.599,
+            "win_prob_away": 0.401,
+            "predicted_spread": 3.2,
+            "key_players": {
+              "home": [
+                "Baker Mayfield (QB)",
+                "Emeka Egbuka (WR)",
+                "Mike Evans (WR)"
+              ],
+              "away": [
+                "Jerry Jeudy (WR)",
+                "Cedric Tillman (WR)",
+                "Jamari Thrash (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "TEN",
+            "away_team": "PHI",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.428,
+            "win_prob_away": 0.572,
+            "predicted_spread": -2.3,
+            "key_players": {
+              "home": [
+                "Cam Ward (QB)",
+                "Chimere Dike (WR)",
+                "Van Jefferson (WR)"
+              ],
+              "away": [
+                "Jalen Hurts (QB)",
+                "DeVonta Smith (WR)",
+                "A.J. Brown (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "DEN",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.426,
+            "win_prob_away": 0.574,
+            "predicted_spread": -2.4,
+            "key_players": {
+              "home": [
+                "Courtland Sutton (WR)",
+                "Troy Franklin (WR)",
+                "Bo Nix (QB)"
+              ],
+              "away": [
+                "Trevor Lawrence (QB)",
+                "Jakobi Meyers (WR)",
+                "Parker Washington (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "LAC",
+            "away_team": "LV",
+            "predicted_winner": "LAC",
+            "win_prob_home": 0.568,
+            "win_prob_away": 0.432,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [
+                "Justin Herbert (QB)",
+                "Ladd McConkey (WR)",
+                "Keenan Allen (WR)"
+              ],
+              "away": [
+                "Kirk Cousins (QB)",
+                "Tre Tucker (WR)",
+                "Tyler Lockett (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "ARI",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.451,
+            "win_prob_away": 0.549,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [
+                "Jacoby Brissett (QB)",
+                "Michael Wilson (WR)",
+                "Marvin Harrison Jr. (WR)"
+              ],
+              "away": [
+                "Jaxon Smith-Njigba (WR)",
+                "Rashid Shaheed (WR)",
+                "Cooper Kupp (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "DAL",
+            "away_team": "WAS",
+            "predicted_winner": "DAL",
+            "win_prob_home": 0.543,
+            "win_prob_away": 0.457,
+            "predicted_spread": 1.4,
+            "key_players": {
+              "home": [
+                "George Pickens (WR)",
+                "Dak Prescott (QB)",
+                "CeeDee Lamb (WR)"
+              ],
+              "away": [
+                "Jayden Daniels (QB)",
+                "Deebo Samuel Sr. (WR)",
+                "Terry McLaurin (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "SF",
+            "away_team": "MIA",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.718,
+            "win_prob_away": 0.282,
+            "predicted_spread": 7.4,
+            "key_players": {
+              "home": [
+                "Brock Purdy (QB)",
+                "Jauan Jennings (WR)",
+                "Ricky Pearsall (WR)"
+              ],
+              "away": [
+                "Jaylen Waddle (WR)",
+                "Tyreek Hill (WR)",
+                "Malik Washington (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "KC",
+            "away_team": "IND",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.651,
+            "win_prob_away": 0.348,
+            "predicted_spread": 5.0,
+            "key_players": {
+              "home": [
+                "Patrick Mahomes (QB)",
+                "Rashee Rice (WR)",
+                "Marquise Brown (WR)"
+              ],
+              "away": [
+                "Alec Pierce (WR)",
+                "Michael Pittman (WR)",
+                "Josh Downs (WR)"
+              ]
+            }
+          },
+          {
+            "week": 2,
+            "home_team": "LA",
+            "away_team": "NYG",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.554,
+            "win_prob_away": 0.446,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [
+                "Puka Nacua (WR)",
+                "Davante Adams (WR)",
+                "Xavier Smith (WR)"
+              ],
+              "away": [
+                "Jaxson Dart (QB)",
+                "Wan'Dale Robinson (WR)",
+                "Darius Slayton (WR)"
+              ]
+            }
+          }
+        ],
+        "top_fantasy_plays": [
+          {
+            "player_name": "Caleb Williams",
+            "position": "QB",
+            "team": "CHI",
+            "opponent": "MIN",
+            "projected_ppr": 37.3,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Josh Allen",
+            "position": "QB",
+            "team": "BUF",
+            "opponent": "DET",
+            "projected_ppr": 35.7,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Jahmyr Gibbs",
+            "position": "RB",
+            "team": "DET",
+            "opponent": "BUF",
+            "projected_ppr": 35.6,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Derrick Henry",
+            "position": "RB",
+            "team": "BAL",
+            "opponent": "NO",
+            "projected_ppr": 35.3,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Kenneth Walker III",
+            "position": "RB",
+            "team": "KC",
+            "opponent": "IND",
+            "projected_ppr": 34.1,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Ashton Jeanty",
+            "position": "RB",
+            "team": "LV",
+            "opponent": "LAC",
+            "projected_ppr": 32.7,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "D'Andre Swift",
+            "position": "RB",
+            "team": "CHI",
+            "opponent": "MIN",
+            "projected_ppr": 32.4,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Bryce Young",
+            "position": "QB",
+            "team": "CAR",
+            "opponent": "ATL",
+            "projected_ppr": 31.4,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Bijan Robinson",
+            "position": "RB",
+            "team": "ATL",
+            "opponent": "CAR",
+            "projected_ppr": 31.3,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "David Montgomery",
+            "position": "RB",
+            "team": "HOU",
+            "opponent": "CIN",
+            "projected_ppr": 28.9,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          }
+        ]
+      },
+      "season_context": {
+        "week": 1,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 2,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 3,
+        "games": [
+          {
+            "week": 3,
+            "home_team": "GB",
+            "away_team": "ATL",
+            "predicted_winner": "GB",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "BUF",
+            "away_team": "LAC",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.636,
+            "win_prob_away": 0.364,
+            "predicted_spread": 4.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "CLE",
+            "away_team": "CAR",
+            "predicted_winner": "CLE",
+            "win_prob_home": 0.562,
+            "win_prob_away": 0.438,
+            "predicted_spread": 2.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "DET",
+            "away_team": "NYJ",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.645,
+            "win_prob_away": 0.355,
+            "predicted_spread": 4.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "IND",
+            "away_team": "HOU",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.483,
+            "win_prob_away": 0.517,
+            "predicted_spread": -0.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "JAX",
+            "away_team": "NE",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.621,
+            "win_prob_away": 0.379,
+            "predicted_spread": 4.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "MIA",
+            "away_team": "KC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.42,
+            "win_prob_away": 0.58,
+            "predicted_spread": -2.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "NYG",
+            "away_team": "TEN",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.664,
+            "win_prob_away": 0.336,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "PIT",
+            "away_team": "CIN",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.565,
+            "win_prob_away": 0.435,
+            "predicted_spread": 2.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "WAS",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.444,
+            "win_prob_away": 0.556,
+            "predicted_spread": -1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "SF",
+            "away_team": "ARI",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.663,
+            "win_prob_away": 0.337,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "TB",
+            "away_team": "MIN",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.444,
+            "win_prob_away": 0.556,
+            "predicted_spread": -1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "DAL",
+            "away_team": "BAL",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.439,
+            "win_prob_away": 0.561,
+            "predicted_spread": -1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "NO",
+            "away_team": "LV",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.577,
+            "win_prob_away": 0.423,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "DEN",
+            "away_team": "LA",
+            "predicted_winner": "DEN",
+            "win_prob_home": 0.536,
+            "win_prob_away": 0.464,
+            "predicted_spread": 1.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 3,
+            "home_team": "CHI",
+            "away_team": "PHI",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.606,
+            "win_prob_away": 0.394,
+            "predicted_spread": 3.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 2,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 3,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 4,
+        "games": [
+          {
+            "week": 4,
+            "home_team": "CLE",
+            "away_team": "PIT",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.45,
+            "win_prob_away": 0.55,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "WAS",
+            "away_team": "IND",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.574,
+            "win_prob_away": 0.426,
+            "predicted_spread": 2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "BAL",
+            "away_team": "TEN",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.721,
+            "win_prob_away": 0.279,
+            "predicted_spread": 7.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "BUF",
+            "away_team": "NE",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "CHI",
+            "away_team": "NYJ",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.686,
+            "win_prob_away": 0.314,
+            "predicted_spread": 6.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "CIN",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.46,
+            "win_prob_away": 0.54,
+            "predicted_spread": -1.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "HOU",
+            "away_team": "DAL",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.627,
+            "win_prob_away": 0.373,
+            "predicted_spread": 4.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "NYG",
+            "away_team": "ARI",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.586,
+            "win_prob_away": 0.414,
+            "predicted_spread": 2.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "PHI",
+            "away_team": "LA",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.578,
+            "win_prob_away": 0.422,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "TB",
+            "away_team": "GB",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.552,
+            "win_prob_away": 0.448,
+            "predicted_spread": 1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "MIN",
+            "away_team": "MIA",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.706,
+            "win_prob_away": 0.294,
+            "predicted_spread": 6.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "LV",
+            "away_team": "KC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.463,
+            "win_prob_away": 0.537,
+            "predicted_spread": -1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "SEA",
+            "away_team": "LAC",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.668,
+            "win_prob_away": 0.332,
+            "predicted_spread": 5.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "SF",
+            "away_team": "DEN",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.659,
+            "win_prob_away": 0.341,
+            "predicted_spread": 5.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "CAR",
+            "away_team": "DET",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.442,
+            "win_prob_away": 0.558,
+            "predicted_spread": -1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 4,
+            "home_team": "NO",
+            "away_team": "ATL",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.569,
+            "win_prob_away": 0.431,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 3,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 4,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 5,
+        "games": [
+          {
+            "week": 5,
+            "home_team": "DAL",
+            "away_team": "TB",
+            "predicted_winner": "DAL",
+            "win_prob_home": 0.553,
+            "win_prob_away": 0.447,
+            "predicted_spread": 1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "JAX",
+            "away_team": "PHI",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.644,
+            "win_prob_away": 0.356,
+            "predicted_spread": 4.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "MIA",
+            "away_team": "CIN",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.454,
+            "win_prob_away": 0.546,
+            "predicted_spread": -1.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "NE",
+            "away_team": "LV",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.645,
+            "win_prob_away": 0.355,
+            "predicted_spread": 4.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "NO",
+            "away_team": "MIN",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.461,
+            "win_prob_away": 0.539,
+            "predicted_spread": -1.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "NYJ",
+            "away_team": "CLE",
+            "predicted_winner": "NYJ",
+            "win_prob_home": 0.577,
+            "win_prob_away": 0.423,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "PIT",
+            "away_team": "IND",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.627,
+            "win_prob_away": 0.373,
+            "predicted_spread": 4.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "TEN",
+            "away_team": "HOU",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.425,
+            "win_prob_away": 0.575,
+            "predicted_spread": -2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "WAS",
+            "away_team": "NYG",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.521,
+            "win_prob_away": 0.479,
+            "predicted_spread": 0.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "LAC",
+            "away_team": "DEN",
+            "predicted_winner": "LAC",
+            "win_prob_home": 0.543,
+            "win_prob_away": 0.457,
+            "predicted_spread": 1.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "ARI",
+            "away_team": "DET",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.507,
+            "win_prob_away": 0.493,
+            "predicted_spread": 0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "GB",
+            "away_team": "CHI",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.449,
+            "win_prob_away": 0.551,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "SEA",
+            "away_team": "SF",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.552,
+            "win_prob_away": 0.448,
+            "predicted_spread": 1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "ATL",
+            "away_team": "BAL",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.45,
+            "win_prob_away": 0.55,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 5,
+            "home_team": "LA",
+            "away_team": "BUF",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.512,
+            "win_prob_away": 0.488,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 4,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 5,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 6,
+        "games": [
+          {
+            "week": 6,
+            "home_team": "DEN",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.456,
+            "win_prob_away": 0.544,
+            "predicted_spread": -1.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "JAX",
+            "away_team": "HOU",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.641,
+            "win_prob_away": 0.359,
+            "predicted_spread": 4.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "ATL",
+            "away_team": "CHI",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.449,
+            "win_prob_away": 0.551,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "CLE",
+            "away_team": "BAL",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.402,
+            "win_prob_away": 0.598,
+            "predicted_spread": -3.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "IND",
+            "away_team": "TEN",
+            "predicted_winner": "IND",
+            "win_prob_home": 0.614,
+            "win_prob_away": 0.386,
+            "predicted_spread": 3.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "NE",
+            "away_team": "NYJ",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.664,
+            "win_prob_away": 0.336,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "NYG",
+            "away_team": "NO",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.587,
+            "win_prob_away": 0.413,
+            "predicted_spread": 2.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "PHI",
+            "away_team": "CAR",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.663,
+            "win_prob_away": 0.337,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "TB",
+            "away_team": "PIT",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.493,
+            "win_prob_away": 0.507,
+            "predicted_spread": -0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "LA",
+            "away_team": "ARI",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.583,
+            "win_prob_away": 0.417,
+            "predicted_spread": 2.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "KC",
+            "away_team": "LAC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.638,
+            "win_prob_away": 0.362,
+            "predicted_spread": 4.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "LV",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.466,
+            "win_prob_away": 0.534,
+            "predicted_spread": -1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "GB",
+            "away_team": "DAL",
+            "predicted_winner": "GB",
+            "win_prob_home": 0.567,
+            "win_prob_away": 0.433,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 6,
+            "home_team": "SF",
+            "away_team": "WAS",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.67,
+            "win_prob_away": 0.33,
+            "predicted_spread": 5.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 5,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 6,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 7,
+        "games": [
+          {
+            "week": 7,
+            "home_team": "CHI",
+            "away_team": "NE",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.582,
+            "win_prob_away": 0.418,
+            "predicted_spread": 2.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "NO",
+            "away_team": "PIT",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.51,
+            "win_prob_away": 0.49,
+            "predicted_spread": 0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "ATL",
+            "away_team": "SF",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.435,
+            "win_prob_away": 0.565,
+            "predicted_spread": -2.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "BAL",
+            "away_team": "CIN",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.613,
+            "win_prob_away": 0.387,
+            "predicted_spread": 3.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "CAR",
+            "away_team": "TB",
+            "predicted_winner": "CAR",
+            "win_prob_home": 0.51,
+            "win_prob_away": 0.49,
+            "predicted_spread": 0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "HOU",
+            "away_team": "NYG",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.577,
+            "win_prob_away": 0.423,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "MIN",
+            "away_team": "IND",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.671,
+            "win_prob_away": 0.329,
+            "predicted_spread": 5.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "NYJ",
+            "away_team": "MIA",
+            "predicted_winner": "NYJ",
+            "win_prob_home": 0.581,
+            "win_prob_away": 0.419,
+            "predicted_spread": 2.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "TEN",
+            "away_team": "CLE",
+            "predicted_winner": "TEN",
+            "win_prob_home": 0.535,
+            "win_prob_away": 0.465,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "ARI",
+            "away_team": "DEN",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.553,
+            "win_prob_away": 0.447,
+            "predicted_spread": 1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "DET",
+            "away_team": "GB",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.619,
+            "win_prob_away": 0.381,
+            "predicted_spread": 3.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "LV",
+            "away_team": "LA",
+            "predicted_winner": "LV",
+            "win_prob_home": 0.511,
+            "win_prob_away": 0.489,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "SEA",
+            "away_team": "KC",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.589,
+            "win_prob_away": 0.411,
+            "predicted_spread": 2.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 7,
+            "home_team": "PHI",
+            "away_team": "DAL",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.624,
+            "win_prob_away": 0.376,
+            "predicted_spread": 4.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 6,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 7,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 8,
+        "games": [
+          {
+            "week": 8,
+            "home_team": "GB",
+            "away_team": "CAR",
+            "predicted_winner": "GB",
+            "win_prob_home": 0.609,
+            "win_prob_away": 0.391,
+            "predicted_spread": 3.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "BUF",
+            "away_team": "BAL",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.533,
+            "win_prob_away": 0.467,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "CIN",
+            "away_team": "TEN",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.672,
+            "win_prob_away": 0.328,
+            "predicted_spread": 5.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "DAL",
+            "away_team": "ARI",
+            "predicted_winner": "DAL",
+            "win_prob_home": 0.536,
+            "win_prob_away": 0.464,
+            "predicted_spread": 1.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "DET",
+            "away_team": "MIN",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.512,
+            "win_prob_away": 0.487,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "JAX",
+            "away_team": "IND",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.706,
+            "win_prob_away": 0.294,
+            "predicted_spread": 7.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "NYJ",
+            "away_team": "LV",
+            "predicted_winner": "NYJ",
+            "win_prob_home": 0.537,
+            "win_prob_away": 0.463,
+            "predicted_spread": 1.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "PIT",
+            "away_team": "CLE",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.659,
+            "win_prob_away": 0.341,
+            "predicted_spread": 5.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "TB",
+            "away_team": "ATL",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.551,
+            "win_prob_away": 0.449,
+            "predicted_spread": 1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "LA",
+            "away_team": "LAC",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.593,
+            "win_prob_away": 0.407,
+            "predicted_spread": 3.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "DEN",
+            "away_team": "KC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.488,
+            "win_prob_away": 0.512,
+            "predicted_spread": -0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "MIA",
+            "away_team": "NE",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.422,
+            "win_prob_away": 0.578,
+            "predicted_spread": -2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "WAS",
+            "away_team": "PHI",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.503,
+            "win_prob_away": 0.497,
+            "predicted_spread": 0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 8,
+            "home_team": "SEA",
+            "away_team": "CHI",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.567,
+            "win_prob_away": 0.433,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 7,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 8,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 9,
+        "games": [
+          {
+            "week": 9,
+            "home_team": "BAL",
+            "away_team": "JAX",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.517,
+            "win_prob_away": 0.483,
+            "predicted_spread": 0.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "ATL",
+            "away_team": "CIN",
+            "predicted_winner": "ATL",
+            "win_prob_home": 0.507,
+            "win_prob_away": 0.493,
+            "predicted_spread": 0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "CAR",
+            "away_team": "DEN",
+            "predicted_winner": "DEN",
+            "win_prob_home": 0.488,
+            "win_prob_away": 0.512,
+            "predicted_spread": -0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "IND",
+            "away_team": "DAL",
+            "predicted_winner": "IND",
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "KC",
+            "away_team": "NYJ",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.666,
+            "win_prob_away": 0.334,
+            "predicted_spread": 5.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "MIA",
+            "away_team": "DET",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.442,
+            "win_prob_away": 0.558,
+            "predicted_spread": -1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "NO",
+            "away_team": "CLE",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.616,
+            "win_prob_away": 0.384,
+            "predicted_spread": 3.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "PHI",
+            "away_team": "NYG",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.575,
+            "win_prob_away": 0.425,
+            "predicted_spread": 2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "WAS",
+            "away_team": "LA",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.524,
+            "win_prob_away": 0.476,
+            "predicted_spread": 0.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "LAC",
+            "away_team": "HOU",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.498,
+            "win_prob_away": 0.502,
+            "predicted_spread": -0.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "SF",
+            "away_team": "LV",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.681,
+            "win_prob_away": 0.319,
+            "predicted_spread": 6.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "NE",
+            "away_team": "GB",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.638,
+            "win_prob_away": 0.362,
+            "predicted_spread": 4.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "SEA",
+            "away_team": "ARI",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.659,
+            "win_prob_away": 0.341,
+            "predicted_spread": 5.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "CHI",
+            "away_team": "TB",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.666,
+            "win_prob_away": 0.334,
+            "predicted_spread": 5.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 9,
+            "home_team": "MIN",
+            "away_team": "BUF",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.581,
+            "win_prob_away": 0.419,
+            "predicted_spread": 2.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 8,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 9,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 10,
+        "games": [
+          {
+            "week": 10,
+            "home_team": "NYG",
+            "away_team": "WAS",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.593,
+            "win_prob_away": 0.407,
+            "predicted_spread": 3.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "DET",
+            "away_team": "NE",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.537,
+            "win_prob_away": 0.463,
+            "predicted_spread": 1.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "ATL",
+            "away_team": "KC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.472,
+            "win_prob_away": 0.528,
+            "predicted_spread": -0.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "CLE",
+            "away_team": "HOU",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.448,
+            "win_prob_away": 0.552,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "GB",
+            "away_team": "MIN",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.449,
+            "win_prob_away": 0.551,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "IND",
+            "away_team": "MIA",
+            "predicted_winner": "IND",
+            "win_prob_home": 0.596,
+            "win_prob_away": 0.404,
+            "predicted_spread": 3.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "NO",
+            "away_team": "CAR",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.62,
+            "win_prob_away": 0.38,
+            "predicted_spread": 3.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "NYJ",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.445,
+            "win_prob_away": 0.555,
+            "predicted_spread": -1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "TEN",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.343,
+            "win_prob_away": 0.657,
+            "predicted_spread": -5.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "ARI",
+            "away_team": "LA",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.531,
+            "win_prob_away": 0.469,
+            "predicted_spread": 1.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "LV",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.431,
+            "win_prob_away": 0.569,
+            "predicted_spread": -2.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "DAL",
+            "away_team": "SF",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.424,
+            "win_prob_away": 0.576,
+            "predicted_spread": -2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "CIN",
+            "away_team": "PIT",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.549,
+            "win_prob_away": 0.451,
+            "predicted_spread": 1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 10,
+            "home_team": "BAL",
+            "away_team": "LAC",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.658,
+            "win_prob_away": 0.342,
+            "predicted_spread": 5.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 9,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 10,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 11,
+        "games": [
+          {
+            "week": 11,
+            "home_team": "HOU",
+            "away_team": "IND",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.629,
+            "win_prob_away": 0.371,
+            "predicted_spread": 4.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "BUF",
+            "away_team": "MIA",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.685,
+            "win_prob_away": 0.315,
+            "predicted_spread": 6.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "CAR",
+            "away_team": "BAL",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.398,
+            "win_prob_away": 0.603,
+            "predicted_spread": -3.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "CHI",
+            "away_team": "NO",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.65,
+            "win_prob_away": 0.35,
+            "predicted_spread": 4.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "DAL",
+            "away_team": "TEN",
+            "predicted_winner": "DAL",
+            "win_prob_home": 0.617,
+            "win_prob_away": 0.384,
+            "predicted_spread": 3.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "DET",
+            "away_team": "TB",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.624,
+            "win_prob_away": 0.376,
+            "predicted_spread": 4.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "KC",
+            "away_team": "ARI",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.629,
+            "win_prob_away": 0.371,
+            "predicted_spread": 4.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "NYG",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.45,
+            "win_prob_away": 0.55,
+            "predicted_spread": -1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "LAC",
+            "away_team": "NYJ",
+            "predicted_winner": "LAC",
+            "win_prob_home": 0.588,
+            "win_prob_away": 0.412,
+            "predicted_spread": 2.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "DEN",
+            "away_team": "LV",
+            "predicted_winner": "DEN",
+            "win_prob_home": 0.582,
+            "win_prob_away": 0.418,
+            "predicted_spread": 2.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "PHI",
+            "away_team": "PIT",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "SF",
+            "away_team": "MIN",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.573,
+            "win_prob_away": 0.427,
+            "predicted_spread": 2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 11,
+            "home_team": "WAS",
+            "away_team": "CIN",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.511,
+            "win_prob_away": 0.489,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 10,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 11,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 12,
+        "games": [
+          {
+            "week": 12,
+            "home_team": "LA",
+            "away_team": "GB",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.595,
+            "win_prob_away": 0.405,
+            "predicted_spread": 3.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "DET",
+            "away_team": "CHI",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.512,
+            "win_prob_away": 0.488,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "DAL",
+            "away_team": "PHI",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.489,
+            "win_prob_away": 0.511,
+            "predicted_spread": -0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "BUF",
+            "away_team": "KC",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "PIT",
+            "away_team": "DEN",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.599,
+            "win_prob_away": 0.401,
+            "predicted_spread": 3.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "CIN",
+            "away_team": "NO",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.596,
+            "win_prob_away": 0.404,
+            "predicted_spread": 3.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "CLE",
+            "away_team": "LV",
+            "predicted_winner": "CLE",
+            "win_prob_home": 0.518,
+            "win_prob_away": 0.482,
+            "predicted_spread": 0.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "HOU",
+            "away_team": "BAL",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.511,
+            "win_prob_away": 0.489,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "IND",
+            "away_team": "NYG",
+            "predicted_winner": "IND",
+            "win_prob_home": 0.504,
+            "win_prob_away": 0.496,
+            "predicted_spread": 0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "MIA",
+            "away_team": "NYJ",
+            "predicted_winner": "MIA",
+            "win_prob_home": 0.534,
+            "win_prob_away": 0.466,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "MIN",
+            "away_team": "ATL",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.66,
+            "win_prob_away": 0.34,
+            "predicted_spread": 5.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "JAX",
+            "away_team": "TEN",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.752,
+            "win_prob_away": 0.247,
+            "predicted_spread": 8.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "ARI",
+            "away_team": "WAS",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.565,
+            "win_prob_away": 0.435,
+            "predicted_spread": 2.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "SF",
+            "away_team": "SEA",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.562,
+            "win_prob_away": 0.438,
+            "predicted_spread": 2.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "LAC",
+            "away_team": "NE",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.476,
+            "win_prob_away": 0.524,
+            "predicted_spread": -0.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 12,
+            "home_team": "TB",
+            "away_team": "CAR",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.604,
+            "win_prob_away": 0.396,
+            "predicted_spread": 3.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 11,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 12,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 13,
+        "games": [
+          {
+            "week": 13,
+            "home_team": "LA",
+            "away_team": "KC",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.51,
+            "win_prob_away": 0.49,
+            "predicted_spread": 0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "ATL",
+            "away_team": "DET",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.495,
+            "win_prob_away": 0.505,
+            "predicted_spread": -0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "CHI",
+            "away_team": "JAX",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.517,
+            "win_prob_away": 0.483,
+            "predicted_spread": 0.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "CLE",
+            "away_team": "CIN",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.458,
+            "win_prob_away": 0.542,
+            "predicted_spread": -1.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "NO",
+            "away_team": "GB",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.569,
+            "win_prob_away": 0.431,
+            "predicted_spread": 2.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "NYG",
+            "away_team": "SF",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.475,
+            "win_prob_away": 0.525,
+            "predicted_spread": -0.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "TB",
+            "away_team": "LAC",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.55,
+            "win_prob_away": 0.45,
+            "predicted_spread": 1.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "TEN",
+            "away_team": "WAS",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.482,
+            "win_prob_away": 0.518,
+            "predicted_spread": -0.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "ARI",
+            "away_team": "PHI",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.511,
+            "win_prob_away": 0.489,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "DEN",
+            "away_team": "MIA",
+            "predicted_winner": "DEN",
+            "win_prob_home": 0.624,
+            "win_prob_away": 0.376,
+            "predicted_spread": 4.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "MIN",
+            "away_team": "CAR",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.706,
+            "win_prob_away": 0.294,
+            "predicted_spread": 6.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "NE",
+            "away_team": "BUF",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "PIT",
+            "away_team": "HOU",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 13,
+            "home_team": "SEA",
+            "away_team": "DAL",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.678,
+            "win_prob_away": 0.322,
+            "predicted_spread": 5.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 12,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 13,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 14,
+        "games": [
+          {
+            "week": 14,
+            "home_team": "NE",
+            "away_team": "MIN",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.533,
+            "win_prob_away": 0.467,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "BAL",
+            "away_team": "TB",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.665,
+            "win_prob_away": 0.335,
+            "predicted_spread": 5.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "CAR",
+            "away_team": "NO",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.493,
+            "win_prob_away": 0.507,
+            "predicted_spread": -0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "CLE",
+            "away_team": "ATL",
+            "predicted_winner": "CLE",
+            "win_prob_home": 0.509,
+            "win_prob_away": 0.491,
+            "predicted_spread": 0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "DET",
+            "away_team": "TEN",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.683,
+            "win_prob_away": 0.317,
+            "predicted_spread": 6.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "MIA",
+            "away_team": "CHI",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.398,
+            "win_prob_away": 0.602,
+            "predicted_spread": -3.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "NYJ",
+            "away_team": "DEN",
+            "predicted_winner": "NYJ",
+            "win_prob_home": 0.512,
+            "win_prob_away": 0.488,
+            "predicted_spread": 0.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "PHI",
+            "away_team": "IND",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.626,
+            "win_prob_away": 0.374,
+            "predicted_spread": 4.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "WAS",
+            "away_team": "HOU",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.5,
+            "win_prob_away": 0.499,
+            "predicted_spread": 0.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "LV",
+            "away_team": "LAC",
+            "predicted_winner": "LV",
+            "win_prob_home": 0.547,
+            "win_prob_away": 0.453,
+            "predicted_spread": 1.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "CIN",
+            "away_team": "KC",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.523,
+            "win_prob_away": 0.477,
+            "predicted_spread": 0.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "SEA",
+            "away_team": "NYG",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.632,
+            "win_prob_away": 0.368,
+            "predicted_spread": 4.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "SF",
+            "away_team": "LA",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.639,
+            "win_prob_away": 0.36,
+            "predicted_spread": 4.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "GB",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.474,
+            "win_prob_away": 0.526,
+            "predicted_spread": -0.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "JAX",
+            "away_team": "PIT",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.643,
+            "win_prob_away": 0.356,
+            "predicted_spread": 4.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 13,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 14,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 15,
+        "games": [
+          {
+            "week": 15,
+            "home_team": "LAC",
+            "away_team": "SF",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.436,
+            "win_prob_away": 0.564,
+            "predicted_spread": -2.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "PHI",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.498,
+            "win_prob_away": 0.502,
+            "predicted_spread": -0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "BUF",
+            "away_team": "CHI",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.532,
+            "win_prob_away": 0.468,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "CAR",
+            "away_team": "CIN",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.454,
+            "win_prob_away": 0.546,
+            "predicted_spread": -1.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "GB",
+            "away_team": "MIA",
+            "predicted_winner": "GB",
+            "win_prob_home": 0.608,
+            "win_prob_away": 0.392,
+            "predicted_spread": 3.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "HOU",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.47,
+            "win_prob_away": 0.53,
+            "predicted_spread": -0.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "NYG",
+            "away_team": "CLE",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.643,
+            "win_prob_away": 0.357,
+            "predicted_spread": 4.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "PIT",
+            "away_team": "BAL",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.508,
+            "win_prob_away": 0.491,
+            "predicted_spread": 0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "TB",
+            "away_team": "NO",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.54,
+            "win_prob_away": 0.46,
+            "predicted_spread": 1.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "TEN",
+            "away_team": "IND",
+            "predicted_winner": "IND",
+            "win_prob_home": 0.499,
+            "win_prob_away": 0.501,
+            "predicted_spread": -0.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "WAS",
+            "away_team": "ATL",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.561,
+            "win_prob_away": 0.439,
+            "predicted_spread": 2.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "ARI",
+            "away_team": "NYJ",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.597,
+            "win_prob_away": 0.403,
+            "predicted_spread": 3.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "LA",
+            "away_team": "DAL",
+            "predicted_winner": "LA",
+            "win_prob_home": 0.605,
+            "win_prob_away": 0.396,
+            "predicted_spread": 3.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "LV",
+            "away_team": "DEN",
+            "predicted_winner": "LV",
+            "win_prob_home": 0.532,
+            "win_prob_away": 0.468,
+            "predicted_spread": 1.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "MIN",
+            "away_team": "DET",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.602,
+            "win_prob_away": 0.399,
+            "predicted_spread": 3.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 15,
+            "home_team": "KC",
+            "away_team": "NE",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.56,
+            "win_prob_away": 0.44,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 14,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 15,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 16,
+        "games": [
+          {
+            "week": 16,
+            "home_team": "PHI",
+            "away_team": "HOU",
+            "predicted_winner": "PHI",
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "CHI",
+            "away_team": "GB",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.661,
+            "win_prob_away": 0.339,
+            "predicted_spread": 5.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "DEN",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.491,
+            "win_prob_away": 0.509,
+            "predicted_spread": -0.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "SEA",
+            "away_team": "LA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.635,
+            "win_prob_away": 0.365,
+            "predicted_spread": 4.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "ATL",
+            "away_team": "TB",
+            "predicted_winner": "ATL",
+            "win_prob_home": 0.564,
+            "win_prob_away": 0.436,
+            "predicted_spread": 2.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "BAL",
+            "away_team": "CLE",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.702,
+            "win_prob_away": 0.298,
+            "predicted_spread": 6.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "IND",
+            "away_team": "CIN",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.494,
+            "win_prob_away": 0.506,
+            "predicted_spread": -0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "MIA",
+            "away_team": "LAC",
+            "predicted_winner": "MIA",
+            "win_prob_home": 0.503,
+            "win_prob_away": 0.497,
+            "predicted_spread": 0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "MIN",
+            "away_team": "WAS",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.656,
+            "win_prob_away": 0.344,
+            "predicted_spread": 5.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "NO",
+            "away_team": "ARI",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "NYJ",
+            "away_team": "NE",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.445,
+            "win_prob_away": 0.555,
+            "predicted_spread": -1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "PIT",
+            "away_team": "CAR",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.664,
+            "win_prob_away": 0.336,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "LV",
+            "away_team": "TEN",
+            "predicted_winner": "LV",
+            "win_prob_home": 0.618,
+            "win_prob_away": 0.382,
+            "predicted_spread": 3.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "KC",
+            "away_team": "SF",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.52,
+            "win_prob_away": 0.48,
+            "predicted_spread": 0.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "DAL",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.4,
+            "win_prob_away": 0.6,
+            "predicted_spread": -3.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 16,
+            "home_team": "DET",
+            "away_team": "NYG",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.579,
+            "win_prob_away": 0.421,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 15,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 16,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 17,
+        "games": [
+          {
+            "week": 17,
+            "home_team": "CIN",
+            "away_team": "BAL",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.5,
+            "win_prob_away": 0.5,
+            "predicted_spread": 0.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "ATL",
+            "away_team": "NO",
+            "predicted_winner": "ATL",
+            "win_prob_home": 0.546,
+            "win_prob_away": 0.454,
+            "predicted_spread": 1.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "CAR",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.388,
+            "win_prob_away": 0.612,
+            "predicted_spread": -3.6,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "CLE",
+            "away_team": "IND",
+            "predicted_winner": "CLE",
+            "win_prob_home": 0.522,
+            "win_prob_away": 0.478,
+            "predicted_spread": 0.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "DAL",
+            "away_team": "NYG",
+            "predicted_winner": "DAL",
+            "win_prob_home": 0.506,
+            "win_prob_away": 0.494,
+            "predicted_spread": 0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "JAX",
+            "away_team": "WAS",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.692,
+            "win_prob_away": 0.308,
+            "predicted_spread": 6.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "LAC",
+            "away_team": "KC",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.473,
+            "win_prob_away": 0.526,
+            "predicted_spread": -0.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "MIA",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.422,
+            "win_prob_away": 0.578,
+            "predicted_spread": -2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "NE",
+            "away_team": "DEN",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.622,
+            "win_prob_away": 0.378,
+            "predicted_spread": 4.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "NYJ",
+            "away_team": "MIN",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.421,
+            "win_prob_away": 0.579,
+            "predicted_spread": -2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "TB",
+            "away_team": "LA",
+            "predicted_winner": "TB",
+            "win_prob_home": 0.514,
+            "win_prob_away": 0.486,
+            "predicted_spread": 0.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "TEN",
+            "away_team": "PIT",
+            "predicted_winner": "PIT",
+            "win_prob_home": 0.428,
+            "win_prob_away": 0.572,
+            "predicted_spread": -2.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "ARI",
+            "away_team": "LV",
+            "predicted_winner": "ARI",
+            "win_prob_home": 0.577,
+            "win_prob_away": 0.423,
+            "predicted_spread": 2.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "CHI",
+            "away_team": "DET",
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.602,
+            "win_prob_away": 0.398,
+            "predicted_spread": 3.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "SF",
+            "away_team": "PHI",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.62,
+            "win_prob_away": 0.38,
+            "predicted_spread": 3.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 17,
+            "home_team": "GB",
+            "away_team": "HOU",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.496,
+            "win_prob_away": 0.504,
+            "predicted_spread": -0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 16,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 17,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": {
+        "week": 18,
+        "games": [
+          {
+            "week": 18,
+            "home_team": "ARI",
+            "away_team": "SF",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.446,
+            "win_prob_away": 0.554,
+            "predicted_spread": -1.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "BAL",
+            "away_team": "PIT",
+            "predicted_winner": "BAL",
+            "win_prob_home": 0.605,
+            "win_prob_away": 0.395,
+            "predicted_spread": 3.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "BUF",
+            "away_team": "NYJ",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.664,
+            "win_prob_away": 0.336,
+            "predicted_spread": 5.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "CAR",
+            "away_team": "ATL",
+            "predicted_winner": "CAR",
+            "win_prob_home": 0.504,
+            "win_prob_away": 0.496,
+            "predicted_spread": 0.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "CIN",
+            "away_team": "CLE",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.652,
+            "win_prob_away": 0.348,
+            "predicted_spread": 5.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "DEN",
+            "away_team": "LAC",
+            "predicted_winner": "DEN",
+            "win_prob_home": 0.572,
+            "win_prob_away": 0.428,
+            "predicted_spread": 2.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "GB",
+            "away_team": "DET",
+            "predicted_winner": "DET",
+            "win_prob_home": 0.494,
+            "win_prob_away": 0.506,
+            "predicted_spread": -0.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "HOU",
+            "away_team": "TEN",
+            "predicted_winner": "HOU",
+            "win_prob_home": 0.682,
+            "win_prob_away": 0.318,
+            "predicted_spread": 6.1,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "IND",
+            "away_team": "JAX",
+            "predicted_winner": "JAX",
+            "win_prob_home": 0.397,
+            "win_prob_away": 0.603,
+            "predicted_spread": -3.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "KC",
+            "away_team": "LV",
+            "predicted_winner": "KC",
+            "win_prob_home": 0.648,
+            "win_prob_away": 0.352,
+            "predicted_spread": 4.9,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "LA",
+            "away_team": "SEA",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.477,
+            "win_prob_away": 0.523,
+            "predicted_spread": -0.7,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "MIN",
+            "away_team": "CHI",
+            "predicted_winner": "MIN",
+            "win_prob_home": 0.557,
+            "win_prob_away": 0.443,
+            "predicted_spread": 1.8,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "NE",
+            "away_team": "MIA",
+            "predicted_winner": "NE",
+            "win_prob_home": 0.685,
+            "win_prob_away": 0.315,
+            "predicted_spread": 6.2,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "NO",
+            "away_team": "TB",
+            "predicted_winner": "NO",
+            "win_prob_home": 0.575,
+            "win_prob_away": 0.425,
+            "predicted_spread": 2.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "NYG",
+            "away_team": "PHI",
+            "predicted_winner": "NYG",
+            "win_prob_home": 0.54,
+            "win_prob_away": 0.46,
+            "predicted_spread": 1.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 18,
+            "home_team": "WAS",
+            "away_team": "DAL",
+            "predicted_winner": "WAS",
+            "win_prob_home": 0.572,
+            "win_prob_away": 0.428,
+            "predicted_spread": 2.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          }
+        ],
+        "top_fantasy_plays": []
+      },
+      "season_context": {
+        "week": 17,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    },
+    {
+      "week": 18,
+      "is_completed": false,
+      "this_week": null,
+      "top_performers": null,
+      "next_week": null,
+      "season_context": {
+        "week": 18,
+        "division_leaders": [
+          {
+            "division": "AFC East",
+            "leader": "BUF",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC North",
+            "leader": "BAL",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC South",
+            "leader": "JAX",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "AFC West",
+            "leader": "KC",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC East",
+            "leader": "PHI",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC North",
+            "leader": "DET",
+            "wins": 1,
+            "losses": 0
+          },
+          {
+            "division": "NFC South",
+            "leader": "TB",
+            "wins": 0,
+            "losses": 1
+          },
+          {
+            "division": "NFC West",
+            "leader": "SEA",
+            "wins": 1,
+            "losses": 0
+          }
+        ],
+        "playoff_race": {
+          "leading_for_playoff": 14,
+          "leading_for_division": 8,
+          "wild_card_contenders": 6
+        },
+        "playoff_race_note": "Real, current playoff-odds projection (Monte Carlo simulation, recalculated every week off the latest in-season Elo recalibration) - not a fixed checkpoint like the completed 2025 season's Week-16 snapshot."
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "season_summary": {
+    "games": {
+      "total_games": 16,
+      "correct_predictions": 11,
+      "accuracy_pct": 68.8,
+      "mae_spread": 11.73,
+      "vs_vegas_spread": 10.86,
+      "vs_vegas_coverage": "14/16 completed games had a real, joined ESPN closing-line spread (see join_espn_odds_2026.py)"
+    },
+    "fantasy": {
+      "QB": {
+        "correlation": 0.649,
+        "mae": 7.94,
+        "samples": 56
+      },
+      "RB": {
+        "correlation": 0.683,
+        "mae": 5.37,
+        "samples": 114
+      },
+      "WR": {
+        "correlation": 0.515,
+        "mae": 5.89,
+        "samples": 147
+      },
+      "TE": {
+        "correlation": 0.425,
+        "mae": 4.67,
+        "samples": 73
+      }
+    },
+    "season_projections": null,
+    "season_projections_note": "Not available yet: the 2026 season is still in progress, so there is no real final outcome to score the season projections against. This section reappears once the real season ends.",
+    "betting": {
+      "moneyline_accuracy_pct": 68.8,
+      "note": "Spread coverage betting tested via edge_detection.py on 2015-2025 data: -36% ROI (real finding, not pursued). Moneyline accuracy above is the only real prediction this model's win-probability output makes. See the Betting Analysis page for a real, in-season ATS/moneyline backtest using the real ESPN odds captured for 2026 so far."
+    }
+  },
+  "weekly_breakdown": [
+    {
+      "week": 1,
+      "games": {
+        "correct": 11,
+        "total": 16,
+        "accuracy_pct": 68.8,
+        "mae_spread": 11.73,
+        "vs_vegas_mae": 10.86
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.649,
+          "mae": 7.94
+        },
+        "RB": {
+          "correlation": 0.683,
+          "mae": 5.37
+        },
+        "WR": {
+          "correlation": 0.515,
+          "mae": 5.89
+        },
+        "TE": {
+          "correlation": 0.425,
+          "mae": 4.67
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 68.8
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "week": 2,
-  "generated_at": "2026-09-16T19:32:35.382962+00:00",
+  "generated_at": "2026-09-16T21:20:25.148054+00:00",
   "source": "ESPN live injury report (site.api.espn.com/.../nfl/injuries) - see get_espn_injuries.py",
   "methodology_note": "Real, disclosed scope: confirmed Out/Injured Reserve players are shown with adjusted_projected_ppr=0.0 (a real fact - they won't play). Questionable players are flagged but NOT numerically adjusted - no real, fit model exists in this project for how much a game-status designation should reduce a projection, so none was invented. Backup players are NOT boosted for the same reason - no real model exists for how much workload/points a backup absorbs when a starter is out. This is a real, separate overlay - it does not modify player_props_2026.json, fantasy_rankings_2026.json, games_2026.json, or data/locked_predictions/.",
   "confirmed_out_count": 6,

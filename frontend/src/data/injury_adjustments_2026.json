@@ -1,51 +1,12 @@
 {
-  "week": 1,
-  "generated_at": "2026-09-16T15:51:19.109034+00:00",
+  "week": 2,
+  "generated_at": "2026-09-16T16:21:25.539937+00:00",
   "source": "ESPN live injury report (site.api.espn.com/.../nfl/injuries) - see get_espn_injuries.py",
   "methodology_note": "Real, disclosed scope: confirmed Out/Injured Reserve players are shown with adjusted_projected_ppr=0.0 (a real fact - they won't play). Questionable players are flagged but NOT numerically adjusted - no real, fit model exists in this project for how much a game-status designation should reduce a projection, so none was invented. Backup players are NOT boosted for the same reason - no real model exists for how much workload/points a backup absorbs when a starter is out. This is a real, separate overlay - it does not modify player_props_2026.json, fantasy_rankings_2026.json, games_2026.json, or data/locked_predictions/.",
   "confirmed_out_count": 6,
   "questionable_count": 17,
   "unmatched_flagged_count": 111,
   "players": [
-    {
-      "name": "Josh Jacobs",
-      "team": "GB",
-      "position": "RB",
-      "status": "Out",
-      "confirmed_out": true,
-      "body_part": "Personal",
-      "detail": "Not Specified",
-      "return_date": "2026-09-27",
-      "source_note": "Jacobs (personal) remains on the Commissioner's Exempt List, but the NFL may count time on the list as time served if it eventually issues a suspension to the running back, Adam Schefter of ESPN reports.",
-      "original_projected_ppr": 16.1,
-      "adjusted_projected_ppr": 0.0
-    },
-    {
-      "name": "James Conner",
-      "team": "ARI",
-      "position": "RB",
-      "status": "Injured Reserve",
-      "confirmed_out": true,
-      "body_part": "Foot",
-      "detail": "Not Specified",
-      "return_date": "2026-10-11",
-      "source_note": "The Cardinals are placing Conner (foot) on injured reserve with a designation to return, John Gambadoro of Arizona Sports 98.7 FM Phoenix reports.",
-      "original_projected_ppr": 11.1,
-      "adjusted_projected_ppr": 0.0
-    },
-    {
-      "name": "Dillon Gabriel",
-      "team": "CLE",
-      "position": "QB",
-      "status": "Injured Reserve",
-      "confirmed_out": true,
-      "body_part": "Back",
-      "detail": "Not Specified",
-      "return_date": "2026-10-11",
-      "source_note": "ir",
-      "original_projected_ppr": 7.0,
-      "adjusted_projected_ppr": 0.0
-    },
     {
       "name": "Tyrell Shavers",
       "team": "BUF",
@@ -60,6 +21,19 @@
       "adjusted_projected_ppr": 0.0
     },
     {
+      "name": "James Conner",
+      "team": "ARI",
+      "position": "RB",
+      "status": "Injured Reserve",
+      "confirmed_out": true,
+      "body_part": "Foot",
+      "detail": "Not Specified",
+      "return_date": "2026-10-11",
+      "source_note": "The Cardinals are placing Conner (foot) on injured reserve with a designation to return, John Gambadoro of Arizona Sports 98.7 FM Phoenix reports.",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
       "name": "Dylan Sampson",
       "team": "CLE",
       "position": "RB",
@@ -69,7 +43,20 @@
       "detail": "Not Specified",
       "return_date": "2026-10-18",
       "source_note": "Sampson (knee) was placed on injured reserve Tuesday.",
-      "original_projected_ppr": 6.0,
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Dillon Gabriel",
+      "team": "CLE",
+      "position": "QB",
+      "status": "Injured Reserve",
+      "confirmed_out": true,
+      "body_part": "Back",
+      "detail": "Not Specified",
+      "return_date": "2026-10-11",
+      "source_note": "ir",
+      "original_projected_ppr": 0.0,
       "adjusted_projected_ppr": 0.0
     },
     {
@@ -82,47 +69,21 @@
       "detail": "Surgery",
       "return_date": "2027-02-15",
       "source_note": "The Cowboys placed Davis (hip) on injured reserve Saturday, Adam Schefter of ESPN reports.",
-      "original_projected_ppr": 4.1,
+      "original_projected_ppr": 0.0,
       "adjusted_projected_ppr": 0.0
     },
     {
-      "name": "Kyler Murray",
-      "team": "MIN",
-      "position": "QB",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Concussion",
-      "detail": "Concussion",
-      "return_date": "2026-09-20",
-      "source_note": "Vikings head coach Kevin O'Connell said Monday that Murray is in concussion protocol and will be evaluated day by day leading up Sunday's road game in Chicago, Alec Lewis of The Athletic reports.",
-      "original_projected_ppr": 16.0,
-      "adjusted_projected_ppr": 16.0
-    },
-    {
-      "name": "Brock Bowers",
-      "team": "LV",
-      "position": "TE",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Knee - Meniscus",
-      "detail": "Surgery",
-      "return_date": "2026-09-20",
-      "source_note": "The knee injury Bowers is recovering from \"is not overly serious,\" and it's \"possible\" he could return in Week 2, Dan Graziano of ESPN.com reports.",
-      "original_projected_ppr": 14.5,
-      "adjusted_projected_ppr": 14.5
-    },
-    {
-      "name": "Michael Penix Jr.",
-      "team": "ATL",
-      "position": "QB",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Knee - ACL",
-      "detail": "Surgery",
-      "return_date": "2026-09-20",
-      "source_note": "questionable",
-      "original_projected_ppr": 13.6,
-      "adjusted_projected_ppr": 13.6
+      "name": "Josh Jacobs",
+      "team": "GB",
+      "position": "RB",
+      "status": "Out",
+      "confirmed_out": true,
+      "body_part": "Personal",
+      "detail": "Not Specified",
+      "return_date": "2026-09-27",
+      "source_note": "Jacobs (personal) remains on the Commissioner's Exempt List, but the NFL may count time on the list as time served if it eventually issues a suspension to the running back, Adam Schefter of ESPN reports.",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
     },
     {
       "name": "Zay Flowers",
@@ -138,17 +99,17 @@
       "adjusted_projected_ppr": 13.3
     },
     {
-      "name": "TreVeyon Henderson",
-      "team": "NE",
+      "name": "Jordan Mason",
+      "team": "MIN",
       "position": "RB",
       "status": "Questionable",
       "confirmed_out": false,
-      "body_part": "Ankle",
-      "detail": "Not Specified",
+      "body_part": "Thumb",
+      "detail": "Soreness",
       "return_date": "2026-09-20",
-      "source_note": "Coach Mike Vrabel said Henderson (ankle) will practice Monday, Mike Reiss of ESPN.com reports.",
-      "original_projected_ppr": 12.2,
-      "adjusted_projected_ppr": 12.2
+      "source_note": "Vikings head coach Kevin O'Connell said Monday that Mason is being further evaluated after experiencing thumb soreness coming out of Sunday's 39-22 win over the Packers, Alec Lewis of The Athletic reports.",
+      "original_projected_ppr": 11.9,
+      "adjusted_projected_ppr": 11.9
     },
     {
       "name": "Alec Pierce",
@@ -164,19 +125,6 @@
       "adjusted_projected_ppr": 11.7
     },
     {
-      "name": "Tua Tagovailoa",
-      "team": "ATL",
-      "position": "QB",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Oblique",
-      "detail": "Strain",
-      "return_date": "2026-09-20",
-      "source_note": "questionable",
-      "original_projected_ppr": 11.5,
-      "adjusted_projected_ppr": 11.5
-    },
-    {
       "name": "Ladd McConkey",
       "team": "LAC",
       "position": "WR",
@@ -190,19 +138,6 @@
       "adjusted_projected_ppr": 10.8
     },
     {
-      "name": "Alvin Kamara",
-      "team": "NO",
-      "position": "RB",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Knee - MCL",
-      "detail": "Sprain",
-      "return_date": "2026-09-20",
-      "source_note": "questionable",
-      "original_projected_ppr": 9.5,
-      "adjusted_projected_ppr": 9.5
-    },
-    {
       "name": "Brian Thomas Jr.",
       "team": "JAX",
       "position": "WR",
@@ -214,32 +149,6 @@
       "source_note": "Coach Liam Coen said Monday that Thomas (shoulder) will be limited in practice this week, Michael DiRocco of ESPN.com reports.",
       "original_projected_ppr": 9.3,
       "adjusted_projected_ppr": 9.3
-    },
-    {
-      "name": "Jake Tonges",
-      "team": "SF",
-      "position": "TE",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Knee",
-      "detail": "Not Specified",
-      "return_date": "2026-09-20",
-      "source_note": "Coach Kyle Shanahan said after Thursday night's win over the Rams that Tonges' knee injury \"does not look good,\" Vic Tafur of The Athletic reports.",
-      "original_projected_ppr": 9.3,
-      "adjusted_projected_ppr": 9.3
-    },
-    {
-      "name": "Jordan Mason",
-      "team": "MIN",
-      "position": "RB",
-      "status": "Questionable",
-      "confirmed_out": false,
-      "body_part": "Thumb",
-      "detail": "Soreness",
-      "return_date": "2026-09-20",
-      "source_note": "Vikings head coach Kevin O'Connell said Monday that Mason is being further evaluated after experiencing thumb soreness coming out of Sunday's 39-22 win over the Packers, Alec Lewis of The Athletic reports.",
-      "original_projected_ppr": 8.2,
-      "adjusted_projected_ppr": 8.2
     },
     {
       "name": "Jalen Coker",
@@ -281,6 +190,32 @@
       "adjusted_projected_ppr": 6.3
     },
     {
+      "name": "Tua Tagovailoa",
+      "team": "ATL",
+      "position": "QB",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Oblique",
+      "detail": "Strain",
+      "return_date": "2026-09-20",
+      "source_note": "questionable",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Michael Penix Jr.",
+      "team": "ATL",
+      "position": "QB",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Knee - ACL",
+      "detail": "Surgery",
+      "return_date": "2026-09-20",
+      "source_note": "questionable",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
       "name": "Ty Johnson",
       "team": "BUF",
       "position": "RB",
@@ -290,8 +225,60 @@
       "detail": "Not Specified",
       "return_date": "2026-09-17",
       "source_note": "Johnson (hamstring) was a limited participant in Tuesday's practice.",
-      "original_projected_ppr": 5.9,
-      "adjusted_projected_ppr": 5.9
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Brock Bowers",
+      "team": "LV",
+      "position": "TE",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Knee - Meniscus",
+      "detail": "Surgery",
+      "return_date": "2026-09-20",
+      "source_note": "The knee injury Bowers is recovering from \"is not overly serious,\" and it's \"possible\" he could return in Week 2, Dan Graziano of ESPN.com reports.",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "TreVeyon Henderson",
+      "team": "NE",
+      "position": "RB",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Ankle",
+      "detail": "Not Specified",
+      "return_date": "2026-09-20",
+      "source_note": "Coach Mike Vrabel said Henderson (ankle) will practice Monday, Mike Reiss of ESPN.com reports.",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Alvin Kamara",
+      "team": "NO",
+      "position": "RB",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Knee - MCL",
+      "detail": "Sprain",
+      "return_date": "2026-09-20",
+      "source_note": "questionable",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Jake Tonges",
+      "team": "SF",
+      "position": "TE",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Knee",
+      "detail": "Not Specified",
+      "return_date": "2026-09-20",
+      "source_note": "Coach Kyle Shanahan said after Thursday night's win over the Rams that Tonges' knee injury \"does not look good,\" Vic Tafur of The Athletic reports.",
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
     },
     {
       "name": "Sean Tucker",
@@ -303,8 +290,21 @@
       "detail": "Not Specified",
       "return_date": "2026-09-20",
       "source_note": "questionable",
-      "original_projected_ppr": 5.4,
-      "adjusted_projected_ppr": 5.4
+      "original_projected_ppr": 0.0,
+      "adjusted_projected_ppr": 0.0
+    },
+    {
+      "name": "Kyler Murray",
+      "team": "MIN",
+      "position": "QB",
+      "status": "Questionable",
+      "confirmed_out": false,
+      "body_part": "Concussion",
+      "detail": "Concussion",
+      "return_date": "2026-09-20",
+      "source_note": "Vikings head coach Kevin O'Connell said Monday that Murray is in concussion protocol and will be evaluated day by day leading up Sunday's road game in Chicago, Alec Lewis of The Athletic reports.",
+      "original_projected_ppr": -0.4,
+      "adjusted_projected_ppr": -0.4
     }
   ]
 }

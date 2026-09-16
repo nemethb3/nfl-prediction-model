@@ -13,7 +13,13 @@ export default function AccuracyTracker() {
   const [activeTab, setActiveTab] = useState('games');
   const [selectedWeek, setSelectedWeek] = useState(null);
 
-  if (!hasResults) {
+  // Real, per-component gate: whether this season actually has real
+  // accuracy data, not the global hasResults flag (which means "season
+  // fully complete" - a live, in-progress season like 2026 has real,
+  // partial accuracy data well before hasResults would ever be true, and
+  // flipping hasResults itself would break other components' auto-navigate
+  // logic that depends on it meaning "complete").
+  if (!accuracyData || !accuracyData.season_summary.games) {
     return (
       <div className="accuracy-tracker">
         <SeasonDataUnavailable season={selectedSeason} sectionName="Accuracy Tracker" />
@@ -23,6 +29,7 @@ export default function AccuracyTracker() {
 
   const summary = accuracyData.season_summary;
   const weeklyData = accuracyData.weekly_breakdown;
+  const seasonLabel = hasResults ? `completed ${selectedSeason} season` : `${selectedSeason} season, in progress`;
 
   const currentData = selectedWeek ? weeklyData.find((w) => w.week === selectedWeek) : summary;
 
@@ -36,7 +43,7 @@ export default function AccuracyTracker() {
     <div className="accuracy-tracker">
       <div className="header">
         <h1>Accuracy Tracker</h1>
-        <p className="subtitle">Real model performance vs. real Vegas lines and real outcomes, 2025 season</p>
+        <p className="subtitle">Real model performance vs. real Vegas lines and real outcomes, {seasonLabel}</p>
       </div>
 
       <div className="week-selector">
@@ -71,11 +78,26 @@ export default function AccuracyTracker() {
               subtitle={`${currentData.games.correct_predictions ?? currentData.games.correct}/${currentData.games.total_games ?? currentData.games.total} correct`}
             />
             <MetricCard title="MAE (Our Spread)" value={`${currentData.games.mae_spread}`} subtitle="Points off on average" />
-            <MetricCard title="MAE (Vegas)" value={`${currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae}`} subtitle="For comparison" />
-            <div className="chart-confidence-note">
-              📊 Real weekly spread MAE has ranged {maeRange.min.toFixed(1)}–{maeRange.max.toFixed(1)} points across the
-              2025 season - a single week's number is expected to vary well outside the season average shown above.
-            </div>
+            <MetricCard
+              title="MAE (Vegas)"
+              value={currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae ?? 'N/A'}
+              subtitle={
+                currentData.games.vs_vegas_spread == null && currentData.games.vs_vegas_mae == null
+                  ? 'No real Vegas line joined for these games yet'
+                  : 'For comparison'
+              }
+            />
+            {weeklyData.length > 1 ? (
+              <div className="chart-confidence-note">
+                📊 Real weekly spread MAE has ranged {maeRange.min.toFixed(1)}–{maeRange.max.toFixed(1)} points across the
+                {' '}{seasonLabel} - a single week's number is expected to vary well outside the season average shown above.
+              </div>
+            ) : (
+              <div className="chart-confidence-note">
+                📊 Only {weeklyData.length} real week{weeklyData.length === 1 ? '' : 's'} of the {seasonLabel} completed so
+                far - too early for a meaningful week-to-week range.
+              </div>
+            )}
           </div>
         )}
 
@@ -103,7 +125,7 @@ export default function AccuracyTracker() {
             {activeTab === 'fantasy' && !selectedWeek && (
               <p className="tab-note">
                 WR now uses a real trailing up-to-4-week actual-PPR average (Phase 4 backtest
-                winner) rather than a static season-long figure - only a player's first real 2025
+                winner) rather than a static season-long figure - only a player's first real {selectedSeason}
                 appearance still falls back to the static number (see Section 2). WR's real
                 correlation is still the lowest of the four positions, but only marginally below
                 QB's now, not because of a static-projection artifact.
@@ -134,6 +156,12 @@ export default function AccuracyTracker() {
         {activeTab === 'season' && selectedWeek && (
           <p className="tab-note">Season projection accuracy is a single season-level metric (week-16 snapshot vs. real final outcome) - switch to Full Season to view it.</p>
         )}
+        {activeTab === 'season' && !selectedWeek && !summary.season_projections && (
+          <p className="tab-note">
+            {summary.season_projections_note ||
+              'Not available yet - this compares a projection snapshot to the real final season outcome.'}
+          </p>
+        )}
 
         {activeTab === 'betting' && currentData.betting && (
           <div className="betting-section">
@@ -161,40 +189,49 @@ export default function AccuracyTracker() {
           <p className="tab-note">Trends show the full-season week-by-week view - switch to Full Season to see it.</p>
         )}
 
-        {activeTab === 'comparison' && currentData.games && (
-          <div className="comparison-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  <th>Our Model</th>
-                  <th>Vegas</th>
-                  <th>Difference</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Spread MAE</td>
-                  <td>{currentData.games.mae_spread}</td>
-                  <td>{currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae}</td>
-                  <td className={currentData.games.mae_spread < (currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae) ? 'win' : 'loss'}>
-                    {((currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae) - currentData.games.mae_spread).toFixed(2)}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        )}
+        {activeTab === 'comparison' && currentData.games && (() => {
+          const vegasMae = currentData.games.vs_vegas_spread ?? currentData.games.vs_vegas_mae ?? null;
+          return (
+            <div className="comparison-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Our Model</th>
+                    <th>Vegas</th>
+                    <th>Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Spread MAE</td>
+                    <td>{currentData.games.mae_spread}</td>
+                    <td>{vegasMae ?? 'N/A'}</td>
+                    <td className={vegasMae == null ? '' : currentData.games.mae_spread < vegasMae ? 'win' : 'loss'}>
+                      {vegasMae == null ? 'No real Vegas line joined yet' : (vegasMae - currentData.games.mae_spread).toFixed(2)}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        })()}
       </div>
 
       <div className="disclaimer">
         <p>
-          Real 2025 data throughout. Games/betting/fantasy metrics are computed from this
-          project's own dashboard exports (games_2025.json, fantasy_rankings_2025.json), not
-          re-derived from raw pipeline files. Season projection accuracy compares the real
-          week-16 checkpoint snapshot against the real final 18-week outcome. Weekly data covers
-          completed games only - this is a fully-completed historical season, so all 18 weeks
-          have real data.
+          Real {selectedSeason} data throughout. Games/betting/fantasy metrics are computed from this
+          project's own dashboard exports (games_{selectedSeason}.json, fantasy_rankings_{selectedSeason}.json), not
+          re-derived from raw pipeline files.{' '}
+          {hasResults
+            ? 'Season projection accuracy compares the real week-16 checkpoint snapshot against the real ' +
+              'final 18-week outcome. Weekly data covers completed games only - this is a fully-completed ' +
+              'historical season, so all 18 weeks have real data.'
+            : `This season is still in progress - only ${weeklyData.length} of 18 real weeks have completed ` +
+              'games so far, so Season Projection accuracy (which needs a real final outcome) is not shown yet. ' +
+              "Vegas-line comparisons only cover games where a real closing line was joined (see each week's " +
+              'own coverage note) - the 2026 season has no real posted lines this far out except what this ' +
+              "project's own ESPN odds collection has captured."}
         </p>
       </div>
     </div>

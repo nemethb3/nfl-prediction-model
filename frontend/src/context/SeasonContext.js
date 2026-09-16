@@ -62,18 +62,27 @@ const SEASON_FILE_LOADERS = {
       injuryAdjustments: null,
     };
   },
-  // 2026: accuracyTracker/weeklySummary/bettingBacktest/totalsBettingBacktest
-  // genuinely don't exist yet (real, unplayed season - see
-  // constants/seasons.js; the totals backtest is real-2025-holdout-only,
-  // same reasoning as backtest_totals_betting_2025.py's own scoping), so
-  // they're real `null`, not a fabricated/missing import.
+  // 2026: accuracyTracker/weeklySummary/bettingBacktest are real, in-season
+  // (partial) data as of the real completed Week 1 - see generate_accuracy_
+  // tracker_dashboard_data_2026.py / generate_weekly_summary_dashboard_data_
+  // 2026.py / betting_backtest_2026.py. Each file self-discloses its own
+  // real coverage (e.g. betting_backtest_results_2026.json's real_odds_
+  // coverage_note) rather than pretending to be the same shape as a
+  // completed season's file. totalsBettingBacktest stays real `null` - a
+  // real point-totals backtest would need the same genuine holdout
+  // methodology as backtest_totals_betting_2025.py, not yet built for 2026
+  // (disclosed gap, not fabricated).
   2026: async () => {
-    const [games, fantasy, seasonProjections, superbowlOdds, playerProps, breakoutAlerts, rookieScores,
+    const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest,
+      superbowlOdds, playerProps, breakoutAlerts, rookieScores,
       powerRankings, awardRaces, injuryAdjustments] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
         import('../data/season_projections_2026.json'),
+        import('../data/accuracy_tracker_2026.json'),
+        import('../data/weekly_summary_2026.json'),
+        import('../data/betting_backtest_results_2026.json'),
         import('../data/superbowl_odds_2026.json'),
         import('../data/player_props_2026.json'),
         import('../data/breakout_alerts_2026.json'),
@@ -86,9 +95,9 @@ const SEASON_FILE_LOADERS = {
       games: games.default,
       fantasy: fantasy.default,
       seasonProjections: seasonProjections.default,
-      accuracyTracker: null,
-      weeklySummary: null,
-      bettingBacktest: null,
+      accuracyTracker: accuracyTracker.default,
+      weeklySummary: weeklySummary.default,
+      bettingBacktest: bettingBacktest.default,
       totalsBettingBacktest: null,
       superbowlOdds: superbowlOdds.default,
       playerProps: playerProps.default,

@@ -20,6 +20,17 @@ jest.mock('./data/season_projections_2025.json', () => ([]));
 jest.mock('./data/season_projections_2026.json', () => ([]));
 jest.mock('./data/accuracy_tracker_2025.json', () => ({ season_summary: {}, weekly_breakdown: [] }));
 jest.mock('./data/weekly_summary_2025.json', () => ({ current_week: null, weeks: [] }));
+// Real, in-season 2026 equivalents (added once join_espn_odds_2026.py/
+// generate_accuracy_tracker_dashboard_data_2026.py/generate_weekly_summary_
+// dashboard_data_2026.py/betting_backtest_2026.py started producing real,
+// partial-season data for 2026 - see SeasonContext.js's 2026 loader).
+// Mocked for the same reason as their 2025 counterparts: test isolation
+// from the real, growing files, not because the shape differs.
+jest.mock('./data/accuracy_tracker_2026.json', () => ({
+  season_summary: { games: null, fantasy: null, season_projections: null, betting: null },
+  weekly_breakdown: [],
+}));
+jest.mock('./data/weekly_summary_2026.json', () => ({ current_week: null, weeks: [] }));
 // Real minimal shape BettingAnalysis.js actually expects (verified against
 // its own real destructuring: resultsData[strategy][betType].season_summary/
 // weekly_summary/bets) - an empty {} (this file's previous mock) would have
@@ -39,6 +50,17 @@ jest.mock('./data/betting_backtest_results_2025.json', () => ({
   our_system: { label: 'Our System', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
   vegas_favorites: { label: 'Vegas Favorites', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
   underdogs_only: { label: 'Underdogs Only', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+}));
+// Real, in-season 2026 shape (betting_backtest_2026.py) - same 3 real
+// strategy sub-dicts PLUS 2 extra metadata keys with no `.label`
+// (real_odds_coverage_note/ats_juice_assumption) that BettingAnalysis.js's
+// strategyKeys must filter out rather than render as a broken 4th strategy.
+jest.mock('./data/betting_backtest_results_2026.json', () => ({
+  our_system: { label: 'Our System', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+  vegas_favorites: { label: 'Vegas Favorites', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+  underdogs_only: { label: 'Underdogs Only', description: 'test strategy', moneyline: mockBetType(), ats: mockBetType() },
+  real_odds_coverage_note: 'test coverage note',
+  ats_juice_assumption: 'test juice assumption',
 }));
 jest.mock('./data/superbowl_odds_2025.json', () => ({ teams: [] }));
 jest.mock('./data/superbowl_odds_2026.json', () => ({ teams: [] }));
@@ -92,21 +114,26 @@ describe('App', () => {
   test('switching season while on Betting Analysis does not crash (real regression)', async () => {
     // Real bug: SeasonContext.js's old `dataLoading` was a separate useState
     // only reset inside a useEffect (runs after render), one tick behind a
-    // selectedSeason change - real 2026->2025 default DEFAULT_SEASON=2026,
-    // hasResults=false so BettingAnalysis first renders its real
-    // SeasonDataUnavailable state (not a crash) - switching to 2025 (real
+    // selectedSeason change - real 2026->2025 default DEFAULT_SEASON=2026;
     // hasResults=true, synchronous with dataLoading now) used to leave a
     // window where hasResults flipped true before seasonData had loaded,
     // crashing BettingAnalysis on `seasonData.bettingBacktest` being
     // undefined. Fixed by deriving dataLoading synchronously instead.
+    //
+    // 2026 now renders real, in-season (partial) data here too (see
+    // betting_backtest_2026.py) - it's gated on real data presence, not the
+    // "season fully complete" hasResults flag (see BettingAnalysis.js) - so
+    // this now checks real content on both seasons instead of 2026's old
+    // "Not available" placeholder, which was only ever true because no 2026
+    // betting data existed yet.
     await renderAppAndWaitForData();
     fireEvent.click(screen.getByText('Betting Analysis'));
-    expect(await screen.findByText('Not available for 2026')).toBeInTheDocument();
-
-    fireEvent.change(screen.getByLabelText('Season'), { target: { value: '2025' } });
     // Regex/partial match, not an exact 'Our System' string - that text is
     // ambiguous with the real static "Our System:" methodology bullet
     // elsewhere in this same component.
+    expect(await screen.findByText(/Strategy Comparison/)).toBeInTheDocument();
+
+    fireEvent.change(screen.getByLabelText('Season'), { target: { value: '2025' } });
     expect(await screen.findByText(/Strategy Comparison/)).toBeInTheDocument();
     expect(screen.queryByText('Section Error')).not.toBeInTheDocument();
   });

@@ -74,7 +74,11 @@ def _key_players(team, week, fantasy_df, n=3):
     return [f"{r['name']} ({r['position']})" for _, r in team_players.head(n).iterrows()]
 
 
-def compute_weekly_summary(games_df, fantasy_df, season_projections_df, current_week):
+DEFAULT_PLAYOFF_RACE_NOTE = "Week-16 snapshot (not true elimination numbers) - see Section 3 for detail."
+
+
+def compute_weekly_summary(games_df, fantasy_df, season_projections_df, current_week,
+                            playoff_race_note=DEFAULT_PLAYOFF_RACE_NOTE):
     weekly_data = {"current_week": current_week, "weeks": []}
 
     for week in range(1, MAX_WEEK + 1):
@@ -213,7 +217,7 @@ def compute_weekly_summary(games_df, fantasy_df, season_projections_df, current_
                 "leading_for_division": division_winner_count,
                 "wild_card_contenders": int(wild_card_contenders),
             },
-            "playoff_race_note": "Week-16 snapshot (not true elimination numbers) - see Section 3 for detail.",
+            "playoff_race_note": playoff_race_note,
         }
 
         weekly_data["weeks"].append(week_summary)

@@ -114,11 +114,31 @@ arbitrary sequence):
       standard real fantasy-industry "rest-of-season" convention), instead
       of the pasted spec's crude, separately-weighted "actual x 17 pace"
       replacement - see that script's own module docstring.
+  16. join_espn_odds_2026.py (added 2026-09-16) - real, joins the already-
+      collected ESPN odds history (step 3's accumulated output) into
+      games_2026.json's own vegas_spread field, plus a new real per-game
+      moneyline/spread-price file (data/processed/vegas_lines_2026.csv).
+      Must run after step 4 (which rewrites games_2026.json fresh every
+      time, same wipe hazard as steps 4/8) - placed right after it.
+  17. generate_accuracy_tracker_dashboard_data_2026.py (added 2026-09-16) -
+      real, in-season Accuracy Tracker (games/fantasy sections only -
+      season-projection accuracy isn't scoreable until the real season
+      ends). Needs steps 6/9/16's real data.
+  18. generate_weekly_summary_dashboard_data_2026.py (added 2026-09-16) -
+      real, in-season Weekly Summary; reuses the 2025 generator's already-
+      generic compute_weekly_summary() unchanged. Needs step 11's real
+      season projections.
+  19. betting_backtest_2026.py (added 2026-09-16) - real, in-season
+      Betting Analysis (moneyline + ATS), reusing betting_backtest.py's
+      already-validated strategies/settlement math. Needs step 16's real
+      vegas_lines_2026.csv.
 
 Real, disclosed scope: every real 2026 deliverable this project ships now
 genuinely recalibrates from real completed games - Elo, Division Winners,
 Playoff Picture, Super Bowl odds, Power Rankings, Trade Scores, MVP race,
-and (new) Week 2+ fantasy projections.
+Week 2+ fantasy projections, and (new) a real, in-season Accuracy Tracker/
+Weekly Summary/Betting Analysis (partial-coverage, honestly disclosed
+where real Vegas data doesn't reach yet - see each script's own docstring).
 """
 
 import json
@@ -163,6 +183,10 @@ class WeeklyRefresh:
         self.step("Updating live rosters", ["update_rosters_2026.py"])
         self.step("Collecting ESPN odds", ["espn_odds_orchestrate.py"])
         self.step("Games pipeline (Elo spread/win-prob + point-totals)", ["orchestrate_2026_pipeline.py"])
+        # Must run right after the games pipeline (which rewrites games_2026.json
+        # fresh every time) - joins the real, already-collected ESPN odds history
+        # into games_2026.json's vegas_spread + a real per-game moneyline file.
+        self.step("Joining real ESPN odds history into games_2026.json", ["join_espn_odds_2026.py"])
         self.step("Refreshing current O/D-Elo file (Power Rankings/Trade Scores)",
                   ["recalibrate_2026_elo.py"])
         self.step("Ingesting completed game results + player box scores",
@@ -207,6 +231,14 @@ class WeeklyRefresh:
         self.step("Regenerating Power Rankings", ["generate_power_rankings_2026.py"])
         self.step("Regenerating trade scores", ["generate_trade_scores_2026.py"])
         self.step("Regenerating MVP race", ["generate_mvp_race_2026.py"])
+        # Real, in-season Accuracy Tracker/Weekly Summary/Betting Analysis -
+        # need this run's real ingested results, real joined odds, and real
+        # season projections, so they run last.
+        self.step("Regenerating in-season accuracy tracker",
+                  ["generate_accuracy_tracker_dashboard_data_2026.py"])
+        self.step("Regenerating in-season weekly summary",
+                  ["generate_weekly_summary_dashboard_data_2026.py"])
+        self.step("Regenerating in-season betting analysis", ["betting_backtest_2026.py"])
         self.step("Verifying data", self.verify_data)
 
         self.log_refresh()

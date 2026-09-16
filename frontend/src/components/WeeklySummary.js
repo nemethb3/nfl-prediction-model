@@ -17,7 +17,10 @@ export default function WeeklySummary() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSeason]);
 
-  if (!hasResults) {
+  // Real, per-component gate (see AccuracyTracker.js for the same reasoning):
+  // whether this season has any real weekly data at all, not the global
+  // hasResults flag (which means "season fully complete").
+  if (!summaryData) {
     return (
       <div className="weekly-summary">
         <SeasonDataUnavailable season={selectedSeason} sectionName="Weekly Summary" />
@@ -236,7 +239,7 @@ export default function WeeklySummary() {
           <section className="section">
             <h2>Next Week Preview</h2>
             <p className="tab-note">
-              No week {MAX_WEEK + 1} preview - this real 2025 season ends at week {MAX_WEEK}.
+              No week {MAX_WEEK + 1} preview - the real {selectedSeason} season ends at week {MAX_WEEK}.
             </p>
           </section>
         )
@@ -287,14 +290,18 @@ export default function WeeklySummary() {
 
       <div className="disclaimer">
         <p>
-          Real 2025 data throughout - no fabricated narratives. "This Week" recaps use real
-          completed-game results; "Next Week" preview uses this project's real predictions for
-          that week (which, since this is a completed historical season, already happened - shown
-          as a preview for demo purposes, not a live forecast). Week {MAX_WEEK} (the default view)
-          has no next-week preview since the real season ends there. Season Context reuses
-          Section 3's real week-16 checkpoint snapshot for every week shown here (not
-          re-computed per week) - "leading for playoff/division" reflects that fixed snapshot,
-          not true week-by-week elimination math.
+          Real {selectedSeason} data throughout - no fabricated narratives. "This Week" recaps use real
+          completed-game results; "Next Week" preview uses this project's real predictions for that week.
+          {hasResults
+            ? ` (Which, since this is a completed historical season, already happened - shown as a preview ` +
+              `for demo purposes, not a live forecast). Week ${MAX_WEEK} (the default view) has no next-week ` +
+              `preview since the real season ends there. Season Context reuses Section 3's real week-16 ` +
+              `checkpoint snapshot for every week shown here (not re-computed per week) - "leading for ` +
+              `playoff/division" reflects that fixed snapshot, not true week-by-week elimination math.`
+            : ` This is a genuine, live forecast - the season is still in progress. Season Context shows this ` +
+              `project's real, current playoff-odds projection (recalculated every week off the latest ` +
+              `in-season Elo recalibration, not a fixed snapshot) - "leading for playoff/division" reflects ` +
+              `that live projection, not true week-by-week elimination math.`}
         </p>
       </div>
     </div>

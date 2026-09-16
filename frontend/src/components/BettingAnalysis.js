@@ -49,7 +49,10 @@ export default function BettingAnalysis() {
   const [selectedStrategy, setSelectedStrategy] = useState('our_system');
   const [expandedWeek, setExpandedWeek] = useState(null);
 
-  if (!hasResults) {
+  // Real, per-component gate (see AccuracyTracker.js for the same
+  // reasoning): whether this season has any real backtest data at all, not
+  // the global hasResults flag (which means "season fully complete").
+  if (!resultsData) {
     return (
       <div className="betting-analysis">
         <SeasonDataUnavailable season={selectedSeason} sectionName="Betting Analysis" />
@@ -63,7 +66,11 @@ export default function BettingAnalysis() {
   // strategy-comparison/weekly-breakdown computations below only apply to
   // the other two bet types.
   const isTotals = betType === 'totals';
-  const strategyKeys = isTotals ? [] : Object.keys(resultsData);
+  // Real, disclosed: betting_backtest_results_2026.json carries 2 extra
+  // metadata keys (real_odds_coverage_note/ats_juice_assumption) alongside
+  // the 3 real strategy sub-dicts (2025's file has only the 3) - filtered
+  // out here rather than rendered as a fourth, broken "strategy".
+  const strategyKeys = isTotals ? [] : Object.keys(resultsData).filter((k) => resultsData[k]?.label);
   const current = isTotals ? null : resultsData[selectedStrategy][betType];
   const seasonSummary = isTotals ? null : current.season_summary;
   const dollarPnL = isTotals ? null : seasonSummary.pnl_units * unitSize;
@@ -77,9 +84,14 @@ export default function BettingAnalysis() {
       <div className="header">
         <h1>Betting Analysis</h1>
         <p className="subtitle">
-          Three win/loss strategies (moneyline and against-the-spread) plus a separate point-totals
-          edge strategy, all backtested on real completed 2025 games using real Vegas odds/lines.
+          Three win/loss strategies (moneyline and against-the-spread){hasResults && ' plus a separate point-totals edge strategy'},
+          {' '}backtested on real completed {selectedSeason} games using real Vegas odds/lines.
         </p>
+        {!hasResults && resultsData.real_odds_coverage_note && (
+          <p className="subtitle" style={{ marginTop: '0.5rem' }}>
+            ⚠️ In-season, partial coverage: {resultsData.real_odds_coverage_note} {resultsData.ats_juice_assumption}
+          </p>
+        )}
       </div>
 
       <div className="controls">
@@ -98,7 +110,9 @@ export default function BettingAnalysis() {
         </div>
 
         <div className="bet-type-toggle">
-          {Object.entries(BET_TYPE_LABELS).map(([key, label]) => (
+          {Object.entries(BET_TYPE_LABELS)
+            .filter(([key]) => key !== 'totals' || totalsBettingBacktest)
+            .map(([key, label]) => (
             <button
               key={key}
               className={`bet-type-btn ${betType === key ? 'active' : ''}`}
@@ -509,44 +523,84 @@ export default function BettingAnalysis() {
 
       <div className="methodology">
         <h3>Methodology</h3>
-        <ul>
-          <li>
-            <strong>Real odds:</strong> every bet is priced with this project&apos;s real 2025 Vegas
-            moneylines and real spread odds (not estimated from the spread size).
-          </li>
-          <li>
-            <strong>Our System:</strong> bets when our model&apos;s win probability and Vegas&apos;s
-            implied probability differ by more than 2%. Direction is the favorite when our spread
-            is more extreme than Vegas&apos;s, the underdog when it&apos;s less extreme — a
-            different, separately-tested rule from this dashboard&apos;s spread-disagreement note
-            elsewhere, not the same strategy.
-          </li>
-          <li>
-            <strong>Vegas Favorites / Underdogs Only:</strong> every game, bet the Vegas favorite or
-            underdog at real Vegas odds.
-          </li>
-          <li>
-            <strong>Moneyline vs. ATS:</strong> the same three strategies, settled two different real
-            ways — straight-up winner (moneyline) or covering the real spread (ATS). Toggle above to
-            compare.
-          </li>
-          <li>
-            <strong>Pushes:</strong> one real 2025 tie (Week 4, GB 40 @ DAL 40) pushes on moneyline
-            bets; one real exact-margin push exists on ATS (Week 12, PIT/CHI). Pushes return the
-            stake and are excluded from win/loss and ROI.
-          </li>
-          <li>
-            <strong>Over/Under (Point Totals):</strong> a separate strategy, not one of the three
-            above - bets the direction our point-totals model disagrees with the real Vegas total by
-            more than an edge threshold. Backtested with a genuine holdout (model refit on
-            2015-2024 only, scored on 2025), not reused in-sample predictions.
-          </li>
-        </ul>
+        {hasResults ? (
+          <ul>
+            <li>
+              <strong>Real odds:</strong> every bet is priced with this project&apos;s real 2025 Vegas
+              moneylines and real spread odds (not estimated from the spread size).
+            </li>
+            <li>
+              <strong>Our System:</strong> bets when our model&apos;s win probability and Vegas&apos;s
+              implied probability differ by more than 2%. Direction is the favorite when our spread
+              is more extreme than Vegas&apos;s, the underdog when it&apos;s less extreme — a
+              different, separately-tested rule from this dashboard&apos;s spread-disagreement note
+              elsewhere, not the same strategy.
+            </li>
+            <li>
+              <strong>Vegas Favorites / Underdogs Only:</strong> every game, bet the Vegas favorite or
+              underdog at real Vegas odds.
+            </li>
+            <li>
+              <strong>Moneyline vs. ATS:</strong> the same three strategies, settled two different real
+              ways — straight-up winner (moneyline) or covering the real spread (ATS). Toggle above to
+              compare.
+            </li>
+            <li>
+              <strong>Pushes:</strong> one real 2025 tie (Week 4, GB 40 @ DAL 40) pushes on moneyline
+              bets; one real exact-margin push exists on ATS (Week 12, PIT/CHI). Pushes return the
+              stake and are excluded from win/loss and ROI.
+            </li>
+            <li>
+              <strong>Over/Under (Point Totals):</strong> a separate strategy, not one of the three
+              above - bets the direction our point-totals model disagrees with the real Vegas total by
+              more than an edge threshold. Backtested with a genuine holdout (model refit on
+              2015-2024 only, scored on 2025), not reused in-sample predictions.
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <strong>Real odds, partial coverage:</strong> bets are only placed on completed{' '}
+              {selectedSeason} games where a real ESPN closing-line spread + moneyline was actually
+              captured before kickoff (see the coverage note above) - unlike the completed-season
+              backtest, not every game has one yet.
+            </li>
+            <li>
+              <strong>Our System:</strong> bets when our model&apos;s win probability and Vegas&apos;s
+              implied probability differ by more than 2%. Direction is the favorite when our spread
+              is more extreme than Vegas&apos;s, the underdog when it&apos;s less extreme.
+            </li>
+            <li>
+              <strong>Vegas Favorites / Underdogs Only:</strong> every real-odds-covered game, bet the
+              Vegas favorite or underdog at real Vegas odds.
+            </li>
+            <li>
+              <strong>Moneyline vs. ATS:</strong> the same three strategies, settled two different real
+              ways — straight-up winner (moneyline) or covering the real spread (ATS). Toggle above to
+              compare.
+            </li>
+            <li>
+              <strong>ATS pricing:</strong> ESPN&apos;s already-collected {selectedSeason} odds capture
+              real moneylines and real point-spread values, but not a real per-side spread-betting price
+              - standard -110 is used on both sides for ATS bets (a disclosed, standard real-world
+              default, not a modeled output).
+            </li>
+            <li>
+              <strong>Over/Under (Point Totals):</strong> not shown for {selectedSeason} yet - would need
+              the same genuine holdout methodology as the completed-season backtest, not yet built for an
+              in-progress season.
+            </li>
+          </ul>
+        )}
       </div>
 
       <div className="disclaimer">
         <p>
-          Historical backtest on completed 2025 games only — not a live betting recommendation.
+          {hasResults
+            ? 'Historical backtest on completed 2025 games only — not a live betting recommendation.'
+            : `Real, in-season backtest on completed ${selectedSeason} games with real, joined odds ` +
+              'only (partial coverage, see above) — not a live betting recommendation, and too small a ' +
+              'sample this early in the season to draw a real conclusion from.'}{' '}
           This project has already found, separately (see Model Transparency), that betting on
           disagreements with Vegas loses money over a real backtest; these three strategies are
           shown here as an additional, real cross-check, not as advice.

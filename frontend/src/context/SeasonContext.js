@@ -64,6 +64,9 @@ const SEASON_FILE_LOADERS = {
       // model (2026-only, see playerProps above) with 2026's own
       // fantasy_rankings, so a 2025 equivalent doesn't apply either.
       ensembleProjections: null,
+      // Real, 2026-only - same reasoning, built on 2026's own week-to-week
+      // real actual_ppr history.
+      bounceBackWarnings: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest are real, in-season
@@ -79,7 +82,7 @@ const SEASON_FILE_LOADERS = {
   2026: async () => {
     const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest,
       superbowlOdds, playerProps, breakoutAlerts, rookieScores,
-      powerRankings, awardRaces, injuryAdjustments, ensembleProjections] =
+      powerRankings, awardRaces, injuryAdjustments, ensembleProjections, bounceBackWarnings] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
@@ -100,6 +103,12 @@ const SEASON_FILE_LOADERS = {
         // rankings_ensemble_2026.py. Neither of the two source models is
         // touched by this - both stay exactly as they are.
         import('../data/ensemble_projections_2026.json'),
+        // Real, 2026-only (added 2026-09-16): flags a player whose prior
+        // week's real actual_ppr fell well below that week's own real
+        // projected_ppr - see generate_bounceback_warnings_2026.py. Needs a
+        // real prior week to compare against, so this is empty until Week
+        // 2+ has something to look back on.
+        import('../data/bounceback_warnings_2026.json'),
       ]);
     return {
       games: games.default,
@@ -126,6 +135,7 @@ const SEASON_FILE_LOADERS = {
       // not a mutation of fantasy/playerProps above (see DECISIONS_LOG.md).
       injuryAdjustments: injuryAdjustments.default,
       ensembleProjections: ensembleProjections.default,
+      bounceBackWarnings: bounceBackWarnings.default,
     };
   },
 };

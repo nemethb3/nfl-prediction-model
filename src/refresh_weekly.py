@@ -142,6 +142,24 @@ arbitrary sequence):
       separate ensemble_projections_2026.json (does NOT overwrite
       fantasy_rankings_2026.json's own projected_ppr - both real component
       models stay visible unchanged). Needs step 20's real weights.
+  22. generate_bounceback_warnings_2026.py (added 2026-09-16) - real,
+      separate bounceback_warnings_2026.json flagging a player whose prior
+      real week fell well short of that week's own real projection. Needs
+      real actual_ppr for the prior week (steps 9/11 above).
+
+Real, NOT wired in here (disclosed, deliberate): a "never regenerate a
+locked week" gate. lock_week1_predictions.py's/lock_week2_predictions.py's
+own real convention is a git-tracked SNAPSHOT COPY for honest post-hoc
+comparison, not a gate on the live frontend/src/data/*.json files - those
+must keep updating additively as a locked week is actually played (real
+actual_* results, injury refreshes) exactly like Week 1 has all session.
+Game-level predictions for an already-played week are already protected by
+the real per-game hybrid pattern in elo_game_prediction.py/compute_
+offensive_defensive_elo.py (verified byte-identical across reruns); Week 2's
+fantasy_rankings/ensemble projections are already idempotent by
+construction (computed from Week 1's real, final actual_ppr, which doesn't
+change) - see lock_week2_predictions.py's own module docstring for the
+full reasoning.
 
 Real, disclosed scope: every real 2026 deliverable this project ships now
 genuinely recalibrates from real completed games - Elo, Division Winners,
@@ -245,6 +263,11 @@ class WeeklyRefresh:
                   ["optimize_ensemble_weights_2026.py"])
         self.step("Generating ensemble player projections",
                   ["generate_fantasy_rankings_ensemble_2026.py"])
+        # Real, in-season bounce-back flags (added 2026-09-16): joins each
+        # week-N row to that same player's own week-(N-1) row by player_id
+        # (fantasy_rankings_2026.json has no same-row prior-week fields) - must
+        # run after the re-ingest/Week 2 steps above (needs real actual_ppr).
+        self.step("Generating bounce-back warnings", ["generate_bounceback_warnings_2026.py"])
         self.step("Refreshing ESPN injury adjustments", ["generate_injury_adjustments_2026.py"])
         self.step("Regenerating season projections", ["generate_season_projections_dashboard_data_2026.py"])
         self.step("Regenerating Super Bowl odds", ["generate_superbowl_odds_2026.py"])

@@ -238,6 +238,32 @@
   white-space: nowrap;
 }
 
+.player-card .bounceback-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid #60a5fa;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: #60a5fa;
+  white-space: nowrap;
+}
+
+.player-card .bounceback-badge .bounceback-text {
+  font-weight: 600;
+}
+
+.player-card .bounceback-detail {
+  color: #60a5fa;
+}
+
+.player-card .bounceback-detail--caution {
+  color: #94a3b8;
+  font-style: italic;
+}
+
 .player-card .breakout-details {
   background: rgba(251, 191, 36, 0.05);
   border-left: 3px solid #fbbf24;

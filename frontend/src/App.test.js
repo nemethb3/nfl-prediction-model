@@ -36,6 +36,11 @@ jest.mock('./data/weekly_summary_2026.json', () => ({ current_week: null, weeks:
 jest.mock('./data/ensemble_projections_2026.json', () => ({
   generated_at: null, methodology_note: '', n_matched: 0, n_unmatched_no_props_row: 0, players: [],
 }));
+// Real, 2026-only bounce-back flags (generate_bounceback_warnings_2026.py) -
+// same test-isolation reasoning as the other real, growing 2026 files above.
+jest.mock('./data/bounceback_warnings_2026.json', () => ({
+  generated_at: null, methodology_note: '', threshold_pct: 0.75, n_flagged: 0, players: [],
+}));
 // Real minimal shape BettingAnalysis.js actually expects (verified against
 // its own real destructuring: resultsData[strategy][betType].season_summary/
 // weekly_summary/bets) - an empty {} (this file's previous mock) would have

@@ -233,6 +233,14 @@ export default function FantasyRankings() {
   const ensembleById = seasonData.ensembleProjections
     ? new Map(seasonData.ensembleProjections.players.map((e) => [e.id, e]))
     : null;
+  // Real "Bounce-Back Candidate" flag (added 2026-09-16) - a player whose
+  // prior real week fell well short of that week's own real projection.
+  // Same real id join as propsById/ensembleById; empty for weeks/seasons
+  // with no prior week to compare against (see generate_bounceback_
+  // warnings_2026.py).
+  const bounceBackById = seasonData.bounceBackWarnings
+    ? new Map(seasonData.bounceBackWarnings.players.map((b) => [b.id, b]))
+    : null;
   // Real data exists for 2026 (Week 1 preseason projections), unlike the
   // other sections gated by the blanket `hasResults` flag - checking for
   // real fantasy data specifically, not the season-wide flag, is what
@@ -387,6 +395,7 @@ export default function FantasyRankings() {
               onToggle={() => setExpandedPlayerId(expandedPlayerId === player.id ? null : player.id)}
               props={propsById ? propsById.get(player.id) : null}
               ensemble={ensembleById ? ensembleById.get(player.id) : null}
+              bounceBack={bounceBackById ? bounceBackById.get(player.id) : null}
               breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
               opponentDElo={player.opponent ? dEloRanks[player.opponent] : null}
               injuryAdjustment={getInjuryAdjustment(player.name, player.team, injuryByPlayer)}
@@ -409,7 +418,7 @@ export default function FantasyRankings() {
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, props, ensemble, breakoutAlert, opponentDElo, injuryAdjustment }) {
+function PlayerCard({ player, isExpanded, onToggle, props, ensemble, bounceBack, breakoutAlert, opponentDElo, injuryAdjustment }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const handleKeyDown = useKeyboardToggle(onToggle);
@@ -457,6 +466,12 @@ function PlayerCard({ player, isExpanded, onToggle, props, ensemble, breakoutAle
               title="Real 2025 opportunities below this position's validated projection threshold - included, but a real, meaningfully weaker signal than the rest of the list (see Fantasy Predictions in How This Model Works)."
             >
               Lower confidence
+            </span>
+          )}
+          {bounceBack?.flagged && (
+            <span className="bounceback-badge" title={bounceBack.reason}>
+              <span className="bounceback-icon">📈</span>
+              <span className="bounceback-text">Bounce-Back Candidate</span>
             </span>
           )}
         </div>
@@ -515,6 +530,11 @@ function PlayerCard({ player, isExpanded, onToggle, props, ensemble, breakoutAle
                 Real, confirmed Out (ESPN) - zeroed here. Model&apos;s own projection before this
                 news was {player.projected_ppr != null ? player.projected_ppr.toFixed(1) : '--'} PPR
                 (see the ESPN Injury Report section below for the real source).
+              </div>
+            )}
+            {bounceBack?.flagged && (
+              <div className={`small-text bounceback-detail ${bounceBack.ambiguous_zero_actual ? 'bounceback-detail--caution' : ''}`}>
+                📈 Bounce-Back Candidate: {bounceBack.reason}
               </div>
             )}
             {player.confidence_tier === 'lower' && (

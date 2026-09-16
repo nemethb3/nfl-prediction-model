@@ -132,6 +132,16 @@ arbitrary sequence):
       Betting Analysis (moneyline + ATS), reusing betting_backtest.py's
       already-validated strategies/settlement math. Needs step 16's real
       vegas_lines_2026.csv.
+  20. optimize_ensemble_weights_2026.py (added 2026-09-16) - refits real
+      per-position blend weights (fantasy_rankings' trailing-rate
+      projected_ppr vs. a PPR figure computed from player_props'
+      predicted_stats) against whatever real 2026 completed weeks exist so
+      far. No real 2025 holdout exists for this comparison (player props is
+      2026-only) - see ensemble_analysis_2026.py's own docstring.
+  21. generate_fantasy_rankings_ensemble_2026.py (added 2026-09-16) - real,
+      separate ensemble_projections_2026.json (does NOT overwrite
+      fantasy_rankings_2026.json's own projected_ppr - both real component
+      models stay visible unchanged). Needs step 20's real weights.
 
 Real, disclosed scope: every real 2026 deliverable this project ships now
 genuinely recalibrates from real completed games - Elo, Division Winners,
@@ -225,6 +235,16 @@ class WeeklyRefresh:
         # before injury adjustments below (needs real Week 2 rows to exist
         # for its current-week join).
         self.step("Generating Week 2 fantasy projections", ["generate_fantasy_rankings_week2_2026.py"])
+        # Real, in-season ensemble (added 2026-09-16): refits per-position blend
+        # weights against whatever real completed weeks exist so far, then
+        # regenerates the real, separate ensemble_projections_2026.json - must run
+        # after the re-ingest/Week 2 steps above (needs real actual_ppr + both
+        # weeks' real projected_ppr) and after player props scoring earlier in
+        # this run (needs real predicted_stats for every week).
+        self.step("Optimizing ensemble weights (real 2026 completed weeks)",
+                  ["optimize_ensemble_weights_2026.py"])
+        self.step("Generating ensemble player projections",
+                  ["generate_fantasy_rankings_ensemble_2026.py"])
         self.step("Refreshing ESPN injury adjustments", ["generate_injury_adjustments_2026.py"])
         self.step("Regenerating season projections", ["generate_season_projections_dashboard_data_2026.py"])
         self.step("Regenerating Super Bowl odds", ["generate_superbowl_odds_2026.py"])

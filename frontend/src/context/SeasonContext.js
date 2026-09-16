@@ -60,6 +60,10 @@ const SEASON_FILE_LOADERS = {
       // Real, 2026-only, live-news overlay (ESPN injury report) - a real
       // 2015-2025 backtest concept doesn't apply here at all.
       injuryAdjustments: null,
+      // Real, 2026-only - the ensemble blends 2026's own real player-props
+      // model (2026-only, see playerProps above) with 2026's own
+      // fantasy_rankings, so a 2025 equivalent doesn't apply either.
+      ensembleProjections: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest are real, in-season
@@ -75,7 +79,7 @@ const SEASON_FILE_LOADERS = {
   2026: async () => {
     const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest,
       superbowlOdds, playerProps, breakoutAlerts, rookieScores,
-      powerRankings, awardRaces, injuryAdjustments] =
+      powerRankings, awardRaces, injuryAdjustments, ensembleProjections] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
@@ -90,6 +94,12 @@ const SEASON_FILE_LOADERS = {
         import('../data/power_rankings_2026.json'),
         import('../data/award_races_2026.json'),
         import('../data/injury_adjustments_2026.json'),
+        // Real, 2026-only (added 2026-09-16): a third, disclosed PPR figure
+        // blending projected_ppr (Model 1, above) and a PPR computed from
+        // playerProps' predicted_stats (Model 2) - see generate_fantasy_
+        // rankings_ensemble_2026.py. Neither of the two source models is
+        // touched by this - both stay exactly as they are.
+        import('../data/ensemble_projections_2026.json'),
       ]);
     return {
       games: games.default,
@@ -115,6 +125,7 @@ const SEASON_FILE_LOADERS = {
       // generate_injury_adjustments_2026.py) - a separate, disclosed layer,
       // not a mutation of fantasy/playerProps above (see DECISIONS_LOG.md).
       injuryAdjustments: injuryAdjustments.default,
+      ensembleProjections: ensembleProjections.default,
     };
   },
 };

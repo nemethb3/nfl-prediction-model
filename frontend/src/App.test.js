@@ -31,6 +31,11 @@ jest.mock('./data/accuracy_tracker_2026.json', () => ({
   weekly_breakdown: [],
 }));
 jest.mock('./data/weekly_summary_2026.json', () => ({ current_week: null, weeks: [] }));
+// Real, 2026-only ensemble (generate_fantasy_rankings_ensemble_2026.py) -
+// same test-isolation reasoning as the other real, growing 2026 files above.
+jest.mock('./data/ensemble_projections_2026.json', () => ({
+  generated_at: null, methodology_note: '', n_matched: 0, n_unmatched_no_props_row: 0, players: [],
+}));
 // Real minimal shape BettingAnalysis.js actually expects (verified against
 // its own real destructuring: resultsData[strategy][betType].season_summary/
 // weekly_summary/bets) - an empty {} (this file's previous mock) would have

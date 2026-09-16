@@ -225,6 +225,14 @@ export default function FantasyRankings() {
   const propsById = seasonData.playerProps
     ? new Map(seasonData.playerProps.map((p) => [p.id, p]))
     : null;
+  // Real, disclosed third figure (added 2026-09-16) blending projected_ppr
+  // (Model 1, this card's own real trailing-rate number) with a PPR
+  // computed from predicted_stats above (Model 2) - see generate_fantasy_
+  // rankings_ensemble_2026.py. Same real id join as propsById; null for
+  // seasons this wasn't built for.
+  const ensembleById = seasonData.ensembleProjections
+    ? new Map(seasonData.ensembleProjections.players.map((e) => [e.id, e]))
+    : null;
   // Real data exists for 2026 (Week 1 preseason projections), unlike the
   // other sections gated by the blanket `hasResults` flag - checking for
   // real fantasy data specifically, not the season-wide flag, is what
@@ -378,6 +386,7 @@ export default function FantasyRankings() {
               isExpanded={expandedPlayerId === player.id}
               onToggle={() => setExpandedPlayerId(expandedPlayerId === player.id ? null : player.id)}
               props={propsById ? propsById.get(player.id) : null}
+              ensemble={ensembleById ? ensembleById.get(player.id) : null}
               breakoutAlert={breakoutById ? breakoutById.get(player.id) : null}
               opponentDElo={player.opponent ? dEloRanks[player.opponent] : null}
               injuryAdjustment={getInjuryAdjustment(player.name, player.team, injuryByPlayer)}
@@ -400,7 +409,7 @@ export default function FantasyRankings() {
   );
 }
 
-function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, opponentDElo, injuryAdjustment }) {
+function PlayerCard({ player, isExpanded, onToggle, props, ensemble, breakoutAlert, opponentDElo, injuryAdjustment }) {
   const borderColor = teamColor(player.team);
   const isStatic = player.projection_type === 'season_static_per_game_avg';
   const handleKeyDown = useKeyboardToggle(onToggle);
@@ -580,6 +589,35 @@ function PlayerCard({ player, isExpanded, onToggle, props, breakoutAlert, oppone
                     </div>
                   );
                 })}
+              </div>
+            </div>
+          )}
+
+          {ensemble && (
+            <div className="section">
+              <div className="section-title">Ensemble Projection</div>
+              <div className="props-grid">
+                <div className="prop-stat">
+                  <span className="prop-label">Model 1 (trailing-rate, above)</span>
+                  <span className="prop-value">{ensemble.model1_ppr.toFixed(1)} PPR</span>
+                </div>
+                <div className="prop-stat">
+                  <span className="prop-label">Model 2 (from stats above)</span>
+                  <span className="prop-value">{ensemble.model2_ppr.toFixed(1)} PPR</span>
+                </div>
+                <div className="prop-stat">
+                  <span className="prop-label">
+                    Ensemble ({Math.round(ensemble.model1_weight * 100)}/{Math.round(ensemble.model2_weight * 100)} blend)
+                  </span>
+                  <span className="prop-value">{(isOut ? 0 : ensemble.ensemble_ppr).toFixed(1)} PPR</span>
+                </div>
+              </div>
+              <div className="small-text">
+                Projected PPR above and Projected Stats above come from two real, separately-fitted
+                models (trailing-rate vs. opponent-adjusted regression) that were never designed to add
+                up to the same number - this blend, fit on {ensemble.weight_fit_sample_size} real
+                completed-week samples at this position so far, is this project's own disclosed attempt
+                to reconcile them, not a claim that either one was wrong.
               </div>
             </div>
           )}

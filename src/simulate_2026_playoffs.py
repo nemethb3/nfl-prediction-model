@@ -114,26 +114,66 @@ RNG_SEED = 42
 
 
 def real_2026_carryover_elo():
-    """Real per-team carryover preseason Elo for 2026 - recomputed via
-    elo_utils.compute_season_start_elo (shared with elo_game_prediction.py's
-    2026 game-spread branch, see that module's docstring) rather than read
-    from elo_game_predictions_2026.csv (see module docstring: the latter has a
-    real, separate, pre-existing bug that discards 2025's actual results;
-    this project's already-published elo_wins/ensemble_wins do NOT have
-    that bug). Exported (not underscore-prefixed) so other real 2026
-    deliverables that need the exact same preseason Elo - e.g. the 2026
-    Super Bowl odds simulation - reuse this instead of re-deriving a
-    second, potentially-diverging copy."""
-    from elo_utils import compute_season_start_elo
-    return compute_season_start_elo(min(TRAIN_SEASONS), SEASON, ELO_K_FACTOR, ELO_HOME_FIELD)
+    """Real per-team current-single-Elo for 2026 - "current" meaning as of
+    the latest real completed game, not frozen at the season start (fixed
+    2026-09-16, once the season actually started - see recalibrate_2026_
+    elo.py's own docstring for the fuller design writeup). Before any 2026
+    game completes this is identical to the pure preseason carryover
+    (elo_model.run_multi_season_elo's `current` dict simply hasn't been
+    touched by any 2026 game yet) - verified byte-for-byte, so every real
+    caller (this module's own playoff simulation, generate_power_rankings_
+    2026.py's single_elo display, generate_trade_scores_2026.py's team-
+    strength context) keeps its exact real preseason behavior right up
+    until Week 1, then genuinely updates from there. Exported (not
+    underscore-prefixed) so those real 2026 deliverables that need the
+    exact same current Elo reuse this instead of re-deriving a second,
+    potentially-diverging copy."""
+    from elo_model import run_multi_season_elo
+    _, _, current = run_multi_season_elo(
+        range(min(TRAIN_SEASONS), SEASON + 1), k_factor=ELO_K_FACTOR, home_field_elo=ELO_HOME_FIELD)
+    return current
+
+
+def _real_played_game_outcomes():
+    """Real (home_team, away_team, week) -> home_won for every real
+    completed 2026 game (build_game_results_2026.py's output) - used to
+    lock already-decided games to their real outcome in the simulation
+    below instead of re-randomizing a game we already know the real
+    result of. Ties excluded (home_won stays undefined for them - none
+    have occurred in 2026 as of this write; a real tie would fall through
+    to "not in this dict" and get simulated, a real, disclosed edge case
+    rather than a silent mis-tally)."""
+    import pandas as pd
+    path = os.path.join(PROJECT_ROOT, "data", "backtest", "game_results_2026.csv")
+    if not os.path.exists(path):
+        return {}
+    games = pd.read_csv(path)
+    games = games[games["game_type"] == "REG"]
+    outcomes = {}
+    for r in games.itertuples():
+        if r.home_score == r.away_score:
+            continue
+        outcomes[(r.home_team, r.away_team, int(r.week))] = r.home_score > r.away_score
+    return outcomes
 
 
 def _real_2026_schedule_and_elo():
     """Real 272-game 2026 REG schedule (schedules_2026.csv, via the same
     real _load_schedule_for_season every other 2026 deliverable uses) +
-    each team's real carryover preseason Elo rating (real_2026_carryover_
-    elo(), see its docstring)."""
+    each team's real current Elo rating (real_2026_carryover_elo(), see
+    its docstring).
+
+    Real fix (2026-09-16): games that have already been played are no
+    longer re-randomized - p_home is forced to 1.0/0.0 for them (their
+    real, already-known outcome), so _simulate_win_totals's per-trial win
+    total below is real-wins-so-far + simulated wins for the real
+    remaining games only, not a full from-scratch simulation of a season
+    that's partly already happened. Before this fix, week 1's own real
+    result had no effect on the playoff/division/Super Bowl simulation at
+    all - every one of the 272 games was simulated fresh every trial,
+    real completed games included."""
     elo_lookup = real_2026_carryover_elo()
+    played_outcomes = _real_played_game_outcomes()
 
     schedule = _load_schedule_for_season(SEASON)
     reg = schedule[schedule["game_type"] == "REG"].copy()
@@ -142,10 +182,14 @@ def _real_2026_schedule_and_elo():
 
     home_idx = reg["home_team"].map(team_idx).to_numpy()
     away_idx = reg["away_team"].map(team_idx).to_numpy()
-    p_home = np.array([
-        calculate_win_probability_from_elo(elo_lookup[h], elo_lookup[a], ELO_HOME_FIELD)
-        for h, a in zip(reg["home_team"], reg["away_team"])
-    ])
+    p_home = []
+    for h, a, wk in zip(reg["home_team"], reg["away_team"], reg["week"]):
+        outcome = played_outcomes.get((h, a, int(wk)))
+        if outcome is not None:
+            p_home.append(1.0 if outcome else 0.0)
+        else:
+            p_home.append(calculate_win_probability_from_elo(elo_lookup[h], elo_lookup[a], ELO_HOME_FIELD))
+    p_home = np.array(p_home)
     return teams, team_idx, home_idx, away_idx, p_home, elo_lookup
 
 

@@ -219,9 +219,21 @@ def generate_od_elo_game_spreads(season, fitted):
     elo_game_prediction.generate_elo_game_spreads uses (game_id, week,
     home/away team, ratings, predicted_spread, ci_low_90/ci_high_90) -
     real, leak-free pre-game ratings for season<=2025 (from this module's
-    real history), real regressed carryover for season>2025 (2026's
-    preseason snapshot, same real convention generate_elo_game_spreads
-    already uses for single-Elo)."""
+    real history).
+
+    season>2025 (fixed 2026-09-16, once the season actually started - see
+    recalibrate_2026_elo.py's own docstring for the fuller design
+    writeup): a real per-game hybrid, mirroring elo_game_prediction.
+    generate_elo_game_spreads's season>2025 branch -
+      - a game that's already been played uses its real, leak-free
+        home_o_elo_before/home_d_elo_before/etc. from recalibrate_2026_
+        elo.compute_od_elo_2026's real history - never recomputed using a
+        later week's information.
+      - a game not yet played uses the CURRENT real rating (that same
+        function's `current` dict - as of the latest real completed
+        game). Before any 2026 game completes, `current` IS the pure
+        preseason regression (empty chain), so this reduces to the exact
+        prior behavior with zero games played - verified byte-for-byte."""
     resid_std = fitted["spread_model"]["resid_std"]
     band = 1.645 * resid_std  # real 90% CI z-score, same real constant used everywhere else in this project
 
@@ -233,19 +245,34 @@ def generate_od_elo_game_spreads(season, fitted):
         rows = rows.rename(columns={"home_o_elo_before": "home_o_elo", "home_d_elo_before": "home_d_elo",
                                      "away_o_elo_before": "away_o_elo", "away_d_elo_before": "away_d_elo"})
     else:
-        from apply_season_regression_od_elo import apply_season_regression_od_elo
+        from recalibrate_2026_elo import compute_od_elo_2026
         from game_predictions import _load_schedule_for_season
-        regressed = apply_season_regression_od_elo(k_factor=fitted["k_factor"])
+        _, current, history_df = compute_od_elo_2026(k_factor=fitted["k_factor"])
+        played_by_matchup = {(r.home_team, r.away_team, int(r.week)): r for r in history_df.itertuples()} \
+            if len(history_df) else {}
+
         schedule = _load_schedule_for_season(season)
         reg = schedule[schedule["game_type"] == "REG"].copy()
-        reg["home_o_elo"] = reg["home_team"].map(lambda t: regressed.get(t, {}).get("o_elo"))
-        reg["home_d_elo"] = reg["home_team"].map(lambda t: regressed.get(t, {}).get("d_elo"))
-        reg["away_o_elo"] = reg["away_team"].map(lambda t: regressed.get(t, {}).get("o_elo"))
-        reg["away_d_elo"] = reg["away_team"].map(lambda t: regressed.get(t, {}).get("d_elo"))
-        reg["od_elo_spread"] = (reg["home_o_elo"] - reg["away_d_elo"]) - (reg["away_o_elo"] - reg["home_d_elo"])
-        reg["game_id"] = reg["home_team"] + "_" + reg["away_team"] + "_" + reg["week"].astype(str)
-        reg["season"] = season
-        rows = reg[["game_id", "season", "week", "home_team", "away_team",
+        game_rows = []
+        for r in reg.itertuples():
+            key = (r.home_team, r.away_team, int(r.week))
+            played = played_by_matchup.get(key)
+            if played is not None:
+                home_o, home_d = played.home_o_elo_before, played.home_d_elo_before
+                away_o, away_d = played.away_o_elo_before, played.away_d_elo_before
+            else:
+                home_o = current.get(r.home_team, {}).get("o_elo")
+                home_d = current.get(r.home_team, {}).get("d_elo")
+                away_o = current.get(r.away_team, {}).get("o_elo")
+                away_d = current.get(r.away_team, {}).get("d_elo")
+            game_rows.append({"week": int(r.week), "home_team": r.home_team, "away_team": r.away_team,
+                              "home_o_elo": home_o, "home_d_elo": home_d,
+                              "away_o_elo": away_o, "away_d_elo": away_d})
+        reg2 = pd.DataFrame(game_rows)
+        reg2["od_elo_spread"] = (reg2["home_o_elo"] - reg2["away_d_elo"]) - (reg2["away_o_elo"] - reg2["home_d_elo"])
+        reg2["game_id"] = reg2["home_team"] + "_" + reg2["away_team"] + "_" + reg2["week"].astype(str)
+        reg2["season"] = season
+        rows = reg2[["game_id", "season", "week", "home_team", "away_team",
                      "home_o_elo", "home_d_elo", "away_o_elo", "away_d_elo", "od_elo_spread"]].copy()
 
     rows["win_prob_home"] = od_elo_win_probability(rows["od_elo_spread"].to_numpy(), fitted)

@@ -81,8 +81,21 @@ def _load_games_chronological(seasons):
     """Real REG-season games for `seasons`, ordered (season, week, game_id) so
     Elo updates process games in the order they actually happened. home_result
     is 1.0/0.0/0.5 (win/loss/tie) - ties are real and rare in this data (10
-    across 2015-2025), not something that can be silently dropped."""
+    across 2015-2025), not something that can be silently dropped.
+
+    Real, additive fix (2026-09-16, see build_game_results_2026.py's own
+    docstring): also concatenates data/backtest/game_results_2026.csv when
+    it exists - a real, separate, freshly-regenerated file of completed
+    2026 games, kept apart from the fixed 2015-2025 corpus rather than
+    appended into it. Backward compatible for every one of this function's
+    16 real callers: a `seasons` argument that doesn't include 2026 is
+    completely unaffected (the extra rows get filtered out by the same
+    season.isin() check below), and before any 2026 game completes the
+    file is simply absent, same as today."""
     games = pd.read_csv(os.path.join(BACKTEST_DIR, "game_results_2015_2025.csv"))
+    live_2026_path = os.path.join(BACKTEST_DIR, "game_results_2026.csv")
+    if os.path.exists(live_2026_path):
+        games = pd.concat([games, pd.read_csv(live_2026_path)], ignore_index=True)
     games = games[(games["season"].isin(list(seasons))) & (games["game_type"] == "REG")].copy()
     games["home_result"] = np.select(
         [games["home_score"] > games["away_score"], games["home_score"] < games["away_score"]],

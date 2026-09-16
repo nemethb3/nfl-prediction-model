@@ -41,55 +41,76 @@ before writing this:
 
 Real order (each step's real, documented input dependency, not an
 arbitrary sequence):
-  1. update_rosters_2026.py - real live roster pull; must run before
+  1. build_game_results_2026.py - real, freshly-regenerated feed of
+     completed 2026 games (data/backtest/game_results_2026.csv) from
+     nflreadpy - must run first; every Elo-recalibration step below reads
+     it (directly or via elo_model._load_games_chronological).
+  2. update_rosters_2026.py - real live roster pull; must run before
      every consumer below that reads roster_utils.apply_current_team().
-  2. espn_odds_orchestrate.py - independent, real Vegas odds.
-  3. orchestrate_2026_pipeline.py - real games_2026.json Elo/point-totals
+  3. espn_odds_orchestrate.py - independent, real Vegas odds.
+  4. orchestrate_2026_pipeline.py - real games_2026.json Elo/point-totals
      pipeline (already self-validates - see that script's own docstring).
-     Rewrites games_2026.json FRESH every run (hardcodes every actual_*
-     result field back to null - real, preseason-era behavior, see that
-     script's own docstring) - step 4 below MUST run after this, every
-     time, or a real completed game's result gets silently wiped.
-  4. ingest_completed_results_2026.py - real, week-agnostic, a no-op when
+     Both Elo models now (2026-09-16) recalibrate in-season - see
+     recalibrate_2026_elo.py's own docstring - using step 1's real
+     completed-game feed; games that have already been played keep their
+     real, leak-free pre-game prediction (never rewritten after the
+     fact), games not yet played use the current real rating. Still
+     rewrites games_2026.json FRESH every run (hardcodes every actual_*
+     result field back to null) - step 6 below MUST run after this.
+  5. recalibrate_2026_elo.py (refresh_current_od_elo_file) - overwrites
+     team_elo_offensive_defensive_2026_regressed.json with the CURRENT
+     (not frozen-preseason) O/D-Elo. Must run after step 4 - step 4's
+     internal preseason-seed computation touches this same file, so
+     without this step running after it, Power Rankings/Trade Scores
+     (both read this file directly) would silently show the preseason
+     value again despite games_2026.json itself being correctly updated.
+  6. ingest_completed_results_2026.py - real, week-agnostic, a no-op when
      nothing new has completed. Fills the real, already-existing-but-null
      result fields in games_2026.json / fantasy_rankings_2026.json for
      every game nflreadpy now has a real final score for. Does NOT flip
      the season-wide SEASON_HAS_RESULTS[2026] flag (see that script's own
      docstring for why - it would crash 3 other tabs whose 2026 data is
      still legitimately null).
-  5. generate_player_props_2026.py - real per-player-week stat scoring,
-     picks up any roster changes from step 1.
-  6. generate_fantasy_rankings_2026_week1.py - Week 1 only (see the week
-     guard below). Same wipe hazard as step 3, same fix: also rewrites
+  7. generate_player_props_2026.py - real per-player-week stat scoring,
+     picks up any roster changes from step 2.
+  8. generate_fantasy_rankings_2026_week1.py - Week 1 only (see the week
+     guard below). Same wipe hazard as step 4, same fix: also rewrites
      fantasy_rankings_2026.json FRESH, hardcoding actual_ppr back to null
-     for every row (see its own module docstring) - step 4 (ingest) runs
+     for every row (see its own module docstring) - step 6 (ingest) runs
      AGAIN right after this, every time, for the same reason it runs after
-     step 3. Verified idempotent - a real, cheap no-op when there's
+     step 4. Verified idempotent - a real, cheap no-op when there's
      nothing new to re-ingest.
-  7. generate_season_projections_dashboard_data_2026.py - reads
-     games_2026.json's actual_winner directly (fixed 2026-09-15 - see
-     that script's own docstring) for real wins_actual/losses_actual/
-     ties_actual, so must run after the step-4 re-ingest above, not before.
-  8. generate_superbowl_odds_2026.py - real, seeded from step 7's output.
-  9. generate_power_rankings_2026.py
-  10. generate_trade_scores_2026.py - real, depends on step 5's output.
-  11. generate_mvp_race_2026.py - real, depends on steps 5 and 7.
-  12. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
+  9. generate_season_projections_dashboard_data_2026.py - reads
+     games_2026.json's actual_winner directly (fixed 2026-09-15) for real
+     wins_actual/losses_actual/ties_actual (must run after the step-6
+     re-ingest, not before), AND (fixed 2026-09-16) its real Monte Carlo
+     playoff simulation (simulate_2026_playoffs.py) now starts from
+     current in-season Elo and locks already-played games to their real
+     outcome instead of re-simulating them - see simulate_2026_playoffs.
+     real_2026_carryover_elo's docstring.
+  10. generate_superbowl_odds_2026.py - real, seeded from step 9's output.
+  11. generate_power_rankings_2026.py - reads step 5's current O/D-Elo file
+      directly, and single-Elo via the same fixed real_2026_carryover_elo.
+  12. generate_trade_scores_2026.py - real, depends on step 7's output and
+      the same current-Elo team-strength context as step 11.
+  13. generate_mvp_race_2026.py - real, depends on steps 7 and 9. Stays on
+      its existing, validated preseason full-season-projection methodology
+      (player_props_2026.json summed across 18 weeks, z-scored against
+      historical MVP-winner profiles) - deliberately NOT blended with
+      actual in-season results this round (see the "In-Season Dynamic
+      Recalibration" task decision, 2026-09-16).
+  14. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
       (added after a real launch-day report: "confirmed out" badges
       weren't propagating into projections everywhere they mattered -
       lineup optimizer, trade analyzer, personal roster). Depends on
-      step 6's real fantasy_rankings_2026.json output for the real
+      step 8's real fantasy_rankings_2026.json output for the real
       original_projected_ppr comparison it reports.
 
-Real, disclosed gap this order does NOT close: none of the above makes
-Week 2+ predictions reflect Week 1 results. orchestrate_2026_pipeline.py's
-Elo (both single-Elo and the primary O/D-Elo) is a static preseason
-carryover for any season > 2025 - no real in-season recalibration is
-wired in for 2026 yet (see weekly_recalibration.py, which proved the
-single-Elo update mechanism on a 2025 backtest and documents exactly how
-to wire it live, but was never connected; the O/D-Elo model - the one
-that actually drives our_spread/win_prob_home - has no update mechanism
-built at all, prototyped or otherwise). Real, separate task.
+Real, disclosed scope: MVP race (step 13) is the one real 2026 deliverable
+this task deliberately left on its preseason methodology - everything
+else above (Elo itself, Division Winners, Playoff Picture, Super Bowl
+odds, Power Rankings, Trade Scores) now genuinely recalibrates from real
+completed 2026 games.
 """
 
 import json
@@ -115,7 +136,7 @@ class WeeklyRefresh:
         print(f"\nStarting real weekly refresh for Week {self.week}...")
         print(f"   Timestamp: {self.timestamp}\n")
 
-        # These four are real, whole-season, week-agnostic steps - they run
+        # These six are real, whole-season, week-agnostic steps - they run
         # regardless of which week was requested, unlike the week-1-only
         # generators guarded below.
         #
@@ -130,9 +151,12 @@ class WeeklyRefresh:
         # never updated to merge real results back in). Running ingestion
         # first (this script's original order) had it immediately undone by
         # this step on every single refresh.
+        self.step("Building real 2026 completed-results feed for Elo", ["build_game_results_2026.py"])
         self.step("Updating live rosters", ["update_rosters_2026.py"])
         self.step("Collecting ESPN odds", ["espn_odds_orchestrate.py"])
         self.step("Games pipeline (Elo spread/win-prob + point-totals)", ["orchestrate_2026_pipeline.py"])
+        self.step("Refreshing current O/D-Elo file (Power Rankings/Trade Scores)",
+                  ["recalibrate_2026_elo.py"])
         self.step("Ingesting completed game results + player box scores",
                   ["ingest_completed_results_2026.py"])
 

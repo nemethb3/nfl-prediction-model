@@ -148,10 +148,27 @@ def generate_elo_game_spreads(season, fitted_model):
     """Real pre-game Elo -> predicted spread + 90% CI (from the conversion
     model's own residual std), for every REG game of `season`. Seasons with
     real completed games (<=2025) use the exact chained pre-game rating from
-    run_multi_season_elo's game-by-game backtest; season=2026 (no games
-    played) uses the single preseason carryover snapshot against the full
-    schedule, same static-preseason convention as every other 2026
-    deliverable in this project."""
+    run_multi_season_elo's game-by-game backtest.
+
+    season=2026: a real, per-game hybrid (added 2026-09-16, once the season
+    actually started - see recalibrate_2026_elo.py's own docstring for the
+    fuller design writeup). run_multi_season_elo now genuinely includes any
+    real completed 2026 games (see elo_model._load_games_chronological's
+    build_game_results_2026.py-backed fix), so:
+      - a game that's already been played uses its real, leak-free
+        home_elo_before/away_elo_before straight from that same backtest
+        chain - identical in kind to the <=2025 branch above, and NEVER
+        recomputed after the fact using a later week's information (a
+        played game's own real pre-game rating doesn't change just because
+        more of the season has since happened).
+      - a game not yet played uses the CURRENT real rating (the chain's
+        final `current` dict - i.e. "as of the latest real completed
+        game") for both teams - the same "one snapshot applied to every
+        remaining game" convention this project already used for the pure
+        preseason case, just kept current instead of frozen at the season
+        start. Before any 2026 game completes, `current` IS the preseason
+        snapshot (empty chain), so this reduces to the exact prior
+        behavior with zero games played - verified byte-for-byte."""
     from elo_model import run_multi_season_elo
     from game_predictions import _load_schedule_for_season
 
@@ -162,20 +179,25 @@ def generate_elo_game_spreads(season, fitted_model):
         games["home_elo"] = games["home_elo_before"]
         games["away_elo"] = games["away_elo_before"]
     else:
-        # AUDIT_2026-08-12_DEEP.md Section 2.1 fix, later refactored into
-        # elo_utils.compute_season_start_elo (see that module's docstring
-        # for the real bug this fixes and why it's a shared, standalone
-        # module rather than duplicated here and in
-        # simulate_2026_playoffs.py). Real, confirmed impact of the
-        # original bug: mean abs discrepancy vs. the correct rating was
-        # 22.6 Elo points, max 55.2.
-        from elo_utils import compute_season_start_elo
-        regressed = compute_season_start_elo(ELO_EARLIEST_SEASON, season, ELO_K_FACTOR, ELO_HOME_FIELD)
+        backtest_df, _, current_ratings = run_multi_season_elo(
+            range(ELO_EARLIEST_SEASON, season + 1), k_factor=ELO_K_FACTOR, home_field_elo=ELO_HOME_FIELD)
+        played_season = backtest_df[backtest_df["season"] == season]
+        played_by_matchup = {(r.home_team, r.away_team, int(r.week)): r for r in played_season.itertuples()}
+
         schedule = _load_schedule_for_season(season)
         reg = schedule[schedule["game_type"] == "REG"].copy()
-        reg["home_elo"] = reg["home_team"].map(regressed)
-        reg["away_elo"] = reg["away_team"].map(regressed)
-        games = reg[["week", "home_team", "away_team", "home_elo", "away_elo"]].copy()
+        rows = []
+        for r in reg.itertuples():
+            key = (r.home_team, r.away_team, int(r.week))
+            played = played_by_matchup.get(key)
+            if played is not None:
+                home_elo, away_elo = played.home_elo_before, played.away_elo_before
+            else:
+                home_elo = current_ratings.get(r.home_team, 1500.0)
+                away_elo = current_ratings.get(r.away_team, 1500.0)
+            rows.append({"week": int(r.week), "home_team": r.home_team, "away_team": r.away_team,
+                         "home_elo": home_elo, "away_elo": away_elo})
+        games = pd.DataFrame(rows)
         games["game_id"] = games["home_team"] + "_" + games["away_team"] + "_" + games["week"].astype(str)
         games["season"] = season
 

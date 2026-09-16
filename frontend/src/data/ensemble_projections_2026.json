@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T21:20:23.704772+00:00",
+  "generated_at": "2026-09-16T21:47:28.114564+00:00",
   "methodology_note": "Real, disclosed ensemble of two independently-fitted real models - not a replacement for either. model1_ppr is fantasy_rankings_2026.json's own real projected_ppr (trailing-rate/EPA-static, unchanged). model2_ppr is computed here from player_props_2026.json's real predicted_stats using this project's own real PPR formula constants (same *_tds_prob-as-expected-count-proxy convention used elsewhere in this project). ensemble_ppr blends them using per-position weights fit against real 2026 completed-week outcomes (see ensemble_weights_2026.json's own methodology + sample size per position - weights fit on very few real weeks so far are real but noisy, disclosed via weight_fit_sample_size on every record, not hidden).",
   "n_matched": 780,
   "n_unmatched_no_props_row": 0,

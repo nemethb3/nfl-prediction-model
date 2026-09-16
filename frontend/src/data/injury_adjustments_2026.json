@@ -1,11 +1,11 @@
 {
   "week": 1,
-  "generated_at": "2026-09-15T21:23:31.662094+00:00",
+  "generated_at": "2026-09-16T15:51:19.109034+00:00",
   "source": "ESPN live injury report (site.api.espn.com/.../nfl/injuries) - see get_espn_injuries.py",
   "methodology_note": "Real, disclosed scope: confirmed Out/Injured Reserve players are shown with adjusted_projected_ppr=0.0 (a real fact - they won't play). Questionable players are flagged but NOT numerically adjusted - no real, fit model exists in this project for how much a game-status designation should reduce a projection, so none was invented. Backup players are NOT boosted for the same reason - no real model exists for how much workload/points a backup absorbs when a starter is out. This is a real, separate overlay - it does not modify player_props_2026.json, fantasy_rankings_2026.json, games_2026.json, or data/locked_predictions/.",
-  "confirmed_out_count": 8,
+  "confirmed_out_count": 6,
   "questionable_count": 17,
-  "unmatched_flagged_count": 142,
+  "unmatched_flagged_count": 111,
   "players": [
     {
       "name": "Josh Jacobs",
@@ -31,19 +31,6 @@
       "return_date": "2026-10-11",
       "source_note": "The Cardinals are placing Conner (foot) on injured reserve with a designation to return, John Gambadoro of Arizona Sports 98.7 FM Phoenix reports.",
       "original_projected_ppr": 11.1,
-      "adjusted_projected_ppr": 0.0
-    },
-    {
-      "name": "Jayden Higgins",
-      "team": "HOU",
-      "position": "WR",
-      "status": "Injured Reserve",
-      "confirmed_out": true,
-      "body_part": "Knee - ACL",
-      "detail": "Surgery",
-      "return_date": "2027-02-15",
-      "source_note": "ir",
-      "original_projected_ppr": 8.1,
       "adjusted_projected_ppr": 0.0
     },
     {
@@ -86,19 +73,6 @@
       "adjusted_projected_ppr": 0.0
     },
     {
-      "name": "Dont'e Thornton Jr.",
-      "team": "LV",
-      "position": "WR",
-      "status": "Injured Reserve",
-      "confirmed_out": true,
-      "body_part": "Undisclosed",
-      "detail": "Not Specified",
-      "return_date": "2026-10-11",
-      "source_note": "ir",
-      "original_projected_ppr": 4.9,
-      "adjusted_projected_ppr": 0.0
-    },
-    {
       "name": "Malik Davis",
       "team": "DAL",
       "position": "RB",
@@ -133,7 +107,7 @@
       "body_part": "Knee - Meniscus",
       "detail": "Surgery",
       "return_date": "2026-09-20",
-      "source_note": "Raiders head coach Klint Kubiak labeled Bowers (knee) as day-to-day Monday, Sam Warren of The Athletic reports.",
+      "source_note": "The knee injury Bowers is recovering from \"is not overly serious,\" and it's \"possible\" he could return in Week 2, Dan Graziano of ESPN.com reports.",
       "original_projected_ppr": 14.5,
       "adjusted_projected_ppr": 14.5
     },
@@ -315,7 +289,7 @@
       "body_part": "Hamstring",
       "detail": "Not Specified",
       "return_date": "2026-09-17",
-      "source_note": "The Bills listed Johnson (hamstring) as a limited participant on Monday's estimated practice report.",
+      "source_note": "Johnson (hamstring) was a limited participant in Tuesday's practice.",
       "original_projected_ppr": 5.9,
       "adjusted_projected_ppr": 5.9
     },

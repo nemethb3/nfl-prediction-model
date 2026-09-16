@@ -10,13 +10,13 @@
       "position": "QB",
       "team": "BUF",
       "projected_season_stats": {
-        "passing_yards": 4063.9,
+        "passing_yards": 4067.8,
         "passing_tds": 14.6,
         "rushing_yards": 0.0,
         "rushing_tds": 6.8
       },
       "team_projected_wins": 9.9,
-      "composite_score": -1.763,
+      "composite_score": -1.761,
       "relative_share_pct": 9.39
     },
     {
@@ -25,13 +25,13 @@
       "position": "QB",
       "team": "PHI",
       "projected_season_stats": {
-        "passing_yards": 3014.3,
+        "passing_yards": 3019.5,
         "passing_tds": 11.6,
         "rushing_yards": 0.0,
-        "rushing_tds": 7.2
+        "rushing_tds": 7.3
       },
       "team_projected_wins": 10.3,
-      "composite_score": -1.899,
+      "composite_score": -1.897,
       "relative_share_pct": 8.19
     },
     {
@@ -40,14 +40,14 @@
       "position": "QB",
       "team": "DET",
       "projected_season_stats": {
-        "passing_yards": 4405.7,
-        "passing_tds": 13.8,
+        "passing_yards": 4424.1,
+        "passing_tds": 13.9,
         "rushing_yards": 0.0,
         "rushing_tds": 1.8
       },
       "team_projected_wins": 9.8,
-      "composite_score": -1.907,
-      "relative_share_pct": 8.13
+      "composite_score": -1.9,
+      "relative_share_pct": 8.17
     },
     {
       "player_id": "00-0026498",
@@ -55,14 +55,14 @@
       "position": "QB",
       "team": "LA",
       "projected_season_stats": {
-        "passing_yards": 4774.3,
+        "passing_yards": 4765.2,
         "passing_tds": 14.7,
         "rushing_yards": 0.0,
         "rushing_tds": 1.6
       },
       "team_projected_wins": 9.4,
-      "composite_score": -1.959,
-      "relative_share_pct": 7.72
+      "composite_score": -1.963,
+      "relative_share_pct": 7.67
     },
     {
       "player_id": "00-0037834",
@@ -70,14 +70,14 @@
       "position": "QB",
       "team": "SF",
       "projected_season_stats": {
-        "passing_yards": 4542.2,
-        "passing_tds": 14.8,
+        "passing_yards": 4535.7,
+        "passing_tds": 14.7,
         "rushing_yards": 0.0,
         "rushing_tds": 2.9
       },
       "team_projected_wins": 9.2,
-      "composite_score": -2.047,
-      "relative_share_pct": 7.07
+      "composite_score": -2.049,
+      "relative_share_pct": 7.04
     },
     {
       "player_id": "00-0036971",
@@ -85,14 +85,14 @@
       "position": "QB",
       "team": "JAX",
       "projected_season_stats": {
-        "passing_yards": 4799.8,
-        "passing_tds": 14.7,
+        "passing_yards": 4815.5,
+        "passing_tds": 14.8,
         "rushing_yards": 0.0,
         "rushing_tds": 3.9
       },
       "team_projected_wins": 8.9,
-      "composite_score": -2.071,
-      "relative_share_pct": 6.9
+      "composite_score": -2.064,
+      "relative_share_pct": 6.93
     },
     {
       "player_id": "00-0039732",
@@ -100,14 +100,14 @@
       "position": "QB",
       "team": "DEN",
       "projected_season_stats": {
-        "passing_yards": 3860.4,
-        "passing_tds": 13.6,
+        "passing_yards": 3848.9,
+        "passing_tds": 13.5,
         "rushing_yards": 0.0,
-        "rushing_tds": 3.0
+        "rushing_tds": 2.9
       },
       "team_projected_wins": 9.6,
-      "composite_score": -2.075,
-      "relative_share_pct": 6.87
+      "composite_score": -2.08,
+      "relative_share_pct": 6.82
     },
     {
       "player_id": "00-0034869",
@@ -115,14 +115,14 @@
       "position": "QB",
       "team": "SEA",
       "projected_season_stats": {
-        "passing_yards": 3405.7,
+        "passing_yards": 3403.7,
         "passing_tds": 11.2,
         "rushing_yards": 0.0,
         "rushing_tds": 1.8
       },
       "team_projected_wins": 10.0,
-      "composite_score": -2.113,
-      "relative_share_pct": 6.61
+      "composite_score": -2.114,
+      "relative_share_pct": 6.59
     },
     {
       "player_id": "00-0039163",
@@ -130,13 +130,13 @@
       "position": "QB",
       "team": "HOU",
       "projected_season_stats": {
-        "passing_yards": 3964.1,
-        "passing_tds": 12.6,
+        "passing_yards": 3974.1,
+        "passing_tds": 12.7,
         "rushing_yards": 0.0,
-        "rushing_tds": 1.8
+        "rushing_tds": 1.9
       },
       "team_projected_wins": 9.4,
-      "composite_score": -2.183,
+      "composite_score": -2.18,
       "relative_share_pct": 6.17
     },
     {
@@ -145,14 +145,14 @@
       "position": "QB",
       "team": "MIN",
       "projected_season_stats": {
-        "passing_yards": 3489.3,
-        "passing_tds": 12.5,
+        "passing_yards": 3512.5,
+        "passing_tds": 12.6,
         "rushing_yards": 0.0,
-        "rushing_tds": 3.9
+        "rushing_tds": 4.0
       },
       "team_projected_wins": 9.4,
-      "composite_score": -2.226,
-      "relative_share_pct": 5.91
+      "composite_score": -2.215,
+      "relative_share_pct": 5.96
     }
   ]
 }

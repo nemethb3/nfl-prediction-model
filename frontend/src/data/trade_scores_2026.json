@@ -12,9 +12,9 @@
         "role_trend": -0.007,
         "recent_trend": -0.084,
         "draft_capital": 1.0,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.29,
+      "prob_ppr_increase": 0.295,
       "trajectory": "Declining"
     },
     "00-0026158": {
@@ -27,9 +27,9 @@
         "role_trend": -0.197,
         "recent_trend": 0.467,
         "draft_capital": 1.0,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.397,
+      "prob_ppr_increase": 0.387,
       "trajectory": "Declining"
     },
     "00-0030565": {
@@ -42,10 +42,10 @@
         "role_trend": -0.01,
         "recent_trend": -0.295,
         "draft_capital": 0.91,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.531,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.494,
+      "trajectory": "Declining"
     },
     "00-0031236": {
       "position": "WR",
@@ -57,10 +57,10 @@
         "role_trend": -0.317,
         "recent_trend": -0.572,
         "draft_capital": 1.0,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.516,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.497,
+      "trajectory": "Declining"
     },
     "00-0031408": {
       "position": "WR",
@@ -72,9 +72,9 @@
         "role_trend": -0.054,
         "recent_trend": -0.676,
         "draft_capital": 1.0,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.472,
+      "prob_ppr_increase": 0.466,
       "trajectory": "Declining"
     },
     "00-0031588": {
@@ -87,9 +87,9 @@
         "role_trend": -0.205,
         "recent_trend": 0.063,
         "draft_capital": 0.64,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.364,
+      "prob_ppr_increase": 0.369,
       "trajectory": "Declining"
     },
     "00-0032392": {
@@ -102,9 +102,9 @@
         "role_trend": -0.199,
         "recent_trend": -0.245,
         "draft_capital": 0.82,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.494,
+      "prob_ppr_increase": 0.496,
       "trajectory": "Declining"
     },
     "00-0032464": {
@@ -117,9 +117,9 @@
         "role_trend": -0.025,
         "recent_trend": -0.132,
         "draft_capital": 0.05,
-        "team_elo": 1496.29
+        "team_elo": 1502.612
       },
-      "prob_ppr_increase": 0.409,
+      "prob_ppr_increase": 0.416,
       "trajectory": "Declining"
     },
     "00-0032775": {
@@ -132,9 +132,9 @@
         "role_trend": -0.367,
         "recent_trend": -0.448,
         "draft_capital": 0.73,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.47,
+      "prob_ppr_increase": 0.464,
       "trajectory": "Declining"
     },
     "00-0033040": {
@@ -147,9 +147,9 @@
         "role_trend": -0.021,
         "recent_trend": -0.82,
         "draft_capital": 0.64,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.436,
+      "prob_ppr_increase": 0.434,
       "trajectory": "Declining"
     },
     "00-0033077": {
@@ -162,9 +162,9 @@
         "role_trend": 0.043,
         "recent_trend": 0.366,
         "draft_capital": 0.73,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.245,
+      "prob_ppr_increase": 0.25,
       "trajectory": "Declining"
     },
     "00-0033090": {
@@ -177,9 +177,9 @@
         "role_trend": -0.076,
         "recent_trend": 0.348,
         "draft_capital": 0.91,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.466,
+      "prob_ppr_increase": 0.456,
       "trajectory": "Declining"
     },
     "00-0033106": {
@@ -192,9 +192,9 @@
         "role_trend": -0.413,
         "recent_trend": -0.032,
         "draft_capital": 1.0,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.293,
+      "prob_ppr_increase": 0.304,
       "trajectory": "Declining"
     },
     "00-0033119": {
@@ -207,9 +207,9 @@
         "role_trend": 0.074,
         "recent_trend": 1.127,
         "draft_capital": 0.82,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.389,
+      "prob_ppr_increase": 0.356,
       "trajectory": "Declining"
     },
     "00-0033246": {
@@ -222,9 +222,9 @@
         "role_trend": -0.242,
         "recent_trend": -0.529,
         "draft_capital": 0.05,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.63,
+      "prob_ppr_increase": 0.614,
       "trajectory": "Rising"
     },
     "00-0033280": {
@@ -237,9 +237,9 @@
         "role_trend": 0.22,
         "recent_trend": 0.898,
         "draft_capital": 1.0,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.376,
+      "prob_ppr_increase": 0.37,
       "trajectory": "Declining"
     },
     "00-0033293": {
@@ -252,9 +252,9 @@
         "role_trend": 0.011,
         "recent_trend": -0.369,
         "draft_capital": 0.64,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.467,
+      "prob_ppr_increase": 0.458,
       "trajectory": "Declining"
     },
     "00-0033307": {
@@ -267,9 +267,9 @@
         "role_trend": 0.062,
         "recent_trend": 0.116,
         "draft_capital": 0.05,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.312,
+      "prob_ppr_increase": 0.34,
       "trajectory": "Declining"
     },
     "00-0033375": {
@@ -282,7 +282,7 @@
         "role_trend": -0.408,
         "recent_trend": -0.584,
         "draft_capital": 0.05,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
       "prob_ppr_increase": 0.485,
       "trajectory": "Declining"
@@ -297,9 +297,9 @@
         "role_trend": 0.019,
         "recent_trend": -0.231,
         "draft_capital": 0.73,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.344,
+      "prob_ppr_increase": 0.354,
       "trajectory": "Declining"
     },
     "00-0033555": {
@@ -312,9 +312,9 @@
         "role_trend": 0.25,
         "recent_trend": 0.598,
         "draft_capital": 0.73,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.392,
+      "prob_ppr_increase": 0.381,
       "trajectory": "Declining"
     },
     "00-0033854": {
@@ -327,10 +327,10 @@
         "role_trend": -0.518,
         "recent_trend": -0.239,
         "draft_capital": 0.05,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.5,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.48,
+      "trajectory": "Declining"
     },
     "00-0033857": {
       "position": "WR",
@@ -342,9 +342,9 @@
         "role_trend": 0.136,
         "recent_trend": 0.288,
         "draft_capital": 0.91,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.4,
+      "prob_ppr_increase": 0.396,
       "trajectory": "Declining"
     },
     "00-0033858": {
@@ -357,9 +357,9 @@
         "role_trend": -0.234,
         "recent_trend": -0.508,
         "draft_capital": 0.82,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.585,
+      "prob_ppr_increase": 0.571,
       "trajectory": "Rising"
     },
     "00-0033873": {
@@ -372,9 +372,9 @@
         "role_trend": -0.377,
         "recent_trend": 0.014,
         "draft_capital": 1.0,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.463,
+      "prob_ppr_increase": 0.468,
       "trajectory": "Declining"
     },
     "00-0033881": {
@@ -387,9 +387,9 @@
         "role_trend": -0.427,
         "recent_trend": -0.357,
         "draft_capital": 1.0,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.685,
+      "prob_ppr_increase": 0.665,
       "trajectory": "Rising"
     },
     "00-0033885": {
@@ -402,9 +402,9 @@
         "role_trend": -0.28,
         "recent_trend": -0.506,
         "draft_capital": 1.0,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.657,
+      "prob_ppr_increase": 0.642,
       "trajectory": "Rising"
     },
     "00-0033891": {
@@ -417,9 +417,9 @@
         "role_trend": 0.431,
         "recent_trend": -0.359,
         "draft_capital": 0.91,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.347,
+      "prob_ppr_increase": 0.377,
       "trajectory": "Declining"
     },
     "00-0033906": {
@@ -432,9 +432,9 @@
         "role_trend": -0.265,
         "recent_trend": -0.596,
         "draft_capital": 0.82,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.341,
+      "prob_ppr_increase": 0.352,
       "trajectory": "Declining"
     },
     "00-0033908": {
@@ -447,10 +447,10 @@
         "role_trend": -0.208,
         "recent_trend": -0.315,
         "draft_capital": 0.82,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.503,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.485,
+      "trajectory": "Declining"
     },
     "00-0033921": {
       "position": "WR",
@@ -462,9 +462,9 @@
         "role_trend": -0.267,
         "recent_trend": -0.522,
         "draft_capital": 0.82,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.443,
+      "prob_ppr_increase": 0.437,
       "trajectory": "Declining"
     },
     "00-0033923": {
@@ -477,9 +477,9 @@
         "role_trend": -0.243,
         "recent_trend": 0.062,
         "draft_capital": 0.82,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.408,
+      "prob_ppr_increase": 0.404,
       "trajectory": "Declining"
     },
     "00-0033943": {
@@ -492,9 +492,9 @@
         "role_trend": 0.641,
         "recent_trend": -0.724,
         "draft_capital": 0.73,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.362,
+      "prob_ppr_increase": 0.394,
       "trajectory": "Declining"
     },
     "00-0033955": {
@@ -507,9 +507,9 @@
         "role_trend": 0.228,
         "recent_trend": 0.058,
         "draft_capital": 0.64,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.293,
+      "prob_ppr_increase": 0.299,
       "trajectory": "Declining"
     },
     "00-0034159": {
@@ -522,9 +522,9 @@
         "role_trend": -0.494,
         "recent_trend": -0.725,
         "draft_capital": 0.73,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.757,
+      "prob_ppr_increase": 0.745,
       "trajectory": "Rising"
     },
     "00-0034272": {
@@ -537,9 +537,9 @@
         "role_trend": -0.187,
         "recent_trend": -0.546,
         "draft_capital": 0.64,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.464,
+      "prob_ppr_increase": 0.458,
       "trajectory": "Declining"
     },
     "00-0034348": {
@@ -552,9 +552,9 @@
         "role_trend": -0.089,
         "recent_trend": 0.021,
         "draft_capital": 0.91,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.415,
+      "prob_ppr_increase": 0.392,
       "trajectory": "Declining"
     },
     "00-0034351": {
@@ -567,9 +567,9 @@
         "role_trend": 0.185,
         "recent_trend": 0.543,
         "draft_capital": 0.91,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.474,
+      "prob_ppr_increase": 0.456,
       "trajectory": "Declining"
     },
     "00-0034383": {
@@ -582,9 +582,9 @@
         "role_trend": 0.064,
         "recent_trend": 0.323,
         "draft_capital": 0.73,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.43,
+      "prob_ppr_increase": 0.413,
       "trajectory": "Declining"
     },
     "00-0034407": {
@@ -597,9 +597,9 @@
         "role_trend": -0.443,
         "recent_trend": -0.837,
         "draft_capital": 0.55,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.422,
+      "prob_ppr_increase": 0.454,
       "trajectory": "Declining"
     },
     "00-0034521": {
@@ -612,9 +612,9 @@
         "role_trend": -0.53,
         "recent_trend": -0.753,
         "draft_capital": 0.05,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.401,
+      "prob_ppr_increase": 0.435,
       "trajectory": "Declining"
     },
     "00-0034613": {
@@ -627,9 +627,9 @@
         "role_trend": 0.11,
         "recent_trend": -0.195,
         "draft_capital": 0.05,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.524,
+      "prob_ppr_increase": 0.533,
       "trajectory": "Rising"
     },
     "00-0034753": {
@@ -642,9 +642,9 @@
         "role_trend": 0.071,
         "recent_trend": -0.192,
         "draft_capital": 0.82,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.459,
+      "prob_ppr_increase": 0.454,
       "trajectory": "Declining"
     },
     "00-0034775": {
@@ -657,9 +657,9 @@
         "role_trend": -0.248,
         "recent_trend": -0.476,
         "draft_capital": 0.91,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.477,
+      "prob_ppr_increase": 0.459,
       "trajectory": "Declining"
     },
     "00-0034791": {
@@ -672,9 +672,9 @@
         "role_trend": -0.086,
         "recent_trend": -0.488,
         "draft_capital": 0.91,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.418,
+      "prob_ppr_increase": 0.398,
       "trajectory": "Declining"
     },
     "00-0034796": {
@@ -687,9 +687,9 @@
         "role_trend": -0.044,
         "recent_trend": -0.436,
         "draft_capital": 1.0,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.458,
+      "prob_ppr_increase": 0.464,
       "trajectory": "Declining"
     },
     "00-0034827": {
@@ -702,9 +702,9 @@
         "role_trend": -0.242,
         "recent_trend": -0.344,
         "draft_capital": 1.0,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.474,
+      "prob_ppr_increase": 0.455,
       "trajectory": "Declining"
     },
     "00-0034829": {
@@ -717,10 +717,10 @@
         "role_trend": -0.141,
         "recent_trend": -0.317,
         "draft_capital": 0.91,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.494,
-      "trajectory": "Declining"
+      "prob_ppr_increase": 0.504,
+      "trajectory": "Rising"
     },
     "00-0034837": {
       "position": "WR",
@@ -732,9 +732,9 @@
         "role_trend": -0.288,
         "recent_trend": -0.78,
         "draft_capital": 1.0,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.375,
+      "prob_ppr_increase": 0.398,
       "trajectory": "Declining"
     },
     "00-0034844": {
@@ -747,9 +747,9 @@
         "role_trend": 0.04,
         "recent_trend": -0.197,
         "draft_capital": 1.0,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.43,
+      "prob_ppr_increase": 0.41,
       "trajectory": "Declining"
     },
     "00-0034855": {
@@ -762,9 +762,9 @@
         "role_trend": -0.014,
         "recent_trend": -0.15,
         "draft_capital": 1.0,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.475,
+      "prob_ppr_increase": 0.482,
       "trajectory": "Declining"
     },
     "00-0034857": {
@@ -777,9 +777,9 @@
         "role_trend": 0.035,
         "recent_trend": -0.049,
         "draft_capital": 1.0,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.393,
+      "prob_ppr_increase": 0.413,
       "trajectory": "Declining"
     },
     "00-0034869": {
@@ -792,9 +792,9 @@
         "role_trend": -0.032,
         "recent_trend": 0.421,
         "draft_capital": 1.0,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.337,
+      "prob_ppr_increase": 0.355,
       "trajectory": "Declining"
     },
     "00-0034960": {
@@ -807,7 +807,7 @@
         "role_trend": -0.08,
         "recent_trend": -0.195,
         "draft_capital": 0.05,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
       "prob_ppr_increase": 0.413,
       "trajectory": "Declining"
@@ -822,10 +822,10 @@
         "role_trend": -0.162,
         "recent_trend": -0.448,
         "draft_capital": 0.73,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.502,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.496,
+      "trajectory": "Declining"
     },
     "00-0035208": {
       "position": "WR",
@@ -837,9 +837,9 @@
         "role_trend": 0.178,
         "recent_trend": 0.11,
         "draft_capital": 0.05,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.394,
+      "prob_ppr_increase": 0.396,
       "trajectory": "Declining"
     },
     "00-0035229": {
@@ -852,9 +852,9 @@
         "role_trend": 0.074,
         "recent_trend": -0.262,
         "draft_capital": 1.0,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.541,
+      "prob_ppr_increase": 0.533,
       "trajectory": "Rising"
     },
     "00-0035243": {
@@ -867,9 +867,9 @@
         "role_trend": -0.405,
         "recent_trend": -0.676,
         "draft_capital": 0.91,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.499,
+      "prob_ppr_increase": 0.493,
       "trajectory": "Declining"
     },
     "00-0035249": {
@@ -882,9 +882,9 @@
         "role_trend": -0.144,
         "recent_trend": -0.076,
         "draft_capital": 0.82,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.634,
+      "prob_ppr_increase": 0.627,
       "trajectory": "Rising"
     },
     "00-0035250": {
@@ -897,9 +897,9 @@
         "role_trend": -0.29,
         "recent_trend": -0.176,
         "draft_capital": 0.82,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.341,
+      "prob_ppr_increase": 0.375,
       "trajectory": "Declining"
     },
     "00-0035261": {
@@ -912,9 +912,9 @@
         "role_trend": -0.25,
         "recent_trend": -0.122,
         "draft_capital": 0.73,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.32,
+      "prob_ppr_increase": 0.345,
       "trajectory": "Declining"
     },
     "00-0035406": {
@@ -927,10 +927,10 @@
         "role_trend": 0.069,
         "recent_trend": -0.379,
         "draft_capital": 0.05,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.522,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.498,
+      "trajectory": "Declining"
     },
     "00-0035500": {
       "position": "WR",
@@ -942,9 +942,9 @@
         "role_trend": -0.215,
         "recent_trend": -0.03,
         "draft_capital": 0.05,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.35,
+      "prob_ppr_increase": 0.38,
       "trajectory": "Declining"
     },
     "00-0035535": {
@@ -957,9 +957,9 @@
         "role_trend": 0.057,
         "recent_trend": -0.243,
         "draft_capital": 0.64,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.319,
+      "prob_ppr_increase": 0.348,
       "trajectory": "Declining"
     },
     "00-0035537": {
@@ -972,9 +972,9 @@
         "role_trend": 0.029,
         "recent_trend": 0.616,
         "draft_capital": 0.55,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.491,
+      "prob_ppr_increase": 0.469,
       "trajectory": "Declining"
     },
     "00-0035631": {
@@ -987,9 +987,9 @@
         "role_trend": -0.094,
         "recent_trend": -0.265,
         "draft_capital": 0.91,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.623,
+      "prob_ppr_increase": 0.632,
       "trajectory": "Rising"
     },
     "00-0035640": {
@@ -1002,9 +1002,9 @@
         "role_trend": 0.044,
         "recent_trend": -0.101,
         "draft_capital": 0.91,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.411,
+      "prob_ppr_increase": 0.405,
       "trajectory": "Declining"
     },
     "00-0035644": {
@@ -1017,9 +1017,9 @@
         "role_trend": -0.354,
         "recent_trend": -0.157,
         "draft_capital": 1.0,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.533,
+      "prob_ppr_increase": 0.543,
       "trajectory": "Rising"
     },
     "00-0035659": {
@@ -1032,9 +1032,9 @@
         "role_trend": -0.063,
         "recent_trend": -0.515,
         "draft_capital": 0.82,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.379,
+      "prob_ppr_increase": 0.384,
       "trajectory": "Declining"
     },
     "00-0035676": {
@@ -1047,9 +1047,9 @@
         "role_trend": -0.051,
         "recent_trend": -0.13,
         "draft_capital": 0.91,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.464,
+      "prob_ppr_increase": 0.446,
       "trajectory": "Declining"
     },
     "00-0035685": {
@@ -1062,9 +1062,9 @@
         "role_trend": -0.237,
         "recent_trend": -0.222,
         "draft_capital": 0.82,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.477,
+      "prob_ppr_increase": 0.457,
       "trajectory": "Declining"
     },
     "00-0035689": {
@@ -1077,9 +1077,9 @@
         "role_trend": 0.157,
         "recent_trend": 0.824,
         "draft_capital": 0.82,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.445,
+      "prob_ppr_increase": 0.427,
       "trajectory": "Declining"
     },
     "00-0035700": {
@@ -1092,9 +1092,9 @@
         "role_trend": -0.065,
         "recent_trend": 0.0,
         "draft_capital": 1.0,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.458,
+      "prob_ppr_increase": 0.441,
       "trajectory": "Declining"
     },
     "00-0035710": {
@@ -1107,7 +1107,7 @@
         "role_trend": -0.065,
         "recent_trend": 1.356,
         "draft_capital": 1.0,
-        "team_elo": 1484.894
+        "team_elo": 1484.891
       },
       "prob_ppr_increase": 0.349,
       "trajectory": "Declining"
@@ -1122,9 +1122,9 @@
         "role_trend": 0.086,
         "recent_trend": -0.057,
         "draft_capital": 0.91,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.426,
+      "prob_ppr_increase": 0.42,
       "trajectory": "Declining"
     },
     "00-0036040": {
@@ -1137,9 +1137,9 @@
         "role_trend": 0.201,
         "recent_trend": 0.631,
         "draft_capital": 0.05,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.264,
+      "prob_ppr_increase": 0.271,
       "trajectory": "Declining"
     },
     "00-0036139": {
@@ -1152,9 +1152,9 @@
         "role_trend": 0.127,
         "recent_trend": 0.495,
         "draft_capital": 0.05,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.361,
+      "prob_ppr_increase": 0.355,
       "trajectory": "Declining"
     },
     "00-0036158": {
@@ -1167,9 +1167,9 @@
         "role_trend": -0.355,
         "recent_trend": -0.151,
         "draft_capital": 0.91,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.564,
+      "prob_ppr_increase": 0.537,
       "trajectory": "Rising"
     },
     "00-0036182": {
@@ -1182,9 +1182,9 @@
         "role_trend": -0.554,
         "recent_trend": -0.82,
         "draft_capital": 0.05,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.483,
+      "prob_ppr_increase": 0.481,
       "trajectory": "Declining"
     },
     "00-0036196": {
@@ -1197,9 +1197,9 @@
         "role_trend": -0.292,
         "recent_trend": -0.713,
         "draft_capital": 0.73,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.535,
+      "prob_ppr_increase": 0.516,
       "trajectory": "Rising"
     },
     "00-0036212": {
@@ -1212,9 +1212,9 @@
         "role_trend": -0.018,
         "recent_trend": -0.292,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.483,
+      "prob_ppr_increase": 0.481,
       "trajectory": "Declining"
     },
     "00-0036223": {
@@ -1227,7 +1227,7 @@
         "role_trend": 0.086,
         "recent_trend": 0.798,
         "draft_capital": 0.91,
-        "team_elo": 1484.894
+        "team_elo": 1484.891
       },
       "prob_ppr_increase": 0.392,
       "trajectory": "Declining"
@@ -1242,9 +1242,9 @@
         "role_trend": 0.093,
         "recent_trend": 1.042,
         "draft_capital": 0.73,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.443,
+      "prob_ppr_increase": 0.422,
       "trajectory": "Declining"
     },
     "00-0036252": {
@@ -1257,9 +1257,9 @@
         "role_trend": -0.102,
         "recent_trend": -0.032,
         "draft_capital": 0.91,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.415,
+      "prob_ppr_increase": 0.409,
       "trajectory": "Declining"
     },
     "00-0036259": {
@@ -1272,9 +1272,9 @@
         "role_trend": -0.05,
         "recent_trend": 0.323,
         "draft_capital": 0.46,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.419,
+      "prob_ppr_increase": 0.411,
       "trajectory": "Declining"
     },
     "00-0036264": {
@@ -1287,9 +1287,9 @@
         "role_trend": 0.027,
         "recent_trend": -0.149,
         "draft_capital": 1.0,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.257,
+      "prob_ppr_increase": 0.27,
       "trajectory": "Declining"
     },
     "00-0036275": {
@@ -1302,9 +1302,9 @@
         "role_trend": -0.125,
         "recent_trend": 0.105,
         "draft_capital": 0.91,
-        "team_elo": 1496.29
+        "team_elo": 1502.612
       },
-      "prob_ppr_increase": 0.425,
+      "prob_ppr_increase": 0.433,
       "trajectory": "Declining"
     },
     "00-0036290": {
@@ -1317,9 +1317,9 @@
         "role_trend": -0.172,
         "recent_trend": -0.478,
         "draft_capital": 0.91,
-        "team_elo": 1496.29
+        "team_elo": 1502.612
       },
-      "prob_ppr_increase": 0.525,
+      "prob_ppr_increase": 0.532,
       "trajectory": "Rising"
     },
     "00-0036309": {
@@ -1332,9 +1332,9 @@
         "role_trend": -0.158,
         "recent_trend": -0.395,
         "draft_capital": 0.64,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.348,
+      "prob_ppr_increase": 0.378,
       "trajectory": "Declining"
     },
     "00-0036322": {
@@ -1347,9 +1347,9 @@
         "role_trend": 0.015,
         "recent_trend": -0.227,
         "draft_capital": 1.0,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.419,
+      "prob_ppr_increase": 0.411,
       "trajectory": "Declining"
     },
     "00-0036328": {
@@ -1362,9 +1362,9 @@
         "role_trend": -0.569,
         "recent_trend": -0.799,
         "draft_capital": 0.82,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.514,
+      "prob_ppr_increase": 0.502,
       "trajectory": "Rising"
     },
     "00-0036355": {
@@ -1377,9 +1377,9 @@
         "role_trend": -0.009,
         "recent_trend": 0.104,
         "draft_capital": 1.0,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.429,
+      "prob_ppr_increase": 0.447,
       "trajectory": "Declining"
     },
     "00-0036358": {
@@ -1392,9 +1392,9 @@
         "role_trend": -0.069,
         "recent_trend": -0.399,
         "draft_capital": 1.0,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.394,
+      "prob_ppr_increase": 0.389,
       "trajectory": "Declining"
     },
     "00-0036389": {
@@ -1407,9 +1407,9 @@
         "role_trend": 0.065,
         "recent_trend": -0.104,
         "draft_capital": 0.91,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.383,
+      "prob_ppr_increase": 0.402,
       "trajectory": "Declining"
     },
     "00-0036407": {
@@ -1422,9 +1422,9 @@
         "role_trend": -0.073,
         "recent_trend": -0.369,
         "draft_capital": 1.0,
-        "team_elo": 1450.266
+        "team_elo": 1462.892
       },
-      "prob_ppr_increase": 0.349,
+      "prob_ppr_increase": 0.361,
       "trajectory": "Declining"
     },
     "00-0036410": {
@@ -1437,9 +1437,9 @@
         "role_trend": -0.133,
         "recent_trend": 0.177,
         "draft_capital": 0.91,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.371,
+      "prob_ppr_increase": 0.38,
       "trajectory": "Declining"
     },
     "00-0036415": {
@@ -1452,9 +1452,9 @@
         "role_trend": 0.059,
         "recent_trend": 0.335,
         "draft_capital": 0.91,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.286,
+      "prob_ppr_increase": 0.307,
       "trajectory": "Declining"
     },
     "00-0036422": {
@@ -1467,9 +1467,9 @@
         "role_trend": 0.02,
         "recent_trend": -0.127,
         "draft_capital": 0.82,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.587,
+      "prob_ppr_increase": 0.564,
       "trajectory": "Rising"
     },
     "00-0036427": {
@@ -1482,9 +1482,9 @@
         "role_trend": -0.128,
         "recent_trend": -0.434,
         "draft_capital": 0.64,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.374,
+      "prob_ppr_increase": 0.407,
       "trajectory": "Declining"
     },
     "00-0036550": {
@@ -1497,9 +1497,9 @@
         "role_trend": -0.148,
         "recent_trend": -0.559,
         "draft_capital": 1.0,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.485,
+      "prob_ppr_increase": 0.48,
       "trajectory": "Declining"
     },
     "00-0036554": {
@@ -1512,9 +1512,9 @@
         "role_trend": 0.076,
         "recent_trend": -0.039,
         "draft_capital": 0.82,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.435,
+      "prob_ppr_increase": 0.418,
       "trajectory": "Declining"
     },
     "00-0036555": {
@@ -1527,9 +1527,9 @@
         "role_trend": -0.393,
         "recent_trend": -0.409,
         "draft_capital": 0.73,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.396,
+      "prob_ppr_increase": 0.407,
       "trajectory": "Declining"
     },
     "00-0036613": {
@@ -1542,9 +1542,9 @@
         "role_trend": 0.195,
         "recent_trend": 0.115,
         "draft_capital": 1.0,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.408,
+      "prob_ppr_increase": 0.385,
       "trajectory": "Declining"
     },
     "00-0036626": {
@@ -1557,9 +1557,9 @@
         "role_trend": 0.069,
         "recent_trend": -0.029,
         "draft_capital": 0.82,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.397,
+      "prob_ppr_increase": 0.403,
       "trajectory": "Declining"
     },
     "00-0036628": {
@@ -1572,9 +1572,9 @@
         "role_trend": 0.442,
         "recent_trend": 0.126,
         "draft_capital": 0.73,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.406,
+      "prob_ppr_increase": 0.412,
       "trajectory": "Declining"
     },
     "00-0036637": {
@@ -1587,9 +1587,9 @@
         "role_trend": -0.082,
         "recent_trend": -0.578,
         "draft_capital": 0.64,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.543,
+      "prob_ppr_increase": 0.54,
       "trajectory": "Rising"
     },
     "00-0036727": {
@@ -1602,9 +1602,9 @@
         "role_trend": -0.31,
         "recent_trend": 5.542,
         "draft_capital": 0.05,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.372,
+      "prob_ppr_increase": 0.347,
       "trajectory": "Declining"
     },
     "00-0036754": {
@@ -1617,9 +1617,9 @@
         "role_trend": 0.186,
         "recent_trend": 0.166,
         "draft_capital": 0.05,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.484,
+      "prob_ppr_increase": 0.473,
       "trajectory": "Declining"
     },
     "00-0036849": {
@@ -1632,9 +1632,9 @@
         "role_trend": -0.422,
         "recent_trend": -0.705,
         "draft_capital": 0.91,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.523,
+      "prob_ppr_increase": 0.501,
       "trajectory": "Rising"
     },
     "00-0036875": {
@@ -1647,9 +1647,9 @@
         "role_trend": -0.014,
         "recent_trend": 0.112,
         "draft_capital": 0.73,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.444,
+      "prob_ppr_increase": 0.432,
       "trajectory": "Declining"
     },
     "00-0036894": {
@@ -1662,9 +1662,9 @@
         "role_trend": -0.277,
         "recent_trend": -0.073,
         "draft_capital": 0.91,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.573,
+      "prob_ppr_increase": 0.568,
       "trajectory": "Rising"
     },
     "00-0036900": {
@@ -1677,9 +1677,9 @@
         "role_trend": 0.097,
         "recent_trend": -0.058,
         "draft_capital": 1.0,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.355,
+      "prob_ppr_increase": 0.364,
       "trajectory": "Declining"
     },
     "00-0036906": {
@@ -1692,9 +1692,9 @@
         "role_trend": -0.335,
         "recent_trend": -0.908,
         "draft_capital": 0.55,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.416,
+      "prob_ppr_increase": 0.454,
       "trajectory": "Declining"
     },
     "00-0036912": {
@@ -1707,9 +1707,9 @@
         "role_trend": -0.082,
         "recent_trend": -0.055,
         "draft_capital": 1.0,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.437,
+      "prob_ppr_increase": 0.419,
       "trajectory": "Declining"
     },
     "00-0036919": {
@@ -1722,9 +1722,9 @@
         "role_trend": 1.138,
         "recent_trend": 1.767,
         "draft_capital": 0.64,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.275,
+      "prob_ppr_increase": 0.269,
       "trajectory": "Declining"
     },
     "00-0036945": {
@@ -1737,9 +1737,9 @@
         "role_trend": 0.45,
         "recent_trend": -0.183,
         "draft_capital": 1.0,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.381,
+      "prob_ppr_increase": 0.385,
       "trajectory": "Declining"
     },
     "00-0036963": {
@@ -1752,9 +1752,9 @@
         "role_trend": 0.072,
         "recent_trend": 0.001,
         "draft_capital": 0.73,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.403,
+      "prob_ppr_increase": 0.392,
       "trajectory": "Declining"
     },
     "00-0036970": {
@@ -1767,9 +1767,9 @@
         "role_trend": 0.501,
         "recent_trend": 0.57,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.275,
+      "prob_ppr_increase": 0.276,
       "trajectory": "Declining"
     },
     "00-0036971": {
@@ -1782,9 +1782,9 @@
         "role_trend": 0.071,
         "recent_trend": 0.657,
         "draft_capital": 1.0,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
-      "prob_ppr_increase": 0.392,
+      "prob_ppr_increase": 0.393,
       "trajectory": "Declining"
     },
     "00-0036972": {
@@ -1797,9 +1797,9 @@
         "role_trend": -0.067,
         "recent_trend": 0.284,
         "draft_capital": 1.0,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.378,
+      "prob_ppr_increase": 0.385,
       "trajectory": "Declining"
     },
     "00-0036973": {
@@ -1812,9 +1812,9 @@
         "role_trend": 0.003,
         "recent_trend": 0.231,
         "draft_capital": 1.0,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.356,
+      "prob_ppr_increase": 0.367,
       "trajectory": "Declining"
     },
     "00-0036980": {
@@ -1827,9 +1827,9 @@
         "role_trend": -0.553,
         "recent_trend": -0.774,
         "draft_capital": 0.91,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.538,
+      "prob_ppr_increase": 0.519,
       "trajectory": "Rising"
     },
     "00-0036988": {
@@ -1842,10 +1842,10 @@
         "role_trend": -0.27,
         "recent_trend": -0.511,
         "draft_capital": 0.82,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.513,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.494,
+      "trajectory": "Declining"
     },
     "00-0036997": {
       "position": "RB",
@@ -1857,9 +1857,9 @@
         "role_trend": 0.007,
         "recent_trend": 0.441,
         "draft_capital": 0.91,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.424,
+      "prob_ppr_increase": 0.418,
       "trajectory": "Declining"
     },
     "00-0037004": {
@@ -1872,9 +1872,9 @@
         "role_trend": 0.491,
         "recent_trend": 0.711,
         "draft_capital": 0.82,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.43,
+      "prob_ppr_increase": 0.461,
       "trajectory": "Declining"
     },
     "00-0037005": {
@@ -1887,9 +1887,9 @@
         "role_trend": -0.078,
         "recent_trend": 0.094,
         "draft_capital": 0.82,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.466,
+      "prob_ppr_increase": 0.476,
       "trajectory": "Declining"
     },
     "00-0037197": {
@@ -1902,9 +1902,9 @@
         "role_trend": -0.066,
         "recent_trend": -0.355,
         "draft_capital": 0.46,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.468,
+      "prob_ppr_increase": 0.463,
       "trajectory": "Declining"
     },
     "00-0037228": {
@@ -1917,9 +1917,9 @@
         "role_trend": -0.022,
         "recent_trend": 0.355,
         "draft_capital": 0.05,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.379,
+      "prob_ppr_increase": 0.373,
       "trajectory": "Declining"
     },
     "00-0037231": {
@@ -1932,9 +1932,9 @@
         "role_trend": 0.224,
         "recent_trend": 0.222,
         "draft_capital": 0.05,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.418,
+      "prob_ppr_increase": 0.428,
       "trajectory": "Declining"
     },
     "00-0037238": {
@@ -1947,9 +1947,9 @@
         "role_trend": 0.03,
         "recent_trend": -0.113,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.36,
+      "prob_ppr_increase": 0.362,
       "trajectory": "Declining"
     },
     "00-0037239": {
@@ -1962,9 +1962,9 @@
         "role_trend": 0.408,
         "recent_trend": 0.74,
         "draft_capital": 1.0,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.294,
+      "prob_ppr_increase": 0.302,
       "trajectory": "Declining"
     },
     "00-0037240": {
@@ -1977,9 +1977,9 @@
         "role_trend": 0.064,
         "recent_trend": 0.504,
         "draft_capital": 1.0,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.417,
+      "prob_ppr_increase": 0.406,
       "trajectory": "Declining"
     },
     "00-0037247": {
@@ -1992,9 +1992,9 @@
         "role_trend": -0.071,
         "recent_trend": 0.564,
         "draft_capital": 0.91,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.328,
+      "prob_ppr_increase": 0.324,
       "trajectory": "Declining"
     },
     "00-0037248": {
@@ -2007,9 +2007,9 @@
         "role_trend": 0.03,
         "recent_trend": 0.21,
         "draft_capital": 0.91,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.474,
+      "prob_ppr_increase": 0.452,
       "trajectory": "Declining"
     },
     "00-0037256": {
@@ -2022,9 +2022,9 @@
         "role_trend": -0.187,
         "recent_trend": -0.388,
         "draft_capital": 0.82,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.389,
+      "prob_ppr_increase": 0.395,
       "trajectory": "Declining"
     },
     "00-0037258": {
@@ -2037,9 +2037,9 @@
         "role_trend": -0.599,
         "recent_trend": -0.943,
         "draft_capital": 0.73,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.581,
+      "prob_ppr_increase": 0.576,
       "trajectory": "Rising"
     },
     "00-0037261": {
@@ -2052,9 +2052,9 @@
         "role_trend": -0.051,
         "recent_trend": 0.126,
         "draft_capital": 0.64,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.45,
+      "prob_ppr_increase": 0.431,
       "trajectory": "Declining"
     },
     "00-0037263": {
@@ -2067,9 +2067,9 @@
         "role_trend": 0.019,
         "recent_trend": 0.009,
         "draft_capital": 0.64,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.301,
+      "prob_ppr_increase": 0.333,
       "trajectory": "Declining"
     },
     "00-0037267": {
@@ -2082,9 +2082,9 @@
         "role_trend": -0.34,
         "recent_trend": -0.749,
         "draft_capital": 0.64,
-        "team_elo": 1450.266
+        "team_elo": 1462.892
       },
-      "prob_ppr_increase": 0.391,
+      "prob_ppr_increase": 0.406,
       "trajectory": "Declining"
     },
     "00-0037291": {
@@ -2097,9 +2097,9 @@
         "role_trend": 0.221,
         "recent_trend": 0.46,
         "draft_capital": 0.55,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.299,
+      "prob_ppr_increase": 0.327,
       "trajectory": "Declining"
     },
     "00-0037304": {
@@ -2112,9 +2112,9 @@
         "role_trend": -0.642,
         "recent_trend": -0.016,
         "draft_capital": 0.55,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.434,
+      "prob_ppr_increase": 0.471,
       "trajectory": "Declining"
     },
     "00-0037525": {
@@ -2127,9 +2127,9 @@
         "role_trend": -0.244,
         "recent_trend": 0.614,
         "draft_capital": 0.05,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.465,
+      "prob_ppr_increase": 0.456,
       "trajectory": "Declining"
     },
     "00-0037545": {
@@ -2142,9 +2142,9 @@
         "role_trend": -0.258,
         "recent_trend": 0.308,
         "draft_capital": 0.05,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.467,
+      "prob_ppr_increase": 0.449,
       "trajectory": "Declining"
     },
     "00-0037614": {
@@ -2157,9 +2157,9 @@
         "role_trend": 0.069,
         "recent_trend": 0.642,
         "draft_capital": 0.91,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.322,
+      "prob_ppr_increase": 0.331,
       "trajectory": "Declining"
     },
     "00-0037617": {
@@ -2172,9 +2172,9 @@
         "role_trend": -0.501,
         "recent_trend": -0.66,
         "draft_capital": 0.73,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.575,
+      "prob_ppr_increase": 0.556,
       "trajectory": "Rising"
     },
     "00-0037664": {
@@ -2187,7 +2187,7 @@
         "role_trend": 0.124,
         "recent_trend": 0.428,
         "draft_capital": 0.91,
-        "team_elo": 1484.894
+        "team_elo": 1484.891
       },
       "prob_ppr_increase": 0.319,
       "trajectory": "Declining"
@@ -2202,9 +2202,9 @@
         "role_trend": -0.319,
         "recent_trend": -0.565,
         "draft_capital": 0.82,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.428,
+      "prob_ppr_increase": 0.426,
       "trajectory": "Declining"
     },
     "00-0037740": {
@@ -2217,9 +2217,9 @@
         "role_trend": 0.13,
         "recent_trend": -0.572,
         "draft_capital": 1.0,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.337,
+      "prob_ppr_increase": 0.368,
       "trajectory": "Declining"
     },
     "00-0037741": {
@@ -2232,9 +2232,9 @@
         "role_trend": -0.022,
         "recent_trend": -0.398,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.392,
+      "prob_ppr_increase": 0.394,
       "trajectory": "Declining"
     },
     "00-0037742": {
@@ -2247,9 +2247,9 @@
         "role_trend": 0.622,
         "recent_trend": 0.224,
         "draft_capital": 1.0,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.393,
+      "prob_ppr_increase": 0.398,
       "trajectory": "Declining"
     },
     "00-0037744": {
@@ -2262,9 +2262,9 @@
         "role_trend": -0.004,
         "recent_trend": 0.486,
         "draft_capital": 0.91,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.357,
+      "prob_ppr_increase": 0.386,
       "trajectory": "Declining"
     },
     "00-0037746": {
@@ -2277,9 +2277,9 @@
         "role_trend": -0.638,
         "recent_trend": -0.651,
         "draft_capital": 0.82,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.466,
+      "prob_ppr_increase": 0.468,
       "trajectory": "Declining"
     },
     "00-0037801": {
@@ -2292,9 +2292,9 @@
         "role_trend": 0.007,
         "recent_trend": 0.031,
         "draft_capital": 0.05,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.414,
+      "prob_ppr_increase": 0.409,
       "trajectory": "Declining"
     },
     "00-0037805": {
@@ -2307,9 +2307,9 @@
         "role_trend": 0.161,
         "recent_trend": 0.574,
         "draft_capital": 0.82,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.358,
+      "prob_ppr_increase": 0.389,
       "trajectory": "Declining"
     },
     "00-0037809": {
@@ -2322,9 +2322,9 @@
         "role_trend": 0.027,
         "recent_trend": 0.093,
         "draft_capital": 0.73,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.352,
+      "prob_ppr_increase": 0.357,
       "trajectory": "Declining"
     },
     "00-0037816": {
@@ -2337,9 +2337,9 @@
         "role_trend": -0.02,
         "recent_trend": 0.079,
         "draft_capital": 0.73,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.394,
+      "prob_ppr_increase": 0.384,
       "trajectory": "Declining"
     },
     "00-0037834": {
@@ -2352,9 +2352,9 @@
         "role_trend": -0.012,
         "recent_trend": -0.369,
         "draft_capital": 0.46,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.347,
+      "prob_ppr_increase": 0.353,
       "trajectory": "Declining"
     },
     "00-0037837": {
@@ -2367,9 +2367,9 @@
         "role_trend": -0.002,
         "recent_trend": -0.006,
         "draft_capital": 0.73,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.409,
+      "prob_ppr_increase": 0.403,
       "trajectory": "Declining"
     },
     "00-0037838": {
@@ -2382,9 +2382,9 @@
         "role_trend": -0.067,
         "recent_trend": -0.451,
         "draft_capital": 0.73,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.455,
+      "prob_ppr_increase": 0.486,
       "trajectory": "Declining"
     },
     "00-0037840": {
@@ -2397,9 +2397,9 @@
         "role_trend": -0.178,
         "recent_trend": -0.001,
         "draft_capital": 0.64,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.496,
+      "prob_ppr_increase": 0.471,
       "trajectory": "Declining"
     },
     "00-0038040": {
@@ -2412,9 +2412,9 @@
         "role_trend": -0.355,
         "recent_trend": -0.814,
         "draft_capital": 0.73,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.447,
+      "prob_ppr_increase": 0.484,
       "trajectory": "Declining"
     },
     "00-0038041": {
@@ -2427,9 +2427,9 @@
         "role_trend": -0.014,
         "recent_trend": 0.336,
         "draft_capital": 0.73,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.411,
+      "prob_ppr_increase": 0.407,
       "trajectory": "Declining"
     },
     "00-0038046": {
@@ -2442,9 +2442,9 @@
         "role_trend": 0.028,
         "recent_trend": 0.448,
         "draft_capital": 0.73,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.608,
+      "prob_ppr_increase": 0.592,
       "trajectory": "Rising"
     },
     "00-0038104": {
@@ -2457,9 +2457,9 @@
         "role_trend": 0.235,
         "recent_trend": 3.501,
         "draft_capital": 0.91,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.25,
+      "prob_ppr_increase": 0.247,
       "trajectory": "Declining"
     },
     "00-0038115": {
@@ -2472,9 +2472,9 @@
         "role_trend": 0.004,
         "recent_trend": 0.548,
         "draft_capital": 0.73,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.419,
+      "prob_ppr_increase": 0.442,
       "trajectory": "Declining"
     },
     "00-0038117": {
@@ -2487,9 +2487,9 @@
         "role_trend": 0.195,
         "recent_trend": 0.38,
         "draft_capital": 0.91,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.284,
+      "prob_ppr_increase": 0.305,
       "trajectory": "Declining"
     },
     "00-0038120": {
@@ -2502,9 +2502,9 @@
         "role_trend": -0.172,
         "recent_trend": -0.218,
         "draft_capital": 0.91,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.363,
+      "prob_ppr_increase": 0.399,
       "trajectory": "Declining"
     },
     "00-0038124": {
@@ -2517,9 +2517,9 @@
         "role_trend": 0.246,
         "recent_trend": 0.282,
         "draft_capital": 0.91,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.418,
+      "prob_ppr_increase": 0.404,
       "trajectory": "Declining"
     },
     "00-0038129": {
@@ -2532,9 +2532,9 @@
         "role_trend": -0.023,
         "recent_trend": -0.049,
         "draft_capital": 0.73,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.45,
+      "prob_ppr_increase": 0.445,
       "trajectory": "Declining"
     },
     "00-0038134": {
@@ -2547,9 +2547,9 @@
         "role_trend": -0.312,
         "recent_trend": 0.008,
         "draft_capital": 0.91,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.484,
+      "prob_ppr_increase": 0.48,
       "trajectory": "Declining"
     },
     "00-0038393": {
@@ -2562,9 +2562,9 @@
         "role_trend": -0.172,
         "recent_trend": -0.342,
         "draft_capital": 0.64,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.473,
+      "prob_ppr_increase": 0.455,
       "trajectory": "Declining"
     },
     "00-0038542": {
@@ -2577,9 +2577,9 @@
         "role_trend": 0.207,
         "recent_trend": 0.261,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.36,
+      "prob_ppr_increase": 0.362,
       "trajectory": "Declining"
     },
     "00-0038543": {
@@ -2592,9 +2592,9 @@
         "role_trend": 0.211,
         "recent_trend": 0.787,
         "draft_capital": 1.0,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.358,
+      "prob_ppr_increase": 0.342,
       "trajectory": "Declining"
     },
     "00-0038544": {
@@ -2607,9 +2607,9 @@
         "role_trend": 0.033,
         "recent_trend": 0.274,
         "draft_capital": 1.0,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.387,
+      "prob_ppr_increase": 0.371,
       "trajectory": "Declining"
     },
     "00-0038547": {
@@ -2622,9 +2622,9 @@
         "role_trend": -0.327,
         "recent_trend": -0.349,
         "draft_capital": 0.91,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.668,
+      "prob_ppr_increase": 0.663,
       "trajectory": "Rising"
     },
     "00-0038551": {
@@ -2637,9 +2637,9 @@
         "role_trend": -0.299,
         "recent_trend": -0.08,
         "draft_capital": 0.82,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.514,
+      "prob_ppr_increase": 0.525,
       "trajectory": "Rising"
     },
     "00-0038555": {
@@ -2652,9 +2652,9 @@
         "role_trend": -0.61,
         "recent_trend": -0.3,
         "draft_capital": 0.82,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.555,
+      "prob_ppr_increase": 0.534,
       "trajectory": "Rising"
     },
     "00-0038558": {
@@ -2667,9 +2667,9 @@
         "role_trend": 0.313,
         "recent_trend": 1.527,
         "draft_capital": 0.82,
-        "team_elo": 1528.825
+        "team_elo": 1523.322
       },
-      "prob_ppr_increase": 0.379,
+      "prob_ppr_increase": 0.374,
       "trajectory": "Declining"
     },
     "00-0038559": {
@@ -2682,9 +2682,9 @@
         "role_trend": 0.164,
         "recent_trend": 0.846,
         "draft_capital": 0.82,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.253,
+      "prob_ppr_increase": 0.279,
       "trajectory": "Declining"
     },
     "00-0038563": {
@@ -2697,9 +2697,9 @@
         "role_trend": 0.218,
         "recent_trend": 0.608,
         "draft_capital": 0.82,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.256,
+      "prob_ppr_increase": 0.282,
       "trajectory": "Declining"
     },
     "00-0038597": {
@@ -2712,9 +2712,9 @@
         "role_trend": 0.146,
         "recent_trend": 0.832,
         "draft_capital": 0.64,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.37,
+      "prob_ppr_increase": 0.38,
       "trajectory": "Declining"
     },
     "00-0038606": {
@@ -2727,7 +2727,7 @@
         "role_trend": 0.176,
         "recent_trend": 1.712,
         "draft_capital": 0.55,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
       "prob_ppr_increase": 0.316,
       "trajectory": "Declining"
@@ -2742,9 +2742,9 @@
         "role_trend": -0.175,
         "recent_trend": 0.018,
         "draft_capital": 0.55,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.425,
+      "prob_ppr_increase": 0.408,
       "trajectory": "Declining"
     },
     "00-0038611": {
@@ -2757,7 +2757,7 @@
         "role_trend": 0.247,
         "recent_trend": 1.651,
         "draft_capital": 0.55,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
       "prob_ppr_increase": 0.448,
       "trajectory": "Declining"
@@ -2772,9 +2772,9 @@
         "role_trend": 0.451,
         "recent_trend": 3.298,
         "draft_capital": 0.55,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.221,
+      "prob_ppr_increase": 0.209,
       "trajectory": "Declining"
     },
     "00-0038619": {
@@ -2787,9 +2787,9 @@
         "role_trend": 0.009,
         "recent_trend": 0.055,
         "draft_capital": 0.55,
-        "team_elo": 1487.552
+        "team_elo": 1496.378
       },
-      "prob_ppr_increase": 0.377,
+      "prob_ppr_increase": 0.386,
       "trajectory": "Declining"
     },
     "00-0038621": {
@@ -2802,9 +2802,9 @@
         "role_trend": -0.509,
         "recent_trend": -0.248,
         "draft_capital": 0.55,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.428,
+      "prob_ppr_increase": 0.417,
       "trajectory": "Declining"
     },
     "00-0038685": {
@@ -2817,9 +2817,9 @@
         "role_trend": -0.266,
         "recent_trend": -0.225,
         "draft_capital": 0.05,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.436,
+      "prob_ppr_increase": 0.42,
       "trajectory": "Declining"
     },
     "00-0038705": {
@@ -2832,9 +2832,9 @@
         "role_trend": -0.098,
         "recent_trend": -0.089,
         "draft_capital": 0.05,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.414,
+      "prob_ppr_increase": 0.408,
       "trajectory": "Declining"
     },
     "00-0038720": {
@@ -2847,9 +2847,9 @@
         "role_trend": 0.229,
         "recent_trend": 1.013,
         "draft_capital": 0.05,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.345,
+      "prob_ppr_increase": 0.344,
       "trajectory": "Declining"
     },
     "00-0038738": {
@@ -2862,24 +2862,24 @@
         "role_trend": -0.26,
         "recent_trend": 0.869,
         "draft_capital": 0.05,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.418,
+      "prob_ppr_increase": 0.413,
       "trajectory": "Declining"
     },
     "00-0038794": {
       "position": "RB",
       "current_age": 26,
-      "team": "DEN",
+      "team": "CLE",
       "signals": {
         "age_curve_rising": 1,
         "injury_risk": 0.196,
         "role_trend": -0.487,
         "recent_trend": -0.691,
         "draft_capital": 0.05,
-        "team_elo": 1549.774
+        "team_elo": 1462.892
       },
-      "prob_ppr_increase": 0.497,
+      "prob_ppr_increase": 0.39,
       "trajectory": "Declining"
     },
     "00-0038797": {
@@ -2892,9 +2892,9 @@
         "role_trend": 0.019,
         "recent_trend": 0.706,
         "draft_capital": 0.05,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.45,
+      "prob_ppr_increase": 0.43,
       "trajectory": "Declining"
     },
     "00-0038933": {
@@ -2907,9 +2907,9 @@
         "role_trend": -0.293,
         "recent_trend": 0.004,
         "draft_capital": 1.0,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.657,
+      "prob_ppr_increase": 0.64,
       "trajectory": "Rising"
     },
     "00-0038935": {
@@ -2922,9 +2922,9 @@
         "role_trend": 0.302,
         "recent_trend": 1.235,
         "draft_capital": 0.91,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
-      "prob_ppr_increase": 0.433,
+      "prob_ppr_increase": 0.432,
       "trajectory": "Declining"
     },
     "00-0038951": {
@@ -2937,9 +2937,9 @@
         "role_trend": -0.163,
         "recent_trend": 0.33,
         "draft_capital": 0.05,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.386,
+      "prob_ppr_increase": 0.38,
       "trajectory": "Declining"
     },
     "00-0038976": {
@@ -2952,9 +2952,9 @@
         "role_trend": 0.152,
         "recent_trend": -0.07,
         "draft_capital": 0.91,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.425,
+      "prob_ppr_increase": 0.402,
       "trajectory": "Declining"
     },
     "00-0038979": {
@@ -2967,9 +2967,9 @@
         "role_trend": -0.101,
         "recent_trend": -0.037,
         "draft_capital": 0.82,
-        "team_elo": 1450.266
+        "team_elo": 1462.892
       },
-      "prob_ppr_increase": 0.384,
+      "prob_ppr_increase": 0.397,
       "trajectory": "Declining"
     },
     "00-0038994": {
@@ -2982,9 +2982,9 @@
         "role_trend": -0.046,
         "recent_trend": -0.377,
         "draft_capital": 1.0,
-        "team_elo": 1535.088
+        "team_elo": 1527.852
       },
-      "prob_ppr_increase": 0.438,
+      "prob_ppr_increase": 0.43,
       "trajectory": "Declining"
     },
     "00-0038996": {
@@ -2997,9 +2997,9 @@
         "role_trend": 0.121,
         "recent_trend": -0.031,
         "draft_capital": 0.82,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.547,
+      "prob_ppr_increase": 0.533,
       "trajectory": "Rising"
     },
     "00-0038997": {
@@ -3012,7 +3012,7 @@
         "role_trend": -0.203,
         "recent_trend": -0.184,
         "draft_capital": 0.82,
-        "team_elo": 1484.894
+        "team_elo": 1484.891
       },
       "prob_ppr_increase": 0.373,
       "trajectory": "Declining"
@@ -3027,9 +3027,9 @@
         "role_trend": 0.051,
         "recent_trend": -0.165,
         "draft_capital": 0.82,
-        "team_elo": 1418.226
+        "team_elo": 1440.073
       },
-      "prob_ppr_increase": 0.334,
+      "prob_ppr_increase": 0.359,
       "trajectory": "Declining"
     },
     "00-0039040": {
@@ -3042,9 +3042,9 @@
         "role_trend": 0.176,
         "recent_trend": 0.316,
         "draft_capital": 0.82,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.389,
+      "prob_ppr_increase": 0.387,
       "trajectory": "Declining"
     },
     "00-0039041": {
@@ -3057,9 +3057,9 @@
         "role_trend": 0.093,
         "recent_trend": 0.359,
         "draft_capital": 0.55,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.332,
+      "prob_ppr_increase": 0.36,
       "trajectory": "Declining"
     },
     "00-0039064": {
@@ -3072,9 +3072,9 @@
         "role_trend": 0.162,
         "recent_trend": 0.17,
         "draft_capital": 1.0,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.371,
+      "prob_ppr_increase": 0.366,
       "trajectory": "Declining"
     },
     "00-0039065": {
@@ -3087,9 +3087,9 @@
         "role_trend": 0.059,
         "recent_trend": -0.483,
         "draft_capital": 0.91,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.56,
+      "prob_ppr_increase": 0.549,
       "trajectory": "Rising"
     },
     "00-0039066": {
@@ -3102,9 +3102,9 @@
         "role_trend": 0.295,
         "recent_trend": 0.367,
         "draft_capital": 0.91,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.367,
+      "prob_ppr_increase": 0.397,
       "trajectory": "Declining"
     },
     "00-0039074": {
@@ -3117,9 +3117,9 @@
         "role_trend": 0.309,
         "recent_trend": 2.548,
         "draft_capital": 0.64,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.373,
+      "prob_ppr_increase": 0.353,
       "trajectory": "Declining"
     },
     "00-0039075": {
@@ -3132,9 +3132,9 @@
         "role_trend": -0.046,
         "recent_trend": 0.485,
         "draft_capital": 0.64,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.397,
+      "prob_ppr_increase": 0.376,
       "trajectory": "Declining"
     },
     "00-0039139": {
@@ -3147,9 +3147,9 @@
         "role_trend": 0.22,
         "recent_trend": 0.229,
         "draft_capital": 1.0,
-        "team_elo": 1542.532
+        "team_elo": 1532.134
       },
-      "prob_ppr_increase": 0.44,
+      "prob_ppr_increase": 0.428,
       "trajectory": "Declining"
     },
     "00-0039144": {
@@ -3162,9 +3162,9 @@
         "role_trend": 0.483,
         "recent_trend": 0.135,
         "draft_capital": 0.91,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.495,
+      "prob_ppr_increase": 0.48,
       "trajectory": "Declining"
     },
     "00-0039146": {
@@ -3177,9 +3177,9 @@
         "role_trend": -0.054,
         "recent_trend": -0.766,
         "draft_capital": 0.91,
-        "team_elo": 1527.17
+        "team_elo": 1513.653
       },
-      "prob_ppr_increase": 0.49,
+      "prob_ppr_increase": 0.475,
       "trajectory": "Declining"
     },
     "00-0039150": {
@@ -3192,9 +3192,9 @@
         "role_trend": 0.114,
         "recent_trend": 0.241,
         "draft_capital": 1.0,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.33,
+      "prob_ppr_increase": 0.32,
       "trajectory": "Declining"
     },
     "00-0039163": {
@@ -3207,9 +3207,9 @@
         "role_trend": -0.397,
         "recent_trend": -0.158,
         "draft_capital": 1.0,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.308,
+      "prob_ppr_increase": 0.325,
       "trajectory": "Declining"
     },
     "00-0039165": {
@@ -3222,9 +3222,9 @@
         "role_trend": -0.274,
         "recent_trend": 0.252,
         "draft_capital": 0.91,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.494,
+      "prob_ppr_increase": 0.474,
       "trajectory": "Declining"
     },
     "00-0039337": {
@@ -3237,9 +3237,9 @@
         "role_trend": -0.178,
         "recent_trend": -0.791,
         "draft_capital": 1.0,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.441,
+      "prob_ppr_increase": 0.473,
       "trajectory": "Declining"
     },
     "00-0039338": {
@@ -3252,9 +3252,9 @@
         "role_trend": -0.035,
         "recent_trend": -0.329,
         "draft_capital": 1.0,
-        "team_elo": 1425.997
+        "team_elo": 1455.809
       },
-      "prob_ppr_increase": 0.446,
+      "prob_ppr_increase": 0.478,
       "trajectory": "Declining"
     },
     "00-0039342": {
@@ -3267,9 +3267,9 @@
         "role_trend": -0.135,
         "recent_trend": -0.286,
         "draft_capital": 1.0,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.356,
+      "prob_ppr_increase": 0.365,
       "trajectory": "Declining"
     },
     "00-0039355": {
@@ -3282,9 +3282,9 @@
         "role_trend": -0.063,
         "recent_trend": 0.474,
         "draft_capital": 0.82,
-        "team_elo": 1473.256
+        "team_elo": 1478.446
       },
-      "prob_ppr_increase": 0.375,
+      "prob_ppr_increase": 0.381,
       "trajectory": "Declining"
     },
     "00-0039356": {
@@ -3297,9 +3297,9 @@
         "role_trend": -0.085,
         "recent_trend": -0.262,
         "draft_capital": 0.73,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.485,
+      "prob_ppr_increase": 0.495,
       "trajectory": "Declining"
     },
     "00-0039359": {
@@ -3312,9 +3312,9 @@
         "role_trend": 0.372,
         "recent_trend": -0.42,
         "draft_capital": 0.73,
-        "team_elo": 1533.547
+        "team_elo": 1517.222
       },
-      "prob_ppr_increase": 0.574,
+      "prob_ppr_increase": 0.557,
       "trajectory": "Rising"
     },
     "00-0039361": {
@@ -3327,9 +3327,9 @@
         "role_trend": 0.237,
         "recent_trend": -0.433,
         "draft_capital": 0.73,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.427,
+      "prob_ppr_increase": 0.42,
       "trajectory": "Declining"
     },
     "00-0039373": {
@@ -3342,9 +3342,9 @@
         "role_trend": 1.233,
         "recent_trend": -0.012,
         "draft_capital": 0.64,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.288,
+      "prob_ppr_increase": 0.297,
       "trajectory": "Declining"
     },
     "00-0039379": {
@@ -3357,9 +3357,9 @@
         "role_trend": 0.459,
         "recent_trend": 2.981,
         "draft_capital": 0.64,
-        "team_elo": 1450.266
+        "team_elo": 1462.892
       },
-      "prob_ppr_increase": 0.231,
+      "prob_ppr_increase": 0.241,
       "trajectory": "Declining"
     },
     "00-0039384": {
@@ -3372,9 +3372,9 @@
         "role_trend": 0.021,
         "recent_trend": -0.118,
         "draft_capital": 0.64,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.309,
+      "prob_ppr_increase": 0.342,
       "trajectory": "Declining"
     },
     "00-0039391": {
@@ -3387,9 +3387,9 @@
         "role_trend": 0.378,
         "recent_trend": 2.606,
         "draft_capital": 0.55,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.401,
+      "prob_ppr_increase": 0.383,
       "trajectory": "Declining"
     },
     "00-0039410": {
@@ -3402,9 +3402,9 @@
         "role_trend": 0.961,
         "recent_trend": 5.264,
         "draft_capital": 0.55,
-        "team_elo": 1498.093
+        "team_elo": 1493.525
       },
-      "prob_ppr_increase": 0.13,
+      "prob_ppr_increase": 0.127,
       "trajectory": "Declining"
     },
     "00-0039424": {
@@ -3417,9 +3417,9 @@
         "role_trend": 0.109,
         "recent_trend": -0.377,
         "draft_capital": 0.46,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.42,
+      "prob_ppr_increase": 0.43,
       "trajectory": "Declining"
     },
     "00-0039491": {
@@ -3432,9 +3432,9 @@
         "role_trend": 0.042,
         "recent_trend": -0.023,
         "draft_capital": 0.05,
-        "team_elo": 1456.623
+        "team_elo": 1465.996
       },
-      "prob_ppr_increase": 0.381,
+      "prob_ppr_increase": 0.391,
       "trajectory": "Declining"
     },
     "00-0039623": {
@@ -3447,9 +3447,9 @@
         "role_trend": -0.246,
         "recent_trend": -0.146,
         "draft_capital": 0.05,
-        "team_elo": 1461.306
+        "team_elo": 1470.424
       },
-      "prob_ppr_increase": 0.436,
+      "prob_ppr_increase": 0.446,
       "trajectory": "Declining"
     },
     "00-0039732": {
@@ -3462,9 +3462,9 @@
         "role_trend": -0.352,
         "recent_trend": -0.039,
         "draft_capital": 1.0,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.295,
+      "prob_ppr_increase": 0.317,
       "trajectory": "Declining"
     },
     "00-0039738": {
@@ -3477,9 +3477,9 @@
         "role_trend": 0.347,
         "recent_trend": 2.648,
         "draft_capital": 0.82,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.376,
+      "prob_ppr_increase": 0.353,
       "trajectory": "Declining"
     },
     "00-0039746": {
@@ -3492,9 +3492,9 @@
         "role_trend": -0.451,
         "recent_trend": 0.242,
         "draft_capital": 0.73,
-        "team_elo": 1560.58
+        "team_elo": 1544.111
       },
-      "prob_ppr_increase": 0.594,
+      "prob_ppr_increase": 0.574,
       "trajectory": "Rising"
     },
     "00-0039751": {
@@ -3507,10 +3507,10 @@
         "role_trend": -0.419,
         "recent_trend": -0.309,
         "draft_capital": 0.55,
-        "team_elo": 1542.572
+        "team_elo": 1522.827
       },
-      "prob_ppr_increase": 0.518,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.496,
+      "trajectory": "Declining"
     },
     "00-0039793": {
       "position": "TE",
@@ -3522,9 +3522,9 @@
         "role_trend": 0.595,
         "recent_trend": 0.876,
         "draft_capital": 0.73,
-        "team_elo": 1560.922
+        "team_elo": 1544.737
       },
-      "prob_ppr_increase": 0.269,
+      "prob_ppr_increase": 0.255,
       "trajectory": "Declining"
     },
     "00-0039794": {
@@ -3537,9 +3537,9 @@
         "role_trend": -0.287,
         "recent_trend": -0.82,
         "draft_capital": 0.73,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.351,
+      "prob_ppr_increase": 0.387,
       "trajectory": "Declining"
     },
     "00-0039796": {
@@ -3552,9 +3552,9 @@
         "role_trend": -0.148,
         "recent_trend": 6.806,
         "draft_capital": 0.64,
-        "team_elo": 1529.571
+        "team_elo": 1524.752
       },
-      "prob_ppr_increase": 0.376,
+      "prob_ppr_increase": 0.371,
       "trajectory": "Declining"
     },
     "00-0039798": {
@@ -3567,9 +3567,9 @@
         "role_trend": 0.208,
         "recent_trend": 0.551,
         "draft_capital": 0.64,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.323,
+      "prob_ppr_increase": 0.358,
       "trajectory": "Declining"
     },
     "00-0039847": {
@@ -3582,9 +3582,9 @@
         "role_trend": 0.144,
         "recent_trend": 0.877,
         "draft_capital": 0.73,
-        "team_elo": 1428.247
+        "team_elo": 1457.368
       },
-      "prob_ppr_increase": 0.326,
+      "prob_ppr_increase": 0.354,
       "trajectory": "Declining"
     },
     "00-0039849": {
@@ -3597,9 +3597,9 @@
         "role_trend": -0.142,
         "recent_trend": -0.35,
         "draft_capital": 1.0,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.341,
+      "prob_ppr_increase": 0.37,
       "trajectory": "Declining"
     },
     "00-0039851": {
@@ -3612,9 +3612,9 @@
         "role_trend": 0.188,
         "recent_trend": 0.987,
         "draft_capital": 1.0,
-        "team_elo": 1517.111
+        "team_elo": 1507.285
       },
-      "prob_ppr_increase": 0.22,
+      "prob_ppr_increase": 0.228,
       "trajectory": "Declining"
     },
     "00-0039855": {
@@ -3627,9 +3627,9 @@
         "role_trend": -0.224,
         "recent_trend": -0.779,
         "draft_capital": 0.82,
-        "team_elo": 1502.405
+        "team_elo": 1496.927
       },
-      "prob_ppr_increase": 0.523,
+      "prob_ppr_increase": 0.517,
       "trajectory": "Rising"
     },
     "00-0039868": {
@@ -3642,9 +3642,9 @@
         "role_trend": 0.604,
         "recent_trend": 1.639,
         "draft_capital": 0.73,
-        "team_elo": 1549.774
+        "team_elo": 1528.408
       },
-      "prob_ppr_increase": 0.289,
+      "prob_ppr_increase": 0.269,
       "trajectory": "Declining"
     },
     "00-0039874": {
@@ -3657,9 +3657,9 @@
         "role_trend": 0.062,
         "recent_trend": 0.805,
         "draft_capital": 0.73,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.361,
+      "prob_ppr_increase": 0.359,
       "trajectory": "Declining"
     },
     "00-0039875": {
@@ -3672,10 +3672,10 @@
         "role_trend": -0.422,
         "recent_trend": -0.448,
         "draft_capital": 0.73,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.515,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.493,
+      "trajectory": "Declining"
     },
     "00-0039880": {
       "position": "WR",
@@ -3687,9 +3687,9 @@
         "role_trend": 0.279,
         "recent_trend": 1.055,
         "draft_capital": 0.55,
-        "team_elo": 1489.627
+        "team_elo": 1487.941
       },
-      "prob_ppr_increase": 0.299,
+      "prob_ppr_increase": 0.297,
       "trajectory": "Declining"
     },
     "00-0039890": {
@@ -3702,9 +3702,9 @@
         "role_trend": 0.364,
         "recent_trend": 0.635,
         "draft_capital": 0.91,
-        "team_elo": 1423.886
+        "team_elo": 1454.668
       },
-      "prob_ppr_increase": 0.241,
+      "prob_ppr_increase": 0.267,
       "trajectory": "Declining"
     },
     "00-0039893": {
@@ -3717,7 +3717,7 @@
         "role_trend": -0.127,
         "recent_trend": -0.511,
         "draft_capital": 1.0,
-        "team_elo": 1512.585
+        "team_elo": 1512.341
       },
       "prob_ppr_increase": 0.423,
       "trajectory": "Declining"
@@ -3732,9 +3732,9 @@
         "role_trend": -0.029,
         "recent_trend": -0.413,
         "draft_capital": 1.0,
-        "team_elo": 1524.707
+        "team_elo": 1521.245
       },
-      "prob_ppr_increase": 0.446,
+      "prob_ppr_increase": 0.442,
       "trajectory": "Declining"
     },
     "00-0039901": {
@@ -3747,10 +3747,10 @@
         "role_trend": -0.01,
         "recent_trend": -0.082,
         "draft_capital": 0.91,
-        "team_elo": 1567.269
+        "team_elo": 1549.989
       },
-      "prob_ppr_increase": 0.501,
-      "trajectory": "Rising"
+      "prob_ppr_increase": 0.482,
+      "trajectory": "Declining"
     },
     "00-0039915": {
       "position": "WR",
@@ -3762,9 +3762,9 @@
         "role_trend": -0.039,
         "recent_trend": -0.249,
         "draft_capital": 0.91,
-        "team_elo": 1527.14
+        "team_elo": 1511.744
       },
-      "prob_ppr_increase": 0.412,
+      "prob_ppr_increase": 0.395,
       "trajectory": "Declining"
     },
     "00-0039916": {
@@ -3777,9 +3777,9 @@
         "role_trend": 0.209,
         "recent_trend": -0.052,
         "draft_capital": 1.0,
-        "team_elo": 1533.125
+        "team_elo": 1527.638
       },
-      "prob_ppr_increase": 0.477,
+      "prob_ppr_increase": 0.471,
       "trajectory": "Declining"
     },
     "00-0039917": {
@@ -3792,9 +3792,9 @@
         "role_trend": 0.398,
         "recent_trend": 1.727,
         "draft_capital": 1.0,
-        "team_elo": 1483.199
+        "team_elo": 1484.693
       },
-      "prob_ppr_increase": 0.256,
+      "prob_ppr_increase": 0.254,
       "trajectory": "Declining"
     },
     "00-0039918": {
@@ -3807,9 +3807,9 @@
         "role_trend": 0.003,
         "recent_trend": 0.25,
         "draft_capital": 1.0,
-        "team_elo": 1496.29
+        "team_elo": 1502.612
       },
-      "prob_ppr_increase": 0.31,
+      "prob_ppr_increase": 0.303,
       "trajectory": "Declining"
     },
     "00-0039919": {
@@ -3822,9 +3822,9 @@
         "role_trend": 0.145,
         "recent_trend": 0.008,
         "draft_capital": 1.0,
-        "team_elo": 1496.29
+        "team_elo": 1502.612
       },
-      "prob_ppr_increase": 0.373,
+      "prob_ppr_increase": 0.38,
       "trajectory": "Declining"
     },
     "00-0039921": {
@@ -3837,9 +3837,9 @@
         "role_trend": 1.523,
         "recent_trend": -0.247,
         "draft_capital": 0.82,
-        "team_elo": 1431.505
+        "team_elo": 1460.686
       },
-      "prob_ppr_increase": 0.329,
+      "prob_ppr_increase": 0.362,
       "trajectory": "Declining"
     }
   }

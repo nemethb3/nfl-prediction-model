@@ -113,6 +113,116 @@
           "result": "loss",
           "actual_winner": "KC",
           "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "DET",
+          "bet_side": "away",
+          "odds": 200.0,
+          "result": "loss",
+          "actual_winner": "BUF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "NO",
+          "bet_side": "away",
+          "odds": 285.0,
+          "result": "win",
+          "actual_winner": "NO",
+          "pnl_units": 2.85
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "MIN",
+          "bet_side": "away",
+          "odds": 180.0,
+          "result": "win",
+          "actual_winner": "MIN",
+          "pnl_units": 1.8
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "CIN",
+          "bet_side": "away",
+          "odds": 124.0,
+          "result": "win",
+          "actual_winner": "CIN",
+          "pnl_units": 1.24
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "PIT",
+          "bet_side": "away",
+          "odds": 180.0,
+          "result": "loss",
+          "actual_winner": "NE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "CLE",
+          "bet_side": "away",
+          "odds": 330.0,
+          "result": "win",
+          "actual_winner": "CLE",
+          "pnl_units": 3.3
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "TEN",
+          "bet_side": "home",
+          "odds": 260.0,
+          "result": "loss",
+          "actual_winner": "PHI",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LV",
+          "bet_side": "away",
+          "odds": 260.0,
+          "result": "win",
+          "actual_winner": "LV",
+          "pnl_units": 2.6
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "ARI",
+          "bet_side": "home",
+          "odds": 180.0,
+          "result": "loss",
+          "actual_winner": "SEA",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "MIA",
+          "bet_side": "away",
+          "odds": 600.0,
+          "result": "loss",
+          "actual_winner": "SF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "IND",
+          "bet_side": "away",
+          "odds": 215.0,
+          "result": "loss",
+          "actual_winner": "KC",
+          "pnl_units": -1.0
         }
       ],
       "weekly_summary": {
@@ -123,16 +233,24 @@
           "pushes": 0,
           "win_pct": 18.2,
           "pnl_units": -4.596
+        },
+        "2": {
+          "total_bets": 11,
+          "wins": 5,
+          "losses": 6,
+          "pushes": 0,
+          "win_pct": 45.5,
+          "pnl_units": 5.79
         }
       },
       "season_summary": {
-        "total_bets": 11,
-        "wins": 2,
-        "losses": 9,
+        "total_bets": 22,
+        "wins": 7,
+        "losses": 15,
         "pushes": 0,
-        "win_pct": 18.2,
-        "pnl_units": -4.596,
-        "roi_pct": -41.78
+        "win_pct": 31.8,
+        "pnl_units": 1.194,
+        "roi_pct": 5.43
       }
     },
     "ats": {
@@ -246,6 +364,116 @@
           "result": "loss",
           "actual_winner": "KC",
           "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "DET",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "BUF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "NO",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "NO",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "MIN",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "MIN",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "CIN",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "CIN",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "PIT",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "NE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "CLE",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "CLE",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "TEN",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "PHI",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LV",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "LV",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "ARI",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "SEA",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "MIA",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "SF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "IND",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "KC",
+          "pnl_units": 0.909
         }
       ],
       "weekly_summary": {
@@ -256,16 +484,24 @@
           "pushes": 1,
           "win_pct": 30.0,
           "pnl_units": -4.273
+        },
+        "2": {
+          "total_bets": 11,
+          "wins": 7,
+          "losses": 4,
+          "pushes": 0,
+          "win_pct": 63.6,
+          "pnl_units": 2.363
         }
       },
       "season_summary": {
-        "total_bets": 11,
-        "wins": 3,
-        "losses": 7,
+        "total_bets": 22,
+        "wins": 10,
+        "losses": 11,
         "pushes": 1,
-        "win_pct": 30.0,
-        "pnl_units": -4.273,
-        "roi_pct": -42.73
+        "win_pct": 47.6,
+        "pnl_units": -1.91,
+        "roi_pct": -9.1
       }
     }
   },
@@ -413,6 +649,146 @@
           "result": "win",
           "actual_winner": "KC",
           "pnl_units": 0.769
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "BUF",
+          "bet_side": "home",
+          "odds": -245.0,
+          "result": "win",
+          "actual_winner": "BUF",
+          "pnl_units": 0.408
+        },
+        {
+          "week": 2,
+          "matchup": "CAR @ ATL",
+          "bet_team": "CAR",
+          "bet_side": "away",
+          "odds": -142.0,
+          "result": "win",
+          "actual_winner": "CAR",
+          "pnl_units": 0.704
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "BAL",
+          "bet_side": "home",
+          "odds": -360.0,
+          "result": "loss",
+          "actual_winner": "NO",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "CHI",
+          "bet_side": "home",
+          "odds": -218.0,
+          "result": "loss",
+          "actual_winner": "MIN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "HOU",
+          "bet_side": "home",
+          "odds": -148.0,
+          "result": "loss",
+          "actual_winner": "CIN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "NE",
+          "bet_side": "home",
+          "odds": -218.0,
+          "result": "win",
+          "actual_winner": "NE",
+          "pnl_units": 0.459
+        },
+        {
+          "week": 2,
+          "matchup": "GB @ NYJ",
+          "bet_team": "GB",
+          "bet_side": "away",
+          "odds": -185.0,
+          "result": "win",
+          "actual_winner": "GB",
+          "pnl_units": 0.541
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "TB",
+          "bet_side": "home",
+          "odds": -425.0,
+          "result": "loss",
+          "actual_winner": "CLE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "PHI",
+          "bet_side": "away",
+          "odds": -325.0,
+          "result": "win",
+          "actual_winner": "PHI",
+          "pnl_units": 0.308
+        },
+        {
+          "week": 2,
+          "matchup": "JAX @ DEN",
+          "bet_team": "DEN",
+          "bet_side": "home",
+          "odds": -142.0,
+          "result": "win",
+          "actual_winner": "DEN",
+          "pnl_units": 0.704
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LAC",
+          "bet_side": "home",
+          "odds": -325.0,
+          "result": "loss",
+          "actual_winner": "LV",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "SEA",
+          "bet_side": "away",
+          "odds": -218.0,
+          "result": "win",
+          "actual_winner": "SEA",
+          "pnl_units": 0.459
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "SF",
+          "bet_side": "home",
+          "odds": -900.0,
+          "result": "win",
+          "actual_winner": "SF",
+          "pnl_units": 0.111
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "KC",
+          "bet_side": "home",
+          "odds": -265.0,
+          "result": "win",
+          "actual_winner": "KC",
+          "pnl_units": 0.377
         }
       ],
       "weekly_summary": {
@@ -423,16 +799,24 @@
           "pushes": 0,
           "win_pct": 78.6,
           "pnl_units": 3.125
+        },
+        "2": {
+          "total_bets": 14,
+          "wins": 9,
+          "losses": 5,
+          "pushes": 0,
+          "win_pct": 64.3,
+          "pnl_units": -0.929
         }
       },
       "season_summary": {
-        "total_bets": 14,
-        "wins": 11,
-        "losses": 3,
+        "total_bets": 28,
+        "wins": 20,
+        "losses": 8,
         "pushes": 0,
-        "win_pct": 78.6,
-        "pnl_units": 3.125,
-        "roi_pct": 22.32
+        "win_pct": 71.4,
+        "pnl_units": 2.196,
+        "roi_pct": 7.84
       }
     },
     "ats": {
@@ -576,6 +960,146 @@
           "result": "win",
           "actual_winner": "KC",
           "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "BUF",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "BUF",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "CAR @ ATL",
+          "bet_team": "CAR",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "CAR",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "BAL",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "NO",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "CHI",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "MIN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "HOU",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "CIN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "NE",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "NE",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "GB @ NYJ",
+          "bet_team": "GB",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "GB",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "TB",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "CLE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "PHI",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "PHI",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "JAX @ DEN",
+          "bet_team": "DEN",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "DEN",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LAC",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "LV",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "SEA",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "SEA",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "SF",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "SF",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "KC",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "KC",
+          "pnl_units": -1.0
         }
       ],
       "weekly_summary": {
@@ -586,16 +1110,24 @@
           "pushes": 1,
           "win_pct": 69.2,
           "pnl_units": 4.181
+        },
+        "2": {
+          "total_bets": 14,
+          "wins": 6,
+          "losses": 8,
+          "pushes": 0,
+          "win_pct": 42.9,
+          "pnl_units": -2.546
         }
       },
       "season_summary": {
-        "total_bets": 14,
-        "wins": 9,
-        "losses": 4,
+        "total_bets": 28,
+        "wins": 15,
+        "losses": 12,
         "pushes": 1,
-        "win_pct": 69.2,
-        "pnl_units": 4.181,
-        "roi_pct": 32.16
+        "win_pct": 55.6,
+        "pnl_units": 1.635,
+        "roi_pct": 6.06
       }
     }
   },
@@ -743,6 +1275,146 @@
           "result": "loss",
           "actual_winner": "KC",
           "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "DET",
+          "bet_side": "away",
+          "odds": 200.0,
+          "result": "loss",
+          "actual_winner": "BUF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CAR @ ATL",
+          "bet_team": "ATL",
+          "bet_side": "home",
+          "odds": 120.0,
+          "result": "loss",
+          "actual_winner": "CAR",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "NO",
+          "bet_side": "away",
+          "odds": 285.0,
+          "result": "win",
+          "actual_winner": "NO",
+          "pnl_units": 2.85
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "MIN",
+          "bet_side": "away",
+          "odds": 180.0,
+          "result": "win",
+          "actual_winner": "MIN",
+          "pnl_units": 1.8
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "CIN",
+          "bet_side": "away",
+          "odds": 124.0,
+          "result": "win",
+          "actual_winner": "CIN",
+          "pnl_units": 1.24
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "PIT",
+          "bet_side": "away",
+          "odds": 180.0,
+          "result": "loss",
+          "actual_winner": "NE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "GB @ NYJ",
+          "bet_team": "NYJ",
+          "bet_side": "home",
+          "odds": 154.0,
+          "result": "loss",
+          "actual_winner": "GB",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "CLE",
+          "bet_side": "away",
+          "odds": 330.0,
+          "result": "win",
+          "actual_winner": "CLE",
+          "pnl_units": 3.3
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "TEN",
+          "bet_side": "home",
+          "odds": 260.0,
+          "result": "loss",
+          "actual_winner": "PHI",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "JAX @ DEN",
+          "bet_team": "JAX",
+          "bet_side": "away",
+          "odds": 120.0,
+          "result": "loss",
+          "actual_winner": "DEN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LV",
+          "bet_side": "away",
+          "odds": 260.0,
+          "result": "win",
+          "actual_winner": "LV",
+          "pnl_units": 2.6
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "ARI",
+          "bet_side": "home",
+          "odds": 180.0,
+          "result": "loss",
+          "actual_winner": "SEA",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "MIA",
+          "bet_side": "away",
+          "odds": 600.0,
+          "result": "loss",
+          "actual_winner": "SF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "IND",
+          "bet_side": "away",
+          "odds": 215.0,
+          "result": "loss",
+          "actual_winner": "KC",
+          "pnl_units": -1.0
         }
       ],
       "weekly_summary": {
@@ -753,16 +1425,24 @@
           "pushes": 0,
           "win_pct": 21.4,
           "pnl_units": -4.92
+        },
+        "2": {
+          "total_bets": 14,
+          "wins": 5,
+          "losses": 9,
+          "pushes": 0,
+          "win_pct": 35.7,
+          "pnl_units": 2.79
         }
       },
       "season_summary": {
-        "total_bets": 14,
-        "wins": 3,
-        "losses": 11,
+        "total_bets": 28,
+        "wins": 8,
+        "losses": 20,
         "pushes": 0,
-        "win_pct": 21.4,
-        "pnl_units": -4.92,
-        "roi_pct": -35.14
+        "win_pct": 28.6,
+        "pnl_units": -2.13,
+        "roi_pct": -7.61
       }
     },
     "ats": {
@@ -906,6 +1586,146 @@
           "result": "loss",
           "actual_winner": "KC",
           "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "DET @ BUF",
+          "bet_team": "DET",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "BUF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "CAR @ ATL",
+          "bet_team": "ATL",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "CAR",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "NO @ BAL",
+          "bet_team": "NO",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "NO",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "MIN @ CHI",
+          "bet_team": "MIN",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "MIN",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "CIN @ HOU",
+          "bet_team": "CIN",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "CIN",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "PIT @ NE",
+          "bet_team": "PIT",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "NE",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "GB @ NYJ",
+          "bet_team": "NYJ",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "GB",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "CLE @ TB",
+          "bet_team": "CLE",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "CLE",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "PHI @ TEN",
+          "bet_team": "TEN",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "PHI",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "JAX @ DEN",
+          "bet_team": "JAX",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "DEN",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "LV @ LAC",
+          "bet_team": "LV",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "LV",
+          "pnl_units": 0.909
+        },
+        {
+          "week": 2,
+          "matchup": "SEA @ ARI",
+          "bet_team": "ARI",
+          "bet_side": "home",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "SEA",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "MIA @ SF",
+          "bet_team": "MIA",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "loss",
+          "actual_winner": "SF",
+          "pnl_units": -1.0
+        },
+        {
+          "week": 2,
+          "matchup": "IND @ KC",
+          "bet_team": "IND",
+          "bet_side": "away",
+          "odds": -110.0,
+          "result": "win",
+          "actual_winner": "KC",
+          "pnl_units": 0.909
         }
       ],
       "weekly_summary": {
@@ -916,19 +1736,27 @@
           "pushes": 1,
           "win_pct": 30.8,
           "pnl_units": -5.364
+        },
+        "2": {
+          "total_bets": 14,
+          "wins": 8,
+          "losses": 6,
+          "pushes": 0,
+          "win_pct": 57.1,
+          "pnl_units": 1.272
         }
       },
       "season_summary": {
-        "total_bets": 14,
-        "wins": 4,
-        "losses": 9,
+        "total_bets": 28,
+        "wins": 12,
+        "losses": 15,
         "pushes": 1,
-        "win_pct": 30.8,
-        "pnl_units": -5.364,
-        "roi_pct": -41.26
+        "win_pct": 44.4,
+        "pnl_units": -4.092,
+        "roi_pct": -15.16
       }
     }
   },
-  "real_odds_coverage_note": "14/16 real completed 2026 games had a real, joined ESPN closing-line spread + moneyline (see join_espn_odds_2026.py) - only those are bet here. Coverage grows weekly as more games complete and more real odds get collected.",
+  "real_odds_coverage_note": "28/32 real completed 2026 games had a real, joined ESPN closing-line spread + moneyline (see join_espn_odds_2026.py) - only those are bet here. Coverage grows weekly as more games complete and more real odds get collected.",
   "ats_juice_assumption": "Standard -110 both sides (see betting_backtest_2026.py docstring) - ESPN's already-collected 2026 odds don't include a captured per-side spread price."
 }

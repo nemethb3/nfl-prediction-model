@@ -11,11 +11,11 @@
       "division": "AFC East",
       "is_playoff_team": true,
       "playoff_seed": 1,
-      "wins_actual": 1,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 19.7,
-      "superbowl_odds_pct": 11.1
+      "conference_champion_pct": 23.3,
+      "superbowl_odds_pct": 12.8
     },
     {
       "team": "SEA",
@@ -23,11 +23,11 @@
       "division": "NFC West",
       "is_playoff_team": true,
       "playoff_seed": 2,
-      "wins_actual": 1,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 17.1,
-      "superbowl_odds_pct": 9.2
+      "conference_champion_pct": 18.1,
+      "superbowl_odds_pct": 9.7
     },
     {
       "team": "PHI",
@@ -35,35 +35,23 @@
       "division": "NFC East",
       "is_playoff_team": true,
       "playoff_seed": 1,
-      "wins_actual": 1,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 16.4,
-      "superbowl_odds_pct": 8.3
+      "conference_champion_pct": 18.5,
+      "superbowl_odds_pct": 9.3
     },
     {
-      "team": "DET",
+      "team": "MIN",
       "conference": "NFC",
       "division": "NFC North",
       "is_playoff_team": true,
       "playoff_seed": 3,
-      "wins_actual": 1,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 12.6,
-      "superbowl_odds_pct": 6.6
-    },
-    {
-      "team": "BAL",
-      "conference": "AFC",
-      "division": "AFC North",
-      "is_playoff_team": true,
-      "playoff_seed": 2,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 12.3,
-      "superbowl_odds_pct": 6.3
+      "conference_champion_pct": 13.3,
+      "superbowl_odds_pct": 6.9
     },
     {
       "team": "SF",
@@ -71,59 +59,71 @@
       "division": "NFC West",
       "is_playoff_team": true,
       "playoff_seed": 5,
-      "wins_actual": 1,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 10.7,
-      "superbowl_odds_pct": 5.5
-    },
-    {
-      "team": "MIN",
-      "conference": "NFC",
-      "division": "NFC North",
-      "is_playoff_team": true,
-      "playoff_seed": 6,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 10.0,
-      "superbowl_odds_pct": 5.1
-    },
-    {
-      "team": "PIT",
-      "conference": "AFC",
-      "division": "AFC North",
-      "is_playoff_team": true,
-      "playoff_seed": 5,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 10.7,
-      "superbowl_odds_pct": 5.1
+      "conference_champion_pct": 12.5,
+      "superbowl_odds_pct": 6.6
     },
     {
       "team": "KC",
       "conference": "AFC",
       "division": "AFC West",
       "is_playoff_team": true,
-      "playoff_seed": 3,
-      "wins_actual": 1,
+      "playoff_seed": 2,
+      "wins_actual": 2,
       "losses_actual": 0,
       "ties_actual": 0,
-      "conference_champion_pct": 9.8,
-      "superbowl_odds_pct": 4.9
+      "conference_champion_pct": 12.7,
+      "superbowl_odds_pct": 6.5
     },
     {
       "team": "DEN",
       "conference": "AFC",
       "division": "AFC West",
       "is_playoff_team": true,
-      "playoff_seed": 6,
-      "wins_actual": 0,
+      "playoff_seed": 5,
+      "wins_actual": 1,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 9.1,
-      "superbowl_odds_pct": 4.5
+      "conference_champion_pct": 10.7,
+      "superbowl_odds_pct": 5.5
+    },
+    {
+      "team": "DET",
+      "conference": "NFC",
+      "division": "NFC North",
+      "is_playoff_team": true,
+      "playoff_seed": 6,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 8.2,
+      "superbowl_odds_pct": 4.0
+    },
+    {
+      "team": "PIT",
+      "conference": "AFC",
+      "division": "AFC North",
+      "is_playoff_team": true,
+      "playoff_seed": 6,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 8.0,
+      "superbowl_odds_pct": 3.9
+    },
+    {
+      "team": "CIN",
+      "conference": "AFC",
+      "division": "AFC North",
+      "is_playoff_team": true,
+      "playoff_seed": 3,
+      "wins_actual": 2,
+      "losses_actual": 0,
+      "ties_actual": 0,
+      "conference_champion_pct": 7.8,
+      "superbowl_odds_pct": 3.8
     },
     {
       "team": "JAX",
@@ -132,70 +132,118 @@
       "is_playoff_team": true,
       "playoff_seed": 4,
       "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 8.8,
-      "superbowl_odds_pct": 4.2
-    },
-    {
-      "team": "HOU",
-      "conference": "AFC",
-      "division": "AFC South",
-      "is_playoff_team": true,
-      "playoff_seed": 7,
-      "wins_actual": 0,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 6.9,
-      "superbowl_odds_pct": 3.5
+      "conference_champion_pct": 7.2,
+      "superbowl_odds_pct": 3.4
+    },
+    {
+      "team": "BAL",
+      "conference": "AFC",
+      "division": "AFC North",
+      "is_playoff_team": true,
+      "playoff_seed": 7,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 7.3,
+      "superbowl_odds_pct": 3.2
+    },
+    {
+      "team": "NE",
+      "conference": "AFC",
+      "division": "AFC East",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 5.8,
+      "superbowl_odds_pct": 3.1
     },
     {
       "team": "LA",
       "conference": "NFC",
       "division": "NFC West",
+      "is_playoff_team": true,
+      "playoff_seed": 7,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 5.7,
+      "superbowl_odds_pct": 2.9
+    },
+    {
+      "team": "GB",
+      "conference": "NFC",
+      "division": "NFC North",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 5.5,
+      "superbowl_odds_pct": 2.8
+    },
+    {
+      "team": "HOU",
+      "conference": "AFC",
+      "division": "AFC South",
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
       "conference_champion_pct": 5.0,
-      "superbowl_odds_pct": 2.5
+      "superbowl_odds_pct": 2.3
+    },
+    {
+      "team": "DAL",
+      "conference": "NFC",
+      "division": "NFC East",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 4.1,
+      "superbowl_odds_pct": 2.0
+    },
+    {
+      "team": "NO",
+      "conference": "NFC",
+      "division": "NFC South",
+      "is_playoff_team": true,
+      "playoff_seed": 4,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 3.5,
+      "superbowl_odds_pct": 1.6
+    },
+    {
+      "team": "LV",
+      "conference": "AFC",
+      "division": "AFC West",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 2,
+      "losses_actual": 0,
+      "ties_actual": 0,
+      "conference_champion_pct": 3.1,
+      "superbowl_odds_pct": 1.2
     },
     {
       "team": "CHI",
       "conference": "NFC",
       "division": "NFC North",
-      "is_playoff_team": true,
-      "playoff_seed": 7,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 4.6,
-      "superbowl_odds_pct": 2.3
-    },
-    {
-      "team": "CIN",
-      "conference": "AFC",
-      "division": "AFC North",
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 4.9,
-      "superbowl_odds_pct": 2.3
-    },
-    {
-      "team": "TB",
-      "conference": "NFC",
-      "division": "NFC South",
-      "is_playoff_team": true,
-      "playoff_seed": 4,
-      "wins_actual": 0,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 4.6,
-      "superbowl_odds_pct": 2.2
+      "conference_champion_pct": 2.2,
+      "superbowl_odds_pct": 1.1
     },
     {
       "team": "LAC",
@@ -204,58 +252,34 @@
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 4.0,
-      "superbowl_odds_pct": 2.0
+      "conference_champion_pct": 2.1,
+      "superbowl_odds_pct": 1.0
     },
     {
-      "team": "GB",
-      "conference": "NFC",
-      "division": "NFC North",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 0,
-      "losses_actual": 1,
-      "ties_actual": 0,
-      "conference_champion_pct": 4.2,
-      "superbowl_odds_pct": 1.9
-    },
-    {
-      "team": "NE",
-      "conference": "AFC",
-      "division": "AFC East",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 0,
-      "losses_actual": 1,
-      "ties_actual": 0,
-      "conference_champion_pct": 3.8,
-      "superbowl_odds_pct": 1.9
-    },
-    {
-      "team": "ATL",
+      "team": "TB",
       "conference": "NFC",
       "division": "NFC South",
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 3.3,
-      "superbowl_odds_pct": 1.5
+      "conference_champion_pct": 2.3,
+      "superbowl_odds_pct": 1.0
     },
     {
-      "team": "DAL",
-      "conference": "NFC",
-      "division": "NFC East",
+      "team": "CLE",
+      "conference": "AFC",
+      "division": "AFC North",
       "is_playoff_team": false,
       "playoff_seed": null,
-      "wins_actual": 0,
+      "wins_actual": 1,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 2.8,
-      "superbowl_odds_pct": 1.4
+      "conference_champion_pct": 2.2,
+      "superbowl_odds_pct": 0.9
     },
     {
       "team": "IND",
@@ -264,22 +288,34 @@
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 2.4,
-      "superbowl_odds_pct": 1.2
+      "conference_champion_pct": 2.1,
+      "superbowl_odds_pct": 0.9
     },
     {
-      "team": "NO",
+      "team": "ATL",
       "conference": "NFC",
       "division": "NFC South",
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
+      "losses_actual": 2,
+      "ties_actual": 0,
+      "conference_champion_pct": 1.7,
+      "superbowl_odds_pct": 0.8
+    },
+    {
+      "team": "CAR",
+      "conference": "NFC",
+      "division": "NFC South",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 1,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 2.3,
-      "superbowl_odds_pct": 1.0
+      "conference_champion_pct": 2.0,
+      "superbowl_odds_pct": 0.8
     },
     {
       "team": "MIA",
@@ -288,58 +324,10 @@
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 2.2,
-      "superbowl_odds_pct": 0.9
-    },
-    {
-      "team": "LV",
-      "conference": "AFC",
-      "division": "AFC West",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 2.0,
-      "superbowl_odds_pct": 0.8
-    },
-    {
-      "team": "NYG",
-      "conference": "NFC",
-      "division": "NFC East",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 1.7,
-      "superbowl_odds_pct": 0.8
-    },
-    {
-      "team": "NYJ",
-      "conference": "AFC",
-      "division": "AFC East",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 1,
-      "losses_actual": 0,
-      "ties_actual": 0,
-      "conference_champion_pct": 1.6,
-      "superbowl_odds_pct": 0.7
-    },
-    {
-      "team": "WAS",
-      "conference": "NFC",
-      "division": "NFC East",
-      "is_playoff_team": false,
-      "playoff_seed": null,
-      "wins_actual": 0,
-      "losses_actual": 1,
-      "ties_actual": 0,
-      "conference_champion_pct": 1.7,
-      "superbowl_odds_pct": 0.7
+      "conference_champion_pct": 1.3,
+      "superbowl_odds_pct": 0.5
     },
     {
       "team": "ARI",
@@ -348,34 +336,46 @@
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 1,
-      "losses_actual": 0,
+      "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 1.8,
-      "superbowl_odds_pct": 0.6
+      "conference_champion_pct": 0.9,
+      "superbowl_odds_pct": 0.4
     },
     {
-      "team": "CAR",
+      "team": "NYG",
       "conference": "NFC",
-      "division": "NFC South",
+      "division": "NFC East",
       "is_playoff_team": false,
       "playoff_seed": null,
-      "wins_actual": 0,
+      "wins_actual": 1,
       "losses_actual": 1,
       "ties_actual": 0,
-      "conference_champion_pct": 1.1,
-      "superbowl_odds_pct": 0.5
+      "conference_champion_pct": 0.9,
+      "superbowl_odds_pct": 0.4
     },
     {
-      "team": "CLE",
+      "team": "NYJ",
       "conference": "AFC",
-      "division": "AFC North",
+      "division": "AFC East",
+      "is_playoff_team": false,
+      "playoff_seed": null,
+      "wins_actual": 1,
+      "losses_actual": 1,
+      "ties_actual": 0,
+      "conference_champion_pct": 1.0,
+      "superbowl_odds_pct": 0.4
+    },
+    {
+      "team": "WAS",
+      "conference": "NFC",
+      "division": "NFC East",
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 1.3,
-      "superbowl_odds_pct": 0.5
+      "conference_champion_pct": 0.7,
+      "superbowl_odds_pct": 0.3
     },
     {
       "team": "TEN",
@@ -384,9 +384,9 @@
       "is_playoff_team": false,
       "playoff_seed": null,
       "wins_actual": 0,
-      "losses_actual": 1,
+      "losses_actual": 2,
       "ties_actual": 0,
-      "conference_champion_pct": 0.6,
+      "conference_champion_pct": 0.5,
       "superbowl_odds_pct": 0.2
     }
   ]

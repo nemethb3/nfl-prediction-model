@@ -1,39 +1,39 @@
 {
   "season_summary": {
     "games": {
-      "total_games": 16,
-      "correct_predictions": 11,
-      "accuracy_pct": 68.8,
-      "mae_spread": 11.73,
-      "vs_vegas_spread": 10.86,
-      "vs_vegas_coverage": "14/16 completed games had a real, joined ESPN closing-line spread (see join_espn_odds_2026.py)"
+      "total_games": 32,
+      "correct_predictions": 19,
+      "accuracy_pct": 59.4,
+      "mae_spread": 12.23,
+      "vs_vegas_spread": 11.16,
+      "vs_vegas_coverage": "28/32 completed games had a real, joined ESPN closing-line spread (see join_espn_odds_2026.py)"
     },
     "fantasy": {
       "QB": {
-        "correlation": 0.649,
-        "mae": 7.94,
-        "samples": 56
+        "correlation": 0.628,
+        "mae": 6.48,
+        "samples": 112
       },
       "RB": {
-        "correlation": 0.683,
-        "mae": 5.37,
-        "samples": 114
+        "correlation": 0.644,
+        "mae": 4.59,
+        "samples": 228
       },
       "WR": {
-        "correlation": 0.515,
-        "mae": 5.89,
-        "samples": 147
+        "correlation": 0.518,
+        "mae": 6.01,
+        "samples": 294
       },
       "TE": {
-        "correlation": 0.425,
-        "mae": 4.67,
-        "samples": 73
+        "correlation": 0.375,
+        "mae": 4.78,
+        "samples": 146
       }
     },
     "season_projections": null,
     "season_projections_note": "Not available yet: the 2026 season is still in progress, so there is no real final outcome to score the season projections against. This section reappears once the real season ends.",
     "betting": {
-      "moneyline_accuracy_pct": 68.8,
+      "moneyline_accuracy_pct": 59.4,
       "note": "Spread coverage betting tested via edge_detection.py on 2015-2025 data: -36% ROI (real finding, not pursued). Moneyline accuracy above is the only real prediction this model's win-probability output makes. See the Betting Analysis page for a real, in-season ATS/moneyline backtest using the real ESPN odds captured for 2026 so far."
     }
   },
@@ -67,6 +67,37 @@
       },
       "betting": {
         "moneyline_accuracy_pct": 68.8
+      }
+    },
+    {
+      "week": 2,
+      "games": {
+        "correct": 8,
+        "total": 16,
+        "accuracy_pct": 50.0,
+        "mae_spread": 12.74,
+        "vs_vegas_mae": 11.46
+      },
+      "fantasy": {
+        "QB": {
+          "correlation": 0.694,
+          "mae": 5.01
+        },
+        "RB": {
+          "correlation": 0.723,
+          "mae": 3.8
+        },
+        "WR": {
+          "correlation": 0.521,
+          "mae": 6.13
+        },
+        "TE": {
+          "correlation": 0.361,
+          "mae": 4.9
+        }
+      },
+      "betting": {
+        "moneyline_accuracy_pct": 50.0
       }
     }
   ]

@@ -80,12 +80,16 @@ arbitrary sequence):
      AGAIN right after this, every time, for the same reason it runs after
      step 4. Verified idempotent - a real, cheap no-op when there's
      nothing new to re-ingest.
-  9. generate_fantasy_rankings_week2_2026.py (added 2026-09-16) - real,
-     additive Week 2 trailing-rate projections (see that script's own
-     docstring for the real methodology: reuses this project's own
-     already-established prior-season-fallback/trailing-mean convention,
-     not an asserted formula). APPENDS to fantasy_rankings_2026.json -
-     does not overwrite Week 1's real rows or their real actual_ppr.
+  9. generate_fantasy_rankings_weekN_2026.py (added 2026-09-16 as a
+     Week-2-only script, generalized 2026-09-22 once Week 2 actually
+     completed and the real current week advanced to 3 with no generator
+     for it - see that script's own docstring for the real methodology:
+     trailing MEAN of every real completed prior week, no shrinkage, the
+     same already-established convention this project's real 2025 per-week
+     generators already used). Targets real_current_week_2026() by default.
+     APPENDS/REPLACES only that week's rows in fantasy_rankings_2026.json -
+     every other week's real rows, including their real actual_ppr, are
+     preserved untouched.
   10. generate_injury_adjustments_2026.py - real, live ESPN injury overlay
       (added after a real launch-day report: "confirmed out" badges
       weren't propagating into projections everywhere they mattered -
@@ -245,14 +249,18 @@ class WeeklyRefresh:
         # reads real records off games_2026.json below.
         self.step("Re-ingesting completed results (fantasy rankings step just reset actual_ppr)",
                   ["ingest_completed_results_2026.py"])
-        # Real, additive Week 2 trailing-rate projections (real once Week 1
-        # has completed games to trail from - see that script's own module
-        # docstring for the real "no fabricated formula" methodology).
-        # Appends to fantasy_rankings_2026.json, does not overwrite it - must
-        # run after the re-ingest above (needs real Week 1 actual_ppr) and
-        # before injury adjustments below (needs real Week 2 rows to exist
-        # for its current-week join).
-        self.step("Generating Week 2 fantasy projections", ["generate_fantasy_rankings_week2_2026.py"])
+        # Real, additive in-season trailing-rate projections for whatever the
+        # real current week is (generate_fantasy_rankings_weekN_2026.py
+        # defaults to current_week_2026.real_current_week_2026() with no arg -
+        # real fix, 2026-09-22: this used to always call the Week-2-only
+        # script, which crashed generate_injury_adjustments_2026.py the
+        # moment Week 2 completed and the real current week advanced to 3
+        # with no Week 3 rows anywhere - see that generator's own module
+        # docstring). Appends/replaces only the current week's rows, does not
+        # overwrite the file - must run after the re-ingest above (needs real
+        # prior-week actual_ppr) and before injury adjustments below (needs
+        # this week's rows to exist for its current-week join).
+        self.step("Generating current-week fantasy projections", ["generate_fantasy_rankings_weekN_2026.py"])
         # Real, in-season ensemble (added 2026-09-16): refits per-position blend
         # weights against whatever real completed weeks exist so far, then
         # regenerates the real, separate ensemble_projections_2026.json - must run

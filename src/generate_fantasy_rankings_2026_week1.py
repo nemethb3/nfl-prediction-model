@@ -223,9 +223,27 @@ def generate_fantasy_rankings_2026_week1_json():
     assert n_missing_id == 0, f"{n_missing_id}/{len(records)} records missing a real id"
     print(f"Validated: {len(records)} real 2026 fantasy records, all with real projected_ppr + id.")
 
+    # Real, structural fix (2026-09-22): this used to unconditionally overwrite
+    # the whole file with ONLY these Week 1 records - harmless while Week 2 was
+    # always fully re-derivable from Week 1 alone, but a real, silent data-loss
+    # bug the moment a real Week 3+ generator needed Week 2's own real,
+    # additive actual_ppr as a trailing input (see generate_fantasy_rankings_
+    # weekN_2026.py's module docstring for the real incident this caused - the
+    # live file's real Week 2 rows were wiped and never regenerated in the same
+    # run, silently corrupting the Week 3 trailing-mean calculation). Now
+    # merges: preserves every other real week's rows (including their real
+    # actual_ppr) exactly as generate_fantasy_rankings_weekN_2026.py already
+    # does for its own week, rather than assuming Week 1 is the only week that
+    # can ever exist in this file.
+    other_weeks = []
+    if os.path.exists(OUTPUT_PATH):
+        with open(OUTPUT_PATH, encoding="utf-8") as f:
+            existing = json.load(f)
+        other_weeks = [r for r in existing if r.get("week") != 1]
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(records, f, indent=2)
+        json.dump(records + other_weeks, f, indent=2)
         record_generation("fantasy_rankings_2026")
 
     by_pos = combined.groupby("position").size()

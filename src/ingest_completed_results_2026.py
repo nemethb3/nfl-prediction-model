@@ -114,22 +114,36 @@ def _load_completed_games():
 
 
 def _load_week1_player_ppr(weeks):
-    """Real per-player actual PPR for the given weeks, keyed by gsis id.
-    Uses this project's own formula per the stat row's position group."""
+    """Real per-player-per-week actual PPR for the given weeks, keyed by
+    (gsis id, week). Uses this project's own formula per the stat row's
+    position group.
+
+    Real, serious bug fixed here (found live, 2026-09-22, once Weeks 1 AND
+    2 were both real and completed in the same ingest run for the first
+    time): this used to key the dict by gsis id ALONE, with no week - every
+    later week's row for the same player silently overwrote the earlier
+    week's entry, and ingest()'s lookup (by gsis id alone, ignoring the
+    ranking row's own week) then applied that single, clobbered value to
+    EVERY week's row for that player. Confirmed directly: Josh Allen's real
+    Week 1 actual_ppr (35.66) got silently overwritten with his real Week 2
+    value (40.82) on both his Week 1 and Week 2 rows. Dormant all session
+    because `weeks` was always a single-element set until Week 2 actually
+    completed - the first run where more than one real week needed
+    ingesting at once."""
     ps = nfl.load_player_stats([SEASON]).to_pandas()
     ps = ps[(ps["season_type"] == "REG") & (ps["week"].isin(list(weeks)))]
-    by_gsis = {}
+    by_gsis_week = {}
     for _, s in ps.iterrows():
         pid = s.get("player_id")
         pos = s.get("position")
         if not pid or pos not in ("QB", "RB", "WR", "TE"):
             continue
-        by_gsis[pid] = {
+        by_gsis_week[(pid, int(s.get("week")))] = {
             "ppr": round(_actual_ppr(pos, s), 1),
             "team": s.get("team"),
             "name": s.get("player_display_name"),
         }
-    return by_gsis
+    return by_gsis_week
 
 
 def ingest():
@@ -142,10 +156,19 @@ def ingest():
     rankings = json.loads(RANKINGS_PATH.read_text(encoding="utf-8"))
 
     completed_weeks = {g["week"] for g in completed.values()}
-    completed_teams = set()
+    # Real, serious bug fixed here (found alongside the per-week PPR keying
+    # bug above, same live incident): this used to be one flat set of teams
+    # across EVERY completed week combined, not per-week - once a team had
+    # ANY completed game, every one of that team's players' rows for a
+    # future, not-yet-played week would wrongly fall into the "completed
+    # game, no box-score row -> actual_ppr = 0.0" branch below, instead of
+    # correctly staying null. Confirmed directly: Josh Allen's real, unplayed
+    # Week 3 row was about to be set to a real, false 0.0 PPR. Dormant all
+    # session for the same reason as the keying bug - only ever one
+    # completed week to check against until today.
+    completed_teams_by_week = {}
     for g in completed.values():
-        completed_teams.add(g["home_team"])
-        completed_teams.add(g["away_team"])
+        completed_teams_by_week.setdefault(g["week"], set()).update([g["home_team"], g["away_team"]])
 
     # ---- games_2026.json ----
     games_updated = 0
@@ -190,16 +213,16 @@ def ingest():
         print(f"  {mark}{away} {as_} @ {home} {hs}  ->  {winner}{spread_note}{tot_note}")
 
     # ---- fantasy_rankings_2026.json ----
-    ppr_by_gsis = _load_week1_player_ppr(completed_weeks)
+    ppr_by_gsis_week = _load_week1_player_ppr(completed_weeks)
     matched = zeroed = 0
     movers = []
     for row in rankings:
         gsis = row["id"].split("_w")[0]
-        stat = ppr_by_gsis.get(gsis)
+        stat = ppr_by_gsis_week.get((gsis, row["week"]))
         if stat is not None:
             actual = stat["ppr"]
             matched += 1
-        elif row.get("team") in completed_teams:
+        elif row.get("team") in completed_teams_by_week.get(row["week"], set()):
             actual = 0.0
             zeroed += 1
         else:

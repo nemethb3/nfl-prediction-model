@@ -123,7 +123,14 @@ def generate_injury_adjustments():
     print(f"  Questionable (fantasy-relevant, flagged only): {output['questionable_count']}")
     for p in players:
         if p["confirmed_out"]:
-            print(f"    OUT  {p['name']} ({p['team']}, {p['position']}): was {p['original_projected_ppr']:.1f} PPR -> 0.0")
+            # Real, defensive fix: original_projected_ppr is genuinely None when no
+            # real rankings row matched this week (confirmed live: happened the
+            # moment the real current week advanced past fantasy_rankings_2026.
+            # json's real coverage) - was crashing this whole step on a bare
+            # `.1f}` format of None instead of reporting it.
+            was = f"{p['original_projected_ppr']:.1f} PPR" if p["original_projected_ppr"] is not None \
+                else "no real projection this week"
+            print(f"    OUT  {p['name']} ({p['team']}, {p['position']}): was {was} -> 0.0")
     return output
 
 

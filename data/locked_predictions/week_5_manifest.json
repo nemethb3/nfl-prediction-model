@@ -1,0 +1,11 @@
+{
+  "week": 5,
+  "locked_at": "2026-10-06T10:49:01.780291",
+  "files": {
+    "games": "week_5_game_predictions.json",
+    "projections": "week_5_player_projections.json",
+    "rankings": "week_5_player_rankings.json",
+    "ensemble": "week_5_ensemble_projections.json"
+  },
+  "notes": "Real snapshot of this project's Week 5 predictions as of the locked_at timestamp - kept for honest post-hoc accuracy comparison, not literally immutable (see this script's own module docstring, same convention as lock_week1_predictions.py/lock_week2_predictions.py)."
+}

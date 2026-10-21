@@ -20,12 +20,14 @@ Two real, disclosed adaptations from the 2025 version:
    coverage (games bet vs. games completed) is disclosed in the output
    rather than silently only covering part of the season with no note.
 
-2. Real -110 ATS juice assumption. 2025's real per-game home_spread_odds/
+2. Real per-side ATS juice. 2025's real per-game home_spread_odds/
    away_spread_odds come from data/raw/vegas_lines_2015_2025.csv. ESPN's
-   already-collected 2026 odds don't include a captured per-side spread
-   price (see join_espn_odds_2026.py's docstring) - standard -110 is used
-   instead, a disclosed, standard real-world default, not a derived model
-   output.
+   2026 odds collector now captures the real, per-side spread price too
+   (home_spread_odds_current/away_spread_odds_current - fixed 2026-10-06,
+   see espn_odds_client.parse_odds's own docstring for the real bug this
+   closed); standard -110 is used only as a disclosed fallback for a game
+   whose provider genuinely didn't expose one (used_default_spread_juice
+   flags which games that applies to).
 """
 
 import csv
@@ -70,6 +72,13 @@ def _load_real_odds():
 def run_betting_backtest_2026():
     games = _load_games()
     odds = _load_real_odds()
+    # Real fix (2026-10-06): games_2026.json now carries its own
+    # home_moneyline/away_moneyline/home_spread_odds/away_spread_odds
+    # directly (join_espn_odds_2026.py writes both the side CSV and the
+    # game row from the same real join - see that script's own module
+    # docstring) - keep only game_id from the CSV side so the merge
+    # doesn't collide into _x/_y suffixed columns.
+    odds = odds[["game_id"]]
     df = games.merge(odds, left_on="id", right_on="game_id", how="inner")
     df = df[df["vegas_spread"].notna()]
 

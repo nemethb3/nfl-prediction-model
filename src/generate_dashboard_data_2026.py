@@ -57,6 +57,8 @@ import os
 
 import pandas as pd
 
+from run_provenance import get_model_version, new_run_id, utc_now_iso
+
 from elo_game_prediction import (
     fit_probability_to_spread_conversion,
     generate_elo_game_spreads,
@@ -89,6 +91,14 @@ def generate_games_2026_json():
     od_by_matchup = {(r["home_team"], r["away_team"], int(r["week"])): r for _, r in od_spreads.iterrows()}
 
     game_log = _full_real_game_log()
+
+    # Real per-run provenance (schema_report.md gap fix, 2026-10-06): one
+    # run_id/generated_at/model_version shared by every row this run
+    # produces - the real git commit + a real unique run id, not an
+    # asserted version string. See run_provenance.py's own module docstring.
+    run_id = new_run_id()
+    generated_at = utc_now_iso()
+    model_version = get_model_version()
 
     games = []
     for _, r in sched.iterrows():
@@ -141,6 +151,7 @@ def generate_games_2026_json():
             "week": week,
             "weekday": r["weekday"] if pd.notna(r["weekday"]) else None,
             "kickoff_datetime": kickoff_datetime,
+            "kickoff_utc": None,
             "home_team": home,
             "away_team": away,
             "home_qb_name": None,
@@ -159,6 +170,13 @@ def generate_games_2026_json():
             "ci_low_90": round(ci_low_90, 2) if ci_low_90 is not None else None,
             "ci_high_90": round(ci_high_90, 2) if ci_high_90 is not None else None,
             "vegas_spread": None,
+            "vegas_spread_observed_at": None,
+            "vegas_line_source": None,
+            "home_moneyline": None,
+            "away_moneyline": None,
+            "home_spread_odds": None,
+            "away_spread_odds": None,
+            "used_default_spread_juice": False,
             "win_prob_home": round(win_prob_home, 4) if win_prob_home is not None else None,
             "win_prob_away": round(win_prob_away, 4) if win_prob_away is not None else None,
             "base_source": "od_elo" if od_row is not None else None,
@@ -172,6 +190,9 @@ def generate_games_2026_json():
             "actual_winner": None,
             "actual_spread_margin": None,
             "did_we_predict_correctly": None,
+            "generated_at": generated_at,
+            "run_id": run_id,
+            "model_version": model_version,
         })
 
     games.sort(key=lambda g: (g["week"], g["kickoff_datetime"] or ""))

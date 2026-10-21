@@ -11,8 +11,9 @@ rather than crashing) since this is unofficial, undocumented ESPN
 infrastructure that can change or fail at any time.
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 
+from current_week_2026 import real_current_week_2026
 from espn_odds_client import ESPNOddsClient
 from espn_odds_storage import append_history, save_daily_snapshot
 
@@ -35,8 +36,15 @@ def _is_relevant_future(name):
 
 
 def collect_game_odds(client):
-    print("\n[1/2] Fetching current-week scoreboard + per-game odds...")
-    scoreboard = client.get_scoreboard()
+    # Real, serious bug fixed here (2026-10-06 - see espn_odds_client.
+    # get_scoreboard's own docstring): the no-param scoreboard call does
+    # NOT reliably track the real current week - verified live, it was
+    # still reporting the prior week as current a day after it ended.
+    # Pass this project's own real current_week_2026() explicitly instead
+    # of trusting ESPN's own default week grouping.
+    week = real_current_week_2026()
+    print(f"\n[1/2] Fetching real Week {week} scoreboard + per-game odds...")
+    scoreboard = client.get_scoreboard(week=week, season=SEASON)
     if not scoreboard:
         print("  FAILED: could not fetch scoreboard - skipping game odds this run.")
         return []
@@ -108,7 +116,7 @@ def collect_futures(client):
                     "sportsbook": provider.get("name"),
                     "team": team_id_map.get(team_id, team_id),
                     "odds": book.get("value"),
-                    "fetched_at": datetime.now().isoformat(),
+                    "fetched_at": datetime.now(timezone.utc).isoformat(),
                 })
 
     return results

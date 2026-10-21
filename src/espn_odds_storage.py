@@ -41,18 +41,23 @@ def append_history(games_odds):
         with open(HISTORY_PATH, encoding="utf-8") as f:
             history = json.load(f)
 
-    existing_keys = {
-        (r.get("game_id"), r.get("sportsbook"), r.get("fetched_at", "")[:10],
-         r.get("home_spread_current"), r.get("away_spread_current"),
-         r.get("home_moneyline"), r.get("away_moneyline"), r.get("total"))
-        for r in history
-    }
+    # Real bug fixed here (2026-10-06): the dedup key didn't include
+    # home/away_spread_odds_current - a run that added a real field
+    # without changing any of the fields already in the key (e.g. the
+    # first run after espn_odds_client.parse_odds started capturing
+    # spreadOdds) was silently treated as a pure duplicate and dropped,
+    # even though it carried real, previously-uncaptured information.
+    def _dedup_key(r):
+        return (r.get("game_id"), r.get("sportsbook"), r.get("fetched_at", "")[:10],
+                r.get("home_spread_current"), r.get("away_spread_current"),
+                r.get("home_moneyline"), r.get("away_moneyline"), r.get("total"),
+                r.get("home_spread_odds_current"), r.get("away_spread_odds_current"))
+
+    existing_keys = {_dedup_key(r) for r in history}
 
     appended = 0
     for record in games_odds:
-        key = (record.get("game_id"), record.get("sportsbook"), record.get("fetched_at", "")[:10],
-               record.get("home_spread_current"), record.get("away_spread_current"),
-               record.get("home_moneyline"), record.get("away_moneyline"), record.get("total"))
+        key = _dedup_key(record)
         if key in existing_keys:
             continue
         history.append(record)

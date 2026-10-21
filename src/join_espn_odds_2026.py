@@ -32,19 +32,54 @@ is the opposite (positive = home favored - established and verified in
 betting_backtest.py's module docstring for the real 2015-2025 data). Every
 real spread pulled from ESPN is negated here to match.
 
-Real, disclosed limitation: ESPN's parsed odds record (espn_odds_client.
-parse_odds) captures real moneylines and real point-spread values but not
-a real per-side spread-betting price ("juice") - the raw API does expose
-one (awayTeamOdds.spreadOdds), but the already-running collector never
-captured it, so nothing on disk has it for weeks already gone by. Standard
--110 (the near-universal real-world default price on either side of a
-point spread) is used for ATS bets going forward - a disclosed, standard
-assumption, not an invented weight.
+Real per-side spread juice (fixed 2026-10-06 - a real bug, not just a
+disclosed gap: see espn_odds_client.parse_odds's own docstring). The raw
+API exposes a genuinely asymmetric per-side spread price
+(home/awayTeamOdds.spreadOdds, e.g. home -112 / away -108) directly
+alongside moneyLine - the collector simply never captured it before.
+Historical weeks collected before this fix still only have the
+symmetric -110/-110 default baked into their saved history.json rows
+(nothing to backfill from - the real value was never fetched for them).
+Standard -110 remains the disclosed fallback for any provider that
+genuinely doesn't expose a per-side price. Every game using that
+fallback has `used_default_spread_juice: true` on its games_2026.json
+row, so a downstream consumer (the juke picks generator) can see plainly
+when a real per-side price wasn't available.
+
+Real fixes added here (2026-10-06, schema_report.md's provenance-gap
+PREREQUISITE for the juke picks competition - see generate_juke_picks.py):
+1. Pre-kickoff cutoff. The old `_latest_odds_by_matchup` picked the
+   absolute-latest real fetched_at row with no regard for whether it was
+   fetched before or after that game's own real kickoff - a line fetched
+   mid-game (e.g. a stale weekly refresh re-run) could have silently been
+   used as if it were a real pre-game reference line. Now only rows with
+   a real fetched_at strictly before that game's real kickoff are
+   considered; a row with no real kickoff on it (very old history rows,
+   collected before espn_odds_orchestrate.py started attaching one) is
+   kept as a last resort, since there is nothing to apply a cutoff
+   against.
+2. Real per-game provenance written directly onto games_2026.json, not
+   just the side CSV: vegas_spread_observed_at (real, UTC, when that
+   reference line was actually fetched), vegas_line_source (real
+   sportsbook name), kickoff_utc (ESPN's own real, UTC-aware event date -
+   fixes the naive kickoff_datetime schema_report.md flagged; null when
+   no real odds row/kickoff has ever been collected for that game, e.g. a
+   future week this far out, or an early-season game whose kickoff
+   predates odds collection starting), home_moneyline/away_moneyline/
+   home_spread_odds/away_spread_odds/used_default_spread_juice (so a
+   consumer doesn't need a second file join to price a bet).
+3. Robust timestamp comparison (run_provenance.parse_any_iso_to_utc) -
+   history.json has a real mix of naive-local (old espn_odds_client rows,
+   before fix 2026-10-06) and UTC-aware (ESPN's own kickoff, and new
+   fetched_at rows going forward) timestamps; comparing them as raw
+   strings (the old behavior) silently mis-ordered rows across that mix.
 """
 
 import csv
 import json
 from pathlib import Path
+
+from run_provenance import parse_any_iso_to_utc
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 GAMES_PATH = PROJECT_ROOT / "frontend" / "src" / "data" / "games_2026.json"
@@ -54,24 +89,45 @@ VEGAS_LINES_OUTPUT = PROJECT_ROOT / "data" / "processed" / "vegas_lines_2026.csv
 STANDARD_SPREAD_JUICE = -110
 
 
-def _latest_odds_by_matchup():
-    """Real {(away_team, home_team): latest real odds row} - one entry per
-    real matchup, keeping only the row with the latest real fetched_at."""
+def _pre_kickoff_odds_by_matchup():
+    """Real {(away_team, home_team): latest PRE-KICKOFF real odds row} -
+    one entry per real matchup, keeping only the latest real fetched_at
+    row that was fetched strictly before that game's own real kickoff
+    (falls back to the latest row overall if no row for that matchup has
+    a real kickoff at all - nothing to apply a cutoff against)."""
     if not HISTORY_PATH.exists():
         return {}
     with open(HISTORY_PATH, encoding="utf-8") as f:
         history = json.load(f)
 
-    latest = {}
+    by_key = {}
     for row in history:
         if row.get("home_spread_current") is None and row.get("home_moneyline") is None:
             continue
         key = (row.get("away_team"), row.get("home_team"))
         if key[0] is None or key[1] is None:
             continue
-        existing = latest.get(key)
-        if existing is None or (row.get("fetched_at") or "") > (existing.get("fetched_at") or ""):
-            latest[key] = row
+        by_key.setdefault(key, []).append(row)
+
+    latest = {}
+    for key, rows in by_key.items():
+        eligible = []
+        for row in rows:
+            fetched = parse_any_iso_to_utc(row.get("fetched_at"))
+            kickoff = parse_any_iso_to_utc(row.get("kickoff"))
+            if fetched is None:
+                continue
+            if kickoff is not None and fetched >= kickoff:
+                continue  # real post-kickoff fetch - never used as a reference line
+            eligible.append((fetched, row))
+        pool = eligible if eligible else [
+            (parse_any_iso_to_utc(row.get("fetched_at")), row) for row in rows
+            if parse_any_iso_to_utc(row.get("fetched_at")) is not None
+        ]
+        if not pool:
+            continue
+        pool.sort(key=lambda t: t[0])
+        latest[key] = pool[-1][1]
 
     return latest
 
@@ -80,7 +136,7 @@ def join_odds():
     with open(GAMES_PATH, encoding="utf-8") as f:
         games = json.load(f)
 
-    odds_by_matchup = _latest_odds_by_matchup()
+    odds_by_matchup = _pre_kickoff_odds_by_matchup()
 
     n_spread_joined = 0
     vegas_lines_rows = []
@@ -94,15 +150,38 @@ def join_odds():
             game["vegas_spread"] = round(-float(row["home_spread_current"]), 1)
             n_spread_joined += 1
 
+        observed_at = parse_any_iso_to_utc(row.get("fetched_at"))
+        game["vegas_spread_observed_at"] = observed_at.isoformat() if observed_at else None
+        game["vegas_line_source"] = row.get("sportsbook")
+        kickoff = parse_any_iso_to_utc(row.get("kickoff"))
+        game["kickoff_utc"] = kickoff.isoformat() if kickoff else None
+        game["home_moneyline"] = row.get("home_moneyline")
+        game["away_moneyline"] = row.get("away_moneyline")
+        # Real fix (2026-10-06 - see espn_odds_client.parse_odds's own
+        # docstring): use the real, per-side spread price when the
+        # collector captured one, instead of always defaulting to a
+        # symmetric -110/-110 (which made the spread market's de-vigged
+        # price exactly 50/50 for every game, carrying no real signal).
+        real_home_juice = row.get("home_spread_odds_current")
+        real_away_juice = row.get("away_spread_odds_current")
+        if real_home_juice is not None and real_away_juice is not None:
+            game["home_spread_odds"] = float(real_home_juice)
+            game["away_spread_odds"] = float(real_away_juice)
+            game["used_default_spread_juice"] = False
+        else:
+            game["home_spread_odds"] = STANDARD_SPREAD_JUICE
+            game["away_spread_odds"] = STANDARD_SPREAD_JUICE
+            game["used_default_spread_juice"] = True
+
         if row.get("home_moneyline") is not None and row.get("away_moneyline") is not None:
             vegas_lines_rows.append({
                 "game_id": game["id"],
                 "home_moneyline": row["home_moneyline"],
                 "away_moneyline": row["away_moneyline"],
-                "home_spread_odds": STANDARD_SPREAD_JUICE,
-                "away_spread_odds": STANDARD_SPREAD_JUICE,
+                "home_spread_odds": game["home_spread_odds"],
+                "away_spread_odds": game["away_spread_odds"],
                 "sportsbook": row.get("sportsbook"),
-                "closing_line_fetched_at": row.get("fetched_at"),
+                "closing_line_fetched_at": game["vegas_spread_observed_at"],
             })
 
     with open(GAMES_PATH, "w", encoding="utf-8") as f:

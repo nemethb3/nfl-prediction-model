@@ -24,7 +24,7 @@ merely "extra book depth" on top of an existing Vegas line.
 
 import json
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -108,13 +108,45 @@ class ESPNOddsClient:
         print(f"  WARNING: ESPN returned {response.status_code} for {cache_key}")
         return None
 
-    def get_scoreboard(self):
-        """Real current-week NFL scoreboard - includes a real, single
-        highest-priority book's odds inline per game (e.g. DraftKings),
-        useful as a quick check but NOT the full multi-book breakdown
-        (use get_odds() for that)."""
+    def get_scoreboard(self, week=None, season=None, seasontype=2):
+        """Real NFL scoreboard - includes a real, single highest-priority
+        book's odds inline per game (e.g. DraftKings), useful as a quick
+        check but NOT the full multi-book breakdown (use get_odds() for
+        that).
+
+        Real, serious bug found and fixed here (2026-10-06): calling this
+        with no params does NOT reliably return the real CURRENT week -
+        verified live the week this was found, ESPN's own default
+        scoreboard still reported week=4 as current on 2026-10-06, a full
+        day after week 4 finished and 2 days before week 5's first game,
+        silently returning the WRONG week's games/odds to any caller that
+        trusted the default. Pass explicit week/season/seasontype (as
+        espn_odds_orchestrate.py now does, using this project's own real
+        current_week_2026.real_current_week_2026()) to get the real
+        intended week deterministically."""
         url = f"{SITE_API}/scoreboard"
-        return self._get(url, "scoreboard")
+        if week is None:
+            return self._get(url, "scoreboard")
+        params = {"week": week, "seasontype": seasontype, "year": season}
+        cache_key = f"scoreboard_wk{week}_{season}_{seasontype}"
+        cached = self._load_cache(cache_key)
+        if cached is not None:
+            return cached
+        try:
+            response = requests.get(url, params=params, timeout=REQUEST_TIMEOUT_S)
+        except requests.RequestException as e:
+            print(f"  WARNING: ESPN request failed for {cache_key}: {e}")
+            return None
+        if response.status_code != 200:
+            print(f"  WARNING: ESPN returned {response.status_code} for {cache_key}")
+            return None
+        try:
+            data = response.json()
+        except json.JSONDecodeError as e:
+            print(f"  WARNING: ESPN returned non-JSON for {cache_key}: {e}")
+            return None
+        self._save_cache(cache_key, data)
+        return data
 
     def get_odds(self, event_id, competition_id):
         """Real per-game odds, one item per provider that has a real
@@ -171,7 +203,22 @@ class ESPNOddsClient:
         each with a real open/current snapshot), NOT the pasted spec's
         guessed `displayOdds`/`type` structure, which doesn't exist.
         Returns one dict per real provider present in the response - do
-        not assume any fixed set of books."""
+        not assume any fixed set of books.
+
+        Real bug found and fixed here (2026-10-06): `awayTeamOdds`/
+        `homeTeamOdds` each carry a real, per-side CURRENT spread price
+        (`spreadOdds`, e.g. away -108 / home -112 - genuinely asymmetric,
+        verified live) directly alongside `moneyLine` - this parser never
+        captured it, so every real spread bet built on top of this data
+        (join_espn_odds_2026.py, betting_backtest_2026.py, and the juke
+        picks engine) silently used a hardcoded symmetric -110/-110
+        instead of the real price that was sitting in the same response.
+        That made the spread market's de-vigged "price" exactly 50/50 by
+        construction for every single spread bet, regardless of the real
+        line - not a market signal at all. Captured here as
+        home_spread_odds_current/away_spread_odds_current; a provider
+        that genuinely doesn't expose it still falls back to the
+        disclosed -110 default downstream (join_espn_odds_2026.py)."""
         parsed = []
         if not raw_odds or not raw_odds.get("items"):
             return parsed
@@ -196,9 +243,11 @@ class ESPNOddsClient:
                 "away_spread_current": _american(away, "current", "pointSpread"),
                 "home_spread_open": _american(home, "open", "pointSpread"),
                 "away_spread_open": _american(away, "open", "pointSpread"),
+                "home_spread_odds_current": home.get("spreadOdds"),
+                "away_spread_odds_current": away.get("spreadOdds"),
                 "home_moneyline_open": _american(home, "open", "moneyLine"),
                 "away_moneyline_open": _american(away, "open", "moneyLine"),
                 "home_favorite": home.get("favorite"),
-                "fetched_at": datetime.now().isoformat(),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
             })
         return parsed

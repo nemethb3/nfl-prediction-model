@@ -2,7 +2,7 @@
   "season": 2026,
   "award": "MVP",
   "is_preseason": false,
-  "methodology_note": "Real weeks 1-4 use each candidate's REAL nflreadpy box score (passing/rushing yards exact, TDs as real counts) in place of that week's preseason prediction; remaining weeks stay projected (real fantasy-industry 'rest-of-season' convention) - each real candidate's real full-season stat total (player_props_2026.json, summed across all 18 real weeks) is z-scored against the real historical MVP-winner profile (11 real seasons, 2015-2025 - see award_winner_profiles.json), blended 60/40 with a real team-strength z-score (this team's real projected wins - itself in-season-recalibrated, see recalibrate_2026_elo.py - vs. the real historical MVP-winning teams' average). 'relative_share_pct' is a real softmax of that composite score across the real top-15 ranked candidates (not the full ~390-player pool, which would dilute every real contender's share toward 0% and stop being interpretable), NOT a calibrated win probability - no real historical voting-share data exists to fit a true probability against (Pro-Football-Reference blocks direct scraping). Read it as a relative ranking strength. Real, disclosed limitation: the historical profile is fit on only 11 real seasons - a real, small sample.",
+  "methodology_note": "Real weeks 1-6 use each candidate's REAL nflreadpy box score (passing/rushing yards exact, TDs as real counts) in place of that week's preseason prediction; remaining weeks stay projected (real fantasy-industry 'rest-of-season' convention) - each real candidate's real full-season stat total (player_props_2026.json, summed across all 18 real weeks) is z-scored against the real historical MVP-winner profile (11 real seasons, 2015-2025 - see award_winner_profiles.json), blended 60/40 with a real team-strength z-score (this team's real projected wins - itself in-season-recalibrated, see recalibrate_2026_elo.py - vs. the real historical MVP-winning teams' average). 'relative_share_pct' is a real softmax of that composite score across the real top-15 ranked candidates (not the full ~390-player pool, which would dilute every real contender's share toward 0% and stop being interpretable), NOT a calibrated win probability - no real historical voting-share data exists to fit a true probability against (Pro-Football-Reference blocks direct scraping). Read it as a relative ranking strength. Real, disclosed limitation: the historical profile is fit on only 11 real seasons - a real, small sample.",
   "candidates": [
     {
       "player_id": "00-0034857",
@@ -10,14 +10,14 @@
       "position": "QB",
       "team": "BUF",
       "projected_season_stats": {
-        "passing_yards": 4114.2,
-        "passing_tds": 17.2,
-        "rushing_yards": 118.0,
-        "rushing_tds": 12.1
+        "passing_yards": 4074.6,
+        "passing_tds": 18.4,
+        "rushing_yards": 240.0,
+        "rushing_tds": 12.2
       },
       "team_projected_wins": 9.9,
-      "composite_score": -1.477,
-      "relative_share_pct": 11.29
+      "composite_score": -1.407,
+      "relative_share_pct": 11.94
     },
     {
       "player_id": "00-0033106",
@@ -25,44 +25,14 @@
       "position": "QB",
       "team": "DET",
       "projected_season_stats": {
-        "passing_yards": 4546.8,
-        "passing_tds": 19.5,
-        "rushing_yards": 15.0,
-        "rushing_tds": 1.3
+        "passing_yards": 4552.1,
+        "passing_tds": 21.7,
+        "rushing_yards": 16.0,
+        "rushing_tds": 2.2
       },
       "team_projected_wins": 9.8,
-      "composite_score": -1.773,
-      "relative_share_pct": 8.39
-    },
-    {
-      "player_id": "00-0036389",
-      "player_name": "Jalen Hurts",
-      "position": "QB",
-      "team": "PHI",
-      "projected_season_stats": {
-        "passing_yards": 2998.9,
-        "passing_tds": 15.9,
-        "rushing_yards": 105.0,
-        "rushing_tds": 6.5
-      },
-      "team_projected_wins": 10.3,
-      "composite_score": -1.801,
-      "relative_share_pct": 8.16
-    },
-    {
-      "player_id": "00-0037834",
-      "player_name": "Brock Purdy",
-      "position": "QB",
-      "team": "SF",
-      "projected_season_stats": {
-        "passing_yards": 4450.5,
-        "passing_tds": 22.3,
-        "rushing_yards": 122.0,
-        "rushing_tds": 3.2
-      },
-      "team_projected_wins": 9.2,
-      "composite_score": -1.865,
-      "relative_share_pct": 7.66
+      "composite_score": -1.699,
+      "relative_share_pct": 8.92
     },
     {
       "player_id": "00-0026498",
@@ -70,44 +40,29 @@
       "position": "QB",
       "team": "LA",
       "projected_season_stats": {
-        "passing_yards": 4843.6,
-        "passing_tds": 17.3,
+        "passing_yards": 4850.6,
+        "passing_tds": 20.5,
         "rushing_yards": 21.0,
-        "rushing_tds": 1.3
+        "rushing_tds": 1.0
       },
       "team_projected_wins": 9.4,
-      "composite_score": -1.897,
-      "relative_share_pct": 7.42
+      "composite_score": -1.842,
+      "relative_share_pct": 7.73
     },
     {
-      "player_id": "00-0039732",
-      "player_name": "Bo Nix",
+      "player_id": "00-0037834",
+      "player_name": "Brock Purdy",
       "position": "QB",
-      "team": "DEN",
+      "team": "SF",
       "projected_season_stats": {
-        "passing_yards": 3760.8,
-        "passing_tds": 15.4,
-        "rushing_yards": 25.0,
-        "rushing_tds": 3.3
+        "passing_yards": 4368.3,
+        "passing_tds": 23.6,
+        "rushing_yards": 156.0,
+        "rushing_tds": 2.8
       },
-      "team_projected_wins": 9.6,
-      "composite_score": -2.042,
-      "relative_share_pct": 6.41
-    },
-    {
-      "player_id": "00-0034869",
-      "player_name": "Sam Darnold",
-      "position": "QB",
-      "team": "SEA",
-      "projected_season_stats": {
-        "passing_yards": 3347.3,
-        "passing_tds": 15.2,
-        "rushing_yards": 11.0,
-        "rushing_tds": 1.5
-      },
-      "team_projected_wins": 10.0,
-      "composite_score": -2.055,
-      "relative_share_pct": 6.33
+      "team_projected_wins": 9.2,
+      "composite_score": -1.857,
+      "relative_share_pct": 7.61
     },
     {
       "player_id": "00-0036971",
@@ -115,14 +70,14 @@
       "position": "QB",
       "team": "JAX",
       "projected_season_stats": {
-        "passing_yards": 4498.7,
-        "passing_tds": 19.3,
-        "rushing_yards": 34.0,
-        "rushing_tds": 3.0
+        "passing_yards": 4567.2,
+        "passing_tds": 23.6,
+        "rushing_yards": 70.0,
+        "rushing_tds": 2.5
       },
       "team_projected_wins": 8.9,
-      "composite_score": -2.069,
-      "relative_share_pct": 6.24
+      "composite_score": -1.971,
+      "relative_share_pct": 6.79
     },
     {
       "player_id": "00-0039163",
@@ -130,14 +85,44 @@
       "position": "QB",
       "team": "HOU",
       "projected_season_stats": {
-        "passing_yards": 4135.9,
-        "passing_tds": 14.6,
-        "rushing_yards": 66.0,
-        "rushing_tds": 1.3
+        "passing_yards": 4245.2,
+        "passing_tds": 17.2,
+        "rushing_yards": 76.0,
+        "rushing_tds": 2.2
       },
       "team_projected_wins": 9.4,
-      "composite_score": -2.095,
-      "relative_share_pct": 6.08
+      "composite_score": -1.989,
+      "relative_share_pct": 6.67
+    },
+    {
+      "player_id": "00-0034869",
+      "player_name": "Sam Darnold",
+      "position": "QB",
+      "team": "SEA",
+      "projected_season_stats": {
+        "passing_yards": 3424.6,
+        "passing_tds": 14.9,
+        "rushing_yards": 35.0,
+        "rushing_tds": 1.3
+      },
+      "team_projected_wins": 10.0,
+      "composite_score": -2.039,
+      "relative_share_pct": 6.35
+    },
+    {
+      "player_id": "00-0023459",
+      "player_name": "Aaron Rodgers",
+      "position": "QB",
+      "team": "PIT",
+      "projected_season_stats": {
+        "passing_yards": 3935.2,
+        "passing_tds": 20.9,
+        "rushing_yards": 17.0,
+        "rushing_tds": 1.1
+      },
+      "team_projected_wins": 9.3,
+      "composite_score": -2.087,
+      "relative_share_pct": 6.05
     },
     {
       "player_id": "00-0033873",
@@ -145,14 +130,29 @@
       "position": "QB",
       "team": "KC",
       "projected_season_stats": {
-        "passing_yards": 4180.0,
-        "passing_tds": 20.0,
-        "rushing_yards": 41.0,
-        "rushing_tds": 2.5
+        "passing_yards": 4216.9,
+        "passing_tds": 19.2,
+        "rushing_yards": 57.0,
+        "rushing_tds": 2.4
       },
       "team_projected_wins": 9.0,
-      "composite_score": -2.103,
-      "relative_share_pct": 6.03
+      "composite_score": -2.108,
+      "relative_share_pct": 5.92
+    },
+    {
+      "player_id": "00-0039732",
+      "player_name": "Bo Nix",
+      "position": "QB",
+      "team": "DEN",
+      "projected_season_stats": {
+        "passing_yards": 3527.4,
+        "passing_tds": 14.8,
+        "rushing_yards": 37.0,
+        "rushing_tds": 3.0
+      },
+      "team_projected_wins": 9.6,
+      "composite_score": -2.114,
+      "relative_share_pct": 5.89
     }
   ]
 }

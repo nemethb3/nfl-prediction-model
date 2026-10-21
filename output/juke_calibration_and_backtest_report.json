@@ -1,0 +1,870 @@
+{
+  "calibration": {
+    "k_factor": 180.0,
+    "test_seasons": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_games": 816,
+    "sigma": 13.252143537632808,
+    "moneyline": {
+      "w_log_loss_optimal": 0.0,
+      "w_used": 0.56,
+      "one_se_note": "Literal log-loss-minimizing w was 0.00 (the model adds nothing over the market out-of-sample) - w_used is the standard 'within one standard error of the best' selection instead (a disclosed statistical choice, not a literal optimum), used so picks aren't all exactly breakeven. See REPORT.md.",
+      "standard_error_at_optimum": 0.012315198889740142,
+      "log_loss_at_w_used": 0.6197195683961834,
+      "log_loss_model_only": 0.6387496783362235,
+      "log_loss_market_only": 0.6076891269448242,
+      "n": 816,
+      "calibration_model": [
+        {
+          "bucket": "0%-10%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "10%-20%",
+          "n": 7,
+          "mean_predicted": 0.1722,
+          "actual_hit_rate": 0.4286
+        },
+        {
+          "bucket": "20%-30%",
+          "n": 49,
+          "mean_predicted": 0.2529,
+          "actual_hit_rate": 0.3469
+        },
+        {
+          "bucket": "30%-40%",
+          "n": 96,
+          "mean_predicted": 0.3602,
+          "actual_hit_rate": 0.3021
+        },
+        {
+          "bucket": "40%-50%",
+          "n": 175,
+          "mean_predicted": 0.4539,
+          "actual_hit_rate": 0.44
+        },
+        {
+          "bucket": "50%-60%",
+          "n": 171,
+          "mean_predicted": 0.5478,
+          "actual_hit_rate": 0.5088
+        },
+        {
+          "bucket": "60%-70%",
+          "n": 164,
+          "mean_predicted": 0.649,
+          "actual_hit_rate": 0.6707
+        },
+        {
+          "bucket": "70%-80%",
+          "n": 104,
+          "mean_predicted": 0.7421,
+          "actual_hit_rate": 0.7212
+        },
+        {
+          "bucket": "80%-90%",
+          "n": 50,
+          "mean_predicted": 0.8394,
+          "actual_hit_rate": 0.88
+        },
+        {
+          "bucket": "90%-100%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        }
+      ],
+      "calibration_final": [
+        {
+          "bucket": "0%-10%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "10%-20%",
+          "n": 13,
+          "mean_predicted": 0.1777,
+          "actual_hit_rate": 0.2308
+        },
+        {
+          "bucket": "20%-30%",
+          "n": 38,
+          "mean_predicted": 0.2562,
+          "actual_hit_rate": 0.2895
+        },
+        {
+          "bucket": "30%-40%",
+          "n": 111,
+          "mean_predicted": 0.3543,
+          "actual_hit_rate": 0.3063
+        },
+        {
+          "bucket": "40%-50%",
+          "n": 160,
+          "mean_predicted": 0.4494,
+          "actual_hit_rate": 0.375
+        },
+        {
+          "bucket": "50%-60%",
+          "n": 173,
+          "mean_predicted": 0.5475,
+          "actual_hit_rate": 0.5607
+        },
+        {
+          "bucket": "60%-70%",
+          "n": 160,
+          "mean_predicted": 0.65,
+          "actual_hit_rate": 0.6937
+        },
+        {
+          "bucket": "70%-80%",
+          "n": 110,
+          "mean_predicted": 0.742,
+          "actual_hit_rate": 0.7182
+        },
+        {
+          "bucket": "80%-90%",
+          "n": 50,
+          "mean_predicted": 0.8378,
+          "actual_hit_rate": 0.92
+        },
+        {
+          "bucket": "90%-100%",
+          "n": 1,
+          "mean_predicted": 0.9085,
+          "actual_hit_rate": 1.0
+        }
+      ]
+    },
+    "spread": {
+      "w_log_loss_optimal": 0.0,
+      "w_used": 0.1,
+      "one_se_note": "Literal log-loss-minimizing w was 0.00 (the model adds nothing over the market out-of-sample) - w_used is the standard 'within one standard error of the best' selection instead (a disclosed statistical choice, not a literal optimum), used so picks aren't all exactly breakeven. See REPORT.md.",
+      "standard_error_at_optimum": 0.0007926040908392498,
+      "log_loss_at_w_used": 0.6943169294770385,
+      "log_loss_model_only": 0.7199236242287569,
+      "log_loss_market_only": 0.6935876383065412,
+      "n": 797,
+      "calibration_model": [
+        {
+          "bucket": "0%-10%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "10%-20%",
+          "n": 2,
+          "mean_predicted": 0.1941,
+          "actual_hit_rate": 1.0
+        },
+        {
+          "bucket": "20%-30%",
+          "n": 15,
+          "mean_predicted": 0.2666,
+          "actual_hit_rate": 0.4667
+        },
+        {
+          "bucket": "30%-40%",
+          "n": 88,
+          "mean_predicted": 0.3674,
+          "actual_hit_rate": 0.5682
+        },
+        {
+          "bucket": "40%-50%",
+          "n": 292,
+          "mean_predicted": 0.4583,
+          "actual_hit_rate": 0.5
+        },
+        {
+          "bucket": "50%-60%",
+          "n": 289,
+          "mean_predicted": 0.5445,
+          "actual_hit_rate": 0.4913
+        },
+        {
+          "bucket": "60%-70%",
+          "n": 88,
+          "mean_predicted": 0.6361,
+          "actual_hit_rate": 0.4659
+        },
+        {
+          "bucket": "70%-80%",
+          "n": 18,
+          "mean_predicted": 0.7322,
+          "actual_hit_rate": 0.5556
+        },
+        {
+          "bucket": "80%-90%",
+          "n": 5,
+          "mean_predicted": 0.8304,
+          "actual_hit_rate": 0.4
+        },
+        {
+          "bucket": "90%-100%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        }
+      ],
+      "calibration_final": [
+        {
+          "bucket": "0%-10%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "10%-20%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "20%-30%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "30%-40%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "40%-50%",
+          "n": 397,
+          "mean_predicted": 0.4896,
+          "actual_hit_rate": 0.5038
+        },
+        {
+          "bucket": "50%-60%",
+          "n": 400,
+          "mean_predicted": 0.5114,
+          "actual_hit_rate": 0.5
+        },
+        {
+          "bucket": "60%-70%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "70%-80%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "80%-90%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        },
+        {
+          "bucket": "90%-100%",
+          "n": 0,
+          "mean_predicted": null,
+          "actual_hit_rate": null
+        }
+      ]
+    }
+  },
+  "per_season": {
+    "2023": {
+      "strategy": {
+        "label": "Our strategy",
+        "bets": 196,
+        "wins": 66,
+        "losses": 130,
+        "pushes": 0,
+        "win_pct": 33.7,
+        "roi_pct": -2.13,
+        "total_pnl": -383.71
+      },
+      "baseline_our_pick_flat": {
+        "label": "Baseline: our pick, flat stake",
+        "bets": 272,
+        "wins": 107,
+        "losses": 165,
+        "pushes": 0,
+        "win_pct": 39.3,
+        "roi_pct": -7.09,
+        "total_pnl": -1275.49
+      },
+      "baseline_vegas_favorite_flat": {
+        "label": "Baseline: Vegas favorite, flat stake",
+        "bets": 272,
+        "wins": 184,
+        "losses": 88,
+        "pushes": 0,
+        "win_pct": 67.6,
+        "roi_pct": 4.97,
+        "total_pnl": 895.4
+      },
+      "worst_week_pnl": -593.56,
+      "max_drawdown": -2830.73
+    },
+    "2024": {
+      "strategy": {
+        "label": "Our strategy",
+        "bets": 215,
+        "wins": 78,
+        "losses": 137,
+        "pushes": 0,
+        "win_pct": 36.3,
+        "roi_pct": -8.89,
+        "total_pnl": -1600.55
+      },
+      "baseline_our_pick_flat": {
+        "label": "Baseline: our pick, flat stake",
+        "bets": 272,
+        "wins": 112,
+        "losses": 160,
+        "pushes": 0,
+        "win_pct": 41.2,
+        "roi_pct": -10.59,
+        "total_pnl": -1906.38
+      },
+      "baseline_vegas_favorite_flat": {
+        "label": "Baseline: Vegas favorite, flat stake",
+        "bets": 272,
+        "wins": 195,
+        "losses": 77,
+        "pushes": 0,
+        "win_pct": 71.7,
+        "roi_pct": 10.16,
+        "total_pnl": 1828.12
+      },
+      "worst_week_pnl": -698.41,
+      "max_drawdown": -2098.87
+    },
+    "2025": {
+      "strategy": {
+        "label": "Our strategy",
+        "bets": 213,
+        "wins": 75,
+        "losses": 138,
+        "pushes": 0,
+        "win_pct": 35.2,
+        "roi_pct": 1.69,
+        "total_pnl": 303.39
+      },
+      "baseline_our_pick_flat": {
+        "label": "Baseline: our pick, flat stake",
+        "bets": 272,
+        "wins": 104,
+        "losses": 168,
+        "pushes": 0,
+        "win_pct": 38.2,
+        "roi_pct": -3.15,
+        "total_pnl": -566.56
+      },
+      "baseline_vegas_favorite_flat": {
+        "label": "Baseline: Vegas favorite, flat stake",
+        "bets": 272,
+        "wins": 178,
+        "losses": 94,
+        "pushes": 0,
+        "win_pct": 65.4,
+        "roi_pct": -3.09,
+        "total_pnl": -555.84
+      },
+      "worst_week_pnl": -605.37,
+      "max_drawdown": -962.5
+    }
+  },
+  "overall": {
+    "strategy": {
+      "label": "Our strategy",
+      "bets": 624,
+      "wins": 219,
+      "losses": 405,
+      "pushes": 0,
+      "win_pct": 35.1,
+      "roi_pct": -3.11,
+      "total_pnl": -1680.86
+    },
+    "baseline_our_pick_flat": {
+      "label": "Baseline: our pick, flat stake",
+      "bets": 816,
+      "wins": 323,
+      "losses": 493,
+      "pushes": 0,
+      "win_pct": 39.6,
+      "roi_pct": -6.94,
+      "total_pnl": -3748.43
+    },
+    "baseline_vegas_favorite_flat": {
+      "label": "Baseline: Vegas favorite, flat stake",
+      "bets": 816,
+      "wins": 557,
+      "losses": 259,
+      "pushes": 0,
+      "win_pct": 68.3,
+      "roi_pct": 4.01,
+      "total_pnl": 2167.69
+    },
+    "core": {
+      "label": "Core picks only",
+      "bets": 624,
+      "wins": 219,
+      "losses": 405,
+      "pushes": 0,
+      "win_pct": 35.1,
+      "roi_pct": -3.11,
+      "total_pnl": -1680.86
+    },
+    "filler": {
+      "label": "Filler picks only",
+      "bets": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "win_pct": 0.0,
+      "roi_pct": 0.0,
+      "total_pnl": 0.0
+    }
+  },
+  "weekly": [
+    {
+      "season": 2023,
+      "week": 1,
+      "bets": 14,
+      "credits_staked": 1000,
+      "pnl": 79.67,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 2,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": -170.99,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 3,
+      "bets": 9,
+      "credits_staked": 1000,
+      "pnl": 558.81,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 4,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -538.04,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 5,
+      "bets": 9,
+      "credits_staked": 1000,
+      "pnl": -369.52,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 6,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": -51.98,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 7,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": -467.54,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 8,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": -344.41,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 9,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": -593.56,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 10,
+      "bets": 9,
+      "credits_staked": 1000,
+      "pnl": -444.04,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 11,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 160.87,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 12,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": -182.51,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 13,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": 431.47,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 14,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": 1227.5,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 15,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": -92.77,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 16,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": 624.2,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 17,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": -24.25,
+      "warning": null
+    },
+    {
+      "season": 2023,
+      "week": 18,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -186.62,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 1,
+      "bets": 15,
+      "credits_staked": 1000,
+      "pnl": 226.45,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 2,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 271.87,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 3,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": -80.66,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 4,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 17.3,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 5,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": -144.84,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 6,
+      "bets": 14,
+      "credits_staked": 1000,
+      "pnl": -379.02,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 7,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": -198.1,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 8,
+      "bets": 9,
+      "credits_staked": 1000,
+      "pnl": 136.78,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 9,
+      "bets": 14,
+      "credits_staked": 1000,
+      "pnl": -491.65,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 10,
+      "bets": 11,
+      "credits_staked": 1000,
+      "pnl": 130.72,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 11,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": 117.39,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 12,
+      "bets": 8,
+      "credits_staked": 1000,
+      "pnl": -132.33,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 13,
+      "bets": 8,
+      "credits_staked": 1000,
+      "pnl": 344.67,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 14,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -186.19,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 15,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -698.41,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 16,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -125.57,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 17,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -40.67,
+      "warning": null
+    },
+    {
+      "season": 2024,
+      "week": 18,
+      "bets": 16,
+      "credits_staked": 1000,
+      "pnl": -368.29,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 1,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 69.59,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 2,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 154.78,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 3,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 266.67,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 4,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -605.37,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 5,
+      "bets": 7,
+      "credits_staked": 1000,
+      "pnl": 1179.46,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 6,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -512.13,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 7,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -416.74,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 8,
+      "bets": 10,
+      "credits_staked": 1000,
+      "pnl": -31.16,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 9,
+      "bets": 9,
+      "credits_staked": 1000,
+      "pnl": 471.35,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 10,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 178.39,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 11,
+      "bets": 15,
+      "credits_staked": 1000,
+      "pnl": -431.42,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 12,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -61.95,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 13,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": -158.84,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 14,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 631.22,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 15,
+      "bets": 14,
+      "credits_staked": 1000,
+      "pnl": -163.9,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 16,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": -232.5,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 17,
+      "bets": 12,
+      "credits_staked": 1000,
+      "pnl": 202.2,
+      "warning": null
+    },
+    {
+      "season": 2025,
+      "week": 18,
+      "bets": 13,
+      "credits_staked": 1000,
+      "pnl": -236.26,
+      "warning": null
+    }
+  ]
+}

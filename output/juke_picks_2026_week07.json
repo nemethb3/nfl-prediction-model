@@ -1,0 +1,133 @@
+{
+  "submission": {
+    "season": 2026,
+    "week": 7,
+    "generated_at": "2026-10-21T02:15:20.645987+00:00",
+    "run_id": "d8d1fd84e36d",
+    "model_version": "df0ff96",
+    "spread_convention": "sportsbook (negative = favorite)",
+    "settlement": "polymarket market odds",
+    "price_source": "ESPN no-vig proxy for Polymarket",
+    "total_credits": 1000,
+    "credits_allocated": 1000
+  },
+  "picks": [
+    {
+      "event_id": "2026_07_NYG_HOU",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "market": "moneyline",
+      "selection": "NYG",
+      "line": null,
+      "assumed_price": 0.1918,
+      "price_american": 400,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:19.021199+00:00"
+    },
+    {
+      "event_id": "2026_07_DAL_PHI",
+      "kickoff_utc": "2026-10-27T00:15:00+00:00",
+      "market": "moneyline",
+      "selection": "PHI",
+      "line": null,
+      "assumed_price": 0.3364,
+      "price_american": 185,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:20.045055+00:00"
+    },
+    {
+      "event_id": "2026_07_DEN_ARI",
+      "kickoff_utc": "2026-10-25T20:05:00+00:00",
+      "market": "moneyline",
+      "selection": "ARI",
+      "line": null,
+      "assumed_price": 0.325,
+      "price_american": 195,
+      "credits": 142,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:19.211089+00:00"
+    },
+    {
+      "event_id": "2026_07_PIT_NO",
+      "kickoff_utc": "2026-10-25T13:30:00+00:00",
+      "market": "moneyline",
+      "selection": "NO",
+      "line": null,
+      "assumed_price": 0.3775,
+      "price_american": 154,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:17.795654+00:00"
+    },
+    {
+      "event_id": "2026_07_MIA_NYJ",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "market": "moneyline",
+      "selection": "MIA",
+      "line": null,
+      "assumed_price": 0.331,
+      "price_american": 190,
+      "credits": 120,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:18.503653+00:00"
+    },
+    {
+      "event_id": "2026_07_NE_CHI",
+      "kickoff_utc": "2026-10-23T00:15:00+00:00",
+      "market": "moneyline",
+      "selection": "NE",
+      "line": null,
+      "assumed_price": 0.417,
+      "price_american": 130,
+      "credits": 143,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:17.488280+00:00"
+    },
+    {
+      "event_id": "2026_07_IND_MIN",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "market": "moneyline",
+      "selection": "IND",
+      "line": null,
+      "assumed_price": 0.2864,
+      "price_american": 235,
+      "credits": 47,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:18.322806+00:00"
+    },
+    {
+      "event_id": "2026_07_SF_ATL",
+      "kickoff_utc": "2026-10-25T17:00:00+00:00",
+      "market": "moneyline",
+      "selection": "ATL",
+      "line": null,
+      "assumed_price": 0.3836,
+      "price_american": 150,
+      "credits": 56,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:17.986007+00:00"
+    },
+    {
+      "event_id": "2026_07_KC_SEA",
+      "kickoff_utc": "2026-10-26T00:20:00+00:00",
+      "market": "moneyline",
+      "selection": "KC",
+      "line": null,
+      "assumed_price": 0.4279,
+      "price_american": 124,
+      "credits": 42,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-21T02:15:19.838450+00:00"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T18:49:30.856137+00:00",
+  "generated_at": "2026-10-28T20:55:38.810138+00:00",
   "weeks": [
     {
       "season": 2026,
@@ -30,6 +30,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:03.201577+00:00",
+          "home_team": "TEN",
+          "away_team": "HOU",
           "result": "loss",
           "pnl": -150.0
         },
@@ -45,6 +47,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:02.702428+00:00",
+          "home_team": "DAL",
+          "away_team": "TB",
           "result": "win",
           "pnl": 490.53
         },
@@ -60,6 +64,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:03.387307+00:00",
+          "home_team": "MIA",
+          "away_team": "CIN",
           "result": "loss",
           "pnl": -137.0
         },
@@ -75,6 +81,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:04.458157+00:00",
+          "home_team": "ARI",
+          "away_team": "DET",
           "result": "loss",
           "pnl": -115.0
         },
@@ -90,6 +98,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:04.770841+00:00",
+          "home_team": "ATL",
+          "away_team": "BAL",
           "result": "win",
           "pnl": 184.69
         },
@@ -105,6 +115,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:04.304509+00:00",
+          "home_team": "LAC",
+          "away_team": "DEN",
           "result": "loss",
           "pnl": -104.0
         },
@@ -120,6 +132,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:02.867974+00:00",
+          "home_team": "JAX",
+          "away_team": "PHI",
           "result": "loss",
           "pnl": -41.0
         },
@@ -135,6 +149,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:03.540063+00:00",
+          "home_team": "NE",
+          "away_team": "LV",
           "result": "loss",
           "pnl": -47.0
         },
@@ -150,6 +166,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:04.620029+00:00",
+          "home_team": "SEA",
+          "away_team": "SF",
           "result": "win",
           "pnl": 72.7
         },
@@ -165,6 +183,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:03.694165+00:00",
+          "home_team": "NO",
+          "away_team": "MIN",
           "result": "win",
           "pnl": 57.3
         },
@@ -180,6 +200,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-06T19:15:03.849951+00:00",
+          "home_team": "NYJ",
+          "away_team": "CLE",
           "result": "loss",
           "pnl": -41.0
         }
@@ -214,6 +236,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:36.327705+00:00",
+          "home_team": "KC",
+          "away_team": "LAC",
           "result": "loss",
           "pnl": -91.0
         },
@@ -229,6 +253,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:35.573411+00:00",
+          "home_team": "PHI",
+          "away_team": "CAR",
           "result": "loss",
           "pnl": -150.0
         },
@@ -244,6 +270,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:34.845958+00:00",
+          "home_team": "IND",
+          "away_team": "TEN",
           "result": "win",
           "pnl": 180.87
         },
@@ -259,6 +287,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:34.582979+00:00",
+          "home_team": "CLE",
+          "away_team": "BAL",
           "result": "win",
           "pnl": 159.68
         },
@@ -274,6 +304,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:35.328184+00:00",
+          "home_team": "NYG",
+          "away_team": "NO",
           "result": "loss",
           "pnl": -128.0
         },
@@ -289,6 +321,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:36.572264+00:00",
+          "home_team": "LV",
+          "away_team": "BUF",
           "result": "loss",
           "pnl": -65.0
         },
@@ -304,6 +338,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:35.087046+00:00",
+          "home_team": "NE",
+          "away_team": "NYJ",
           "result": "loss",
           "pnl": -38.0
         },
@@ -319,6 +355,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:33.743908+00:00",
+          "home_team": "DEN",
+          "away_team": "SEA",
           "result": "win",
           "pnl": 103.46
         },
@@ -334,6 +372,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:35.839133+00:00",
+          "home_team": "TB",
+          "away_team": "PIT",
           "result": "loss",
           "pnl": -72.0
         },
@@ -349,6 +389,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:34.088223+00:00",
+          "home_team": "JAX",
+          "away_team": "HOU",
           "result": "loss",
           "pnl": -114.0
         },
@@ -364,6 +406,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:36.869242+00:00",
+          "home_team": "GB",
+          "away_team": "DAL",
           "result": "win",
           "pnl": 69.68
         },
@@ -379,6 +423,8 @@
           "tier": "core",
           "reference_line_source": "Draft Kings",
           "reference_line_observed_at": "2026-10-16T14:47:34.339227+00:00",
+          "home_team": "ATL",
+          "away_team": "CHI",
           "result": "loss",
           "pnl": -43.0
         }
@@ -413,6 +459,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:19.021199+00:00",
+          "home_team": "HOU",
+          "away_team": "NYG",
           "result": "win",
           "pnl": 632.06
         },
@@ -428,6 +476,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:20.045055+00:00",
+          "home_team": "PHI",
+          "away_team": "DAL",
           "result": "loss",
           "pnl": -150.0
         },
@@ -443,6 +493,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:19.211089+00:00",
+          "home_team": "ARI",
+          "away_team": "DEN",
           "result": "loss",
           "pnl": -142.0
         },
@@ -458,6 +510,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:17.795654+00:00",
+          "home_team": "NO",
+          "away_team": "PIT",
           "result": "loss",
           "pnl": -150.0
         },
@@ -473,6 +527,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:18.503653+00:00",
+          "home_team": "NYJ",
+          "away_team": "MIA",
           "result": "win",
           "pnl": 242.54
         },
@@ -488,6 +544,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:17.488280+00:00",
+          "home_team": "CHI",
+          "away_team": "NE",
           "result": "loss",
           "pnl": -143.0
         },
@@ -503,6 +561,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:18.322806+00:00",
+          "home_team": "MIN",
+          "away_team": "IND",
           "result": "loss",
           "pnl": -47.0
         },
@@ -518,6 +578,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:17.986007+00:00",
+          "home_team": "ATL",
+          "away_team": "SF",
           "result": "win",
           "pnl": 89.99
         },
@@ -533,6 +595,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-21T02:15:19.838450+00:00",
+          "home_team": "SEA",
+          "away_team": "KC",
           "result": "loss",
           "pnl": -42.0
         }
@@ -567,6 +631,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:10.685542+00:00",
+          "home_team": "JAX",
+          "away_team": "IND",
           "result": "pending",
           "pnl": 0.0
         },
@@ -582,6 +648,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:11.350895+00:00",
+          "home_team": "MIA",
+          "away_team": "NE",
           "result": "pending",
           "pnl": 0.0
         },
@@ -597,6 +665,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:09.210751+00:00",
+          "home_team": "CIN",
+          "away_team": "TEN",
           "result": "pending",
           "pnl": 0.0
         },
@@ -612,6 +682,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:09.494091+00:00",
+          "home_team": "DAL",
+          "away_team": "ARI",
           "result": "pending",
           "pnl": 0.0
         },
@@ -627,6 +699,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:09.731131+00:00",
+          "home_team": "DET",
+          "away_team": "MIN",
           "result": "pending",
           "pnl": 0.0
         },
@@ -642,6 +716,8 @@
           "tier": "core",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:11.103953+00:00",
+          "home_team": "DEN",
+          "away_team": "KC",
           "result": "pending",
           "pnl": 0.0
         },
@@ -657,6 +733,8 @@
           "tier": "filler",
           "reference_line_source": "DraftKings",
           "reference_line_observed_at": "2026-10-28T18:49:10.007472+00:00",
+          "home_team": "NYJ",
+          "away_team": "LV",
           "result": "pending",
           "pnl": 0.0
         }

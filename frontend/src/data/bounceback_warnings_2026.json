@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T18:47:34.759717+00:00",
+  "generated_at": "2026-10-28T20:53:22.177566+00:00",
   "methodology_note": "Real, disclosed heuristic: flags a player whose prior-week real actual_ppr fell below 75% of that week's own real projected_ppr (the threshold requested for this feature, not a separately validated cutoff). A real actual_ppr of exactly 0.0 is flagged with a more cautious reason - it may mean the player didn't play at all rather than underperformed while playing (fantasy_rankings_2026.json's own injury_status is hardcoded 'healthy' at Week 1 generation time, so it can't disambiguate this after the fact - see module docstring).",
   "threshold_pct": 0.75,
   "n_flagged": 1262,

@@ -47,6 +47,7 @@ const AccuracyTracker = lazy(() => import('./components/AccuracyTracker'));
 const WeeklySummary = lazy(() => import('./components/WeeklySummary'));
 const BettingAnalysis = lazy(() => import('./components/BettingAnalysis'));
 const ModelTransparency = lazy(() => import('./components/ModelTransparency'));
+const WeeklyPicks = lazy(() => import('./components/WeeklyPicks'));
 
 // ModelTransparency is genuinely season-independent (doesn't call
 // useSeason() anywhere) - its code is still lazy-loaded (above), just
@@ -57,7 +58,7 @@ const ModelTransparency = lazy(() => import('./components/ModelTransparency'));
 // section id, so it isn't gated here either - it gates its own subtabs
 // internally instead (see Fantasy.js) to avoid blocking the
 // season-independent ones on data they don't need.
-const SEASON_DATA_SECTIONS = new Set(['games', 'projections', 'accuracy', 'summary', 'betting']);
+const SEASON_DATA_SECTIONS = new Set(['games', 'projections', 'accuracy', 'summary', 'betting', 'weekly-picks']);
 
 const SECTION_COMPONENTS = {
   games: GamePredictions,
@@ -67,6 +68,7 @@ const SECTION_COMPONENTS = {
   summary: WeeklySummary,
   transparency: ModelTransparency,
   betting: BettingAnalysis,
+  'weekly-picks': WeeklyPicks,
 };
 
 // AUDIT_2026-08-12_DEEP.md Section 7.2: no error boundary existed anywhere

@@ -41,6 +41,12 @@ export const DASHBOARD_SECTIONS = [
     description: 'Strategy backtests vs. real Vegas odds',
     component: 'BettingAnalysis',
   },
+  {
+    id: 'weekly-picks',
+    label: 'Weekly Picks',
+    description: 'This week\'s picks, shown before kickoff so they can be tracked honestly',
+    component: 'WeeklyPicks',
+  },
 ];
 
 export const DEFAULT_SECTION = 'games';

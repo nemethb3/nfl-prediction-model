@@ -74,6 +74,43 @@ jest.mock('./data/betting_backtest_results_2026.json', () => ({
 }));
 jest.mock('./data/superbowl_odds_2025.json', () => ({ teams: [] }));
 jest.mock('./data/superbowl_odds_2026.json', () => ({ teams: [] }));
+// Real, 2026-only (Weekly Picks tab) - weekly_picks_2026.json is a flat
+// array (generate_weekly_picks_2026.py); credit_picks_2026.json is the
+// same {weeks, season_to_date} shape track_juke_results.py also writes to
+// output/juke_weekly_results.json. Same test-isolation reasoning as every
+// other mocked 2026 file above.
+jest.mock('./data/weekly_picks_2026.json', () => ([
+  {
+    id: '2026_01_TEST_AWY_HME', week: 1, home_team: 'HME', away_team: 'AWY',
+    kickoff_datetime: '2026-09-09T20:20:00', kickoff_utc: '2026-09-10T00:20:00+00:00',
+    pick_team: 'AWY', pick_side: 'away', moneyline_odds: 150,
+    our_spread: 2.67, vegas_spread: 3.5, actual_winner: null,
+    actual_home_score: null, actual_away_score: null,
+    result_moneyline: 'pending', result_ats: 'pending',
+    pnl_moneyline_units: null, pnl_ats_units: null,
+  },
+]));
+jest.mock('./data/credit_picks_2026.json', () => ({
+  generated_at: '2026-01-01T00:00:00+00:00',
+  weeks: [
+    {
+      season: 2026, week: 1, run_id: 'test', generated_at: '2026-01-01T00:00:00+00:00',
+      picks_total: 1, picks_decided: 0, picks_pending: 1,
+      credits_staked: 1000, credits_staked_decided: 0,
+      wins: 0, losses: 0, pushes: 0, net_credits_won: 0, roi_pct: null, fully_settled: false,
+      picks: [
+        {
+          event_id: '2026_01_TEST_AWY_HME', kickoff_utc: '2026-09-10T00:20:00+00:00',
+          market: 'moneyline', selection: 'AWY', line: null, assumed_price: 0.4,
+          price_american: 150, credits: 1000, tier: 'core',
+          reference_line_source: 'test', reference_line_observed_at: '2026-01-01T00:00:00+00:00',
+          home_team: 'HME', away_team: 'AWY', result: 'pending', pnl: 0,
+        },
+      ],
+    },
+  ],
+  season_to_date: { weeks_fully_settled: 0, weeks_pending: 1, credits_staked: 0, net_credits_won: 0, roi_pct: null },
+}));
 
 // SeasonContext now loads each season's data via dynamic import()
 // (AUDIT_2026-08-12_DEEP.md Recommendation 11) - real async gap between
@@ -145,6 +182,19 @@ describe('App', () => {
 
     fireEvent.change(screen.getByLabelText('Season'), { target: { value: '2025' } });
     expect(await screen.findByText(/Strategy Comparison/)).toBeInTheDocument();
+    expect(screen.queryByText('Section Error')).not.toBeInTheDocument();
+  });
+
+  test('Weekly Picks tab renders both real sub-tabs without crashing', async () => {
+    await renderAppAndWaitForData();
+    fireEvent.click(screen.getByText('Weekly Picks'));
+    // Default sub-tab ("Our Picks") - real pick from the mocked data above.
+    expect(await screen.findByText('Our Pick: AWY')).toBeInTheDocument();
+    expect(screen.queryByText('Section Error')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('Credit Picks'));
+    // Real selection text from the mocked credit_picks_2026.json pick.
+    expect(await screen.findByText(/AWY \(moneyline\)/)).toBeInTheDocument();
     expect(screen.queryByText('Section Error')).not.toBeInTheDocument();
   });
 });

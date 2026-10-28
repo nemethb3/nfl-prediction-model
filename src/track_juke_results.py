@@ -30,6 +30,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "output"
 GAMES_PATH = PROJECT_ROOT / "frontend" / "src" / "data" / "games_2026.json"
 RESULTS_PATH = OUTPUT_DIR / "juke_weekly_results.json"
+# Real, deliberate duplicate (not a symlink/import) - the Weekly Picks tab's
+# "Credit Picks" sub-section reads this exact same content from inside
+# frontend/src/data/ (SeasonContext.js's per-season dynamic import
+# convention), while output/juke_weekly_results.json stays the canonical
+# copy for the competition/ops side. Same dict, written twice.
+FRONTEND_RESULTS_PATH = PROJECT_ROOT / "frontend" / "src" / "data" / "credit_picks_2026.json"
 
 
 def _load_games_by_id():
@@ -80,7 +86,16 @@ def _week_summary(output_path, games_by_id):
             result, pnl = "pending", 0.0
         else:
             result, pnl = _settle_pick(pick, game)
-        settled_picks.append({**pick, "result": result, "pnl": round(pnl, 2)})
+        settled_picks.append({
+            **pick,
+            # Real team names, for display - the public pick only ever
+            # carried event_id (e.g. "2026_07_IND_JAX"); enriched here so
+            # a consumer doesn't need to parse that id's away/home order.
+            "home_team": game["home_team"] if game else None,
+            "away_team": game["away_team"] if game else None,
+            "result": result,
+            "pnl": round(pnl, 2),
+        })
 
     decided = [p for p in settled_picks if p["result"] in ("win", "loss", "push")]
     scored = [p for p in decided if p["result"] != "push"]
@@ -139,6 +154,10 @@ def track_juke_results():
     with open(RESULTS_PATH, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2)
     print(f"Wrote {RESULTS_PATH}")
+
+    with open(FRONTEND_RESULTS_PATH, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2)
+    print(f"Wrote {FRONTEND_RESULTS_PATH}")
 
     for w in weeks:
         status = "FINAL" if w["fully_settled"] else f"PENDING ({w['picks_pending']}/{w['picks_total']} not yet played)"

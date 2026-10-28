@@ -1,0 +1,240 @@
+/* Real, deliberate choice: fully self-contained, not relying on another
+   lazy-loaded component's CSS chunk (e.g. GamePredictions.css's .header/
+   .subtitle/.week-selector, BettingAnalysis.css's .metric-card) even
+   though those are technically global/unscoped - this component's own
+   chunk should render correctly the first time a visitor opens it
+   directly, without depending on some other section having loaded
+   first. .header/.subtitle/.week-selector below are deliberately scoped
+   under .weekly-picks-container to match that file's visual values
+   without colliding with (or depending on) theirs. */
+
+.weekly-picks-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.weekly-picks-container .header {
+  max-width: 1100px;
+  margin: 0 auto 20px auto;
+  border-bottom: 1px solid #333;
+  padding-bottom: 16px;
+}
+
+.weekly-picks-container .header h1 {
+  margin: 0 0 8px 0;
+}
+
+.weekly-picks-container .subtitle {
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.weekly-picks-container .week-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  color: #ccc;
+  max-width: 1100px;
+  margin: 0 auto 1rem auto;
+}
+
+.weekly-picks-container .week-selector select {
+  padding: 8px 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.weekly-picks-container .week-selector select:hover {
+  background: #242424;
+}
+
+.weekly-picks-tabs-header {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #333;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.weekly-picks-tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.weekly-picks-tab-button:hover {
+  color: #ccc;
+}
+
+.weekly-picks-tab-button.active {
+  color: #fff;
+  border-bottom-color: #00d4ff;
+}
+
+.weekly-picks-tabs-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: weekly-picks-fade-in 0.2s ease-in;
+}
+
+@keyframes weekly-picks-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.weekly-picks-panel .week-selector {
+  margin-bottom: 1rem;
+}
+
+.weekly-picks-subtitle {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.weekly-picks-empty {
+  color: #888;
+  padding: 2rem 0;
+}
+
+.credit-picks-summary {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.weekly-picks-summary-card {
+  background: #2a2a2a;
+  padding: 14px 20px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.weekly-picks-summary-label {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.weekly-picks-summary-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.weekly-picks-summary-value.positive {
+  color: #4ade80;
+}
+
+.weekly-picks-summary-value.negative {
+  color: #f87171;
+}
+
+.weekly-picks-summary-detail {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.weekly-picks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.weekly-pick-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.weekly-pick-matchup {
+  font-weight: 600;
+  color: #fff;
+  min-width: 140px;
+}
+
+.weekly-pick-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 212, 255, 0.12);
+  border: 1px solid #00d4ff;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  color: #00d4ff;
+  white-space: nowrap;
+}
+
+.weekly-pick-tier {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1px 6px;
+}
+
+.weekly-pick-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.weekly-pick-odds {
+  color: #aaa;
+}
+
+.weekly-pick-result {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.weekly-pick-result.win {
+  color: #4ade80;
+}
+
+.weekly-pick-result.loss {
+  color: #f87171;
+}
+
+.weekly-pick-result.push {
+  color: #999;
+}
+
+.weekly-pick-result.pending {
+  color: #fbbf24;
+}

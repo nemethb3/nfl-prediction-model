@@ -150,6 +150,13 @@ arbitrary sequence):
       separate bounceback_warnings_2026.json flagging a player whose prior
       real week fell well short of that week's own real projection. Needs
       real actual_ppr for the prior week (steps 9/11 above).
+  23. generate_weekly_picks_2026.py (added 2026-10-28, Weekly Picks tab) -
+      real pre-game "Our System" picks for every game with real odds
+      joined, played or not - the same real selection rule step 19's
+      betting_backtest_2026.py uses, reused directly (not re-derived), run
+      against every game so a pick is visible before kickoff instead of
+      only appearing retroactively once that game (and step 19's own
+      result) exists. Needs step 16's real vegas_spread/moneylines.
 
 Real, NOT wired in here (disclosed, deliberate): a "never regenerate a
 locked week" gate. lock_week1_predictions.py's/lock_week2_predictions.py's
@@ -290,6 +297,14 @@ class WeeklyRefresh:
         self.step("Regenerating in-season weekly summary",
                   ["generate_weekly_summary_dashboard_data_2026.py"])
         self.step("Regenerating in-season betting analysis", ["betting_backtest_2026.py"])
+        # Real pre-game "Our System" picks (added 2026-10-28, Weekly Picks
+        # tab) - same real selection rule betting_backtest_2026.py's
+        # our_system strategy uses, just run against every real game with
+        # odds joined regardless of whether it's been played, so a pick is
+        # visible before kickoff instead of only appearing once the game
+        # (and betting_backtest_2026.py's own result) exists. Must run
+        # after the odds join above (needs real vegas_spread/moneylines).
+        self.step("Regenerating pre-game Weekly Picks", ["generate_weekly_picks_2026.py"])
         self.step("Verifying data", self.verify_data)
 
         self.log_refresh()

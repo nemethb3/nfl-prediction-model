@@ -67,6 +67,15 @@ const SEASON_FILE_LOADERS = {
       // Real, 2026-only - same reasoning, built on 2026's own week-to-week
       // real actual_ppr history.
       bounceBackWarnings: null,
+      // Real, 2026-only (Weekly Picks tab, added 2026-10-28) - the real
+      // pre-game "Our System" pick needs a real live, in-progress season
+      // with real odds joined week to week; a completed historical season
+      // has no equivalent built (Betting Analysis already covers it there).
+      weeklyPicks: null,
+      // Real, 2026-only - the juke paper-trading competition's own
+      // credit-allocation picks don't exist for any season but the one
+      // actually being played live.
+      creditPicks: null,
     };
   },
   // 2026: accuracyTracker/weeklySummary/bettingBacktest are real, in-season
@@ -82,7 +91,8 @@ const SEASON_FILE_LOADERS = {
   2026: async () => {
     const [games, fantasy, seasonProjections, accuracyTracker, weeklySummary, bettingBacktest,
       superbowlOdds, playerProps, breakoutAlerts, rookieScores,
-      powerRankings, awardRaces, injuryAdjustments, ensembleProjections, bounceBackWarnings] =
+      powerRankings, awardRaces, injuryAdjustments, ensembleProjections, bounceBackWarnings,
+      weeklyPicks, creditPicks] =
       await Promise.all([
         import('../data/games_2026.json'),
         import('../data/fantasy_rankings_2026.json'),
@@ -109,6 +119,16 @@ const SEASON_FILE_LOADERS = {
         // real prior week to compare against, so this is empty until Week
         // 2+ has something to look back on.
         import('../data/bounceback_warnings_2026.json'),
+        // Real, 2026-only (Weekly Picks tab, added 2026-10-28): the exact
+        // same "Our System" pick betting_backtest_2026.py tracks, run
+        // against every game regardless of whether it's been played yet -
+        // see generate_weekly_picks_2026.py.
+        import('../data/weekly_picks_2026.json'),
+        // Real, 2026-only: the juke paper-trading competition's own
+        // credit-allocation picks + real settled results per week - see
+        // track_juke_results.py (writes this same content to
+        // output/juke_weekly_results.json too, for the competition side).
+        import('../data/credit_picks_2026.json'),
       ]);
     return {
       games: games.default,
@@ -136,6 +156,8 @@ const SEASON_FILE_LOADERS = {
       injuryAdjustments: injuryAdjustments.default,
       ensembleProjections: ensembleProjections.default,
       bounceBackWarnings: bounceBackWarnings.default,
+      weeklyPicks: weeklyPicks.default,
+      creditPicks: creditPicks.default,
     };
   },
 };

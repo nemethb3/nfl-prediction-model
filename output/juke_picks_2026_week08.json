@@ -1,0 +1,107 @@
+{
+  "submission": {
+    "season": 2026,
+    "week": 8,
+    "generated_at": "2026-10-28T18:49:17.995595+00:00",
+    "run_id": "3f7a4d9ed214",
+    "model_version": "3e7b4ad",
+    "spread_convention": "sportsbook (negative = favorite)",
+    "settlement": "polymarket market odds",
+    "price_source": "ESPN no-vig proxy for Polymarket",
+    "total_credits": 1000,
+    "credits_allocated": 1000
+  },
+  "picks": [
+    {
+      "event_id": "2026_08_IND_JAX",
+      "kickoff_utc": "2026-11-01T18:00:00+00:00",
+      "market": "moneyline",
+      "selection": "IND",
+      "line": null,
+      "assumed_price": 0.2,
+      "price_american": 380,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:10.685542+00:00"
+    },
+    {
+      "event_id": "2026_08_NE_MIA",
+      "kickoff_utc": "2026-11-01T21:25:00+00:00",
+      "market": "moneyline",
+      "selection": "MIA",
+      "line": null,
+      "assumed_price": 0.2742,
+      "price_american": 250,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:11.350895+00:00"
+    },
+    {
+      "event_id": "2026_08_TEN_CIN",
+      "kickoff_utc": "2026-11-01T18:00:00+00:00",
+      "market": "moneyline",
+      "selection": "TEN",
+      "line": null,
+      "assumed_price": 0.2,
+      "price_american": 380,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:09.210751+00:00"
+    },
+    {
+      "event_id": "2026_08_ARI_DAL",
+      "kickoff_utc": "2026-11-01T18:00:00+00:00",
+      "market": "moneyline",
+      "selection": "ARI",
+      "line": null,
+      "assumed_price": 0.2522,
+      "price_american": 280,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:09.494091+00:00"
+    },
+    {
+      "event_id": "2026_08_MIN_DET",
+      "kickoff_utc": "2026-11-01T18:00:00+00:00",
+      "market": "moneyline",
+      "selection": "MIN",
+      "line": null,
+      "assumed_price": 0.3962,
+      "price_american": 142,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:09.731131+00:00"
+    },
+    {
+      "event_id": "2026_08_KC_DEN",
+      "kickoff_utc": "2026-11-01T21:25:00+00:00",
+      "market": "moneyline",
+      "selection": "DEN",
+      "line": null,
+      "assumed_price": 0.4826,
+      "price_american": -102,
+      "credits": 150,
+      "tier": "core",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:11.103953+00:00"
+    },
+    {
+      "event_id": "2026_08_LV_NYJ",
+      "kickoff_utc": "2026-11-01T18:00:00+00:00",
+      "market": "moneyline",
+      "selection": "NYJ",
+      "line": null,
+      "assumed_price": 0.5261,
+      "price_american": -122,
+      "credits": 100,
+      "tier": "filler",
+      "reference_line_source": "DraftKings",
+      "reference_line_observed_at": "2026-10-28T18:49:10.007472+00:00"
+    }
+  ]
+}

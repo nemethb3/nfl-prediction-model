@@ -243,6 +243,14 @@ export default function GameCard({
               <span className="label">Vegas</span> {formatSpread(vegasSpread, home, away)}
             </div>
           )}
+          {edge && (
+            <div
+              className="spread-gap-badge"
+              title={`You favor ${teamName(edge.team)} by ${edge.magnitude.toFixed(1)} more than Vegas - not a betting recommendation.`}
+            >
+              <span className="label">Gap</span> {edge.magnitude.toFixed(1)} ({edge.team})
+            </div>
+          )}
           {predictedTotal !== null && predictedTotal !== undefined && (
             <div className="predicted-total" title="Weak, informational projection only - see expanded view">
               <span className="label">Total</span> {predictedTotal.toFixed(1)}

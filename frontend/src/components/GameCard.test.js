@@ -57,6 +57,21 @@ describe('GameCard', () => {
     expect(container.textContent).toContain('KC -3.5');
   });
 
+  test('shows a real point-gap badge on the collapsed card when our_spread and vegas_spread differ', () => {
+    // our_spread=3.5 (KC favored by 3.5), vegas_spread=1.0 (KC favored by
+    // only 1.0) -> real gap = 2.5, in KC's favor (spreadEdge's own sign
+    // convention, GameCard.js:72-77) - visible without expanding the card.
+    const gameWithRealOdds = { ...mockGame, vegas_spread: 1.0 };
+    const { container } = render(<GameCard game={gameWithRealOdds} isExpanded={false} onToggle={() => {}} />);
+    expect(container.querySelector('.spread-gap-badge')).toBeInTheDocument();
+    expect(container.textContent).toContain('2.5 (KC)');
+  });
+
+  test('omits the point-gap badge when there is no real vegas_spread', () => {
+    const { container } = render(<GameCard game={mockGame} isExpanded={false} onToggle={() => {}} />);
+    expect(container.querySelector('.spread-gap-badge')).not.toBeInTheDocument();
+  });
+
   test('handles a minimal/incomplete game object without throwing', () => {
     // Real, disclosed gap from AUDIT_2026-08-12_DEEP.md Section 4.2:
     // formatSpread has no null guard on `spread` itself, so this renders a

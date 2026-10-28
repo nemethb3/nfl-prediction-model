@@ -188,6 +188,22 @@ html, body, #root {
   font-weight: 600;
 }
 
+/* Real point-gap badge (our_spread vs. vegas_spread) on the collapsed
+   card, not just the expanded detail - same .breakout-badge-style pill
+   convention used in FantasyRankings.css, so a real discrepancy is
+   visible without expanding the card. */
+.spread-gap-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(251, 191, 36, 0.15);
+  border: 1px solid #fbbf24;
+  border-radius: 12px;
+  padding: 2px 8px;
+  color: #fbbf24;
+  font-weight: 600;
+}
+
 .label {
   color: #999;
   font-size: 10px;

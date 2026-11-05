@@ -157,6 +157,19 @@ arbitrary sequence):
       against every game so a pick is visible before kickoff instead of
       only appearing retroactively once that game (and step 19's own
       result) exists. Needs step 16's real vegas_spread/moneylines.
+  24. generate_juke_picks.py (added 2026-11-05, folded in from a real,
+      previously-separate manual step - see this script's own real
+      module docstring for the full history) - the "Credit Picks" half of
+      the Weekly Picks tab, generated for the real current week with
+      --skip-refresh (this run's own odds collection above already
+      covers it). Needs step 16's real vegas_spread/moneylines, same as
+      step 23.
+  25. track_juke_results.py (added 2026-11-05, same real reason as step
+      24) - settles every real juke pick against games_2026.json's own
+      actual_* results and writes both the competition-side output
+      (output/juke_weekly_results.json) and this project's own frontend
+      copy (credit_picks_2026.json). Needs step 7's real ingested
+      results.
 
 Real, NOT wired in here (disclosed, deliberate): a "never regenerate a
 locked week" gate. lock_week1_predictions.py's/lock_week2_predictions.py's
@@ -305,6 +318,19 @@ class WeeklyRefresh:
         # (and betting_backtest_2026.py's own result) exists. Must run
         # after the odds join above (needs real vegas_spread/moneylines).
         self.step("Regenerating pre-game Weekly Picks", ["generate_weekly_picks_2026.py"])
+        # Real fix (2026-11-05): these two used to be separate, manually-run
+        # steps (the "Credit Picks" half of the Weekly Picks tab) - a real
+        # gap the user caught directly ("week 9 picks were not posted"),
+        # since nothing structurally guaranteed they'd run before that
+        # week's games started. Folded into the automatic weekly refresh so
+        # a single run now fills out BOTH Weekly Picks sub-tabs, every time,
+        # pre-game, with no separate manual step to forget. --skip-refresh
+        # on the first one: this run's own ESPN odds collection/join above
+        # already happened (steps 3/16) - re-fetching here would just be a
+        # second, redundant real HTTP round-trip for the same current week.
+        self.step("Generating weekly juke picks (Credit Picks)",
+                  ["generate_juke_picks.py", "--week", "auto", "--skip-refresh"])
+        self.step("Updating juke weekly results tracker", ["track_juke_results.py"])
         self.step("Verifying data", self.verify_data)
 
         self.log_refresh()
@@ -316,9 +342,9 @@ class WeeklyRefresh:
             if callable(target):
                 target()
             else:
-                script = target[0]
+                script, args = target[0], target[1:]
                 result = subprocess.run(
-                    [sys.executable, str(SRC_DIR / script)],
+                    [sys.executable, str(SRC_DIR / script), *args],
                     cwd=SRC_DIR, capture_output=True, text=True,
                 )
                 if result.returncode != 0:

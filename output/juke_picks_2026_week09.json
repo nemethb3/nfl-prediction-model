@@ -2,9 +2,9 @@
   "submission": {
     "season": 2026,
     "week": 9,
-    "generated_at": "2026-11-05T16:06:29.668293+00:00",
-    "run_id": "ff89b9a24038",
-    "model_version": "08b6719",
+    "generated_at": "2026-11-05T17:49:50.833538+00:00",
+    "run_id": "87f216218442",
+    "model_version": "8d271ca",
     "spread_convention": "sportsbook (negative = favorite)",
     "settlement": "polymarket market odds",
     "price_source": "ESPN no-vig proxy for Polymarket",

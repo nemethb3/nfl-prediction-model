@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 from juke.calibration import _fit_shrinkage_weight
 from juke.pricing import get_market_price, no_vig_probabilities, price_to_decimal_odds
 from juke.staking import allocate_stakes, kelly_fraction, select_candidates
-from juke.valuation import best_option_per_game, event_kickoff_utc, has_kicked_off
+from juke.valuation import best_option_per_game, event_kickoff_utc, expected_value_per_credit, has_kicked_off
 
 
 # ---- Sign convention ----
@@ -106,12 +106,21 @@ def test_kelly_fraction_never_negative():
 
 # ---- Cap + redistribution / exact credit sum ----
 
-def _opt(game_id, p_final, decimal_odds, ev):
+def _opt(game_id, p_final, decimal_odds):
+    """Real option shape - ev is ALWAYS derived from (p_final, decimal_odds)
+    via the real formula, exactly as engine.py does, never set
+    independently. A prior version of this helper let tests pass an
+    arbitrary, inconsistent ev - harmless while ranking only ever read
+    ev, but staking.py now ranks by the real risk-adjusted Kelly fraction
+    (a function of p_final/decimal_odds too), so a fixture with a fake ev
+    unrelated to its own p_final/decimal_odds would test a combination
+    that could never occur on a real option."""
+    ev = expected_value_per_credit(p_final, decimal_odds)
     return {"game_id": game_id, "p_final": p_final, "decimal_odds": decimal_odds, "ev": ev}
 
 
 def test_allocation_sums_to_exactly_total_credits():
-    options = [_opt(f"g{i}", 0.55 + 0.01 * i, 2.0, 0.05 + 0.01 * i) for i in range(10)]
+    options = [_opt(f"g{i}", 0.55 + 0.01 * i, 2.0) for i in range(10)]
     picks, warning = allocate_stakes(options, total_credits=1000)
     assert sum(p["credits"] for p in picks) == 1000
 
@@ -119,7 +128,7 @@ def test_allocation_sums_to_exactly_total_credits():
 def test_allocation_respects_cap_with_enough_picks():
     """With >= MIN_PICKS real qualifying options, no single pick should
     exceed the 15% cap (150 of 1000)."""
-    options = [_opt(f"g{i}", 0.9, 5.0, 2.5) for i in range(8)]  # all identical, equal split expected
+    options = [_opt(f"g{i}", 0.9, 5.0) for i in range(8)]  # all identical, equal split expected
     picks, warning = allocate_stakes(options, total_credits=1000, max_bet_pct=0.15, min_picks=7)
     assert all(p["credits"] <= 150 for p in picks)
     assert sum(p["credits"] for p in picks) == 1000
@@ -128,7 +137,7 @@ def test_allocation_respects_cap_with_enough_picks():
 def test_allocation_redistributes_excess_from_capped_picks():
     # One hugely dominant option would want ~all the money; the cap should
     # clip it and hand the rest to the others, not just drop the excess.
-    options = [_opt("dominant", 0.95, 20.0, 15.0)] + [_opt(f"g{i}", 0.52, 2.0, 0.04) for i in range(7)]
+    options = [_opt("dominant", 0.95, 20.0)] + [_opt(f"g{i}", 0.52, 2.0) for i in range(7)]
     picks, warning = allocate_stakes(options, total_credits=1000, max_bet_pct=0.15, min_picks=7)
     dominant = next(p for p in picks if p["game_id"] == "dominant")
     assert dominant["credits"] <= 150
@@ -136,42 +145,74 @@ def test_allocation_redistributes_excess_from_capped_picks():
 
 
 def test_fewer_than_min_picks_relaxes_cap_and_warns():
-    options = [_opt("g0", 0.6, 2.0, 0.1), _opt("g1", 0.6, 2.0, 0.1)]
+    options = [_opt("g0", 0.6, 2.0), _opt("g1", 0.6, 2.0)]
     picks, warning = allocate_stakes(options, total_credits=1000, max_bet_pct=0.15, min_picks=7)
     assert warning is not None
     assert sum(p["credits"] for p in picks) == 1000
 
 
 def test_max_picks_caps_at_the_ceiling_not_a_target():
-    # 15 real qualifying (ev >= default min_ev) options - should keep only
-    # the 10 highest-EV ones, not force all 15 in.
-    options = [_opt(f"g{i}", 0.6, 2.0, 0.05 + 0.01 * i) for i in range(15)]
+    # 15 real qualifying (ev >= default min_ev) options, p_final increasing
+    # with i (not just a fake ev) so there's a real, consistent ranking to
+    # test - should keep only the 10 highest-ranked ones, not force all 15 in.
+    options = [_opt(f"g{i}", 0.55 + 0.01 * i, 2.0) for i in range(15)]
     picks, warning = allocate_stakes(options, total_credits=1000, max_picks=10, min_picks=7)
     assert len(picks) == 10
     assert sum(p["credits"] for p in picks) == 1000
     kept_ids = {p["game_id"] for p in picks}
-    # the 10 kept should be exactly the 10 highest-EV ones (g5..g14)
+    # the 10 kept should be exactly the 10 highest-p_final (= highest Kelly
+    # fraction, same decimal_odds for all) ones: g5..g14
     assert kept_ids == {f"g{i}" for i in range(5, 15)}
 
 
 def test_fewer_real_qualifiers_than_max_picks_is_fine():
     # Only 8 real qualifying options exist - max_picks=10 must not force
     # padding up to 10 with anything non-positive-EV.
-    options = [_opt(f"g{i}", 0.6, 2.0, 0.05 + 0.01 * i) for i in range(8)]
+    options = [_opt(f"g{i}", 0.6, 2.0) for i in range(8)]
     picks, warning = allocate_stakes(options, total_credits=1000, max_picks=10, min_picks=7)
     assert len(picks) == 8
     assert sum(p["credits"] for p in picks) == 1000
 
 
 def test_no_positive_ev_options_allocates_nothing():
-    options = [_opt("g0", 0.4, 2.0, -0.2)]
+    options = [_opt("g0", 0.4, 2.0)]
     picks, warning = allocate_stakes(options, total_credits=1000, min_ev=0.03, min_picks=7)
     assert picks == []
     assert warning is not None
 
 
+def test_favorite_floor_reserves_slots_even_when_underdogs_rank_higher():
+    # 12 real qualifying underdogs (p=0.3, dec=5.0 -> kelly=0.125, ev=0.5)
+    # all out-rank 3 real qualifying favorites (p=0.55, dec=1.9 ->
+    # kelly=0.05, ev=0.045) by the risk-adjusted rank key alone - without
+    # the real favorite floor, the underdogs would fill all 10 slots and
+    # the favorites would never appear.
+    underdogs = [_opt(f"dog{i}", 0.3, 5.0) for i in range(12)]
+    favorites = [_opt(f"fav{i}", 0.55, 1.9) for i in range(3)]
+    picks, _ = allocate_stakes(underdogs + favorites, total_credits=1000, max_picks=10, min_picks=7)
+    picked_ids = {p["game_id"] for p in picks}
+    assert {"fav0", "fav1", "fav2"}.issubset(picked_ids)
+    assert len(picks) == 10
+    assert sum(p["credits"] for p in picks) == 1000
+
+
+def test_favorite_floor_never_exceeds_real_available_favorites():
+    # Only 1 real qualifying favorite exists - the floor must not invent
+    # 2 more out of thin air.
+    underdogs = [_opt(f"dog{i}", 0.3, 5.0) for i in range(9)]
+    favorites = [_opt("fav0", 0.55, 1.9)]
+    picks, _ = allocate_stakes(underdogs + favorites, total_credits=1000, max_picks=10, min_picks=7)
+    picked_ids = {p["game_id"] for p in picks}
+    assert "fav0" in picked_ids
+    assert sum(1 for pid in picked_ids if pid.startswith("fav")) == 1
+
+
 def test_core_vs_filler_tagging():
-    options = [_opt("core1", 0.7, 2.0, 0.2)] + [_opt(f"filler{i}", 0.55, 2.0, 0.01) for i in range(6)]
+    # core1: p=0.7, dec=2.0 -> ev=0.4 (clearly >= the 0.05 min_ev here).
+    # filler{i}: p=0.51, dec=2.0 -> ev=0.02 (positive, but below 0.05 - a
+    # real filler candidate, not a fake "positive but suspiciously tiny"
+    # ev unrelated to its own p_final).
+    options = [_opt("core1", 0.7, 2.0)] + [_opt(f"filler{i}", 0.51, 2.0) for i in range(6)]
     picks, _ = allocate_stakes(options, total_credits=1000, min_ev=0.05, min_picks=7)
     tiers = {p["game_id"]: p["tier"] for p in picks}
     assert tiers["core1"] == "core"

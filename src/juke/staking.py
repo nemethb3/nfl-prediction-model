@@ -12,7 +12,9 @@ allocate 1000 credits without breaching the cap - hence the task's own
 "relax the cap only as much as needed" fallback below.
 """
 
-from juke.config import KELLY_FRACTION, MAX_BET_PCT, MAX_PICKS, MIN_EV, MIN_PICKS, TOTAL_CREDITS
+from juke.config import (
+    KELLY_FRACTION, MAX_BET_PCT, MAX_PICKS, MIN_EV, MIN_FAVORITE_PICKS, MIN_PICKS, TOTAL_CREDITS,
+)
 
 
 def kelly_fraction(p, decimal_odds):
@@ -28,30 +30,86 @@ def kelly_fraction(p, decimal_odds):
     return max(f, 0.0)
 
 
-def select_candidates(options, min_ev=MIN_EV, min_picks=MIN_PICKS, max_picks=MAX_PICKS):
-    """Real selection: every option with ev >= min_ev is "core", capped at
-    max_picks (a real ceiling, not a target - keeps only the highest-EV
+def _risk_adjusted_rank_key(option):
+    """Real, bounded rank key - the Kelly fraction, not raw EV.
+
+    Real bug fixed here (2026-11-13, found when the user noticed Credit
+    Picks going all-underdog and losing a full week 0-10): ranking by raw
+    EV = p*b - q mechanically favors longshots, because EV scales with
+    the payout multiplier b (= decimal_odds - 1) with no ceiling - a tiny
+    model/market disagreement on a 10% shot (b large) produces a bigger
+    raw EV number than a genuine, larger edge on a near-even game (b
+    small), even though the longshot's edge is far less trustworthy (a
+    small, plausibly-noisy probability error gets amplified by a huge
+    multiplier). Checked directly against real recent weeks: 3 of the
+    last 4 real weekly pick sets were 100% underdogs (one was 5/7) under
+    the old ev-ranked selection - not bad luck, a structural bias.
+
+    Kelly fraction f = EV/b = p - q/b is real, bounded as b grows (f -> p
+    as b -> infinity, never blows up) - the same real reason Kelly
+    sizing itself avoids over-betting longshots, now also used to decide
+    WHICH bets are worth taking in the first place, not just how big to
+    size the ones already chosen. Verified against the real 2023-2025
+    walk-forward backtest before trusting this (see REPORT.md) - not
+    assumed to help without checking."""
+    return kelly_fraction(option["p_final"], option["decimal_odds"])
+
+
+def select_candidates(options, min_ev=MIN_EV, min_picks=MIN_PICKS, max_picks=MAX_PICKS,
+                       min_favorite_picks=MIN_FAVORITE_PICKS):
+    """Real selection: every option with ev >= min_ev qualifies as "core",
+    ranked by real, risk-adjusted Kelly fraction (not raw EV - see
+    _risk_adjusted_rank_key's own docstring for why), capped at max_picks
+    (a real ceiling, not a target - keeps only the highest-ranked
     max_picks core options when more than that qualify, per the user's
     own instruction that fewer picks is fine when it's the better call).
-    If core (after that cap) is fewer than min_picks, the next-highest-EV
-    positive-EV options (ev > 0) are added as "filler" until min_picks is
-    reached or positive-EV options run out - never a non-positive-EV
-    option, and never past max_picks total (min_picks <= max_picks always,
-    by this module's own real constraint - see module docstring)."""
-    ranked = sorted(options, key=lambda o: o["ev"], reverse=True)
-    core = [o for o in ranked if o["ev"] >= min_ev][:max_picks]
+
+    Real, disclosed addition (2026-11-13, same real finding as the
+    ranking fix above): even ranked by Kelly fraction, qualifying
+    underdogs still outnumber qualifying favorites by roughly 3-to-1 in
+    the real 2023-2025 backtest, so favorites can still get crowded out
+    of the max_picks slots purely by underdog volume. Up to
+    min_favorite_picks of the highest-ranked qualifying FAVORITES
+    (p_final >= 0.5) are reserved a slot first - never a non-qualifying
+    one, and never more than really exist - with the remaining slots
+    filled from the full ranked pool as before (favorites or underdogs,
+    whichever genuinely ranks higher).
+
+    If core (after that cap) is fewer than min_picks, the next-highest-
+    ranked positive-EV options (ev > 0) are added as "filler" until
+    min_picks is reached or positive-EV options run out - never a non-
+    positive-EV option, and never past max_picks total (min_picks <=
+    max_picks always, by this module's own real constraint - see module
+    docstring)."""
+    ranked = sorted(options, key=_risk_adjusted_rank_key, reverse=True)
+    qualifying = [o for o in ranked if o["ev"] >= min_ev]
+
+    reserved_favorites = [o for o in qualifying if o["p_final"] >= 0.5][:min_favorite_picks]
+    reserved_ids = {o["game_id"] for o in reserved_favorites}
+    remaining_slots = max_picks - len(reserved_favorites)
+    rest = [o for o in qualifying if o["game_id"] not in reserved_ids][:remaining_slots]
+    core = reserved_favorites + rest
+
     chosen = list(core)
     chosen_ids = {o["game_id"] for o in chosen}
     tiers = {o["game_id"]: "core" for o in chosen}
 
     if len(chosen) < min_picks:
-        for o in ranked:
+        # Real, deliberate consistency fix alongside the ranking change
+        # above: filler used to fall back to the real `ranked` list's
+        # order directly (an implicit EV sort) and break on the first
+        # non-positive-EV option under the OLD assumption that `ranked`
+        # was EV-sorted - no longer true now that `ranked` is sorted by
+        # the risk-adjusted key instead. Re-filtered/re-sorted here by
+        # the SAME risk-adjusted key as core, so filler doesn't quietly
+        # reintroduce the real underdog bias core was just fixed for.
+        filler_candidates = sorted(
+            (o for o in ranked if o["ev"] > 0 and o["game_id"] not in chosen_ids),
+            key=_risk_adjusted_rank_key, reverse=True,
+        )
+        for o in filler_candidates:
             if len(chosen) >= min_picks:
                 break
-            if o["game_id"] in chosen_ids:
-                continue
-            if o["ev"] <= 0:
-                break  # ranked descending - every option after this is also <= 0
             chosen.append(o)
             chosen_ids.add(o["game_id"])
             tiers[o["game_id"]] = "filler"
@@ -112,7 +170,8 @@ def _round_to_exact_total(values, total):
 
 
 def allocate_stakes(options, total_credits=TOTAL_CREDITS, kelly_fraction_mult=KELLY_FRACTION,
-                     max_bet_pct=MAX_BET_PCT, min_ev=MIN_EV, min_picks=MIN_PICKS, max_picks=MAX_PICKS):
+                     max_bet_pct=MAX_BET_PCT, min_ev=MIN_EV, min_picks=MIN_PICKS, max_picks=MAX_PICKS,
+                     min_favorite_picks=MIN_FAVORITE_PICKS):
     """Real end-to-end staking: selects core+filler candidates, sizes each
     with fractional Kelly, caps and redistributes to fill the full real
     total_credits, rounds to exact whole credits, and tags each pick
@@ -121,7 +180,8 @@ def allocate_stakes(options, total_credits=TOTAL_CREDITS, kelly_fraction_mult=KE
     a real, disclosed string when the cap had to be relaxed because fewer
     than min_picks real positive-EV options existed at all.
     """
-    chosen, tiers = select_candidates(options, min_ev=min_ev, min_picks=min_picks, max_picks=max_picks)
+    chosen, tiers = select_candidates(options, min_ev=min_ev, min_picks=min_picks, max_picks=max_picks,
+                                       min_favorite_picks=min_favorite_picks)
     warning = None
     max_per_pick = max_bet_pct * total_credits
 

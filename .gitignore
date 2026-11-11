@@ -17,6 +17,8 @@ data/espn_injuries/*
 !data/espn_injuries/.gitkeep
 data/refresh_logs/*
 !data/refresh_logs/.gitkeep
+data/scheduled_run_logs/*
+!data/scheduled_run_logs/.gitkeep
 data/season_tracking/*
 !data/season_tracking/.gitkeep
 data/tracking.db

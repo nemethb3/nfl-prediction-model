@@ -120,7 +120,15 @@ def _week_summary(output_path, games_by_id):
         "pushes": sum(1 for p in decided if p["result"] == "push"),
         "net_credits_won": net_credits_won,
         "roi_pct": round(net_credits_won / credits_staked_decided * 100, 2) if credits_staked_decided else None,
-        "fully_settled": len(pending) == 0,
+        # Real bug fixed here (2026-11-11): len(pending) == 0 is also
+        # vacuously true for a week with ZERO real picks at all (e.g. a
+        # week far enough out that no real odds have been posted yet -
+        # generate_juke_picks.py correctly returns no picks rather than
+        # fabricating any) - that used to be mislabeled "fully_settled",
+        # which would show as a real, completed 0-result week instead of
+        # "no real picks exist yet for this week".
+        "fully_settled": len(settled_picks) > 0 and len(pending) == 0,
+        "has_picks": len(settled_picks) > 0,
         "picks": settled_picks,
     }
 
@@ -160,7 +168,12 @@ def track_juke_results():
     print(f"Wrote {FRONTEND_RESULTS_PATH}")
 
     for w in weeks:
-        status = "FINAL" if w["fully_settled"] else f"PENDING ({w['picks_pending']}/{w['picks_total']} not yet played)"
+        if not w["has_picks"]:
+            status = "NO PICKS YET (no real odds posted for this week yet)"
+        elif w["fully_settled"]:
+            status = "FINAL"
+        else:
+            status = f"PENDING ({w['picks_pending']}/{w['picks_total']} not yet played)"
         print(f"  Week {w['week']:2d} [{status:35s}] net={w['net_credits_won']:+8.2f}  "
               f"record={w['wins']}-{w['losses']}-{w['pushes']}  roi={w['roi_pct']}")
     print(f"\nSeason-to-date (fully settled weeks only): net={season_net:+.2f} credits, "

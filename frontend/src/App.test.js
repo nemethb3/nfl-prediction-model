@@ -97,7 +97,8 @@ jest.mock('./data/credit_picks_2026.json', () => ({
       season: 2026, week: 1, run_id: 'test', generated_at: '2026-01-01T00:00:00+00:00',
       picks_total: 1, picks_decided: 0, picks_pending: 1,
       credits_staked: 1000, credits_staked_decided: 0,
-      wins: 0, losses: 0, pushes: 0, net_credits_won: 0, roi_pct: null, fully_settled: false,
+      wins: 0, losses: 0, pushes: 0, net_credits_won: 0, roi_pct: null,
+      fully_settled: false, has_picks: true,
       picks: [
         {
           event_id: '2026_01_TEST_AWY_HME', kickoff_utc: '2026-09-10T00:20:00+00:00',

@@ -10,6 +10,16 @@ KELLY_FRACTION = 0.25
 MAX_BET_PCT = 0.15
 MIN_PICKS = 7
 MAX_PICKS = 10  # a real ceiling, not a target - fewer real qualifying picks is fine
+
+# Real, data-grounded floor (2026-11-13 - see staking.py's own module
+# docstring): the real 2023-2025 walk-forward backtest averages 3.07
+# qualifying (ev >= MIN_EV) favorites/week against 9.43 qualifying
+# underdogs/week - without a reserved floor, the sheer VOLUME of
+# qualifying underdogs crowds favorites out of the MAX_PICKS=10 slots
+# even after ranking by the risk-adjusted Kelly fraction instead of raw
+# EV. 3 matches the real historical average availability, not an
+# arbitrary round number - verified before picking it, not asserted.
+MIN_FAVORITE_PICKS = 3
 POLYMARKET_FEE = 0.0  # reduces payout; set once a real fee schedule is known
 SPREAD_PRICE_DEFAULT = -110  # only used when a real per-side spread price is missing
 

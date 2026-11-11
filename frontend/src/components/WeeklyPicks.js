@@ -120,7 +120,14 @@ function CreditPicksPanel({ creditPicks }) {
         </select>
       </div>
 
-      {week && (
+      {week && !week.has_picks && (
+        <p className="weekly-picks-subtitle">
+          No real picks generated yet for this week — no odds have been posted for these games
+          yet. Check back closer to kickoff.
+        </p>
+      )}
+
+      {week && week.has_picks && (
         <>
           <p className="weekly-picks-subtitle">
             A separate, credit-weighted allocation across this week&apos;s games (1000 credits, sized by

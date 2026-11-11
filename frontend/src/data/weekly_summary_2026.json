@@ -1,5 +1,5 @@
 {
-  "current_week": 8,
+  "current_week": 9,
   "weeks": [
     {
       "week": 1,
@@ -780,7 +780,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -792,37 +792,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -1613,7 +1613,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -1625,37 +1625,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -2446,7 +2446,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -2458,37 +2458,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -3258,7 +3258,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -3270,37 +3270,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -4036,7 +4036,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -4048,37 +4048,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -4801,7 +4801,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -4813,37 +4813,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -5566,7 +5566,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -5578,37 +5578,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -6352,7 +6352,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -6364,37 +6364,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -6408,9 +6408,320 @@
     },
     {
       "week": 9,
-      "is_completed": false,
-      "this_week": null,
-      "top_performers": null,
+      "is_completed": true,
+      "this_week": {
+        "total_games": 15,
+        "correct_predictions": 13,
+        "accuracy_pct": 86.7,
+        "mean_spread_error": 10.28,
+        "games": [
+          {
+            "week": 9,
+            "home_team": "BAL",
+            "away_team": "JAX",
+            "home_score": 10,
+            "away_score": 33,
+            "predicted_winner": "JAX",
+            "actual_winner": "JAX",
+            "prediction_correct": true,
+            "predicted_spread": -6.8,
+            "actual_spread": -23.0,
+            "vegas_spread": -10.0
+          },
+          {
+            "week": 9,
+            "home_team": "ATL",
+            "away_team": "CIN",
+            "home_score": 17,
+            "away_score": 34,
+            "predicted_winner": "CIN",
+            "actual_winner": "CIN",
+            "prediction_correct": true,
+            "predicted_spread": -1.6,
+            "actual_spread": -17.0,
+            "vegas_spread": -3.0
+          },
+          {
+            "week": 9,
+            "home_team": "CAR",
+            "away_team": "DEN",
+            "home_score": 21,
+            "away_score": 26,
+            "predicted_winner": "DEN",
+            "actual_winner": "DEN",
+            "prediction_correct": true,
+            "predicted_spread": -2.5,
+            "actual_spread": -5.0,
+            "vegas_spread": -2.5
+          },
+          {
+            "week": 9,
+            "home_team": "IND",
+            "away_team": "DAL",
+            "home_score": 23,
+            "away_score": 27,
+            "predicted_winner": "DAL",
+            "actual_winner": "DAL",
+            "prediction_correct": true,
+            "predicted_spread": -1.3,
+            "actual_spread": -4.0,
+            "vegas_spread": -5.5
+          },
+          {
+            "week": 9,
+            "home_team": "KC",
+            "away_team": "NYJ",
+            "home_score": 35,
+            "away_score": 12,
+            "predicted_winner": "KC",
+            "actual_winner": "KC",
+            "prediction_correct": true,
+            "predicted_spread": 6.0,
+            "actual_spread": 23.0,
+            "vegas_spread": 10.0
+          },
+          {
+            "week": 9,
+            "home_team": "MIA",
+            "away_team": "DET",
+            "home_score": 9,
+            "away_score": 19,
+            "predicted_winner": "DET",
+            "actual_winner": "DET",
+            "prediction_correct": true,
+            "predicted_spread": -3.4,
+            "actual_spread": -10.0,
+            "vegas_spread": -7.0
+          },
+          {
+            "week": 9,
+            "home_team": "NO",
+            "away_team": "CLE",
+            "home_score": 23,
+            "away_score": 22,
+            "predicted_winner": "NO",
+            "actual_winner": "NO",
+            "prediction_correct": true,
+            "predicted_spread": 2.6,
+            "actual_spread": 1.0,
+            "vegas_spread": 3.0
+          },
+          {
+            "week": 9,
+            "home_team": "PHI",
+            "away_team": "NYG",
+            "home_score": 11,
+            "away_score": 19,
+            "predicted_winner": "NYG",
+            "actual_winner": "NYG",
+            "prediction_correct": true,
+            "predicted_spread": -1.4,
+            "actual_spread": -8.0,
+            "vegas_spread": -3.5
+          },
+          {
+            "week": 9,
+            "home_team": "WAS",
+            "away_team": "LA",
+            "home_score": 13,
+            "away_score": 20,
+            "predicted_winner": "LA",
+            "actual_winner": "LA",
+            "prediction_correct": true,
+            "predicted_spread": -0.8,
+            "actual_spread": -7.0,
+            "vegas_spread": null
+          },
+          {
+            "week": 9,
+            "home_team": "LAC",
+            "away_team": "HOU",
+            "home_score": 22,
+            "away_score": 44,
+            "predicted_winner": "HOU",
+            "actual_winner": "HOU",
+            "prediction_correct": true,
+            "predicted_spread": -2.5,
+            "actual_spread": -22.0,
+            "vegas_spread": -4.5
+          },
+          {
+            "week": 9,
+            "home_team": "SF",
+            "away_team": "LV",
+            "home_score": 38,
+            "away_score": 17,
+            "predicted_winner": "SF",
+            "actual_winner": "SF",
+            "prediction_correct": true,
+            "predicted_spread": 6.5,
+            "actual_spread": 21.0,
+            "vegas_spread": 10.0
+          },
+          {
+            "week": 9,
+            "home_team": "NE",
+            "away_team": "GB",
+            "home_score": 27,
+            "away_score": 45,
+            "predicted_winner": "NE",
+            "actual_winner": "GB",
+            "prediction_correct": false,
+            "predicted_spread": 3.1,
+            "actual_spread": -18.0,
+            "vegas_spread": 3.5
+          },
+          {
+            "week": 9,
+            "home_team": "SEA",
+            "away_team": "ARI",
+            "home_score": 17,
+            "away_score": 3,
+            "predicted_winner": "SEA",
+            "actual_winner": "SEA",
+            "prediction_correct": true,
+            "predicted_spread": 7.5,
+            "actual_spread": 14.0,
+            "vegas_spread": 8.5
+          },
+          {
+            "week": 9,
+            "home_team": "CHI",
+            "away_team": "TB",
+            "home_score": 27,
+            "away_score": 24,
+            "predicted_winner": "CHI",
+            "actual_winner": "CHI",
+            "prediction_correct": true,
+            "predicted_spread": 3.2,
+            "actual_spread": 3.0,
+            "vegas_spread": 6.0
+          },
+          {
+            "week": 9,
+            "home_team": "MIN",
+            "away_team": "BUF",
+            "home_score": 6,
+            "away_score": 23,
+            "predicted_winner": "MIN",
+            "actual_winner": "BUF",
+            "prediction_correct": false,
+            "predicted_spread": 0.7,
+            "actual_spread": -17.0,
+            "vegas_spread": -3.5
+          }
+        ],
+        "biggest_surprises": [
+          {
+            "home_team": "NE",
+            "away_team": "GB",
+            "home_score": 27,
+            "away_score": 45,
+            "predicted_winner": "NE",
+            "actual_winner": "GB",
+            "prediction_confidence": "60% NE",
+            "actual_spread": -18.0,
+            "surprise_score": 21.1
+          },
+          {
+            "home_team": "MIN",
+            "away_team": "BUF",
+            "home_score": 6,
+            "away_score": 23,
+            "predicted_winner": "MIN",
+            "actual_winner": "BUF",
+            "prediction_confidence": "52% MIN",
+            "actual_spread": -17.0,
+            "surprise_score": 17.7
+          }
+        ]
+      },
+      "top_performers": {
+        "best": [
+          {
+            "player_name": "Matthew Golden",
+            "position": "WR",
+            "team": "GB",
+            "projected_ppr": 6.9,
+            "actual_ppr": 32.4,
+            "difference": 25.5
+          },
+          {
+            "player_name": "Shedeur Sanders",
+            "position": "QB",
+            "team": "CLE",
+            "projected_ppr": 0.0,
+            "actual_ppr": 22.7,
+            "difference": 22.7
+          },
+          {
+            "player_name": "CeeDee Lamb",
+            "position": "WR",
+            "team": "DAL",
+            "projected_ppr": 13.6,
+            "actual_ppr": 35.5,
+            "difference": 21.9
+          },
+          {
+            "player_name": "Christian Watson",
+            "position": "WR",
+            "team": "GB",
+            "projected_ppr": 9.1,
+            "actual_ppr": 30.1,
+            "difference": 21.0
+          },
+          {
+            "player_name": "Kayshon Boutte",
+            "position": "WR",
+            "team": "NE",
+            "projected_ppr": 8.2,
+            "actual_ppr": 28.5,
+            "difference": 20.3
+          }
+        ],
+        "worst": [
+          {
+            "player_name": "George Pickens",
+            "position": "WR",
+            "team": "DAL",
+            "projected_ppr": 18.2,
+            "actual_ppr": 0.0,
+            "difference": -18.2
+          },
+          {
+            "player_name": "D'Andre Swift",
+            "position": "RB",
+            "team": "CHI",
+            "projected_ppr": 19.3,
+            "actual_ppr": 3.1,
+            "difference": -16.2
+          },
+          {
+            "player_name": "Jared Goff",
+            "position": "QB",
+            "team": "DET",
+            "projected_ppr": 20.6,
+            "actual_ppr": 5.3,
+            "difference": -15.3
+          },
+          {
+            "player_name": "Jahmyr Gibbs",
+            "position": "RB",
+            "team": "DET",
+            "projected_ppr": 28.5,
+            "actual_ppr": 13.4,
+            "difference": -15.1
+          },
+          {
+            "player_name": "DeVonta Smith",
+            "position": "WR",
+            "team": "PHI",
+            "projected_ppr": 14.8,
+            "actual_ppr": 0.0,
+            "difference": -14.8
+          }
+        ]
+      },
       "next_week": {
         "week": 10,
         "games": [
@@ -6419,12 +6730,20 @@
             "home_team": "NYG",
             "away_team": "WAS",
             "predicted_winner": "NYG",
-            "win_prob_home": 0.557,
-            "win_prob_away": 0.443,
-            "predicted_spread": 1.9,
+            "win_prob_home": 0.574,
+            "win_prob_away": 0.426,
+            "predicted_spread": 2.4,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Wan'Dale Robinson (WR)",
+                "Jameis Winston (QB)",
+                "Darius Slayton (WR)"
+              ],
+              "away": [
+                "Jayden Daniels (QB)",
+                "Deebo Samuel Sr. (WR)",
+                "Terry McLaurin (WR)"
+              ]
             }
           },
           {
@@ -6432,12 +6751,20 @@
             "home_team": "DET",
             "away_team": "NE",
             "predicted_winner": "DET",
-            "win_prob_home": 0.553,
-            "win_prob_away": 0.447,
-            "predicted_spread": 1.7,
+            "win_prob_home": 0.607,
+            "win_prob_away": 0.393,
+            "predicted_spread": 3.5,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Amon-Ra St. Brown (WR)",
+                "Jared Goff (QB)",
+                "Jameson Williams (WR)"
+              ],
+              "away": [
+                "Drake Maye (QB)",
+                "Stefon Diggs (WR)",
+                "Mack Hollins (WR)"
+              ]
             }
           },
           {
@@ -6445,12 +6772,20 @@
             "home_team": "ATL",
             "away_team": "KC",
             "predicted_winner": "KC",
-            "win_prob_home": 0.497,
-            "win_prob_away": 0.503,
-            "predicted_spread": -0.1,
+            "win_prob_home": 0.421,
+            "win_prob_away": 0.579,
+            "predicted_spread": -2.5,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Drake London (WR)",
+                "Michael Penix Jr. (QB)",
+                "Darnell Mooney (WR)"
+              ],
+              "away": [
+                "Patrick Mahomes (QB)",
+                "Rashee Rice (WR)",
+                "Marquise Brown (WR)"
+              ]
             }
           },
           {
@@ -6458,12 +6793,20 @@
             "home_team": "CLE",
             "away_team": "HOU",
             "predicted_winner": "HOU",
-            "win_prob_home": 0.461,
-            "win_prob_away": 0.539,
-            "predicted_spread": -1.2,
+            "win_prob_home": 0.421,
+            "win_prob_away": 0.579,
+            "predicted_spread": -2.5,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Jerry Jeudy (WR)",
+                "Cedric Tillman (WR)",
+                "Jamari Thrash (WR)"
+              ],
+              "away": [
+                "C.J. Stroud (QB)",
+                "Nico Collins (WR)",
+                "Jayden Higgins (WR)"
+              ]
             }
           },
           {
@@ -6471,12 +6814,20 @@
             "home_team": "GB",
             "away_team": "MIN",
             "predicted_winner": "GB",
-            "win_prob_home": 0.508,
-            "win_prob_away": 0.492,
-            "predicted_spread": 0.3,
+            "win_prob_home": 0.597,
+            "win_prob_away": 0.404,
+            "predicted_spread": 3.1,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Jordan Love (QB)",
+                "Romeo Doubs (WR)",
+                "Christian Watson (WR)"
+              ],
+              "away": [
+                "Justin Jefferson (WR)",
+                "Kyler Murray (QB)",
+                "Jordan Addison (WR)"
+              ]
             }
           },
           {
@@ -6484,12 +6835,20 @@
             "home_team": "IND",
             "away_team": "MIA",
             "predicted_winner": "IND",
-            "win_prob_home": 0.534,
-            "win_prob_away": 0.466,
-            "predicted_spread": 1.1,
+            "win_prob_home": 0.542,
+            "win_prob_away": 0.458,
+            "predicted_spread": 1.4,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Alec Pierce (WR)",
+                "Michael Pittman (WR)",
+                "Daniel Jones (QB)"
+              ],
+              "away": [
+                "Jaylen Waddle (WR)",
+                "Tyreek Hill (WR)",
+                "Malik Washington (WR)"
+              ]
             }
           },
           {
@@ -6497,12 +6856,20 @@
             "home_team": "NO",
             "away_team": "CAR",
             "predicted_winner": "NO",
-            "win_prob_home": 0.568,
-            "win_prob_away": 0.432,
-            "predicted_spread": 2.2,
+            "win_prob_home": 0.563,
+            "win_prob_away": 0.437,
+            "predicted_spread": 2.0,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Tyler Shough (QB)",
+                "Chris Olave (WR)",
+                "Devaughn Vele (WR)"
+              ],
+              "away": [
+                "Bryce Young (QB)",
+                "Tetairoa McMillan (WR)",
+                "Jalen Coker (WR)"
+              ]
             }
           },
           {
@@ -6510,12 +6877,20 @@
             "home_team": "NYJ",
             "away_team": "BUF",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.351,
-            "win_prob_away": 0.648,
-            "predicted_spread": -4.8,
+            "win_prob_home": 0.28,
+            "win_prob_away": 0.72,
+            "predicted_spread": -7.4,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Geno Smith (QB)",
+                "Adonai Mitchell (WR)",
+                "Garrett Wilson (WR)"
+              ],
+              "away": [
+                "Josh Allen (QB)",
+                "Khalil Shakir (WR)",
+                "Keon Coleman (WR)"
+              ]
             }
           },
           {
@@ -6523,12 +6898,20 @@
             "home_team": "TEN",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.27,
-            "win_prob_away": 0.73,
-            "predicted_spread": -7.8,
+            "win_prob_home": 0.248,
+            "win_prob_away": 0.752,
+            "predicted_spread": -8.7,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Cam Ward (QB)",
+                "Chimere Dike (WR)",
+                "Van Jefferson (WR)"
+              ],
+              "away": [
+                "Trevor Lawrence (QB)",
+                "Jakobi Meyers (WR)",
+                "Parker Washington (WR)"
+              ]
             }
           },
           {
@@ -6536,12 +6919,20 @@
             "home_team": "ARI",
             "away_team": "LA",
             "predicted_winner": "LA",
-            "win_prob_home": 0.4,
-            "win_prob_away": 0.6,
-            "predicted_spread": -3.2,
+            "win_prob_home": 0.379,
+            "win_prob_away": 0.621,
+            "predicted_spread": -3.9,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Michael Wilson (WR)",
+                "Marvin Harrison Jr. (WR)",
+                "Greg Dortch (WR)"
+              ],
+              "away": [
+                "Puka Nacua (WR)",
+                "Matthew Stafford (QB)",
+                "Davante Adams (WR)"
+              ]
             }
           },
           {
@@ -6549,12 +6940,20 @@
             "home_team": "LV",
             "away_team": "SEA",
             "predicted_winner": "SEA",
-            "win_prob_home": 0.414,
-            "win_prob_away": 0.586,
-            "predicted_spread": -2.7,
+            "win_prob_home": 0.372,
+            "win_prob_away": 0.628,
+            "predicted_spread": -4.1,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Kirk Cousins (QB)",
+                "Tre Tucker (WR)",
+                "Tyler Lockett (WR)"
+              ],
+              "away": [
+                "Jaxon Smith-Njigba (WR)",
+                "Rashid Shaheed (WR)",
+                "Cooper Kupp (WR)"
+              ]
             }
           },
           {
@@ -6562,12 +6961,20 @@
             "home_team": "DAL",
             "away_team": "SF",
             "predicted_winner": "SF",
-            "win_prob_home": 0.449,
-            "win_prob_away": 0.551,
-            "predicted_spread": -1.6,
+            "win_prob_home": 0.415,
+            "win_prob_away": 0.585,
+            "predicted_spread": -2.7,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Dak Prescott (QB)",
+                "George Pickens (WR)",
+                "CeeDee Lamb (WR)"
+              ],
+              "away": [
+                "Brock Purdy (QB)",
+                "Jauan Jennings (WR)",
+                "Ricky Pearsall (WR)"
+              ]
             }
           },
           {
@@ -6575,12 +6982,20 @@
             "home_team": "CIN",
             "away_team": "PIT",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.563,
-            "win_prob_away": 0.437,
-            "predicted_spread": 2.0,
+            "win_prob_home": 0.594,
+            "win_prob_away": 0.406,
+            "predicted_spread": 3.0,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Joe Burrow (QB)",
+                "Ja'Marr Chase (WR)",
+                "Tee Higgins (WR)"
+              ],
+              "away": [
+                "Aaron Rodgers (QB)",
+                "DK Metcalf (WR)",
+                "Calvin Austin III (WR)"
+              ]
             }
           },
           {
@@ -6588,16 +7003,115 @@
             "home_team": "BAL",
             "away_team": "LAC",
             "predicted_winner": "BAL",
-            "win_prob_home": 0.599,
-            "win_prob_away": 0.401,
-            "predicted_spread": 3.2,
+            "win_prob_home": 0.611,
+            "win_prob_away": 0.389,
+            "predicted_spread": 3.6,
             "key_players": {
-              "home": [],
-              "away": []
+              "home": [
+                "Zay Flowers (WR)",
+                "Jacoby Brissett (QB)",
+                "Lamar Jackson (QB)"
+              ],
+              "away": [
+                "Ladd McConkey (WR)",
+                "Keenan Allen (WR)",
+                "Justin Herbert (QB)"
+              ]
             }
           }
         ],
-        "top_fantasy_plays": []
+        "top_fantasy_plays": [
+          {
+            "player_name": "Jahmyr Gibbs",
+            "position": "RB",
+            "team": "DET",
+            "opponent": "NE",
+            "projected_ppr": 26.7,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Joe Burrow",
+            "position": "QB",
+            "team": "CIN",
+            "opponent": "PIT",
+            "projected_ppr": 25.1,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Josh Allen",
+            "position": "QB",
+            "team": "BUF",
+            "opponent": "NYJ",
+            "projected_ppr": 25.0,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Kenneth Walker III",
+            "position": "RB",
+            "team": "KC",
+            "opponent": "ATL",
+            "projected_ppr": 24.6,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Jaxon Smith-Njigba",
+            "position": "WR",
+            "team": "SEA",
+            "opponent": "LV",
+            "projected_ppr": 22.0,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Puka Nacua",
+            "position": "WR",
+            "team": "LA",
+            "opponent": "ARI",
+            "projected_ppr": 21.8,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Brock Purdy",
+            "position": "QB",
+            "team": "SF",
+            "opponent": "DAL",
+            "projected_ppr": 21.2,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Christian McCaffrey",
+            "position": "RB",
+            "team": "SF",
+            "opponent": "DAL",
+            "projected_ppr": 21.1,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "C.J. Stroud",
+            "position": "QB",
+            "team": "HOU",
+            "opponent": "CLE",
+            "projected_ppr": 20.8,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          },
+          {
+            "player_name": "Jordan Love",
+            "position": "QB",
+            "team": "GB",
+            "opponent": "MIN",
+            "projected_ppr": 20.3,
+            "matchup_quality": "neutral",
+            "injury_status": "healthy"
+          }
+        ]
       },
       "season_context": {
         "week": 9,
@@ -6605,7 +7119,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -6617,37 +7131,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -6672,9 +7186,9 @@
             "home_team": "HOU",
             "away_team": "IND",
             "predicted_winner": "HOU",
-            "win_prob_home": 0.688,
-            "win_prob_away": 0.312,
-            "predicted_spread": 6.3,
+            "win_prob_home": 0.719,
+            "win_prob_away": 0.281,
+            "predicted_spread": 7.4,
             "key_players": {
               "home": [],
               "away": []
@@ -6685,9 +7199,9 @@
             "home_team": "BUF",
             "away_team": "MIA",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.751,
-            "win_prob_away": 0.249,
-            "predicted_spread": 8.7,
+            "win_prob_home": 0.782,
+            "win_prob_away": 0.218,
+            "predicted_spread": 10.0,
             "key_players": {
               "home": [],
               "away": []
@@ -6698,9 +7212,9 @@
             "home_team": "CAR",
             "away_team": "BAL",
             "predicted_winner": "CAR",
-            "win_prob_home": 0.567,
-            "win_prob_away": 0.433,
-            "predicted_spread": 2.2,
+            "win_prob_home": 0.6,
+            "win_prob_away": 0.4,
+            "predicted_spread": 3.2,
             "key_players": {
               "home": [],
               "away": []
@@ -6711,9 +7225,9 @@
             "home_team": "CHI",
             "away_team": "NO",
             "predicted_winner": "CHI",
-            "win_prob_home": 0.72,
-            "win_prob_away": 0.28,
-            "predicted_spread": 7.5,
+            "win_prob_home": 0.723,
+            "win_prob_away": 0.277,
+            "predicted_spread": 7.6,
             "key_players": {
               "home": [],
               "away": []
@@ -6724,9 +7238,9 @@
             "home_team": "DAL",
             "away_team": "TEN",
             "predicted_winner": "DAL",
-            "win_prob_home": 0.642,
-            "win_prob_away": 0.358,
-            "predicted_spread": 4.7,
+            "win_prob_home": 0.638,
+            "win_prob_away": 0.362,
+            "predicted_spread": 4.5,
             "key_players": {
               "home": [],
               "away": []
@@ -6737,9 +7251,9 @@
             "home_team": "DET",
             "away_team": "TB",
             "predicted_winner": "DET",
-            "win_prob_home": 0.547,
-            "win_prob_away": 0.453,
-            "predicted_spread": 1.5,
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
             "key_players": {
               "home": [],
               "away": []
@@ -6750,9 +7264,9 @@
             "home_team": "KC",
             "away_team": "ARI",
             "predicted_winner": "KC",
-            "win_prob_home": 0.687,
-            "win_prob_away": 0.313,
-            "predicted_spread": 6.2,
+            "win_prob_home": 0.735,
+            "win_prob_away": 0.265,
+            "predicted_spread": 8.0,
             "key_players": {
               "home": [],
               "away": []
@@ -6763,9 +7277,9 @@
             "home_team": "NYG",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.347,
-            "win_prob_away": 0.653,
-            "predicted_spread": -5.0,
+            "win_prob_home": 0.328,
+            "win_prob_away": 0.672,
+            "predicted_spread": -5.7,
             "key_players": {
               "home": [],
               "away": []
@@ -6776,9 +7290,9 @@
             "home_team": "LAC",
             "away_team": "NYJ",
             "predicted_winner": "LAC",
-            "win_prob_home": 0.528,
-            "win_prob_away": 0.472,
-            "predicted_spread": 0.9,
+            "win_prob_home": 0.532,
+            "win_prob_away": 0.468,
+            "predicted_spread": 1.1,
             "key_players": {
               "home": [],
               "away": []
@@ -6789,9 +7303,9 @@
             "home_team": "DEN",
             "away_team": "LV",
             "predicted_winner": "DEN",
-            "win_prob_home": 0.68,
-            "win_prob_away": 0.32,
-            "predicted_spread": 6.0,
+            "win_prob_home": 0.703,
+            "win_prob_away": 0.297,
+            "predicted_spread": 6.8,
             "key_players": {
               "home": [],
               "away": []
@@ -6802,9 +7316,9 @@
             "home_team": "PHI",
             "away_team": "PIT",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.354,
-            "win_prob_away": 0.646,
-            "predicted_spread": -4.8,
+            "win_prob_home": 0.346,
+            "win_prob_away": 0.654,
+            "predicted_spread": -5.0,
             "key_players": {
               "home": [],
               "away": []
@@ -6815,9 +7329,9 @@
             "home_team": "SF",
             "away_team": "MIN",
             "predicted_winner": "SF",
-            "win_prob_home": 0.561,
-            "win_prob_away": 0.439,
-            "predicted_spread": 2.0,
+            "win_prob_home": 0.628,
+            "win_prob_away": 0.372,
+            "predicted_spread": 4.2,
             "key_players": {
               "home": [],
               "away": []
@@ -6828,9 +7342,9 @@
             "home_team": "WAS",
             "away_team": "CIN",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.447,
-            "win_prob_away": 0.553,
-            "predicted_spread": -1.7,
+            "win_prob_home": 0.408,
+            "win_prob_away": 0.592,
+            "predicted_spread": -2.9,
             "key_players": {
               "home": [],
               "away": []
@@ -6845,7 +7359,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -6857,37 +7371,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -6912,9 +7426,9 @@
             "home_team": "LA",
             "away_team": "GB",
             "predicted_winner": "LA",
-            "win_prob_home": 0.586,
-            "win_prob_away": 0.414,
-            "predicted_spread": 2.8,
+            "win_prob_home": 0.543,
+            "win_prob_away": 0.457,
+            "predicted_spread": 1.4,
             "key_players": {
               "home": [],
               "away": []
@@ -6925,9 +7439,9 @@
             "home_team": "DET",
             "away_team": "CHI",
             "predicted_winner": "DET",
-            "win_prob_home": 0.504,
-            "win_prob_away": 0.496,
-            "predicted_spread": 0.1,
+            "win_prob_home": 0.506,
+            "win_prob_away": 0.494,
+            "predicted_spread": 0.2,
             "key_players": {
               "home": [],
               "away": []
@@ -6938,9 +7452,9 @@
             "home_team": "DAL",
             "away_team": "PHI",
             "predicted_winner": "DAL",
-            "win_prob_home": 0.654,
-            "win_prob_away": 0.346,
-            "predicted_spread": 5.1,
+            "win_prob_home": 0.657,
+            "win_prob_away": 0.343,
+            "predicted_spread": 5.2,
             "key_players": {
               "home": [],
               "away": []
@@ -6951,9 +7465,9 @@
             "home_team": "BUF",
             "away_team": "KC",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.634,
-            "win_prob_away": 0.366,
-            "predicted_spread": 4.4,
+            "win_prob_home": 0.628,
+            "win_prob_away": 0.372,
+            "predicted_spread": 4.2,
             "key_players": {
               "home": [],
               "away": []
@@ -6964,9 +7478,9 @@
             "home_team": "PIT",
             "away_team": "DEN",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.572,
-            "win_prob_away": 0.428,
-            "predicted_spread": 2.4,
+            "win_prob_home": 0.576,
+            "win_prob_away": 0.424,
+            "predicted_spread": 2.5,
             "key_players": {
               "home": [],
               "away": []
@@ -6977,9 +7491,9 @@
             "home_team": "CIN",
             "away_team": "NO",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.694,
-            "win_prob_away": 0.306,
-            "predicted_spread": 6.5,
+            "win_prob_home": 0.72,
+            "win_prob_away": 0.28,
+            "predicted_spread": 7.5,
             "key_players": {
               "home": [],
               "away": []
@@ -6990,9 +7504,9 @@
             "home_team": "CLE",
             "away_team": "LV",
             "predicted_winner": "CLE",
-            "win_prob_home": 0.54,
-            "win_prob_away": 0.46,
-            "predicted_spread": 1.3,
+            "win_prob_home": 0.571,
+            "win_prob_away": 0.429,
+            "predicted_spread": 2.3,
             "key_players": {
               "home": [],
               "away": []
@@ -7003,9 +7517,9 @@
             "home_team": "HOU",
             "away_team": "BAL",
             "predicted_winner": "HOU",
-            "win_prob_home": 0.648,
-            "win_prob_away": 0.352,
-            "predicted_spread": 4.9,
+            "win_prob_home": 0.709,
+            "win_prob_away": 0.291,
+            "predicted_spread": 7.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7016,9 +7530,9 @@
             "home_team": "IND",
             "away_team": "NYG",
             "predicted_winner": "NYG",
-            "win_prob_home": 0.456,
-            "win_prob_away": 0.544,
-            "predicted_spread": -1.4,
+            "win_prob_home": 0.452,
+            "win_prob_away": 0.548,
+            "predicted_spread": -1.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7029,9 +7543,9 @@
             "home_team": "MIA",
             "away_team": "NYJ",
             "predicted_winner": "MIA",
-            "win_prob_home": 0.549,
-            "win_prob_away": 0.451,
-            "predicted_spread": 1.6,
+            "win_prob_home": 0.589,
+            "win_prob_away": 0.411,
+            "predicted_spread": 2.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7042,9 +7556,9 @@
             "home_team": "MIN",
             "away_team": "ATL",
             "predicted_winner": "MIN",
-            "win_prob_home": 0.655,
-            "win_prob_away": 0.345,
-            "predicted_spread": 5.1,
+            "win_prob_home": 0.648,
+            "win_prob_away": 0.352,
+            "predicted_spread": 4.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7055,9 +7569,9 @@
             "home_team": "JAX",
             "away_team": "TEN",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.811,
-            "win_prob_away": 0.189,
-            "predicted_spread": 11.3,
+            "win_prob_home": 0.828,
+            "win_prob_away": 0.172,
+            "predicted_spread": 12.1,
             "key_players": {
               "home": [],
               "away": []
@@ -7068,9 +7582,9 @@
             "home_team": "ARI",
             "away_team": "WAS",
             "predicted_winner": "WAS",
-            "win_prob_home": 0.48,
-            "win_prob_away": 0.519,
-            "predicted_spread": -0.6,
+            "win_prob_home": 0.476,
+            "win_prob_away": 0.524,
+            "predicted_spread": -0.8,
             "key_players": {
               "home": [],
               "away": []
@@ -7081,9 +7595,9 @@
             "home_team": "SF",
             "away_team": "SEA",
             "predicted_winner": "SF",
-            "win_prob_home": 0.561,
-            "win_prob_away": 0.439,
-            "predicted_spread": 2.0,
+            "win_prob_home": 0.578,
+            "win_prob_away": 0.422,
+            "predicted_spread": 2.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7094,9 +7608,9 @@
             "home_team": "LAC",
             "away_team": "NE",
             "predicted_winner": "NE",
-            "win_prob_home": 0.368,
-            "win_prob_away": 0.632,
-            "predicted_spread": -4.3,
+            "win_prob_home": 0.378,
+            "win_prob_away": 0.622,
+            "predicted_spread": -3.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7107,9 +7621,9 @@
             "home_team": "TB",
             "away_team": "CAR",
             "predicted_winner": "TB",
-            "win_prob_home": 0.692,
-            "win_prob_away": 0.308,
-            "predicted_spread": 6.4,
+            "win_prob_home": 0.686,
+            "win_prob_away": 0.314,
+            "predicted_spread": 6.2,
             "key_players": {
               "home": [],
               "away": []
@@ -7124,7 +7638,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -7136,37 +7650,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -7191,9 +7705,9 @@
             "home_team": "LA",
             "away_team": "KC",
             "predicted_winner": "LA",
-            "win_prob_home": 0.577,
-            "win_prob_away": 0.423,
-            "predicted_spread": 2.5,
+            "win_prob_home": 0.541,
+            "win_prob_away": 0.459,
+            "predicted_spread": 1.4,
             "key_players": {
               "home": [],
               "away": []
@@ -7204,9 +7718,9 @@
             "home_team": "ATL",
             "away_team": "DET",
             "predicted_winner": "DET",
-            "win_prob_home": 0.47,
-            "win_prob_away": 0.53,
-            "predicted_spread": -0.9,
+            "win_prob_home": 0.435,
+            "win_prob_away": 0.565,
+            "predicted_spread": -2.1,
             "key_players": {
               "home": [],
               "away": []
@@ -7217,9 +7731,9 @@
             "home_team": "CHI",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.484,
-            "win_prob_away": 0.516,
-            "predicted_spread": -0.5,
+            "win_prob_home": 0.458,
+            "win_prob_away": 0.542,
+            "predicted_spread": -1.3,
             "key_players": {
               "home": [],
               "away": []
@@ -7230,9 +7744,9 @@
             "home_team": "CLE",
             "away_team": "CIN",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.39,
-            "win_prob_away": 0.61,
-            "predicted_spread": -3.5,
+            "win_prob_home": 0.362,
+            "win_prob_away": 0.638,
+            "predicted_spread": -4.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7243,9 +7757,9 @@
             "home_team": "NO",
             "away_team": "GB",
             "predicted_winner": "GB",
-            "win_prob_home": 0.469,
-            "win_prob_away": 0.531,
-            "predicted_spread": -1.0,
+            "win_prob_home": 0.417,
+            "win_prob_away": 0.583,
+            "predicted_spread": -2.6,
             "key_players": {
               "home": [],
               "away": []
@@ -7256,9 +7770,9 @@
             "home_team": "NYG",
             "away_team": "SF",
             "predicted_winner": "SF",
-            "win_prob_home": 0.451,
-            "win_prob_away": 0.549,
-            "predicted_spread": -1.6,
+            "win_prob_home": 0.428,
+            "win_prob_away": 0.572,
+            "predicted_spread": -2.3,
             "key_players": {
               "home": [],
               "away": []
@@ -7269,9 +7783,9 @@
             "home_team": "TB",
             "away_team": "LAC",
             "predicted_winner": "TB",
-            "win_prob_home": 0.736,
-            "win_prob_away": 0.264,
-            "predicted_spread": 8.1,
+            "win_prob_home": 0.764,
+            "win_prob_away": 0.236,
+            "predicted_spread": 9.2,
             "key_players": {
               "home": [],
               "away": []
@@ -7282,9 +7796,9 @@
             "home_team": "TEN",
             "away_team": "WAS",
             "predicted_winner": "WAS",
-            "win_prob_home": 0.468,
-            "win_prob_away": 0.532,
-            "predicted_spread": -1.0,
+            "win_prob_home": 0.476,
+            "win_prob_away": 0.524,
+            "predicted_spread": -0.7,
             "key_players": {
               "home": [],
               "away": []
@@ -7295,9 +7809,9 @@
             "home_team": "ARI",
             "away_team": "PHI",
             "predicted_winner": "ARI",
-            "win_prob_home": 0.583,
-            "win_prob_away": 0.417,
-            "predicted_spread": 2.7,
+            "win_prob_home": 0.578,
+            "win_prob_away": 0.422,
+            "predicted_spread": 2.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7310,7 +7824,7 @@
             "predicted_winner": "DEN",
             "win_prob_home": 0.712,
             "win_prob_away": 0.288,
-            "predicted_spread": 7.1,
+            "predicted_spread": 7.2,
             "key_players": {
               "home": [],
               "away": []
@@ -7321,9 +7835,9 @@
             "home_team": "MIN",
             "away_team": "CAR",
             "predicted_winner": "MIN",
-            "win_prob_home": 0.696,
-            "win_prob_away": 0.304,
-            "predicted_spread": 6.6,
+            "win_prob_home": 0.659,
+            "win_prob_away": 0.341,
+            "predicted_spread": 5.2,
             "key_players": {
               "home": [],
               "away": []
@@ -7333,10 +7847,10 @@
             "week": 13,
             "home_team": "NE",
             "away_team": "BUF",
-            "predicted_winner": "NE",
-            "win_prob_home": 0.51,
-            "win_prob_away": 0.49,
-            "predicted_spread": 0.3,
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.42,
+            "win_prob_away": 0.58,
+            "predicted_spread": -2.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7347,9 +7861,9 @@
             "home_team": "PIT",
             "away_team": "HOU",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.622,
-            "win_prob_away": 0.378,
-            "predicted_spread": 4.0,
+            "win_prob_home": 0.583,
+            "win_prob_away": 0.417,
+            "predicted_spread": 2.7,
             "key_players": {
               "home": [],
               "away": []
@@ -7360,9 +7874,9 @@
             "home_team": "SEA",
             "away_team": "DAL",
             "predicted_winner": "SEA",
-            "win_prob_home": 0.658,
-            "win_prob_away": 0.342,
-            "predicted_spread": 5.2,
+            "win_prob_home": 0.673,
+            "win_prob_away": 0.327,
+            "predicted_spread": 5.8,
             "key_players": {
               "home": [],
               "away": []
@@ -7377,7 +7891,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -7389,37 +7903,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -7444,9 +7958,9 @@
             "home_team": "NE",
             "away_team": "MIN",
             "predicted_winner": "NE",
-            "win_prob_home": 0.547,
-            "win_prob_away": 0.453,
-            "predicted_spread": 1.5,
+            "win_prob_home": 0.534,
+            "win_prob_away": 0.466,
+            "predicted_spread": 1.1,
             "key_players": {
               "home": [],
               "away": []
@@ -7457,9 +7971,9 @@
             "home_team": "BAL",
             "away_team": "TB",
             "predicted_winner": "TB",
-            "win_prob_home": 0.404,
-            "win_prob_away": 0.596,
-            "predicted_spread": -3.1,
+            "win_prob_home": 0.379,
+            "win_prob_away": 0.621,
+            "predicted_spread": -3.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7470,9 +7984,9 @@
             "home_team": "CAR",
             "away_team": "NO",
             "predicted_winner": "CAR",
-            "win_prob_home": 0.547,
-            "win_prob_away": 0.453,
-            "predicted_spread": 1.5,
+            "win_prob_home": 0.552,
+            "win_prob_away": 0.448,
+            "predicted_spread": 1.7,
             "key_players": {
               "home": [],
               "away": []
@@ -7482,10 +7996,10 @@
             "week": 14,
             "home_team": "CLE",
             "away_team": "ATL",
-            "predicted_winner": "ATL",
-            "win_prob_home": 0.498,
-            "win_prob_away": 0.502,
-            "predicted_spread": -0.0,
+            "predicted_winner": "CLE",
+            "win_prob_home": 0.53,
+            "win_prob_away": 0.469,
+            "predicted_spread": 1.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7496,9 +8010,9 @@
             "home_team": "DET",
             "away_team": "TEN",
             "predicted_winner": "DET",
-            "win_prob_home": 0.72,
-            "win_prob_away": 0.28,
-            "predicted_spread": 7.5,
+            "win_prob_home": 0.724,
+            "win_prob_away": 0.276,
+            "predicted_spread": 7.6,
             "key_players": {
               "home": [],
               "away": []
@@ -7509,9 +8023,9 @@
             "home_team": "MIA",
             "away_team": "CHI",
             "predicted_winner": "CHI",
-            "win_prob_home": 0.343,
-            "win_prob_away": 0.657,
-            "predicted_spread": -5.1,
+            "win_prob_home": 0.337,
+            "win_prob_away": 0.663,
+            "predicted_spread": -5.4,
             "key_players": {
               "home": [],
               "away": []
@@ -7522,9 +8036,9 @@
             "home_team": "NYJ",
             "away_team": "DEN",
             "predicted_winner": "DEN",
-            "win_prob_home": 0.399,
-            "win_prob_away": 0.601,
-            "predicted_spread": -3.2,
+            "win_prob_home": 0.361,
+            "win_prob_away": 0.639,
+            "predicted_spread": -4.5,
             "key_players": {
               "home": [],
               "away": []
@@ -7535,9 +8049,9 @@
             "home_team": "PHI",
             "away_team": "IND",
             "predicted_winner": "PHI",
-            "win_prob_home": 0.556,
-            "win_prob_away": 0.444,
-            "predicted_spread": 1.8,
+            "win_prob_home": 0.544,
+            "win_prob_away": 0.456,
+            "predicted_spread": 1.4,
             "key_players": {
               "home": [],
               "away": []
@@ -7547,72 +8061,7 @@
             "week": 14,
             "home_team": "WAS",
             "away_team": "HOU",
-            "predicted_winner": "WAS",
-            "win_prob_home": 0.519,
-            "win_prob_away": 0.481,
-            "predicted_spread": 0.6,
-            "key_players": {
-              "home": [],
-              "away": []
-            }
-          },
-          {
-            "week": 14,
-            "home_team": "LV",
-            "away_team": "LAC",
-            "predicted_winner": "LV",
-            "win_prob_home": 0.614,
-            "win_prob_away": 0.386,
-            "predicted_spread": 3.7,
-            "key_players": {
-              "home": [],
-              "away": []
-            }
-          },
-          {
-            "week": 14,
-            "home_team": "CIN",
-            "away_team": "KC",
-            "predicted_winner": "CIN",
-            "win_prob_home": 0.605,
-            "win_prob_away": 0.395,
-            "predicted_spread": 3.4,
-            "key_players": {
-              "home": [],
-              "away": []
-            }
-          },
-          {
-            "week": 14,
-            "home_team": "SEA",
-            "away_team": "NYG",
-            "predicted_winner": "SEA",
-            "win_prob_home": 0.656,
-            "win_prob_away": 0.344,
-            "predicted_spread": 5.2,
-            "key_players": {
-              "home": [],
-              "away": []
-            }
-          },
-          {
-            "week": 14,
-            "home_team": "SF",
-            "away_team": "LA",
-            "predicted_winner": "SF",
-            "win_prob_home": 0.582,
-            "win_prob_away": 0.418,
-            "predicted_spread": 2.7,
-            "key_players": {
-              "home": [],
-              "away": []
-            }
-          },
-          {
-            "week": 14,
-            "home_team": "GB",
-            "away_team": "BUF",
-            "predicted_winner": "BUF",
+            "predicted_winner": "HOU",
             "win_prob_home": 0.47,
             "win_prob_away": 0.53,
             "predicted_spread": -0.9,
@@ -7623,12 +8072,77 @@
           },
           {
             "week": 14,
+            "home_team": "LV",
+            "away_team": "LAC",
+            "predicted_winner": "LV",
+            "win_prob_home": 0.624,
+            "win_prob_away": 0.376,
+            "predicted_spread": 4.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "CIN",
+            "away_team": "KC",
+            "predicted_winner": "CIN",
+            "win_prob_home": 0.592,
+            "win_prob_away": 0.408,
+            "predicted_spread": 3.0,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "SEA",
+            "away_team": "NYG",
+            "predicted_winner": "SEA",
+            "win_prob_home": 0.661,
+            "win_prob_away": 0.339,
+            "predicted_spread": 5.3,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "SF",
+            "away_team": "LA",
+            "predicted_winner": "SF",
+            "win_prob_home": 0.604,
+            "win_prob_away": 0.396,
+            "predicted_spread": 3.4,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
+            "home_team": "GB",
+            "away_team": "BUF",
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.483,
+            "win_prob_away": 0.517,
+            "predicted_spread": -0.5,
+            "key_players": {
+              "home": [],
+              "away": []
+            }
+          },
+          {
+            "week": 14,
             "home_team": "JAX",
             "away_team": "PIT",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.662,
-            "win_prob_away": 0.338,
-            "predicted_spread": 5.4,
+            "win_prob_home": 0.688,
+            "win_prob_away": 0.312,
+            "predicted_spread": 6.3,
             "key_players": {
               "home": [],
               "away": []
@@ -7643,7 +8157,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -7655,37 +8169,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -7710,9 +8224,9 @@
             "home_team": "LAC",
             "away_team": "SF",
             "predicted_winner": "SF",
-            "win_prob_home": 0.355,
-            "win_prob_away": 0.644,
-            "predicted_spread": -4.7,
+            "win_prob_home": 0.293,
+            "win_prob_away": 0.707,
+            "predicted_spread": -6.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7723,9 +8237,9 @@
             "home_team": "PHI",
             "away_team": "SEA",
             "predicted_winner": "SEA",
-            "win_prob_home": 0.355,
-            "win_prob_away": 0.645,
-            "predicted_spread": -4.7,
+            "win_prob_home": 0.336,
+            "win_prob_away": 0.664,
+            "predicted_spread": -5.4,
             "key_players": {
               "home": [],
               "away": []
@@ -7736,9 +8250,9 @@
             "home_team": "BUF",
             "away_team": "CHI",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.556,
-            "win_prob_away": 0.444,
-            "predicted_spread": 1.8,
+            "win_prob_home": 0.591,
+            "win_prob_away": 0.409,
+            "predicted_spread": 3.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7749,9 +8263,9 @@
             "home_team": "CAR",
             "away_team": "CIN",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.402,
-            "win_prob_away": 0.598,
-            "predicted_spread": -3.1,
+            "win_prob_home": 0.376,
+            "win_prob_away": 0.624,
+            "predicted_spread": -4.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7762,9 +8276,9 @@
             "home_team": "GB",
             "away_team": "MIA",
             "predicted_winner": "GB",
-            "win_prob_home": 0.68,
-            "win_prob_away": 0.32,
-            "predicted_spread": 6.0,
+            "win_prob_home": 0.727,
+            "win_prob_away": 0.273,
+            "predicted_spread": 7.7,
             "key_players": {
               "home": [],
               "away": []
@@ -7775,9 +8289,9 @@
             "home_team": "HOU",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.382,
-            "win_prob_away": 0.618,
-            "predicted_spread": -3.8,
+            "win_prob_home": 0.394,
+            "win_prob_away": 0.606,
+            "predicted_spread": -3.4,
             "key_players": {
               "home": [],
               "away": []
@@ -7788,9 +8302,9 @@
             "home_team": "NYG",
             "away_team": "CLE",
             "predicted_winner": "NYG",
-            "win_prob_home": 0.614,
-            "win_prob_away": 0.386,
-            "predicted_spread": 3.7,
+            "win_prob_home": 0.621,
+            "win_prob_away": 0.379,
+            "predicted_spread": 4.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7801,9 +8315,9 @@
             "home_team": "PIT",
             "away_team": "BAL",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.706,
-            "win_prob_away": 0.294,
-            "predicted_spread": 7.0,
+            "win_prob_home": 0.73,
+            "win_prob_away": 0.271,
+            "predicted_spread": 7.8,
             "key_players": {
               "home": [],
               "away": []
@@ -7814,9 +8328,9 @@
             "home_team": "TB",
             "away_team": "NO",
             "predicted_winner": "TB",
-            "win_prob_home": 0.683,
-            "win_prob_away": 0.317,
-            "predicted_spread": 6.1,
+            "win_prob_home": 0.681,
+            "win_prob_away": 0.319,
+            "predicted_spread": 6.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7827,9 +8341,9 @@
             "home_team": "TEN",
             "away_team": "IND",
             "predicted_winner": "TEN",
-            "win_prob_home": 0.569,
-            "win_prob_away": 0.431,
-            "predicted_spread": 2.2,
+            "win_prob_home": 0.565,
+            "win_prob_away": 0.435,
+            "predicted_spread": 2.1,
             "key_players": {
               "home": [],
               "away": []
@@ -7840,9 +8354,9 @@
             "home_team": "WAS",
             "away_team": "ATL",
             "predicted_winner": "WAS",
-            "win_prob_home": 0.557,
-            "win_prob_away": 0.443,
-            "predicted_spread": 1.8,
+            "win_prob_home": 0.579,
+            "win_prob_away": 0.421,
+            "predicted_spread": 2.6,
             "key_players": {
               "home": [],
               "away": []
@@ -7853,9 +8367,9 @@
             "home_team": "ARI",
             "away_team": "NYJ",
             "predicted_winner": "ARI",
-            "win_prob_home": 0.55,
-            "win_prob_away": 0.45,
-            "predicted_spread": 1.6,
+            "win_prob_home": 0.581,
+            "win_prob_away": 0.419,
+            "predicted_spread": 2.6,
             "key_players": {
               "home": [],
               "away": []
@@ -7866,9 +8380,9 @@
             "home_team": "LA",
             "away_team": "DAL",
             "predicted_winner": "LA",
-            "win_prob_home": 0.638,
-            "win_prob_away": 0.362,
-            "predicted_spread": 4.5,
+            "win_prob_home": 0.649,
+            "win_prob_away": 0.35,
+            "predicted_spread": 4.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7879,9 +8393,9 @@
             "home_team": "LV",
             "away_team": "DEN",
             "predicted_winner": "DEN",
-            "win_prob_home": 0.427,
-            "win_prob_away": 0.573,
-            "predicted_spread": -2.3,
+            "win_prob_home": 0.402,
+            "win_prob_away": 0.598,
+            "predicted_spread": -3.1,
             "key_players": {
               "home": [],
               "away": []
@@ -7892,9 +8406,9 @@
             "home_team": "MIN",
             "away_team": "DET",
             "predicted_winner": "MIN",
-            "win_prob_home": 0.572,
-            "win_prob_away": 0.428,
-            "predicted_spread": 2.3,
+            "win_prob_home": 0.529,
+            "win_prob_away": 0.471,
+            "predicted_spread": 1.0,
             "key_players": {
               "home": [],
               "away": []
@@ -7905,9 +8419,9 @@
             "home_team": "KC",
             "away_team": "NE",
             "predicted_winner": "KC",
-            "win_prob_home": 0.526,
-            "win_prob_away": 0.474,
-            "predicted_spread": 0.9,
+            "win_prob_home": 0.62,
+            "win_prob_away": 0.38,
+            "predicted_spread": 3.9,
             "key_players": {
               "home": [],
               "away": []
@@ -7922,7 +8436,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -7934,37 +8448,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -7989,9 +8503,9 @@
             "home_team": "PHI",
             "away_team": "HOU",
             "predicted_winner": "HOU",
-            "win_prob_home": 0.416,
-            "win_prob_away": 0.584,
-            "predicted_spread": -2.7,
+            "win_prob_home": 0.37,
+            "win_prob_away": 0.63,
+            "predicted_spread": -4.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8002,9 +8516,9 @@
             "home_team": "CHI",
             "away_team": "GB",
             "predicted_winner": "CHI",
-            "win_prob_home": 0.642,
-            "win_prob_away": 0.357,
-            "predicted_spread": 4.7,
+            "win_prob_home": 0.597,
+            "win_prob_away": 0.403,
+            "predicted_spread": 3.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8014,10 +8528,10 @@
             "week": 16,
             "home_team": "DEN",
             "away_team": "BUF",
-            "predicted_winner": "DEN",
-            "win_prob_home": 0.507,
-            "win_prob_away": 0.493,
-            "predicted_spread": 0.2,
+            "predicted_winner": "BUF",
+            "win_prob_home": 0.464,
+            "win_prob_away": 0.536,
+            "predicted_spread": -1.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8028,9 +8542,9 @@
             "home_team": "SEA",
             "away_team": "LA",
             "predicted_winner": "SEA",
-            "win_prob_home": 0.579,
-            "win_prob_away": 0.421,
-            "predicted_spread": 2.6,
+            "win_prob_home": 0.583,
+            "win_prob_away": 0.417,
+            "predicted_spread": 2.7,
             "key_players": {
               "home": [],
               "away": []
@@ -8041,9 +8555,9 @@
             "home_team": "ATL",
             "away_team": "TB",
             "predicted_winner": "TB",
-            "win_prob_home": 0.46,
-            "win_prob_away": 0.54,
-            "predicted_spread": -1.3,
+            "win_prob_home": 0.432,
+            "win_prob_away": 0.568,
+            "predicted_spread": -2.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8054,9 +8568,9 @@
             "home_team": "BAL",
             "away_team": "CLE",
             "predicted_winner": "BAL",
-            "win_prob_home": 0.559,
-            "win_prob_away": 0.441,
-            "predicted_spread": 1.9,
+            "win_prob_home": 0.53,
+            "win_prob_away": 0.47,
+            "predicted_spread": 1.0,
             "key_players": {
               "home": [],
               "away": []
@@ -8067,9 +8581,9 @@
             "home_team": "IND",
             "away_team": "CIN",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.35,
-            "win_prob_away": 0.65,
-            "predicted_spread": -4.9,
+            "win_prob_home": 0.326,
+            "win_prob_away": 0.674,
+            "predicted_spread": -5.8,
             "key_players": {
               "home": [],
               "away": []
@@ -8080,9 +8594,9 @@
             "home_team": "MIA",
             "away_team": "LAC",
             "predicted_winner": "MIA",
-            "win_prob_home": 0.579,
-            "win_prob_away": 0.421,
-            "predicted_spread": 2.5,
+            "win_prob_home": 0.614,
+            "win_prob_away": 0.387,
+            "predicted_spread": 3.7,
             "key_players": {
               "home": [],
               "away": []
@@ -8093,9 +8607,9 @@
             "home_team": "MIN",
             "away_team": "WAS",
             "predicted_winner": "MIN",
-            "win_prob_home": 0.655,
-            "win_prob_away": 0.344,
-            "predicted_spread": 5.1,
+            "win_prob_home": 0.628,
+            "win_prob_away": 0.372,
+            "predicted_spread": 4.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8106,9 +8620,9 @@
             "home_team": "NO",
             "away_team": "ARI",
             "predicted_winner": "NO",
-            "win_prob_home": 0.598,
-            "win_prob_away": 0.402,
-            "predicted_spread": 3.2,
+            "win_prob_home": 0.61,
+            "win_prob_away": 0.391,
+            "predicted_spread": 3.6,
             "key_players": {
               "home": [],
               "away": []
@@ -8119,9 +8633,9 @@
             "home_team": "NYJ",
             "away_team": "NE",
             "predicted_winner": "NE",
-            "win_prob_home": 0.396,
-            "win_prob_away": 0.604,
-            "predicted_spread": -3.3,
+            "win_prob_home": 0.403,
+            "win_prob_away": 0.597,
+            "predicted_spread": -3.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8132,9 +8646,9 @@
             "home_team": "PIT",
             "away_team": "CAR",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.698,
-            "win_prob_away": 0.302,
-            "predicted_spread": 6.6,
+            "win_prob_home": 0.694,
+            "win_prob_away": 0.306,
+            "predicted_spread": 6.5,
             "key_players": {
               "home": [],
               "away": []
@@ -8145,9 +8659,9 @@
             "home_team": "LV",
             "away_team": "TEN",
             "predicted_winner": "LV",
-            "win_prob_home": 0.605,
-            "win_prob_away": 0.395,
-            "predicted_spread": 3.4,
+            "win_prob_home": 0.576,
+            "win_prob_away": 0.424,
+            "predicted_spread": 2.5,
             "key_players": {
               "home": [],
               "away": []
@@ -8158,9 +8672,9 @@
             "home_team": "KC",
             "away_team": "SF",
             "predicted_winner": "KC",
-            "win_prob_home": 0.512,
-            "win_prob_away": 0.488,
-            "predicted_spread": 0.4,
+            "win_prob_home": 0.526,
+            "win_prob_away": 0.474,
+            "predicted_spread": 0.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8171,9 +8685,9 @@
             "home_team": "DAL",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.345,
-            "win_prob_away": 0.655,
-            "predicted_spread": -5.1,
+            "win_prob_home": 0.316,
+            "win_prob_away": 0.684,
+            "predicted_spread": -6.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8184,9 +8698,9 @@
             "home_team": "DET",
             "away_team": "NYG",
             "predicted_winner": "DET",
-            "win_prob_home": 0.642,
-            "win_prob_away": 0.358,
-            "predicted_spread": 4.7,
+            "win_prob_home": 0.639,
+            "win_prob_away": 0.361,
+            "predicted_spread": 4.6,
             "key_players": {
               "home": [],
               "away": []
@@ -8201,7 +8715,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -8213,37 +8727,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -8268,9 +8782,9 @@
             "home_team": "CIN",
             "away_team": "BAL",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.711,
-            "win_prob_away": 0.289,
-            "predicted_spread": 7.1,
+            "win_prob_home": 0.758,
+            "win_prob_away": 0.242,
+            "predicted_spread": 8.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8281,9 +8795,9 @@
             "home_team": "ATL",
             "away_team": "NO",
             "predicted_winner": "ATL",
-            "win_prob_home": 0.593,
-            "win_prob_away": 0.407,
-            "predicted_spread": 3.0,
+            "win_prob_home": 0.564,
+            "win_prob_away": 0.436,
+            "predicted_spread": 2.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8294,9 +8808,9 @@
             "home_team": "CAR",
             "away_team": "SEA",
             "predicted_winner": "SEA",
-            "win_prob_home": 0.409,
-            "win_prob_away": 0.591,
-            "predicted_spread": -2.9,
+            "win_prob_home": 0.4,
+            "win_prob_away": 0.6,
+            "predicted_spread": -3.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8307,9 +8821,9 @@
             "home_team": "CLE",
             "away_team": "IND",
             "predicted_winner": "CLE",
-            "win_prob_home": 0.6,
-            "win_prob_away": 0.4,
-            "predicted_spread": 3.2,
+            "win_prob_home": 0.597,
+            "win_prob_away": 0.403,
+            "predicted_spread": 3.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8320,9 +8834,9 @@
             "home_team": "DAL",
             "away_team": "NYG",
             "predicted_winner": "DAL",
-            "win_prob_home": 0.555,
-            "win_prob_away": 0.445,
-            "predicted_spread": 1.8,
+            "win_prob_home": 0.543,
+            "win_prob_away": 0.457,
+            "predicted_spread": 1.4,
             "key_players": {
               "home": [],
               "away": []
@@ -8333,9 +8847,9 @@
             "home_team": "JAX",
             "away_team": "WAS",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.749,
-            "win_prob_away": 0.251,
-            "predicted_spread": 8.6,
+            "win_prob_home": 0.776,
+            "win_prob_away": 0.224,
+            "predicted_spread": 9.7,
             "key_players": {
               "home": [],
               "away": []
@@ -8346,9 +8860,9 @@
             "home_team": "LAC",
             "away_team": "KC",
             "predicted_winner": "KC",
-            "win_prob_home": 0.398,
-            "win_prob_away": 0.602,
-            "predicted_spread": -3.3,
+            "win_prob_home": 0.32,
+            "win_prob_away": 0.68,
+            "predicted_spread": -6.0,
             "key_players": {
               "home": [],
               "away": []
@@ -8359,9 +8873,9 @@
             "home_team": "MIA",
             "away_team": "BUF",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.344,
-            "win_prob_away": 0.656,
-            "predicted_spread": -5.1,
+            "win_prob_home": 0.306,
+            "win_prob_away": 0.694,
+            "predicted_spread": -6.4,
             "key_players": {
               "home": [],
               "away": []
@@ -8372,9 +8886,9 @@
             "home_team": "NE",
             "away_team": "DEN",
             "predicted_winner": "NE",
-            "win_prob_home": 0.56,
-            "win_prob_away": 0.44,
-            "predicted_spread": 2.0,
+            "win_prob_home": 0.513,
+            "win_prob_away": 0.487,
+            "predicted_spread": 0.5,
             "key_players": {
               "home": [],
               "away": []
@@ -8385,9 +8899,9 @@
             "home_team": "NYJ",
             "away_team": "MIN",
             "predicted_winner": "MIN",
-            "win_prob_home": 0.387,
-            "win_prob_away": 0.613,
-            "predicted_spread": -3.6,
+            "win_prob_home": 0.381,
+            "win_prob_away": 0.62,
+            "predicted_spread": -3.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8398,9 +8912,9 @@
             "home_team": "TB",
             "away_team": "LA",
             "predicted_winner": "TB",
-            "win_prob_home": 0.574,
-            "win_prob_away": 0.426,
-            "predicted_spread": 2.4,
+            "win_prob_home": 0.563,
+            "win_prob_away": 0.437,
+            "predicted_spread": 2.0,
             "key_players": {
               "home": [],
               "away": []
@@ -8424,9 +8938,9 @@
             "home_team": "ARI",
             "away_team": "LV",
             "predicted_winner": "ARI",
-            "win_prob_home": 0.521,
-            "win_prob_away": 0.479,
-            "predicted_spread": 0.7,
+            "win_prob_home": 0.539,
+            "win_prob_away": 0.461,
+            "predicted_spread": 1.3,
             "key_players": {
               "home": [],
               "away": []
@@ -8437,9 +8951,9 @@
             "home_team": "CHI",
             "away_team": "DET",
             "predicted_winner": "CHI",
-            "win_prob_home": 0.61,
-            "win_prob_away": 0.39,
-            "predicted_spread": 3.6,
+            "win_prob_home": 0.608,
+            "win_prob_away": 0.392,
+            "predicted_spread": 3.5,
             "key_players": {
               "home": [],
               "away": []
@@ -8450,9 +8964,9 @@
             "home_team": "SF",
             "away_team": "PHI",
             "predicted_winner": "SF",
-            "win_prob_home": 0.745,
-            "win_prob_away": 0.255,
-            "predicted_spread": 8.4,
+            "win_prob_home": 0.773,
+            "win_prob_away": 0.227,
+            "predicted_spread": 9.6,
             "key_players": {
               "home": [],
               "away": []
@@ -8463,9 +8977,9 @@
             "home_team": "GB",
             "away_team": "HOU",
             "predicted_winner": "GB",
-            "win_prob_home": 0.572,
-            "win_prob_away": 0.428,
-            "predicted_spread": 2.3,
+            "win_prob_home": 0.582,
+            "win_prob_away": 0.418,
+            "predicted_spread": 2.7,
             "key_players": {
               "home": [],
               "away": []
@@ -8480,7 +8994,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -8492,37 +9006,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -8547,9 +9061,9 @@
             "home_team": "ARI",
             "away_team": "SF",
             "predicted_winner": "SF",
-            "win_prob_home": 0.376,
-            "win_prob_away": 0.624,
-            "predicted_spread": -4.0,
+            "win_prob_home": 0.336,
+            "win_prob_away": 0.664,
+            "predicted_spread": -5.4,
             "key_players": {
               "home": [],
               "away": []
@@ -8560,9 +9074,9 @@
             "home_team": "BAL",
             "away_team": "PIT",
             "predicted_winner": "PIT",
-            "win_prob_home": 0.398,
-            "win_prob_away": 0.603,
-            "predicted_spread": -3.3,
+            "win_prob_home": 0.37,
+            "win_prob_away": 0.63,
+            "predicted_spread": -4.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8573,9 +9087,9 @@
             "home_team": "BUF",
             "away_team": "NYJ",
             "predicted_winner": "BUF",
-            "win_prob_home": 0.745,
-            "win_prob_away": 0.255,
-            "predicted_spread": 8.4,
+            "win_prob_home": 0.803,
+            "win_prob_away": 0.197,
+            "predicted_spread": 10.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8586,9 +9100,9 @@
             "home_team": "CAR",
             "away_team": "ATL",
             "predicted_winner": "CAR",
-            "win_prob_home": 0.51,
-            "win_prob_away": 0.49,
-            "predicted_spread": 0.4,
+            "win_prob_home": 0.546,
+            "win_prob_away": 0.454,
+            "predicted_spread": 1.5,
             "key_players": {
               "home": [],
               "away": []
@@ -8599,9 +9113,9 @@
             "home_team": "CIN",
             "away_team": "CLE",
             "predicted_winner": "CIN",
-            "win_prob_home": 0.713,
-            "win_prob_away": 0.287,
-            "predicted_spread": 7.2,
+            "win_prob_home": 0.737,
+            "win_prob_away": 0.263,
+            "predicted_spread": 8.1,
             "key_players": {
               "home": [],
               "away": []
@@ -8612,9 +9126,9 @@
             "home_team": "DEN",
             "away_team": "LAC",
             "predicted_winner": "DEN",
-            "win_prob_home": 0.729,
-            "win_prob_away": 0.271,
-            "predicted_spread": 7.8,
+            "win_prob_home": 0.757,
+            "win_prob_away": 0.243,
+            "predicted_spread": 8.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8625,9 +9139,9 @@
             "home_team": "GB",
             "away_team": "DET",
             "predicted_winner": "GB",
-            "win_prob_home": 0.522,
-            "win_prob_away": 0.477,
-            "predicted_spread": 0.7,
+            "win_prob_home": 0.569,
+            "win_prob_away": 0.431,
+            "predicted_spread": 2.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8638,9 +9152,9 @@
             "home_team": "HOU",
             "away_team": "TEN",
             "predicted_winner": "HOU",
-            "win_prob_home": 0.678,
-            "win_prob_away": 0.322,
-            "predicted_spread": 5.9,
+            "win_prob_home": 0.713,
+            "win_prob_away": 0.287,
+            "predicted_spread": 7.2,
             "key_players": {
               "home": [],
               "away": []
@@ -8651,9 +9165,9 @@
             "home_team": "IND",
             "away_team": "JAX",
             "predicted_winner": "JAX",
-            "win_prob_home": 0.261,
-            "win_prob_away": 0.739,
-            "predicted_spread": -8.2,
+            "win_prob_home": 0.242,
+            "win_prob_away": 0.758,
+            "predicted_spread": -8.9,
             "key_players": {
               "home": [],
               "away": []
@@ -8664,9 +9178,9 @@
             "home_team": "KC",
             "away_team": "LV",
             "predicted_winner": "KC",
-            "win_prob_home": 0.655,
-            "win_prob_away": 0.345,
-            "predicted_spread": 5.1,
+            "win_prob_home": 0.72,
+            "win_prob_away": 0.281,
+            "predicted_spread": 7.4,
             "key_players": {
               "home": [],
               "away": []
@@ -8677,9 +9191,9 @@
             "home_team": "LA",
             "away_team": "SEA",
             "predicted_winner": "LA",
-            "win_prob_home": 0.536,
-            "win_prob_away": 0.464,
-            "predicted_spread": 1.2,
+            "win_prob_home": 0.531,
+            "win_prob_away": 0.469,
+            "predicted_spread": 1.0,
             "key_players": {
               "home": [],
               "away": []
@@ -8689,10 +9203,10 @@
             "week": 18,
             "home_team": "MIN",
             "away_team": "CHI",
-            "predicted_winner": "MIN",
-            "win_prob_home": 0.519,
-            "win_prob_away": 0.481,
-            "predicted_spread": 0.6,
+            "predicted_winner": "CHI",
+            "win_prob_home": 0.477,
+            "win_prob_away": 0.523,
+            "predicted_spread": -0.7,
             "key_players": {
               "home": [],
               "away": []
@@ -8703,9 +9217,9 @@
             "home_team": "NE",
             "away_team": "MIA",
             "predicted_winner": "NE",
-            "win_prob_home": 0.714,
-            "win_prob_away": 0.286,
-            "predicted_spread": 7.2,
+            "win_prob_home": 0.674,
+            "win_prob_away": 0.326,
+            "predicted_spread": 5.8,
             "key_players": {
               "home": [],
               "away": []
@@ -8716,8 +9230,8 @@
             "home_team": "NO",
             "away_team": "TB",
             "predicted_winner": "TB",
-            "win_prob_home": 0.424,
-            "win_prob_away": 0.576,
+            "win_prob_home": 0.426,
+            "win_prob_away": 0.574,
             "predicted_spread": -2.4,
             "key_players": {
               "home": [],
@@ -8729,9 +9243,9 @@
             "home_team": "NYG",
             "away_team": "PHI",
             "predicted_winner": "NYG",
-            "win_prob_home": 0.656,
-            "win_prob_away": 0.344,
-            "predicted_spread": 5.1,
+            "win_prob_home": 0.67,
+            "win_prob_away": 0.33,
+            "predicted_spread": 5.6,
             "key_players": {
               "home": [],
               "away": []
@@ -8742,9 +9256,9 @@
             "home_team": "WAS",
             "away_team": "DAL",
             "predicted_winner": "WAS",
-            "win_prob_home": 0.56,
-            "win_prob_away": 0.44,
-            "predicted_spread": 1.9,
+            "win_prob_home": 0.555,
+            "win_prob_away": 0.445,
+            "predicted_spread": 1.8,
             "key_players": {
               "home": [],
               "away": []
@@ -8759,7 +9273,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -8771,37 +9285,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],
@@ -8825,7 +9339,7 @@
           {
             "division": "AFC East",
             "leader": "BUF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           },
           {
@@ -8837,37 +9351,37 @@
           {
             "division": "AFC South",
             "leader": "JAX",
-            "wins": 5,
+            "wins": 6,
             "losses": 2
           },
           {
             "division": "AFC West",
             "leader": "DEN",
-            "wins": 6,
+            "wins": 7,
             "losses": 2
           },
           {
             "division": "NFC East",
             "leader": "NYG",
-            "wins": 4,
+            "wins": 5,
             "losses": 2
           },
           {
             "division": "NFC North",
-            "leader": "MIN",
+            "leader": "DET",
             "wins": 6,
-            "losses": 1
+            "losses": 2
           },
           {
             "division": "NFC South",
             "leader": "TB",
             "wins": 3,
-            "losses": 5
+            "losses": 6
           },
           {
             "division": "NFC West",
             "leader": "SF",
-            "wins": 6,
+            "wins": 7,
             "losses": 1
           }
         ],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T17:49:53.597305+00:00",
+  "generated_at": "2026-11-11T23:11:37.387002+00:00",
   "weeks": [
     {
       "season": 2026,
@@ -17,6 +17,7 @@
       "net_credits_won": 170.22,
       "roi_pct": 17.02,
       "fully_settled": true,
+      "has_picks": true,
       "picks": [
         {
           "event_id": "2026_05_HOU_TEN",
@@ -223,6 +224,7 @@
       "net_credits_won": -187.31,
       "roi_pct": -18.73,
       "fully_settled": true,
+      "has_picks": true,
       "picks": [
         {
           "event_id": "2026_06_LAC_KC",
@@ -446,6 +448,7 @@
       "net_credits_won": 290.59,
       "roi_pct": 29.06,
       "fully_settled": true,
+      "has_picks": true,
       "picks": [
         {
           "event_id": "2026_07_NYG_HOU",
@@ -618,6 +621,7 @@
       "net_credits_won": -94.41,
       "roi_pct": -9.44,
       "fully_settled": true,
+      "has_picks": true,
       "picks": [
         {
           "event_id": "2026_08_IND_JAX",
@@ -746,16 +750,17 @@
       "run_id": "87f216218442",
       "generated_at": "2026-11-05T17:49:50.833538+00:00",
       "picks_total": 10,
-      "picks_decided": 0,
-      "picks_pending": 10,
+      "picks_decided": 10,
+      "picks_pending": 0,
       "credits_staked": 1000,
-      "credits_staked_decided": 0,
+      "credits_staked_decided": 1000,
       "wins": 0,
-      "losses": 0,
+      "losses": 10,
       "pushes": 0,
-      "net_credits_won": 0,
-      "roi_pct": null,
-      "fully_settled": false,
+      "net_credits_won": -1000.0,
+      "roi_pct": -100.0,
+      "fully_settled": true,
+      "has_picks": true,
       "picks": [
         {
           "event_id": "2026_09_JAX_BAL",
@@ -771,8 +776,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:14.706035+00:00",
           "home_team": "BAL",
           "away_team": "JAX",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -112.0
         },
         {
           "event_id": "2026_09_NYJ_KC",
@@ -788,8 +793,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:15.215143+00:00",
           "home_team": "KC",
           "away_team": "NYJ",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -102.0
         },
         {
           "event_id": "2026_09_LV_SF",
@@ -805,8 +810,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:16.654137+00:00",
           "home_team": "SF",
           "away_team": "LV",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -86.0
         },
         {
           "event_id": "2026_09_DET_MIA",
@@ -822,8 +827,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:15.378584+00:00",
           "home_team": "MIA",
           "away_team": "DET",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -119.0
         },
         {
           "event_id": "2026_09_DAL_IND",
@@ -839,8 +844,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:15.083116+00:00",
           "home_team": "IND",
           "away_team": "DAL",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -127.0
         },
         {
           "event_id": "2026_09_TB_CHI",
@@ -856,8 +861,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:17.328358+00:00",
           "home_team": "CHI",
           "away_team": "TB",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -99.0
         },
         {
           "event_id": "2026_09_ARI_SEA",
@@ -873,8 +878,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:16.894199+00:00",
           "home_team": "SEA",
           "away_team": "ARI",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -57.0
         },
         {
           "event_id": "2026_09_BUF_MIN",
@@ -890,8 +895,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:17.546860+00:00",
           "home_team": "MIN",
           "away_team": "BUF",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -129.0
         },
         {
           "event_id": "2026_09_HOU_LAC",
@@ -907,8 +912,8 @@
           "reference_line_observed_at": "2026-11-05T16:06:16.251670+00:00",
           "home_team": "LAC",
           "away_team": "HOU",
-          "result": "pending",
-          "pnl": 0.0
+          "result": "loss",
+          "pnl": -86.0
         },
         {
           "event_id": "2026_09_NYG_PHI",
@@ -924,6 +929,196 @@
           "reference_line_observed_at": "2026-11-05T16:06:15.735991+00:00",
           "home_team": "PHI",
           "away_team": "NYG",
+          "result": "loss",
+          "pnl": -83.0
+        }
+      ]
+    },
+    {
+      "season": 2026,
+      "week": 10,
+      "run_id": "13934e05179d",
+      "generated_at": "2026-11-11T23:11:35.654696+00:00",
+      "picks_total": 10,
+      "picks_decided": 0,
+      "picks_pending": 10,
+      "credits_staked": 1000,
+      "credits_staked_decided": 0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "net_credits_won": 0,
+      "roi_pct": null,
+      "fully_settled": false,
+      "has_picks": true,
+      "picks": [
+        {
+          "event_id": "2026_10_NE_DET",
+          "kickoff_utc": "2026-11-15T14:30:00+00:00",
+          "market": "moneyline",
+          "selection": "DET",
+          "line": null,
+          "assumed_price": 0.5721,
+          "price_american": -148,
+          "credits": 70,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:06.148858+00:00",
+          "home_team": "DET",
+          "away_team": "NE",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_HOU_CLE",
+          "kickoff_utc": "2026-11-15T18:00:00+00:00",
+          "market": "moneyline",
+          "selection": "CLE",
+          "line": null,
+          "assumed_price": 0.331,
+          "price_american": 190,
+          "credits": 149,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:06.518893+00:00",
+          "home_team": "CLE",
+          "away_team": "HOU",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_MIA_IND",
+          "kickoff_utc": "2026-11-15T18:00:00+00:00",
+          "market": "moneyline",
+          "selection": "MIA",
+          "line": null,
+          "assumed_price": 0.3691,
+          "price_american": 160,
+          "credits": 132,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:07.026436+00:00",
+          "home_team": "IND",
+          "away_team": "MIA",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_SEA_LV",
+          "kickoff_utc": "2026-11-15T21:05:00+00:00",
+          "market": "moneyline",
+          "selection": "LV",
+          "line": null,
+          "assumed_price": 0.2864,
+          "price_american": 235,
+          "credits": 128,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:07.719198+00:00",
+          "home_team": "LV",
+          "away_team": "SEA",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_JAX_TEN",
+          "kickoff_utc": "2026-11-15T18:00:00+00:00",
+          "market": "moneyline",
+          "selection": "TEN",
+          "line": null,
+          "assumed_price": 0.1881,
+          "price_american": 410,
+          "credits": 104,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:06.877777+00:00",
+          "home_team": "TEN",
+          "away_team": "JAX",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_SF_DAL",
+          "kickoff_utc": "2026-11-15T21:25:00+00:00",
+          "market": "moneyline",
+          "selection": "DAL",
+          "line": null,
+          "assumed_price": 0.3553,
+          "price_american": 170,
+          "credits": 104,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:08.061474+00:00",
+          "home_team": "DAL",
+          "away_team": "SF",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_BUF_NYJ",
+          "kickoff_utc": "2026-11-15T18:00:00+00:00",
+          "market": "moneyline",
+          "selection": "NYJ",
+          "line": null,
+          "assumed_price": 0.2181,
+          "price_american": 340,
+          "credits": 92,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:07.489826+00:00",
+          "home_team": "NYJ",
+          "away_team": "BUF",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_LAC_BAL",
+          "kickoff_utc": "2026-11-17T01:15:00+00:00",
+          "market": "moneyline",
+          "selection": "LAC",
+          "line": null,
+          "assumed_price": 0.3364,
+          "price_american": 185,
+          "credits": 82,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:08.505866+00:00",
+          "home_team": "BAL",
+          "away_team": "LAC",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_KC_ATL",
+          "kickoff_utc": "2026-11-15T18:00:00+00:00",
+          "market": "moneyline",
+          "selection": "ATL",
+          "line": null,
+          "assumed_price": 0.3775,
+          "price_american": 154,
+          "credits": 80,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:06.308052+00:00",
+          "home_team": "ATL",
+          "away_team": "KC",
+          "result": "pending",
+          "pnl": 0.0
+        },
+        {
+          "event_id": "2026_10_PIT_CIN",
+          "kickoff_utc": "2026-11-16T01:20:00+00:00",
+          "market": "moneyline",
+          "selection": "PIT",
+          "line": null,
+          "assumed_price": 0.3836,
+          "price_american": 150,
+          "credits": 59,
+          "tier": "core",
+          "reference_line_source": "DraftKings",
+          "reference_line_observed_at": "2026-11-11T23:02:08.302706+00:00",
+          "home_team": "CIN",
+          "away_team": "PIT",
           "result": "pending",
           "pnl": 0.0
         }
@@ -931,10 +1126,10 @@
     }
   ],
   "season_to_date": {
-    "weeks_fully_settled": 4,
+    "weeks_fully_settled": 5,
     "weeks_pending": 1,
-    "credits_staked": 4000,
-    "net_credits_won": 179.09,
-    "roi_pct": 4.48
+    "credits_staked": 5000,
+    "net_credits_won": -820.91,
+    "roi_pct": -16.42
   }
 }

@@ -41,6 +41,22 @@ New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 $Timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 $LogFile = Join-Path $LogDir "tuesday_refresh_$Timestamp.log"
 
+# Real fix (2026-11-17, found after this task silently never fired on its
+# real first scheduled Tuesday): C: had 0 bytes free. The project and
+# venv are both already on D:, but Python/pytest/npm/npx all default to
+# the real Windows TEMP/TMP env vars, which point at
+# C:\Users\<user>\AppData\Local\Temp by default regardless of where the
+# code being run lives - a write there can fail even though every real
+# project file is on D:. Redirected here, scoped to THIS process only
+# (never touches the user's real system-wide TEMP/TMP) - every step
+# below inherits this via $env:, so nothing this script runs needs any
+# real free space on C: at all.
+$ScratchDir = Join-Path $ProjectRoot "tmp\scheduled_refresh"
+New-Item -ItemType Directory -Force -Path $ScratchDir | Out-Null
+$env:TEMP = $ScratchDir
+$env:TMP = $ScratchDir
+$env:npm_config_cache = Join-Path $ScratchDir "npm-cache"
+
 function Write-Log {
     param([string]$Message)
     $line = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $Message"

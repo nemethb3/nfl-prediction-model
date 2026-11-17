@@ -19,6 +19,11 @@ data/refresh_logs/*
 !data/refresh_logs/.gitkeep
 data/scheduled_run_logs/*
 !data/scheduled_run_logs/.gitkeep
+
+# Real, D:-local scratch space for the scheduled refresh (redirected here
+# instead of the real system TEMP/TMP, which defaults to C: regardless of
+# where the code being run lives - see scripts/scheduled_weekly_refresh.ps1).
+tmp/
 data/season_tracking/*
 !data/season_tracking/.gitkeep
 data/tracking.db
